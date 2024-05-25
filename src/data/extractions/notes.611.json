@@ -1,0 +1,288 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1955-01-01",
+        "age": 68
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "",
+          "end": ""
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "19732000",
+                "display": "Relapsing cholangitis"
+              }
+            ],
+            "text": "Relapsing cholangitis"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "19732000",
+              "display": "Relapsing cholangitis"
+            }
+          ],
+          "text": "Relapsing cholangitis"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "17470003",
+              "display": "Extended right hepatectomy"
+            }
+          ],
+          "text": "Extended right hepatectomy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": ""
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "69798008",
+              "display": "Bile duct resection with choledochojejunostomy"
+            }
+          ],
+          "text": "Bile duct resection with choledochojejunostomy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": ""
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44987009",
+              "display": "Biliary stenting with PS"
+            }
+          ],
+          "text": "Biliary stenting with PS"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": ""
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "443771005",
+              "display": "EUS-HGS with MS"
+            }
+          ],
+          "text": "EUS-HGS with MS"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": ""
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-5",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "241138005",
+              "display": "Balloon sweeping"
+            }
+          ],
+          "text": "Balloon sweeping"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": ""
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-6",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44987009",
+              "display": "Placement of PS into MS"
+            }
+          ],
+          "text": "Placement of PS into MS"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": ""
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-7",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49062008",
+              "display": "Replacement of PS with MS"
+            }
+          ],
+          "text": "Replacement of PS with MS"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": ""
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1975-2",
+              "display": "Hepatobiliary enzymes"
+            }
+          ],
+          "text": "Hepatobiliary enzymes"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Normalized"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "document-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary: Hospital Course: The patient, a 68-year-old man, was admitted for relapsing cholangitis caused by anastomotic benign stenosis after extended right hepatectomy and bile duct resection with choledochojejunostomy for hilar cholangiocarcinoma. Biliary stenting with PS had been performed, but the stenosis did not improve. Thus, he underwent EUS-HGS with MS. The procedure was successful, and the patient experienced no adverse events. Nine months after EUS-HGS, cholangitis occurred only once due to debris and granulation. We performed balloon sweeping for debris and placed a PS into the MS. Twelve months after EUS-HGS, we replaced the PS with an MS. The patient's hepatobiliary enzymes normalized, and cholangitis has not recurred in 11 months. Hospital Course: Admission Date: Discharge Date: Diagnosis: Relapsing cholangitis Procedures: Extended right hepatectomy, bile duct resection with choledochojejunostomy, biliary stenting with PS, EUS-HGS with MS. Course of Treatment: Biliary stenting with PS was performed for the patient, but it did not improve the stenosis. EUS-HGS with MS was conducted, which successfully treated the anastomotic benign stenosis. The patient experienced no adverse events. Nine months after EUS-HGS, the patient experienced cholangitis only once due to debris and granulation. We performed balloon sweeping and placed a PS into the MS. Twelve months after EUS-HGS, we replaced the PS with an MS. The patient's hepatobiliary enzymes normalized, and cholangitis has not recurred in 11 months. Condition at Discharge: The patient was discharged in a stable condition."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

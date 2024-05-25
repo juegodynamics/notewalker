@@ -1,0 +1,288 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example",
+        "name": [
+          {
+            "use": "official",
+            "family": "[REDACTED]",
+            "given": [
+              "[REDACTED]"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2001-01-01"  // Assuming the patient is 22 years old in 2023
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-example",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "emd",
+                "display": "Emergency department"
+              }
+            ]
+          },
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/admit-diagnosis"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admitting Diagnosis"
+                }
+              ]
+            }
+          },
+          {
+            "condition": {
+              "reference": "Condition/discharge-diagnosis"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "DD",
+                  "display": "Discharge Diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "admit-diagnosis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "provisional",
+              "display": "Provisional"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "424132000",
+              "display": "Acute progressive necrotizing fasciitis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "onsetDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "discharge-diagnosis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "240370009",
+              "display": "Necrotizing fasciitis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "onsetDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-example",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77477000",
+              "display": "Debridement procedure"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/admit-diagnosis"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-example",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "[REDACTED]",  // Code for anti-tubercular chemotherapy
+              "display": "Anti-tubercular chemotherapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "authoredOn": "[REDACTED]",
+        "requester": {
+          "reference": "Practitioner/[REDACTED]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Complete the full course of anti-tubercular chemotherapy as prescribed."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-example",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Patient is advised to avoid direct sun exposure and to keep the wound clean and dry. Complete the full course of anti-tubercular chemotherapy as prescribed. Follow-up with a primary care provider or specialist is recommended.",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Avoid direct sun exposure",
+              "status": "completed"
+            }
+          },
+          {
+            "detail": {
+              "description": "Keep the wound clean and dry",
+              "status": "completed"
+            }
+          },
+          {
+            "detail": {
+              "description": "Complete the full course of anti-tubercular chemotherapy as prescribed",
+              "status": "completed"
+            }
+          },
+          {
+            "detail": {
+              "description": "Follow-up with a primary care provider or specialist",
+              "status": "completed"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,339 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "age": 75,
+        "smokingStatus": "former smoker",
+        "exposure": "passive smoking due to running a bar-tobacco shop",
+        "condition": [
+          {
+            "code": {
+              "text": "atrial fibrillation"
+            }
+          },
+          {
+            "code": {
+              "text": "arterial hypertension"
+            }
+          },
+          {
+            "code": {
+              "text": "gastroesophageal reflux"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "type": [
+          {
+            "text": "hospital admission"
+          }
+        ],
+        "reasonCode": [
+          {
+            "text": "breathlessness"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-1"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admission diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Interstitial lung disease with subpleural reticulations and bronchial obstruction"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "display": "chest computed tomography (CT) scan"
+              },
+              {
+                "display": "serological testing"
+              },
+              {
+                "display": "bronchoscopy"
+              },
+              {
+                "display": "bronchoalveolar lavage"
+              },
+              {
+                "display": "Pulmonary function tests"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "Clinical examination showed interstitial lung disease (ILD) with subpleural reticulations and crackles at lung bases. ILD multidisciplinary discussion (MDD) reached a CT pattern of possible usual interstitial pneumonia (UIP), which led to the decision to perform surgical lung biopsy."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "text": "surgical lung biopsy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2019-07-01",
+          "end": "2019-07-01"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-1"
+          }
+        ],
+        "note": [
+          {
+            "text": "Wedge resection of the right upper and lower lobes was performed by video-assisted thoracoscopic surgery. Both resected lung specimens showed a similar pattern of UIP: fibroblastic foci and honeycombing. In addition, the right lower lobe specimen displayed numerous disseminated foci of well-differentiated focally invasive malignancy without invasion of visceral pleura. Complete resection was obtained without malignant margins."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Nintedanib"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-1"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Pulmonary function tests"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "FVC, 130% pred.; TLCO, 61% pred."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "CT scan evaluation"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "note": [
+          {
+            "text": "At the last follow-up in October 2019, that is, 2 years after initiation of nintedanib, clinical, functional (FVC, 130% pred.; TLCO, 61% pred.), and CT scan evaluations were stable. There was no evidence of malignancy progression."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Usual interstitial pneumonia with disseminated foci of well-differentiated focally invasive malignancy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "inactive"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Bronchial obstruction"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "2019-10-01",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary: HISTORY OF PRESENT ILLNESS: The patient, a 75-year-old former smoker with a history of atrial fibrillation, arterial hypertension, and gastroesophageal reflux, was admitted to the hospital for breathlessness. She was exposed to passive smoking due to running a bar-tobacco shop. Clinical examination showed interstitial lung disease (ILD) with subpleural reticulations and crackles at lung bases. HOSPITAL COURSE: The patient underwent chest computed tomography (CT) scan, standard biology, serological testing, bronchoscopy, and bronchoalveolar lavage. Pulmonary function tests demonstrated bronchial obstruction and alteration of gas diffusion. ILD multidisciplinary discussion (MDD) reached a CT pattern of possible usual interstitial pneumonia (UIP), which led to the decision to perform surgical lung biopsy. Wedge resection of the right upper and lower lobes was performed by video-assisted thoracoscopic surgery. Both resected lung specimens showed a similar pattern of UIP: fibroblastic foci and honeycombing. In addition, the right lower lobe specimen displayed numerous disseminated foci of well-differentiated focally invasive malignancy without invasion of visceral pleura. Complete resection was obtained without malignant margins. DIAGNOSIS: Interstitial lung disease with subpleural reticulations and bronchial obstruction. Surgical biopsy revealed usual interstitial pneumonia with disseminated foci of well-differentiated focally invasive malignancy. TREATMENT: Nintedanib was started as an antifibrotic treatment owing to pathological confirmation of UIP. CONDITION ON DISCHARGE: At the last follow-up in October 2019, that is, 2 years after initiation of nintedanib, clinical, functional (FVC, 130% pred.; TLCO, 61% pred.), and CT scan evaluations were stable. There was no evidence of malignancy progression. DISCHARGE INSTRUCTIONS: The patient is advised to continue taking prescribed medications as directed and follow up with the primary care physician on a regular basis. She is also advised to avoid exposure to passive smoking and other environmental irritants to prevent further lung damage. DISCHARGE DIAGNOSES: - Interstitial lung disease - Bronchial obstruction - Usual interstitial pneumonia with disseminated foci of well-differentiated focally invasive malignancy. FINAL DIAGNOSES: - Usual interstitial pneumonia with disseminated foci of well-differentiated focally invasive malignancy."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

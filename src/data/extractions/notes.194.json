@@ -1,0 +1,245 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ],
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "text": "Large lobulated multicompartmental supra-sellar mass centered within the hypothalamus/optic chiasm."
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "Large lobulated multicompartmental supra-sellar mass centered within the hypothalamus/optic chiasm"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "onsetString": "[redacted]",
+        "abatementString": "[redacted]",
+        "note": [
+          {
+            "text": "The patient, a two-year-old female with a six-week history of macrocephaly and truncal and peripheral ataxia, was admitted to the hospital for further evaluation. An urgent brain MRI demonstrated the presence of a large lobulated multicompartmental supra-sellar mass centered within the hypothalamus/optic chiasm, with extension into the surrounding structures and mass effect on the midbrain and third ventricle causing obstructive hydrocephalus."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "Endoscopic biopsy and septostomy, right-sided ventriculoperitoneal (VP) shunt"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "performedString": "[redacted]",
+        "reasonReference": [
+          {
+            "reference": "Condition/[redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "code": {
+          "text": "Pathology of the lesion"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "result": [
+          {
+            "reference": "Observation/[redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "Pathology of the lesion"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueString": "Low-grade glioma, BRAF-V600E negative on immunohistochemistry but positive on next-generation sequencing"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "text": "Vincristine and carboplatin"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "note": [
+          {
+            "text": "Started on chemotherapy with vincristine and carboplatin but had rapid tumor progression with worsening hydrocephalus six weeks into chemotherapy."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "Progressive right-sided hemiparesis, bitemporal hemianopia, central hypothyroidism, and feeding difficulties"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "note": [
+          {
+            "text": "Complications developed due to tumor progression, requiring a gastrostomy tube and placement of a second VP shunt."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "text": "Dabrafenib"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "note": [
+          {
+            "text": "Started on the novel targeted agent dabrafenib. By three months of starting dabrafenib, the size of her tumor decreased by more than 70%, with continued decline until plateauing after two years of therapy."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "Motor and speech impairments"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueString": "Prior to dabrafenib, the patient had marked motor and speech impairments but is now able to perform all age-appropriate developmental skills independently."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "Feeding"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueString": "No longer requires tube feeding and has been growing well."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "Bitemporal hemianopia"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueString": "Improved markedly."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "Visual acuity"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueString": "Continues to have low but stable visual acuity bilaterally."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "title": "ORCYD biomarker study",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "note": [
+          {
+            "text": "The patient was enrolled in the ORCYD biomarker study to test her plasma and CSF for the presence of the BRAF-V600E mutation and to correlate the assay results with the MRI changes observed while on dabrafenib therapy."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "BRAF-V600E mutation"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueString": "The BRAF-V600E mutation was not detected in any of the samples from either plasma or CSF."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "text": "None"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "note": [
+          {
+            "text": "Discharge Medications: None."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "note": [
+          {
+            "text": "The patient will follow up with her oncologist for regular check-ups and monitoring. Future imaging studies will be performed as needed to evaluate the progression of the tumor."
+          }
+        ]
+      }
+    }
+  ]
+}

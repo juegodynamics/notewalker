@@ -1,0 +1,161 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1959-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "period": {
+          "start": "[DATE]",
+          "end": "[DATE]"
+        },
+        "length": {
+          "value": "[DAYS]",
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        },
+        "reasonCode": [
+          {
+            "text": "Left inferior visual field deficit and headache"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "code": {
+          "text": "Left superior carotid-ophthalmic aneurysm"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "onsetDateTime": "[DATE]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "status": "not-done",
+        "code": {
+          "text": "Conservative management"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/example-condition"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "status": "final",
+        "code": {
+          "text": "Discharge Condition"
+        },
+        "valueString": "Stable"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "example-careplan",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Post-discharge Recommendations",
+        "description": "The patient is advised to visit the neurosurgeon as scheduled for follow-up and further management of his condition. He is also advised to take his medications as prescribed and to follow a healthy lifestyle with regular exercise and a balanced diet. The patient is advised to report any increase in headache, visual disturbance, or any other symptoms to his physician immediately."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-medicationrequest",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "status": "stopped",
+        "intent": "order",
+        "note": [
+          {
+            "text": "None"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "example-practitioner",
+        "name": [
+          {
+            "text": "[REDACTED], MD"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "example-documentreference",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "author": [
+          {
+            "reference": "Practitioner/example-practitioner"
+          }
+        ],
+        "date": "[DATE]",
+        "description": "Discharge Summary",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary\n\nPatient Name: [REDACTED]\n\nGender: Male\nAge: 64 years\nChief Complaint: Left inferior visual field deficit and headache\n\nAdmission Date: [DATE]\nDischarge Date: [DATE]\nLength of Stay: [DAYS]\n\nClinical Course:\nThe patient was admitted to the hospital with complaints of headache and a left inferior visual field deficit. The CT angiography showed a left superior carotid-ophthalmic aneurysm measuring 4 × 5 mm. Conservative management was initiated in consultation with the neurosurgical team. The neurosurgeons have decided to continue with conservative management for this patient as he is stable and does not require any intervention or surgery at this time. The patient did not have any complications during his hospital stay. His symptoms were monitored closely, and he was found to be stable at the time of discharge.\n\nDischarge Diagnosis:\nThe patient was diagnosed with a left superior carotid-ophthalmic aneurysm.\n\nPost-discharge Recommendations:\nThe patient is advised to visit the neurosurgeon as scheduled for follow-up and further management of his condition. He is also advised to take his medications as prescribed and to follow a healthy lifestyle with regular exercise and a balanced diet. The patient is advised to report any increase in headache, visual disturbance, or any other symptoms to his physician immediately.\n\nFollow-Up Plan:\nThe patient is advised to follow up with the neurosurgeon as scheduled for further evaluation and management of his condition.\n\nDischarge Medications:\nNone\n\nDischarge Condition:\nThe patient was discharged in stable condition.\n\nSigned by:\n[REDACTED], MD\n[DATE]."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

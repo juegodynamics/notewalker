@@ -1,0 +1,219 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "N/A"
+          }
+        ],
+        "name": [
+          {
+            "text": "N/A"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2023-09-01" // Assuming the patient is 30 days old from today
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "period": {
+          "start": "N/A",
+          "end": "N/A"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274100004",
+              "display": "Intraabdominal cystic mass"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "174040007",
+              "display": "Salpingo-oophorectomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "performedPeriod": {
+          "start": "N/A",
+          "end": "N/A"
+        },
+        "outcome": {
+          "text": "No signs of wound infections or peritonitis"
+        },
+        "note": [
+          {
+            "text": "Left salpingo-oophorectomy and incidental appendectomy were performed. Oophoropexy carried out on the right ovary with absorbable suture and peripheral cysts drained."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11526-1",
+              "display": "Pathology study"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "valueString": "Necrotic ovary with cysts smaller than 1 cm on contralateral ovary, aspirated during surgery."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:careplan-1",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Plan",
+        "description": "Regular check-ups with pelvic and Doppler imaging of ovary.",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "period": {
+          "start": "N/A",
+          "end": "N/A"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "At 6 months follow-up, cysts redeveloped up to 2 cm and then spontaneously disappeared. Ovary developed age-appropriately, follow-up ongoing for 2 years."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:discharge-summary",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "discharge-summary",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "date": "N/A",
+        "author": [
+          {
+            "reference": "urn:uuid:patient-1"
+          }
+        ],
+        "title": "Discharge Summary",
+        "section": [
+          {
+            "title": "Hospital Course",
+            "text": {
+              "status": "generated",
+              "div": "<div>The 30-day-old Caucasian baby girl was referred to our hospital due to the detection of an intraabdominal cystic mass during the last trimester of pregnancy. Following a physical examination and imaging studies, the patient was diagnosed with an intraabdominal cystic mass, with no presence of malignancy. During surgery, it was found that the patient had torsion in her left adnexa, and a necrotic ovary was discovered. A left salpingo-oophorectomy was performed along with an incidental appendectomy. An oophoropexy was carried out on her right ovary, with absorbable suture at the level of the pelvic brim of the sidewall of her abdomen after draining peripheral cysts. A pathological examination confirmed the diagnosis of a necrotic ovary, with cysts smaller than 1 cm on her contralateral ovary, which were aspirated during surgery. The postoperative period showed no signs of wound infections or peritonitis, and the patient was discharged on the third postoperative day.</div>"
+            }
+          },
+          {
+            "title": "Follow-up",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient had regular check-ups with pelvic and Doppler imaging of her ovary after surgery. At 6 months of follow-up, the cysts, which were smaller than 1 cm, redeveloped up to 2 cm and then spontaneously disappeared. Her ovary developed age-appropriately, and she has been following up for 2 years.</div>"
+            }
+          },
+          {
+            "title": "Discharge Condition",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient was discharged in a stable condition with an appropriate follow-up plan.</div>"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

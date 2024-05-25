@@ -1,0 +1,426 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "123456"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Unknown",
+            "given": [
+              "Unknown"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1955-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/us-core-race",
+            "valueString": "Caucasian"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-09-01T12:00:00Z",
+          "end": "2023-09-15T12:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "249366005",
+                "display": "Bright red blood per rectum"
+              }
+            ],
+            "text": "Persistent bright red blood per rectum"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "408740005",
+              "display": "Sigmoid colon cancer"
+            }
+          ],
+          "text": "Sigmoid colon cancer"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "2023-09-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33765-9",
+              "display": "White blood cell count"
+            }
+          ],
+          "text": "White blood cell count"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2023-09-01T12:00:00Z",
+        "valueQuantity": {
+          "value": 11,
+          "unit": "10*3/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*3/uL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin"
+            }
+          ],
+          "text": "Hemoglobin"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2023-09-01T12:00:00Z",
+        "valueQuantity": {
+          "value": 10,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Colonoscopy"
+            }
+          ],
+          "text": "Colonoscopy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "2023-09-02T12:00:00Z",
+        "report": [
+          {
+            "reference": "Observation/observation-3"
+          },
+          {
+            "reference": "Observation/observation-4"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18747-8",
+              "display": "CT of Abdomen and Pelvis"
+            }
+          ],
+          "text": "CT of Abdomen and Pelvis"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2023-09-02T12:00:00Z",
+        "valueString": "CT negative for any obvious distant disease"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2039-6",
+              "display": "Carcinoembryonic antigen"
+            }
+          ],
+          "text": "Carcinoembryonic antigen"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2023-09-02T12:00:00Z",
+        "valueQuantity": {
+          "value": 2.5,
+          "unit": "ng/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ng/mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Colectomy"
+            }
+          ],
+          "text": "Surgical resection of the affected colon"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "2023-09-03T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108290001",
+              "display": "Radiation therapy"
+            }
+          ],
+          "text": "Radiation therapy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-09-04T12:00:00Z",
+          "end": "2023-09-14T12:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "408740005",
+              "display": "Sigmoid colon cancer"
+            }
+          ],
+          "text": "Sigmoid colon cancer"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "2023-09-01T12:00:00Z",
+        "abatementDateTime": "2024-09-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "intent": "plan",
+        "status": "active",
+        "title": "Follow-up Care Plan",
+        "description": "Regular follow-up appointments with primary care physician, gastroenterologist, and oncologist.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-09-15T12:00:00Z"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "status": "scheduled",
+              "description": "Follow-up with primary care physician",
+              "scheduledPeriod": {
+                "start": "2023-10-01T12:00:00Z"
+              }
+            }
+          },
+          {
+            "detail": {
+              "kind": "Appointment",
+              "status": "scheduled",
+              "description": "Follow-up with gastroenterologist",
+              "scheduledPeriod": {
+                "start": "2023-10-10T12:00:00Z"
+              }
+            }
+          },
+          {
+            "detail": {
+              "kind": "Appointment",
+              "status": "scheduled",
+              "description": "Follow-up with oncologist",
+              "scheduledPeriod": {
+                "start": "2023-10-20T12:00:00Z"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

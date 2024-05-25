@@ -1,0 +1,188 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[NAME]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "[DOB]",
+        "animal": {
+          "species": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/animal-species",
+                "code": "canislf",
+                "display": "Dog"
+              }
+            ]
+          },
+          "breed": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/animal-breed",
+                "code": "GRH",
+                "display": "Greyhound"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[DATE]",
+          "end": "[DATE]"
+        },
+        "reasonCode": [
+          {
+            "text": "head trauma following a collision with a park bench"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "125605004",
+              "display": "Fracture of frontal bone"
+            }
+          ],
+          "text": "Comminuted depressed fracture of the frontal bone"
+        },
+        "subject": {
+          "reference": "Patient/[ID]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Repair of fracture"
+            }
+          ],
+          "text": "Surgical repair of the frontal bone defect"
+        },
+        "subject": {
+          "reference": "Patient/[ID]"
+        },
+        "performedPeriod": {
+          "start": "[DATE]",
+          "end": "[DATE]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "352370",
+              "display": "Antibiotics"
+            },
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "72705000",
+              "display": "Analgesics"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[ID]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Continue course of oral antibiotics and analgesics as prescribed"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "1. Continue course of oral antibiotics and analgesics as prescribed.\n2. Limit physical activity and rest the patient for at least a week.\n3. Monitor the surgical site for swelling, hyperthermia, and infection.\n4. If any concerning symptoms develop, contact a veterinarian immediately.\n5. Schedule a follow-up appointment in six weeks and two years.",
+        "subject": {
+          "reference": "Patient/[ID]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-Up Plan",
+        "description": "The patient's follow-up will continue at regular intervals to reassess the surgical site and ensure no complications occur. At the six-week recheck, radiographs and CT scan showed a slight uplift of the mesh at its most rostral aspect from the frontal bone, which was corrected with a procedure that was uneventful. Radiographs and CT scan at six months revealed soft tissue swelling between the rostral mesh portion and the skull with no clinical concern. At two years assessment, radiographs and CT scan confirmed the adequate contouring and positioning of the Ti mesh with a bone-dense opacity between the rostral part of the mesh and the skull. No further complications were noted, and the owners did not raise any further concerns regarding the patient's ability to participate in normal lifestyle and activity.",
+        "subject": {
+          "reference": "Patient/[ID]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "text": "[NAME], DVM"
+          }
+        ]
+      }
+    }
+  ]
+}

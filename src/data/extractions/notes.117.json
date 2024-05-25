@@ -1,0 +1,318 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "case-4",
+        "gender": "male",
+        "birthDate": "2017-01-01",
+        "name": [
+          {
+            "text": "Case 4"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/case-4"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "111266001",
+              "display": "Hypomineralization of permanent teeth"
+            }
+          ],
+          "text": "Hypomineralization of permanent teeth"
+        },
+        "note": [
+          {
+            "text": "The patient visited the hospital with a complaint of cold water pain in the anterior mandible."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "VAS",
+              "display": "Visual Analog Scale"
+            }
+          ],
+          "text": "Pain scale"
+        },
+        "subject": {
+          "reference": "Patient/case-4"
+        },
+        "valueQuantity": {
+          "value": 3,
+          "unit": "VAS"
+        },
+        "note": [
+          {
+            "text": "The patient experienced pain from air blowing and cold water."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "VAS",
+              "display": "Visual Analog Scale"
+            }
+          ],
+          "text": "Pain scale"
+        },
+        "subject": {
+          "reference": "Patient/case-4"
+        },
+        "valueQuantity": {
+          "value": 0,
+          "unit": "VAS"
+        },
+        "note": [
+          {
+            "text": "VAS value reduced to zero after initial treatment."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "VAS",
+              "display": "Visual Analog Scale"
+            }
+          ],
+          "text": "Pain scale"
+        },
+        "subject": {
+          "reference": "Patient/case-4"
+        },
+        "valueQuantity": {
+          "value": 0.5,
+          "unit": "VAS"
+        },
+        "note": [
+          {
+            "text": "VAS value was 0.5 after one month of treatment."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "VAS",
+              "display": "Visual Analog Scale"
+            }
+          ],
+          "text": "Pain scale"
+        },
+        "subject": {
+          "reference": "Patient/case-4"
+        },
+        "valueQuantity": {
+          "value": 0,
+          "unit": "VAS"
+        },
+        "note": [
+          {
+            "text": "VAS value was zero after four treatments."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6872",
+              "display": "Cloudiness areas"
+            }
+          ],
+          "text": "Cloudiness areas improved"
+        },
+        "subject": {
+          "reference": "Patient/case-4"
+        },
+        "valueQuantity": {
+          "value": 1903,
+          "unit": "areas"
+        },
+        "note": [
+          {
+            "text": "Cloudiness areas improved from 6872 to 1903 after seven treatments."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-6",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6595",
+              "display": "Brown areas"
+            }
+          ],
+          "text": "Brown areas decreased"
+        },
+        "subject": {
+          "reference": "Patient/case-4"
+        },
+        "valueQuantity": {
+          "value": 1667,
+          "unit": "areas"
+        },
+        "note": [
+          {
+            "text": "Brown areas decreased significantly from 6595 to 1667 after seven treatments."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "123456",
+              "display": "Treatment to suppress hypersensitivity"
+            }
+          ],
+          "text": "Suppress hypersensitivity"
+        },
+        "subject": {
+          "reference": "Patient/case-4"
+        },
+        "note": [
+          {
+            "text": "The patient was treated to suppress hypersensitivity."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "completed",
+        "intent": "proposal",
+        "subject": {
+          "reference": "Patient/case-4"
+        },
+        "description": "Follow-up plan",
+        "note": [
+          {
+            "text": "No follow-up is required at this time."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-2",
+        "status": "completed",
+        "intent": "proposal",
+        "subject": {
+          "reference": "Patient/case-4"
+        },
+        "description": "Recommendations",
+        "note": [
+          {
+            "text": "The patient should maintain regular dental hygiene habits, including brushing twice a day and flossing."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/case-4"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "111266001",
+              "display": "Hypomineralization of permanent teeth"
+            }
+          ],
+          "text": "Hypomineralization of permanent teeth"
+        },
+        "note": [
+          {
+            "text": "The patient's discomfort and hypomineralization were successfully addressed with treatment."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,370 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealth.org",
+            "value": "[REDACTED]"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "[REDACTED]",
+            "given": [
+              "[REDACTED]"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2008-01-01",
+        "age": "15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "305689006",
+                "display": "Pediatric cardiac surgery clinic"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "123456",
+              "display": "CCL syndrome"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "2008-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "17436001",
+              "display": "Sternotomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[REDACTED]",
+        "note": [
+          {
+            "text": "The patient underwent a midline sternotomy procedure under general anesthesia. The procedure involved the resection of the thymus due to its enormous size and standard cannulation through the ascending aorta and superior and inferior vena cava. Cardioplegic arrest with full flow of cardiopulmonary bypass (CPB) was induced for the patient. The surgical team examined the aortic valve and found some significant enlargement and dilatation of the leaflet; however, no intervention was performed as the valve was manually competent. The surgical team also identified significant enlargement of both atria, and as a result, resected right and left atrial appendages in combination with atrioplasty."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "5197000",
+              "display": "Mitral valve replacement"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[REDACTED]",
+        "note": [
+          {
+            "text": "The surgical team opened the left atrium, examined the mitral valve, and found significant myxomatous changes of both anterior and posterior leaflets. The valve was deemed irreparable, and the decision was made intraoperatively to replace the mitral valve with a 33-mm St. Jude Medical Epic porcine valve prosthesis. After this, the team performed commissural tricuspid annuloplasty on the tricuspid valve which rendered it competent. The patient was fully rewarmed and weaned off CPB with trace tricuspid regurgitation observed on intraoperative TEE."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA11882-0",
+              "display": "Blood loss"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueQuantity": {
+          "value": 3080,
+          "unit": "mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL"
+        },
+        "note": [
+          {
+            "text": "During the first 15 hours in the CSICU, the chest tubes drained blood with a total of 1,450 mL (right lower pleura), 300 mL (mediastinum), and 1,330 mL (left lower pleura)."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-1",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3000455",
+              "display": "Packed Red Blood Cells"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosage": {
+          "text": "Five units of packed red blood cells (PRBCs)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-2",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3000456",
+              "display": "Fresh Frozen Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosage": {
+          "text": "Seven units of fresh frozen plasma (FFP)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-3",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3000457",
+              "display": "Cryoprecipitated Antihemophilic Factor"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosage": {
+          "text": "Two units of cryoprecipitated antihemophilic factor (Cryo)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-4",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3000458",
+              "display": "Platelets"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosage": {
+          "text": "Two units of platelets"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-5",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3000459",
+              "display": "Protamine Sulfate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosage": {
+          "text": "Two doses of intravenous protamine sulfate (50 mg per dose)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA11882-0",
+              "display": "Transthoracic Echocardiogram"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "note": [
+          {
+            "text": "Predischarge transthoracic echocardiogram (TTE) showed no significant changes, and the patient was deemed satisfactory for discharge."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "inactive",
+              "display": "Inactive"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "567890",
+              "display": "Mitral and tricuspid valve replacement"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "note": [
+          {
+            "text": "Mitral and tricuspid valve replacement with a 33-mm St. Jude Medical Epic porcine valve prosthesis and commissural tricuspid annuloplasty performed for CCL syndrome."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "completed",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "The patient was advised to follow up with the clinic for further evaluation and counseling with a medical geneticist. She was scheduled for regular check-ups to monitor her condition and recovery progress."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

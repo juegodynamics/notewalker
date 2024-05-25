@@ -1,0 +1,178 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [],
+        "gender": "female",
+        "birthDate": "2015",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/us-core-ethnicity",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/v3/Ethnicity",
+                  "code": "2186-5",
+                  "display": "Asian"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "271807003",
+                "display": "Swelling of lower lip"
+              }
+            ],
+            "text": "The patient presented with a swelling on the lower lip and sought dental examination."
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "271807003",
+              "display": "Swelling of lower lip"
+            }
+          ],
+          "text": "Swelling on the lower lip"
+        },
+        "onsetDateTime": "2023",
+        "note": [
+          {
+            "text": "Examination revealed a translucent swelling in the labial mucosa, opposite the left mandibular lateral incisor."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75325-1",
+              "display": "History of medical condition Narrative"
+            }
+          ],
+          "text": "Medical History"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "The patient had no significant medical history or known allergies. The swelling had been present for a long time, with no changes reported in size or color. The parents denied any previous trauma or habit of lip biting."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest-1",
+        "status": "active",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10509002",
+              "display": "Diagnostic procedure"
+            }
+          ],
+          "text": "Further testing to determine the nature and extent of the swelling"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest-2",
+        "status": "completed",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "305351004",
+              "display": "Referral to Pediatric Dentist"
+            }
+          ],
+          "text": "Follow up with the department of Pediatric Dentistry at [TUSDM], or any other relevant healthcare provider, as necessary"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "REASON FOR ADMISSION: The patient presented with a swelling on the lower lip and sought dental examination. Examination revealed a translucent swelling in the labial mucosa, opposite the left mandibular lateral incisor.\n\nHISTORY AND FINDINGS: The patient had no significant medical history or known allergies. The swelling had been present for a long time, with no changes reported in size or color. The parents denied any previous trauma or habit of lip biting.\n\nASSESSMENT: The patient was diagnosed with a swelling on the lower lip, and further testing was recommended.\n\nTREATMENT: The patient was referred for further testing to determine the nature and extent of the swelling. No treatment was provided at that time.\n\nFOLLOW-UP: The patient was advised to follow up with the department of Pediatric Dentistry at [TUSDM], or any other relevant healthcare provider, as necessary.\n\nOUTCOME: The patient was discharged from the hospital with no treatment provided."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

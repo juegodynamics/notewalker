@@ -1,0 +1,317 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "period": {
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "239036004",
+              "display": "Idiopathic pulmonary hemosiderosis"
+            }
+          ],
+          "text": "Idiopathic pulmonary hemosiderosis (IPH)"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "suspected"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "239036004",
+              "display": "Heiner syndrome"
+            }
+          ],
+          "text": "Heiner syndrome"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3640",
+              "display": "Corticosteroid"
+            }
+          ],
+          "text": "Corticosteroids"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Dose was gradually tapered after the first month of treatment."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI) [Ratio]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "267036007",
+                  "display": "Severe anemia"
+                }
+              ]
+            },
+            "valueString": "The patient was admitted to the hemato-oncology department due to severe anemia."
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "57833-6",
+                  "display": "Chest radiograph"
+                }
+              ]
+            },
+            "valueString": "Chest radiograph revealed pulmonary hemorrhage as the focus of bleeding."
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "30624-4",
+                  "display": "CT of Chest"
+                }
+              ]
+            },
+            "valueString": "Chest computed tomography scans revealed pulmonary hemorrhage as the focus of bleeding."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "19123-9",
+              "display": "Allergy status"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "valueString": "Patient did not have any history of allergy."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "19123-9",
+              "display": "Immunoglobulin E"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "valueString": "Low levels of specific immunoglobulin (Ig)E to cow’s milk."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Diet",
+              "description": "Patient followed a strict milk restriction diet."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "430193006",
+              "display": "Hemoptysis"
+            }
+          ],
+          "text": "Readmitted to the hospital due to hemoptysis."
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225358003",
+              "display": "Follow-up visit"
+            }
+          ],
+          "text": "A follow-up visit is recommended to be scheduled with the treating physician."
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "status": "not-taken",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3640",
+              "display": "Corticosteroid"
+            }
+          ],
+          "text": "Corticosteroids"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "note": [
+          {
+            "text": "The patient was not taking corticosteroids upon being discharged."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "status": "completed",
+        "description": "The patient was diagnosed with idiopathic pulmonary hemosiderosis (IPH) after being admitted to the hospital due to pallor without respiratory symptoms or signs. The patient was treated with corticosteroids, which were gradually tapered after the first month of treatment. He was later re-admitted to the hospital due to hemoptysis, and Heiner syndrome was suspected based on laboratory analysis and clinical history. A strict milk restriction diet was prescribed, and subsequently, the patient did not experience any further hemorrhagic events.",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "finding": [
+          {
+            "item": {
+              "reference": "Condition/[REDACTED]"
+            }
+          },
+          {
+            "item": {
+              "reference": "Condition/[REDACTED]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

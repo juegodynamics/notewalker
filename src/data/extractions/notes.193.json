@@ -1,0 +1,184 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1991-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40739000",
+              "display": "Dysphagia"
+            }
+          ],
+          "text": "Dysphagia"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "9532001",
+              "display": "Heartburn"
+            }
+          ],
+          "text": "Pyrosis"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49727002",
+              "display": "Cough"
+            }
+          ],
+          "text": "Cough"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267036007",
+              "display": "Shortness of breath"
+            }
+          ],
+          "text": "Shortness of breath"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "122456005",
+              "display": "Endobronchial ultrasound with biopsy"
+            }
+          ],
+          "text": "Endobronchial Ultrasound Bronchoscopy (EBUS) with transbronchial needle aspiration and biopsy"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01",
+          "end": "2023-01-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8640",
+              "display": "Prednisone 40 MG"
+            }
+          ],
+          "text": "Prednisone 40 mg"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "40 mg orally once daily"
+          }
+        ],
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "period": {
+          "start": "2023-01-01",
+          "end": "2023-01-10"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ],
+            "text": "The patient's condition improved and he was discharged in stable condition."
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-Up Plan",
+        "description": "The patient will follow up with pulmonology and gastroenterology clinics for continued evaluation and management of dysphagia.",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    }
+  ]
+}

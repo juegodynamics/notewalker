@@ -1,0 +1,246 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "240370009",
+              "display": "IgG4-related pleuritis"
+            }
+          ],
+          "text": "IgG4-related pleuritis"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "367336001",
+              "display": "Chest computed tomography (CT)"
+            }
+          ],
+          "text": "chest computed tomography (CT)"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "430193006",
+              "display": "Thoracic ultrasound"
+            }
+          ],
+          "text": "thoracic ultrasound"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "276106007",
+              "display": "Medical thoracoscopy"
+            }
+          ],
+          "text": "medical thoracoscopy"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232717009",
+              "display": "Surgical pleural biopsy"
+            }
+          ],
+          "text": "surgical pleural biopsy"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108241001",
+              "display": "Thoracentesis"
+            }
+          ],
+          "text": "thoracentesis"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8640",
+              "display": "Steroid"
+            }
+          ],
+          "text": "Steroid therapy"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take as prescribed by physician"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33959-8",
+              "display": "IgG4 serum levels"
+            }
+          ],
+          "text": "IgG4 serum levels"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "valueQuantity": {
+          "value": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "The patient is advised to continue taking the prescribed medication and to follow-up with their physician as per schedule.",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Take prescribed medication, follow-up with physician",
+              "kind": "MedicationRequest",
+              "scheduledString": "As per schedule",
+              "performer": [
+                {
+                  "reference": "Practitioner/[REDACTED]"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

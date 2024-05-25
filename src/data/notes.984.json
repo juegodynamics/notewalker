@@ -1,0 +1,211 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example",
+        "name": [
+          {
+            "use": "official",
+            "given": ["[redacted]"]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1957-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/v3/Race",
+                  "code": "2054-5",
+                  "display": "African American"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "initial-diagnosis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "230690007",
+              "display": "Cocaine-induced cerebrovascular disease"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "note": [
+          {
+            "text": "Cocaine-induced bilateral posterior inferior cerebellar artery and hippocampal infarction with multifocal punctate infarcts in bilateral posterior cerebral artery and basal ganglia secondary to severe vasoconstriction. Mild encephalopathy also observed."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "medical-history",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "191816009",
+              "display": "Polysubstance abuse"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "note": [
+          {
+            "text": "Polysubstance abuse (heroin, prescription opioids), bacterial endocarditis 30 years ago with remote epidural abscess, cervical cord compression from C3-C6 and myelopathy with residual bilateral upper extremity contractures and lower extremity weakness, hepatitis C, and chronic obstructive pulmonary disease."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "period": {
+          "start": "2023-09-01T00:00:00Z",
+          "end": "2023-09-08T00:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "230690007",
+                "display": "Cocaine-induced cerebrovascular disease"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "clinical-course",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11369-6",
+              "display": "History of clinical course narrative"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "effectiveDateTime": "2023-09-01T00:00:00Z",
+        "valueString": "The patient was brought to ER due to confusion and short-term memory loss with significant receptive aphasia. She had no pain, fever, chest pain, palpitations, loss of consciousness, or seizure-like activity. She was a middle-aged lady who was alert oriented to name and place but not to time. Physical examination showed decreased bulk in bilateral upper extremities with moderate spasticity, tight contractures of the arms and forearms in flexed posture with some antigravity strength. Both posterior inferior cerebellar arteries were widely patent, and there was no evidence of obstructive hydrocephalus. CT of the brain showed heterogeneous low attenuation involving the entirety of bilateral cerebellar hemispheres with areas of petechial hemorrhage along with encephalomalacia in the right insular and anterior operculum. An MRI of the brain along with MR venogram showed infarcts in the bilateral occipital lobes, both hippocampi, and bilateral basal ganglia suspicious for an embolic phenomenon. Cerebral angiography was deferred given normal CT angiography. Blood cultures drawn on the day of admission showed no growth, and telemetric monitoring was unremarkable during the course of hospitalization. The patient was discharged to a skilled nursing facility after seven days with persisting memory problems and unable to recognize faces."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medications-upon-discharge",
+        "status": "unknown",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "note": [
+          {
+            "text": "Medications upon discharge: Unknown"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "follow-up-care",
+        "status": "unknown",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "note": [
+          {
+            "text": "Follow-up Care: Lost to follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "other-information",
+        "status": "current",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient had a past medical history of polysubstance abuse, including heroin and prescription opioids, which may have been responsible for the current condition. The clinical course showed significant receptive aphasia and decreased extremity strength, which were evaluated using the National Institutes of Health Stroke scale assessment. Despite suspicion for posterior circulation large vessel occlusion, CT angiogram of the head and neck ruled out any dissection, significant stenosis, or occlusion of intracranial or extracranial cerebral vasculature. The differential diagnosis included multifocal infarction secondary to cocaine-related vasospasm and posterior reversible encephalopathy syndrome (PRES) and infective endocarditis with septic emboli. However, negative blood cultures, normal echocardiogram, and lack of fever and other constitutional symptoms ruled out the last possibility. The patient was diagnosed with cocaine-induced bilateral posterior inferior cerebellar artery and hippocampal infarction with multifocal punctate infarcts in the bilateral posterior cerebral artery and basal ganglia secondary to severe vasoconstriction. PRES was a consideration given the significant involvement of posterior circulation and mild encephalopathy, but vasogenic edema was not observed."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

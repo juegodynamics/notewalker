@@ -1,0 +1,147 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "type": [
+          {
+            "text": "Hospital admission"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "code": {
+          "text": "Right hip and low back pain"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "code": {
+          "text": "SI joint fusion using the iFuse implant System®"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "code": {
+          "text": "Exploration and removal of hematoma"
+        },
+        "complication": [
+          {
+            "text": "Gluteal hematoma, laceration of the superior gluteal artery"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "code": {
+          "text": "Condition at Discharge"
+        },
+        "valueString": "Improved"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "appointment-1",
+        "status": "booked",
+        "description": "Two-month follow-up visit",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/patient-1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "appointment-2",
+        "status": "booked",
+        "description": "Four-month follow-up visit - walking unassisted and not requiring pain medicines",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/patient-1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge instructions: None specified in case report."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

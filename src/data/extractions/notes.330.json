@@ -1,0 +1,253 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example",
+        "name": [
+          {
+            "text": "Confidential"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "status": "finished",
+        "period": {
+          "start": "[Confidential]",
+          "end": "[Confidential]"
+        },
+        "reasonCode": [
+          {
+            "text": "Severe hypertensive disorder of pregnancy and fetal growth restriction (FGR)"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition-admission",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Severe hypertensive disorder of pregnancy and fetal growth restriction (FGR)"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition-discharge",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "inactive"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Hemorrhagic shock"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure",
+        "status": "completed",
+        "code": {
+          "text": "Emergency cesarean section"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "performedPeriod": {
+          "start": "[Confidential]",
+          "end": "[Confidential]"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/example-condition-admission"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure-intubation",
+        "status": "completed",
+        "code": {
+          "text": "Endotracheal intubation and surfactant replacement"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "performedDateTime": "[Confidential]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-anemia",
+        "status": "final",
+        "code": {
+          "text": "Anemia"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-dic",
+        "status": "final",
+        "code": {
+          "text": "Disseminated intravascular coagulation (DIC)"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-ascites",
+        "status": "final",
+        "code": {
+          "text": "Slight ascites"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "example-imaging-study",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "description": "Ultrasonography revealing liver and adrenal bleeding"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-medicationrequest",
+        "status": "completed",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "medicationCodeableConcept": {
+          "text": "HFOV, inotropes, steroids, massive blood and plasma transfusion"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Goal",
+        "id": "example-goal-palliative-care",
+        "lifecycleStatus": "abandoned",
+        "achievementStatus": {
+          "text": "Patient's parents hoped to switch to palliative care"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-death",
+        "status": "final",
+        "code": {
+          "text": "Condition at discharge"
+        },
+        "valueString": "Deceased",
+        "subject": {
+          "reference": "Patient/example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "example-practitioner",
+        "name": [
+          {
+            "text": "Confidential"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "example-document",
+        "status": "current",
+        "type": {
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "author": [
+          {
+            "reference": "Practitioner/example-practitioner"
+          }
+        ],
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary:\n\nPatient Name: [Confidential]\n\nDate of Admission: [Confidential]\n\nDate of Discharge: [Confidential]\n\nAdmission Diagnosis: Severe hypertensive disorder of pregnancy and fetal growth restriction (FGR)\n\nClinical Course: At 19 gestational weeks, the patient was diagnosed with severe hypertensive disorder of pregnancy and fetal growth restriction (FGR). An emergency cesarean section was performed at 23 6/7 gestational weeks due to worsened hypertensive disorder of pregnancy and non-reassuring fetal status. A male infant was delivered with a birthweight of 293 g. Endotracheal intubation and surfactant replacement were performed immediately after birth in the delivery room. Initial examination revealed anemia, disseminated intravascular coagulation (DIC), and slight ascites on ultrasonography, suggesting intra-abdominal bleeding. Intensive treatment, including HFOV, inotropes, steroids, and massive blood and plasma transfusion for the progressive anemia and DIC, was started. Liver and adrenal bleeding gradually became evident on ultrasonography, and the patient continued to suffer from refractory hypotension and further progressive anemia. Throughout the course, the patient's parents hoped to switch to palliative care, seeing the patient's irreversible worsening clinical condition. The patient eventually died of hemorrhagic shock at 3 DOL.\n\nDischarge Diagnosis: Hemorrhagic shock\n\nHospital Course: The patient was treated for severe hypertensive disorder of pregnancy and fetal growth restriction (FGR). The patient's condition worsened, and an emergency cesarean section was conducted. Despite intensive treatment, the patient experienced liver and adrenal bleeding and suffered from refractory hypotension and further progressive anemia. The patient eventually passed away from hemorrhagic shock at 3 DOL.\n\nDischarge Medications: N/A\n\nFollow-Up: N/A\n\nCondition at Discharge: Deceased\n\nDischarge Instructions: N/A\n\nProvider: [Confidential]."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

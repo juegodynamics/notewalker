@@ -1,0 +1,282 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1958-10-10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "41650007",
+              "display": "Squamous cell carcinoma, poorly differentiated"
+            }
+          ],
+          "text": "Poorly differentiated squamous cell carcinoma"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232717009",
+              "display": "Right posterolateral thoracotomy"
+            }
+          ],
+          "text": "Right posterolateral thoracotomy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[Admission Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232718004",
+              "display": "Double sleeve lobectomy of right upper and middle lobes"
+            }
+          ],
+          "text": "Double sleeve lobectomy of right upper and middle lobes"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[Admission Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232719007",
+              "display": "Systematic mediastinal lymph node dissection"
+            }
+          ],
+          "text": "Systematic mediastinal lymph node dissection"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[Admission Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232720001",
+              "display": "Resection of superior vena cava (SVC) with interposition of ringed graft"
+            }
+          ],
+          "text": "Resection of superior vena cava (SVC) with interposition of ringed graft"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[Admission Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-5",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232721002",
+              "display": "Reconstruction of right pulmonary artery (PA) trunk and right lower PA"
+            }
+          ],
+          "text": "Reconstruction of right pulmonary artery (PA) trunk and right lower PA"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[Admission Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-1",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "856679",
+              "display": "Heparin (low molecular weight)"
+            }
+          ],
+          "text": "Low molecular heparin"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-2",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "11289",
+              "display": "Warfarin"
+            }
+          ],
+          "text": "Warfarin"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Postoperative Care Plan",
+        "description": "Patient was given low molecular heparin on the operative day and switched to warfarin when thoracic drains were removed. The patient recovered in an uneventful manner and was discharged from the hospital on the 12th postoperative day.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-2",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Follow-up Care Plan",
+        "description": "After 4 cycles of chemotherapy (Gemzar and cisplatin) and 1 cycle of radiotherapy, chest MRI showed patency of the graft and PLSVC. The patient died 21 months after the operation due to remote metastasis.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "discharge-instructions",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "The patient has been discharged with follow-up instructions from their oncologist. Please follow-up regularly with your medical team.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[Discharge Date]"
+        }
+      }
+    }
+  ]
+}

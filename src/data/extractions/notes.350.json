@@ -1,0 +1,207 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-confidential",
+        "gender": "female",
+        "birthDate": "1962",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "Confidential"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-confidential",
+        "status": "finished",
+        "class": {
+          "code": "inpatient",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "display": "Inpatient"
+        },
+        "subject": {
+          "reference": "Patient/patient-confidential"
+        },
+        "period": {
+          "start": "Confidential",
+          "end": "Confidential"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/admitting-diagnosis"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admitting Diagnosis"
+                }
+              ]
+            }
+          },
+          {
+            "condition": {
+              "reference": "Condition/discharge-diagnosis"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "DD",
+                  "display": "Discharge Diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "admitting-diagnosis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "442467005",
+              "display": "Intestinal Behçet’s disease"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-confidential"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "discharge-diagnosis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71185002",
+              "display": "Pulmonary alveolar proteinosis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-confidential"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-whole-lung-lavage",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "32997",
+              "display": "Whole lung lavage"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-confidential"
+        },
+        "performedPeriod": {
+          "start": "Confidential",
+          "end": "Confidential"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-discharge",
+        "status": "stopped",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/patient-confidential"
+        },
+        "authoredOn": "Confidential"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-follow-up",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Plan",
+        "description": "The patient is advised to continue attending clinical follow-up consultations for further evaluation and management.",
+        "subject": {
+          "reference": "Patient/patient-confidential"
+        }
+      }
+    }
+  ]
+}

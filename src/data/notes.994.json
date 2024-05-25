@@ -1,0 +1,199 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-example",
+        "gender": "female",
+        "age": 8
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-example",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "reasonCode": [
+          {
+            "text": "Severe abdominal colic, vomiting, constipation, and fatigue"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-example",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Poisoning due to lead exposure"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-bll",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "5671-3",
+              "display": "Lead [Mass/volume] in Blood"
+            }
+          ],
+          "text": "Venous blood lead level (BLL)"
+        },
+        "valueQuantity": {
+          "value": 91,
+          "unit": "µg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ug/dL"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "effectiveDateTime": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-radiography",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168537006",
+              "display": "Abdominal radiography"
+            }
+          ],
+          "text": "Radiography of the abdomen"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "performedDateTime": "[Redacted]",
+        "note": [
+          {
+            "text": "Revealed shadow of stool and gas with points of increased density."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medication-administration-can2edta",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308182",
+              "display": "Calcium disodium edetate"
+            }
+          ],
+          "text": "CaNa2EDTA chelation"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "effectivePeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "dosage": {
+          "text": "Chelation therapy to achieve a BLL of 36 µg/dL at the end of 5 days"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medication-administration-foliumsennae",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "617293",
+              "display": "Senna leaf"
+            }
+          ],
+          "text": "Folium sennae"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "effectivePeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "dosage": {
+          "text": "Administered as a cathartic to eliminate lead from the intestine prior to initiating chelation"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-followup",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care Plan",
+        "description": "Follow-up with primary care provider for further evaluation and monitoring of BLL. Avoid TCM practices that may contain high levels of heavy metals.",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "period": {
+          "start": "[Redacted]"
+        }
+      }
+    }
+  ]
+}

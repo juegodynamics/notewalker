@@ -1,0 +1,341 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "1948-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName",
+            "valueString": ""
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-15T00:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "236073007",
+                "display": "Postherpetic neuralgia"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Anesthesia procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18286008",
+              "display": "Gasserian ganglion nerve block"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-01T01:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128477000",
+              "display": "Corneal epithelial defect"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267443004",
+              "display": "Conjunctival hyperemia"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128462008",
+              "display": "Descemet's folds"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "onsetDateTime": "2023-10-02T00:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049630",
+              "display": "Ofloxacin Ophthalmic Ointment"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "authoredOn": "2023-10-02T00:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049631",
+              "display": "Rebamipide Ophthalmic Suspension"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "authoredOn": "2023-10-02T00:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-3",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049632",
+              "display": "Fluorometholone Ophthalmic Suspension"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "authoredOn": "2023-10-02T00:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "409622000",
+              "display": "Corneal erosion"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "onsetDateTime": "2023-10-10T00:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11289-6",
+              "display": "Visual acuity"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "effectiveDateTime": "2023-10-02T00:00:00Z",
+        "valueString": "sudden decline"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "42344-2",
+              "display": "Ocular hyperemia"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "effectiveDateTime": "2023-10-02T00:00:00Z",
+        "valueString": "right eye"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34133-9",
+              "display": "Summary of episode note"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "VGhpcyA3NS15ZWFyLW9sZCBmZW1hbGUgcGF0aWVudCB3YXMgYWRtaXR0ZWQgdG8gb3VyIGhvc3BpdGFsIGZvbGxvd2luZyBhIEdhc3NlcmlhbiBnYW5nbGlvbiBuZXJ2ZSBibG9jayBwcm9jZWR1cmUgcGVyZm9ybWVkIGF0IHRoZSBEZXBhcnRtZW50IG9mIEFuZXN0aGVzaW9sb2d5LiBUaGUgcHJvY2VkdXJlIGFpbWVkIHRvIHRyZWF0IHBvc3RoZXJwZXRpYyBuZXVyYWxnaWEgaW4gdGhlIHJpZ2h0IGZpcnN0IGJyYW5jaCBuZXVyYWxnaWEgb2YgdGhlIHRyaWdlbWluYWwgbmVydmUuIFRoZSBwYXRpZW50IHJlcG9ydGVkIHN1ZGRlbiB2aXN1YWwgYWN1aXR5IGRlY2xpbmUgYW5kIGh5cGVyZW1pYSBvZiB0aGUgcmlnaHQgZXllIHRoZSBmb2xsb3dpbmcgZGF5LCBsZWFkaW5nIGhlciB0byBzZWVrIG1lZGljYWwgYXR0ZW50aW9uLiBUaGUgcGF0aWVudCB3YXMgZGlhZ25vc2VkIHdpdGggY29ybmVhbCBlcGl0aGVsaWFsIGRlZmVjdCwgY29uanVuY3RpdmFsIGh5cGVyZW1pYSwgYW5kIERlc2NlbWV0J3MgZm9sZHMgaW4gdGhlIHJpZ2h0IGV5ZSBieSBhIG5laWdoYm9yaG9vZCBvcGh0aGFsbW9sb2dpc3QuIFRoZSBwYXRpZW50IHdhcyB0aGVuIHRyZWF0ZWQgd2l0aCBhIHZhcmlldHkgb2Ygb3BodGhhbG1pYyBtZWRpY2F0aW9ucyBpbmNsdWRpbmcgb2Zsb3hhemluIG9waHRoYWxtaWMgb2ludG1lbnQsIHJlYmFtaXBpZGUgb3BodGhhbG1pYyBzdXNwZW5zaW9uLCBhbmQgZmx1b3JvbWV0aG9sb25lIG9waHRoYWxtaWMgc3VzcGVuc2lvbi4gSG9zcGl0YWwgQ291cnNlIFN1bW1hcnk6IFRoZSBwYXRpZW50IHByZXNlbnRlZCB3aXRoIHBvc3RoZXJwZXRpYyBuZXVyYWxnaWEgYW5kIHVuZGVyd2VudCBhIEdhc3NlcmlhbiBnYW5nbGlvbiBuZXJ2ZSBibG9jayBwcm9jZWR1cmUsIHdoaWNoIHJlc3VsdGVkIGluIGEgc3VkZGVuIHZpc3VhbCBhY3VpdHkgZGVjbGluZSBhbmQgaHlwZXJlbWlhIG9mIHRoZSByaWdodCBleWUuIFRoZSBwYXRpZW50IHdhcyB0cmVhdGVkIHdpdGggb3BodGhhbG1pYyBtZWRpY2F0aW9ucyBhbmQgZXhoaWJpdGVkIGdyYWR1YWwgaW1wcm92ZW1lbnQgb3ZlciB0aW1lLiBIb3dldmVyLCB0aGUgcGF0aWVudCBleHBlcmllbmNlZCBpbnRlcm1pdHRlbnQgY29ybmVhbCBlcm9zaW9uLCBhbmQgaXQgd2FzIGRldGVjdGVkIHRoYXQgY29ybmVhbCBzdWJiYXNhbCBuZXJ2ZSBmaWJlcnMgaGFkIHJlZ2VuZXJhdGVkIGluIHRoZSByaWdodCBleWUuIFRoaXMgcGF0aWVudCB3YXMgZGlzY2hhcmdlZCwgYW5kIGZvbGxvdy11cCBhcHBvaW50bWVudHMgd2VyZSBzY2hlZHVsZWQgdG8gY29udGludWUgdG8gbW9uaXRvciBoZXIgcmVjb3Zlcnku"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

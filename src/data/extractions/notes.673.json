@@ -1,0 +1,257 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363406005",
+              "display": "Malignant tumor of liver"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "129913006",
+              "display": "Metastasis from malignant tumor of liver"
+            }
+          ],
+          "text": "Lung metastasis from hepatocellular carcinoma in the upper lobe of the left lung"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "448935000",
+              "display": "Radiotherapy procedure"
+            }
+          ],
+          "text": "Radiotherapy for lung metastasis"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "note": [
+          {
+            "text": "Planning CT images were acquired under deep inspiration breath-hold condition with a commercial gold coil marker, Visicoil 21G slim line (IBA Dosimetry, Schwarzenbruck, Germany) of diameter 0.5mm and length 10mm, implanted using CT guidance as close as possible to a tumor. A single-arc coplanar VMAT plan (gantry rotation from 320° to 100°) was created with an isotropic planning target volume (PTV) margin of 5mm and a prescribed dose of 60Gy in 20 fractions. Multiple breath-holds were required to complete the delivery. During the segmented VMAT beam delivery, the implant marker stayed at the planned breath-hold position, and a DRR image at the gantry start angle was created for each segment. Breath-hold training was given to the patient for optimizing the breath-hold and the following free-breathing periods to successfully complete each segmented breath-hold VMAT delivery. Subsequently, two lateral lines were manually copied onto a fluoroscopic image window of the XVI display using a transparent sheet. Each line was used as a tolerance limit for the breath-hold beam delivery. During the beam delivery, the breath-hold status was continuously monitored to ensure that the marker position stayed within the tolerance range. If the marker moved outside the tolerance range, beam delivery was interrupted, and the procedure was repeated. Breath-hold CBCT imaging was performed to confirm that the marker position relative to the tumor remained unchanged. The total VMAT delivery time for a prescribed fraction dose of 3Gy was approximately 115sec, with three beam interrupts and a 25 sec segmented beam delivery followed by 20 sec free breathing."
+          }
+        ],
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-discharge-diagnosis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "discharge-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "129913006",
+              "display": "Metastasis from malignant tumor of liver"
+            }
+          ],
+          "text": "Lung metastasis from hepatocellular carcinoma in the upper lobe of the left lung"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "example-discharge-summary",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "date": "[Redacted]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "RG9jdW1lbnQgY29udGVudCBnb2VzIGhlcmUu",
+              "title": "Discharge Summary"
+            }
+          }
+        ],
+        "context": {
+          "encounter": [
+            {
+              "reference": "Encounter/example-encounter"
+            }
+          ],
+          "period": {
+            "start": "[Redacted]",
+            "end": "[Redacted]"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "example-careplan",
+        "status": "active",
+        "intent": "plan",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/core/CodeSystem/careplan-category",
+                "code": "assess-plan",
+                "display": "Assessment and Plan"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "308335008",
+                    "display": "Regular patient follow-up"
+                  }
+                ],
+                "text": "Regular monitoring and follow-ups"
+              },
+              "status": "not-started",
+              "description": "The patient was advised to undergo regular monitoring and follow-ups to track the progress of their condition. An appropriate management plan was recommended, depending on the patient's condition during follow-up visits."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

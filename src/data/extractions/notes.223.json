@@ -1,0 +1,195 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1953-01-01",
+        "age": 70
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32485007",
+                "display": "Emergency department patient visit"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "70236000",
+              "display": "Septic arthritis"
+            }
+          ],
+          "text": "Septic arthritis caused by Yersinia enterocolitica"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6690-2",
+              "display": "Leukocytes [#/volume] in Blood"
+            }
+          ],
+          "text": "High white blood cell count"
+        },
+        "valueQuantity": {
+          "value": 15,
+          "unit": "10*3/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*3/uL"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "85896003",
+              "display": "Resection of left knee arthroplasty"
+            }
+          ],
+          "text": "Resection of left TKA and placement of a biodegradable implant"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "72705000",
+              "display": "Intravenous antibiotics"
+            }
+          ],
+          "text": "Intravenous antibiotics"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "authoredOn": "[REDACTED]",
+        "dosageInstruction": [
+          {
+            "text": "6 weeks of outpatient intravenous antibiotics"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "The patient should follow the recommended outpatient intravenous antibiotic regimen as prescribed. Additionally, the patient should follow up with her primary care physician and specialists as directed, continue current medications, and monitor vital signs as needed. The patient should report any concerns or worsening of symptoms to her healthcare provider immediately.",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "[REDACTED]",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ]
+      }
+    }
+  ]
+}

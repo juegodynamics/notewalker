@@ -1,0 +1,332 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "39848009",
+              "display": "Guillain-Barre syndrome"
+            }
+          ],
+          "text": "Guillain-Barre Syndrome (GBS)"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Procedure/procedure-edx"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "AIDP was diagnosed via EDX studies."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-edx",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "432100008",
+              "display": "Electrodiagnostic study"
+            }
+          ],
+          "text": "EDX studies"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-ivig",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "856525",
+              "display": "Immune Globulin Intravenous (Human)"
+            }
+          ],
+          "text": "IVIG"
+        },
+        "effectivePeriod": {
+          "start": "2023-01-01",
+          "end": "2023-01-05"
+        },
+        "dosage": {
+          "text": "Five-day course of IVIG"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-blood-pressure",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel with all children optional"
+            }
+          ],
+          "text": "Blood Pressure"
+        },
+        "valueQuantity": {
+          "value": 121,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 121,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 65,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "effectiveDateTime": "2023-01-30"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-rehabilitation",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "284371005",
+              "display": "Rehabilitation therapy"
+            }
+          ],
+          "text": "Inpatient rehabilitation"
+        },
+        "status": "completed",
+        "performedPeriod": {
+          "start": "2023-01-06",
+          "end": "2023-02-03"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-functional-status",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Functional status"
+            }
+          ],
+          "text": "Functional status upon discharge"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "valueString": "The patient was given a power wheelchair for mobility and was unable to transfer in and out of a car, requiring a wheelchair van for transportation."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-muscle-strength",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Muscle strength"
+            }
+          ],
+          "text": "Muscle strength evaluation"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "72514-3",
+                  "display": "Muscle strength"
+                }
+              ],
+              "text": "Dorsiflexion strength"
+            },
+            "valueQuantity": {
+              "value": 1,
+              "unit": "out of 5",
+              "system": "http://unitsofmeasure.org",
+              "code": "{score}"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "72514-3",
+                  "display": "Muscle strength"
+                }
+              ],
+              "text": "Plantar flexion strength"
+            },
+            "valueQuantity": {
+              "value": 3,
+              "unit": "out of 5",
+              "system": "http://unitsofmeasure.org",
+              "code": "{score}"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-sensation",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39104-9",
+              "display": "Sensation"
+            }
+          ],
+          "text": "Sensation to light touch"
+        },
+        "valueString": "Sensation to light touch had diminished in all dermatomes of bilateral upper extremities."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-wheelchair",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "410534003",
+              "display": "Provision of wheelchair"
+            }
+          ],
+          "text": "Power wheelchair provision"
+        },
+        "status": "completed",
+        "performedDateTime": "2023-02-03"
+      }
+    }
+  ]
+}

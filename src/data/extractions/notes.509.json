@@ -1,0 +1,310 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "family": "[Redacted]",
+            "given": [
+              "[Redacted]"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "[Redacted]",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/iso-21090-ST-language",
+            "valueCode": "en"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        },
+        "length": {
+          "value": "[Redacted]",
+          "unit": "days"
+        },
+        "participant": [
+          {
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                    "code": "ATND",
+                    "display": "attender"
+                  }
+                ]
+              }
+            ],
+            "individual": {
+              "reference": "Practitioner/[Redacted]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128462008",
+              "display": "Duchenne muscular dystrophy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "447553006",
+              "display": "Internal fixation of fracture"
+            }
+          ],
+          "text": "Surgical fixation of distal left femur fracture"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ],
+          "text": "Body temperature"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "effectiveDateTime": "[Redacted]",
+        "valueQuantity": {
+          "value": 38.6,
+          "unit": "degrees Celsius",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26464-8",
+              "display": "Tricuspid valve regurgitation velocity"
+            }
+          ],
+          "text": "Tricuspid regurgitation velocities"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "effectiveDateTime": "[Redacted]",
+        "valueQuantity": {
+          "value": "[Redacted]",
+          "unit": "m/s",
+          "system": "http://unitsofmeasure.org",
+          "code": "m/s"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LP29708-2",
+                "display": "Radiology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24606-6",
+              "display": "CT of chest"
+            }
+          ],
+          "text": "CT scan of chest"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "effectiveDateTime": "[Redacted]",
+        "issued": "[Redacted]",
+        "result": [
+          {
+            "reference": "Observation/[Redacted]"
+          }
+        ],
+        "conclusion": "Bilateral patchy infiltrates; no pulmonary embolism identified"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "[Redacted]",
+              "display": "Oral steroids"
+            }
+          ],
+          "text": "Daily oral steroids"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "authoredOn": "[Redacted]",
+        "requester": {
+          "reference": "Practitioner/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Plan",
+        "description": "Follow-up with the primary care physician for further management of DMD and to monitor for any potential complications related to the fracture and hospitalization.",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "period": {
+          "start": "[Redacted]"
+        },
+        "author": [
+          {
+            "reference": "Practitioner/[Redacted]"
+          }
+        ]
+      }
+    }
+  ]
+}

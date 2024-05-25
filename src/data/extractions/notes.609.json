@@ -1,0 +1,141 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[Number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "400964006",
+              "display": "Lichen striatus"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "[Date]",
+        "recordedDate": "[Date]",
+        "note": [
+          {
+            "text": "The patient, a 7-year-old girl of Indian descent presented with complaints of hypochromic linear bands in two regions, which had persisted for one year. The lesions were present on the right forearm and left leg and buttocks without any associated pruritus, pain, hair loss, or nail involvement. No biopsies were taken at the request of the patient's parents."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "not-done",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274025005",
+              "display": "Biopsy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "note": [
+          {
+            "text": "No biopsies were taken at the request of the patient's parents."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Lichen striatus Observation",
+        "description": "The patient was diagnosed with Lichen striatus and advised observation with explanation of the disease course. A follow-up visit was scheduled but the patient did not return to the clinic.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "scheduled",
+              "description": "Follow-up visit for Lichen striatus"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-2",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Patient Education on Lichen striatus",
+        "description": "The diagnosis, LS, was explained to the patient's parents. The natural course of the disease was reviewed, and it was explained that the condition is self-limiting and resolves spontaneously within a year or two. The parents were advised to avoid traumatic stimuli to prevent Koebnerization.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    }
+  ]
+}

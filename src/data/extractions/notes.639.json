@@ -1,0 +1,496 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "Patient/[REDACTED]",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "[REDACTED]",
+        "name": [
+          {
+            "use": "official",
+            "family": "[REDACTED]",
+            "given": [
+              "[REDACTED]"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "Encounter/[REDACTED]",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "[REDACTED]",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "hosp-trans",
+                "display": "transferred from other hospital"
+              }
+            ]
+          }
+        },
+        "period": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-15T00:00:00Z"
+        }
+      }
+    },
+    {
+      "fullUrl": "Condition/[REDACTED]",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "[REDACTED]",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertension"
+            }
+          ],
+          "text": "Hypertension"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "fullUrl": "Procedure/[REDACTED]",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "[REDACTED]",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232717009",
+              "display": "Transcatheter Arterial Embolization"
+            }
+          ],
+          "text": "Transcatheter Arterial Embolization"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedPeriod": {
+          "start": "2023-09-27T00:00:00Z",
+          "end": "2023-09-27T02:00:00Z"
+        }
+      }
+    },
+    {
+      "fullUrl": "Procedure/[REDACTED]",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "[REDACTED]",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232664002",
+              "display": "Cardiopulmonary resuscitation"
+            }
+          ],
+          "text": "Cardiopulmonary Resuscitation (CPR)"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedPeriod": {
+          "start": "2023-10-10T19:00:00Z",
+          "end": "2023-10-10T19:20:00Z"
+        }
+      }
+    },
+    {
+      "fullUrl": "MedicationRequest/[REDACTED]",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "[REDACTED]",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "312615",
+              "display": "Cortisone"
+            }
+          ],
+          "text": "Cortisone"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "authoredOn": "2023-10-10",
+        "requester": {
+          "reference": "Practitioner/[REDACTED]"
+        }
+      }
+    },
+    {
+      "fullUrl": "Observation/[REDACTED]",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "[REDACTED]",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11558-4",
+              "display": "Arterial blood gas panel"
+            }
+          ],
+          "text": "Arterial blood gas analysis"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectiveDateTime": "2023-10-10T19:30:00Z",
+        "valueQuantity": {
+          "value": "[REDACTED]",
+          "unit": "[REDACTED]",
+          "system": "http://unitsofmeasure.org",
+          "code": "[REDACTED]"
+        },
+        "interpretation": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+              "code": "L",
+              "display": "Low"
+            }
+          ],
+          "text": "Low pH, Low PO2, Low PCO2, High Lactate, High BE"
+        }
+      }
+    },
+    {
+      "fullUrl": "Observation/[REDACTED]",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "[REDACTED]",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "20564-1",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectiveDateTime": "2023-10-10T19:30:00Z",
+        "valueQuantity": {
+          "value": 150,
+          "unit": "beats/minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "Observation/[REDACTED]",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "[REDACTED]",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel"
+            }
+          ],
+          "text": "Blood pressure"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectiveDateTime": "2023-10-10T19:30:00Z",
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ],
+              "text": "Systolic blood pressure"
+            },
+            "valueQuantity": {
+              "value": 140,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ],
+              "text": "Diastolic blood pressure"
+            },
+            "valueQuantity": {
+              "value": 90,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "Observation/[REDACTED]",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "[REDACTED]",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "20509-6",
+              "display": "Respiratory rate"
+            }
+          ],
+          "text": "Respiratory rate"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectiveDateTime": "2023-10-10T19:30:00Z",
+        "valueQuantity": {
+          "value": 30,
+          "unit": "breaths/minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "fullUrl": "Observation/[REDACTED]",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "[REDACTED]",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ],
+          "text": "Body temperature"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectiveDateTime": "2023-10-10T19:30:00Z",
+        "valueQuantity": {
+          "value": 37.5,
+          "unit": "degrees Celsius",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      }
+    },
+    {
+      "fullUrl": "Observation/[REDACTED]",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "[REDACTED]",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2708-6",
+              "display": "Oxygen saturation in Arterial blood"
+            }
+          ],
+          "text": "Oxygen saturation"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectiveDateTime": "2023-10-10T19:30:00Z",
+        "valueQuantity": {
+          "value": 85,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    },
+    {
+      "fullUrl": "Observation/[REDACTED]",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "[REDACTED]",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3141-9",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body weight"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectiveDateTime": "2023-10-10T19:30:00Z",
+        "valueQuantity": {
+          "value": 18,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "Observation/[REDACTED]",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "[REDACTED]",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18833-4",
+              "display": "Urine output"
+            }
+          ],
+          "text": "Urine output"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectiveDateTime": "2023-10-10T19:30:00Z",
+        "valueQuantity": {
+          "value": 0,
+          "unit": "mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL"
+        }
+      }
+    },
+    {
+      "fullUrl": "ServiceRequest/[REDACTED]",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "[REDACTED]",
+        "status": "completed",
+        "intent": "order",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/service-category",
+                "code": "diagnostic",
+                "display": "Diagnostic procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168537006",
+              "display": "Ultrasound of chest"
+            }
+          ],
+          "text": "Critical care ultrasound"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "authoredOn": "2023-10-10T20:00:00Z",
+        "requester": {
+          "reference": "Practitioner/[REDACTED]"
+        }
+      }
+    },
+    {
+      "fullUrl": "CarePlan/[REDACTED]",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "[REDACTED]",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Follow-up Care Plan",
+        "description": "Follow-up care and monitoring to ensure patient's continued recovery.",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "period": {
+          "start": "2023-10-15T00:00:00Z"
+        }
+      }
+    }
+  ]
+}

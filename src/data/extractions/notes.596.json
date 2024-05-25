@@ -1,0 +1,113 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "given": [
+              "[redacted]"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2023-09-23"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183807002",
+                "display": "Hospital admission"
+              }
+            ]
+          }
+        ],
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://www.nubc.org/patient-discharge",
+                "code": "01",
+                "display": "Discharged to home"
+              }
+            ]
+          }
+        },
+        "period": {
+          "start": "2023-10-12",
+          "end": "2023-10-12"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "17404007",
+              "display": "Cystoscopy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-10-12T10:00:00Z",
+          "end": "2023-10-12T11:00:00Z"
+        },
+        "note": [
+          {
+            "text": "The mucosal integrity of the urethra was found to be undamaged during the patient's medical evaluation using cystoscopy."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-1",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "result": [
+          {
+            "reference": "Procedure/procedure-1"
+          }
+        ],
+        "conclusion": "The patient's catheter was successfully removed following the VCUG procedure, and no urethral injury was detected during medical evaluation.",
+        "presentedForm": [
+          {
+            "contentType": "text/plain",
+            "data": "The patient's catheter was successfully removed following the VCUG procedure, and no urethral injury was detected during medical evaluation. The patient was observed for a short period of time before being discharged with no follow-up required."
+          }
+        ]
+      }
+    }
+  ]
+}

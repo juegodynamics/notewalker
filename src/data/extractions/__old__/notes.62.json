@@ -1,0 +1,454 @@
+{
+    "resourceType": "Bundle",
+    "type": "document",
+    "entry": [
+        {
+            "resource": {
+                "resourceType": "Patient",
+                "id": "example",
+                "name": [
+                    {
+                        "use": "official",
+                        "family": "__________",
+                        "given": [
+                            "__________"
+                        ]
+                    }
+                ],
+                "gender": "male",
+                "birthDate": "1959",
+                "identifier": [
+                    {
+                        "system": "http://hospital.smarthealthit.org",
+                        "value": "____________"
+                    }
+                ]
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Encounter",
+                "id": "encounter1",
+                "status": "finished",
+                "class": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                    "code": "IMP",
+                    "display": "inpatient encounter"
+                },
+                "patient": {
+                    "reference": "Patient/example"
+                },
+                "period": {
+                    "start": "2020-01",
+                    "end": "____________"
+                },
+                "diagnosis": [
+                    {
+                        "condition": {
+                            "reference": "#condition1"
+                        },
+                        "rank": 1
+                    }
+                ]
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Condition",
+                "id": "condition1",
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "code": "active",
+                            "display": "Active"
+                        }
+                    ]
+                },
+                "verificationStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                            "code": "confirmed",
+                            "display": "Confirmed"
+                        }
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                                "code": "encounter-diagnosis",
+                                "display": "Encounter Diagnosis"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "254637007",
+                            "display": "Metastatic malignant melanoma"
+                        }
+                    ],
+                    "text": "De novo metastatic melanoma"
+                },
+                "subject": {
+                    "reference": "Patient/example"
+                },
+                "onsetDateTime": "2020-01"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Procedure",
+                "id": "procedure1",
+                "status": "completed",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "387713003",
+                            "display": "Excision of malignant neoplasm of skin"
+                        }
+                    ],
+                    "text": "Resection for melanoma metastases"
+                },
+                "subject": {
+                    "reference": "Patient/example"
+                },
+                "performedPeriod": {
+                    "start": "2020-02"
+                }
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Procedure",
+                "id": "procedure2",
+                "status": "completed",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "17436001",
+                            "display": "Craniotomy"
+                        }
+                    ],
+                    "text": "Craniotomy for cerebral abscess"
+                },
+                "subject": {
+                    "reference": "Patient/example"
+                }
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Procedure",
+                "id": "procedure3",
+                "status": "completed",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "448385000",
+                            "display": "Stereotactic radiosurgery"
+                        }
+                    ],
+                    "text": "Stereotactic radiosurgery for brain metastases"
+                },
+                "subject": {
+                    "reference": "Patient/example"
+                },
+                "performedPeriod": {
+                    "start": "2020-06"
+                }
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Condition",
+                "id": "condition2",
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "code": "resolved",
+                            "display": "Resolved"
+                        }
+                    ]
+                },
+                "verificationStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                            "code": "confirmed",
+                            "display": "Confirmed"
+                        }
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                                "code": "problem-list-item",
+                                "display": "Problem List Item"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "233910002",
+                            "display": "Carditis"
+                        }
+                    ],
+                    "text": "ICI-induced pericarditis"
+                },
+                "subject": {
+                    "reference": "Patient/example"
+                },
+                "onsetDateTime": "2020-04",
+                "abatementDateTime": "2020-05"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "Condition",
+                "id": "condition3",
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "code": "resolved",
+                            "display": "Resolved"
+                        }
+                    ]
+                },
+                "verificationStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                            "code": "confirmed",
+                            "display": "Confirmed"
+                        }
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                                "code": "problem-list-item",
+                                "display": "Problem List Item"
+                            }
+                        ]
+                    }
+                ],
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "128302006",
+                            "display": "Encephalitis"
+                        }
+                    ],
+                    "text": "ICI-induced encephalitis"
+                },
+                "subject": {
+                    "reference": "Patient/example"
+                },
+                "onsetDateTime": "2020-11",
+                "abatementDateTime": "2020-12"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "id": "medreq1",
+                "status": "stopped",
+                "intent": "order",
+                "medicationCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                            "code": "308135",
+                            "display": "Ipilimumab"
+                        }
+                    ],
+                    "text": "Ipilimumab"
+                },
+                "subject": {
+                    "reference": "Patient/example"
+                },
+                "dosageInstruction": [
+                    {
+                        "timing": {
+                            "repeat": {
+                                "frequency": 1,
+                                "period": 3,
+                                "periodUnit": "wk"
+                            }
+                        },
+                        "doseAndRate": [
+                            {
+                                "doseQuantity": {
+                                    "value": 3,
+                                    "unit": "mg/kg",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "mg/kg"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "id": "medreq2",
+                "status": "stopped",
+                "intent": "order",
+                "medicationCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                            "code": "308136",
+                            "display": "Nivolumab"
+                        }
+                    ],
+                    "text": "Nivolumab"
+                },
+                "subject": {
+                    "reference": "Patient/example"
+                },
+                "dosageInstruction": [
+                    {
+                        "timing": {
+                            "repeat": {
+                                "frequency": 1,
+                                "period": 3,
+                                "periodUnit": "wk"
+                            }
+                        },
+                        "doseAndRate": [
+                            {
+                                "doseQuantity": {
+                                    "value": 1,
+                                    "unit": "mg/kg",
+                                    "system": "http://unitsofmeasure.org",
+                                    "code": "mg/kg"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "CarePlan",
+                "id": "careplan1",
+                "status": "active",
+                "intent": "plan",
+                "title": "Discharge Care Plan",
+                "description": "The patient is advised to follow up with his primary care physician and oncologist for continued surveillance and management of metastatic melanoma.",
+                "subject": {
+                    "reference": "Patient/example"
+                },
+                "period": {
+                    "start": "2020-12"
+                },
+                "activity": [
+                    {
+                        "detail": {
+                            "kind": "Appointment",
+                            "status": "scheduled",
+                            "description": "Follow up with primary care physician and oncologist"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "AllergyIntolerance",
+                "id": "allergy1",
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                            "code": "active"
+                        }
+                    ]
+                },
+                "verificationStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+                            "code": "confirmed"
+                        }
+                    ]
+                },
+                "type": "allergy",
+                "category": [
+                    "medication"
+                ],
+                "criticality": "high",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "417532002",
+                            "display": "Allergy to corticosteroid"
+                        }
+                    ],
+                    "text": "Allergy to corticosteroid"
+                },
+                "patient": {
+                    "reference": "Patient/example"
+                }
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "RelatedPerson",
+                "id": "relatedperson1",
+                "patient": {
+                    "reference": "Patient/example"
+                },
+                "relationship": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                            "code": "C",
+                            "display": "Emergency Contact"
+                        }
+                    ]
+                },
+                "name": [
+                    {
+                        "use": "official",
+                        "family": "__________",
+                        "given": [
+                            "__________"
+                        ]
+                    }
+                ],
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "__________",
+                        "use": "mobile"
+                    }
+                ]
+            }
+        }
+    ]
+}

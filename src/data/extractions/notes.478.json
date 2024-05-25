@@ -1,0 +1,204 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[patient name]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1966",
+        "address": [
+          {
+            "text": "Chiang Klang District, Nan Province, Thailand"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "text": "Chiang Klang Hospital"
+          }
+        },
+        "period": {
+          "start": "[admission date]"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "20183000",
+              "display": "Cutaneous leishmaniasis"
+            }
+          ],
+          "text": "Cutaneous leishmaniasis"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "onsetDateTime": "[admission date]"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274025005",
+              "display": "Skin biopsy"
+            }
+          ],
+          "text": "Skin biopsy"
+        },
+        "performedDateTime": "[admission date]",
+        "location": {
+          "display": "Chiang Mai University"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationrequest-1",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "305048",
+              "display": "Amphotericin B"
+            }
+          ],
+          "text": "Amphotericin B"
+        },
+        "dosageInstruction": [
+          {
+            "text": "1 mg/kg/day for 1 day"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationrequest-2",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "173839",
+              "display": "Fluconazole"
+            }
+          ],
+          "text": "Fluconazole"
+        },
+        "dosageInstruction": [
+          {
+            "text": "200 mg/day for 45 days"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin"
+            }
+          ],
+          "text": "Hemoglobin concentration"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueQuantity": {
+          "value": 10.9,
+          "unit": "g/dl",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dl"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24312-1",
+              "display": "HIV 1+2 Ab [Presence] in Serum or Plasma by Immunoassay"
+            }
+          ],
+          "text": "HIV serology"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Negative"
+      }
+    }
+  ]
+}

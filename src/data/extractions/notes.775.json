@@ -1,0 +1,251 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.36.146.595.217.0.1",
+            "value": "[Redacted]"
+          }
+        ],
+        "birthDate": "[Redacted]",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "code": "inpatient",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "display": "Inpatient"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "Gravida 1, para 0, in labor at 36 weeks of gestation"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admitting diagnosis"
+                }
+              ]
+            }
+          },
+          {
+            "condition": {
+              "text": "Intrahepatic cyst"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "DD",
+                  "display": "Discharge diagnosis"
+                }
+              ]
+            }
+          },
+          {
+            "condition": {
+              "text": "Low weight for gestational age"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Gravida 1, para 0, in labor at 36 weeks of gestation"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "text": "Aspartate Aminotransferase Level"
+        },
+        "valueQuantity": {
+          "value": 43,
+          "unit": "U/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 10,
+              "unit": "U/L"
+            },
+            "high": {
+              "value": 37,
+              "unit": "U/L"
+            }
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "text": "Total Bilirubin Level"
+        },
+        "valueQuantity": {
+          "value": 5.2,
+          "unit": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 0.1,
+              "unit": "mg/dL"
+            },
+            "high": {
+              "value": 1.2,
+              "unit": "mg/dL"
+            }
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "text": "Intrahepatic Cyst Size"
+        },
+        "valueQuantity": {
+          "value": 1.47,
+          "unit": "cm"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "text": "Vaginal Delivery"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "code": {
+          "text": "Newborn Weight"
+        },
+        "valueQuantity": {
+          "value": "[Redacted]",
+          "unit": "g"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "text": "Abdominal Sonography"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "The baby was discharged from our hospital with recommendations for continued follow-up with the multidisciplinary team.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    }
+  ]
+}

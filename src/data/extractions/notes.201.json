@@ -1,0 +1,284 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[insert name]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.572",
+            "value": "[insert number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[insert date]",
+          "end": "[insert date]"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "hosp-trans",
+                "display": "[insert hospital name]"
+              }
+            ]
+          },
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "226000000",
+                "display": "Chronic persistent swallowing dysfunction"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "226000000",
+              "display": "Chronic persistent swallowing dysfunction"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "432119003",
+              "display": "Endoscopic submucosal dissection"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[insert date]",
+          "end": "[insert date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18782-3",
+              "display": "History of tobacco use"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "The patient has a history of excessive intake of alcohol and locally grown tobacco use for several years."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29308-4",
+              "display": "Findings of Esophagogastroduodenoscopy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "White light endoscopy revealed a 22 mm flat lesion in the middle esophagus. The lesion was covered with scattered leukoplakia and normal vascular network could not be seen in the lesion. Narrow-band imaging (NBI) under endoscopy revealed the lesion with an indistinct brownish area, local white penniform area and white tiny papillary surface structure. Further low and high magnifying endoscopy with NBI (ME-NBI) showed tiny irregular papillary microsurface structure with various shapes and sizes, and non-typical intraepithelial papillary capillary loops (IPCL) confined to the papillary microsurface structure. Iodine staining endoscopy showed a less-stained lesion and showed more distinct white tiny papillary surface structure than conventional white light endoscopy. Biopsy showed a low-grade intraepithelial neoplasia. Chest and abdominal CT scan revealed no abnormal lesions."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "371973000",
+              "display": "Early esophageal cancer"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60570-9",
+              "display": "Biopsy report"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "result": [
+          {
+            "reference": "Observation/observation-2"
+          }
+        ],
+        "conclusion": "The lesion was histopathologically confirmed as early VCCE which was limited within the mucosal lamina propria (m2) and completely resected. There were no lymphovascular and neural invasions of cancer cells, and no cancer cells to be seen in the lateral and vertical margin of the resected specimen (the distance of the lesion to the closest margin of the resected specimen was 3.012mm)."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "The patient is discharged in good condition and advised to follow up with their primary care physician.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[insert date]",
+          "end": "[insert date]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "736271009",
+                    "display": "Follow-up with primary care physician"
+                  }
+                ]
+              },
+              "status": "not-started"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

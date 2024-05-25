@@ -1,0 +1,200 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1964-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[date]",
+          "end": "[date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "408645006",
+              "display": "Malignant tumor of esophagus"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "note": [
+          {
+            "text": "The patient was admitted with a 2-month history of progressive dysphagia, without hoarseness. Physical examination revealed an esophageal MEC."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "180030006",
+              "display": "Esophagectomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[date]",
+        "note": [
+          {
+            "text": "Esophagectomy, 2-field (upper abdominal and mediastinum) lymphadenectomy, and esophagogastrostomy were performed, and the resected esophagectomy specimen contained a fungating tumor. Based on immunohistochemistry, the tumor was diagnosed as a poorly differentiated esophageal MEC."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108290001",
+              "display": "Radiotherapy"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385798007",
+              "display": "Radiotherapy procedure"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[date]",
+          "end": "[date]"
+        },
+        "note": [
+          {
+            "text": "After surgery, the patient received radiotherapy combined with chemotherapy."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-1",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "started": "[date]",
+        "note": [
+          {
+            "text": "Subsequent CT scans showed a thickened esophageal wall but no evidence of recurrence."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "[date]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient was admitted with progressive dysphagia and was diagnosed with an esophageal MEC. Surgery was performed and the patient received radiotherapy combined with chemotherapy. No evidence of recurrence was found in subsequent CT scans."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

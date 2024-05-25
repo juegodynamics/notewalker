@@ -1,0 +1,209 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[insert name]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[insert number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": "[insert date]",
+          "end": "[insert date]"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/encounter-admit-source",
+                "code": "emd",
+                "display": "Emergency Department"
+              }
+            ]
+          }
+        },
+        "reasonCode": [
+          {
+            "text": "Left sinus of Valsalva aneurysm"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "253416004",
+              "display": "Aneurysm of sinus of Valsalva"
+            }
+          ],
+          "text": "Left sinus of Valsalva aneurysm"
+        },
+        "subject": {
+          "reference": "Patient/[insert number]"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "312961",
+              "display": "Nifedipine 10 MG"
+            }
+          ],
+          "text": "oral nifedipine"
+        },
+        "subject": {
+          "reference": "Patient/[insert number]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197604",
+              "display": "Metoprolol Tartrate 50 MG"
+            }
+          ],
+          "text": "oral metoprolol"
+        },
+        "subject": {
+          "reference": "Patient/[insert number]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "39607008",
+              "display": "Repair of aneurysm"
+            }
+          ],
+          "text": "Surgical repair of left sinus of Valsalva aneurysm"
+        },
+        "subject": {
+          "reference": "Patient/[insert number]"
+        },
+        "performedPeriod": {
+          "start": "[insert date]",
+          "end": "[insert date]"
+        },
+        "outcome": {
+          "text": "Cessation of abnormal blood flow in the left sinus of Valsalva"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "55110-9",
+              "display": "Echocardiogram study"
+            }
+          ],
+          "text": "Echocardiogram follow-up"
+        },
+        "subject": {
+          "reference": "Patient/[insert number]"
+        },
+        "effectiveDateTime": "[insert date]",
+        "valueString": "Cessation of abnormal blood flow in the left sinus of Valsalva"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care Plan",
+        "subject": {
+          "reference": "Patient/[insert number]"
+        },
+        "period": {
+          "start": "[insert date]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "status": "scheduled",
+              "description": "Follow-up visit with primary care physician in 2 weeks",
+              "scheduledPeriod": {
+                "start": "[insert date + 2 weeks]"
+              }
+            }
+          },
+          {
+            "detail": {
+              "kind": "Appointment",
+              "status": "scheduled",
+              "description": "Follow-up visit with cardiologist in 1 month",
+              "scheduledPeriod": {
+                "start": "[insert date + 1 month]"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

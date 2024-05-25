@@ -1,0 +1,246 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "154283005",
+              "display": "Budd-Chiari syndrome"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "onsetString": "Prior to admission"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2160-0",
+              "display": "Serum C125"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 1560,
+          "unit": "U/ml"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "final",
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "CT",
+            "display": "CT"
+          },
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "XR",
+            "display": "X-ray"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "note": [
+          {
+            "text": "Abdominal X-ray and CT showed a large presence of ascites in the abdomen, massive hydrops of abdominal cavity, multiple intraluminal gas pockets in rectum, and an ovarian mass which was limited to the ovarian surface without invasion."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "final",
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "US",
+            "display": "Ultrasound"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "note": [
+          {
+            "text": "Abdominal ultrasonography revealed massive hydrops in the abdominal cavity."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Colonoscopy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "note": [
+          {
+            "text": "Colonoscopy showed grape or beaded lesions."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "165829005",
+              "display": "Peritoneal biopsy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "outcome": {
+          "text": "Diagnosis of primary peritoneal carcinoma (PPC) confirmed."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "NutritionOrder",
+        "status": "completed",
+        "intent": "order",
+        "patient": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "note": [
+          {
+            "text": "The patient was given nutritional support while hospitalized."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "416471007",
+                "display": "Primary peritoneal carcinoma"
+              }
+            ]
+          }
+        ],
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "expired",
+                "display": "Expired"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

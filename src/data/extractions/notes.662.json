@@ -1,0 +1,354 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[Patient Name]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1947-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183452005",
+                "display": "Inpatient stay for chemotherapy"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "serviceProvider": {
+          "reference": "Organization/hematology-oncology"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "109989006",
+              "display": "Diffuse large B-cell lymphoma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "evidence": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "44054006",
+                  "display": "Ann Arbor stage IIIA"
+                }
+              ]
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "The patient developed complications of Haemorrhagic Cystitis (HC) associated with BKV and ADV viral infection after relapsing from chemotherapy. She underwent auto-PBSCT and later had BK Viraemia with complications and BKV pneumonia."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "12843005",
+              "display": "Autologous peripheral blood stem cell transplantation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "2017-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1989-3",
+              "display": "C-reactive protein [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueQuantity": {
+          "value": 10,
+          "unit": "mg/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 0,
+              "unit": "mg/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/L"
+            },
+            "high": {
+              "value": 5,
+              "unit": "mg/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/L"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Elevated serum C-reactive protein levels noted during the hospital course."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-1",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "started": "2017-01-01",
+        "series": [
+          {
+            "uid": "1.2.840.10008.1.2.1.1",
+            "number": 1,
+            "modality": {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "CT",
+              "display": "CT"
+            },
+            "description": "Chest CT",
+            "numberOfInstances": 1,
+            "instance": [
+              {
+                "uid": "1.2.840.10008.1.2.1.1.1",
+                "sopClass": {
+                  "system": "http://dicom.nema.org/resources/ontology/DCM",
+                  "code": "1.2.840.10008.5.1.4.1.1.2",
+                  "display": "CT Image Storage"
+                },
+                "number": 1,
+                "title": "Ground-glass opacity (GGO) in the bilateral upper lobe"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "197571007",
+              "display": "Bronchoalveolar lavage (BAL)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "2017-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medadmin-1",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "83367",
+              "display": "Cidofovir"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2017-01-01",
+        "note": [
+          {
+            "text": "Re-administered cidofovir, respiratory symptoms and GGO in CT abated."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40733004",
+              "display": "Hemorrhagic cystitis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "note": [
+          {
+            "text": "The patient's DLBCL and complications of HC, BK viraemia with complications and BKV pneumonia were treated during this hospital stay. The patient's respiratory symptoms and serum C-reactive protein levels abated, and the GGO in the chest CT resolved. The patient has not experienced a relapse of BKV pneumonia and DLBCL even after 11 months."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care Plan",
+        "description": "Follow up was arranged to assess the resolution of the HC symptoms and for long-term follow-up of her DLBCL.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "description": "Follow-up appointment to assess HC symptoms and long-term follow-up of DLBCL.",
+              "status": "scheduled"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div>Follow up was arranged to assess the resolution of the HC symptoms and for long-term follow-up of her DLBCL. The patient was educated about necessary steps to prevent recurrence of these complications.</div>"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "hematology-oncology",
+        "name": "Hematology/Oncology Department"
+      }
+    }
+  ]
+}

@@ -1,0 +1,407 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "Not provided"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:medical-record-number",
+            "value": "Not provided"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32485007",
+                "display": "Hospital admission"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": "Not provided",
+          "end": "Not provided"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "text": "Not provided"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "253355004",
+              "display": "Univentricular heart"
+            }
+          ],
+          "text": "Univentricular heart with tricuspid atresia"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "234723000",
+              "display": "Fontan procedure"
+            }
+          ],
+          "text": "Fontan conversion surgery"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "outcome": {
+          "text": "Severe single ventricle dysfunction resulting in low cardiac output syndrome (LCOS). ECMO device implanted but could not be weaned off due to multi-organ failure."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "57067-1",
+              "display": "Ventricular function"
+            }
+          ],
+          "text": "Pre-operative ventricular function"
+        },
+        "valueQuantity": {
+          "value": 50,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49755003",
+              "display": "Sinus node dysfunction"
+            }
+          ],
+          "text": "Post-operative sinus node dysfunction"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233917008",
+              "display": "Atrioventricular conduction abnormality"
+            }
+          ],
+          "text": "Atrioventricular conduction abnormalities"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "426749004",
+              "display": "Sinus rhythm"
+            }
+          ],
+          "text": "Discharge rhythm: Sinus rhythm"
+        },
+        "valueQuantity": {
+          "value": 15,
+          "unit": "patients",
+          "system": "http://unitsofmeasure.org",
+          "code": "patients"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "425447009",
+              "display": "Pacemaker rhythm"
+            }
+          ],
+          "text": "Discharge rhythm: Pacemaker rhythm"
+        },
+        "valueQuantity": {
+          "value": 5,
+          "unit": "patients",
+          "system": "http://unitsofmeasure.org",
+          "code": "patients"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "Atrial fibrillation"
+            }
+          ],
+          "text": "Discharge rhythm: Atrial fibrillation"
+        },
+        "valueQuantity": {
+          "value": 2,
+          "unit": "patients",
+          "system": "http://unitsofmeasure.org",
+          "code": "patients"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "195080001",
+              "display": "Atrial flutter"
+            }
+          ],
+          "text": "Discharge rhythm: Atrial flutter"
+        },
+        "valueQuantity": {
+          "value": 1,
+          "unit": "patients",
+          "system": "http://unitsofmeasure.org",
+          "code": "patients"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "426749004",
+              "display": "Sinus rhythm"
+            }
+          ],
+          "text": "Follow-up rhythm: Sinus rhythm"
+        },
+        "valueQuantity": {
+          "value": 16,
+          "unit": "patients",
+          "system": "http://unitsofmeasure.org",
+          "code": "patients"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "425447009",
+              "display": "Pacemaker rhythm"
+            }
+          ],
+          "text": "Follow-up rhythm: Pacemaker rhythm"
+        },
+        "valueQuantity": {
+          "value": 6,
+          "unit": "patients",
+          "system": "http://unitsofmeasure.org",
+          "code": "patients"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "Atrial fibrillation"
+            }
+          ],
+          "text": "Follow-up rhythm: Atrial fibrillation"
+        },
+        "valueQuantity": {
+          "value": 1,
+          "unit": "patients",
+          "system": "http://unitsofmeasure.org",
+          "code": "patients"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75214-8",
+              "display": "NYHA functional class"
+            }
+          ],
+          "text": "NYHA functional class improvement"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "248234008",
+                  "display": "NYHA class I"
+                }
+              ],
+              "text": "NYHA class I"
+            },
+            "valueQuantity": {
+              "value": 4,
+              "unit": "patients",
+              "system": "http://unitsofmeasure.org",
+              "code": "patients"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "248235009",
+                  "display": "NYHA class II"
+                }
+              ],
+              "text": "NYHA class II"
+            },
+            "valueQuantity": {
+              "value": 5,
+              "unit": "patients",
+              "system": "http://unitsofmeasure.org",
+              "code": "patients"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "248236005",
+                  "display": "NYHA class III"
+                }
+              ],
+              "text": "NYHA class III"
+            },
+            "valueQuantity": {
+              "value": 0,
+              "unit": "patients",
+              "system": "http://unitsofmeasure.org",
+              "code": "patients"
+            }
+          }
+        ],
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    }
+  ]
+}

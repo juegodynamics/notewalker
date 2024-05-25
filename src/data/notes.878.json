@@ -1,0 +1,161 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1971-01-01"  // Approximate date based on age of 52
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "Mild abdominal pain, yellowing sclera, and dark-colored urine"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Bile leak from the choledocus after the T-tube removal"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "text": "Cholecystectomy and choledocus exploration with a T-tube insertion"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "text": "Embolization of the bile leak tract with eight coils during angiography"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "status": "completed",
+        "code": {
+          "text": "Percutaneous drainage of the perihepatic fluid"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "docref-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "[REDACTED]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "RGlzY2hhcmdlIFN1bW1hcnkKClBhdGllbnQgTmFtZTogW1JFREFDVEVECgpNZWRpY2FsIFJlY29yZCBOdW1iZXI6IFtSRURBQ1RFRF0KClNleDogNTIgeWVhci1vbGQgbWFsZQoKRGlzY2hhcmdlIFN0YXR1czogU3RhYmxlIGNvbmRpdGlvbiB3aXRoIG5vIGZ1cnRoZXIgY29tcGxpY2F0aW9ucyBhZnRlciBzdWNjZXNzZnVsIHRyZWF0bWVudCBvZiB0aGUgYmlsZSBsZWFrLgoKSW5zdHJ1Y3Rpb25zIGF0IERpc2NoYXJnZToKVGVsZXBob25lIE51bWJlciA6IFtSRURBQ1RFRF0gU3RhdHVzICogW1JFREFDVEVECgpJbnN0cnVjdGlvbnMgYXQgRGlzY2hhcmdlOgogIFRoZSBwYXRpZW50IHdhcyBhZHZpc2VkIHRvIG1haW50YWluIGEgaGVhbHRoeSBkaWV0IGFuZCBmb2xsb3ctdXAgY2FyZSB3aXRoIGhpcyBwcmltYXJ5IGhlYWx0aGNhcmUgcHJvdmlkZXIuIFRoZSBwYXRpZW50IHdhcyBhZHZpc2VkIHRvIHNjaGVkdWxlIGEgZm9sbG93LXVwIGFwcG9pbnRtZW50IHdpdGggbmVjZXNzYXJ5IGZvbGxvdy11cCBjYXJlLgoKU2lnbmVkIGJ5OiBbUkVEQUNURUQ]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

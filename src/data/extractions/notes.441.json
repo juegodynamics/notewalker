@@ -1,0 +1,185 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "gender": "female",
+        "age": 71
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "Right hip fracture"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "210975003",
+              "display": "Periprosthetic fracture of right hip"
+            }
+          ],
+          "text": "Vancouver B3 peri-prosthetic fracture of the right hip"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "241113001",
+              "display": "Both component revision arthroplasty"
+            }
+          ],
+          "text": "Both component revision arthroplasty"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition"
+          }
+        ],
+        "note": [
+          {
+            "text": "Procedure involved removal of the prosthesis and cement from the proximal femur and insertion of a modular endoprosthesis (LPS ® DePuy Limb Preservation System (Warsaw, IN, USA) proximal femoral replacement). The acetabular component was also revised. A trochanteric claw plate was used to re-attach the bone of the proximal femur to the prosthesis to ensure good abductor function."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Vital signs"
+            }
+          ],
+          "text": "Vital signs"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "effectiveDateTime": "[REDACTED]",
+        "valueString": "Stable"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "postoperative-evaluation",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "305351004",
+              "display": "Postoperative evaluation"
+            }
+          ],
+          "text": "Six-week postoperative evaluation"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]"
+        },
+        "note": [
+          {
+            "text": "At her six-week postoperative evaluation, she was ambulating independently, though continued with the use of her walking frame for ‘balance and confidence’."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "discharge-summary",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "date": "[REDACTED]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient underwent a both component revision arthroplasty procedure for a Vancouver B3 peri-prosthetic fracture of the right hip. She tolerated the surgery well and was able to commence immediate full weight-bearing, protected with a Zimmer frame, on postoperative day one. At her six-week postoperative evaluation, she was ambulating independently, though continued with the use of her walking frame for ‘balance and confidence’. She was discharged with stable vital signs and overall good health."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

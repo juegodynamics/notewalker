@@ -1,0 +1,317 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "[redacted]",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-birthTime",
+            "valueDateTime": "2007-01-01T00:00:00Z"  // Approximate birth year based on age 16
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "233987006",
+                "display": "Torsion of ovary"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "443529009",
+                "display": "Hemorrhagic ovarian cyst"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "443529009",
+              "display": "Hemorrhagic ovarian cyst"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "onsetDateTime": "[redacted]",
+        "abatementDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233987006",
+              "display": "Torsion of ovary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "onsetDateTime": "[redacted]",
+        "abatementDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27836007",
+              "display": "Periappendicitis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "onsetDateTime": "[redacted]",
+        "abatementDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1747006",
+              "display": "Cystectomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "performedPeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Appendectomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "performedPeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "Pelvic and Doppler imaging",
+              "display": "Pelvic and Doppler imaging"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueString": "Ovaries regularly checked, similar size and blood flow as contralateral ovary, development age appropriate"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "Pelvic fluid",
+              "display": "Pelvic fluid"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueString": "Minimal pelvic fluid"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "Appendix diameter",
+              "display": "Appendix diameter"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueString": "Increased diameter"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "Tumor markers",
+              "display": "Tumor markers"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueString": "Within normal ranges"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "Menstrual cycle",
+              "display": "Menstrual cycle"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueString": "Regular"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up care plan",
+        "description": "The patient will have regular follow-up visits with her gynecologist. Avoid heavy lifting for the next two weeks.",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "Patient Name"
+          }
+        ],
+        "gender": "male",
+        "age": 25
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "EMER",
+          "display": "Emergency"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "text": "Emergency department"
+          },
+          "dischargeDisposition": {
+            "text": "Discharged without any complications"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Diabetes mellitus with ketoacidosis"
+            }
+          ],
+          "text": "Diabetes mellitus complicated with DKA"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "19829001",
+              "display": "Pneumomediastinum"
+            }
+          ],
+          "text": "Pneumomediastinum with potential esophageal rupture"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225158009",
+              "display": "Administration of normal saline"
+            }
+          ],
+          "text": "Intravenous normal saline"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "430193006",
+              "display": "Administration of sodium bicarbonate"
+            }
+          ],
+          "text": "Bicarbonate administration"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225154003",
+              "display": "Administration of insulin"
+            }
+          ],
+          "text": "Insulin drip"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "modality": {
+          "system": "http://dicom.nema.org/resources/ontology/DCM",
+          "code": "DX",
+          "display": "Digital Radiography"
+        },
+        "description": "Chest X-ray suggesting pneumomediastinum"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "modality": {
+          "system": "http://dicom.nema.org/resources/ontology/DCM",
+          "code": "CT",
+          "display": "Computed Tomography"
+        },
+        "description": "Chest CT confirming pneumomediastinum and potential esophageal rupture"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "description": "Treated conservatively with analgesia and respiratory support",
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "386924004",
+                    "display": "Analgesia"
+                  }
+                ],
+                "text": "Analgesia"
+              }
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "40617009",
+                    "display": "Respiratory support"
+                  }
+                ],
+                "text": "Respiratory support"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "status": "completed",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386637004",
+              "display": "Follow-up care"
+            }
+          ],
+          "text": "Routine follow-up recommended"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1997-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        },
+        "location": [
+          {
+            "location": {
+              "display": "Local Hospital in Mianeh, Iran"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "7890003",
+              "display": "Fascioliasis"
+            }
+          ],
+          "text": "Fascioliasis"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "onsetDateTime": "2016-01-01",
+        "abatementDateTime": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "10368-9",
+              "display": "Fecal examination"
+            }
+          ],
+          "text": "Fecal examination for F. gigantica eggs"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "effectiveDateTime": "[Redacted]",
+        "valueString": "Negative for F. gigantica eggs"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1975-2",
+              "display": "Liver function tests"
+            }
+          ],
+          "text": "Liver function tests"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "effectiveDateTime": "[Redacted]",
+        "valueString": "Improved liver function with a decrease in blood eosinophil counts"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386344002",
+              "display": "Administration of anthelmintic"
+            }
+          ],
+          "text": "Egaten at a dose of 10mg/kg in a single oral dose"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "performedDateTime": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Outpatient Plan",
+        "description": "Follow up with primary care physician, continue monitoring liver function tests, and avoid consuming local watercress without proper preparation.",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Follow up with primary care physician",
+              "status": "scheduled",
+              "prohibited": false
+            }
+          },
+          {
+            "detail": {
+              "description": "Continue monitoring liver function tests with regular lab work",
+              "status": "scheduled",
+              "prohibited": false
+            }
+          },
+          {
+            "detail": {
+              "description": "Avoid consuming local watercress and other similar foods without proper preparation",
+              "status": "prohibited",
+              "prohibited": true
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1962-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372143000",
+              "display": "Hepatocellular carcinoma"
+            }
+          ],
+          "text": "Hepatocellular carcinoma with a tumor of approximately 5 cm diameter at the liver segment IV"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "197483000",
+              "display": "Bile leakage"
+            }
+          ],
+          "text": "Bile leakage from the isolated bile duct of segments V and VIII"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1747007",
+              "display": "Partial hepatectomy"
+            }
+          ],
+          "text": "Partial hepatectomy with segments IV + V"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01",
+          "end": "2023-01-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Cholecystectomy"
+            }
+          ],
+          "text": "Cholecystectomy with cystic duct-tube drainage"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01",
+          "end": "2023-01-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "122866006",
+              "display": "Percutaneous drainage"
+            }
+          ],
+          "text": "Percutaneous drainage to the cavity near the liver cut surface"
+        },
+        "performedPeriod": {
+          "start": "2023-01-20",
+          "end": "2023-01-20"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure4",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232717009",
+              "display": "Percutaneous transhepatic cholangiography drainage (PTCD)"
+            }
+          ],
+          "text": "Percutaneous transhepatic cholangiography drainage (PTCD) tube insertion"
+        },
+        "performedPeriod": {
+          "start": "2023-01-21",
+          "end": "2023-01-21"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure5",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232716000",
+              "display": "Percutaneous transhepatic portal embolization (PTPE)"
+            }
+          ],
+          "text": "Percutaneous transhepatic portal embolization (PTPE) with coil embolization"
+        },
+        "performedPeriod": {
+          "start": "2023-01-22",
+          "end": "2023-01-22"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure6",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "122869004",
+              "display": "Bile duct ablation"
+            }
+          ],
+          "text": "Bile duct ablation with pure ethanol"
+        },
+        "performedPeriod": {
+          "start": "2023-01-23",
+          "end": "2023-01-23"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "2023-01-01",
+          "end": "2023-05-20"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ],
+          "text": "Fever"
+        },
+        "valueQuantity": {
+          "value": 38,
+          "unit": "Celsius",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        },
+        "effectiveDateTime": "2023-01-20"
+      }
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1980-01-01",
+        "identifier": [
+          {
+            "system": "urn:example:mrn",
+            "value": "[Number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "reasonCode": [
+          {
+            "text": "1-month history of spontaneous clear left side nipple discharge with a recent appearance of a homolateral painless breast swelling"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "398254007",
+              "display": "Intraductal papilloma with atypical ductal hyperplasia and ductal carcinoma in situ"
+            }
+          ],
+          "text": "Intraductal papilloma (IP) with atypical ductal hyperplasia (ADH) and a single focus of ductal carcinoma in situ (DCIS) solid-cribriform type"
+        },
+        "onsetDateTime": "[Date]",
+        "abatementDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "443497000",
+              "display": "Subcutaneous mastectomy"
+            }
+          ],
+          "text": "Left subcutaneous nipple-sparing mastectomy without sentinel lymph node biopsy"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "performedDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest1",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "36567",
+              "display": "Tamoxifen"
+            }
+          ],
+          "text": "Tamoxifen"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Tamoxifen as approved adjuvant hormone treatment for men with ER-positive early stage breast cancer"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "docref1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "date": "[Date]",
+        "author": [
+          {
+            "reference": "Practitioner/example"
+          }
+        ],
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary:\n\nPatient Name: [Name]\n\nAge: 43\n\nSex: Male\n\nMedical Record Number: [Number]\n\nDate of Admission: [Date]\n\nDate of Discharge: [Date]\n\nReason for Admission:\nThe patient reported a 1-month history of spontaneous clear left side nipple discharge with a recent appearance of a homolateral painless breast swelling.\n\nHistory and Physical Examination:\nThe patient had a past medical history pertinent for obesity class I and bilateral hypoacusia for otosclerosis. On physical examination, he was an overweight Caucasian male with symmetrical breasts. On palpation, there was a bilateral pseudogynaecomastia with a smooth, ill-defined left breast thickening, especially at the union of the outer quadrants. With applied pressure, a minimal clear stream of discharge fluid was elicited from the left nipple and was felt to be localized to a single duct.\n\nMedical Condition:\nPatient was diagnosed with an intraductal papilloma (IP) with atypical ductal hyperplasia (ADH) and a single focus of ductal carcinoma in situ (DCIS) solid-cribriform type, which was surgically removed by a left subcutaneous nipple-sparing mastectomy without sentinel lymph node biopsy.\n\nTreatment:\nThe patient did not undergo axillary dissection and was administered tamoxifen as approved adjuvant hormone treatment for men with ER-positive early stage breast cancer.\n\nFollow-up:\nThe patient was noted to be doing well 6 months post-operatively and is still on follow-up at the time of writing.\n\nDischarge Diagnosis:\nIntraductal papilloma (IP) with atypical ductal hyperplasia (ADH) and a single focus of ductal carcinoma in situ (DCIS) solid-cribriform type.\n\nRecommendations:\nFollow-up with the multidisciplinary team for further management.\n\nDischarge Condition:\nStable.\n\nDischarge Medication:\nN/A.\n\nDischarge Instructions:\nN/A.\n\nSigned,\n[Doctor's Name], MD."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner1",
+        "name": [
+          {
+            "text": "[Doctor's Name]"
+          }
+        ]
+      }
+    }
+  ]
+}

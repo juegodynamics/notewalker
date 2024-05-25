@@ -1,0 +1,214 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Patient Name]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1973-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "reasonCode": [
+          {
+            "text": "Decreased vision in the left eye"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "display": "Noninfectious uveitis"
+            },
+            "rank": 1
+          },
+          {
+            "condition": {
+              "display": "Primary intraocular lymphoma"
+            },
+            "rank": 2
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44186001",
+              "display": "Noninfectious uveitis"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "42343007",
+              "display": "Primary intraocular lymphoma"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000124106",
+              "display": "25-gauge microincision vitrectomy"
+            }
+          ],
+          "text": "25-gauge microincision vitrectomy of the right eye"
+        },
+        "performedPeriod": {
+          "start": "[Procedure Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29271-4",
+              "display": "Best corrected visual acuity"
+            }
+          ]
+        },
+        "valueString": "BCVA of 0.8 OD and 0.1 OS"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29271-4",
+              "display": "Best corrected visual acuity"
+            }
+          ]
+        },
+        "valueString": "Final BCVA of 0.1 OD and 0.4 OS"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "subject": {
+          "reference": "Patient"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8767",
+              "display": "Methotrexate"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "High-dose systemic methotrexate and intravitreal methotrexate injections for induction, and once weekly for eight weeks followed by once monthly for nine months in the right eye."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "subject": {
+          "reference": "Patient"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care",
+        "description": "The patient is advised to have regular follow-up care with the physician."
+      }
+    }
+  ]
+}

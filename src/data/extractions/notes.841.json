@@ -1,0 +1,417 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "Patient Name"
+          }
+        ],
+        "gender": "male",
+        "age": 67
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ],
+            "text": "Postoperative follow-up management"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "",
+          "end": ""
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128613002",
+              "display": "Renal oncocytoma"
+            }
+          ],
+          "text": "Renal oncocytoma"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "399014009",
+              "display": "Biopsy"
+            }
+          ],
+          "text": "Biopsy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-1"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "immunization-1",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "871638004",
+              "display": "Mycophenolate-mofetil"
+            }
+          ],
+          "text": "Mycophenolate-mofetil"
+        },
+        "patient": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "immunization-2",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428731000000108",
+              "display": "Tacrolimus"
+            }
+          ],
+          "text": "Tacrolimus"
+        },
+        "patient": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "immunization-3",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10843511000001105",
+              "display": "Prednisone"
+            }
+          ],
+          "text": "Prednisone"
+        },
+        "patient": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "45036003",
+              "display": "Ultrasonography"
+            }
+          ],
+          "text": "Ultrasonography"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "",
+          "end": "2023"
+        },
+        "valueString": "Ultrasonography every 2 months for the first year"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168537006",
+              "display": "Magnetic resonance imaging"
+            }
+          ],
+          "text": "Magnetic resonance imaging (MRI)"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "",
+          "end": "2028"
+        },
+        "valueString": "MRI every year"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "252465000",
+              "display": "Renal oncocytoma"
+            }
+          ],
+          "text": "Renal oncocytoma status"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "",
+          "end": "2028"
+        },
+        "valueString": "No growth, regression, or any other morphological changes"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Renal Oncocytoma Monitoring",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "",
+          "end": "2028"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "completed",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "171207006",
+                    "display": "Active surveillance"
+                  }
+                ],
+                "text": "Active surveillance"
+              }
+            }
+          },
+          {
+            "detail": {
+              "status": "completed",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "45036003",
+                    "display": "Ultrasonography"
+                  }
+                ],
+                "text": "Ultrasonography every 2 months for the first year"
+              }
+            }
+          },
+          {
+            "detail": {
+              "status": "completed",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "168537006",
+                    "display": "Magnetic resonance imaging"
+                  }
+                ],
+                "text": "MRI every year"
+              }
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "The patient received mycophenolate-mofetil, tacrolimus, and prednisone throughout the 5-year follow-up period, and the regimen for immunosuppression was not changed despite the presence of the renal mass."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "409586006",
+              "display": "Patient outcome"
+            }
+          ],
+          "text": "Patient outcome"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2028",
+        "valueString": "The patient is alive and well."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168537006",
+              "display": "Magnetic resonance imaging"
+            }
+          ],
+          "text": "MRI"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-1"
+          }
+        ],
+        "note": [
+          {
+            "text": "The patient should continue to undergo annual MRI monitoring to ensure that the tumor remains stable. In case of any changes, further evaluation and treatment will be advised."
+          }
+        ]
+      }
+    }
+  ]
+}

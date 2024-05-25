@@ -1,0 +1,452 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient1",
+        "name": [
+          {
+            "given": [
+              "Unknown"
+            ],
+            "family": "Unknown"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2011-01-01",
+        "animal": {
+          "species": {
+            "text": "Canine"
+          },
+          "breed": {
+            "text": "Terrier Mix"
+          },
+          "genderStatus": {
+            "text": "Spayed"
+          }
+        },
+        "weight": {
+          "value": 12,
+          "unit": "kg"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "22298006",
+              "display": "Uveitis"
+            }
+          ],
+          "text": "Anterior uveitis"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "244486005",
+                "display": "Left eye"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "193570009",
+              "display": "Hyphema"
+            }
+          ],
+          "text": "Hyphema"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "244486005",
+                "display": "Left eye"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "140973",
+              "display": "Carprofen"
+            }
+          ],
+          "text": "Carprofen tablets"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest2",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "104375",
+              "display": "Ophthalmic suspension"
+            }
+          ],
+          "text": "Ophthalmic suspension"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition3",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "396275006",
+              "display": "Bilateral uveitis"
+            }
+          ],
+          "text": "Bilateral uveitis"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition4",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1932000",
+              "display": "Iris bombe"
+            }
+          ],
+          "text": "Iris bombe"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "244486005",
+                "display": "Left eye"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition5",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "193570009",
+              "display": "Cataract"
+            }
+          ],
+          "text": "Immature cataract"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "244486005",
+                "display": "Right eye"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "69729003",
+              "display": "Enucleation of eye"
+            }
+          ],
+          "text": "Enucleation of left eye"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest3",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197361",
+              "display": "Clindamycin"
+            }
+          ],
+          "text": "Clindamycin"
+        },
+        "dosageInstruction": [
+          {
+            "text": "30 days"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "105568002",
+              "display": "Splenectomy"
+            }
+          ],
+          "text": "Splenectomy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "229800009",
+              "display": "Liver biopsy"
+            }
+          ],
+          "text": "Liver biopsy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition6",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444135009",
+              "display": "Splenic hemangiosarcoma"
+            }
+          ],
+          "text": "Splenic hemangiosarcoma"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest4",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197635",
+              "display": "Doxorubicin"
+            }
+          ],
+          "text": "Doxorubicin monotherapy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition7",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "431855005",
+              "display": "Vomiting"
+            }
+          ],
+          "text": "Vomiting"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest5",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/ndc",
+              "code": "0006-3212",
+              "display": "Chlorambucil"
+            }
+          ],
+          "text": "Metronomic chlorambucil"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest6",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "medicationCodeableConcept": {
+          "text": "Omega-3 fatty acids"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest7",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "medicationCodeableConcept": {
+          "text": "Yunnan Baiyao"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition8",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "431855005",
+              "display": "Chronic renal disease"
+            }
+          ],
+          "text": "Chronic renal disease (IRIS stage 2)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition9",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "26079004",
+              "display": "Tonic seizures"
+            }
+          ],
+          "text": "Tonic seizures"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest8",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "6212",
+              "display": "Phenobarbital"
+            }
+          ],
+          "text": "Phenobarbital"
+        }
+      }
+    }
+  ]
+}

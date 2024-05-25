@@ -1,0 +1,359 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "identifier": [
+          {
+            "system": "http://hospital.example.org",
+            "value": "12345"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1981-01-01" 
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "period": {
+          "start": "2013-01-01",
+          "end": "2016-06-01"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "93761005",
+              "display": "Ewing sarcoma"
+            }
+          ],
+          "text": "Primary localized ES"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "onsetDateTime": "2013-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274441001",
+              "display": "Biopsy of mass"
+            }
+          ],
+          "text": "Biopsy of the mass"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "performedPeriod": {
+          "start": "2013-01-01",
+          "end": "2013-01-02"
+        },
+        "outcome": {
+          "text": "small round blue cell malignant neoplasm"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure2",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108290001",
+              "display": "Neoadjuvant chemotherapy"
+            }
+          ],
+          "text": "Neoadjuvant chemotherapy according to VIVA regimen"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "performedPeriod": {
+          "start": "2013-01-01",
+          "end": "2013-01-30"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure3",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108290001",
+              "display": "Adjuvant radiation therapy"
+            }
+          ],
+          "text": "Adjuvant radiation therapy to the primary site"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "performedPeriod": {
+          "start": "2013-01-01",
+          "end": "2013-01-30"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30525-0",
+              "display": "MRI of spine"
+            }
+          ],
+          "text": "Dorsal spine MRI"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "effectiveDateTime": "2013-01-01",
+        "valueString": "Mass involving the left ilium, sacrum, and left sacroiliac joint"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "57833-6",
+              "display": "CT of chest"
+            }
+          ],
+          "text": "Follow-up CT of the chest"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "effectiveDateTime": "2014-07-01",
+        "valueString": "Interval decrease in the metastatic lesions, consistent with chemosensitive disease"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "44136-0",
+              "display": "PET/CT scan"
+            }
+          ],
+          "text": "PET/CT scan"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "effectiveDateTime": "2014-08-01",
+        "valueString": "Stable metastatic disease in the form of pulmonary nodules and pleural involvement"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure4",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "122869004",
+              "display": "Collection of autologous stem cells"
+            }
+          ],
+          "text": "Autologous stem cells collection"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "performedDateTime": "2014-08-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure5",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure5",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108290001",
+              "display": "High-dose chemotherapy"
+            }
+          ],
+          "text": "High-dose chemotherapy"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "performedPeriod": {
+          "start": "2014-08-01",
+          "end": "2015-08-01"
+        },
+        "outcome": {
+          "text": "12 months of progression-free survival (PFS)"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "44136-0",
+              "display": "PET scan"
+            }
+          ],
+          "text": "PET scan"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "effectiveDateTime": "2015-10-01",
+        "valueString": "Disease progression"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure6",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure6",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108290001",
+              "display": "Chemotherapy"
+            }
+          ],
+          "text": "Six cycles of pembrolizumab and cyclophosphamide, vincristine, dactinomycin (alternating with ifosfamide), and etoposide"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "performedPeriod": {
+          "start": "2015-10-01",
+          "end": "2016-06-01"
+        },
+        "outcome": {
+          "text": "Disease continued to progress"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure7",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure7",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385763009",
+              "display": "Hospice care"
+            }
+          ],
+          "text": "Hospice care"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "performedDateTime": "2016-06-01"
+      }
+    }
+  ]
+}

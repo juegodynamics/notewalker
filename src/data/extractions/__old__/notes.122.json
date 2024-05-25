@@ -1,0 +1,352 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "1979-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25337000",
+              "display": "Mitral valve dysplasia"
+            }
+          ],
+          "text": "Mitral Valve Dysplasia"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "2341000013108",
+              "display": "Subaortic stenosis"
+            }
+          ],
+          "text": "Subaortic Stenosis"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000000108",
+              "display": "Subaortic membrane resection"
+            }
+          ],
+          "text": "Subaortic membrane resection and septal myectomy"
+        },
+        "performedPeriod": {
+          "start": "1989-01-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "89668005",
+              "display": "Heart valve replacement"
+            }
+          ],
+          "text": "St. Jude Regent 17 mm implantation"
+        },
+        "performedPeriod": {
+          "start": "2006-01-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11290-0",
+              "display": "Echocardiography study"
+            }
+          ],
+          "text": "Transthoracic Echocardiography (TTE)"
+        },
+        "valueString": "Detected an increase in the intraventricular gradient with LV hypertrophy"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "55110-1",
+              "display": "Transesophageal echocardiography study"
+            }
+          ],
+          "text": "Transesophageal Echocardiography (TEE)"
+        },
+        "valueString": "Confirmed severe subaortic stenosis and suspected new subaortic membrane formation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "report-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "46380-0",
+              "display": "CT of heart"
+            }
+          ],
+          "text": "Multidetector Computed Tomography (MDCT)"
+        },
+        "conclusion": "Provided accurate 3D reconstructions of the LV outlet tract with a better topographic assessment of the new subaortic membrane and its surrounding structures"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000000108",
+              "display": "Subaortic membrane resection"
+            }
+          ],
+          "text": "Surgical excision of the subaortic membrane formation"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "intent": "plan",
+        "title": "Postoperative care plan",
+        "description": "Postoperative care and management including medication administration, continuous monitoring of vital signs and laboratory values, physical therapy initiation, and prevention of deep vein thrombosis",
+        "activity": [
+          {
+            "detail": {
+              "kind": "MedicationRequest",
+              "status": "completed",
+              "description": "Administered appropriate medications"
+            }
+          },
+          {
+            "detail": {
+              "kind": "Observation",
+              "status": "completed",
+              "description": "Continuous monitoring of vital signs and laboratory values"
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "status": "completed",
+              "description": "Initiated physical therapy"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "305351004",
+                "display": "Inpatient stay"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": "2023-01-01",
+          "end": "2023-01-10"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "emergency",
+                "display": "Emergency Room"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25337000",
+              "display": "Mitral valve dysplasia"
+            }
+          ],
+          "text": "Mitral Valve Dysplasia"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "2341000013108",
+              "display": "Subaortic stenosis"
+            }
+          ],
+          "text": "Subaortic Stenosis"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "document-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "date": "2023-01-10",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "REDACTED",
+              "title": "Discharge Summary"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

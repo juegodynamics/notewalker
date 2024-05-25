@@ -1,0 +1,197 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "{REDACTED}"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1973",  // Assuming current year is 2023 and patient is 50 years old
+        "deceasedBoolean": true
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "{REDACTED}",
+          "end": "{REDACTED}"
+        },
+        "reasonCode": [
+          {
+            "text": "acute onset of double vision"
+          }
+        ],
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "expired",
+                "display": "Expired"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "double vision",
+              "display": "Diplopia"
+            }
+          ],
+          "text": "acute onset of double vision"
+        },
+        "subject": {
+          "reference": "Patient/{REDACTED}"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "ruptured aneurysm",
+              "display": "Ruptured aneurysm"
+            }
+          ],
+          "text": "ruptured aneurysm"
+        },
+        "subject": {
+          "reference": "Patient/{REDACTED}"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18746-2",
+              "display": "CT of Head and Neck"
+            }
+          ],
+          "text": "non-contrast CT/CTA"
+        },
+        "valueString": "Normal",
+        "subject": {
+          "reference": "Patient/{REDACTED}"
+        },
+        "effectiveDateTime": "{REDACTED}"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "autopsy",
+              "display": "Autopsy"
+            }
+          ],
+          "text": "autopsy"
+        },
+        "subject": {
+          "reference": "Patient/{REDACTED}"
+        },
+        "performedDateTime": "{REDACTED}",
+        "outcome": {
+          "text": "Confirmed ruptured aneurysm"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Communication",
+        "status": "completed",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/communication-category",
+                "code": "notification",
+                "display": "Notification"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/{REDACTED}"
+        },
+        "sent": "{REDACTED}",
+        "recipient": [
+          {
+            "reference": "RelatedPerson/{REDACTED}"
+          }
+        ],
+        "payload": [
+          {
+            "contentString": "The patient's family was notified of the diagnosis and his unfortunate passing."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient1",
+        "gender": "female",
+        "age": 47
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "period": {
+          "end": "[Insert date]"
+        },
+        "reasonCode": [
+          {
+            "text": "Left upper abdominal pain"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Left upper abdominal pain"
+        },
+        "note": [
+          {
+            "text": "Accompanied by diaphoresis, nausea, and several episodes of non-bloody, non-bilious vomiting. Moderate to severe pain with gradual onset and constant crampiness."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Vital signs"
+        },
+        "valueString": "Stable"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Laboratory results"
+        },
+        "valueString": "Within reference ranges, except for subtherapeutic coagulation profile"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Nonischemic cardiomyopathy with left ventricular thrombus"
+        },
+        "note": [
+          {
+            "text": "Four previous cerebrovascular accidents, managed with warfarin"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Physical examination"
+        },
+        "valueString": "Significant tenderness in the left upper abdomen, fine crackles in the left lower lobe"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "report1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Cardiac MRI"
+        },
+        "conclusion": "Septal and apical predominantly transmural infarct"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "report2",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Transthoracic echocardiogram"
+        },
+        "conclusion": "Mildly dilated left ventricle with moderate to severe left ventricular dysfunction, ejection fraction 30% to 35%, distal anterior, anteroseptal, and apical akinesis, mild mitral regurgitation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "report3",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Cardiac catheterization"
+        },
+        "conclusion": "Unremarkable"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "report4",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "CT scan of abdomen"
+        },
+        "conclusion": "Mild cardiomegaly with previous infarction on the anterior-inferior wall of the left ventricle"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation4",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Left ventricular thrombus"
+        },
+        "valueString": "37.47 mm calcified thrombus in the left ventricular apex with peripheral calcifications"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation5",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Infarction"
+        },
+        "valueString": "Infarction in the spleen and right kidney with bilateral renal scarring"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medication1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "medicationCodeableConcept": {
+          "text": "Heparin drip"
+        },
+        "dosage": {
+          "text": "Started on a heparin drip and later bridged to warfarin on the third day"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Medication compliance reinforcement"
+        },
+        "status": "completed",
+        "performedPeriod": {
+          "end": "[Insert date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "status": "completed",
+        "intent": "plan",
+        "title": "Follow-up care plan",
+        "description": "Follow-up appointments suggested with primary care physician and cardiology department"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition3",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Guarded prognosis"
+        },
+        "note": [
+          {
+            "text": "Due to history of nonischemic cardiomyopathy with left ventricular thrombus and recent infarction. Prognosis can be improved with careful medication management, consistent follow-up appointments, and proactive lifestyle changes."
+          }
+        ]
+      }
+    }
+  ]
+}

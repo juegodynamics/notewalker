@@ -1,0 +1,242 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[name]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.1",
+            "value": "[MRN]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1977"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "identifier": [
+          {
+            "value": "[MRN]"
+          }
+        ],
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32485007",
+                "display": "Hospital admission"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[MRN]"
+        },
+        "period": {
+          "start": "[date]",
+          "end": "[date]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "17436001",
+                "display": "Lung transplant"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "79654002",
+              "display": "Mandibular pain"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27452005",
+              "display": "Trismus"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "230265002",
+              "display": "Oromandibular dystonia"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[MRN]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "409063005",
+              "display": "Reduction of dislocation"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27452005",
+              "display": "Nelaton reduction maneuver"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[MRN]"
+        },
+        "performedPeriod": {
+          "start": "[date]",
+          "end": "[date]"
+        },
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385669000",
+              "display": "Successful"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386924004",
+              "display": "Analgesia"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[MRN]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386924004",
+              "display": "Muscular relaxation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[MRN]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/[MRN]"
+        },
+        "started": "[date]",
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "CT",
+            "display": "Computed Tomography"
+          }
+        ],
+        "description": "CT of the craniofacial complex and brain without IV contrast showed dislocation of both mandibular condyles with anterior position to the temporal’s glenoid cavity, without evidence of associated bone injuries."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Plan",
+        "description": "The patient will follow-up with his healthcare provider as recommended.",
+        "subject": {
+          "reference": "Patient/[MRN]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "The patient should rest and avoid strenuous activity for the next few days. Any symptoms should be reported to the healthcare provider immediately.",
+        "subject": {
+          "reference": "Patient/[MRN]"
+        }
+      }
+    }
+  ]
+}

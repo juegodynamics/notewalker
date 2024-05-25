@@ -1,0 +1,263 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "[REDACTED]",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealth.org/mrn",
+            "value": "[REDACTED]"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "[REDACTED]",
+            "given": [
+              "[REDACTED]"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "period": {
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Sézary syndrome"
+            }
+          ],
+          "text": "Sézary Syndrome, Stage IVA"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "702559000",
+              "display": "Chronic graft-versus-host disease"
+            }
+          ],
+          "text": "Chronic graft-versus-host disease of ocular mucosa and liver"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "302954006",
+              "display": "Allogeneic hematopoietic stem cell transplant"
+            }
+          ],
+          "text": "Allogeneic hematopoietic stem cell transplant (alloHSCT)"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest1",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "123456",
+              "display": "Brentuximab Vedotin"
+            }
+          ],
+          "text": "Brentuximab Vedotin (BV)"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "allergy1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "300916003",
+              "display": "Graft-versus-host disease"
+            }
+          ],
+          "text": "Chronic graft-versus-host disease of ocular mucosa and liver"
+        },
+        "patient": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "The patient will continue to require immunosuppressive treatment for chronic graft-versus-host disease of ocular mucosa and liver and will require ongoing monitoring for possible relapse of Sézary Syndrome. Follow-up appointments with the patient's oncologist and ophthalmologist are recommended.",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "185349003",
+                    "display": "Follow-up appointment"
+                  }
+                ],
+                "text": "Follow-up appointments with oncologist and ophthalmologist"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner1",
+        "name": [
+          {
+            "use": "official",
+            "family": "[REDACTED]",
+            "given": [
+              "[REDACTED]"
+            ],
+            "suffix": [
+              "MD"
+            ]
+          }
+        ],
+        "qualification": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0360/2.7",
+                  "code": "MD",
+                  "display": "Doctor of Medicine"
+                }
+              ],
+              "text": "Medical Oncology"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner2",
+        "name": [
+          {
+            "use": "official",
+            "family": "[REDACTED]",
+            "given": [
+              "[REDACTED]"
+            ],
+            "suffix": [
+              "MD"
+            ]
+          }
+        ],
+        "qualification": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0360/2.7",
+                  "code": "MD",
+                  "display": "Doctor of Medicine"
+                }
+              ],
+              "text": "Medical Oncology"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

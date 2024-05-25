@@ -1,0 +1,245 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "shortness of breath, cough, myalgias, and malaise in the setting of a positive SARS-CoV-2 test result"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Positive SARS-CoV-2 test result"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "supplemental oxygen"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "remdesivir"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-3",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "dexamethasone"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-4",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "furosemide"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-5",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "azithromycin"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-6",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "enoxaparin for venous thromboembolism prophylaxis"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "text": "Repeat chest X-ray"
+        },
+        "note": [
+          {
+            "text": "slight interval improvement of bilateral pulmonary infiltrates"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "VGhlIHBhdGllbnQgd2FzIGFkbWl0dGVkIHdpdGggc2hvcnRuZXNzIG9mIGJyZWF0aCwgY291Z2gsIG15YWxnaWFzLCBhbmQgbWFsYWlzZSBpbiB0aGUgc2V0dGluZyBvZiBhIHBvc2l0aXZlIFNBUlMtQ09WLTkgdGVzdCByZXN1bHQuIERlc3BpdGUgbXVsdGlwbGUgbWVhc3VyZXMsIHRoZSBwYXRpZW50J3MgY2xpbmljYWwgY291cnNlIHdhcyBjaGFsbGVuZ2luZyBhbmQgcmVxdWlyZWQgbW9yZSBhZ2dyZXNzaXZlIG1hbmFnZW1lbnQuIFJlcGVhdCBjaGVzdCBYLXJheSBzaG93ZWQgc2xpZ2h0IGludGVydmFsIGltcHJvdmVtZW50IG9mIGJpbGF0ZXJhbCBwdWxtb25hcnkgaW5maWx0cmF0ZXMuIFRoZSBwYXRpZW50J3MgY29uZGl0aW9uIGdyYWR1YWxseSBpbXByb3ZlZCBvdmVyIHRoZSBjb3Vyc2Ugb2YgaGVyIGhvc3BpdGFsIHN0YXksIGFuZCBzaGUgd2FzIGV2ZW50dWFsbHkgZGV0ZXJtaW5lZCB0byBiZSBmaXQgZm9yIGRpc2NoYXJnZS4gVGhlIHBhdGllbnQgd2lsbCBmb2xsb3cgdXAgd2l0aCBoZXIgUENQIHdpdGhpbiBzZXZlbiBkYXlzIGFuZCBjb250aW51ZSB0byBtb25pdG9yIGhlciBzeW1wdG9tcy4="
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-Up Plan",
+        "description": "The patient should follow up with her PCP within seven days and continue to monitor her symptoms.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[REDACTED]"
+        }
+      }
+    }
+  ]
+}

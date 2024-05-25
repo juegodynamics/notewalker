@@ -1,0 +1,302 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-b-ii-1",
+        "identifier": [
+          {
+            "system": "http://hospital.org/patients",
+            "value": "B.II.1"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1977-01-01",  // Assuming the birth year based on age 46 in 2023
+        "name": [
+          {
+            "use": "official",
+            "family": "B.II.1"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-hemochromatosis",
+        "subject": {
+          "reference": "Patient/patient-b-ii-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "235200000",  // Example code for Hemochromatosis
+              "display": "Hemochromatosis"
+            }
+          ],
+          "text": "Hemochromatosis (Cys282Tyr mutation carrier)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-dyslipidemia",
+        "subject": {
+          "reference": "Patient/patient-b-ii-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55822004",  // Example code for Dyslipidemia
+              "display": "Dyslipidemia"
+            }
+          ],
+          "text": "Dyslipidemia"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-internal-hemorrhoids",
+        "subject": {
+          "reference": "Patient/patient-b-ii-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "255604002",  // Example code for Internal Hemorrhoids
+              "display": "Internal hemorrhoids"
+            }
+          ],
+          "text": "Internal hemorrhoids"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-chronic-arthropathy",
+        "subject": {
+          "reference": "Patient/patient-b-ii-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128599002",  // Example code for Chronic Arthropathy
+              "display": "Chronic arthropathy"
+            }
+          ],
+          "text": "Chronic arthropathy (feet, spine, hands)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-erythroapheresis",
+        "subject": {
+          "reference": "Patient/patient-b-ii-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18286008",  // Example code for Erythroapheresis
+              "display": "Erythroapheresis"
+            }
+          ],
+          "text": "Monthly erythroapheresis"
+        },
+        "performedPeriod": {
+          "start": "2015-01-01",  // Assuming start date
+          "end": "2017-05-01"  // Assuming end date when reduced to every two months
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-phlebotomy",
+        "subject": {
+          "reference": "Patient/patient-b-ii-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "302456002",  // Example code for Phlebotomy
+              "display": "Phlebotomy"
+            }
+          ],
+          "text": "Phlebotomies"
+        },
+        "performedPeriod": {
+          "start": "2015-01-01"  // Assuming start date
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-hyperferritinemia",
+        "subject": {
+          "reference": "Patient/patient-b-ii-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "302866003",  // Example code for Hyperferritinemia
+              "display": "Hyperferritinemia"
+            }
+          ],
+          "text": "Hyperferritinemia"
+        },
+        "effectiveDateTime": "2015-01-01"  // Assuming observation date
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-hepatic-mri",
+        "subject": {
+          "reference": "Patient/patient-b-ii-1"
+        },
+        "description": "Hepatic magnetic resonance imaging",
+        "started": "2015-01-01",  // Assuming imaging date
+        "series": [
+          {
+            "description": "Hepatic iron accumulation",
+            "instance": [
+              {
+                "uid": "1.2.840.10008.1.2.1",  // Example UID
+                "sopClass": {
+                  "system": "urn:ietf:rfc:3986",
+                  "code": "1.2.840.10008.5.1.4.1.1.4",  // Example SOP Class UID for MRI
+                  "display": "MRI"
+                },
+                "title": "Hepatic iron accumulation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-no-hepatic-iron-overload",
+        "subject": {
+          "reference": "Patient/patient-b-ii-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "251200008",  // Example code for No Hepatic Iron Overload
+              "display": "No hepatic iron overload"
+            }
+          ],
+          "text": "No signs of hepatic iron overload"
+        },
+        "effectiveDateTime": "2017-05-01"  // Assuming observation date
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-hospital-admission",
+        "subject": {
+          "reference": "Patient/patient-b-ii-1"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32485007",  // Example code for Hospital Admission
+                "display": "Hospital admission"
+              }
+            ],
+            "text": "Hospital admission"
+          }
+        ],
+        "period": {
+          "start": "2015-01-01",  // Assuming admission date
+          "end": "2017-05-01"  // Assuming discharge date
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "302866003",  // Example code for Hyperferritinemia
+                "display": "Hyperferritinemia"
+              }
+            ],
+            "text": "Hyperferritinemia and hepatic iron accumulation"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-discharge",
+        "subject": {
+          "reference": "Patient/patient-b-ii-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "description": "Discharge care plan",
+        "activity": [
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "302456002",  // Example code for Phlebotomy
+                    "display": "Phlebotomy"
+                  }
+                ],
+                "text": "Regular phlebotomies"
+              },
+              "status": "scheduled"
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "171207006",  // Example code for Monitoring of Iron Levels
+                    "display": "Monitoring of iron levels"
+                  }
+                ],
+                "text": "Routine monitoring of iron levels"
+              },
+              "status": "scheduled"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Follow-up appointments with the healthcare provider are recommended to monitor the patient's progress and adjust treatment as necessary."
+          }
+        ]
+      }
+    }
+  ]
+}

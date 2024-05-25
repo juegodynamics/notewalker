@@ -1,0 +1,215 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "3",
+        "gender": "female",
+        "birthDate": "1960-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-birthDate",
+            "valueDateTime": "1960-01-01"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "92821000119105",
+              "display": "Acute myeloid leukemia"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/3"
+        },
+        "onsetDateTime": "2020-12"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000000106",
+              "display": "Induction chemotherapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/3"
+        },
+        "performedPeriod": {
+          "start": "2020-12",
+          "end": "2021-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000000106",
+              "display": "Consolidation chemotherapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/3"
+        },
+        "performedPeriod": {
+          "start": "2021-02",
+          "end": "2021-03"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000000106",
+              "display": "Consolidation chemotherapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/3"
+        },
+        "performedPeriod": {
+          "start": "2021-04",
+          "end": "2021-05"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000000106",
+              "display": "Chemotherapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/3"
+        },
+        "performedPeriod": {
+          "start": "2021-06",
+          "end": "2021-07"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Complete remission"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/3"
+        },
+        "effectiveDateTime": "2021-07"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Complete remission"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/3"
+        },
+        "effectiveDateTime": "2021-08"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "completed",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "subject": {
+          "reference": "Patient/3"
+        },
+        "period": {
+          "start": "2020-12",
+          "end": "2021-07"
+        }
+      }
+    }
+  ]
+}

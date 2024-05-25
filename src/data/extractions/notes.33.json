@@ -1,0 +1,215 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1988-01-01",
+        "age": 35
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonCode": [
+          {
+            "text": "Chest and neck pain"
+          }
+        ],
+        "period": {
+          "start": "2023-01-01T00:00:00Z",
+          "end": "2023-01-07T00:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "provisional",
+              "display": "Provisional"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "164713005",
+              "display": "SAPHO syndrome"
+            }
+          ],
+          "text": "Suspected SAPHO syndrome"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "2023-01-01T00:00:00Z",
+        "abatementDateTime": "2023-01-07T00:00:00Z",
+        "note": [
+          {
+            "text": "The patient was admitted with complaints of pain in the anterior chest and neck. The pain had been present for six months and had worsened over the last three weeks. On physical examination, marked tenderness of the right sternoclavicular joint was noted. Initial laboratory investigations and chest X-rays were unremarkable, although MRI revealed subchondral bone marrow edema and enhancement involving the medial end of the right clavicle. In addition, mild effusion of the right sternoclavicular joint and surrounding soft-tissue edema was also seen. Given the patient's radiological and clinical findings, suspicion of SAPHO syndrome was raised. He was prescribed paracetamol and NSAIDs, which led to a remarkable improvement in his symptoms."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72170-8",
+              "display": "Magnetic resonance imaging (MRI) study"
+            }
+          ],
+          "text": "MRI of right clavicle"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2023-01-03T00:00:00Z",
+        "valueString": "MRI revealed subchondral bone marrow edema and enhancement involving the medial end of the right clavicle. Mild effusion of the right sternoclavicular joint and surrounding soft-tissue edema was also seen."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "198211",
+              "display": "Paracetamol"
+            }
+          ],
+          "text": "Paracetamol"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "authoredOn": "2023-01-01T00:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "354946",
+              "display": "Nonsteroidal anti-inflammatory drug (NSAID)"
+            }
+          ],
+          "text": "NSAIDs"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "authoredOn": "2023-01-01T00:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "not-done",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274441001",
+              "display": "Biopsy"
+            }
+          ],
+          "text": "Biopsy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "2023-01-05T00:00:00Z",
+        "reasonCode": [
+          {
+            "text": "Patient refused further investigations"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "2023-01-07T00:00:00Z",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient was discharged with a diagnosis of suspected SAPHO syndrome following an admission for chest and neck pain. The initial laboratory investigations and chest X-rays did not reveal any significant abnormalities. However, MRI showed subchondral bone marrow edema and enhancement in the medial end of the right clavicle, consistent with SAPHO syndrome. The patient was treated with paracetamol and NSAIDs, which led to a significant improvement in his symptoms. Although a biopsy was offered, the patient refused further investigations. He has not shown any relapse to date and was advised to return if he experienced any further pain or symptoms."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

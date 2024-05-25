@@ -1,0 +1,310 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ],
+        "birthDate": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128477000",
+              "display": "Infantile myofibromatosis"
+            }
+          ],
+          "text": "IM of left sartorius muscle"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Excision of tumor"
+            }
+          ],
+          "text": "Resection of tumor in left sartorius muscle"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-10-01",
+          "end": "2023-10-01"
+        },
+        "outcome": {
+          "text": "The patient had a favorable surgical outcome and was discharged 3 days postoperatively."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33747-5",
+              "display": "Ultrasound study"
+            }
+          ],
+          "text": "Initial ultrasound"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Pre-femoral soft tissue mass that measured approximately 30/13 mm, with nonhomogeneous structure, hypoechoic areas, calcifications, and weak Doppler signal."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-9",
+              "display": "X-ray study"
+            }
+          ],
+          "text": "Initial X-ray"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Pre-femoral soft tissue mass that measured approximately 30/13 mm, with nonhomogeneous structure, hypoechoic areas, calcifications, and weak Doppler signal."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39138-7",
+              "display": "Magnetic resonance imaging (MRI) study"
+            }
+          ],
+          "text": "MRI findings"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Mass of 19.33/15.19/34 mm, with a nonspecific vascular involvement."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33725-1",
+              "display": "Histopathology study"
+            }
+          ],
+          "text": "Histopathology findings"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Proliferation of tapered cells arranged in an irregular spiral pattern and crossed by thin-walled vessels. Pseudocapsule formed by a thin layer of connective tissue <1 mm covering the mass. Neoplastic proliferation encompassed residual skeletal muscle fibers in the center of the lesion. Extracapsular and peripheral scarce mature adipose tissue with isolated large-caliber blood vessels."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "19107-0",
+              "display": "Immunohistochemistry study"
+            }
+          ],
+          "text": "Immunostaining results"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LP14834-6",
+                  "display": "Vimentin"
+                }
+              ],
+              "text": "Vimentin"
+            },
+            "valueString": "Positive"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LP14842-9",
+                  "display": "Smooth muscle actin"
+                }
+              ],
+              "text": "Smooth muscle actin"
+            },
+            "valueString": "Positive in nodules with necrosis and calcifications (miotic nodules)"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LP14835-3",
+                  "display": "Desmin"
+                }
+              ],
+              "text": "Desmin"
+            },
+            "valueString": "Focal positive"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LP253125-6",
+                  "display": "Ki-67"
+                }
+              ],
+              "text": "Ki67"
+            },
+            "valueString": "Low (about 5 positive cells per 100 tumor cells, suggesting low cell kinetics)"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-10-01",
+          "end": "2023-10-04"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "128477000",
+                "display": "Infantile myofibromatosis"
+              }
+            ],
+            "text": "IM of left sartorius muscle"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "document-1",
+        "status": "current",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary:\n\nPatient Name: [redacted]\nDOB: [redacted]\n\nHospital Course:\n\nThe patient presented to our facility at the age of 2 months with a lump on her left thigh, which had progressively grown after birth. The lesion was first described on the prenatal ultrasound at 30 weeks of gestation, and the patient was delivered by cesarean section due to fetal distress but was otherwise normal at birth. Development was normal, and there was no relevant family history.\n\nUpon physical examination, a 25/10 mm nodule was found on the antero-intern side of the left thigh that was firm, mobile and within the deep layers. The initial X-ray and ultrasound showed a pre-femoral soft tissue mass that measured approximately 30/13 mm, with nonhomogeneous structure, hypoechoic areas, calcifications, and weak Doppler signal, being located anteriorly to the vascular elements of the thigh. Magnetic resonance imaging (MRI) showed a mass of 19.33/15.19/34 mm, with a nonspecific vascular involvement.\n\nElective surgery was scheduled, and an italic S-shaped incision on the antero-internal face of the left thigh was performed. The tumor was resected, and the sartorius muscle was resected at a distance of about 2 cm distal and proximal to the tumor, with complete tumor resection. The patient had a favorable surgical outcome and was discharged 3 days postoperatively.\n\nDiagnostic Findings:\n\nHistologically, the mass in the sartorius muscle was noted as a proliferation of tapered cells arranged in an irregular spiral pattern and crossed by thin-walled vessels. A pseudocapsule formed by a thin layer of connective tissue <1 mm covered the mass. Neoplastic proliferation encompassed residual skeletal muscle fibers in the center of the lesion. Extracapsular and peripheral scarce mature adipose tissue were seen with isolated large-caliber blood vessels.\n\nImmunostaining revealed the following results: vimentin positive, smooth muscle actin positive in nodules with necrosis and calcifications (miotic nodules), desmin focal positive, Ki67 low (about 5 positive cells per 100 tumor cells, suggesting low cell kinetics).\n\nDiagnosis:\n\nA diagnosis of IM of left sartorius muscle was made.\n\nFollow-up:\n\nAt one year after surgery follow up, the child had no recurrence.\n\nDischarge:\n\nThe patient was discharged in good condition with appropriate follow-up arrangements."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Patient Name]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2012-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "442231000124107",
+              "display": "Pulp necrosis secondary to fractured dens evaginatus and symptomatic apical periodontitis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "onsetDateTime": "[Admission Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428331000124100",
+              "display": "Root canal therapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "performedPeriod": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/[Condition ID]"
+          }
+        ],
+        "note": [
+          {
+            "text": "Initial assessment: The pulp chamber was reentered and irrigated with saline, followed by the placement of a nonsetting calcium hydroxide material and a double sealing of the access cavity with Cavit™ 3M and glass ionomer cement (GIC) Riva Self Cure™ SDI. Two weeks later, the tooth was reassessed, irrigated with 1.5% sodium hypochlorite (NaOCI), followed by irrigation with sterile water, and filled using EndoSequence material under a dental operating microscope. The root canal was later obturated with thermoplasticised gutta-perca using the Obtura III Max System."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "38212-7",
+              "display": "Periapical radiograph"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "effectiveDateTime": "[Six-month Review Date]",
+        "valueString": "The apical root of tooth 45 had grown beyond the apexification level, with a normal periodontal ligament space and lamina dura."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "stopped",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "note": [
+          {
+            "text": "Discharge Medications: None."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "description": "Annual monitoring of tooth 45",
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "308335008",
+                    "display": "Annual dental check-up"
+                  }
+                ]
+              },
+              "status": "scheduled"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "text": "[Physician's Name] MD"
+          }
+        ]
+      }
+    }
+  ]
+}

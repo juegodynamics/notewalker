@@ -1,0 +1,459 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "1979",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-birthTime",
+            "valueDateTime": "1979-01-01T00:00:00Z"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "195967001",
+              "display": "Asthma"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "59621000",
+              "display": "Essential hypertension"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "414916001",
+              "display": "Obesity class 3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "35489007",
+              "display": "Depressive disorder"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-5",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "266254006",
+              "display": "Intertrigo"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Persistent cutaneous candidiasis with intertrigo in the inframammary, inguinal, and lower abdominal regions."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "2386",
+              "display": "Fluconazole"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "Oral fluconazole"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "2206",
+              "display": "Itraconazole"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "Oral itraconazole"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-6",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "17897006",
+              "display": "Skin rash"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Worsening in the skin rash with exudate, pruritus, and a change to a violaceous colour, with scaly papules and vesicles."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "86273004",
+              "display": "Skin biopsy"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Skin biopsy showed orthokeratotic hyperkeratosis in the epidermis with areas of parakeratosis and, in the papillary dermis, there was an infiltrate of cells with eosinophilic cytoplasm and reniform nuclei that showed positive CD1a and S100 proteins on the immunohistochemistry and negative CD163."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "252416005",
+              "display": "Orthokeratotic hyperkeratosis"
+            }
+          ]
+        },
+        "valueString": "Orthokeratotic hyperkeratosis in the epidermis with areas of parakeratosis."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "106092009",
+              "display": "Eosinophilic cells"
+            }
+          ]
+        },
+        "valueString": "Infiltrate of cells with eosinophilic cytoplasm and reniform nuclei that showed positive CD1a and S100 proteins on the immunohistochemistry and negative CD163."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18629005",
+              "display": "Chemotherapy"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Induction treatment with prednisolone and vinblastine-based chemotherapy."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "36653000",
+              "display": "Partial regression of skin lesions"
+            }
+          ]
+        },
+        "valueString": "At six weeks of chemotherapy, there was a partial regression of the skin lesions and a resolution of the urothelium lesion in imaging exam."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18629005",
+              "display": "Chemotherapy"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Second round of chemotherapy with prednisolone and vinblastine."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "26962009",
+              "display": "Complete remission"
+            }
+          ]
+        },
+        "valueString": "Resolution of all the lesions following the second round of chemotherapy."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "266708006",
+              "display": "Maintenance chemotherapy"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Maintenance therapy consisting of administrating mercaptopurine daily and prednisolone/vinblastine every three weeks during 12 months."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "271737000",
+              "display": "Recurrence"
+            }
+          ]
+        },
+        "valueString": "Six months after the end of maintenance therapy the patient had a recurrence of the disease."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-5",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18629005",
+              "display": "Chemotherapy"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Second-line chemotherapy with clofarabine and cytosine arabinoside (ARA-C)."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-6",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "409586006",
+              "display": "Non-compliance with treatment"
+            }
+          ]
+        },
+        "valueString": "The patient did not comply with the treatment and the disease progressed."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-7",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "200285002",
+              "display": "Skin ulcer"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "As a result of skin ulceration, she developed skin and soft tissue infection that evolved into septic shock."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-8",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10001005",
+              "display": "Septic shock"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "The patient did not survive despite intensive care support."
+          }
+        ]
+      }
+    }
+  ]
+}

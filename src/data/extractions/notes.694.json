@@ -1,0 +1,302 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-example",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "12345"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Doe",
+            "given": [
+              "John"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2019-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-osteogenesis-imperfecta",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "941000119104",
+              "display": "Osteogenesis imperfecta type III (disorder)"
+            }
+          ],
+          "text": "Severe osteogenesis imperfecta"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "evidence": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "81254-4",
+                  "display": "Pathogenic variant in COL1A2 gene"
+                }
+              ]
+            },
+            "detail": [
+              {
+                "reference": "Observation/genetic-variant"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "Patient has triangular face, blue sclerae, and high-pitched voice."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-developmental-delay",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "34861009",
+              "display": "Developmental delay (disorder)"
+            }
+          ],
+          "text": "Developmental delay"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-osteotomies-rodding",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ],
+          "text": "Bilateral osteotomies and rodding"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274804009",
+              "display": "Osteotomy of femur"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274806006",
+              "display": "Osteotomy of tibia"
+            }
+          ],
+          "text": "Bilateral osteotomies and rodding of femurs and tibias"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-pamidronate",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308159",
+              "display": "Pamidronate"
+            }
+          ],
+          "text": "Pamidronate infusions"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 3,
+                "periodUnit": "mo"
+              }
+            },
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "47625008",
+                  "display": "Intravenous route"
+                }
+              ]
+            },
+            "doseAndRate": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                      "code": "ordered",
+                      "display": "Ordered"
+                    }
+                  ]
+                },
+                "doseQuantity": {
+                  "value": 30,
+                  "unit": "mg",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-genetic-variant",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81254-4",
+              "display": "Genetic variant assessment"
+            }
+          ],
+          "text": "Pathogenic c.902G>A variant in COL1A2"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "valueString": "Pathogenic c.902G>A variant in COL1A2 replacing glycine at position 301 with a glutamic acid"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-ongoing-care",
+        "status": "active",
+        "intent": "plan",
+        "title": "Ongoing care for osteogenesis imperfecta and developmental delay",
+        "description": "Follow-up appointments with appropriate healthcare specialists",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Follow-up with orthopedic specialist",
+              "status": "scheduled"
+            }
+          },
+          {
+            "detail": {
+              "description": "Follow-up with speech and language therapist",
+              "status": "scheduled"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

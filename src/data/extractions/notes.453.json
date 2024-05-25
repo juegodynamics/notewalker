@@ -1,0 +1,391 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Case1",
+        "name": [
+          {
+            "text": "Case 1"
+          }
+        ],
+        "gender": "male",
+        "age": {
+          "value": 11,
+          "unit": "years"
+        },
+        "species": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "446465000",
+              "display": "Canis lupus familiaris"
+            }
+          ]
+        },
+        "breed": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "34206005",
+              "display": "Border Collie"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "renal-mass",
+        "subject": {
+          "reference": "Patient/Case1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "127013003",
+              "display": "Renal mass"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "181414000",
+                "display": "Kidney"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Observation/ultrasonography"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ultrasonography",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "25045-6",
+              "display": "Ultrasonography"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Case1"
+        },
+        "valueString": "Large renal mass and metastasis towards the lungs"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "research-protocol",
+        "subject": {
+          "reference": "Patient/Case1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "430193006",
+              "display": "Research protocol"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "The patient was entered into a research protocol that involved high dose oral DHEA and ubiquinone. A rapid improvement in quality of life was observed within a few days of initiation of the protocol."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "generalized-inflammatory-condition",
+        "subject": {
+          "reference": "Patient/Case1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "271737000",
+              "display": "Generalized inflammatory condition"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "232208000",
+                "display": "Nasal passage structure"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "39937001",
+                "display": "Skin"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "81745001",
+                "display": "Eye"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "skin-lesions",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "416098002",
+              "display": "Skin lesion"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Case1"
+        },
+        "valueString": "Skin lesions ranged from nonpruritic maculopapular rash to urticaria, erythema nodosum, and purpura"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "oral-mucosa-inflammation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "67782005",
+              "display": "Inflammation of mucous membrane"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Case1"
+        },
+        "valueString": "Oral mucosa was inflamed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "uveitis",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "79987009",
+              "display": "Uveitis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Case1"
+        },
+        "valueString": "Prominent uveitis"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "zinc-supplementation",
+        "subject": {
+          "reference": "Patient/Case1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385800000",
+              "display": "Zinc supplementation"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Zinc supplementation did not help alleviate the inflammatory condition."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mevalonate-pathway-inhibition",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11823-4",
+              "display": "Study"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Case1"
+        },
+        "valueString": "Inhibition of the mevalonate pathway may have caused the autoinflammatory reaction observed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "geraniol-administration",
+        "subject": {
+          "reference": "Patient/Case1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225323000",
+              "display": "Administration of medication"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Administration of oral, encapsulated geraniol led to the rapid clearing of all lesions within 3.5 days."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "survival-duration",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "76435-7",
+              "display": "Survival duration"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Case1"
+        },
+        "valueQuantity": {
+          "value": 315,
+          "unit": "days"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "pulmonary-metastasis",
+        "subject": {
+          "reference": "Patient/Case1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "93880001",
+              "display": "Pulmonary metastasis"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Pulmonary metastasis was the cause of death."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "discharge",
+        "subject": {
+          "reference": "Patient/Case1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "308646001",
+              "display": "Discharge from hospital"
+            }
+          ]
+        },
+        "status": "completed",
+        "note": [
+          {
+            "text": "The patient is no longer under our care and has passed away. No further follow-up is required."
+          }
+        ]
+      }
+    }
+  ]
+}

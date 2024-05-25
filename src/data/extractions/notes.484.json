@@ -1,0 +1,268 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Patient Name]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1994",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealth.org",
+            "value": "[Medical Record Number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "reasonCode": [
+          {
+            "text": "Severe abdominal pain in the right upper quadrant"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[Medical Record Number]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "21522001",
+              "display": "Abdominal pain"
+            }
+          ],
+          "text": "Severe abdominal pain in the right upper quadrant"
+        },
+        "subject": {
+          "reference": "Patient/[Medical Record Number]"
+        },
+        "encounter": {
+          "reference": "Encounter/[Medical Record Number]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "174041007",
+              "display": "Laparoscopic cholecystectomy"
+            }
+          ],
+          "text": "Laparoscopic cholecystectomy"
+        },
+        "subject": {
+          "reference": "Patient/[Medical Record Number]"
+        },
+        "encounter": {
+          "reference": "Encounter/[Medical Record Number]"
+        },
+        "performedPeriod": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274022005",
+              "display": "Exploratory laparotomy"
+            }
+          ],
+          "text": "Mini midline laparotomy for reduction of internal hernia"
+        },
+        "subject": {
+          "reference": "Patient/[Medical Record Number]"
+        },
+        "encounter": {
+          "reference": "Encounter/[Medical Record Number]"
+        },
+        "performedPeriod": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "43193005",
+              "display": "Drainage procedure"
+            }
+          ],
+          "text": "Insertion of Blake drain 24 F into the pelvis"
+        },
+        "subject": {
+          "reference": "Patient/[Medical Record Number]"
+        },
+        "encounter": {
+          "reference": "Encounter/[Medical Record Number]"
+        },
+        "performedPeriod": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "258207006",
+              "display": "Chylous ascites"
+            }
+          ],
+          "text": "Chylous ascites post-cholecystectomy"
+        },
+        "subject": {
+          "reference": "Patient/[Medical Record Number]"
+        },
+        "encounter": {
+          "reference": "Encounter/[Medical Record Number]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Pain medication, [Medication Name], [Dosage]"
+        },
+        "subject": {
+          "reference": "Patient/[Medical Record Number]"
+        },
+        "authoredOn": "[Discharge Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Instructions",
+        "description": "Follow up with primary care physician and surgeon within a week from the date of discharge. Maintain a healthy lifestyle, including a weight loss plan if needed. Attend all scheduled follow-up visits.",
+        "subject": {
+          "reference": "Patient/[Medical Record Number]"
+        },
+        "period": {
+          "start": "[Discharge Date]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "description": "Follow up with primary care physician and surgeon within a week from the date of discharge."
+            }
+          },
+          {
+            "detail": {
+              "kind": "Diet",
+              "description": "Maintain a healthy lifestyle, including a weight loss plan if needed."
+            }
+          },
+          {
+            "detail": {
+              "kind": "Appointment",
+              "description": "Attend all scheduled follow-up visits."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

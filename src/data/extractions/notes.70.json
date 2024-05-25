@@ -1,0 +1,524 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "UKR29",
+        "name": [
+          {
+            "text": "UKR29"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32485007",
+                "display": "Hospital admission"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/UKR29"
+        },
+        "period": {
+          "start": "[date]",
+          "end": "[date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "20430005",
+              "display": "Hypospadias"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        },
+        "onsetAge": {
+          "value": 0.167,
+          "unit": "month",
+          "system": "http://unitsofmeasure.org",
+          "code": "mo"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27654006",
+              "display": "Cryptorchidism"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        },
+        "onsetAge": {
+          "value": 0.167,
+          "unit": "month",
+          "system": "http://unitsofmeasure.org",
+          "code": "mo"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest1",
+        "status": "completed",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "58150001",
+              "display": "Karyotyping"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest2",
+        "status": "completed",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "118673000",
+              "display": "Urological examination"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest3",
+        "status": "completed",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168731007",
+              "display": "Gonadal ultrasound"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest4",
+        "status": "completed",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168731007",
+              "display": "Pelvic ultrasound"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest5",
+        "status": "completed",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "113091000",
+              "display": "MRI investigation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest6",
+        "status": "completed",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "165865005",
+              "display": "Hormonal analysis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33762-6",
+              "display": "Testosterone"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        },
+        "valueQuantity": {
+          "value": "within normal ranges",
+          "unit": "testosterone levels"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "not-done",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical intervention"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        },
+        "note": [
+          {
+            "text": "Patient did not require any surgical intervention."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "status": "not-done",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18286008",
+              "display": "Medical intervention"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        },
+        "note": [
+          {
+            "text": "Patient did not require any medical intervention."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "171207006",
+              "display": "Testosterone synthesis stimulation test"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Communication",
+        "id": "communication1",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/UKR29"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/communication-category",
+                "code": "instruction",
+                "display": "Patient education"
+              }
+            ]
+          }
+        ],
+        "medium": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationMode",
+                "code": "face",
+                "display": "Face-to-face"
+              }
+            ]
+          }
+        ],
+        "payload": [
+          {
+            "contentString": "Patient and parents were educated on the hypospadias and cryptorchidism condition and advised to keep regular check-ups with a specialist."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up care plan",
+        "description": "Patient and parents were advised to follow up with their primary care physician and/or specialist provider in 6 months.",
+        "subject": {
+          "reference": "Patient/UKR29"
+        },
+        "period": {
+          "start": "[date]",
+          "end": "[date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "84387000",
+              "display": "Normal finding"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        },
+        "abatementString": "Patient's psychological development was found to be normal. No signs of Wilms’ Tumour or renal anomalies were discovered."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "55423-8",
+              "display": "Psychological development"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        },
+        "valueString": "Normal"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "32434-4",
+              "display": "Wilms' Tumour"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        },
+        "valueString": "No signs"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "32435-1",
+              "display": "Renal anomalies"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        },
+        "valueString": "No signs"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition4",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "162613003",
+              "display": "Discharge condition"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/UKR29"
+        },
+        "abatementString": "The patient was discharged and able to ambulate and care for himself independently without any complications."
+      }
+    }
+  ]
+}

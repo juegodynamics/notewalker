@@ -1,0 +1,201 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient1",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1997"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "446358003",
+              "display": "Exercise-induced syncope"
+            }
+          ],
+          "text": "Exercise-related syncope"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "onsetDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "899090000",
+              "display": "Anomalous origin of the right coronary artery (disorder)"
+            }
+          ],
+          "text": "Anomalous origin of the RCA from the left sinus of Valsalva"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "onsetDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ],
+          "text": "Surgical treatment for anomalous RCA"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedDateTime": "[redacted]",
+        "reasonReference": [
+          {
+            "reference": "Condition/condition2"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59258-4",
+              "display": "Fractional flow reserve"
+            }
+          ],
+          "text": "CT-based fractional flow reserve (FFRCT) in the RCA"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectiveDateTime": "[redacted]",
+        "valueQuantity": {
+          "value": 0.77,
+          "unit": "ratio",
+          "system": "http://unitsofmeasure.org",
+          "code": "{ratio}"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "A",
+                "display": "Abnormal"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

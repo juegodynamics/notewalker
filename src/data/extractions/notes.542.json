@@ -1,0 +1,567 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2011-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "19090005",
+              "display": "Insulinoma"
+            }
+          ],
+          "text": "Insulinoma"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "34486009",
+              "display": "Hyperparathyroidism"
+            }
+          ],
+          "text": "Hyperparathyroidism"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Enucleation of pancreatic tumor"
+            }
+          ],
+          "text": "Enucleation of pancreatic tumor"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "15074-8",
+              "display": "Glucose [Mass/volume] in Blood"
+            }
+          ],
+          "text": "Blood Glucose Level"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueQuantity": {
+          "value": 60,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 70,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 200,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2731-8",
+              "display": "Parathyroid hormone.Intact [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Intact Parathyroid Hormone Level"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueQuantity": {
+          "value": 66,
+          "unit": "pg/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "pg/mL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 10,
+              "unit": "pg/mL",
+              "system": "http://unitsofmeasure.org",
+              "code": "pg/mL"
+            },
+            "high": {
+              "value": 65,
+              "unit": "pg/mL",
+              "system": "http://unitsofmeasure.org",
+              "code": "pg/mL"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2000-8",
+              "display": "Calcium [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Adjusted Serum Calcium Level"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueQuantity": {
+          "value": 10.3,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 8.7,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 9.9,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medadmin-1",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "313982",
+              "display": "Propofol"
+            }
+          ],
+          "text": "Propofol"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medadmin-2",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "4337",
+              "display": "Fentanyl"
+            }
+          ],
+          "text": "Fentanyl"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medadmin-3",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "11588",
+              "display": "Remifentanil"
+            }
+          ],
+          "text": "Remifentanil"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medadmin-4",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "2586",
+              "display": "Rocuronium"
+            }
+          ],
+          "text": "Rocuronium"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medadmin-5",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "6875",
+              "display": "Sevoflurane"
+            }
+          ],
+          "text": "Sevoflurane"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medadmin-6",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "7052",
+              "display": "Levobupivacaine"
+            }
+          ],
+          "text": "Levobupivacaine"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40521001",
+              "display": "Insertion of epidural catheter"
+            }
+          ],
+          "text": "Insertion of epidural catheter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "2510002",
+              "display": "Insertion of arterial catheter"
+            }
+          ],
+          "text": "Insertion of arterial catheter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168537006",
+              "display": "Continuous glucose monitoring"
+            }
+          ],
+          "text": "Continuous glucose monitoring"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "location": {
+          "reference": "BodyStructure/upper-arm"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "id": "location-1",
+        "name": "General Surgery Ward"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "BodyStructure",
+        "id": "upper-arm",
+        "location": {
+          "text": "Upper Arm"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-5",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Intravenous glucose administration"
+            }
+          ],
+          "text": "Intravenous glucose administration"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Care plan for post-discharge instructions.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Take all prescribed medications as directed by the physician."
+            }
+          },
+          {
+            "detail": {
+              "description": "Follow-up with your primary care provider as recommended."
+            }
+          },
+          {
+            "detail": {
+              "description": "Monitor blood glucose levels as directed by the physician."
+            }
+          },
+          {
+            "detail": {
+              "description": "Contact the physician immediately if you experience any symptoms such as dizziness, confusion, or seizures."
+            }
+          },
+          {
+            "detail": {
+              "description": "Follow any dietary restrictions or recommendations provided by the physician."
+            }
+          },
+          {
+            "detail": {
+              "description": "Avoid strenuous activities for at least one week following discharge."
+            }
+          },
+          {
+            "detail": {
+              "description": "If you have any questions or concerns, please contact the physician."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

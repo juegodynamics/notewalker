@@ -1,0 +1,156 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[insert name]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[insert number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[insert date]",
+          "end": "[insert date]"
+        },
+        "reasonCode": [
+          {
+            "text": "Left sinus of Valsalva aneurysm"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Left sinus of Valsalva aneurysm"
+        },
+        "subject": {
+          "reference": "Patient/[insert number]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Nifedipine"
+        },
+        "subject": {
+          "reference": "Patient/[insert number]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "oral"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Metoprolol"
+        },
+        "subject": {
+          "reference": "Patient/[insert number]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "oral"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Surgical repair of left sinus of Valsalva aneurysm"
+        },
+        "subject": {
+          "reference": "Patient/[insert number]"
+        },
+        "performedPeriod": {
+          "start": "[insert date]",
+          "end": "[insert date]"
+        },
+        "outcome": {
+          "text": "The perforation was sutured and repaired, and the left aortic valve was lengthened with pericardial patches."
+        },
+        "followUp": [
+          {
+            "text": "Three weeks after surgery, a follow-up echocardiogram demonstrated the cessation of the abnormal blood flow in the left sinus of Valsalva."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up visits",
+        "description": "The patient is scheduled for follow-up visits with his primary care physician and cardiologist in 2 weeks and 1 month, respectively.",
+        "subject": {
+          "reference": "Patient/[insert number]"
+        },
+        "period": {
+          "start": "[insert date]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Follow-up visit with primary care physician in 2 weeks"
+            }
+          },
+          {
+            "detail": {
+              "description": "Follow-up visit with cardiologist in 1 month"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

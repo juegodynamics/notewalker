@@ -1,0 +1,214 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient1",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[REDACTED]"
+          }
+        ],
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1968-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254935002",
+              "display": "Glomus tumor"
+            }
+          ],
+          "text": "Glomus tumor"
+        },
+        "onsetDateTime": "2013-01-01",
+        "abatementDateTime": "2023-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "230690007",
+              "display": "Excision of glomus tumor"
+            }
+          ],
+          "text": "Surgical intervention for glomus tumor"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-outcome",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy1",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "description": "X-ray study of left little finger",
+        "series": [
+          {
+            "uid": "1.2.840.10008.1.2.1.1",
+            "number": 1,
+            "modality": {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "DX",
+              "display": "Digital radiography"
+            },
+            "description": "X-ray left little finger",
+            "numberOfInstances": 2
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "docref1",
+        "status": "current",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "RGlzY2hhcmdlIFN1bW1hcnk6ClBhdGllbnQgTmFtZTogW1JFREFDVEVEXQpBZ2U6IDU0IHllYXJzClNleDogRmVtYWxlCk1lZGljYWwgUmVjb3JkIE51bWJlcjogW1JFREFDVEVEXQpEYXRlIG9mIEFkbWlzc2lvbjogW1JFREFDVEVEXQpEYXRlIG9mIERpc2NoYXJnZTogW1JFREFDVEVEXQoKS
+              G9zcGl0YWwgQ291cnNlOgoKW1JFREFDVEVEXSB3YXMgYWRtaXR0ZWQgdG8gb3VyIGRlcGFydG1lbnQgd2l0aCBhIHRlbi15ZWFyIGhpc3Rvcnkgb2YgcHJvZ3Jlc3NpdmUgcGFpbiwgY29sZCBzZW5zaXRpdml0eSwgYW5kIHNldmVyZSB0ZW5kZXJ...
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan1",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Follow up with primary care doctor for any further concerns.",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "description": "Follow-up appointment with primary care doctor"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

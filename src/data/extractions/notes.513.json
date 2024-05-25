@@ -1,0 +1,335 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1969-01-01",
+        "id": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond1",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "109838007",
+              "display": "Intermittent vaginal bleeding"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond2",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363346000",
+              "display": "Malignant tumor of vagina"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "76784001",
+                "display": "Vaginal wall"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc1",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "52734007",
+              "display": "Excision of lesion"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "76784001",
+                "display": "Vaginal wall"
+              }
+            ]
+          }
+        ],
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "441655000",
+              "display": "Clear cell carcinoma"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs1",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33717-0",
+              "display": "Immunohistochemistry result"
+            }
+          ]
+        },
+        "valueString": "Positive CD10, PAX-8, and CA-IX; Negative CK7"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs2",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33719-6",
+              "display": "Radiology study"
+            }
+          ]
+        },
+        "valueString": "Left renal mass, bilateral adrenal masses, and enlarged retroperitoneal lymph nodes"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc2",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1747002",
+              "display": "Radical nephrectomy"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "181422007",
+                "display": "Left kidney"
+              }
+            ]
+          }
+        ],
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "441655000",
+              "display": "Clear cell carcinoma"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc3",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "119941000119106",
+              "display": "Adrenalectomy"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "23451007",
+                "display": "Adrenal gland"
+              }
+            ]
+          }
+        ],
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "441655000",
+              "display": "Clear cell carcinoma"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med1",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "60846",
+              "display": "Sunitinib 50 mg"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "50 mg daily"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs3",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33716-2",
+              "display": "Imaging result"
+            }
+          ]
+        },
+        "valueString": "Multiple pulmonary nodules and right adrenal nodule showed improvement after targeted therapy"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs4",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33717-0",
+              "display": "Pathology report"
+            }
+          ]
+        },
+        "valueString": "CCRCC with extensive rhabdoid differentiation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "cp1",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up plan",
+        "description": "Regular follow-up visits with oncologist for further management and evaluation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "enc1",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "371828006",
+                "display": "Discharge encounter"
+              }
+            ]
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "441655000",
+                "display": "Clear cell carcinoma"
+              }
+            ]
+          }
+        ],
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "306689006",
+                "display": "Discharged to outpatient care"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

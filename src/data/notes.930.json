@@ -1,0 +1,248 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:[REDACTED]",
+            "value": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "Suicide attempt by hanging"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "code": {
+          "text": "Suicide attempt by hanging"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Cardiac massage"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "neurology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Glasgow Coma Score"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "valueQuantity": {
+          "value": 3,
+          "unit": "score",
+          "system": "http://unitsofmeasure.org",
+          "code": "{score}"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy1",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "started": "[REDACTED]",
+        "modality": {
+          "system": "http://dicom.nema.org/resources/ontology/DCM",
+          "code": "CT"
+        },
+        "description": "Brain computed tomography (CT) showed bilateral basal ganglia hypodensity with related decreased gray-white differentiation due to edema."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy2",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "started": "[REDACTED]",
+        "modality": {
+          "system": "http://dicom.nema.org/resources/ontology/DCM",
+          "code": "CT"
+        },
+        "description": "Unenhanced CT showed progression of the brain edema with collapse of the sylvian fissures, basal cisterns, and cortical sulci, along with prominent pseudo-subarachnoid hemorrhage."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "neurology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Evoked potential testing"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "valueCodeableConcept": {
+          "text": "brain death"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "code": {
+          "text": "Brain death"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Aggressive resuscitative measures"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "dischargesummary",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge Summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "date": "[REDACTED]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary\n\nPatient Name: [REDACTED]\n\nMedical Record Number: [REDACTED]\n\nDate of Admission: [REDACTED]\n\nDate of Discharge: [REDACTED]\n\nAdmitting Diagnosis: Suicide attempt by hanging\n\nHospital Course: The patient was admitted to the intensive care unit after being found in cardiac arrest following a suicide attempt by hanging. Cardiac massage was performed during transfer for 40 minutes. The patient was comatose upon arrival with a Glasgow score of 3/15. Brain computed tomography (CT) was performed after five hours which showed bilateral basal ganglia hypodensity with related decreased gray-white differentiation due to edema. The unenhanced CT after 30 hours showed progression of the brain edema with collapse of the sylvian fissures, basal cisterns, and cortical sulci, along with prominent pseudo-subarachnoid hemorrhage. Subsequent evoked potential testing confirmed brain death after 48 hours. \n\nHospital Course Summary: The patient was admitted to the intensive care unit following a suicide attempt by hanging that resulted in cardiac arrest. Despite attempts at resuscitation, the patient remained comatose with evidence of severe brain injury on imaging. Further neurological testing confirmed brain death, and the patient was subsequently discharged from the hospital. \n\nCourse of Treatment: The patient received aggressive resuscitative measures upon admission, including cardiac massage. However, given the extent of the brain injury, no further interventions were pursued.\n\nFollow-Up Plan: There is no follow-up required as the patient is deceased. \n\nPrimary Care Provider: None indicated.\n\nCommunication with Consulting Physicians: None indicated.\n\nDischarge Medications: None indicated.\n\nDischarge Condition: The patient expired. \n\nDischarge Disposition: The patient was transferred to the morgue for further evaluation. \n\nAttending Provider: [REDACTED]\n\nSummary: The patient was admitted to the hospital following a suicide attempt by hanging that resulted in severe brain injury and subsequent brain death. Despite aggressive resuscitative measures upon admission, no further interventions were pursued given the extent of the injury. The patient subsequently expired, and arrangements were made for evaluation in the morgue."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

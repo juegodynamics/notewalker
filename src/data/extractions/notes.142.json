@@ -1,0 +1,153 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "1958-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428452005",
+              "display": "Peri-implantitis"
+            }
+          ],
+          "text": "Peri-implantitis lesion"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "23415002",
+                "display": "Mandible"
+              }
+            ],
+            "text": "Mandibular left distal implant"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "399208008",
+              "display": "Surgical debridement of wound"
+            }
+          ],
+          "text": "Surgical reconstructive therapy"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "23415002",
+                "display": "Mandible"
+              }
+            ],
+            "text": "Mandibular left distal implant"
+          }
+        ],
+        "performedPeriod": {
+          "start": "2023-01-01",
+          "end": "2023-01-01"
+        },
+        "complication": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "230265002",
+                "display": "Subcutaneous emphysema"
+              }
+            ],
+            "text": "Subcutaneous emphysema"
+          }
+        ],
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385669000",
+              "display": "Resolved"
+            }
+          ],
+          "text": "Swelling completely resolved without any complications"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "123456",
+              "display": "Antibiotics"
+            }
+          ],
+          "text": "Antibiotics"
+        },
+        "dosageInstruction": [
+          {
+            "text": "As directed to prevent potential aerobic and anaerobic polymicrobial infection"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Patient was advised to avoid coughing, sneezing, and nose-blowing, and to follow up with the clinician for regular check-ups.",
+        "activity": [
+          {
+            "detail": {
+              "description": "Avoid coughing, sneezing, and nose-blowing.",
+              "status": "completed"
+            }
+          },
+          {
+            "detail": {
+              "description": "Follow up with the clinician for regular check-ups to monitor swelling reduction and resolution.",
+              "status": "completed"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

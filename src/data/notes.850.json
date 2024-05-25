@@ -1,0 +1,174 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[XXX]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1953-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[XXX]",
+          "end": "[XXX]"
+        },
+        "subject": {
+          "reference": "Patient/[XXX]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "441867007",
+              "display": "Neoplasm of uncertain or unknown behavior of gastrointestinal tract"
+            }
+          ],
+          "text": "Cecal schwannoma with a reactive lymph node"
+        },
+        "subject": {
+          "reference": "Patient/[XXX]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Exploratory surgery"
+            }
+          ],
+          "text": "Exploratory surgery and wedge resection including appendix"
+        },
+        "subject": {
+          "reference": "Patient/[XXX]"
+        },
+        "performedPeriod": {
+          "start": "[XXX]",
+          "end": "[XXX]"
+        },
+        "outcome": {
+          "text": "Benign spindle cell tumor diagnosed as cecal schwannoma with a reactive lymph node"
+        },
+        "followUp": [
+          {
+            "text": "Follow-up with regular screenings and check-ups"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26436-6",
+              "display": "CT of Abdomen"
+            }
+          ],
+          "text": "Abdominal CT scan"
+        },
+        "subject": {
+          "reference": "Patient/[XXX]"
+        },
+        "effectiveDateTime": "[XXX]",
+        "valueString": "Well-circumscribed hypervascular anterior cecal wall mass with no metastases or other distant lesions"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "22637-3",
+              "display": "Pathology report"
+            }
+          ],
+          "text": "Final pathology report"
+        },
+        "subject": {
+          "reference": "Patient/[XXX]"
+        },
+        "effectiveDateTime": "[XXX]",
+        "valueString": "Benign spindle cell tumor diagnosed as cecal schwannoma with a reactive lymph node"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "222354",
+              "display": "Pain killers"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[XXX]"
+        },
+        "authoredOn": "[XXX]"
+      }
+    }
+  ]
+}

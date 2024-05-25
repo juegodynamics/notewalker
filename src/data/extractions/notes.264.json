@@ -1,0 +1,245 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "gender": "[Gender]",
+        "birthDate": "[BirthDate]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "2",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "reasonCode": [
+          {
+            "text": "Ski injury resulting in an effusion of the knee and severe posterior knee pain."
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/3"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Avulsion fractures of the medial meniscus and PCL along with avulsed fragments belonging to the PCL and lateral meniscus."
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "onsetDateTime": "[Admission Date]",
+        "abatementDateTime": "[Discharge Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "27599",
+              "display": "Unlisted procedure, femur or knee"
+            }
+          ],
+          "text": "Temporary fixation of the medial meniscus's avulsion fracture with Kirschner wires."
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "performedPeriod": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "followUp": [
+          {
+            "text": "Post-operative X-rays showed fracture healing, and weight-bearing was resumed in the sixth week after the surgery. The patient reported progress in visual analog scale score and Lysholm score in follow-ups."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "5",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "27599",
+              "display": "Unlisted procedure, femur or knee"
+            }
+          ],
+          "text": "Permanent fixation of the medial meniscus's avulsion fracture with two headless 3.0 mm compression screws."
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "performedPeriod": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "6",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "27599",
+              "display": "Unlisted procedure, femur or knee"
+            }
+          ],
+          "text": "PCL avulsion fracture fixed with a 4.0 mm partially threaded, cannulated, cancellous screw with a washer."
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "performedPeriod": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "7",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Progress note"
+            }
+          ],
+          "text": "Condition on Discharge"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "[Discharge Date]",
+        "valueString": "At the time of discharge, the patient was asymptomatic and had achieved full weight-bearing and ROM without pain in the third month after the operation."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "8",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34105-7",
+              "display": "Hospital discharge diagnosis"
+            }
+          ],
+          "text": "Final Diagnosis"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "[Discharge Date]",
+        "valueString": "Avulsion fractures of the medial meniscus and PCL along with avulsed fragments belonging to the PCL and lateral meniscus."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "9",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Recommendations",
+        "description": "The patient was advised to continue weight-bearing as tolerated and to avoid any activities that might result in knee injury. The patient was also advised to follow up with the orthopedic surgeon for further evaluation at regular intervals.",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "period": {
+          "start": "[Discharge Date]"
+        }
+      }
+    }
+  ]
+}

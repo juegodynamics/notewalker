@@ -1,0 +1,315 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[Redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "441993005",
+              "display": "Cap polyposis"
+            }
+          ],
+          "text": "Cap polyposis"
+        },
+        "subject": {
+          "reference": "Patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Laparoscopic Low Anterior Resection of Rectum and Sigmoid Colon"
+            }
+          ],
+          "text": "Laparoscopic low anterior resection of the rectum and the sigmoid colon with diverting ileostomy"
+        },
+        "subject": {
+          "reference": "Patient"
+        },
+        "performedDateTime": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Bilateral leg edema"
+        },
+        "subject": {
+          "reference": "Patient"
+        },
+        "valueString": "Bilateral leg edema"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26436-6",
+              "display": "Colonoscopic findings"
+            }
+          ],
+          "text": "Colonoscopic findings"
+        },
+        "subject": {
+          "reference": "Patient"
+        },
+        "valueString": "erythematous polypoid lesions, hyperplastic polyps, and tubular adenomas with low-grade atypia"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26435-8",
+              "display": "Gastroscopy findings"
+            }
+          ],
+          "text": "Gastroscopy findings"
+        },
+        "subject": {
+          "reference": "Patient"
+        },
+        "valueString": "erythematous polypoid lesions, hyperplastic polyps, and tubular adenomas with low-grade atypia"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI) [Ratio]"
+            }
+          ],
+          "text": "Thick subserosal layer with moderate fibrosis and edematous change"
+        },
+        "subject": {
+          "reference": "Patient"
+        },
+        "valueString": "Thick subserosal layer with moderate fibrosis and edematous change"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation5",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33717-0",
+              "display": "Pathology report"
+            }
+          ],
+          "text": "Pathology report"
+        },
+        "subject": {
+          "reference": "Patient"
+        },
+        "valueString": "More than 100 polyps consisting of elongated and mild adenomatous glands with a thick layer of subserosal tissue"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation6",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2885-2",
+              "display": "Serum total protein"
+            }
+          ],
+          "text": "Serum total protein level"
+        },
+        "subject": {
+          "reference": "Patient"
+        },
+        "valueString": "Normal levels of serum total protein and albumin after surgery"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation7",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1751-7",
+              "display": "Albumin [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Serum albumin level"
+        },
+        "subject": {
+          "reference": "Patient"
+        },
+        "valueString": "Normal levels of serum total protein and albumin after surgery"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Colonoscopy"
+            }
+          ],
+          "text": "Colonoscopy"
+        },
+        "subject": {
+          "reference": "Patient"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Gastroscopy"
+            }
+          ],
+          "text": "Gastroscopy"
+        },
+        "subject": {
+          "reference": "Patient"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation8",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "46264-8",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Condition"
+        },
+        "subject": {
+          "reference": "Patient"
+        },
+        "valueString": "The patient was discharged in stable condition."
+      }
+    }
+  ]
+}

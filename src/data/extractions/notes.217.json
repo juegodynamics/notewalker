@@ -1,0 +1,177 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1977-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55342001",
+              "display": "Aggressive osteoblastoma"
+            }
+          ],
+          "text": "Aggressive osteoblastoma (Enneking Type III)"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "305351004",
+                "display": "Discharge summary"
+              }
+            ],
+            "text": "Discharge Summary"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Wide resection"
+            }
+          ],
+          "text": "Complete wide resection for aggressive osteoblastoma (Enneking Type III)"
+        },
+        "status": "completed",
+        "outcome": {
+          "text": "Successful, no complications noted"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Discharge condition"
+            }
+          ],
+          "text": "Discharge Condition"
+        },
+        "valueString": "Stable"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "The patient should follow-up with the oncologist in three months for further evaluation and management. The patient should also discuss any concerns related to her condition, including pain management, with the physician."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner-1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner/practitioner-1"
+            }
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "185349003",
+                "display": "Follow-up encounter"
+              }
+            ],
+            "text": "Follow-up Visit"
+          }
+        ],
+        "period": {
+          "start": "[REDACTED]"
+        }
+      }
+    }
+  ]
+}

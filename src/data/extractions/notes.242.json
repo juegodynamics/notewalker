@@ -1,0 +1,249 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-xy",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "12345"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "XY",
+            "given": [
+              "Patient"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1979-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-acute-liver-failure",
+        "subject": {
+          "reference": "Patient/patient-xy"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "32822007",
+              "display": "Acute liver failure"
+            }
+          ],
+          "text": "Acute liver failure"
+        },
+        "onsetDateTime": "2023-01-01",
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Observation/observation-vomiting-abd-pain"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-vomiting-abd-pain",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "symptom",
+                "display": "Symptom"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422400008",
+              "display": "Vomiting"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "21522001",
+              "display": "Abdominal pain"
+            }
+          ],
+          "text": "Vomiting and abdominal pain"
+        },
+        "subject": {
+          "reference": "Patient/patient-xy"
+        },
+        "effectiveDateTime": "2023-01-01T08:00:00Z",
+        "valueString": "Patient presented with vomiting and abdominal pain following mushroom consumption"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-orthotopic-liver-transplant",
+        "subject": {
+          "reference": "Patient/patient-xy"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "367336001",
+              "display": "Orthotopic liver transplant"
+            }
+          ],
+          "text": "Orthotopic liver transplant"
+        },
+        "performedPeriod": {
+          "start": "2023-01-02T09:00:00Z",
+          "end": "2023-01-02T18:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-skin-necrosis",
+        "subject": {
+          "reference": "Patient/patient-xy"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128599002",
+              "display": "Skin necrosis"
+            }
+          ],
+          "text": "Skin necrosis"
+        },
+        "onsetDateTime": "2023-01-03"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-sepsis",
+        "subject": {
+          "reference": "Patient/patient-xy"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "91302008",
+              "display": "Sepsis"
+            }
+          ],
+          "text": "Sepsis"
+        },
+        "onsetDateTime": "2023-01-03"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-avn",
+        "subject": {
+          "reference": "Patient/patient-xy"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10596007",
+              "display": "Avascular necrosis of bone"
+            }
+          ],
+          "text": "Avascular necrosis of bone"
+        },
+        "onsetDateTime": "2023-01-04"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-bilateral-hip-replacement",
+        "subject": {
+          "reference": "Patient/patient-xy"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "302210001",
+              "display": "Bilateral hip replacement"
+            }
+          ],
+          "text": "Bilateral total hip replacements"
+        },
+        "performedPeriod": {
+          "start": "2023-01-05T07:00:00Z",
+          "end": "2023-01-05T18:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-rehabilitative-physiotherapy",
+        "subject": {
+          "reference": "Patient/patient-xy"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000124100",
+              "display": "Rehabilitative physiotherapy"
+            }
+          ],
+          "text": "Rehabilitative physiotherapy"
+        },
+        "performedPeriod": {
+          "start": "2023-01-06T09:00:00Z",
+          "end": "2023-01-06T17:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-discharge",
+        "subject": {
+          "reference": "Patient/patient-xy"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "306689006",
+              "display": "Discharge from hospital"
+            }
+          ],
+          "text": "Patient discharged"
+        },
+        "performedPeriod": {
+          "start": "2023-01-07T08:00:00Z",
+          "end": "2023-01-07T10:00:00Z"
+        }
+      }
+    }
+  ]
+}

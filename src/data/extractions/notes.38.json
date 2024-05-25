@@ -1,0 +1,354 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "Japanese woman"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1982-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "period": {
+          "start": "[DATE]",
+          "end": "[DATE]"
+        },
+        "reasonCode": [
+          {
+            "text": "Bilateral groin pain and right buttock pain"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/osteonecrosis"
+            },
+            "rank": 1
+          },
+          {
+            "condition": {
+              "reference": "Condition/vitamin-d-deficiency"
+            },
+            "rank": 2
+          }
+        ],
+        "patient": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "osteonecrosis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Bilateral osteonecrosis of the femoral head"
+        },
+        "stage": [
+          {
+            "summary": {
+              "text": "Stage 1 (ARCO classification)"
+            }
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "[DATE]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "vitamin-d-deficiency",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Vitamin D deficiency"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "[DATE]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "iron-deficiency-anemia",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Iron-deficiency anemia"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[DATE]",
+        "valueString": "Diagnosed 2 years earlier"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "surgery-1",
+        "status": "completed",
+        "code": {
+          "text": "Surgery with the use of sliding hip screws and femoral head decompression"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[DATE]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-1",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Eldecalcitol"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "authoredOn": "[DATE]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "med-2",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Teriparatide acetate"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "authoredOn": "[DATE]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dexavalues",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "38269-7",
+              "display": "Bone density"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[DATE]",
+        "valueString": "Low DEXA values in both femoral necks"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "tracp-5b",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "TRACP-5b level"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[DATE]",
+        "valueString": "Increased"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "p1np",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Total P1NP"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[DATE]",
+        "valueString": "Decreased"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "radiograph-1",
+        "status": "completed",
+        "code": {
+          "text": "Standard radiographs of both hips"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[DATE]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "mri-1",
+        "status": "completed",
+        "code": {
+          "text": "MRI scans of both hips"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[DATE]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "joa-hip-score",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "JOA hip score"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[DATE]",
+        "valueQuantity": {
+          "value": 34,
+          "unit": "points"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "joa-hip-score-post-surgery",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "JOA hip score post-surgery"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[DATE]",
+        "valueQuantity": {
+          "value": 90,
+          "unit": "points"
+        }
+      }
+    }
+  ]
+}

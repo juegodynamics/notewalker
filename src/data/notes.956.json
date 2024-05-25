@@ -1,0 +1,223 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [{
+          "text": "[REDACTED]"
+        }],
+        "identifier": [{
+          "system": "http://hospital.smarthealthit.org",
+          "value": "[REDACTED]"
+        }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "identifier": [{
+          "system": "http://hospital.smarthealthit.org",
+          "value": "[REDACTED]"
+        }],
+        "status": "finished",
+        "type": [{
+          "coding": [{
+            "system": "http://snomed.info/sct",
+            "code": "183452005",
+            "display": "Hospital admission"
+          }]
+        }],
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [{
+            "system": "http://snomed.info/sct",
+            "code": "129103003",
+            "display": "Mass of parotid gland"
+          }],
+          "text": "Painful mass in the right parotid gland"
+        },
+        "clinicalStatus": {
+          "coding": [{
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active",
+            "display": "Active"
+          }]
+        },
+        "verificationStatus": {
+          "coding": [{
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed",
+            "display": "Confirmed"
+          }]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [{
+            "system": "http://snomed.info/sct",
+            "code": "162550004",
+            "display": "Facial nerve palsy"
+          }],
+          "text": "Ipsilateral facial nerve palsy"
+        },
+        "clinicalStatus": {
+          "coding": [{
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "resolved",
+            "display": "Resolved"
+          }]
+        },
+        "verificationStatus": {
+          "coding": [{
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed",
+            "display": "Confirmed"
+          }]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [{
+            "system": "http://snomed.info/sct",
+            "code": "254632001",
+            "display": "Oncocytoma of salivary gland"
+          }],
+          "text": "Oncocytoma of the parotid gland"
+        },
+        "clinicalStatus": {
+          "coding": [{
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "resolved",
+            "display": "Resolved"
+          }]
+        },
+        "verificationStatus": {
+          "coding": [{
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed",
+            "display": "Confirmed"
+          }]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [{
+            "system": "http://snomed.info/sct",
+            "code": "10765007",
+            "display": "Total parotidectomy"
+          }],
+          "text": "Total parotidectomy and reconstruction of the facial nerve"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "outcome": {
+          "coding": [{
+            "system": "http://snomed.info/sct",
+            "code": "385669000",
+            "display": "Successful"
+          }]
+        },
+        "followUp": [{
+          "text": "The patient had a slightly weakened nasalis muscle on the affected side; however, it completely recovered at 2 months after surgery. No recurrence was observed during the 18-month follow-up period."
+        }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [{
+            "system": "http://loinc.org",
+            "code": "11526-1",
+            "display": "Discharge condition"
+          }],
+          "text": "Discharge Condition"
+        },
+        "valueString": "The patient was discharged in stable condition with instructions for follow-up with an otolaryngologist and periodic imaging studies."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Plan",
+        "description": "The patient was advised to follow-up with an otolaryngologist and undergo periodic imaging studies to monitor the parotid gland. They were also instructed to report any unusual symptoms immediately."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "status": "not-taken",
+        "note": [{
+          "text": "No discharge medications were prescribed."
+        }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "type": {
+          "coding": [{
+            "system": "http://loinc.org",
+            "code": "18842-5",
+            "display": "Discharge instructions"
+          }],
+          "text": "Discharge Instructions"
+        },
+        "content": [{
+          "attachment": {
+            "contentType": "text/plain",
+            "data": "The patient was instructed to rest at home and avoid strenuous activities for a few days after discharge. They were also advised to follow a healthy diet and seek medical attention if any new symptoms occur."
+          }
+        }]
+      }
+    }
+  ]
+}

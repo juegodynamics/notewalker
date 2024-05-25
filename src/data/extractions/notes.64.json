@@ -1,0 +1,192 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "animal": {
+          "species": {
+            "text": "Bovine"
+          },
+          "breed": {
+            "text": "Brown"
+          },
+          "genderStatus": {
+            "text": "Female"
+          }
+        },
+        "birthDate": "2020-05-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "123456",
+              "display": "Bovine viral diarrhea virus persistent infection (BVDV-PI)"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2021-04-12"
+        },
+        "location": [
+          {
+            "location": {
+              "display": "Veterinary Hospital of the Department of Veterinary Medicine of the University of Bari, Italy"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ],
+          "text": "Hyperthermia"
+        },
+        "valueQuantity": {
+          "value": 39.8,
+          "unit": "°C",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        },
+        "effectiveDateTime": "2021-04-14"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LP14209-3",
+              "display": "Bovine viral diarrhea virus"
+            }
+          ]
+        },
+        "valueString": "Positive",
+        "specimen": {
+          "display": "Nasal swabs, fecal swabs, and EDTA-treated blood"
+        },
+        "effectiveDateTime": "2021-04-12"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LP14209-3",
+              "display": "Bovine coronavirus"
+            }
+          ]
+        },
+        "valueString": "Positive",
+        "specimen": {
+          "display": "Nasal swabs, fecal swabs, and EDTA-treated blood"
+        },
+        "effectiveDateTime": "2021-04-12"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LP14209-3",
+              "display": "Bovine viral diarrhea virus antibodies"
+            }
+          ]
+        },
+        "valueString": "Detected",
+        "specimen": {
+          "display": "Serum samples"
+        },
+        "effectiveDateTime": "2021-04-12"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108241001",
+              "display": "Specimen collection"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2021-04-12",
+          "end": "2021-06-12"
+        },
+        "reasonCode": [
+          {
+            "text": "Monitor health status and assess presence of concomitant virological/bacteriological infections"
+          }
+        ]
+      }
+    }
+  ]
+}

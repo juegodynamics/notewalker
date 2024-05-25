@@ -1,0 +1,153 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "[Calculated Date from Age 31]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "35917007",
+              "display": "Renal cell carcinoma"
+            }
+          ],
+          "text": "Renal cell carcinoma associated with Xp11.2 translocations/TFE3 gene fusions"
+        },
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Radical resection of right renal carcinoma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "performedPeriod": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385669000",
+              "display": "Successful"
+            }
+          ]
+        },
+        "followUp": [
+          {
+            "text": "A follow-up examination one month after the operation showed no recurrence."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up and Monitoring Plan",
+        "description": "The patient will be monitored for any signs of recurrence of renal cell carcinoma. Further follow-up and imaging studies will be recommended as necessary.",
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "scheduled",
+              "description": "Attend all scheduled follow-up appointments and imaging studies."
+            }
+          },
+          {
+            "detail": {
+              "status": "scheduled",
+              "description": "Continue hemodialysis without any changes."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

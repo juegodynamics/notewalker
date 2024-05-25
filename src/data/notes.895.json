@@ -1,0 +1,217 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2020-04-15" // Assuming the birthdate calculated from the age provided
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "Intraabdominal Cystic Mass"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Intraabdominal Cystic Mass"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "discharge-diagnosis",
+                "display": "Discharge Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Necrotic Ovary"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Surgery for intraabdominal cystic mass and incidental appendectomy"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Hospital Course"
+        },
+        "valueString": "The patient, a 55-day-old Caucasian baby girl, was admitted to our hospital due to the detection of an intraabdominal cystic mass during prenatal US in the last trimester. The imaging studies confirmed an intraabdominal cystic mass. The patient underwent surgery, during which her right ovary was found to be autoamputated due to torsion, and an incidental appendectomy was performed. Postoperatively, the cysts in the contralateral ovary were drained, and she was found to have cysts smaller than 1 cm, which were aspirated during surgery. The patient developed no wound infections or peritonitis during the PO period, and she was discharged on the third PO day. After surgery, her ovary was checked regularly using pelvic and Doppler imaging. The patient developed no complications during the follow-up period of 1 year, and the cysts in the remaining ovary spontaneously disappeared. She has been followed for 2.5 years uneventfully."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Condition at Discharge"
+        },
+        "valueString": "The patient was discharged in stable condition."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Follow-Up Care"
+        },
+        "valueString": "The patient requires regular follow-up care to monitor her remaining ovary using pelvic and Doppler imaging."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "status": "not-taken",
+        "medicationCodeableConcept": {
+          "text": "None"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "inactive"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "None"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "[REDACTED]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,305 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-example",
+        "name": [
+          {
+            "use": "official",
+            "family": "[Redacted]",
+            "given": [
+              "[Redacted]"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1954-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-example",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "hosp-trans",
+                "display": "Transferred from other hospital"
+              }
+            ]
+          },
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-example"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-example",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "118600003",
+              "display": "Diffuse large B-cell lymphoma"
+            }
+          ],
+          "text": "Diffuse large B-cell lymphoma (DLBCL) with BCL6 positivity"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "onsetDateTime": "[Redacted]",
+        "abatementDateTime": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-example-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Excision of lesion"
+            }
+          ],
+          "text": "Surgery on nasal lesions, excision and debulking of rhinophyma, closure with adjacent cheek flaps"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "performedDateTime": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-example-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Excision of lesion"
+            }
+          ],
+          "text": "Wide local excision of glabellar lesion, closure with forehead flaps"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "performedDateTime": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-example-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Excision of lesion"
+            }
+          ],
+          "text": "Removal of basal cell carcinoma of the right forehead, closure with double opposing V-Y advancement flaps"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "performedDateTime": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-example-4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274441004",
+              "display": "Biopsy of lymph node"
+            }
+          ],
+          "text": "Biopsy of lymph node"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "performedDateTime": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-example",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308056",
+              "display": "Rituximab"
+            },
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "310798",
+              "display": "Cyclophosphamide"
+            },
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "6742",
+              "display": "Vincristine"
+            },
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "21377",
+              "display": "Doxorubicin"
+            },
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8640",
+              "display": "Prednisone"
+            }
+          ],
+          "text": "Intensive combination chemotherapy including Rituxan®, Cytoxan®, Oncovin®, Adriamycin®, and prednisone"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "authoredOn": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-example",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "386359008",
+                    "display": "Follow-up visit"
+                  }
+                ],
+                "text": "Scheduled follow-up visit with oncologist"
+              },
+              "status": "scheduled"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "182840001",
+                    "display": "Diet education"
+                  }
+                ],
+                "text": "Advised to follow a balanced and low-sodium diet"
+              },
+              "status": "completed"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "183981001",
+                    "display": "Activity restriction"
+                  }
+                ],
+                "text": "Advised to avoid any physical exertion until further notice"
+              },
+              "status": "completed"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

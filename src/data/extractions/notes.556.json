@@ -1,0 +1,181 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "gender": "male",
+        "communication": [
+          {
+            "language": {
+              "coding": [
+                {
+                  "system": "urn:ietf:bcp:47",
+                  "code": "es",
+                  "display": "Spanish"
+                }
+              ]
+            },
+            "preferred": true
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-genderIdentity",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/gender-identity",
+                  "code": "male",
+                  "display": "Male"
+                }
+              ]
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-disability",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/disability",
+                  "code": "deaf",
+                  "display": "Deaf"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "2",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "32425008",
+              "display": "Schizophrenia"
+            }
+          ]
+        },
+        "onsetDateTime": "Not Provided",
+        "abatementDateTime": "Not Provided"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "191667000",
+              "display": "Delusional disorder"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "4",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "other",
+                "display": "Other"
+              }
+            ]
+          },
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        },
+        "period": {
+          "start": "Not Provided",
+          "end": "Not Provided"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "5",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1355704",
+              "display": "Risperidone"
+            }
+          ]
+        },
+        "dosage": [
+          {
+            "text": "Patient had been taking risperidone for several years, but stopped due to side effects of drowsiness and weight gain."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "6",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "The patient is advised to keep his follow-up appointment with his community psychiatrist and to continue his prescribed treatment as directed. He is encouraged to communicate effectively with his mother and to discuss any concerns with his treatment."
+      }
+    }
+  ]
+}

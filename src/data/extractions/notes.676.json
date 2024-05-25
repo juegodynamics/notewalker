@@ -1,0 +1,154 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "Anonymous"
+          }
+        ],
+        "gender": "male",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "0000000"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "period": {
+          "start": "Unknown",
+          "end": "Unknown"
+        },
+        "reasonCode": [
+          {
+            "text": "Anemia and Thrombocytopenia"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "Anemia and Thrombocytopenia (corrected to TTP)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "Anemia and Thrombocytopenia (corrected to TTP)"
+        },
+        "subject": {
+          "reference": "Patient/0000000"
+        },
+        "encounter": {
+          "reference": "Encounter/1"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Clinical Findings"
+        },
+        "subject": {
+          "reference": "Patient/0000000"
+        },
+        "encounter": {
+          "reference": "Encounter/1"
+        },
+        "valueString": "Microscopic erythrocyturia and mild proteinuria"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Eculizumab (~ 900 mg/m2)"
+        },
+        "subject": {
+          "reference": "Patient/0000000"
+        },
+        "encounter": {
+          "reference": "Encounter/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Amoxicillin prophylaxis"
+        },
+        "subject": {
+          "reference": "Patient/0000000"
+        },
+        "encounter": {
+          "reference": "Encounter/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Immunization",
+        "status": "completed",
+        "vaccineCode": {
+          "text": "N. meningitidis vaccine"
+        },
+        "patient": {
+          "reference": "Patient/0000000"
+        },
+        "encounter": {
+          "reference": "Encounter/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Follow-up"
+        },
+        "subject": {
+          "reference": "Patient/0000000"
+        },
+        "encounter": {
+          "reference": "Encounter/1"
+        },
+        "valueString": "Confirmed diagnosis of TTP, excluded mutations of DGKE, PLG, MMACHC, identified homozygous deletion of CFHR3/1, no anti-CFH antibodies, no relapse of TTP or TMA over 4 years, temporary increase of plasmatic sC5b-9 > 2½ years, normalized ADAMTS13 activity, undetectable anti-CFH antibodies."
+      }
+    }
+  ]
+}

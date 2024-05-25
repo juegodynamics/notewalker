@@ -1,0 +1,244 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.1",
+            "value": "[Redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "period": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-01T00:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "11687002",
+              "display": "Congenital anomaly of cardiovascular system"
+            }
+          ],
+          "text": "Fetal cardiac malformation with aortic arch anomaly, coarctation of the aorta, membranous ventricular septal defect, ductal aortic coarctation, and dilated left subclavian and pulmonary arteries"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "57067-1",
+              "display": "Fetal echocardiography"
+            }
+          ],
+          "text": "Fetal echocardiography"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "result": [
+          {
+            "reference": "Observation/mild-cardiomegaly"
+          },
+          {
+            "reference": "Observation/left-deviated-heart-axis"
+          },
+          {
+            "reference": "Observation/small-membranous-ventricular-septal-defect"
+          },
+          {
+            "reference": "Observation/ductal-aortic-coarctation"
+          },
+          {
+            "reference": "Observation/aneurysmal-structure"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mild-cardiomegaly",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29308-4",
+              "display": "Cardiomegaly"
+            }
+          ],
+          "text": "Mild cardiomegaly"
+        },
+        "valueString": "Mild cardiomegaly with a left deviated heart axis of 72 degrees"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "left-deviated-heart-axis",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29309-2",
+              "display": "Heart axis"
+            }
+          ],
+          "text": "Left deviated heart axis"
+        },
+        "valueQuantity": {
+          "value": 72,
+          "unit": "degrees",
+          "system": "http://unitsofmeasure.org",
+          "code": "deg"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "small-membranous-ventricular-septal-defect",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29310-0",
+              "display": "Ventricular septal defect"
+            }
+          ],
+          "text": "Small membranous ventricular septal defect"
+        },
+        "valueString": "Small membranous ventricular septal defect"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ductal-aortic-coarctation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "77006-9",
+              "display": "Coarctation of aorta"
+            }
+          ],
+          "text": "Ductal aortic coarctation"
+        },
+        "valueString": "Ductal aortic coarctation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "aneurysmal-structure",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29313-4",
+              "display": "Aneurysm"
+            }
+          ],
+          "text": "Aneurysmal structure"
+        },
+        "valueString": "An aneurysmal structure measuring 1.63/1.25/1.16 cm with turbulent Doppler flow was identified, located above the emergence of the pulmonary trunk and continued by a dilated vascular structure that bifurcates in the cervical region, which is connected to the left pulmonary artery."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "48387007",
+              "display": "Termination of pregnancy"
+            }
+          ],
+          "text": "Termination of pregnancy by drug-induced abortion"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "performedPeriod": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-01T00:00:00Z"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/fetal-cardiac-malformation"
+          }
+        ]
+      }
+    }
+  ]
+}

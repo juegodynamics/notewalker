@@ -1,0 +1,524 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "identifier": [
+          {
+            "use": "usual",
+            "system": "http://hospital.smarthealthit.org",
+            "value": "12345"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2018-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "status": "in-progress",
+        "class": {
+          "code": "inpatient",
+          "display": "Inpatient"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "period": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-15T00:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "263499002",
+              "display": "Acute behavioral disturbance"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-cbc",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "57021-8",
+              "display": "Complete blood count (CBC) panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectiveDateTime": "2023-10-01T00:00:00Z",
+        "valueString": "Normal CBC, no cytopenias, normal inflammatory markers"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-mri-brain",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72145-4",
+              "display": "MRI Brain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectiveDateTime": "2023-10-01T00:00:00Z",
+        "valueString": "Multiple small nonenhancing foci on T2 FLAIR sequence, mostly in the frontal lobes and scattered throughout the subcortical white matter"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-ebv-pcr-blood",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "62518-5",
+              "display": "Epstein-Barr virus DNA [#/volume] (viral load) in Blood by NAA with probe detection"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectiveDateTime": "2023-10-01T00:00:00Z",
+        "valueQuantity": {
+          "value": 2300,
+          "unit": "copies/ml"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-ebv-pcr-csf",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "62362-8",
+              "display": "Epstein-Barr virus DNA [#/volume] (viral load) in Cerebral spinal fluid by NAA with probe detection"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectiveDateTime": "2023-10-01T00:00:00Z",
+        "valueQuantity": {
+          "value": 73,
+          "unit": "copies/ml"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-csf-analysis",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "38284-4",
+              "display": "Cerebral spinal fluid cell count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectiveDateTime": "2023-10-01T00:00:00Z",
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "718-7",
+                  "display": "Leukocytes [#/volume] in Cerebral spinal fluid"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 8,
+              "unit": "cells/mm3"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "670-1",
+                  "display": "Lymphocytes/100 leukocytes in Cerebral spinal fluid"
+                }
+              ]
+            },
+            "valueRatio": {
+              "numerator": {
+                "value": 79,
+                "unit": "%"
+              },
+              "denominator": {
+                "value": 100,
+                "unit": "leukocytes"
+              }
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "669-3",
+                  "display": "Monocytes/100 leukocytes in Cerebral spinal fluid"
+                }
+              ]
+            },
+            "valueRatio": {
+              "numerator": {
+                "value": 21,
+                "unit": "%"
+              },
+              "denominator": {
+                "value": 100,
+                "unit": "leukocytes"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-medicationrequest-iv-gg",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "5640",
+              "display": "Gamma Globulin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "dosageInstruction": [
+          {
+            "text": "1 g/kg IV"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-medicationrequest-iv-ganciclovir",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "5648",
+              "display": "Ganciclovir"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "dosageInstruction": [
+          {
+            "text": "10 mg/kg/day IV"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-medicationrequest-rituximab",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1174270",
+              "display": "Rituximab"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Administered on days 16 and 23 of admission"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-medicationrequest-prednisolone",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8640",
+              "display": "Prednisolone"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "dosageInstruction": [
+          {
+            "text": "1 mg/kg/day daily on days 16 through 23"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-medicationrequest-ivig",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "5640",
+              "display": "Gamma Globulin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "dosageInstruction": [
+          {
+            "text": "1 g/kg IV repeated on day 23"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-medicationrequest-valganciclovir",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "236000",
+              "display": "Valganciclovir"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "dosageInstruction": [
+          {
+            "text": "45 mg/kg/day continued for 4 months after ganciclovir treatment"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure-hsct",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000000103",
+              "display": "Hematopoietic stem cell transplantation (procedure)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedDateTime": "2024-03-01T00:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-ebv-igm",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "22263-5",
+              "display": "Epstein-Barr virus IgM Ab [Presence] in Serum"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectiveDateTime": "2023-10-01T00:00:00Z",
+        "valueBoolean": false
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "example-careplan",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "period": {
+          "start": "2024-03-01T00:00:00Z"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "183919006",
+                    "display": "Postoperative care"
+                  }
+                ]
+              },
+              "description": "Post-HSCT care including adherence to regimen and regular follow-up appointments with immunology service",
+              "status": "not-started"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

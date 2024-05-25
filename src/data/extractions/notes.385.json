@@ -1,0 +1,197 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "N/A"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:example:mrn",
+            "value": "N/A"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "identifier": [
+          {
+            "system": "urn:example:encounter",
+            "value": "N/A"
+          }
+        ],
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "N/A",
+          "end": "N/A"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "N/A",
+                "display": "N/A"
+              }
+            ],
+            "text": "N/A"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "N/A",
+              "display": "N/A"
+            }
+          ],
+          "text": "Herniated fragment migrated from neural foramen to cranial central canal with no neurological deficit."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "N/A",
+              "display": "Transforaminal lumbar interbody fusion with right L4-5 facetectomy"
+            }
+          ],
+          "text": "Transforaminal lumbar interbody fusion with right L4-5 facetectomy"
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "performedPeriod": {
+          "start": "N/A",
+          "end": "N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "N/A",
+              "display": "Neurological assessment"
+            }
+          ],
+          "text": "No neurological deficit"
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "effectiveDateTime": "N/A",
+        "valueString": "No neurological deficit"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "N/A",
+              "display": "Post-operative course"
+            }
+          ],
+          "text": "Post-operative course unremarkable"
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "effectiveDateTime": "N/A",
+        "valueString": "Post-operative course unremarkable"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "N/A",
+              "display": "Discharge status"
+            }
+          ],
+          "text": "Patient discharged in stable condition"
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "effectiveDateTime": "N/A",
+        "valueString": "Patient discharged in stable condition"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "status": "completed",
+        "description": "74-year-old male presented with right leg pain in the L4 nerve root area. Previous clinic diagnosed right L4-5 foraminal disc herniation, and the patient was treated with a disc block procedure. The patient reported worsening of right leg pain after the procedure and was admitted to our facility. MR images revealed that the herniated fragment had migrated from the neural foramen to the cranial central canal. Transforaminal lumbar interbody fusion with right L4-5 facetectomy was performed to remove the herniated fragment. No neurological deficit was observed, and the post-operative course was unremarkable. The patient was discharged in stable condition.",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "assessor": {
+          "reference": "Practitioner/N/A"
+        },
+        "date": "N/A"
+      }
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1949-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-09-15",
+          "end": "2023-10-15"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44169009",
+              "display": "Exophthalmos"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "2023-09-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18748-4",
+              "display": "MRI of orbit"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2023-09-15",
+        "valueString": "Orbit MR imaging showed an infiltrating mass involving both orbits, especially the lacrimal gland and both lateral rectus muscles, foramen rotundum, infraobital groove and foramen, trigeminal nerve, and midline anterior skullbase."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "83047-1",
+              "display": "Biopsy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2023-09-15",
+        "valueString": "Lacrimal gland biopsy confirmed the diagnosis of lymphoplasmacytic infiltration with increased IgG4-positive cells (> 50–100 cells/HPF, IgG4/IgG ratio > 80%), consistent with IgG4-ROD."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "5240002",
+              "display": "Lymphoplasmacytic infiltrate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "2023-09-15",
+        "abatementDateTime": "2023-10-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18748-4",
+              "display": "MRI of orbit"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2026-09-15",
+        "valueString": "Orbit MR imaging showed a decreased extent of infiltrative mass-forming lesions in both orbits, especially in both lacrimal glands, but significant remnant mass lesions were found in the right inferior extraconal space involving the right medial, lateral, and inferior rectus muscles, left lateral, and inferior rectus muscles, with perineural spread along both foramen rotundum and infraorbital foramen."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "22768-2",
+              "display": "Immunoglobulin G4"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2026-09-15",
+        "valueQuantity": {
+          "value": 788,
+          "unit": "mg/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8640",
+              "display": "Prednisolone"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take 20 mg by mouth daily"
+          }
+        ],
+        "dispenseRequest": {
+          "validityPeriod": {
+            "start": "2026-09-15",
+            "end": "2026-12-15"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "22768-2",
+              "display": "Immunoglobulin G4"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2026-12-15",
+        "valueQuantity": {
+          "value": 249.9,
+          "unit": "mg/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34133-9",
+              "display": "Summary of episode note"
+            }
+          ]
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "SG9zcGl0YWwgQ291cnNlOiBBIDc0LXllYXItb2xkIG1hbGUgcHJlc2VudGVkIHdpdGggc3VkZGVuIG9uc2V0IHJpZ2h0IGV4b3BodGhhbG1vcyAxNSBkYXlzIGFnby4gT3JiaXQgTVIgaW1hZ2luZyBzaG93ZWQgYW4gaW5maWx0cmF0aW5nIG1hc3MgaW52b2x2aW5nIGJvdGggb3JiaXRzLCBlc3BlY2lhbGx5IHRoZSBsYWNyaW1hbCBnbGFuZCBhbmQgYm90aCBsYXRlcmFsIHJlY3R1cyBtdXNjbGVzLCBmb3JhbWVuIHJvdHVuZHVtLCBpbmZyYW9iaXRhbCBncm9vdmUgYW5kIGZvcmFtZW4sIHRyaWdlbWluYWwgbmVydmUsIGFuZCBtaWRsaW5lIGFudGVyaW9yIHNrdWxsYmFzZS4gTGFjcmltYWwgZ2xhbmQgYmlvc3B5IGNvbmZpcm1lZCB0aGUgZGlhZ25vc2lzIG9mIGx5bXBob3BsYXNtYWN5dGljIGluZmlsdHJhdGlvbiB3aXRoIGluY3JlYXNlZCBJZ0c0LXBvc2l0aXZlIGNlbGxzICggNTAtMTAwIGNlbGxzL0hQRiwgSWdHNC9JZ0cgcmF0aW8gPiA4MCUpLCBjb25zaXN0ZW50IHdpdGggSWdHNC1ST0QuIFRocmVlIHllYXJzIGxhdGVyLCB0aGUgcGF0aWVudCByZXBvcnRlZCByaWdodCBmYWNpYWwgZWRlbWEsIGl0Y2hpbmcsIHJpZ2h0IHZpc3VhbCBkZWNyZWFzZSwgYW5kIHZlcnRpY2FsIGRpcGxvcGlhLiBPcmJpdCBNUiBpbWFnaW5nIHNob3dlZCBhIGRlY3JlYXNlZCBleHRlbnQgb2YgaW5maWx0cmF0aXZlIG1hc3MtZm9ybWluZyBsZXNpb25zIGluIGJvdGggb3JiaXRzLCBlc3BlY2lhbGx5IGluIGJvdGggbGFjcmltYWwgZ2xhbmRzLCBidXQgc2lnbmlmaWNhbnQgcmVtbmFudCBtYXNzIGxlc2lvbnMgd2VyZSBmb3VuZCBpbiB0aGUgcmlnaHQgaW5mZXJpb3IgZXh0cmFjb25hbCBzcGFjZSBpbnZvbHZpbmcgdGhlIHJpZ2h0IG1lZGlhbCwgbGF0ZXJhbCwgYW5kIGluZmVyaW9yIHJlY3R1cyBtdXNjbGVzLCBsZWZ0IGxhdGVyYWwsIGFuZCBpbmZlcmlvciByZWN0dXMgbXVzY2xlcywgd2l0aCBwZXJpbmV1cmFsIHNwcmVhZCBhbG9uZyBib3RoIGZvcmFtZW4gcm90dW5kdW0gYW5kIGluZnJhb3JiaXRhbCBmb3JhbWVuLiBTZXJ1bSBJZ0c0IGxldmVsIHdhcyBlbGV2YXRlZCBhdCA3ODguMCBtZy9kTC4gQWZ0ZXIgdGFraW5nIG9yYWwgcHJlZG5pc29sb25lIDIwIG1nIGEgZGF5LCBkaXBsb3BpYSByZXNvbHZlZCBhbmQgZHVjdGlvbnMgYW5kIHZlcnNpb25zIHdlcmUgZnVsbCB3aXRoIG9ydGhvdHJvcGlhIGF0IGRpc3RhbmNlIGFuZCBhdCBuZWFyIGluIHRoZSBwcmltYXJ5IHBvc2l0aW9uIG9uIGZvbGxvdy11cC4gQXQgdGhlIHRpbWUgb2YgZGlzY2hhcmdlLCB0aGUgcGF0aWVudCdzIGNvbmRpdGlvbiBoYWQgaW1wcm92ZWQuIFNlcnVtIElnRzQgbGV2ZWwgZGVjcmVhc2VkIHRvIDI0OS45IG1nL2RMIHRocmVlIG1vbnRocyBvZiB0cmVhdG1lbnQgd2l0aCBvcmFsIHByZWRuaXNvbG9uZS4gVGhlIHBhdGllbnQgd2FzIGFkdmlzZWQgdG8gY29udGludWUgZm9sbG93LXVwIHdpdGggaGlzIHByaW1hcnkgY2FyZSBwaHlzaWNpYW4gYW5kIHNwZWNpYWxpc3RzIGZvciBtb25pdG9yaW5nIGFuZCBwb3RlbnRpYWwgbWFuYWdlbWVudCBvZiBoaXMgZGlhZ25vc2lzLg=="
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

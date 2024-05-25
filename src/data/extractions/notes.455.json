@@ -1,0 +1,302 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "species": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/animal-species",
+              "code": "canis",
+              "display": "Dog"
+            }
+          ]
+        },
+        "gender": "female",
+        "age": {
+          "value": 6,
+          "unit": "years",
+          "system": "http://unitsofmeasure.org",
+          "code": "a"
+        },
+        "breed": {
+          "text": "Boxer"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128599002",
+              "display": "Cutaneous protothecosis"
+            }
+          ],
+          "text": "Cutaneous protothecosis due to Prototheca wickerhamii"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "note": [
+          {
+            "text": "A six-year-old female boxer dog with a 13-month history of progressive and mildly pruritic skin lesions."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18782-3",
+              "display": "Physical findings of Skin"
+            }
+          ],
+          "text": "Dermatological examination findings"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Nine ulcerated and nonulcerated skin nodules, ranging from 1 to 7 cm in diameter, distributed mainly over bony prominences of distal extremities and digits of the front legs, left elbow, and right hock. Other skin lesions included footpad hyperkeratosis, crusting, depigmentation, and erosions."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnostic-report-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18747-6",
+              "display": "Cytology study report"
+            }
+          ],
+          "text": "Fine needle aspiration (FNA) cytology"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "conclusion": "Pyogranulomatous inflammation and numerous mainly extracellular round-shaped organisms, ranging from 20 to 30 μm in diameter, most containing 2 spores of approximately 10 μm in diameter.",
+        "presentedForm": [
+          {
+            "contentType": "text/plain",
+            "data": "Fine needle aspiration (FNA) cytology made from material obtained from nonulcerated skin nodules revealed pyogranulomatous inflammation and numerous mainly extracellular round-shaped organisms, ranging from 20 to 30 μm in diameter, most containing 2 spores of approximately 10 μm in diameter."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnostic-report-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18769-0",
+              "display": "Microbiology study report"
+            }
+          ],
+          "text": "Culture of FNA material in dermatophyte test medium (DTM)"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "conclusion": "Smooth, creamy, yeast-like colonies were grown.",
+        "presentedForm": [
+          {
+            "contentType": "text/plain",
+            "data": "A culture of FNA material in dermatophyte test medium (DTM) was performed, and smooth, creamy, yeast-like colonies were grown."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnostic-report-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60567-8",
+              "display": "Pathology study report"
+            }
+          ],
+          "text": "Histopathology"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "conclusion": "Nodular-to-diffuse, pyogranulomatous dermatitis and panniculitis.",
+        "presentedForm": [
+          {
+            "contentType": "text/plain",
+            "data": "Histopathology revealed nodular-to-diffuse, pyogranulomatous dermatitis and panniculitis."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108241001",
+              "display": "Nucleic acid sequencing"
+            }
+          ],
+          "text": "Sequencing of a portion of the 28S rRNA gene following DNA isolation"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "11289",
+              "display": "Fluconazole"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Oral fluconazole, significant clinical improvement in footpad lesions after one month of administration."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "13529",
+              "display": "Itraconazole"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Concurrent administration of itraconazole with subcutaneous infusion of AMB."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-3",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308056",
+              "display": "Amphotericin B (AMB)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Subcutaneous infusion of AMB, discontinued after seven infusions due to nephrotoxicity."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75325-1",
+              "display": "Follow-up note"
+            }
+          ],
+          "text": "Follow-Up"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Although skin nodules have not shown any improvement with this treatment regimen, footpads remain close to normal."
+      }
+    }
+  ]
+}

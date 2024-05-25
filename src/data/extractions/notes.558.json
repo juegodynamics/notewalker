@@ -1,0 +1,183 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[INSERT NAME]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1993"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "AMA",
+                "display": "Left against medical advice"
+              }
+            ]
+          }
+        },
+        "serviceProvider": {
+          "reference": "Organization/[INSERT HOSPITAL NAME]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "Complete atrioventricular block"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[INSERT NAME]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75367002",
+              "display": "Blood pressure"
+            }
+          ]
+        },
+        "valueString": "High blood pressure",
+        "subject": {
+          "reference": "Patient/[INSERT NAME]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "22633-2",
+              "display": "Left ventricular hypertrophy"
+            }
+          ]
+        },
+        "valueString": "Moderate concentric left ventricular hypertrophy",
+        "subject": {
+          "reference": "Patient/[INSERT NAME]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Echocardiogram"
+            }
+          ]
+        },
+        "valueString": "Moderate hypokinesia of the left ventricle, EF 35–40%, grade 2/4 diastolic dysfunction",
+        "subject": {
+          "reference": "Patient/[INSERT NAME]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "180325003",
+              "display": "Percutaneous stenting"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[INSERT NAME]"
+        },
+        "outcome": {
+          "text": "Improvement in BP and renal function, reduction in doses of antihypertensive medications"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "397884008",
+              "display": "Insertion of permanent pacemaker"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[INSERT NAME]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "83367",
+              "display": "Warfarin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[INSERT NAME]"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient4",
+        "identifier": [
+          {
+            "use": "usual",
+            "value": "4"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2008",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-disability",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "419723007",
+                  "display": "Global developmental delay"
+                },
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "40974000",
+                  "display": "Learning difficulties"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "subject": {
+          "reference": "Patient/patient4"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128613002",
+              "display": "Autism Spectrum Disorder"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "subject": {
+          "reference": "Patient/patient4"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "7163008",
+              "display": "Fracture of forearm"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "203199000",
+              "display": "Vertebral wedge fracture"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition3",
+        "subject": {
+          "reference": "Patient/patient4"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "312894000",
+              "display": "Reduced bone mineral density"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "239873007",
+              "display": "Joint hypermobility"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "42954005",
+              "display": "Brittle nails"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition4",
+        "subject": {
+          "reference": "Patient/patient4"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "204906000",
+              "display": "Incomplete descended testes"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition5",
+        "subject": {
+          "reference": "Patient/patient4"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422463000",
+              "display": "Choroidal coloboma"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "7771000",
+                "display": "Left eye"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition6",
+        "subject": {
+          "reference": "Patient/patient4"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "11154001",
+              "display": "Myopia"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "subject": {
+          "reference": "Patient/patient4"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "384763001",
+              "display": "Pamidronate therapy"
+            }
+          ],
+          "text": "3-monthly pamidronate infusions"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "subject": {
+          "reference": "Patient/patient4"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "448100005",
+              "display": "Derotation osteotomy"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "182201002",
+                "display": "Bilateral femoral proximal"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "subject": {
+          "reference": "Patient/patient4"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "38269-7",
+              "display": "Bone mineral density"
+            }
+          ]
+        },
+        "valueString": "Reduced"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "subject": {
+          "reference": "Patient/patient4"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "10199-8",
+              "display": "Joint stability"
+            }
+          ]
+        },
+        "valueString": "Reduced"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "subject": {
+          "reference": "Patient/patient4"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81247-9",
+              "display": "Whole exome sequencing analysis"
+            }
+          ]
+        },
+        "valueString": "No significant variants"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest1",
+        "subject": {
+          "reference": "Patient/patient4"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108241005",
+              "display": "Referral to orthopaedic surgeon"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest2",
+        "subject": {
+          "reference": "Patient/patient4"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108241006",
+              "display": "Referral to geneticist"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest3",
+        "subject": {
+          "reference": "Patient/patient4"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108241007",
+              "display": "Referral to endocrinologist"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

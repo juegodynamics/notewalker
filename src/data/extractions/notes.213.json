@@ -1,0 +1,228 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "use": "official",
+            "family": "",
+            "given": [
+              ""
+            ]
+          }
+        ],
+        "birthDate": ""
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "",
+          "end": ""
+        },
+        "reasonCode": [
+          {
+            "text": "N/A"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "26929004",
+              "display": "Autism Spectrum Disorder"
+            }
+          ],
+          "text": "Autism Spectrum Disorder (ASD)"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254837009",
+              "display": "Bereavement"
+            }
+          ],
+          "text": "Patient's mother passed away"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "Patient is being discharged from care and services as her mother has passed away.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "We extend our sincerest condolences to the patient and her family. If the patient requires further assistance with grief counseling or support, she is encouraged to contact her primary care physician for further recommendations.",
+              "status": "completed"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner-1",
+        "name": [
+          {
+            "family": "",
+            "given": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Composition",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "",
+        "author": [
+          {
+            "reference": "Practitioner/practitioner-1"
+          }
+        ],
+        "title": "Discharge Summary",
+        "section": [
+          {
+            "title": "Hospital Course",
+            "text": {
+              "status": "generated",
+              "div": "<div>This patient is a 37-year-old woman with Autism Spectrum Disorder (ASD) who provided home care for her mother who had end-stage breast cancer. Her father was visually impaired, and the daughter was the main caregiver. The home care staff initially had difficulty contacting and communicating with her as she often focused on household tasks such as dishwashing. After the diagnosis of ASD was disclosed, the patient received consultation and social skill training at an outpatient clinic to improve her communication, scheduling, and caregiving abilities. Inappropriate behavior decreased following explanations and making communication rules with the patient. The patient's mother's condition worsened, and she required opioids for pain control. The patient was able to communicate with the home care staff effectively and provide appropriate care during this time. Unfortunately, the patient's mother passed away at home.</div>"
+            }
+          },
+          {
+            "title": "Discharge Condition",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient is being discharged from care and services as her mother has passed away.</div>"
+            }
+          },
+          {
+            "title": "Follow-up Recommendations",
+            "text": {
+              "status": "generated",
+              "div": "<div>No further follow-up recommendations are needed at this time.</div>"
+            }
+          },
+          {
+            "title": "Discharge Instructions",
+            "text": {
+              "status": "generated",
+              "div": "<div>We extend our sincerest condolences to the patient and her family. If the patient requires further assistance with grief counseling or support, she is encouraged to contact her primary care physician for further recommendations.</div>"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1938-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "2023-01-01T00:00:00Z",
+          "end": "2023-01-02T00:00:00Z"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "286500003",
+              "display": "Syncope"
+            }
+          ],
+          "text": "Recurrent, unexplained syncope"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "429706004",
+              "display": "Electrophysiology study"
+            }
+          ],
+          "text": "Electrophysiology (EP) study with possible device implantation"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01T12:00:00Z",
+          "end": "2023-01-01T13:00:00Z"
+        },
+        "note": [
+          {
+            "text": "An octapolar catheter was positioned near the His-bundle location during the EP study. Intracardiac electrograms revealed infra-Hisian block at baseline, and there were no inducible ventricular arrhythmias during the EP study."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "408394003",
+              "display": "Permanent His-bundle pacemaker insertion"
+            }
+          ],
+          "text": "Permanent His-bundle pacemaker implantation"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01T14:00:00Z",
+          "end": "2023-01-01T15:00:00Z"
+        },
+        "note": [
+          {
+            "text": "Pacing from the His catheter in this location resulted in QRS narrowing, and it was decided to implant a permanent His-bundle pacemaker. The PHB lead was directed toward the membranous septum using a fixed-curve delivery sheath. High-output unipolar pacing from the PHB lead resulted in a narrow QRS complex with resolution of the conduction abnormalities. However, intracardiac EGMs on the octapolar catheter revealed that the recorded His-bundle potential was not captured during PHB lead pacing. The octapolar catheter was advanced beyond the PHB lead tip to ensure there was not capture of the distal His bundle. Pacing at lower outputs resulted in non-selective His capture."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27885002",
+              "display": "Conduction disorder of the heart"
+            }
+          ],
+          "text": "Conduction abnormalities"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "case2",
+        "name": [
+          {
+            "use": "official",
+            "family": "Case",
+            "given": ["2"]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "subject": {
+          "reference": "Patient/case2"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "subject": {
+          "reference": "Patient/case2"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "123456",
+              "display": "Anterior Maxillary Pain"
+            }
+          ],
+          "text": "Anterior Maxillary Pain"
+        },
+        "onsetDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "subject": {
+          "reference": "Patient/case2"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "234567",
+              "display": "Composite resin repair of tooth"
+            }
+          ],
+          "text": "Composite resin repair of a fracture in the crown of the upper right primary central incisor"
+        },
+        "performedDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "subject": {
+          "reference": "Patient/case2"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA6753-8",
+              "display": "VAS Pain Score"
+            }
+          ],
+          "text": "VAS Pain Score for Cold Water"
+        },
+        "valueQuantity": {
+          "value": 6,
+          "unit": "score",
+          "system": "http://unitsofmeasure.org",
+          "code": "score"
+        },
+        "effectiveDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "subject": {
+          "reference": "Patient/case2"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA6753-8",
+              "display": "VAS Pain Score"
+            }
+          ],
+          "text": "VAS Pain Score for Air Blowing"
+        },
+        "valueQuantity": {
+          "value": 7.5,
+          "unit": "score",
+          "system": "http://unitsofmeasure.org",
+          "code": "score"
+        },
+        "effectiveDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "subject": {
+          "reference": "Patient/case2"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA6753-8",
+              "display": "VAS Pain Score"
+            }
+          ],
+          "text": "VAS Pain Score for Cold Water Post-Treatment"
+        },
+        "valueQuantity": {
+          "value": 0,
+          "unit": "score",
+          "system": "http://unitsofmeasure.org",
+          "code": "score"
+        },
+        "effectiveDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation4",
+        "subject": {
+          "reference": "Patient/case2"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA6753-8",
+              "display": "VAS Pain Score"
+            }
+          ],
+          "text": "VAS Pain Score for Air Blowing Post-Treatment"
+        },
+        "valueQuantity": {
+          "value": 0,
+          "unit": "score",
+          "system": "http://unitsofmeasure.org",
+          "code": "score"
+        },
+        "effectiveDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "subject": {
+          "reference": "Patient/case2"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "456789",
+              "display": "Monthly Dental Treatment"
+            }
+          ],
+          "text": "Monthly dental treatment"
+        },
+        "performedPeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation5",
+        "subject": {
+          "reference": "Patient/case2"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA6753-8",
+              "display": "VAS Pain Score"
+            }
+          ],
+          "text": "VAS Pain Score for Air Blowing During Treatment"
+        },
+        "valueQuantity": {
+          "value": 2,
+          "unit": "score",
+          "system": "http://unitsofmeasure.org",
+          "code": "score"
+        },
+        "effectiveDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation6",
+        "subject": {
+          "reference": "Patient/case2"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA6753-8",
+              "display": "VAS Pain Score"
+            }
+          ],
+          "text": "VAS Pain Score for Cold Water During Treatment"
+        },
+        "valueQuantity": {
+          "value": 1,
+          "unit": "score",
+          "system": "http://unitsofmeasure.org",
+          "code": "score"
+        },
+        "effectiveDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation7",
+        "subject": {
+          "reference": "Patient/case2"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "123456",
+              "display": "Cloudiness"
+            }
+          ],
+          "text": "Cloudiness on Labial Surface"
+        },
+        "valueQuantity": {
+          "value": 27886,
+          "unit": "pixels",
+          "system": "http://unitsofmeasure.org",
+          "code": "pixels"
+        },
+        "effectiveDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation8",
+        "subject": {
+          "reference": "Patient/case2"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "123456",
+              "display": "Cloudiness"
+            }
+          ],
+          "text": "Cloudiness on Labial Surface Post-Treatment"
+        },
+        "valueQuantity": {
+          "value": 7904,
+          "unit": "pixels",
+          "system": "http://unitsofmeasure.org",
+          "code": "pixels"
+        },
+        "effectiveDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "document1",
+        "subject": {
+          "reference": "Patient/case2"
+        },
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge Summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "DISCHARGE SUMMARY\n\nPatient Name: Case 2\n\nDOB: [redacted]\n\nGender: Male\n\nDate of admission: [redacted]\n\nDate of discharge: [redacted]\n\nDiagnosis: Anterior Maxillary Pain\n\nHospital Course:\n\nCase 2 is an 8-year-old male child who presented to the hospital with chief complaints of pain in the anterior maxilla following exposure to cold water. The patient had a history of trauma to the anterior primary teeth at the age of one year, with composite resin repair of a fracture in the crown of the upper right primary central incisor. Physical examination revealed an abnormal position of the upper right permanent central incisor and clouding of the labial surface, which were likely due to trauma to the primary teeth. The VAS value was 6 for cold water and 7.5 for air blowing.\n\nImmediate treatment reduced VAS to zero for cold water and air blowing. The patient underwent treatment once monthly for seven months. While the sensitivity did not completely disappear, the VAS for air blowing was 2-4, and for cold water it was 1-2. During the treatment, there was no appearance of discolored, devitalized teeth, gingival inflammation, or percussion pain. Digital analysis showed significantly reduced cloudiness, from 27,886 pixels to 7904 pixels. The hypomineralized tooth was mostly cloudy, with a narrow area of brown color, which significantly decreased after treatment (p < 0.03).\n\nRecommendations:\n\nCase 2 was discharged in good condition. Follow-up care should continue as needed."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

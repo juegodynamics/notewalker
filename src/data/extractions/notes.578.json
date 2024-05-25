@@ -1,0 +1,288 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[redacted]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1995"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "239873007",
+              "display": "Osteoarthritis"
+            }
+          ],
+          "text": "Progressive osteoarthritis caused by an osteochondral defect on the anterolateral surface of the distal tibial plafond"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "275568009",
+              "display": "Osteochondral graft"
+            }
+          ],
+          "text": "Surgical repair of the osteochondral defect via an osteochondral graft procedure"
+        },
+        "performedPeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29299-5",
+              "display": "Magnetic resonance imaging"
+            }
+          ],
+          "text": "Magnetic resonance imaging"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "effectivePeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "valueString": "The most recent magnetic resonance imaging scans at 2 years after surgery showed that the cartilage in the anterolateral joint surface was almost intact, and there was no osteonecrosis."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72109-2",
+              "display": "Radiograph"
+            }
+          ],
+          "text": "Radiographs"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "effectivePeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "valueString": "The radiographs showed moderate narrowing of the ankle joint and forward displacement of the talus."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-5",
+              "display": "Computed tomography"
+            }
+          ],
+          "text": "Computed tomography"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "effectivePeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "valueString": "The computed tomography of the right ankle showed an osteochondral defect on the anterolateral surface of the distal tibial plafond."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274396005",
+              "display": "Synovectomy"
+            }
+          ],
+          "text": "Arthroscopic synovectomy"
+        },
+        "performedPeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8317-1",
+              "display": "Pain severity"
+            }
+          ],
+          "text": "Pain severity"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "effectivePeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "valueString": "On the latest physical examination, the patient complained of mild pain in his right ankle while walking, but could walk for 30 min."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation5",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8319-7",
+              "display": "Pain severity score"
+            }
+          ],
+          "text": "Pain severity score"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "effectivePeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "valueQuantity": {
+          "value": 80,
+          "unit": "points",
+          "system": "http://unitsofmeasure.org",
+          "code": "points"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation6",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11366-2",
+              "display": "Physical findings"
+            }
+          ],
+          "text": "Physical findings"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "effectivePeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "valueString": "The patient was able to return to standing work 10 months after surgery and to carpenter's work on a five-day week, but remained with minor ankle pain on standing up and walking for more than half an hour over the 3-year observation period."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "status": "active",
+        "intent": "plan",
+        "description": "Follow-up Care Plan",
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "scheduledPeriod": {
+                "start": "[redacted]",
+                "end": "[redacted]"
+              },
+              "description": "A scheduled follow-up appointment with the physician in 6 months is recommended."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

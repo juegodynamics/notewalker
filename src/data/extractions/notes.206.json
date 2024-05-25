@@ -1,0 +1,192 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1958-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-birthDate",
+            "valueDateTime": "1958-01-01"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "255081000119106",
+              "display": "Pancreatic head adenocarcinoma"
+            }
+          ],
+          "text": "Pancreatic head adenocarcinoma"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "note": [
+          {
+            "text": "Diagnosed with progressive jaundice, anorexia, and weight loss since 4 to 5 weeks. Incomplete intestinal rotation, an rRHA arising from SMA."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "60568009",
+              "display": "Pylorus-preserving pancreaticoduodenectomy"
+            }
+          ],
+          "text": "Pylorus-preserving pancreaticoduodenectomy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "2023-03-01",
+        "note": [
+          {
+            "text": "During surgery, the small bowel loops were found clumped in right upper abdomen and a Kocher's maneuver was performed after interbowel adhesiolysis to free all the loops till the third part of duodenum. SMA and SMV were then identified and looped at the lower border of pancreas. Hepatoduodenal ligament dissection was then performed to identify the replaced right hepatic artery and the main portal vein. The retropancreatic tunnel was created above the portal vein superiorly and the SMA inferiorly, and then the plane was widened till the area above SMV. Uncinate dissection, duodenojejunal flexure mobilization, and standard lymphadenectomy were then performed, followed by division of jejunum, first part of duodenum common bile duct and pancreas. Reconstruction was performed as the modified Blumgart technique of duct to mucosa pancreatico-jejunostomy with 5–0 polypropylene, single layer interrupted hepatico jejunostomy using 4–0 polypropylene and antecolic stapled posterior gastrojejunostomy."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33717-0",
+              "display": "Histopathology report"
+            }
+          ],
+          "text": "Histopathology report"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2023-03-09",
+        "valueString": "The histopathological examination showed moderately differentiated adenocarcinoma confined to pancreas with all margins free and a single peripancreatic node out of 18 was positive."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-03-01",
+          "end": "2023-03-09"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "255081000119106",
+                "display": "Pancreatic head adenocarcinoma"
+              }
+            ],
+            "text": "Pancreatic head adenocarcinoma"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medreq-1",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "387447",
+              "display": "5-Fluorouracil"
+            }
+          ],
+          "text": "5-Fluorouracil"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "authoredOn": "2023-07-01",
+        "dosageInstruction": [
+          {
+            "text": "Adjuvant chemotherapy"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care Plan",
+        "description": "Further follow-up is recommended as per standard of care.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-07-01"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Follow-up visits and monitoring",
+              "status": "not-started"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

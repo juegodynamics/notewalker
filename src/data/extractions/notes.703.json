@@ -1,0 +1,330 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ],
+        "identifier": [
+          {
+            "value": "[redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "identifier": [
+          {
+            "value": "[redacted]"
+          }
+        ],
+        "status": "finished",
+        "type": [
+          {
+            "text": "Inpatient"
+          }
+        ],
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "hosp-trans",
+                "display": "Transferred from hospital"
+              }
+            ]
+          },
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/dengue-fever-encephalitis"
+            },
+            "rank": 1
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "dengue-fever-encephalitis",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "8447006",
+              "display": "Dengue fever"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "230456007",
+              "display": "Encephalitis"
+            }
+          ],
+          "text": "Dengue fever with encephalitis"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "777-3",
+              "display": "Platelets [#/volume] in Blood"
+            }
+          ],
+          "text": "Platelet count"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueQuantity": {
+          "value": 31,
+          "unit": "10*9/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*9/L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308057",
+              "display": "Meropenem"
+            }
+          ],
+          "text": "intravenous meropenem"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "effectivePeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "11124",
+              "display": "Vancomycin"
+            }
+          ],
+          "text": "intravenous vancomycin"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "effectivePeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1983",
+              "display": "Acyclovir"
+            }
+          ],
+          "text": "aciclovir"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "effectivePeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3128",
+              "display": "Dexamethasone"
+            }
+          ],
+          "text": "dexamethasone"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "effectivePeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72126-2",
+              "display": "CT of head"
+            }
+          ],
+          "text": "non-contrast CT brain"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueCodeableConcept": {
+          "text": "Cerebral oedema observed"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72128-8",
+              "display": "MRI of brain"
+            }
+          ],
+          "text": "cranial MRI"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "effectiveDateTime": "[redacted]",
+        "valueCodeableConcept": {
+          "text": "Complete resolution of the splenial lesion"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary: The 24-year-old Sri Lankan man was admitted to the hospital with fever, vomiting, and reduced level of consciousness. The patient was diagnosed with dengue fever with encephalitis based on the positive dengue IgM antibody and cerebral oedema observed on non-contrast CT brain. The patient's platelet count dropped to a nadir of 31 × 109/L, but subsequently increased. During the course of the hospital stay, he received treatment with intravenous meropenem, vancomycin, aciclovir and dexamethasone. Follow-up cranial MRI done 1 month later showed complete resolution of the splenial lesion. The patient was discharged from the hospital on the tenth day of illness with complete clinical, heamatological and biochemical recovery. Discharge Diagnosis: Dengue fever with encephalitis. Discharge Condition: The patient was discharged from the hospital in a stable condition. Discharge Medications: N/A Follow-Up: The patient was advised to follow-up with his primary care physician for regular check-ups."
+            }
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "author": [
+          {
+            "reference": "Practitioner/[redacted]"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "identifier": [
+          {
+            "value": "[Number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "period": {
+          "start": "[Date of Admission]",
+          "end": "[Date of Discharge]"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "82423001",
+              "display": "Polyarteritis nodosa"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "The patient was admitted to the hospital in January 2016 with large volume hematemesis from esophageal varices due to portal hypertension. The patient had a previous diagnosis of PAN, which was based on skin biopsies. The patient also had lymphopenia and hypogammaglobulinemia. He had a history of recurrent mouth and genital ulcers, as well as visual loss in childhood."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LP21258-6",
+              "display": "Lymphopenia"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LP21184-4",
+              "display": "Hypogammaglobulinemia"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8640",
+              "display": "Prednisone"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "The patient was discharged on his current medications including prednisone."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "The patient was instructed to follow up with his primary care provider and specialists as recommended. He was advised to continue his current medications and report to his healthcare provider any new symptoms. It was recommended that the patient avoid alcohol and nonsteroidal anti-inflammatory drugs."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/[Name]"
+            }
+          }
+        ],
+        "description": "Follow-up appointments with primary care provider and specialists."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "text": "[Name], MD"
+          }
+        ]
+      }
+    }
+  ]
+}

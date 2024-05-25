@@ -1,0 +1,148 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "age": 7
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "left knee arthritis"
+        },
+        "onsetDateTime": "2023-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "right ankle arthritis"
+        },
+        "onsetDateTime": "2023-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "arthrotomy with surgical drainage"
+        },
+        "performedAge": 4
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "arthrotomy with surgical drainage"
+        },
+        "performedAge": 5
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Magnetic resonance imaging of the left knee"
+        },
+        "valueString": "Significant inflammatory arthropathy, incipient osteomyelitis"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Target gene panel"
+        },
+        "valueString": "Mutation in PSTPIP1 gene"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "text": "Prednisone"
+        },
+        "dosage": {
+          "text": "1 mg/kg over 3 weeks"
+        },
+        "note": [
+          {
+            "text": "Satisfactory response to treatment, followed by gradual withdrawal"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Pyoderma gangrenosum episodes"
+        },
+        "valueString": "None during 2-year follow-up"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Genetic counseling"
+        },
+        "status": "scheduled"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "description": "Close follow-up with pediatric rheumatologist and genetic counseling"
+      }
+    }
+  ]
+}

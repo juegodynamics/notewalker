@@ -1,0 +1,174 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "family": "[REDACTED]",
+            "given": [
+              "[REDACTED]"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1984-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/LymeDisease"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "admitting diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "LymeDisease",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "235866009",
+              "display": "Lyme disease"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "note": [
+          {
+            "text": "Positive serological testing for Lyme disease"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "56888-1",
+              "display": "Lyme disease Ab [Presence] in Serum by Immunoblot"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10828004",
+              "display": "Positive"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Antibiotic therapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "note": [
+          {
+            "text": "Started on antibiotics to treat Lyme disease and monitored for adverse reactions. Symptoms improved significantly."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care Plan",
+        "description": "Continue medication regimen, complete full course of antibiotics, and avoid outdoor activities that may increase risk of Lyme disease.",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "MedicationRequest",
+              "status": "completed",
+              "description": "Complete full course of antibiotics"
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "status": "not-done",
+              "description": "Avoid outdoor activities that may increase risk of Lyme disease"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

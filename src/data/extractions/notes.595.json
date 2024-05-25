@@ -1,0 +1,247 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-2",
+        "gender": "male",
+        "birthDate": "1945-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-clinicalTrial",
+            "valueBoolean": false
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "Condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "53741008",
+              "display": "Coronary artery disease"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-2"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "Condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233604007",
+              "display": "Pneumonia"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-2"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "Procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "708986005",
+              "display": "Holmium laser enucleation of prostate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-2"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01T08:00:00Z",
+          "end": "2023-01-01T12:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "201820005",
+                "display": "Lower urinary tract symptoms"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "431491007",
+              "display": "Cystoscopy finding"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-2"
+        },
+        "valueString": "Enlarged prostate and severe bladder trabeculations"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "ImagingStudy-1",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/Patient-2"
+        },
+        "description": "CT scan revealing moderate amount of free pelvic and abdominal fluid in the extraperitoneal region",
+        "series": [
+          {
+            "uid": "1.2.840.10008.1.2.3",
+            "description": "CT Scan",
+            "numberOfInstances": 1,
+            "instance": [
+              {
+                "uid": "1.2.840.10008.1.2.3.1",
+                "sopClass": {
+                  "system": "urn:ietf:rfc:3986",
+                  "code": "1.2.840.10008.5.1.4.1.1.2"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "MedicationRequest-1",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049630",
+              "display": "Furosemide 40 MG Oral Tablet"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-2"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Given Lasix"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/Patient-2"
+        },
+        "period": {
+          "start": "2023-01-01T08:00:00Z",
+          "end": "2023-01-02T08:00:00Z"
+        },
+        "location": [
+          {
+            "location": {
+              "display": "Hospital"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "Procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "310512003",
+              "display": "Cystourethroscopy and laser incision of bladder neck contracture"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-2"
+        },
+        "performedPeriod": {
+          "start": "2023-05-01T08:00:00Z",
+          "end": "2023-05-01T10:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108632007",
+              "display": "Histopathology finding"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-2"
+        },
+        "valueString": "Final pathology revealed 30 grams of benign prostate tissue"
+      }
+    }
+  ]
+}

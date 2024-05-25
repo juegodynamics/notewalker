@@ -1,0 +1,341 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-prob-iii-3",
+        "name": [
+          {
+            "text": "Prob and III-3"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1991-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-prob-iii-3"
+        },
+        "period": {
+          "start": "[insert date]",
+          "end": "[insert date]"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        },
+        "length": {
+          "value": "[insert length of stay]",
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-sca28",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "111564002",
+              "display": "Spinocerebellar ataxia type 28"
+            }
+          ],
+          "text": "SCA28"
+        },
+        "subject": {
+          "reference": "Patient/patient-prob-iii-3"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-neurological-exam",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386344002",
+              "display": "Neurological examination"
+            }
+          ],
+          "text": "Neurological examination"
+        },
+        "subject": {
+          "reference": "Patient/patient-prob-iii-3"
+        },
+        "effectiveDateTime": "[insert date]",
+        "valueString": "Dysarthria, ptosis of both eyes, unstable and inaccurate bilateral finger-nose test, and clumsy bilateral alternating bilateral movements"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-mri",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168537006",
+              "display": "Magnetic resonance imaging of brain and cervical cord"
+            }
+          ],
+          "text": "MRI"
+        },
+        "subject": {
+          "reference": "Patient/patient-prob-iii-3"
+        },
+        "effectiveDateTime": "[insert date]",
+        "valueString": "Cerebellar atrophy with no clear abnormal signals in the head MRI and no atrophy or thinning of the cervical cord in the cervical MRI"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-genetic",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "genetic",
+                "display": "Genetic"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "55233-1",
+              "display": "Genetic analysis master panel"
+            }
+          ],
+          "text": "Genetic Sequencing"
+        },
+        "subject": {
+          "reference": "Patient/patient-prob-iii-3"
+        },
+        "effectiveDateTime": "[insert date]",
+        "valueString": "Sanger sequencing of the proband and his cousin revealed a c.1852A > G missense mutation in the exon region of the AFG3L2 gene, resulting in a lysine-glutamate amino acid substitution (p.K618E)"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-rehabilitation",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386053000",
+              "display": "Rehabilitation"
+            }
+          ],
+          "text": "Rehabilitation treatment"
+        },
+        "subject": {
+          "reference": "Patient/patient-prob-iii-3"
+        },
+        "performedDateTime": "[insert date]",
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-sca28"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-statement",
+        "status": "not-taken",
+        "medicationCodeableConcept": {
+          "text": "N/A"
+        },
+        "subject": {
+          "reference": "Patient/patient-prob-iii-3"
+        },
+        "effectiveDateTime": "[insert date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-followup",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-Up Plan",
+        "description": "The patient was advised to follow up with the department of Neurology for monitoring of his condition. Further referral for genetic counseling was also recommended.",
+        "subject": {
+          "reference": "Patient/patient-prob-iii-3"
+        },
+        "period": {
+          "start": "[insert date]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "category": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/care-plan-activity-category",
+                    "code": "encounter",
+                    "display": "Encounter"
+                  }
+                ]
+              },
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "408443003",
+                    "display": "Neurology follow-up"
+                  }
+                ],
+                "text": "Follow up with Neurology"
+              },
+              "status": "not-started"
+            }
+          },
+          {
+            "detail": {
+              "category": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/care-plan-activity-category",
+                    "code": "service",
+                    "display": "Service"
+                  }
+                ]
+              },
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "29463-7",
+                    "display": "Genetic counseling"
+                  }
+                ],
+                "text": "Genetic counseling"
+              },
+              "status": "not-started"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner-attending",
+        "name": [
+          {
+            "text": "[insert physician's name]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner-dictator",
+        "name": [
+          {
+            "text": "[insert physician's name]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "transcriptionist",
+        "name": [
+          {
+            "text": "[insert transcriptionist's name]"
+          }
+        ]
+      }
+    }
+  ]
+}

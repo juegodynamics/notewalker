@@ -1,0 +1,251 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1983-XX-XX"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "physician referral",
+                "display": "Physician referral"
+              }
+            ]
+          }
+        },
+        "serviceProvider": {
+          "reference": "Organization/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "11687002",
+              "display": "Breech presentation"
+            }
+          ]
+        },
+        "onsetDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "177184002",
+              "display": "Elective cesarean section"
+            }
+          ]
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "236886005",
+              "display": "Hysteroscopic myomectomy"
+            }
+          ]
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "236885009",
+              "display": "Hysteroscopic adhesiolysis"
+            }
+          ]
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168731000",
+              "display": "Cesarean hysterectomy"
+            }
+          ]
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "279001",
+              "display": "Submucous leiomyoma of uterus"
+            }
+          ]
+        },
+        "recordedDate": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71854001",
+              "display": "Asherman's syndrome"
+            }
+          ]
+        },
+        "recordedDate": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "53523003",
+              "display": "Miscarriage in first trimester"
+            }
+          ]
+        },
+        "recordedDate": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "441031000124107",
+              "display": "Placenta increta"
+            }
+          ]
+        },
+        "recordedDate": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "23387004",
+              "display": "Subserosal leiomyoma of uterus"
+            }
+          ]
+        },
+        "recordedDate": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Postpartum Follow-up",
+        "description": "The patient is advised to follow up with her primary care physician for routine postpartum care and to monitor for any potential complications related to her previous history of submucosal fibroids and Asherman's syndrome."
+      }
+    }
+  ]
+}

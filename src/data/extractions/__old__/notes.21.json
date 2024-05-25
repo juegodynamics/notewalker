@@ -1,0 +1,319 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-history",
+            "valueString": "Aortic valve replacement, Factor V Leiden anomaly, migraines"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "2410003",
+              "display": "Aortic valve replacement"
+            }
+          ],
+          "text": "Aortic valve replacement"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "439127008",
+              "display": "Factor V Leiden mutation"
+            }
+          ],
+          "text": "Factor V Leiden anomaly"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "37796009",
+              "display": "Migraine"
+            }
+          ],
+          "text": "Migraines"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422670002",
+              "display": "Paracentral acute middle maculopathy"
+            }
+          ],
+          "text": "PAMM"
+        },
+        "evidence": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "424500007",
+                  "display": "Spectral-domain optical coherence tomography"
+                }
+              ],
+              "text": "Spectral-domain OCT imaging revealed hyperreflective bands in the middle retina"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Patient with new paracentral blind spots in the right eye. Lesions described as small opaque structures obstructing the field of vision with a purple hue."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Medication",
+        "id": "medication-1",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "303357",
+              "display": "Niacinamide"
+            }
+          ],
+          "text": "Niacinamide"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Medication",
+        "id": "medication-2",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1191",
+              "display": "Aspirin"
+            }
+          ],
+          "text": "Aspirin"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Medication",
+        "id": "medication-3",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "5640",
+              "display": "Ibuprofen"
+            }
+          ],
+          "text": "Ibuprofen"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Medication",
+        "id": "medication-4",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "6837",
+              "display": "Nitroglycerin"
+            }
+          ],
+          "text": "Nitroglycerin"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationReference": {
+          "reference": "Medication/medication-1"
+        },
+        "note": [
+          {
+            "text": "Administered for relief of left-sided visual scotoma without success."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationReference": {
+          "reference": "Medication/medication-2"
+        },
+        "note": [
+          {
+            "text": "Administered for relief of left-sided visual scotoma without success."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationReference": {
+          "reference": "Medication/medication-3"
+        },
+        "note": [
+          {
+            "text": "Administered for relief of left-sided visual scotoma without success."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationReference": {
+          "reference": "Medication/medication-4"
+        },
+        "note": [
+          {
+            "text": "Effective in treating subsequent episodes of visual scotomas."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "422670002",
+                "display": "Paracentral acute middle maculopathy"
+              }
+            ],
+            "text": "PAMM"
+          }
+        ],
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner/practitioner-1"
+            }
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-4"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner-1",
+        "name": [
+          {
+            "text": "Chief of the Retinal Service",
+            "family": "Chief",
+            "given": [
+              "Retinal Service"
+            ]
+          }
+        ],
+        "address": [
+          {
+            "text": "New York Eye and Ear Infirmary"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "activity": [
+          {
+            "detail": {
+              "kind": "Consultation",
+              "description": "Follow-up with ophthalmologist recommended."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

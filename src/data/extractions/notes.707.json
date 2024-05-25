@@ -1,0 +1,231 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1951-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "reasonCode": [
+          {
+            "text": "Locally advanced clear cell RCC with bone and lung metastases."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "text": "Locally advanced clear cell RCC with bone and lung metastases."
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Left partial nephrectomy"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Left radical nephrectomy"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "High-dose palliative radiotherapy"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Dose-reduced pazopanib"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Nivolumab"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "dosageInstruction": [
+          {
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 3,
+                  "unit": "mg/kg"
+                }
+              },
+              {
+                "doseQuantity": {
+                  "value": 240,
+                  "unit": "mg"
+                }
+              }
+            ],
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 2,
+                "periodUnit": "wk"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Pain score"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "valueQuantity": {
+          "value": 3,
+          "unit": "/10"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "ECOG performance status"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "valueQuantity": {
+          "value": 2
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "description": "Follow-up imaging showing partial response according to RECIST version 1.1, with a considerable reduction in the size of metastases in the lung and renal bed."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Dialysis"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "note": [
+          {
+            "text": "3 times/week"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Follow-up appointments"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "gender": "male",
+        "age": 29,
+        "race": {
+          "coding": [
+            {
+              "code": "2028-9",
+              "display": "Asian"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "emergency",
+                "display": "Emergency"
+              }
+            ]
+          }
+        },
+        "location": [
+          {
+            "location": {
+              "reference": "Location/XiamenChangGungHospital",
+              "display": "Xiamen Chang Gung Hospital"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260374003",
+              "display": "Fournier's gangrene"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "281158006",
+                "display": "Perianal region"
+              }
+            ]
+          }
+        ],
+        "onsetDateTime": "not specified",
+        "abatementDateTime": "not specified"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical debridement"
+            }
+          ]
+        },
+        "performedDateTime": "not specified"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "57021-8",
+              "display": "White blood cell count"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": "decreased",
+          "unit": "cells/µL",
+          "system": "http://unitsofmeasure.org",
+          "code": "/µL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationRequest",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "617314",
+              "display": "Levofloxacin"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "Administered intravenously, later adjusted to oral administration"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical debridement"
+            }
+          ]
+        },
+        "performedDateTime": "not specified"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "180325003",
+              "display": "Transposition of testicles"
+            }
+          ]
+        },
+        "performedDateTime": "not specified"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure4",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "302347004",
+              "display": "Split-skin closure"
+            }
+          ]
+        },
+        "performedDateTime": "not specified"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure5",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "281615006",
+              "display": "Open drainage"
+            }
+          ]
+        },
+        "performedDateTime": "not specified"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "followup1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "410620009",
+                "display": "Follow-up examination"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "57021-8",
+              "display": "White blood cell count"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": "normal",
+          "unit": "cells/µL",
+          "system": "http://unitsofmeasure.org",
+          "code": "/µL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "786-4",
+              "display": "Liver function test"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": "normal",
+          "unit": "U/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation4",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "787-2",
+              "display": "Kidney function test"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": "normal",
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        }
+      }
+    }
+  ]
+}

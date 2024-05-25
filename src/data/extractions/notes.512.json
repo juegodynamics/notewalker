@@ -1,0 +1,262 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "gender": "female",
+        "age": 28
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "__________",
+          "end": "__________"
+        },
+        "length": {
+          "value": "__________",
+          "unit": "days"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "44157006",
+                "display": "Acute appendicitis"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "408678004",
+              "display": "Ulcerated malignant ileal gastrointestinal stromal tumor"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Resection of ileal segment with restoration of bowel continuity and peritoneal toileting"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "performedPeriod": {
+          "start": "__________",
+          "end": "__________"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Polymorphonuclear leukocytosis with left shift"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "valueString": "Hematological tests showed polymorphonuclear leukocytosis with left shift."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport",
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+              "code": "RAD",
+              "display": "Radiology"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18782-3",
+              "display": "Ultrasound scan"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "conclusion": "USG could not visualize appendix."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "laparotomy",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Exploratory laparotomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "performedPeriod": {
+          "start": "__________",
+          "end": "__________"
+        },
+        "outcome": {
+          "text": "Appendix appeared normal during laparotomy."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "FollowUp",
+        "id": "followup",
+        "status": "planned",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "description": "The patient was advised to review a week later at the outpatients but failed to report."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "clinicalimpression",
+        "status": "completed",
+        "description": "This summary describes a 28-year-old female with sudden onset periumbilical pain that migrated to the right iliac fossa. Hematological tests showed polymorphonuclear leukocytosis with left shift. USG could not visualize appendix, and a clinical diagnosis of acute appendicitis was made. Appendix appeared normal during laparotomy. A hemorrhagic lesion was found little deeper in the mid abdomen during the surgery, and a subsequent transverse incision extended from the medial edge revealed an ulcerated malignant ileal GIST measuring 7 × 5 cm arising from the antimesenteric border of the ileum 8 feet from ICJ. The patient had an uneventful recovery from the surgery, and was discharged on the 8th postoperative day. The patient was advised to review a week later at the outpatients but failed to report, and remained lost to follow-up.",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        }
+      }
+    }
+  ]
+}

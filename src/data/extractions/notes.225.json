@@ -1,0 +1,552 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[XXXX]"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "period": {
+          "start": "[XX/XX/XXXX]",
+          "end": "[XX/XX/XXXX]"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "154283005",
+              "display": "Ileocaecal tuberculosis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter"
+        },
+        "valueQuantity": {
+          "value": 10.8,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-hematocrit",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-hematocrit",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4544-3",
+              "display": "Hematocrit [Volume Fraction] of Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter"
+        },
+        "valueQuantity": {
+          "value": 31.6,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-neutrophils",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-neutrophils",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33765-9",
+              "display": "Neutrophils/100 leukocytes in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter"
+        },
+        "valueQuantity": {
+          "value": 78,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-platelets",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-platelets",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26515-7",
+              "display": "Platelets [#/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter"
+        },
+        "valueQuantity": {
+          "value": 291000,
+          "unit": "per mm3",
+          "system": "http://unitsofmeasure.org",
+          "code": "/uL"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-leukocytes",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-leukocytes",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26464-8",
+              "display": "Leukocytes [#/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter"
+        },
+        "valueQuantity": {
+          "value": 11510,
+          "unit": "per mm3",
+          "system": "http://unitsofmeasure.org",
+          "code": "/uL"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-urine-sugar",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-urine-sugar",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "5792-7",
+              "display": "Glucose [Presence] in Urine by Test strip"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter"
+        },
+        "valueString": "traces"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-urine-albumin",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-urine-albumin",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "20454-5",
+              "display": "Albumin [Presence] in Urine by Test strip"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter"
+        },
+        "valueString": "++"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Colonoscopy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-request",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-request",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049620",
+              "display": "isoniazid"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-request-rifampicin",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-request-rifampicin",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049633",
+              "display": "rifampicin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-request-pyrazinamide",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-request-pyrazinamide",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049640",
+              "display": "pyrazinamide"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-request-ethambutol",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-request-ethambutol",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049646",
+              "display": "ethambutol"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-request-pyridoxine",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-request-pyridoxine",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049653",
+              "display": "pyridoxine"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:document-reference",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "document-reference",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "date": "[XX/XX/XXXX]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "REDACTED"
+            }
+          }
+        ],
+        "author": [
+          {
+            "reference": "urn:uuid:practitioner"
+          }
+        ],
+        "context": {
+          "encounter": [
+            {
+              "reference": "urn:uuid:encounter"
+            }
+          ],
+          "period": {
+            "start": "[XX/XX/XXXX]",
+            "end": "[XX/XX/XXXX]"
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:practitioner",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner",
+        "name": [
+          {
+            "use": "official",
+            "text": "[XXXX]"
+          }
+        ]
+      }
+    }
+  ]
+}

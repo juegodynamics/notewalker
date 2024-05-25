@@ -1,0 +1,410 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[Redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32485007",
+                "display": "Hospital admission"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/[Redacted1]"
+            }
+          },
+          {
+            "condition": {
+              "reference": "Condition/[Redacted2]"
+            }
+          },
+          {
+            "condition": {
+              "reference": "Condition/[Redacted3]"
+            }
+          },
+          {
+            "condition": {
+              "reference": "Condition/[Redacted4]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "[Redacted1]",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "235871000000109",
+              "display": "Lyme disease"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ValueSet/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "[Redacted2]",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "64062008",
+              "display": "Babesiosis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ValueSet/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "[Redacted3]",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "105629000",
+              "display": "Bartonellosis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ValueSet/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "[Redacted4]",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "248490001",
+              "display": "Morgellons disease"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ValueSet/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "763158003",
+              "display": "Intravenous antibiotic therapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "68740",
+              "display": "ceftriaxone"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "6902",
+              "display": "metronidazole"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "20562",
+              "display": "telithromycin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "2037",
+              "display": "doxycycline"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "723",
+              "display": "amoxicillin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8560",
+              "display": "ciprofloxacin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "10421",
+              "display": "tinidazole"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3128",
+              "display": "atovaquone"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "308335008",
+                    "display": "Follow-up visit"
+                  }
+                ]
+              },
+              "status": "scheduled"
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "104001000000109",
+                    "display": "Blood test for Lyme disease"
+                  }
+                ]
+              },
+              "status": "scheduled"
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "104001000000109",
+                    "display": "Blood test for Babesia"
+                  }
+                ]
+              },
+              "status": "scheduled"
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "104001000000109",
+                    "display": "Blood test for Bartonella"
+                  }
+                ]
+              },
+              "status": "scheduled"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

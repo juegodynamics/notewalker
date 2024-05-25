@@ -1,0 +1,468 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1942-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-hypertension",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertensive disorder, systemic arterial"
+            }
+          ],
+          "text": "Hypertension"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-diabetes",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Diabetes mellitus type 2"
+            }
+          ],
+          "text": "Type 2 diabetes mellitus"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-physical-exam",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29553-5",
+              "display": "Physical examination"
+            }
+          ],
+          "text": "Physical examination"
+        },
+        "valueString": "Hepatomegaly without jaundice, ascites, or hepatic encephalopathy"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-lab-platelet",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "777-3",
+              "display": "Platelets [#/volume] in Blood"
+            }
+          ],
+          "text": "Platelet count"
+        },
+        "valueQuantity": {
+          "value": 101000,
+          "unit": "mm3",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm3"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-lab-bilirubin",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1975-2",
+              "display": "Bilirubin.total [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Total bilirubin"
+        },
+        "valueQuantity": {
+          "value": 0.9,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-lab-ast",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1920-8",
+              "display": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "AST"
+        },
+        "valueQuantity": {
+          "value": 33,
+          "unit": "IU/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "IU/L"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-lab-alt",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1742-6",
+              "display": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "ALT"
+        },
+        "valueQuantity": {
+          "value": null,
+          "unit": "IU/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "IU/L"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-lab-pt-inr",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34714-6",
+              "display": "Prothrombin time (PT) [INR] in Blood"
+            }
+          ],
+          "text": "PT-INR"
+        },
+        "valueQuantity": {
+          "value": 1.15,
+          "unit": "ratio",
+          "system": "http://unitsofmeasure.org",
+          "code": "ratio"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-tace",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "431061000124107",
+              "display": "Transarterial chemoembolization (TACE) of lesion"
+            }
+          ],
+          "text": "Segmental TACE with epirubicin and iodized oil"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "10200004",
+                "display": "Liver"
+              }
+            ],
+            "text": "Liver segments II, VI, VIII"
+          }
+        ],
+        "performedPeriod": {
+          "start": "2023-03-01T00:00:00Z",
+          "end": "2023-03-01T01:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-hcc",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372143000",
+              "display": "Hepatocellular carcinoma"
+            }
+          ],
+          "text": "Hepatocellular carcinoma (HCC)"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "10200004",
+                "display": "Liver"
+              }
+            ],
+            "text": "Liver segments II, VI, VIII"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-ct-scan",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-3",
+              "display": "CT Abdomen"
+            }
+          ],
+          "text": "CT scan"
+        },
+        "valueString": "Intraperitoneal free air and rupture of HCC in segment II"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-piperacillin-tazobactam",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "238947",
+              "display": "Piperacillin/Tazobactam"
+            }
+          ],
+          "text": "Administration of Piperacillin and Tazobactam"
+        },
+        "performedPeriod": {
+          "start": "2023-03-16T00:00:00Z",
+          "end": "2023-03-31T00:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-readmission",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-05-01T00:00:00Z",
+          "end": "2023-05-05T00:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "204110000",
+                "display": "Hematochezia"
+              }
+            ],
+            "text": "Hematochezia and hemorrhagic shock"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-ct-scan-readmission",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-3",
+              "display": "CT Abdomen"
+            }
+          ],
+          "text": "CT scan"
+        },
+        "valueString": "Gastric extraluminal compression by HCC lesion and extravasation of contrast medium into stomach"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-endoscopy",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Upper gastrointestinal endoscopy"
+            }
+          ],
+          "text": "Upper gastrointestinal endoscopy"
+        },
+        "performedPeriod": {
+          "start": "2023-05-02T00:00:00Z",
+          "end": "2023-05-02T01:00:00Z"
+        },
+        "outcome": {
+          "text": "Submucosal tumor with central ulceration detected on anterior wall of gastric body"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-hypertonic-saline-epinephrine",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "704",
+              "display": "Epinephrine"
+            }
+          ],
+          "text": "Hypertonic saline-epinephrine injection"
+        },
+        "performedPeriod": {
+          "start": "2023-05-02T01:00:00Z",
+          "end": "2023-05-02T02:00:00Z"
+        },
+        "outcome": {
+          "text": "Hemorrhage from ulcer treated successfully"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-endoscopy",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "10193-1",
+              "display": "Endoscopy study"
+            }
+          ],
+          "text": "Endoscopy"
+        },
+        "valueString": "Additional submucosal tumor without ulcer formation observed in gastric fundus"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-palliative-care",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-05-10T00:00:00Z",
+          "end": "2023-06-30T00:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "103735009",
+                "display": "Palliative care"
+              }
+            ],
+            "text": "Palliative care"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-expiration",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81959-9",
+              "display": "Death notification"
+            }
+          ],
+          "text": "Patient expired"
+        },
+        "valueDateTime": "2023-06-30T00:00:00Z"
+      }
+    }
+  ]
+}

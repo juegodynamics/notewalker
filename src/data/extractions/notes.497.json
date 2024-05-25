@@ -1,0 +1,157 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "1969",
+        "age": 54
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "right thumb carpometacarpal arthroplasty with ligament reconstruction"
+        },
+        "bodySite": [
+          {
+            "text": "right thumb"
+          }
+        ],
+        "performedPeriod": {
+          "start": "2023-10-01",
+          "end": "2023-10-01"
+        },
+        "outcome": {
+          "text": "successful"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "right thumb pain"
+        },
+        "bodySite": [
+          {
+            "text": "right thumb"
+          }
+        },
+        "onsetDateTime": "2023-10-01",
+        "abatementDateTime": "2023-10-05"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "immobility in the 2nd through 5th digits"
+        },
+        "bodySite": [
+          {
+            "text": "right hand"
+          }
+        ],
+        "onsetDateTime": "2023-10-01",
+        "abatementDateTime": "2023-10-04"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "phantom sensations"
+        },
+        "bodySite": [
+          {
+            "text": "right hand"
+          }
+        ],
+        "onsetDateTime": "2023-10-01",
+        "abatementDateTime": "2023-10-04"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "BPA administration"
+        },
+        "bodySite": [
+          {
+            "text": "right thumb"
+          }
+        ],
+        "performedDateTime": "2023-10-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "document-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "2023-10-05",
+        "description": "Discharge Summary",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient underwent successful right thumb carpometacarpal arthroplasty with ligament reconstruction. She reported pain in her thumb post-operation, but the sensation of immobility in her fingers has since subsided. No additional complications have been reported."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Post-operation Follow-up",
+        "description": "The patient should avoid any strenuous activity and should monitor her pain levels in the coming weeks. The development of any new symptoms should be immediately reported to her physician."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner-1",
+        "name": [
+          {
+            "text": "[Physician's Name]"
+          }
+        ]
+      }
+    }
+  ]
+}

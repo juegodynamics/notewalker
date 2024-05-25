@@ -1,0 +1,232 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1988-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-01-01T00:00:00Z",
+          "end": "2023-01-07T00:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "29857009",
+                "display": "Pain in thorax"
+              }
+            ],
+            "text": "Pain in the anterior chest and neck"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "38208-5",
+              "display": "Physical findings of Musculoskeletal system"
+            }
+          ],
+          "text": "Marked tenderness of the right sternoclavicular joint"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "effectiveDateTime": "2023-01-01T00:00:00Z",
+        "valueString": "Marked tenderness of the right sternoclavicular joint"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-0",
+              "display": "Radiologic findings"
+            }
+          ],
+          "text": "MRI revealed subchondral bone marrow edema and enhancement involving the medial end of the right clavicle. Mild effusion of the right sternoclavicular joint and surrounding soft-tissue edema was also seen."
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "effectiveDateTime": "2023-01-02T00:00:00Z",
+        "valueString": "MRI revealed subchondral bone marrow edema and enhancement involving the medial end of the right clavicle. Mild effusion of the right sternoclavicular joint and surrounding soft-tissue edema was also seen."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "provisional"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "239873007",
+              "display": "SAPHO syndrome"
+            }
+          ],
+          "text": "Suspected SAPHO syndrome"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "onsetDateTime": "2023-01-02T00:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "161",
+              "display": "paracetamol"
+            }
+          ],
+          "text": "paracetamol"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "prescribed paracetamol"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "311",
+              "display": "NSAIDs"
+            }
+          ],
+          "text": "NSAIDs"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "prescribed NSAIDs"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "2023-01-07T00:00:00Z",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient was discharged with a diagnosis of suspected SAPHO syndrome following an admission for chest and neck pain. The initial laboratory investigations and chest X-rays did not reveal any significant abnormalities. However, MRI showed subchondral bone marrow edema and enhancement in the medial end of the right clavicle, consistent with SAPHO syndrome. The patient was treated with paracetamol and NSAIDs, which led to a significant improvement in his symptoms. Although a biopsy was offered, the patient refused further investigations. He has not shown any relapse to date and was advised to return if he experienced any further pain or symptoms."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

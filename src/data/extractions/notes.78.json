@@ -1,0 +1,147 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1983-XX-XX"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44900009",
+              "display": "Intraosseous lipoma"
+            }
+          ],
+          "text": "Milgram type II intraosseous lipoma"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "onsetDateTime": "2021-XX-XX",
+        "abatementDateTime": "2023-XX-XX",
+        "evidence": [
+          {
+            "detail": [
+              {
+                "display": "MRI exam confirmed a Milgram type II intraosseous lipoma"
+              },
+              {
+                "display": "Histopathological exam confirmed the diagnosis of a stage II Milgram intraosseous lipoma"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44202002",
+              "display": "Curettage"
+            }
+          ],
+          "text": "Surgery was performed, and the lesion was cured. The cavity was filled with a medium viscosity poly (methyl methacrylate)-based bone cement with gentamycin."
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Condition at discharge"
+            }
+          ],
+          "text": "Condition at Discharge"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "valueString": "The patient was discharged in good health with no further complications or symptoms related to the previous diagnosis or treatment."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care",
+        "description": "The patient is advised to continue regular follow-up care as directed by the medical team to monitor the condition and ensure no recurrence.",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    }
+  ]
+}

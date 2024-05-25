@@ -1,0 +1,368 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[redacted]"
+          }
+        ],
+        "birthDate": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-1"
+            },
+            "rank": 1
+          },
+          {
+            "condition": {
+              "reference": "Condition/condition-2"
+            },
+            "rank": 2
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "82271004",
+              "display": "Heat stroke"
+            }
+          ],
+          "text": "Heat stroke"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233991000000109",
+              "display": "Heat stroke complicated by seizures and posterior reversible encephalopathy syndrome"
+            }
+          ],
+          "text": "Heat stroke complicated by seizures and posterior reversible encephalopathy syndrome"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "430193006",
+              "display": "Fluid resuscitation"
+            }
+          ],
+          "text": "Fluid resuscitation"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "33582005",
+              "display": "Hemodialysis"
+            }
+          ],
+          "text": "Hemodialysis"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225728007",
+              "display": "Cooling therapy"
+            }
+          ],
+          "text": "Cooling therapy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40617009",
+              "display": "Intubation"
+            }
+          ],
+          "text": "Intubation"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "597188",
+              "display": "Midazolam"
+            }
+          ],
+          "text": "Intravenous midazolam"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "866350",
+              "display": "Phenytoin"
+            }
+          ],
+          "text": "Intravenous phenytoin"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-3",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "836133",
+              "display": "Levetiracetam"
+            }
+          ],
+          "text": "Intravenous levetiracetam"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-4",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3640",
+              "display": "Valproic Acid"
+            }
+          ],
+          "text": "Oral valproic acid"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-5",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "836133",
+              "display": "Levetiracetam"
+            }
+          ],
+          "text": "Oral levetiracetam"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge summary"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "[redacted]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "RGlzY2hhcmdlIHN1bW1hcnkKClBhdGllbnQgTmFtZTogW3JlZGFjdGVkXQpNZWRpY2FsIFJlY29yZCBOdW1iZXI6IFtyZWRhY3RlZF0KRE9COiBbcmVkYWN0ZWRdCkFkbWlzc2lvbiBkYXRlOiBbcmVkYWN0ZWRdCkRpc2NoYXJnZSBkYXRlOiBbcmVkYWN0ZWRdCkFkbWl0dGluZyBkaWFnbm9zaXM6IEhlYXQgc3Ryb2tlClByaW5jaXBhbCBkaWFnbm9zaXMgb24gYWRtaXNzaW9uOiBIZWF0IHN0cm9rZSBjb21wbGljYXRlZCBieSBzZWl6dXJlcyBhbmQgcG9zdGVyaW9yIHJldmVyc2libGUgZW5jZXBoYWxvcGF0aHkgc3luZHJvbWUKCkhvc3BpdGFsIGNvdXJzZToKVGVtcGVyYXR1cmUgY29tcGVuc2F0aW9uIGNvbGxhcHNlIGFmdGVyIHJ1bm5pbmcgaW4gYSBtYXJhdGhvbiBjb21wZXRpdGlvbiB1bmRlciBob3Qgc3VuIGluIGhpZ2ggYW1iaWVudCB0ZW1wZXJhdHVyZS4gVGhlIHBhdGllbnQgd2FzIHRyYW5zZmVycmVkIHRvIElDVSBpbiBhIGNvbmZ1c2VkIHN0YXRlIHdpdGggYSByZWN0YWwgdGVtcGVyYXR1cmUgb2YgNDIuMkPCoC4gVGhlIHBhdGllbnQgd2FzIHRyZWF0ZWQgd2l0aCBpbnRyYXZlbm91cyBmbHVpZHMgYW5kIHJhcGlkbHkgY29vbGVkIHdpdGggaWNlIHBpbGxvdyBhbmQgaWNlIHdhdGVyLXNvYWtlZCB0b3dlbC4gRmx1aWQgcmVzdXNjaXRhdGlvbiB3YXMgY29tbWVuY2VkLCBob3dldmVyLCBoZSByZW1haW5lZCBvbGlndXJpYyBhbmQgaGVtb2RpYWx5c2lzIHdhcyBpbml0aWF0ZWQuIE9uIGRheSA0LCB0aGUgcGF0aWVudCBkZXZlbG9wZWQgc2V2ZXJlIGhlYWRhY2hlLCB3aGljaCBwcm9ncmVzc2VkIHRvIHNpeCBlcGlzb2RlcyBvZiBnZW5lcmFsaXplZCB0b25pYy1jbG9uaWMgc2Vpelx1MDNlcywgZWFjaCBsYXN0aW5nIGZvciAxLTIgbWludXRlcywgaW4gYSBvbmUtaG91ciB0aW1lLiBUaGUgZXBpc29kZXMgd2VyZSBhc3NvY2lhdGVkIHdpdGggZHJvb2xpbmcgb2Ygc2FsaXZhLCB0b25ndWUgYml0aW5nLCBhbmQgcG9zdGljdGFsIGRyb3dzaW5lc3MuIFRoZSBwYXRpZW50IHdhcyBpbnR1YmF0ZWQgYW5kIHN0YXJ0ZWQgb24gaW50cmF2ZW5vdXMgaW5mdXNpb24gb2YgbWlkYXpvbGFtLCBpbnRyYXZlbm91cyBwaGVueXRvaW4sIGFuZCBpbnRyYXZlbm91cyBsZXZldGlyYWNldGFtLiBIZSB3YXMgZGlhZ25vc2VkIHdpdGggcG9zdGVyaW9yIHJldmVyc2libGUgZW5jZXBoYWxvcGF0aHkgc3luZHJvbWUgKFBSRVMpLiBUaGUgcGF0aWVudCdzIGNvbmRpdGlvbiBpbXByb3ZlZCwgYW5kIGhlIHdhcyB0cmFuc2ZlcnJlZCB0byB0aGUgZ2VuZXJhbCB3YXJkIG9uIHRoZSBzZXZlbnRoIGRheSBvZiBhZG1pc3Npb24uIFRoZSBwYXRpZW50J3Mgc2VpenVyZSB3YXMgd2VsbC1jb250cm9sbGVkIHdpdGggb3JhbCBtZWRpY2F0aW9uIGFuZCByZXBlYXQgTUxJIHNob3dlZCBuZWFyIGNvbXBsZXRlIHJlc29sdXRpb24gb2YgdGhlIHByZXZpb3VzIHZhc29nZW5pYyBvZWRlbWEuCgpDb25kaXRpb24gb24gZGlzY2hhcmdlOlRoZSBwYXRpZW50IHdhcyBkaXNjaGFyZ2VkIGhvbWUgd2l0aCBvcmFsIG1lZGljYXRpb25zLiBPcmFsIHZhbHByb2ljIGFjaWQgYW5kIGxldmV0aXJhY2V0YW0gd2VyZSBwcmVzY3JpYmVkIHRvIGNvbnRyb2wgc2VpemVycy4gSW5zdHJ1Y3Rpb25zIHdlcmUgZ2l2ZW4gdG8gYXZvaWQgZXhwb3N1cmUgdG8gaGlnaCBhbWJpZW50IHRlbXBlcmF0dXJlIGFuZCB0byByZW1haW4gd2VsbC1oeWRyYXRlZC4gVGhlIHBhdGllbnQgd2FzIGFkdmlzZWQgdG8gaGF2ZSByZWd1bGFyIGZvbGxvdy11cCB3aXRoIGEgcHJpbWFyeSBjYXJlIHBoeXNpY2lhbiBhbmQgbmV1cm9sb2dpc3QuCgpTdW1tYXJ5IG9mIGhvc3BpdGFsIGNvdXJzZToKQSAyMC15ZWFyLW9sZCBtYW4gcHJlc2VudGVkIHdpdGggaGVhdCBzdHJva2UgYWZ0ZXIgcnVubmluZyBpbiBhIG1hcmF0aG9uIGNvbXBldGl0aW9uIGluIGhpZ2ggYW1iaWVudCB0ZW1wZXJhdHVyZS4gSGUgd2FzIHRyZWF0ZWQgd2l0aCBpbnRyYXZlbm91cyBmbHVpZHMgYW5kIHJhcGlkbHkgY29vbGVkIHdpdGggaWNlIHBpbGxvdyBhbmQgaWNlIHdhdGVyLXNvYWtlZCB0b3dlbC4gSGUgcmVxdWlyZWQgaGVtb2RpYWx5c2lzIGZvbGxvd2luZyBwZXJzaXN0ZW50IG9saWd1cmlhLiBPbiBkYXkgNCBvZiBhZG1pc3Npb24sIHRoZSBwYXRpZW50IGRldmVsb3BlZCBzZWl6dXJlcyBhbmQgd2FzIGRpYWdub3NlZCB3aXRoIHBvc3RlcmlvciByZXZlcnNpYmxlIGVuY2V

@@ -1,0 +1,198 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "case3",
+        "name": [
+          {
+            "use": "official",
+            "family": "Case",
+            "given": ["3"]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2015-03",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-birthTime",
+            "valueDateTime": "2015-03-01T00:00:00+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/case3"
+        },
+        "reasonCode": [
+          {
+            "text": "Cold water pain in the left side of the maxilla"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "#diagnosis1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "diagnosis1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Cold water pain and hypersensitivity due to caries and root resorption in the left upper second primary molar, and dark brown hypomineralization on the buccal tooth surface of the first premolars"
+        },
+        "subject": {
+          "reference": "Patient/case3"
+        },
+        "onsetDateTime": "2023-10-01T00:00:00+00:00"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "text": "Tooth sensitivity treatment"
+        },
+        "subject": {
+          "reference": "Patient/case3"
+        },
+        "performedPeriod": {
+          "start": "2023-10-01T00:00:00+00:00",
+          "end": "2023-10-14T00:00:00+00:00"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical",
+                "display": "Clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "VAS score"
+        },
+        "subject": {
+          "reference": "Patient/case3"
+        },
+        "valueQuantity": {
+          "value": 4,
+          "unit": "score",
+          "system": "http://unitsofmeasure.org",
+          "code": "score"
+        },
+        "effectiveDateTime": "2023-10-01T00:00:00+00:00"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical",
+                "display": "Clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "VAS score"
+        },
+        "subject": {
+          "reference": "Patient/case3"
+        },
+        "valueQuantity": {
+          "value": 0,
+          "unit": "score",
+          "system": "http://unitsofmeasure.org",
+          "code": "score"
+        },
+        "effectiveDateTime": "2023-10-14T00:00:00+00:00"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical",
+                "display": "Clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Digital analysis of tooth surface tint"
+        },
+        "subject": {
+          "reference": "Patient/case3"
+        },
+        "valueString": "Significant reduction in the area of the brownish tint"
+      }
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[REDACTED]"
+          }
+        ],
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2004"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "86049000",
+              "display": "Paroxysmal Kinesigenic Dyskinesia"
+            }
+          ],
+          "text": "Paroxysmal Kinesigenic Dyskinesia (PKD)"
+        },
+        "note": [
+          {
+            "text": "The patient has a significant family history of PKD, with the grandfather, uncle, and grandfather's brother confirmed to have PRRT2-PxMD."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "17621005",
+              "display": "Stereotactic ablative surgery"
+            }
+          ],
+          "text": "Right-sided Vo thalamotomy"
+        },
+        "performedAge": {
+          "value": 15,
+          "unit": "years"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "17621005",
+              "display": "Stereotactic ablative surgery"
+            }
+          ],
+          "text": "Left-sided Vo thalamotomy"
+        },
+        "performedAge": {
+          "value": 19,
+          "unit": "years"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "2998",
+              "display": "Carbamazepine 100 MG Oral Tablet"
+            }
+          ],
+          "text": "Carbamazepine (100 mg/day)"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Carbamazepine (100 mg/day) was prescribed again, and the PKD attacks reduced."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428341000124100",
+              "display": "Involuntary movements (finding)"
+            }
+          ],
+          "text": "Clinical Findings"
+        },
+        "note": [
+          {
+            "text": "The patient presented with paroxysmal involuntary left hand and toe flexion with left forearm pronation triggered by sudden voluntary movements, and right hand and foot dyskinesia."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "conclusion": "Paroxysmal Kinesigenic Dyskinesia is a rare movement disorder associated with PRRT2-PxMD. The patient underwent stereotactic ablative surgery consisting of right-sided Vo thalamotomy at the age of 15 and left-sided Vo thalamotomy at the age of 19, which resulted in the complete resolution of PKD attacks. No further recurrence of PKD was noted without the aid of medication.",
+        "codedDiagnosis": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "86049000",
+                "display": "Paroxysmal Kinesigenic Dyskinesia"
+              }
+            ],
+            "text": "Paroxysmal Kinesigenic Dyskinesia (PKD)"
+          }
+        ]
+      }
+    }
+  ]
+}

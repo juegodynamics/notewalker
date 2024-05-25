@@ -1,0 +1,271 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient",
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "[REDACTED]",
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.19.5",
+            "value": "[REDACTED]",
+            "type": {
+              "text": "Medical Record Number"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter",
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "urn:uuid:condition1"
+            },
+            "rank": 1
+          },
+          {
+            "condition": {
+              "reference": "urn:uuid:condition2"
+            },
+            "rank": 2
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition1",
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "442456000",
+              "display": "Nephroblastomatosis"
+            }
+          ],
+          "text": "Bilateral diffuse hyperplastic perilobar nephroblastomatosis (DHPLNB) complicated by a left renal mass (likely Wilms Tumour)"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition2",
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128462008",
+              "display": "Positive margins"
+            }
+          ],
+          "text": "Resection margins positive, nodal dissection negative"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure1",
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Chemotherapy"
+            }
+          ],
+          "text": "COG protocol AREN 0534 EE-4A chemotherapy including vincristine and dactinomycin for 20 weeks"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure2",
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "302395001",
+              "display": "Partial nephrectomy"
+            }
+          ],
+          "text": "Left partial nephrectomy and perihilar lymph node dissection"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure3",
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108290001",
+              "display": "Radiotherapy"
+            }
+          ],
+          "text": "Left flank radiotherapy to a dose of 1080 cGy in 6 fractions"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:careplan",
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care Plan",
+        "description": "The patient is currently on surveillance with ultrasounds every 3-4 months.",
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "scheduled",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "766774005",
+                    "display": "Ultrasound scan"
+                  }
+                ],
+                "text": "Surveillance with ultrasounds every 3-4 months"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationstatement",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "status": "not-taken",
+        "medicationCodeableConcept": {
+          "text": "None"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:dischargeInstructions",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "78418-1",
+              "display": "Patient discharge instructions"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient is advised to follow up with the medical team as recommended and to report any new symptoms or concerns. Any questions or concerns about the patient's care or treatment plan can be directed to the medical team."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

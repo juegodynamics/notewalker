@@ -1,0 +1,178 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Name Omitted]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1989-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363346000",
+              "display": "Malignant neoplasm of skin"
+            }
+          ],
+          "text": "Pigmented lesion with rare mitotic figures and multiple microscopic satellites"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274392008",
+              "display": "Excisional biopsy"
+            }
+          ],
+          "text": "Excisional biopsy of bluish nodule on forehead"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "2023-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33717-0",
+              "display": "Pathology report"
+            }
+          ],
+          "text": "Immunohistochemical stains for Melan-A and HMB-45"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Diffuse reactivity for Melan-A and HMB-45. Non-specific cytoplasmic staining for -catenin. Low proliferative index for Ki-67."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81247-9",
+              "display": "Gene mutation analysis"
+            }
+          ],
+          "text": "Gene rearrangement and mutation analysis"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "No gene rearrangements including PRKCA and PRKAR1A. GNA11 c.626A>T p.Q209L oncogenic mutation detected."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81247-9",
+              "display": "DNA methylation profiling"
+            }
+          ],
+          "text": "Whole-genome DNA methylation profiling and t-SNE cluster analysis"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Performed as described."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "2023-01-01",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "DISCHARGE SUMMARY: The patient is advised to follow up with a healthcare provider for further evaluation and management of the pigmented lesion. Methylation profiling of tumors offers highly efficient and reliable information for classification of tumors and future studies aiming to explore the optimal use of this technique will warrant improved diagnostic and management approaches for pigmented lesions when there is a concern for malignancy."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

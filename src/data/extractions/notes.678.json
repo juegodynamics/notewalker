@@ -1,0 +1,688 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "gender": "male",
+        "birthDate": "1969-01-01", 
+        "address": [
+          {
+            "country": "Iran"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "2",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "2023-10-01",
+          "end": "2023-10-21"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "20772000",
+              "display": "Benign prostatic hyperplasia"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "4",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "235595009",
+              "display": "Gastroesophageal reflux disease"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "5",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1201005",
+              "display": "Hemorrhoid"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "6",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueQuantity": {
+          "value": 38,
+          "unit": "°C",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "7",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 130,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 82,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ],
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "2023-10-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "8",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueQuantity": {
+          "value": 8.1,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "9",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6690-2",
+              "display": "Leukocytes [#/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueQuantity": {
+          "value": 1900,
+          "unit": "per microliter",
+          "system": "http://unitsofmeasure.org",
+          "code": "/uL"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:10",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "10",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "777-3",
+              "display": "Platelets [#/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueQuantity": {
+          "value": 20000,
+          "unit": "per microliter",
+          "system": "http://unitsofmeasure.org",
+          "code": "/uL"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:11",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "11",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4537-7",
+              "display": "Erythrocyte sedimentation rate by Westergren method"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueQuantity": {
+          "value": 56,
+          "unit": "mm/h",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm/h"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:12",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "12",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1742-6",
+              "display": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueQuantity": {
+          "value": 84,
+          "unit": "IU/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:13",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "13",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1920-8",
+              "display": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueQuantity": {
+          "value": 67,
+          "unit": "IU/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:14",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "14",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6768-6",
+              "display": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueQuantity": {
+          "value": 401,
+          "unit": "IU/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:15",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "15",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1751-7",
+              "display": "Albumin [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueQuantity": {
+          "value": 3.4,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:16",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "16",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "14629-0",
+              "display": "Bilirubin.direct [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueQuantity": {
+          "value": 0.6,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:17",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "17",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2276-4",
+              "display": "Ferritin [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueQuantity": {
+          "value": 658.6,
+          "unit": "ng/mL",
+          "system": "http://unit

@@ -1,0 +1,161 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Patient’s Name]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2008-01-01"  // Approximate birth year based on age 15
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "period": {
+          "start": "[Hospitalization Dates]",
+          "end": "[Hospitalization Dates]"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "118600001",
+              "display": "Burkitt's lymphoma"
+            }
+          ],
+          "text": "Burkitt's lymphoma of the terminal ileum causing ileocolic intussusception"
+        },
+        "subject": {
+          "reference": "Patient/[Patient’s Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Right hemicolectomy"
+            }
+          ],
+          "text": "Right hemicolectomy"
+        },
+        "subject": {
+          "reference": "Patient/[Patient’s Name]"
+        },
+        "performedDateTime": "[Hospitalization Dates]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1988-5",
+              "display": "C-reactive protein"
+            }
+          ],
+          "text": "C-reactive protein"
+        },
+        "valueQuantity": {
+          "value": 92,
+          "unit": "mg/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/L"
+        },
+        "subject": {
+          "reference": "Patient/[Patient’s Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-0",
+              "display": "Abdominal CT"
+            }
+          ],
+          "text": "CT revealed right-sided abdominal mass and a layering effect at the caecal pole consistent with an intussusception."
+        },
+        "subject": {
+          "reference": "Patient/[Patient’s Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/[Patient’s Name]"
+        },
+        "date": "[Hospitalization Dates]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Patient was discharged with instructions to rest and follow up with appropriate specialists. The patient was advised to refrain from heavy lifting or strenuous activity for at least two weeks after the surgery. The patient was informed to maintain a healthy diet and to drink plenty of fluids. The patient was given a detailed description of their diagnosis and treatment, along with instructions for their follow-up care."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

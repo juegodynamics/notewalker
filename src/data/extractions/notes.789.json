@@ -1,0 +1,308 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "age": {
+          "value": 21,
+          "unit": "months"
+        },
+        "status": "previously healthy"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "code": "emergency"
+        },
+        "reasonCode": [
+          {
+            "text": "lower extremity weakness and lumbar pain after an upper respiratory tract infection"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "transient hip arthritis"
+            }
+          }
+        ],
+        "type": [
+          {
+            "text": "emergency department visit"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-2",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "reasonCode": [
+          {
+            "text": "worsening pain and inability to walk"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "spinal dysdiaethesia with associated osteomyelitis"
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "display": "spine radiograph showing slight reduction in the thickness of the L5 soma"
+              },
+              {
+                "display": "spine MRI showing T1 post-enhancement increased signals of the anulus L4–L5, opposite end-plates of L4 and L5, adjacent soft tissues, and the osteolytic area of the L5 pedicle"
+              },
+              {
+                "display": "blood exams showing an increase in ESR and CRP, but normal WBC and negative Quantiferon TB-gold test"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "text": "spine radiograph"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "text": "spine MRI"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "text": "ESR"
+        },
+        "valueQuantity": {
+          "value": "increased"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "text": "CRP"
+        },
+        "valueQuantity": {
+          "value": "increased"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "text": "WBC"
+        },
+        "valueQuantity": {
+          "value": "normal"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "code": {
+          "text": "Quantiferon TB-gold test"
+        },
+        "valueBoolean": false,
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "broad-spectrum intravenous antibiotics"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "anti-inflammatory treatment"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-3",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Ceftazidime"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonCode": [
+          {
+            "text": "leukopenia with severe neutropenia"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-4",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Linezolid"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-5",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Cefuroxime axetil"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-1",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "description": "MRI showing complete resolution of the infectious process after 12 weeks of treatment"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "FollowUp",
+        "id": "followup-1",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "3 years ago",
+          "end": "now"
+        },
+        "outcome": {
+          "text": "The patient remained asymptomatic throughout the 3 year follow up. Blood exams and imaging showed normal results."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "upper respiratory tract infection"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "lower extremity weakness"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "lumbar pain"
+        }
+      }
+    }
+  ]
+}

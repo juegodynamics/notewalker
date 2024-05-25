@@ -1,0 +1,163 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "",
+        "id": "[Number]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "reasonCode": [
+          {
+            "text": "1-month history of spontaneous clear left side nipple discharge with recent appearance of homolateral painless breast swelling"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "code": {
+          "text": "Intraductal papilloma (IP) with atypical ductal hyperplasia (ADH) and a single focus of ductal carcinoma in situ (DCIS) solid-cribriform type"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Left subcutaneous nipple-sparing mastectomy without sentinel lymph node biopsy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest1",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Tamoxifen"
+        },
+        "reasonCode": [
+          {
+            "text": "ER-positive early stage breast cancer"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan1",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "status": "active",
+        "intent": "plan",
+        "activity": [
+          {
+            "detail": {
+              "status": "in-progress",
+              "description": "Follow-up with the multidisciplinary team for further management"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "code": {
+          "text": "Discharge Condition"
+        },
+        "valueString": "Stable"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner1",
+        "name": [
+          {
+            "text": "[Doctor's Name]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "docref1",
+        "status": "current",
+        "type": {
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "author": [
+          {
+            "reference": "Practitioner/practitioner1"
+          }
+        ],
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary: ... [full text not included for brevity] ..."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

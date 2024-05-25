@@ -1,0 +1,326 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Name]"
+          }
+        ],
+        "age": 72
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "DISCH",
+                "display": "discharge"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Diabetes mellitus"
+            }
+          ]
+        },
+        "onsetDateTime": "[10 years ago]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "62315008",
+              "display": "Constipation"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "236077008",
+              "display": "Diarrhea"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8213-1",
+              "display": "Abdominal tenderness"
+            }
+          ]
+        },
+        "valueString": "extensive abdominal tenderness"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11528-8",
+              "display": "Stool exam"
+            }
+          ]
+        },
+        "valueString": "negative for bacterial, parasitic, and viral serology"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "DX",
+            "display": "Digital Radiography"
+          }
+        ],
+        "description": "Abdominal X-ray showed multiple intraluminal gas pockets in sigmoid and ascending colon"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "CT",
+            "display": "Computed Tomography"
+          }
+        ],
+        "description": "CT examination showed multiple polypoid lesions of the colon"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Colonoscopy"
+            }
+          ]
+        },
+        "outcome": {
+          "text": "Colonoscopy showed irregular forms of lesions covered with mucosa of normal appearance in sigmoid and ascending colon. Narrowing of the lumen secondary to these lesions caused the colonoscopy to be incomplete."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108290001",
+              "display": "High frequency electrosurgical resection"
+            }
+          ]
+        },
+        "outcome": {
+          "text": "The patient was treated with high frequency electrosurgical resection of the gas cysts."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197361",
+              "display": "Ornidazole"
+            }
+          ]
+        },
+        "dosage": [
+          {
+            "text": "The patient showed improvements after one month of treatment with ornidazole and bifidobacterium, which was later changed to rifaximin."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197361",
+              "display": "Rifaximin"
+            }
+          ]
+        },
+        "dosage": [
+          {
+            "text": "The patient showed improvements after one month of treatment with ornidazole and bifidobacterium, which was later changed to rifaximin."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "705129",
+              "display": "Insulin"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "The patient is advised to continue using insulin treatment for diabetes."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Follow-up recommendation"
+            }
+          ]
+        },
+        "valueString": "The patient is advised to avoid using medications that can produce gas. She is also advised to follow a healthy diet and exercise regularly."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "planned",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "FUP",
+                "display": "Follow-up"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": "[3 months from discharge date]"
+        },
+        "reasonCode": [
+          {
+            "text": "A follow-up visit is scheduled after 3 months to monitor progress."
+          }
+        ]
+      }
+    }
+  ]
+}

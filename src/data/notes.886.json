@@ -1,0 +1,133 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1986-01-01" // Assuming current year is 2023
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1430008",
+              "display": "Hemorrhoids"
+            }
+          ],
+          "text": "Hemorrhoids"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29341-0",
+              "display": "Digital rectal exam"
+            }
+          ],
+          "text": "Digital rectal examination"
+        },
+        "valueString": "Prolapsus of the anus and rectum. A 1.5 cm x 1.5 cm mass was observed under the rectum mucosa, located 8 cm from the anus.",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI) [Ratio]"
+            }
+          ],
+          "text": "Physical Examination"
+        },
+        "valueString": "The patient presented with anal mass prolapse and bloody stools of three years duration. No complaints of abdominal pain, diarrhea or weight loss.",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "not-done",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "183919006",
+              "display": "No treatment"
+            }
+          ],
+          "text": "No treatment due to lack of further symptoms"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge and Follow-up Plan",
+        "description": "The patient was advised to consult a physician if the symptoms return or intensify.",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    }
+  ]
+}

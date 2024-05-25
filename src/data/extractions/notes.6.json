@@ -1,0 +1,363 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient1",
+        "gender": "female",
+        "age": 59
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32485007",
+                "display": "Hospital admission"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "period": {
+          "start": "N/A",
+          "end": "N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "67782005",
+              "display": "Acute respiratory distress syndrome"
+            }
+          ],
+          "text": "Moderate acute respiratory distress syndrome (ARDS) with reduced lung compliance"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Dysphagia"
+            }
+          ],
+          "text": "Postextubation dysphagia"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "248283001",
+              "display": "Weakness of limb"
+            }
+          ],
+          "text": "ICU-acquired weakness"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition4",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "263102004",
+              "display": "Physical disability"
+            }
+          ],
+          "text": "Persistent physical function impairment"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40617009",
+              "display": "Tracheal intubation"
+            }
+          ],
+          "text": "Immediate tracheal intubation"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedPeriod": {
+          "start": "N/A",
+          "end": "N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225339007",
+              "display": "Sitting on edge of bed"
+            }
+          ],
+          "text": "Sitting on the edge-of-bed (SOEB) trial"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedPeriod": {
+          "start": "N/A",
+          "end": "N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "410684002",
+              "display": "Physiotherapy"
+            }
+          ],
+          "text": "Continuous physical therapy"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedPeriod": {
+          "start": "N/A",
+          "end": "N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232717009",
+              "display": "Extubation"
+            }
+          ],
+          "text": "Successful extubation"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedPeriod": {
+          "start": "N/A",
+          "end": "N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure5",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225339007",
+              "display": "Monitoring of patient"
+            }
+          ],
+          "text": "Close monitoring for secretion management and cough stimulation"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedPeriod": {
+          "start": "N/A",
+          "end": "N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure6",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "229298005",
+              "display": "Walking aid use"
+            }
+          ],
+          "text": "Walking with a walking aid"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedPeriod": {
+          "start": "N/A",
+          "end": "N/A"
+        }
+      }
+    }
+  ]
+}

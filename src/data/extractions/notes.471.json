@@ -1,0 +1,193 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1975-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "197456007",
+              "display": "Hepatic sclerosing hemangioma"
+            }
+          ],
+          "text": "Hepatic sclerosing hemangioma"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "display": "Imaging studies, histopathological examination"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1747005",
+              "display": "Caudate lobectomy of liver"
+            }
+          ],
+          "text": "Caudate lobectomy of the liver and partial hepatectomy of S2 and S6"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "2023-09-01",
+          "end": "2023-09-15"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1975-2",
+              "display": "Liver enzymes panel"
+            }
+          ],
+          "text": "Liver enzymes"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Mildly increased concentrations of liver enzymes"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1975-2",
+              "display": "Total bilirubin and albumin"
+            }
+          ],
+          "text": "Total bilirubin and albumin levels"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Normal levels of total bilirubin and albumin"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "CT"
+          }
+        ],
+        "description": "Dynamic CT showed a low-density mass with an irregular margin and peripheral early ring enhancement in the arterial phase and internal heterogeneous enhancement in the delayed phase"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "MR"
+          }
+        ],
+        "description": "MRI showed low-intensity signals on T1-weighted images and high-intensity signals on T2-weighted images"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "date": "2023-09-15",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient was admitted with multiple hepatic tumors, including a giant tumor, superior to the inferior vena cava. A laboratory workup on admission showed mildly increased concentrations of liver enzymes but normal levels of total bilirubin and albumin. Imaging studies revealed well-defined, hypoechoic masses in segment 1, S6, and S2 of the liver. Dynamic CT showed a low-density mass with an irregular margin and peripheral early ring enhancement in the arterial phase and internal heterogeneous enhancement in the delayed phase. MRI showed low-intensity signals on T1-weighted images and high-intensity signals on T2-weighted images. On the basis of these imaging findings, a preoperative diagnosis of multiple scirrhous hepatocellular carcinomas characterized by abundant fibrous stroma was made. However, after a histopathological examination, the tumor was found to be hepatic sclerosing hemangioma, a rare type of hepatic hemangioma composed of abundant acellular hyalinized tissue with small vessels seen occasionally."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

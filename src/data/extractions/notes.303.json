@@ -1,0 +1,159 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "age": 56
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "reasonCode": [
+          {
+            "text": "Right eye pain, redness, lid swelling, and double vision"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "#condition"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition",
+        "code": {
+          "text": "Direct carotid cavernous fistula (CCF)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "embolization",
+        "status": "completed",
+        "code": {
+          "text": "Urgent embolization"
+        },
+        "outcome": {
+          "text": "Complete resolution of symptoms"
+        },
+        "followUp": [
+          {
+            "text": "The patient was closely monitored post-procedure, and no complications were noted."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "visual-acuity",
+        "status": "final",
+        "code": {
+          "text": "Bilateral visual acuity"
+        },
+        "valueString": "6/9"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "physical-exam",
+        "status": "final",
+        "code": {
+          "text": "Physical Exam"
+        },
+        "component": [
+          {
+            "code": {
+              "text": "Right eye proptosis, grade 1 RAPD, swollen, tender with palpable thrill, audible bruit"
+            }
+          },
+          {
+            "code": {
+              "text": "Slit-lamp examination"
+            },
+            "valueString": "Generalized episcleral congestion with corkscrew vessels, raised IOP of 28 mmHg"
+          },
+          {
+            "code": {
+              "text": "Optic discs and posterior poles"
+            },
+            "valueString": "Normal"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnostic-tests",
+        "status": "final",
+        "code": {
+          "text": "Diagnostic Tests"
+        },
+        "conclusion": "Direct CCF confirmed",
+        "imagingStudy": [
+          {
+            "reference": "#ct-angiography"
+          },
+          {
+            "reference": "#dsa"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "ct-angiography",
+        "status": "available",
+        "modality": {
+          "system": "http://dicom.nema.org/resources/ontology/DCM",
+          "code": "CT",
+          "display": "CT"
+        },
+        "description": "Urgent CT angiography demonstrated an engorged right superior ophthalmic vein (SOV) and bulky right CS. The left SOV was prominent with a similar contrast enhancement to the internal carotid artery."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "dsa",
+        "status": "available",
+        "modality": {
+          "system": "http://dicom.nema.org/resources/ontology/DCM",
+          "code": "XA",
+          "display": "Digital Subtraction Angiography"
+        },
+        "description": "Urgent successful digital subtraction angiography (DSA)"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "follow-up",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Instructions",
+        "description": "The patient was advised to follow-up with his ophthalmologist as needed. No other specific follow-up instructions were issued upon discharge. The patient was advised to seek urgent care if he experienced recurring symptoms."
+      }
+    }
+  ]
+}

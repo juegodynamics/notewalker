@@ -1,0 +1,125 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "gender": "male",
+        "age": 76
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "1",
+        "status": "finished",
+        "period": {
+          "start": "N/A",
+          "end": "N/A"
+        },
+        "reasonCode": [
+          {
+            "text": "Evaluation of progressive bilateral hearing loss and recurrent acute hearing loss bilaterally."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "1",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "text": "Bilateral progressive hearing loss"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "1",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "status": "completed",
+        "code": {
+          "text": "CyberKnife radiosurgery"
+        },
+        "reasonCode": [
+          {
+            "text": "Treatment of multilocular schwannoma on the right side and small intracochlear schwannoma on the T1."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "2",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Cochlear implantation"
+        },
+        "bodySite": {
+          "text": "right and left sides"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "1",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "status": "final",
+        "code": {
+          "text": "Word Recognition Score (WRS)"
+        },
+        "valueString": "35% (FMT) on the right side"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "2",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "status": "final",
+        "code": {
+          "text": "Signal-to-noise ratio (SNR)"
+        },
+        "valueString": "4.6 dB with CI on the right side and hearing aid on the left side, 11.3 dB for the right side with CI (with masking of the left ear)"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "1",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Plan",
+        "description": "A follow-up appointment will be scheduled to monitor the auditory function of the patient."
+      }
+    }
+  ]
+}

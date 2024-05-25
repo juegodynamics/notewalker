@@ -1,0 +1,225 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ],
+        "identifier": [
+          {
+            "value": "[redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "3723001",
+              "display": "Abdominal pain"
+            }
+          ],
+          "text": "Abdominal pain, distension, and weight loss"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "174041007",
+              "display": "Laparotomy"
+            }
+          ],
+          "text": "Laparotomy and S5-S6 liver bisegmentectomy"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "outcome": {
+          "text": "Successful recovery, discharged on the sixth postoperative day"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33747-9",
+              "display": "Histopathology report"
+            }
+          ],
+          "text": "Histological analysis"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueCodeableConcept": {
+          "text": "Undifferentiated Embryonal Sarcoma of the Liver (UESL)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33747-9",
+              "display": "Immunostaining report"
+            }
+          ],
+          "text": "Immunostaining"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "3041005",
+                  "display": "CD10 positive"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "3041005",
+                  "display": "CD68 positive"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "3041005",
+                  "display": "Vimentin positive"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "312961",
+              "display": "Vincristine"
+            },
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "137347",
+              "display": "Actinomycin D"
+            },
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "310829",
+              "display": "Cyclophosphamide"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "dosage": {
+          "text": "Six cycles"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11348-0",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Follow-up at 30 months"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueString": "No signs of recurrence"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "The patient is advised to maintain a healthy lifestyle and follow up regularly with the treating physician.",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,441 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1979",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-age",
+            "valueAge": {
+              "value": 44,
+              "unit": "years"
+            }
+          }
+        ],
+        "condition": [
+          {
+            "resourceType": "Condition",
+            "id": "condition-1",
+            "clinicalStatus": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                  "code": "active"
+                }
+              ]
+            },
+            "verificationStatus": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                  "code": "confirmed"
+                }
+              ]
+            },
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                    "code": "problem-list-item"
+                  }
+                ]
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "92814001",
+                  "display": "Acute lymphoblastic leukemia"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "2022-01-01",
+          "end": "2022-02-25"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32485007",
+                "display": "Hospital admission for chemotherapy"
+              }
+            ]
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "92814001",
+                "display": "Acute lymphoblastic leukemia"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "367336001",
+              "display": "Chemotherapy"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2022-01-01",
+          "end": "2022-02-25"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "14743-9",
+              "display": "Body temperature"
+            }
+          ],
+          "text": "Fever"
+        },
+        "valueQuantity": {
+          "value": 38.5,
+          "unit": "°C",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        },
+        "effectiveDateTime": "2022-01-10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24323-8",
+              "display": "Septic shock"
+            }
+          ],
+          "text": "Septic shock"
+        },
+        "effectiveDateTime": "2022-01-10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "Cerebral infarction"
+            }
+          ],
+          "text": "Cerebral infarction"
+        },
+        "effectiveDateTime": "2022-01-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "Cerebral infarction"
+            }
+          ],
+          "text": "Small hypodense areas in the left and right parietal lobes"
+        },
+        "effectiveDateTime": "2022-01-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "Cerebral infarction"
+            }
+          ],
+          "text": "Multiple hyperdense lesions in the lung"
+        },
+        "effectiveDateTime": "2022-01-18"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-6",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "(1,3)-β-D-glucan test"
+            }
+          ],
+          "text": "Positive result for (1,3)-β-D-glucan"
+        },
+        "effectiveDateTime": "2022-01-22"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-1",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "105214",
+              "display": "Voriconazole"
+            }
+          ],
+          "text": "Voriconazole"
+        },
+        "effectivePeriod": {
+          "start": "2022-01-22",
+          "end": "2022-02-25"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-2",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "6717",
+              "display": "Imipenem"
+            }
+          ],
+          "text": "Imipenem"
+        },
+        "effectivePeriod": {
+          "start": "2022-01-22",
+          "end": "2022-02-25"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-7",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "Metagenomic next-generation sequencing"
+            }
+          ],
+          "text": "Rhizomucor miehei infection in peripheral blood"
+        },
+        "effectiveDateTime": "2022-01-25"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-3",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8504",
+              "display": "Amphotericin B"
+            }
+          ],
+          "text": "Liposome-associated amphotericin B"
+        },
+        "effectivePeriod": {
+          "start": "2022-01-25",
+          "end": "2022-02-25"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-8",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "Complete blood count"
+            }
+          ],
+          "text": "Complete blood count"
+        },
+        "effectiveDateTime": "2022-01-28"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-9",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "Metagenomic next-generation sequencing"
+            }
+          ],
+          "text": "Rhizomucor miehei infection in cerebrospinal fluid"
+        },
+        "effectiveDateTime": "2022-01-28"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-10",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "Metagenomic next-generation sequencing"
+            }
+          ],
+          "text": "Rhizomucor miehei infection in bronchoalveolar lavage"
+        },
+        "effectiveDateTime": "2022-02-05"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-11",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "Fever"
+            }
+          ],
+          "text": "Recurrence of fever in febrile neutropenia patients"
+        },
+        "effectiveDateTime": "2022-02-25"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-4",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049626",
+              "display": "Posaconazole"
+            }
+          ],
+          "text": "Posaconazole"
+        },
+        "effectivePeriod": {
+          "start": "2022-02-25",
+          "end": "2022-04-25"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "2022-02-25",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary: Patient: 44-year-old male with acute lymphoblastic leukemia (ALL) Hospital Course: The patient was admitted for induction chemotherapy (IC) on day 0 and experienced bone marrow suppression with fever and septic shock on day 10. Broad-spectrum antibacterial and antifungal prophylaxis were used empirically, with little success in controlling the patient's recurrent fever. The patient then experienced hemiplegia and hemiconvulsions on the right limb and was diagnosed with cerebral infarction in the right parietal lobe and small hypodense areas in the left and right parietal lobes. CT scans also showed multiple hyperdense lesions in the patient's lung on day 18. After a positive result for the test of (1,3)- β-D-glucan on day 22, treatment was changed to voriconazole (VRC) and imipenem, but the patient's fever persisted and the lesions in the brain and lung worsened. On day 25, Rhizomucor miehei infection was shown by metagenomic next-generation sequencing (mNGS) of peripheral blood (PB) with high relative abundance, and liposome-associated amphotericin B was administered as antifungal therapy. The patient's fever subsided, and his complete blood count (CBC) returned to normal on day 28. Infection with Rhizomucor miehei was also detected by mNGS findings in the cerebrospinal fluid (CSF) on day 28 and bronchoalveolar lavage (BAL) on day 35. Antifungal therapy using liposome-associated amphotericin B was continued until day 55, and the patient's general condition improved, with partial recovery of the right limb function. After discharge, the patient continued antifungal therapy with amphotericin B and posaconazole for 2 months and received a new chemotherapy for ALL. Follow-up imaging tests showed a significant reduction in the size of the lesions. The antifungal drug regimen was well-tolerated and achieved a remarkable effect. Important Findings: The patient had a series of infections caused by Rhizomucor miehei, which were detected by mNGS findings. The antifungal therapy using liposome-associated amphotericin B was an effective treatment for the patient's condition. The recurrence of fever in febrile neutropenia patients after chemotherapy with cerebral symptoms may be highly indicative of infections in the brain. Disposition: The patient was discharged and requested to continue antifungal therapy at a local hospital due to family reasons."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

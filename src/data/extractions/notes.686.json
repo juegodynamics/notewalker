@@ -1,0 +1,187 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.1",
+            "value": "[Number]"
+          }
+        ],
+        "gender": "[Gender]",
+        "age": "[Age]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "399326009",
+              "display": "Primary extramammary Paget’s disease"
+            }
+          ],
+          "text": "Primary extramammary Paget’s disease (EMPD) of the anogenital region"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254935002",
+              "display": "Adenocarcinoma in situ"
+            }
+          ],
+          "text": "Anal gland adenocarcinoma in situ with pagetoid spread in the perianal skin"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "172960003",
+              "display": "Wide local excision of lesion"
+            }
+          ],
+          "text": "Anal-preserving wide local excision"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "performedPeriod": {
+          "start": "2023-10-01",
+          "end": "2023-10-01"
+        },
+        "outcome": {
+          "text": "Paget’s cells within the epidermis, secondary EMPD due to adenocarcinoma arising from the anal gland"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "176960001",
+              "display": "Laparoscopic abdominoperineal resection"
+            }
+          ],
+          "text": "Radical laparoscopy-assisted abdominoperineal resection"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "performedPeriod": {
+          "start": "2023-10-01",
+          "end": "2023-10-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33717-0",
+              "display": "Histopathology study"
+            }
+          ],
+          "text": "Histopathological examination"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "valueString": "Paget’s cells within the epidermis. Immunohistochemical markers: positive for cytokeratin 7, cytokeratin 20, caudal-related homeobox gene nuclear transcription factor 2; negative for gross cystic disease fluid protein 15. Additional examination: well-differentiated adenocarcinoma in an anal gland, continuous with the Paget’s cells in the anoderm but limited in the basement membrane without a desmoplastic change."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "UGF0aWVudCBuYW1lOiBbTmFtZV0KTWVkaWNhbCBSZWNvcmQgTnVtYmVyOiBbTnVtYmVyXQoKSG9zcGl0YWwgQ291cnNlOiAKVGhlIFtBZ2VdIFtHZW5kZXJdIHBhdGllbnQgd2FzIGFkbWl0dGVkIHRvIG91ciBob3NwaXRhbCBmb3IgaXRjaGluZyBhcm91bmQgaGVyIGFudXMuIFBoeXNpY2FsIGV4YW1pbmF0aW9uIHNob3dlZCBhbiBlcnl0aGVtYXRvdXMsIGluZmxhbWVkIHNraW4gbGVzaW9uIGluIHRoZSBwZXJpYW5hbCByZWdpb24uIFRoZSBwYXRpZW50IGhhZCBhIGhpc3Rvcnkgb2Ygc2lnbW9pZGVjdG9teSBmb3IgZGl2ZXJ0aWN1bGl0aXMgc3luZHJvbWUuIEhvd2V2ZXIsIG5vIGdpbWFzdHJvaW50ZXN0aW5hbCBzeW1wdG9tcywgY2hhbmdlIGluIGJvd2VsIGhhYml0cywgd2VpZ2h0IGxvc3MsIG9yIGZhbWlseSBoaXN0b3J5IG9mIG1hbGlnbmFuY3kgd2FzIHJlcG9ydGVkLgoKSW52ZXN0aWdhdGlvbnM6IApDb2xwb3Njb3B5LCBjeXN0b3Njb3B5LCBub3IgY29sb25vc2NvcHkgcmV2ZWFsZWQgYW55IGFibm9ybWFsaXR5IG9mIHRoZSBjZXJ2aXgsIGJsYWRkZXIsIG9yIHJlY3R1bS4gQ29tcHV0ZWQgdG9tb2dyYXBoeSBhbmQgbWFnbmV0aWMgcmVzb25hbmNlIGltYWdpbmcgc2hvd2VkIG5vIGV2aWRlbmNlIG9mIG1hbGlnbmFuY3kgaW4gdGhlIGdlbml0b3VyaW5hcnkgb3IgZ2FzdHJvaW50ZXN0aW5hbCB0cmFjdHMuIEhpc3RvcGF0aG9sb2dpY2FsIGV4YW1pbmF0aW9uIG9mIGJpb3BzeSBzcGVjaW1lbnRzIHNob3dlZCBtYW55IFBhZ2V0J3MgY2VsbHMgd2l0aGluIGludHJhZXBpdGhlbGlhbCBsZXNpb25zIG9mIHRoZSBwZXJpYW5hbCBza2luIGJ1dCBubyBtYWxpZ25hbnQgY2VsbHMgaW4gdGhlIHJlY3RhbCBvciB2YWdpbmFsIG11Y29zYS4gCkRpYWdub3NpczogIFByaW1hcnkgZXh0cmFtbWFyeSBQYWdldOKAmXMgc2l0dW5hdGlvbiB3YXMgY29uZmlybWVkLgoKVHJlYXRtZW50OiAKQW5hbC1wcmVzZXJ2aW5nIHdpZGUgbG9jYWwgZXhjaXNpb24gZGVlcCB0byB0aGUgc3ViY3V0YW5lb3VzIGZhdCB3aXRoIDEtY20gbmVnYXRpdmUgbWFyZ2luIGZyb20gdGhlIHBvc2l0aXZlIHNpdGVzIGNvbmZpcm1lZCBieSBmcm96ZW4gc2VjdGlvbiBleGFtaW5hdGlvbiBhbmQgbXVjb3NhbCByZXNlY3Rpb24gb2YgdGhlIGFuYWwgY2FuYWwgdGhhdCBleHRlbmRlZCAxIGNtIHByb3hpbWFsIHRvIHRoZSBkZW50YXRlIGxpbmUgb2YgdGhlIGFuYWwgY2FuYWwuIFJlY29uc3RydWN0aW9uIHdhcyBwZXJmb3JtZWQgdXNpbmcgYSBiaWxvYmVkIGdsdXRlYWwgZm9sZCBmbGFwLiAKSGlzdG9wYXRob2xvZ2ljYWwgZXhhbWluYXRpb24gb2YgdGhlIHJlc2VjdGVkIHNwZWNpbWVuIHNob3dlZCBQYWdldOKAmXMgY2VsbHMgd2l0aGluIHRoZSBlcGlkZXJtaXMuIEltbXVub2hpc3RvY2hlbWljYWwgbWFya2VycyByZXZlYWxlZCB0aGF0IHRoZSBQYWdldOKAmXMgY2VsbHMgd2VyZSBwb3NpdGl2ZSBmb3IgY3l0b2tlcmF0aW4gNywgY3l0b2tlcmF0aW4gMjAsIGFuZCBjYXVkYWwtcmVsYXRlZCBob21lb2JveCBnZW5lIG51Y2xlYXIgdHJhbnNjcmlwdGlvbiBmYWN0b3IgMiBhbmQgbmVnYXRpdmUgZm9yIGdyb3NzIGN5c3RpYyBkaXNlYXNlIGZsdWlkIHByb3RlaW4gMTUuIEFkZGl0aW9uYWwgaGlzdG9wYXRob2xvZ2ljYWwgZXhhbWluYXRpb24gb2YgdGhlIHJlc2VjdGVkIHNwZWNpbWVuIHNob3dlZCB3ZWxsLWRpZmZlcmVudGlhdGVkIGFkZW5vY2FyY2lub21hIGluIGFuIGFuYWwgZ2xhbmQsIGNvbnRpbnVvdXMgd2l0aCB0aGUgUGFnZXTigJlzIGNlbGxzIGluIHRoZSBhbm9kZXJtIGJ1dCBsaW1pdGVkIGluIHRoZSBiYXNlbWVudCBtZW1icmFuZSB3aXRob3V0IGEgZGVzbW9wbGFzdGljIGNoYW5nZS4gSW1tdW5vaGlzdG9jaGVtaWNhbCBzdGFpbmluZyBvZiB0aGUgcmVzZWN0ZWQgc3BlY2ltZW4gcmV2ZWFsZWQgc2Vjb25kYXJ5IEVNUFQgZHVlIHRvIGFkZW5vY2FyY2lub21hIGFyaXNpbmcgZnJvbSB0aGUgYW5hbCBnbGFuZC4gCkR1ZSB0byB0aGUgcG9zc2liaWxpdHkgb2YgcmVzaWR1YWwgYWRlbm9jYXJjaW5vbWEgaW4gdGhlIGFuYWwgZ2xhbmQsIHBvc3NpYmx5IGV4dGVuZGluZyB0byB0aGUgc3BoaW5jdGVyLCBhIHJhZGljYWwgbGFwYXJvc2NvcHktYXNzaXN0ZWQgYWJkb21pbm9wZXJpbmVhbCByZXNlY3Rpb24gd2FzIHBlcmZvcm1lZC4gTm8gcmVjb25zdHJ1Y3RpdmUgcGxhc3RpYyBzdXJnZXJ5IHdhcyBuZWVkZWQuCkRpc2NoYXJnZSBEaWFnbm9zaXM6IApBbmFsIGdsYW5kIGFkZW5vY2FyY2lub21hIGluIHNpdHUgd2l0aCBwYWdldG9pZCBzcHJlYWQgaW4gdGhlIHBlcmlhbmFsIHNraW4uCgpEaXNwb3NpdGlvbjogClRoZSBwYXRpZW50IHdhcyBkaXNjaGFyZ2VkIGFuZCByZWNvbW1lbmRlZCB0byBmb2xsb3cgdXAgd2l0aCB0aGVpciBwcmltYXJ5IGNhcmUgcGh5c2ljaWFuLgoKRGlzY2hhcmdlIEluc3RydWN0aW9uczogClRoZSBwYXRpZW50IHdhcyBhZHZpc2VkIHRvIGZvbGxvdyB0aGUgY3VycmVudCBtZWRpY2F0aW9uIHByZXNjcmliZWQgYnkgdGhlIHByaW1hcnkgY2FyZSBwaHlzaWNpYW4gYW5kIGZ1cnRoZXIgYWR2aXNlZCB0byBsaW1pdCBwaHlzaWNhbCBhY3Rpdml0eS4gUmVndWxhciBoeWdpZW5lIHdhcyByZWNvbW1lbmRlZC4gSW4gY2FzZSBvZiBhbnkgd29yc2VuaW5nIHN5bXB0b21zLCB0aGUgcGF0aWVudCB3YXMgYWR2aXNlZCB0byBjb250YWN0IHRoZWlyIHByaW1hcnkgY2FyZSBwaHlzaWNpYW4uIFRoZSBwYXRpZW50IHdhcyBhbHNvIGFkdmlzZWQgdG8gY29tZSBmb3IgZm9sbG93LXVwIGFwcG9pbnRtZW50cyB3aXRoIHRoZWlyIHByaW1hcnkgY2FyZSBwaHlzaWNpYW4u"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

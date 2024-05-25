@@ -1,0 +1,378 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "gender": "male",
+        "birthDate": "1961-01-01",
+        "age": 62,
+        "text": {
+          "status": "generated",
+          "div": "<div>A 62-year-old male with a history of dysphagia.</div>"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363355006",
+              "display": "Malignant neoplasm of lower third of esophagus"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "onsetDateTime": "2021-01-01",
+        "note": [
+          {
+            "text": "Lower esophageal cancer confirmed squamous cell carcinoma on biopsy with pancreatic invasion, cStage IIIC."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "67097005",
+              "display": "Ivor Lewis esophagectomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedPeriod": {
+          "start": "2021-01-02",
+          "end": "2021-01-12"
+        },
+        "note": [
+          {
+            "text": "The patient underwent Ivor Lewis esophagectomy with distal pancreatectomy and splenectomy."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "example-medicationstatement",
+        "status": "not-taken",
+        "medicationCodeableConcept": {
+          "text": "None"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33747-1",
+              "display": "Alcohol consumption"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "valueQuantity": {
+          "value": 1500,
+          "unit": "ml",
+          "system": "http://unitsofmeasure.org",
+          "code": "ml"
+        },
+        "note": [
+          {
+            "text": "The patient's lifestyle included 1500 ml beer consumption per day."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-smoking",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Tobacco smoking status"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "valueString": "40 cigarettes per day for the past 40 years",
+        "note": [
+          {
+            "text": "The patient's lifestyle included 40 cigarettes per day for the past 40 years."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "period": {
+          "start": "2021-01-01",
+          "end": "2021-01-20"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "363355006",
+                "display": "Malignant neoplasm of lower third of esophagus"
+              }
+            ]
+          }
+        ],
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "hosp-trans",
+                "display": "Transfer from hospital"
+              }
+            ]
+          },
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        },
+        "location": [
+          {
+            "location": {
+              "display": "Hospital"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "example-servicerequest",
+        "status": "completed",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168537006",
+              "display": "CT of thorax and abdomen"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "authoredOn": "2021-01-01",
+        "note": [
+          {
+            "text": "Computed tomography (CT) showed thickening of the wall in the lower esophagus as the primary lesion was demonstrated, and the tumor formed a mass with the solitary metastatic abdominal lymph node, and invaded pancreas body and gastric body. No other distant metastasis was detected on CT."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure-resection",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Radical resection of tumor"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedDateTime": "2021-01-02",
+        "note": [
+          {
+            "text": "The patient underwent radical surgery. Reconstruction of gastric conduit was possible although the lymph node was adherent to lesser side of gastric body, which was resected when reconstruction of gastric conduit. In addition, partial resection of lung was performed simultaneously owing to involvement of bilateral pulmonary ligaments to the primary tumor."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure-chemotherapy",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "367336001",
+              "display": "Neoadjuvant chemotherapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedPeriod": {
+          "start": "2021-01-05",
+          "end": "2021-01-06"
+        },
+        "note": [
+          {
+            "text": "The patient underwent neoadjuvant chemotherapy, but after once administration, he could not continue chemotherapy for the exacerbation of dysphagia."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure-adjuvant-chemotherapy",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "367336001",
+              "display": "Adjuvant chemotherapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedPeriod": {
+          "start": "2021-02-01",
+          "end": "2021-03-01"
+        },
+        "note": [
+          {
+            "text": "The patient underwent two courses of chemotherapy as adjuvant chemotherapy."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-pathology",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33731-5",
+              "display": "Pathology report"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectiveDateTime": "2021-01-15",
+        "valueString": "The resected specimen revealed that the primary lesion was observed from lower esophagus to esophagogastric junction, and metastatic lymph node was fixed to stomach and pancreas body. The tumor was diagnosed with squamous cell carcinoma, moderately differentiated type. The vascular and lymphatic invasion were confirmed. The histopathological response of chemotherapy was grade 1a."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure-followup",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428341000000109",
+              "display": "Follow-up encounter"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedDateTime": "2021-01-20",
+        "note": [
+          {
+            "text": "The patient should return for routine follow-up visits with his oncologist. The patient should also avoid smoking and alcohol."
+          }
+        ]
+      }
+    }
+  ]
+}

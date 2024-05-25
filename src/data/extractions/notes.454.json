@@ -1,0 +1,265 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-case-2",
+        "name": [
+          {
+            "text": "Case 2"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2010-04-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-weight",
+            "valueQuantity": {
+              "value": 28.4,
+              "unit": "kg"
+            }
+          },
+          {
+            "url": "http://example.org/fhir/StructureDefinition/patient-breed",
+            "valueString": "Doberman Pinscher"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-case-2",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-case-2"
+        },
+        "period": {
+          "start": "2015-10",
+          "end": "2017-05"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-case-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "94128008",
+              "display": "Soft tissue sarcoma"
+            }
+          ],
+          "text": "Soft tissue sarcoma"
+        },
+        "subject": {
+          "reference": "Patient/patient-case-2"
+        },
+        "onsetDateTime": "2015-10",
+        "abatementDateTime": "2017-05"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-ultrasound",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "45036003",
+              "display": "Ultrasonography"
+            }
+          ],
+          "text": "Ultrasound"
+        },
+        "subject": {
+          "reference": "Patient/patient-case-2"
+        },
+        "performedPeriod": {
+          "start": "2015-10"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "med-admin-dhea-ubiquinone",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://example.org/fhir/CodeSystem/medication-codes",
+              "code": "DHEA",
+              "display": "DHEA"
+            },
+            {
+              "system": "http://example.org/fhir/CodeSystem/medication-codes",
+              "code": "ubiquinone",
+              "display": "ubiquinone"
+            }
+          ],
+          "text": "DHEA and ubiquinone"
+        },
+        "subject": {
+          "reference": "Patient/patient-case-2"
+        },
+        "effectivePeriod": {
+          "start": "2015-10",
+          "end": "2017-05"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "allergy-inflammatory-reaction",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "39579001",
+              "display": "Inflammatory reaction"
+            }
+          ],
+          "text": "Inflammatory reaction"
+        },
+        "patient": {
+          "reference": "Patient/patient-case-2"
+        },
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "247472004",
+                    "display": "Acute inflammatory reaction"
+                  }
+                ],
+                "text": "Acute inflammatory reaction"
+              }
+            ],
+            "description": "Acute inflammatory reaction in the eyes, followed by multiple inflammatory cutaneous lesions on the legs, foot pads, and trunk"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "med-admin-geraniol",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://example.org/fhir/CodeSystem/medication-codes",
+              "code": "geraniol",
+              "display": "geraniol"
+            }
+          ],
+          "text": "geraniol"
+        },
+        "subject": {
+          "reference": "Patient/patient-case-2"
+        },
+        "effectivePeriod": {
+          "start": "2015-10",
+          "end": "2017-05"
+        },
+        "note": [
+          {
+            "text": "Complete resolution of symptoms upon oral administration of geraniol"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-pregnancy",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "133918003",
+              "display": "Successful pregnancy"
+            }
+          ],
+          "text": "Successful pregnancy"
+        },
+        "subject": {
+          "reference": "Patient/patient-case-2"
+        },
+        "performedPeriod": {
+          "start": "2015-10",
+          "end": "2017-05"
+        },
+        "note": [
+          {
+            "text": "The patient underwent a successful pregnancy during treatment, delivering five healthy puppies"
+          }
+        ]
+      }
+    }
+  ]
+}

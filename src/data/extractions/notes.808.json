@@ -1,0 +1,205 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1969-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "109992000",
+              "display": "Primary myelofibrosis"
+            }
+          ],
+          "text": "Primary myelofibrosis"
+        },
+        "onsetDateTime": "2004-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ClinicalTrial",
+        "id": "clinicaltrial-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "period": {
+          "start": "2011-01-01",
+          "end": "2013-01-01"
+        },
+        "study": {
+          "reference": "http://example.org/study/fedratinib",
+          "display": "Clinical trial utilizing JAK2 inhibitor fedratinib"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1243909",
+              "display": "fedratinib"
+            }
+          ],
+          "text": "fedratinib"
+        },
+        "authoredOn": "2011-01-01",
+        "status": "stopped"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1231129",
+              "display": "ruxolitinib"
+            }
+          ],
+          "text": "ruxolitinib"
+        },
+        "authoredOn": "2013-01-01",
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77477000",
+              "display": "Bone marrow biopsy"
+            }
+          ],
+          "text": "Bone marrow biopsy"
+        },
+        "performedDateTime": "2012-01-01",
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "255604002",
+              "display": "Decreased cellularity with MF-3 fibrosis"
+            }
+          ],
+          "text": "Decrease in cellularity with MF-3 fibrosis only in the cellular areas"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77477000",
+              "display": "Bone marrow biopsy"
+            }
+          ],
+          "text": "Bone marrow biopsy"
+        },
+        "performedDateTime": "2016-01-01",
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "255604002",
+              "display": "Adipose tissue with osteosclerosis"
+            }
+          ],
+          "text": "Marrow comprised entirely of adipose tissue with osteosclerosis"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77477000",
+              "display": "Bone marrow biopsy"
+            }
+          ],
+          "text": "Bone marrow biopsy"
+        },
+        "performedDateTime": "2017-01-01",
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "255604002",
+              "display": "Hypocellular marrow with findings consistent with primary myelofibrosis"
+            }
+          ],
+          "text": "Hypocellular marrow with histopathologic findings consistent with primary myelofibrosis"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "789-8",
+              "display": "Magnetic resonance imaging of Bone marrow"
+            }
+          ],
+          "text": "Quantitative fat magnetic resonance (MR) imaging"
+        },
+        "valueString": "Replacement of the marrow with fat. A representative pseudocolor display that depicts 100% fat as dark red and 0% fat as dark blue was shown. The percent fat seen in the bone marrow imaging approximates that in subcutaneous fat.",
+        "effectiveDateTime": "2016-01-01"
+      }
+    }
+  ]
+}

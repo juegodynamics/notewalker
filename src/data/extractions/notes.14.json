@@ -1,0 +1,292 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "gender": "female",
+        "birthDate": "1978-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "1",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Diabetes mellitus type 2"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "2",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "36756008",
+              "display": "Primary hyperparathyroidism"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-3",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128423007",
+              "display": "Langerhans cell histiocytosis"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "remission"
+            }
+          ]
+        },
+        "onsetDateTime": "2006-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-4",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "4",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128423007",
+              "display": "Langerhans cell histiocytosis"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onsetDateTime": "2020-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-5",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "5",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128423007",
+              "display": "Langerhans cell histiocytosis"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onsetDateTime": "2021-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-6",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "6",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128423007",
+              "display": "Langerhans cell sarcoma"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onsetDateTime": "2021-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "period": {
+          "start": "2021-01-01",
+          "end": "2021-01-07"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationRequest-1",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "1",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8600",
+              "display": "Methotrexate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationRequest-2",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "2",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8640",
+              "display": "Prednisone"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationRequest-3",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "3",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "11124",
+              "display": "Vinblastine"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:carePlan-1",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "1",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "171052003",
+                    "display": "Monitoring"
+                  }
+                ]
+              },
+              "status": "in-progress"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

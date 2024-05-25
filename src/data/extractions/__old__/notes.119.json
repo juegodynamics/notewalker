@@ -1,0 +1,196 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "gender": "male",
+        "birthDate": "2012-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "428763004",
+                "display": "Dental examination"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "256500004",
+              "display": "Dilated odontoma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "234147009",
+              "display": "Extraction of tooth"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        },
+        "performedDateTime": "[REDACTED]",
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "256500004",
+                "display": "Dilated odontoma"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "36890007",
+              "display": "Computed tomography (CT)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        },
+        "effectiveDateTime": "[REDACTED]",
+        "valueString": "CT scan established bone integrity around the lesion and its independence from the local neuro-vascular structures."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-medicationrequest",
+        "status": "completed",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        },
+        "authoredOn": "[REDACTED]",
+        "note": [
+          {
+            "text": "No discharge medications."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "example-careplan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge instructions",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        },
+        "period": {
+          "start": "[REDACTED]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "completed",
+              "code": {
+                "text": "Follow-up with dental provider"
+              },
+              "scheduledPeriod": {
+                "start": "[REDACTED]",
+                "end": "[REDACTED]"
+              }
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "The patient is advised to follow up with a dental provider according to their recommended schedule. A postoperative follow-up appointment was scheduled for two weeks after discharge. The patient and their parent were instructed on the signs and symptoms of complications, and advised to seek medical attention if any were noted."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "123456"
+          }
+        ],
+        "name": [
+          {
+            "family": "Doe",
+            "given": [
+              "Jane"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2015-01-01",
+        "race": "African-American"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "serviceProvider": {
+          "reference": "Organization/tufts-dental"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "422587007",
+                "display": "Swelling of mouth"
+              }
+            ],
+            "text": "Asymptomatic swelling in the labial mucosa of her lower lips"
+          }
+        ],
+        "period": {
+          "start": "2023-01-01T10:00:00Z",
+          "end": "2023-01-01T11:00:00Z"
+        },
+        "location": [
+          {
+            "location": {
+              "reference": "Location/tufts-pediatric-dentistry"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422587007",
+              "display": "Swelling of mouth"
+            }
+          ],
+          "text": "Asymptomatic swelling in the labial mucosa of her lower lips"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "2023-01-01T10:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11289-6",
+              "display": "Physical exam finding"
+            }
+          ],
+          "text": "Physical Examination"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "effectiveDateTime": "2023-01-01T10:15:00Z",
+        "valueString": "0.70 cm silver blue, translucent swelling opposite the right mandibular canine"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Location",
+        "id": "tufts-pediatric-dentistry",
+        "name": "Tufts University School of Dental Medicine - Pediatric Dentistry",
+        "address": {
+          "line": [
+            "1 Kneeland St"
+          ],
+          "city": "Boston",
+          "state": "MA",
+          "postalCode": "02111",
+          "country": "USA"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "tufts-dental",
+        "name": "Tufts University School of Dental Medicine",
+        "address": {
+          "line": [
+            "1 Kneeland St"
+          ],
+          "city": "Boston",
+          "state": "MA",
+          "postalCode": "02111",
+          "country": "USA"
+        }
+      }
+    }
+  ]
+}

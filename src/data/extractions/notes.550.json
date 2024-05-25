@@ -1,0 +1,156 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Patient Name]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1973-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/us-core-race",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/v3/Race",
+                  "code": "2054-5",
+                  "display": "African American"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "399919001",
+              "display": "High-grade primary angiosarcoma of the breast"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274804006",
+              "display": "Partial mastectomy of breast"
+            }
+          ],
+          "text": "partial mastectomy for cosmesis and resection of the infected keloidal area"
+        },
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385669000",
+              "display": "Negative margins"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274804006",
+              "display": "Completion mastectomy of breast"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "6918",
+              "display": "Gemcitabine"
+            },
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "103",
+              "display": "Taxotere"
+            }
+          ]
+        },
+        "intent": "order",
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30525-0",
+              "display": "CT of chest, abdomen, and pelvis"
+            }
+          ]
+        },
+        "valueString": "No evidence of gross metastatic disease"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Plan",
+        "description": "Ongoing follow-up for surveillance and monitoring of any recurrence of angiosarcoma."
+      }
+    }
+  ]
+}

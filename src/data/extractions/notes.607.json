@@ -1,0 +1,239 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.1",
+            "value": "[MRN]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Date of Admission]",
+          "end": "[Date of Discharge]"
+        },
+        "subject": {
+          "reference": "Patient/[MRN]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128462008",
+              "display": "Hepatic metastases from squamous cell carcinoma"
+            }
+          ],
+          "text": "Hepatic metastases from squamous cell carcinoma"
+        },
+        "subject": {
+          "reference": "Patient/[MRN]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "17404007",
+              "display": "Liver resection"
+            }
+          ],
+          "text": "Liver resection for malignant hepatic lesion"
+        },
+        "subject": {
+          "reference": "Patient/[MRN]"
+        },
+        "performedPeriod": {
+          "start": "[Date of Admission]",
+          "end": "[Date of Discharge]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Cholecystectomy"
+            }
+          ],
+          "text": "Cholecystectomy"
+        },
+        "subject": {
+          "reference": "Patient/[MRN]"
+        },
+        "performedPeriod": {
+          "start": "[Date of Admission]",
+          "end": "[Date of Discharge]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "39607008",
+              "display": "Lymphadenectomy"
+            }
+          ],
+          "text": "Lymphadenectomy of the hepatic pedicle nodes"
+        },
+        "subject": {
+          "reference": "Patient/[MRN]"
+        },
+        "performedPeriod": {
+          "start": "[Date of Admission]",
+          "end": "[Date of Discharge]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "14937-7",
+              "display": "Hepatic Function"
+            }
+          ],
+          "text": "ICG Test Results"
+        },
+        "subject": {
+          "reference": "Patient/[MRN]"
+        },
+        "effectiveDateTime": "[Date of Admission]",
+        "valueString": "Routine liver function test with ICG conducted to determine the most appropriate surgical procedures."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan1",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "The patient is advised to have their post-operative follow-up with their primary care physician. The patient is advised to report any symptoms such as pain, fever, or any drainage from the site of surgery. The patient is advised to follow a healthy diet and maintain physical activity and not to smoke.",
+        "subject": {
+          "reference": "Patient/[MRN]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest1",
+        "status": "completed",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/[MRN]"
+        },
+        "authoredOn": "[Date of Discharge]",
+        "dosageInstruction": [
+          {
+            "text": "None"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "appointment1",
+        "status": "booked",
+        "serviceCategory": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/service-category",
+                "code": "17",
+                "display": "General Practice"
+              }
+            ]
+          }
+        ],
+        "description": "Follow-up with primary care physician",
+        "start": "[Date of Discharge]",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/[MRN]"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "name": [
+          {
+            "use": "official",
+            "family": "[Redacted]",
+            "given": [
+              "[Redacted]"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "admission-diagnosis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "84114007",
+              "display": "Heart failure"
+            }
+          ],
+          "text": "Acute heart failure secondary to dilated cardiomyopathy"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "echocardiogram",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "46338-6",
+              "display": "Echocardiogram"
+            }
+          ],
+          "text": "Echocardiogram"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "valueString": "Acute heart failure secondary to dilated cardiomyopathy with severe mitral regurgitation and an ejection fraction of 21%"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-request",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Anti-failure medications"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "care-plan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Discharge instructions and follow-up care plan",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Follow up with pediatric cardiology and pediatric hematology departments regularly"
+            }
+          },
+          {
+            "detail": {
+              "description": "Continue taking prescribed medications as directed"
+            }
+          },
+          {
+            "detail": {
+              "description": "Follow a healthy and balanced diet"
+            }
+          },
+          {
+            "detail": {
+              "description": "Avoid strenuous activities or activities that may cause excessive fatigue"
+            }
+          },
+          {
+            "detail": {
+              "description": "Monitor for any signs or symptoms of worsening symptoms"
+            }
+          },
+          {
+            "detail": {
+              "description": "Seek medical attention immediately if there are any concerns"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CareTeam",
+        "id": "care-team",
+        "status": "active",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "participant": [
+          {
+            "role": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/participant-role",
+                  "code": "practitioner",
+                  "display": "Pediatric Cardiologist"
+                }
+              ],
+              "text": "Pediatric Cardiologist"
+            }
+          },
+          {
+            "role": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/participant-role",
+                  "code": "practitioner",
+                  "display": "Pediatric Hematologist"
+                }
+              ],
+              "text": "Pediatric Hematologist"
+            }
+          },
+          {
+            "role": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/participant-role",
+                  "code": "practitioner",
+                  "display": "Pediatric Gastroenterologist"
+                }
+              ],
+              "text": "Pediatric Gastroenterologist"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "signed-document",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34133-9",
+              "display": "Summary of episode note"
+            }
+          ],
+          "text": "Signed Hospital Course Summary"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "application/pdf",
+              "url": "[Redacted]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

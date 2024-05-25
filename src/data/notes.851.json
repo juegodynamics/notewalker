@@ -1,0 +1,142 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "N/A"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1984-01-01"  // Assuming the patient is 39 years old in 2023
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "N/A",
+          "end": "N/A"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "263204007",
+              "display": "Fracture of coronoid process of ulna"
+            }
+          ],
+          "text": "Coronoid process fracture, Regan-Morrey type 2"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "430193006",
+              "display": "Arthroscopic osteosynthesis"
+            }
+          ],
+          "text": "Minimally invasive arthroscopic osteosynthesis"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "N/A",
+          "end": "N/A"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/1"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Not available"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Instructions",
+        "description": "The patient was able to resume his normal daily activities without any pain. He will continue physical therapy for several weeks to maintain and increase the range of motion. The patient did not require further hospitalization.",
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "text": "N/A"
+          }
+        ]
+      }
+    }
+  ]
+}

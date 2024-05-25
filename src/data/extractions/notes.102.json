@@ -1,0 +1,217 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "family": "[Redacted]",
+            "given": [
+              "[Redacted]"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1940-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "reasonCode": [
+          {
+            "text": "Consultation for left ptosis surgery and previous treatment for NTG"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Unilateral stable glaucoma with coexisting pituitary adenoma"
+        },
+        "onsetAge": {
+          "value": 82,
+          "unit": "years",
+          "system": "http://unitsofmeasure.org",
+          "code": "a"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "17856-6",
+              "display": "Intraocular pressure"
+            }
+          ],
+          "text": "Intraocular pressure"
+        },
+        "valueQuantity": {
+          "value": 14,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29271-4",
+              "display": "Visual acuity"
+            }
+          ],
+          "text": "Best corrected visual acuity (BCVA)"
+        },
+        "valueString": "1.0 (right eye), 1.0 (left eye)"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Left ptosis surgery"
+            }
+          ],
+          "text": "Left ptosis surgery"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "description": "Discharge plan and follow-up instructions",
+        "activity": [
+          {
+            "detail": {
+              "description": "Follow-up appointments with ophthalmologist and endocrinologist",
+              "status": "scheduled"
+            }
+          },
+          {
+            "detail": {
+              "description": "Monitor vision changes and report symptoms to ophthalmologist",
+              "status": "not-started"
+            }
+          },
+          {
+            "detail": {
+              "description": "Continue monitoring pituitary microadenoma with endocrinologist",
+              "status": "not-started"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ReferralRequest",
+        "id": "referral-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "order",
+        "type": {
+          "text": "Referral to endocrinologist"
+        },
+        "description": "Management of pituitary microadenoma"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "document-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary\n\nPatient Name: [Redacted]\nAge: 82\nGender: Male\nAdmission Date: [Redacted]\nDischarge Date: [Redacted]\n\nReason for Admission:\nThe patient presented to our clinic for consultation and left ptosis surgery and was previously treated elsewhere for NTG.\n\nHospital Course:\nUpon admission, the patient reported normal IOP (14 mmHg) and BCVA of 1.0 and 1.0, right and left eye, respectively. On ophthalmoscopy, both eyes showed glaucomatous changes, but the left eye was more advanced than the right. In addition, only the left eye exhibited VF changes typical for glaucoma that corresponded ideally with a retinal nerve fiber layer thickness defect in OCT examinations.\n\nFurther examination revealed a 4 x 4mm pituitary microadenoma that was found to be contacting the chiasm. While the cause of this condition is unclear, the patient’s condition remained stable throughout his observation with no change in visual field or tumor size.\n\nDiagnosis:\nThe patient presented with unilateral stable glaucoma with coexisting pituitary adenoma.\n\nDischarge Plan:\nThe patient was given a detailed follow-up plan upon discharge and scheduled for routine follow-up appointments with his ophthalmologist and endocrinologist.\n\nInstructions:\nThe patient was advised to monitor any changes in vision and immediately report any symptoms to his ophthalmologist. He was also asked to continue monitoring his pituitary microadenoma under the supervision of his endocrinologist.\n\nReferrals/Consultations:\nThe patient was referred to an endocrinologist for the management of his pituitary microadenoma.\n\nProcedures/Treatments:\nThe patient underwent left ptosis surgery.\n\nCondition Upon Discharge:\nThe patient was discharged in stable condition with no complications.\n\nSigned: [Redacted]."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

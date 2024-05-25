@@ -1,0 +1,258 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[insert name]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1992-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+            "valueString": "African American"
+          }
+        ],
+        "id": "patient-1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "code": "inpatient",
+          "display": "Inpatient"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[insert date]",
+          "end": "[insert date]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-1"
+            }
+          }
+        ],
+        "reasonCode": [
+          {
+            "text": "Vaginal bleeding at 22-weeks gestation"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "126926006",
+              "display": "High-grade sarcoma of the posterior vaginal wall"
+            }
+          ],
+          "text": "High-grade sarcoma of the posterior vaginal wall"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "onsetDateTime": "[insert date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71388002",
+              "display": "Cesarean hysterectomy"
+            }
+          ],
+          "text": "Cesarean hysterectomy, bilateral salpingectomy, and peritoneal biopsies"
+        },
+        "performedDateTime": "[insert date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "170784004",
+              "display": "Upper vaginectomy"
+            }
+          ],
+          "text": "Upper vaginectomy and proctoscopy"
+        },
+        "performedDateTime": "[insert date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33739-4",
+              "display": "Pathology report"
+            }
+          ],
+          "text": "Pathology report"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[insert date]",
+        "valueString": "The mass was highly cellular and composed of spindle-shaped and multinucleated giant cells with focal myxomatous change."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33739-4",
+              "display": "Pathology report"
+            }
+          ],
+          "text": "Pathology report"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[insert date]",
+        "valueString": "Final surgical pathology report showed no malignant or neoplastic cells."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33739-4",
+              "display": "Pathology report"
+            }
+          ],
+          "text": "Pathology report"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[insert date]",
+        "valueString": "Biopsy revealed a high-grade sarcoma that was positive for estrogen receptor and progesterone receptor."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Medication",
+        "id": "medication-1",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1045811",
+              "display": "Betamethasone"
+            }
+          ],
+          "text": "Betamethasone"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-1",
+        "status": "completed",
+        "medicationReference": {
+          "reference": "Medication/medication-1"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "[insert date]",
+          "end": "[insert date]"
+        },
+        "dosage": {
+          "text": "Betamethasone administered 24 hours apart for two doses"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44816003",
+              "display": "Brachytherapy"
+            }
+          ],
+          "text": "High dose rate vaginal brachytherapy using a multi-channel vaginal cylinder"
+        },
+        "performedDateTime": "[insert date]"
+      }
+    }
+  ]
+}

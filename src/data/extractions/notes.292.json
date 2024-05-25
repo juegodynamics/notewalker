@@ -1,0 +1,178 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[patient name]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1969-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-age",
+            "valueAge": {
+              "value": 54,
+              "unit": "years"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[patient id]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "373937008",
+              "display": "Late onset capsular bag distension syndrome (CBDS)"
+            }
+          ],
+          "text": "Late-onset CBDS with a high possibility of associated P. acnes"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "onsetDateTime": "2022-01-01",
+        "abatementDateTime": "2023-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29271-4",
+              "display": "Vision assessment"
+            }
+          ],
+          "text": "Best corrected visual acuity (BCVA)"
+        },
+        "subject": {
+          "reference": "Patient/[patient id]"
+        },
+        "valueString": "20/28 in right eye (OD) and 20/400 in left eye (OS)"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Pars plana vitrectomy"
+            }
+          ],
+          "text": "Pars plana vitrectomy (PPV) with posterior capsulotomy"
+        },
+        "subject": {
+          "reference": "Patient/[patient id]"
+        },
+        "performedDateTime": "2023-01-01",
+        "reasonReference": [
+          {
+            "reference": "Condition/[condition id]"
+          }
+        ],
+        "outcome": {
+          "text": "The post-operative period was uneventful, and no signs of intraocular inflammation were detected. At six months, the patient had a 20/25 BCVA and did fine without any complaints."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "11124",
+              "display": "Vancomycin"
+            }
+          ],
+          "text": "Intravitreal vancomycin (1 mg/0.1 mL)"
+        },
+        "subject": {
+          "reference": "Patient/[patient id]"
+        },
+        "effectiveDateTime": "2023-01-01",
+        "dosage": {
+          "text": "Intravitreal vancomycin (1 mg/0.1 mL) injected at the end of the procedure"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "664-3",
+              "display": "Gram stain"
+            }
+          ],
+          "text": "Histopathology for gram stains and cultures"
+        },
+        "subject": {
+          "reference": "Patient/[patient id]"
+        },
+        "result": [
+          {
+            "reference": "Observation/[observation id]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "664-3",
+              "display": "Thioglycolate broth culture"
+            }
+          ],
+          "text": "Thioglycolate broth positive for P. acnes"
+        },
+        "subject": {
+          "reference": "Patient/[patient id]"
+        },
+        "valueString": "Positive for the growth of P. acnes"
+      }
+    }
+  ]
+}

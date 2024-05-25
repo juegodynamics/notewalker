@@ -1,0 +1,350 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "family": "[REDACTED]",
+            "given": [
+              "[REDACTED]"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1965-XX-XX"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-aml",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "92814000",
+              "display": "Acute myeloid leukemia"
+            }
+          ],
+          "text": "Acute myeloid leukemia (AML)"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "onsetDateTime": "2016-07-XX"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "115050003",
+              "display": "Bone marrow aspiration and biopsy"
+            }
+          ],
+          "text": "Bone marrow biopsy"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedDateTime": "2016-07-XX"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Pancytopenia"
+            }
+          ],
+          "text": "Pancytopenia"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectiveDateTime": "2016-07-XX",
+        "valueCodeableConcept": {
+          "text": "Pancytopenia"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "32207-3",
+              "display": "Bone marrow cellularity"
+            }
+          ],
+          "text": "Hypercellular marrow with 65% myeloid blasts"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectiveDateTime": "2016-07-XX",
+        "valueQuantity": {
+          "value": 65,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "62362-2",
+              "display": "Chromosome analysis"
+            }
+          ],
+          "text": "del(5q22q36)"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectiveDateTime": "2016-07-XX",
+        "valueCodeableConcept": {
+          "text": "del(5)(q22q36)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "727090001",
+              "display": "IA regimen"
+            }
+          ],
+          "text": "IA regimen"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectivePeriod": {
+          "start": "2016-07-XX",
+          "end": "2016-08-XX"
+        },
+        "note": [
+          {
+            "text": "Achieved complete remission (CR) after 1 cycle"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "131090000",
+              "display": "HiDAC regimen"
+            }
+          ],
+          "text": "HiDAC regimen"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectivePeriod": {
+          "start": "2016-09-XX",
+          "end": "2017-03-XX"
+        },
+        "note": [
+          {
+            "text": "Received 6 courses as consolidation therapies"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "182900001",
+              "display": "CAG regimen"
+            }
+          ],
+          "text": "CAG regimen"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectivePeriod": {
+          "start": "2018-07-XX",
+          "end": "2019-03-XX"
+        },
+        "note": [
+          {
+            "text": "Treated for 3 cycles, resulting in second CR"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "387620000",
+              "display": "VA regimen"
+            }
+          ],
+          "text": "VA regimen"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectivePeriod": {
+          "start": "2020-11-XX",
+          "end": "2021-01-XX"
+        },
+        "note": [
+          {
+            "text": "Did not respond after 2 courses"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "86098000",
+              "display": "Chidamide"
+            },
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1423800",
+              "display": "Venetoclax"
+            },
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "205219",
+              "display": "Azacitidine"
+            }
+          ],
+          "text": "Chidamide combined with venetoclax plus azacitidine regimen"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectivePeriod": {
+          "start": "2021-03-XX",
+          "end": "2021-04-XX"
+        },
+        "note": [
+          {
+            "text": "Achieved third CR"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18262-6",
+              "display": "Duration of neutropenia"
+            }
+          ],
+          "text": "Duration of neutropenia"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectiveDateTime": "2021-04-XX",
+        "valueQuantity": {
+          "value": 10,
+          "unit": "days",
+          "system": "http://unitsofmeasure.org",
+          "code": "d"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "57833-6",
+              "display": "Infectious complications"
+            }
+          ],
+          "text": "Infectious complications"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectiveDateTime": "2021-04-XX",
+        "valueCodeableConcept": {
+          "text": "No infectious complications observed"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "period": {
+          "start": "2016-07-XX",
+          "end": "2021-04-XX"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "92814000",
+                "display": "Acute myeloid leukemia"
+              }
+            ],
+            "text": "Acute myeloid leukemia (AML)"
+          }
+        ]
+      }
+    }
+  ]
+}

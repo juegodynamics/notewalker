@@ -1,0 +1,132 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Name]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "reasonCode": [
+          {
+            "text": "Whole-body computed tomography scan and a bone scintigraphy scan revealed a tumor in the entire right tibia of [Name] with known breast carcinoma."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Adamantinoma histology with a tumor in the entire right tibia"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Custom-made tibia EPR, resection of tumor with anteromedial approach, reconstruction with silver-coated modular endoprosthesis"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/Adamantinoma"
+          }
+        ],
+        "note": [
+          {
+            "text": "A microvascular latissimus dorsi musculocutaneous flap was anastomosed to the tibia artery (end-to-side) and concomitant vein and wrapped around the prosthesis to avoid dead space and allow tension-free closure. A medial gastrocnemius muscle flap was transposed to cover the patellar tendon region."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "status": "not-taken",
+        "medicationCodeableConcept": {
+          "text": "None"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Discharge Condition"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "valueString": "Stable and able to ambulate with mild limping."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient is advised to continue following up with their treating physician and regular radiological investigations. The patient is advised to monitor any changes in symptoms, such as pain or swelling, and to inform their treating physicians of any concerns."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "gender": "male",
+        "birthDate": "1967-01-01",
+        "name": [
+          {
+            "use": "official",
+            "text": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "2",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "254937004",
+                "display": "Urachal carcinoma"
+              }
+            ],
+            "text": "Urachal carcinoma with suspected peritoneal dissemination"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254937004",
+              "display": "Urachal carcinoma"
+            }
+          ],
+          "text": "Urachal carcinoma with suspected peritoneal dissemination"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Procedure/4"
+              }
+            ]
+          },
+          {
+            "detail": [
+              {
+                "reference": "Observation/5"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "4",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Complete resection of tumor"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/3"
+          }
+        ],
+        "followUp": [
+          {
+            "text": "Regular follow-up with CT scans and tumor marker level measurement every three months for the first three years and every six months thereafter."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "5",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30654-0",
+              "display": "CT of Abdomen"
+            }
+          ],
+          "text": "Contrast-enhanced computed tomography (CT)"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "[REDACTED]",
+        "valueString": "9-cm mass extending from the bladder to the umbilicus with intraperitoneal nodules suggesting peritoneal dissemination"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "6",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "49765-1",
+              "display": "Serum Tumor Marker"
+            }
+          ],
+          "text": "Serum tumor markers"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "[REDACTED]",
+        "valueString": "Normalized"
+      }
+    }
+  ]
+}

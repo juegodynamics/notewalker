@@ -1,0 +1,195 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "185349003",
+                "display": "Hospital admission"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "4740000",
+                "display": "Acute pyelonephritis in pregnancy"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "4740000",
+              "display": "Acute pyelonephritis in pregnancy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Removal of vascular device"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "performer": [
+          {
+            "actor": {
+              "reference": "Practitioner/[REDACTED]",
+              "display": "Vascular Surgery Department"
+            }
+          }
+        ],
+        "outcome": {
+          "text": "The procedure was performed by the vascular surgery department, who successfully removed the stent by puncturing the femoral vein and introducing a curved guide into the vena cava, which was then twisted around the stent to extract it. The patient experienced no complications during or after the procedure."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75325-1",
+              "display": "Palpitations"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "valueString": "The patient complained of insidious onset of palpitations and moderate right flank pain. There was no macroscopic hematuria, which was likely due to intracatheter blood clotting."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "date": "[REDACTED]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "In summary, the patient was treated for acute gestational obstructive pyelonephritis with the added complication of a migrated right ureteral stent. An endovascular extraction procedure was performed successfully without complications, and the patient was discharged in stable condition with instructions for follow-up with her primary care physician."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Follow-up care plan",
+        "description": "The patient was advised to rest and monitor any potential complications related to the stent migration. Follow-up with primary care physician for any ongoing symptoms or concerns related to previous condition.",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    }
+  ]
+}

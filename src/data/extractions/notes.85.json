@@ -1,0 +1,195 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "age": 5,
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "74400008",
+              "display": "Acute appendicitis"
+            }
+          ],
+          "text": "Acute uncomplicated appendicitis"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onsetDateTime": "2023-10-01T00:00:00Z",
+        "abatementDateTime": "2023-10-10T00:00:00Z",
+        "note": [
+          {
+            "text": "Recurrence of acute uncomplicated appendicitis, treated non-surgically due to underlying COVID-19 infection."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ],
+          "text": "Fever"
+        },
+        "valueQuantity": {
+          "value": 38.5,
+          "unit": "Celsius",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2160-0",
+              "display": "Laboratory test result"
+            }
+          ],
+          "text": "Elevated inflammatory markers"
+        },
+        "valueString": "Elevated"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "763158003",
+              "display": "Conservative treatment"
+            }
+          ],
+          "text": "Treated conservatively with antibiotics due to underlying COVID-19 infection."
+        },
+        "status": "completed",
+        "performedPeriod": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-10T00:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385669000",
+              "display": "Non-surgical procedure"
+            }
+          ],
+          "text": "Non-surgical approach due to patient's clinical status."
+        },
+        "status": "completed",
+        "performedPeriod": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-10T00:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-10T00:00:00Z"
+        },
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32485007",
+                "display": "Inpatient encounter"
+              }
+            ],
+            "text": "Hospital admission"
+          }
+        ],
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "428361000124106",
+                "display": "Discharge to home"
+              }
+            ],
+            "text": "Discharged in stable condition"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-Up Care Plan",
+        "description": "Follow-up visit to ensure resolution of symptoms and confirm the effectiveness of the treatment.",
+        "period": {
+          "start": "2023-10-17T00:00:00Z"
+        }
+      }
+    }
+  ]
+}

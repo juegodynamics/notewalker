@@ -1,0 +1,334 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "guinea-pig",
+        "animal": {
+          "species": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/animal-species",
+                "code": "Cavia porcellus",
+                "display": "Guinea Pig"
+              }
+            ]
+          },
+          "breed": {
+            "text": "Satin"
+          },
+          "genderStatus": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/animal-genderstatus",
+                "code": "female",
+                "display": "Female"
+              }
+            ]
+          }
+        },
+        "birthDate": "2021-10-01",
+        "weight": {
+          "value": 560,
+          "unit": "g"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Insert date]",
+          "end": "[Insert date]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "267036007",
+                "display": "Anorexia"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "161891005",
+                "display": "Low weight"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "233748000",
+                "display": "Cheek teeth overgrowth"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "12559006",
+                "display": "Malocclusion"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "26366000",
+                "display": "Joint immobility"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "111297000",
+                "display": "Spinal misalignment"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "subject": {
+          "reference": "Patient/guinea-pig"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "12559006",
+              "display": "Malocclusion"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "11324000",
+                "display": "Incisor"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "39610005",
+                  "display": "Radiological study"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "subject": {
+          "reference": "Patient/guinea-pig"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "234147001",
+              "display": "Coronal reduction"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "[Insert date]",
+          "end": "[Insert date]"
+        },
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385669000",
+              "display": "Improved"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11882-8",
+              "display": "Hematology panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/guinea-pig"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "effectiveDateTime": "[Insert date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24323-8",
+              "display": "Biochemical panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/guinea-pig"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "effectiveDateTime": "[Insert date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1998-2",
+              "display": "Ionized calcium"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/guinea-pig"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "effectiveDateTime": "[Insert date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24336-0",
+              "display": "Urinalysis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/guinea-pig"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "effectiveDateTime": "[Insert date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "report1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18748-4",
+              "display": "Radiology report"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/guinea-pig"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "effectiveDateTime": "[Insert date]",
+        "conclusion": "Deformity, double cortical line, marked trabecular pattern, and loss of definition of the medullary cavity in virtually all of the long bones. Left carpal synarthrosis and misalignment of the spine at the L5-L6 level."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan1",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/guinea-pig"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "period": {
+          "start": "[Insert date]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "18286008",
+                    "display": "Diet monitoring"
+                  }
+                ]
+              },
+              "description": "The patient's diet should be monitored closely, especially vitamin C intake."
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "171207006",
+                    "display": "Dental examination"
+                  }
+                ]
+              },
+              "description": "The patient should continue to undergo regular dental examinations to check for recurrence of dental issues."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

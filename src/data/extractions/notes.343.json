@@ -1,0 +1,245 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "male"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ],
+            "text": "Inpatient Encounter"
+          }
+        ],
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ],
+            "text": "Problem List Item"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254537002",
+              "display": "Subungual melanocytic nevus"
+            }
+          ],
+          "text": "Subungual melanocytic nevus"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical resection"
+            }
+          ],
+          "text": "Surgical resection of subungual melanocytic nevus"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "followUp": [
+          {
+            "text": "Routine follow-up procedures"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "106232009",
+              "display": "Repair of nail matrix"
+            }
+          ],
+          "text": "Repair of nail matrix with lateral toe pulp island flap"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "56459004",
+                "display": "Right hallux"
+              }
+            ],
+            "text": "Right hallux"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Plan",
+        "description": "Routine follow-up procedures to avoid potential negative consequences",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Composition",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge Summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "date": "[REDACTED]",
+        "title": "Discharge Summary",
+        "section": [
+          {
+            "title": "Brief Hospital Course",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient was admitted to the hospital with progressive subungual melanosis in the hallux of the right foot lasting more than 4 years. No pseudo-Hutchinson signs were noted during the initial evaluation. After resection, the tumor was pathologically diagnosed as subungual melanocytic nevus, and the defect of the nail matrix was repaired with a lateral toe pulp island flap based on the plantar digital artery. A thorough clinical evaluation and follow-up tests were carried out to monitor the patient's recovery after surgery.</div>"
+            }
+          },
+          {
+            "title": "Discharge Diagnosis",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient was diagnosed with subungual melanocytic nevus.</div>"
+            }
+          },
+          {
+            "title": "Treatment Provided",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient underwent surgical resection of the tumor and subsequent repair of the nail matrix with a lateral toe pulp island flap based on the plantar digital artery. During the postoperative period, the patient was monitored and subjected to a series of follow-up tests.</div>"
+            }
+          },
+          {
+            "title": "Patient Condition on Discharge",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient was discharged in a stable condition and made a full recovery after surgery.</div>"
+            }
+          },
+          {
+            "title": "Follow-Up Plan",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient will be recommended to undergo routine follow-up procedures to avoid any potential negative consequences in the future.</div>"
+            }
+          },
+          {
+            "title": "Instructions Given at Discharge",
+            "text": {
+              "status": "generated",
+              "div": "<div>Instructions were given to the patient and their family regarding postoperative care and follow-up procedures.</div>"
+            }
+          },
+          {
+            "title": "Summary",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient was admitted to the hospital with progressive subungual melanosis in the hallux of the right foot for over 4 years, which was diagnosed as subungual melanocytic nevus. After surgical resection of the tumor and repair of the nail matrix with a lateral toe pulp island flap, the patient made a full recovery and was discharged in a stable condition. The patient will undergo routine follow-up procedures to ensure long-term health.</div>"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

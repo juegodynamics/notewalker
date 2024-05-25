@@ -1,0 +1,191 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Redacted]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1970-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "2",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "302215000",
+              "display": "Severe thrombocytopenia"
+            }
+          ],
+          "text": "Severe thrombocytopenia"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onsetDateTime": "1999-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "3",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26515-7",
+              "display": "Platelet count"
+            }
+          ],
+          "text": "Platelet count"
+        },
+        "valueQuantity": {
+          "value": 10,
+          "unit": "x10^9/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "x10^9/L"
+        },
+        "effectiveDateTime": "2003-04-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "4",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26515-7",
+              "display": "Platelet count"
+            }
+          ],
+          "text": "Platelet count"
+        },
+        "valueQuantity": {
+          "value": 400,
+          "unit": "x10^9/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "x10^9/L"
+        },
+        "effectiveDateTime": "2003-04-24"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "5",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308137",
+              "display": "Eltrombopag 75 MG Oral Tablet"
+            }
+          ],
+          "text": "Eltrombopag 75 mg daily"
+        },
+        "dosage": [
+          {
+            "text": "75 mg daily"
+          }
+        ],
+        "effectivePeriod": {
+          "start": "2015-05-01",
+          "end": "2015-05-31"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "6",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197345",
+              "display": "Azathioprine 50 MG Oral Tablet"
+            }
+          ],
+          "text": "Azathioprine low dose"
+        },
+        "dosage": [
+          {
+            "text": "low dose"
+          }
+        ],
+        "effectivePeriod": {
+          "start": "2015-05-01",
+          "end": "2015-05-31"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "7",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197316",
+              "display": "Mycophenolate mofetil 500 MG Oral Tablet"
+            }
+          ],
+          "text": "Mycophenolate low dose"
+        },
+        "dosage": [
+          {
+            "text": "low dose"
+          }
+        ],
+        "effectivePeriod": {
+          "start": "2015-05-01",
+          "end": "2015-05-31"
+        }
+      }
+    }
+  ]
+}

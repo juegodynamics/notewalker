@@ -1,0 +1,165 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Patient Name]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1970-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/v3/Race",
+                  "code": "2106-3",
+                  "display": "White"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/[Patient Name]"
+        },
+        "reasonCode": [
+          {
+            "text": "Seizures, neuropathy, palpitations, and musculoskeletal pain"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/[Condition1]"
+            }
+          },
+          {
+            "condition": {
+              "reference": "Condition/[Condition2]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "Condition1",
+        "subject": {
+          "reference": "Patient/[Patient Name]"
+        },
+        "code": {
+          "text": "Symptoms including seizures, neuropathy, palpitations, and musculoskeletal pain"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "Condition2",
+        "subject": {
+          "reference": "Patient/[Patient Name]"
+        },
+        "code": {
+          "text": "Positive serological testing for Babesia microti and Anaplasma phagocytophylum"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[Patient Name]"
+        },
+        "code": {
+          "text": "Serological testing"
+        },
+        "note": [
+          {
+            "text": "Initially negative serological testing for Bb became seropositive after taking antibiotics. Positive serological testing for Babesia microti and Anaplasma phagocytophylum."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "subject": {
+          "reference": "Patient/[Patient Name]"
+        },
+        "medicationCodeableConcept": {
+          "text": "Antibiotics"
+        },
+        "note": [
+          {
+            "text": "Antibiotics included doxycycline, telithromycin, minocycline, clindamycin, clarithromycin, metronidazole, tinidazole, rifampicin, atovaquone, hydroxychloroquine, and mefloquine."
+          },
+          {
+            "text": "Clarithromycin and cefdinir at the time of sample collection."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Current symptoms"
+        },
+        "subject": {
+          "reference": "Patient/[Patient Name]"
+        },
+        "valueString": "Currently asymptomatic"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "subject": {
+          "reference": "Patient/[Patient Name]"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up",
+        "description": "The patient should schedule a follow-up appointment with the medical team for monitoring and further evaluation. Any changes or worsening of symptoms should be reported to the doctor immediately."
+      }
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2014-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "442311008",
+              "display": "Renal Hypouricemia"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LP19989-3",
+              "display": "Ultrasonography of abdomen"
+            }
+          ]
+        },
+        "valueString": "2 cm calculus in the right middle moiety of kidney non-obstructing",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LP20703-2",
+              "display": "Hypouricemia"
+            }
+          ]
+        },
+        "valueString": "Persistent hypouricemia and markedly elevated fractional excretion of uric acid (FE-UA)",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "367640001",
+              "display": "Genetic analysis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedDateTime": "[REDACTED]",
+        "reasonReference": [
+          {
+            "reference": "Condition/[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Maintain a healthy diet and increase fluid intake to prevent further stone formation. Follow-up with a nephrologist for further management of RHUC.",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "addresses": [
+          {
+            "reference": "Condition/[REDACTED]"
+          }
+        ],
+        "activity": [
+          {
+            "detail": {
+              "description": "Maintain a healthy diet and increase fluid intake to prevent further stone formation",
+              "status": "completed"
+            }
+          },
+          {
+            "detail": {
+              "description": "Follow-up with a nephrologist for further management of RHUC",
+              "status": "completed"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

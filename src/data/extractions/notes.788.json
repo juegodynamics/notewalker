@@ -1,0 +1,190 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "identifier": [
+          {
+            "system": "http://hospital.org/patients",
+            "value": "12345"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1978-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "72310000",
+              "display": "Lumbago"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "41695006",
+                "display": "Structure of right kidney"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11525-3",
+                  "display": "Ultrasound of Kidney"
+                }
+              ],
+              "text": "B mode ultrasonography revealed a tumor with a size of 5.4 × 4.8 cm, a regular shape, and an uneven internal echo."
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "30746-0",
+                  "display": "CT of Abdomen"
+                }
+              ],
+              "text": "Middle abdomen plain and enhanced CT confirmed a round tumor of the same size."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "432061000124100",
+              "display": "Laparoscopic radical nephrectomy"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "41695006",
+                "display": "Structure of right kidney"
+              }
+            ]
+          }
+        ],
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385669000",
+              "display": "Successful"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2023-01-01T08:30:00Z",
+          "end": "2023-01-01T12:30:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60570-9",
+              "display": "Pathology report"
+            }
+          ]
+        },
+        "conclusion": "The tumor was determined to be a translocation of XP11.2 tumor associated with pigment differentiation and showed a low malignant biological behavior.",
+        "conclusionCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "128462008",
+                "display": "Translocation of XP11.2 associated tumor"
+              }
+            ]
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain",
+            "data": "Immunohistochemistry revealed that it was positive for HMB45, Melan-A, S100, Ki67, and TFE3."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33791-1",
+              "display": "Follow-up note"
+            }
+          ]
+        },
+        "valueString": "After the surgery, the patient remained stable with no recurrence or complications within the 3-month follow-up period. No other treatments were administered to the patient at this time."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "activity": [
+          {
+            "detail": {
+              "description": "The patient is advised to attend regular check-ups to monitor for any recurrence of the tumor. The patient was also instructed to maintain a healthy lifestyle, including regular exercise and a balanced diet."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

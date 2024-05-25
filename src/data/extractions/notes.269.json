@@ -1,0 +1,248 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "patient": {
+          "reference": "Patient/patient"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "Syncope"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "code": {
+          "text": "Transient loss of consciousness due to syncope"
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Observation/observation-electrolyte"
+              },
+              {
+                "reference": "Observation/observation-hemoglobin"
+              },
+              {
+                "reference": "Observation/observation-esr"
+              },
+              {
+                "reference": "Observation/observation-crp"
+              },
+              {
+                "reference": "Observation/observation-ecg"
+              },
+              {
+                "reference": "Observation/observation-ambulatory-ecg"
+              },
+              {
+                "reference": "Observation/observation-echo"
+              },
+              {
+                "reference": "Observation/observation-tilt-table"
+              },
+              {
+                "reference": "Observation/observation-exercise"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-electrolyte",
+        "status": "final",
+        "code": {
+          "text": "Electrolyte level"
+        },
+        "valueString": "Normal"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-hemoglobin",
+        "status": "final",
+        "code": {
+          "text": "Hemoglobin level"
+        },
+        "valueString": "Normal"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-esr",
+        "status": "final",
+        "code": {
+          "text": "Erythrocyte Sedimentation Rate"
+        },
+        "valueString": "Normal"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-crp",
+        "status": "final",
+        "code": {
+          "text": "C-Reactive Protein level"
+        },
+        "valueString": "Normal"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-ecg",
+        "status": "final",
+        "code": {
+          "text": "Electrocardiogram"
+        },
+        "valueString": "No abnormal findings"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-ambulatory-ecg",
+        "status": "final",
+        "code": {
+          "text": "24 hours ambulatory electrocardiogram monitoring"
+        },
+        "valueString": "No abnormal findings"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-echo",
+        "status": "final",
+        "code": {
+          "text": "Echocardiogram"
+        },
+        "valueString": "No abnormal findings"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-tilt-table",
+        "status": "final",
+        "code": {
+          "text": "Tilt table test"
+        },
+        "valueString": "No abnormal findings"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-exercise",
+        "status": "final",
+        "code": {
+          "text": "Exercise tolerance test"
+        },
+        "valueString": "No abnormal findings"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnostic-imaging",
+        "status": "final",
+        "code": {
+          "text": "DCE MRI scans"
+        },
+        "conclusion": "Disruption of the blood-brain barrier",
+        "imagingStudy": [
+          {
+            "reference": "ImagingStudy/imagingstudy-dce-mri"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-dce-mri",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "numberOfSeries": 1,
+        "numberOfInstances": 1,
+        "series": [
+          {
+            "uid": "1.2.840.10008.1.2.1",
+            "number": 1,
+            "numberOfInstances": 1,
+            "instance": [
+              {
+                "uid": "1.2.840.10008.1.2.1.1",
+                "sopClass": {
+                  "system": "http://dicom.nema.org/resources/ontology/DCM",
+                  "code": "1.2.840.10008.5.1.4.1.1.4"
+                },
+                "title": "DCE MRI"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "discharge-summary",
+        "status": "current",
+        "type": {
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "date": "[REDACTED]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "[REDACTED]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

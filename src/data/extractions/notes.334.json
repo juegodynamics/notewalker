@@ -1,0 +1,229 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "N/A"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        },
+        "period": {
+          "end": "Day 18 of Hospitalization"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "95293001",
+              "display": "Mantle cell lymphoma"
+            }
+          ],
+          "text": "Mantle cell lymphoma with multiple lymphomatous polyposis"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267425008",
+              "display": "Nephrogenic diabetes insipidus"
+            }
+          ],
+          "text": "Partial NDI"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18286008",
+              "display": "Autologous hematopoietic cell transplantation"
+            }
+          ],
+          "text": "BeEAM protocol for an autologous HCT"
+        },
+        "performedPeriod": {
+          "start": "Day -8",
+          "end": "Day 18 of Hospitalization"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197361",
+              "display": "Bendamustine"
+            }
+          ],
+          "text": "Bendamustine"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectivePeriod": {
+          "start": "Day -8",
+          "end": "Day -8"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "310798",
+              "display": "Desmopressin"
+            }
+          ],
+          "text": "Desmopressin"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectivePeriod": {
+          "start": "Day -1",
+          "end": "Day 18 of Hospitalization"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2160-0",
+              "display": "Serum sodium"
+            }
+          ],
+          "text": "Serum sodium"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectivePeriod": {
+          "start": "Day -6",
+          "end": "Day 18 of Hospitalization"
+        },
+        "valueQuantity": {
+          "value": "Normal range"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2164-2",
+              "display": "Serum creatinine"
+            }
+          ],
+          "text": "Serum creatinine"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectivePeriod": {
+          "start": "Day -6",
+          "end": "Day 18 of Hospitalization"
+        },
+        "valueQuantity": {
+          "value": "Increased"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "5811-5",
+              "display": "Urine output"
+            }
+          ],
+          "text": "Urine output"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectivePeriod": {
+          "start": "Day -6",
+          "end": "Day 18 of Hospitalization"
+        },
+        "valueQuantity": {
+          "value": "Increased"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "Follow up with the nephrology team and monitor the patient's fluid intake and output closely. No further treatment is needed for the lymphoma at this time.",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "Day 18 of Hospitalization"
+        }
+      }
+    }
+  ]
+}

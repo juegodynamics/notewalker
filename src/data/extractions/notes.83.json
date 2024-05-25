@@ -1,0 +1,316 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "age": {
+          "value": 12,
+          "unit": "years"
+        },
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267036007",
+              "display": "Acute appendicitis"
+            }
+          ],
+          "text": "Acute complicated appendicitis"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "onsetDateTime": "2023-10-01",
+        "evidence": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "422400008",
+                  "display": "Abdominal tenderness"
+                }
+              ],
+              "text": "Tenderness in the right lower abdominal quadrant"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI) [Ratio]"
+            }
+          ],
+          "text": "Fever"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueQuantity": {
+          "value": 38.5,
+          "unit": "degrees Celsius",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11289-6",
+              "display": "Abdominal pain"
+            }
+          ],
+          "text": "Abdominal pain"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2023-10-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "76536-6",
+              "display": "Painful urination"
+            }
+          ],
+          "text": "Painful urination"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2023-10-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "94500-6",
+              "display": "SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory specimen by NAA with probe detection"
+            }
+          ],
+          "text": "COVID-19 Test"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2023-09-23",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260373001",
+              "display": "Detected"
+            }
+          ],
+          "text": "Positive"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Laparoscopic appendectomy"
+            }
+          ],
+          "text": "Laparoscopic appendectomy"
+        },
+        "performedPeriod": {
+          "start": "2023-10-02T08:00:00Z",
+          "end": "2023-10-02T10:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "46384-6",
+              "display": "Ultrasound of Abdomen"
+            }
+          ],
+          "text": "Abdominal ultrasound"
+        },
+        "conclusion": "Signs consistent with acute complicated appendicitis",
+        "effectiveDateTime": "2023-10-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medadmin-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "421593001",
+              "display": "Intravenous antibiotics"
+            }
+          ],
+          "text": "Intravenous antibiotics"
+        },
+        "effectivePeriod": {
+          "start": "2023-10-01T08:00:00Z",
+          "end": "2023-10-01T10:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "82159-5",
+              "display": "Bacteria identified in Fluid by Culture"
+            }
+          ],
+          "text": "Fluid culture"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "302786000",
+              "display": "Pseudomonas aeruginosa"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108523007",
+              "display": "Streptococcus viridans"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "720597008",
+              "display": "Gemella morbillorum"
+            }
+          ],
+          "text": "P.aeruginosa, Str.viridans, and Gemella morbillorum"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-10-01T08:00:00Z",
+          "end": "2023-10-03T12:00:00Z"
+        },
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32485007",
+                "display": "Hospital admission"
+              }
+            ],
+            "text": "Hospital admission"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "The patient was monitored for any signs of complications and was discharged home in stable condition. The patient will follow up with her primary care physician in the coming weeks for further evaluation and monitoring. Recommendations for follow-up care were provided to the patient and her family prior to discharge."
+      }
+    }
+  ]
+}

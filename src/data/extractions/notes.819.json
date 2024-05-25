@@ -1,0 +1,282 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "identifier": [
+          {
+            "system": "http://hospital.example.org/patients",
+            "value": "123456"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1964-01-01",
+        "age": 59
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-lung-cancer",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254637007",
+              "display": "Lung cancer"
+            }
+          ],
+          "text": "Nonsmall cell lung cancer in the right upper lobe, stage T1A"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "code": {
+              "text": "Serial surveillance imaging showed no abnormalities until the current presentation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-sbrt",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000124106",
+              "display": "Stereotactic Body Radiation Therapy (SBRT)"
+            }
+          ],
+          "text": "Completed SBRT"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-gastric-carcinoma",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "408646001",
+              "display": "Poorly differentiated carcinoma of stomach"
+            }
+          ],
+          "text": "Poorly differentiated carcinoma in the gastric fundus"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "69695003",
+                "display": "Gastric fundus"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-pancreatic-mass",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "373972000",
+              "display": "Mass of pancreas"
+            }
+          ],
+          "text": "Hypoechoic round mass in the tail of the pancreas"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "18911002",
+                "display": "Tail of pancreas"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "code": {
+              "text": "Local vascular involvement and splenic vein thrombus"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cond-splenic-vein-thrombus",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "4070008",
+              "display": "Thrombosis of splenic vein"
+            }
+          ],
+          "text": "1.1-cm filling defect within the splenic vein"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-pet-ct",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44560002",
+              "display": "PET-CT scan"
+            }
+          ],
+          "text": "Total body PET-CT scan"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/cond-lung-cancer"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-upper-endoscopy",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Upper gastrointestinal endoscopy"
+            }
+          ],
+          "text": "Upper endoscopy"
+        },
+        "outcome": {
+          "text": "Revealed a 5-cm infiltrative and ulcerated mass in the gastric fundus"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-eus",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444455000",
+              "display": "Endoscopic ultrasound (EUS)"
+            }
+          ],
+          "text": "EUS confirmed a hypoechoic round mass in the pancreas with local vascular involvement and splenic vein thrombus"
+        },
+        "outcome": {
+          "text": "Diagnosed with neuroendocrine carcinoma"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagreport-gastric-biopsy",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "22634-0",
+              "display": "Gastric biopsy"
+            }
+          ],
+          "text": "Gastric biopsies"
+        },
+        "conclusion": "Poorly differentiated carcinoma"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-symptomatic-treatment",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Symptomatic treatment",
+        "description": "Patient elected to receive symptomatic treatment after discussing treatment options including palliative care"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-diagnostic-concern",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11526-1",
+              "display": "Diagnostic concern"
+            }
+          ],
+          "text": "Metastasis of the primary lung tumor to the stomach"
+        },
+        "valueString": "Metastasis of the primary lung tumor to the stomach is infrequent and sporadic. Symptomatic cases present with epigastric pain, chronic anemia, signs of GI bleed (hematemesis, melena), and gastric perforations. The patient's case illustrates the potential for cancer to spread via hematogenous and lymphatic routes. EUS-FNA in combination with immunohistochemistry is useful in diagnosing metastatic lesions and differentiating those from synchronous primary lesions."
+      }
+    }
+  ]
+}

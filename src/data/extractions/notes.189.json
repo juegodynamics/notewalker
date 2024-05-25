@@ -1,0 +1,209 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "identifier": [
+          {
+            "value": "[REDACTED]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2014-01-01",
+        "weight": {
+          "value": 31,
+          "unit": "kg"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "text": "Dengue Shock Syndrome with Plasma Leakage"
+        },
+        "onsetDateTime": "2023-10-01",
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Observation/[REDACTED]"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "Patient with complaints of high fever, body aches, headache, abdominal cramps, emesis, and rashes. History of dengue infection two years previously and contact with a COVID-19 patient one month before the illness."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "text": "Respiratory distress, fluctuating blood pressure, cold periphery, bilateral pleural effusions, pneumonitis"
+        },
+        "valueString": "Positive for dengue NS1 Ag, negative rt-PCR for SARS-CoV-2, blood and urine cultures no growth"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "text": "Laboratory Findings"
+        },
+        "component": [
+          {
+            "code": {
+              "text": "Thrombocytopenia"
+            }
+          },
+          {
+            "code": {
+              "text": "Hypoalbuminemia"
+            }
+          },
+          {
+            "code": {
+              "text": "Hypocalcemia"
+            }
+          },
+          {
+            "code": {
+              "text": "Altered liver functions"
+            }
+          },
+          {
+            "code": {
+              "text": "Coagulopathy"
+            }
+          },
+          {
+            "code": {
+              "text": "Positive C-reactive protein"
+            }
+          },
+          {
+            "code": {
+              "text": "Slightly increased blood urea"
+            }
+          },
+          {
+            "code": {
+              "text": "High levels of serum ferritin, D-dimer, serum troponin I, and NT-pro-BNP"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "text": "Echocardiogram"
+        },
+        "valueString": "Mild pericardial effusion, prominent dilated coronaries, LMCA (+3.0 SD), LAD (+2.5 SD), bilateral pleural effusion, fair LV function"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "code": {
+          "text": "SARS-CoV-2 Antibody (IgG)"
+        },
+        "valueString": "Positive"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "medicationCodeableConcept": {
+          "text": "IV inotropes, albumin, calcium gluconate, antibiotics (imipenem, levofloxacin), furosemide"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Managed for dengue shock syndrome with plasma leakage"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "medicationCodeableConcept": {
+          "text": "IVIG, methylprednisolone, aspirin, clopidogrel"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Single dose of IVIG followed by methylprednisolone, aspirin, and clopidogrel"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "type": {
+          "text": "Discharge Summary"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient, a previously healthy nine-year-old male with a weight of 31 Kg, was admitted to our hospital with complaints of high fever, body aches, headache, abdominal cramps, emesis, and rashes. He had a history of dengue infection two years previously and was in contact with a COVID-19 patient one month before the illness. On admission, he was noted to have respiratory distress, fluctuating blood pressure, cold periphery, and bilateral pleural effusions with pneumonitis. He tested positive for dengue NS1 Ag and his rt-PCR for SARS-CoV-2 was negative, and blood and urine cultures yielded no growth.\n\nInvestigations revealed thrombocytopenia, hypoalbuminemia, hypocalcemia, altered liver functions, coagulopathy, positive C-reactive protein, and slightly increased blood urea. He also had high levels of serum ferritin, D-dimer, serum troponin I, and NT-pro-BNP. An echocardiogram showed a mild pericardial effusion, prominent dilated coronaries, LMCA (+3.0 SD), LAD (+2.5 SD), bilateral pleural effusion, and fair LV function. The test for SARS-CoV-2 antibody (IgG) came back positive.\n\nThe patient was initially managed for dengue shock syndrome with plasma leakage using IV inotropes, albumin, calcium gluconate, antibiotics (imipenem, levofloxacin), and furosemide. After evaluating his condition and consultation with pediatric cardiologists, he was treated with a single dose of IVIG, followed by methylprednisolone, aspirin, and clopidogrel. His general condition gradually improved, and serial CXRs showed gradually reducing pleural effusions.\n\nThe patient was transferred to the pediatric ward ten days after PICU admission and was discharged with necessary advice and follow-up plans.\n\nPatient Outcomes:\n\nThe patient was discharged from the hospital with improving laboratory reports. His condition gradually improved and his pleural effusions showed marked reduction. During his hospital course, the patient was managed for dengue shock syndrome with plasma leakage using IV inotropes, albumin, calcium gluconate, antibiotics, and furosemide, along with a single dose of IVIG. He was also started on methylprednisolone, aspirin, and clopidogrel."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

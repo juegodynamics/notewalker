@@ -1,0 +1,171 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-example",
+        "gender": "male",
+        "birthDate": "2012",
+        "name": [
+          {
+            "use": "official",
+            "text": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-example",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "428763004",
+                "display": "Dental assessment"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-example",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77877007",
+              "display": "Dilated odontoma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-example",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "408478003",
+              "display": "Surgical procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "234147009",
+              "display": "Extraction of third molar"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-example"
+        },
+        "performedDateTime": "[REDACTED]",
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "428763004",
+                "display": "Dental assessment"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "discharge-summary",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "author": [
+          {
+            "reference": "Practitioner/[REDACTED]"
+          }
+        ],
+        "date": "[REDACTED]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "VGhlIHBhdGllbnQgd2FzIGFkbWl0dGVkIGZvciBhIGRlbnRhbCBhc3Nlc3NtZW50LCB3aGljaCByZXZlYWxlZCBhbiBpbnRyYW9zc2VvdXMgbGVzaW9uIGFzc29jaWF0ZWQgd2l0aCB0aGUgbGVmdCBtYW5kaWJ1bGFyIHRoaXJkIG1vbGFyIGdlcm0uIFRoZSBsZXNpb24gd2FzIHN1cmdpY2FsbHkgcmVtb3ZlZCB1bmRlciBsb2NhbCBhbmVzdGhlc2lhLCBhbmQgdGhlIHBhdGllbnQncyByZWNvdmVyeSB3YXMgdW5ldmVudGZ1bC4gVGhlIHBhdGllbnQgd2FzIGRpc2NoYXJnZWQgd2l0aCBpbnN0cnVjdGlvbnMgZm9yIGZvbGxvdy11cCBjYXJlIHdpdGggYSBkZW50YWwgcHJvdmlkZXIuCkRpYWdub3NpczoKRGlsYXRlZCBvZG9udG9tYQoKQ29uZGl0aW9uIHVwb24gZGlzY2hhcmdlOgogU3RhYmxlCgpEaXNjaGFyZ2UgbWVkaWNhdGlvbnM6Ck5vbmUKCkRpc2NoYXJnZSBpbnN0cnVjdGlvbnM6ClRoZSBwYXRpZW50IGlzIGFkdmlzZWQgdG8gZm9sbG93IHVwIHdpdGggYSBkZW50YWwgcHJvdmlkZXIgYWNjb3JkaW5nIHRvIHRoZWlyIHJlY29tbWVuZGVkIHNjaGVkdWxlLiBBIHBvc3RvcGVyYXRpdmUgZm9sbG93LXVwIGFwcG9pbnRtZW50IHdhcyBzY2hlZHVsZWQgZm9yIHR3byB3ZWVrcyBmdXR1cmUgZGlzY2hhcmdlLiBUaGUgcGF0aWVudCBhbmQgdGhlaXIgcGFyZW50IHdlcmUgaW5zdHJ1Y3RlZCBvbiB0aGUgc2lnbnMgYW5kIHN5bXB0b21zIG9mIGNvbXBsaWNhdGlvbnMsIGFuZCBhZHZpc2VkIHRvIHNlZWsgbWVkaWNhbCBhdHRlbnRpb24gaWYgYW55IHdlcmUgbm90ZWQuCkZvbGxvLVVwOgogQSBwb3N0b3BlcmF0aXZlIGZvbGxvdy11cCBhcHBvaW50bWVudCB3YXMgc2NoZWR1bGVkIGZvciB0d28gd2Vla3MgYWZ0ZXIgdGhlIHBhdGllbnQncyBkaXNjaGFyZ2UuLgo="
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

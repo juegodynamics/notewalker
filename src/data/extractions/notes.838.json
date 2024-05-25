@@ -1,0 +1,218 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1955-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "reasonCode": [
+          {
+            "text": "Enlarged extraocular muscles"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44730008",
+              "display": "IgG4-related ophthalmic disease"
+            }
+          ],
+          "text": "IgG4-related ophthalmic disease (IgG4-ROD)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29271-4",
+              "display": "CT of orbit"
+            }
+          ],
+          "text": "CT of orbit"
+        },
+        "valueString": "enlarged extraocular muscles, left lacrimal gland, right medial rectus, right inferior rectus, right lateral rectus, and right inferior oblique"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26388-6",
+              "display": "MRI of orbit"
+            }
+          ],
+          "text": "MRI of orbit"
+        },
+        "valueString": "enlarged extraocular muscles, left lacrimal gland, right medial rectus, right inferior rectus, right lateral rectus, and right inferior oblique"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29571-1",
+              "display": "Serum IgG4 level"
+            }
+          ],
+          "text": "Serum IgG4 level"
+        },
+        "valueQuantity": {
+          "value": 429,
+          "unit": "mg/dL",
+          "referenceRange": [
+            {
+              "low": {
+                "value": 6.1,
+                "unit": "mg/dL"
+              },
+              "high": {
+                "value": 121.4,
+                "unit": "mg/dL"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33799-8",
+              "display": "Anterior orbitotomy and lacrimal gland biopsy"
+            }
+          ],
+          "text": "Anterior orbitotomy and lacrimal gland biopsy"
+        },
+        "valueString": "Increased positive IgG4 cells (>50–70 cells/HPF), focally positive CD3, CD20, and Ki-67 (6%)"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29271-4",
+              "display": "Exophthalmometry"
+            }
+          ],
+          "text": "Exophthalmometry"
+        },
+        "valueString": "18 mm OD and 16.5 mm OS"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Orbitotomy"
+            }
+          ],
+          "text": "Anterior orbitotomy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "122456005",
+              "display": "Biopsy of lacrimal gland"
+            }
+          ],
+          "text": "Lacrimal gland biopsy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "5640",
+              "display": "Oral Steroids"
+            }
+          ],
+          "text": "Oral Steroids"
+        },
+        "dosageInstruction": [
+          {
+            "text": "The patient was treated with oral steroids and demonstrated improvement in symptoms."
+          }
+        ]
+      }
+    }
+  ]
+}

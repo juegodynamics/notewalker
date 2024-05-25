@@ -1,0 +1,363 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "70423000",
+                "display": "Anti-PR3-associated ANCA glomerulonephritis"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "70423000",
+              "display": "Anti-PR3-associated ANCA glomerulonephritis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2160-0",
+              "display": "Creatinine [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 4.1,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "359140007",
+              "display": "Renal biopsy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049627",
+              "display": "Prednisone 60 MG Oral Tablet"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Prednisone 60 mg daily"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308136",
+              "display": "Cyclophosphamide"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Cyclophosphamide x 2 doses"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1363058",
+              "display": "Rituximab"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Rituximab x 4 doses"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225158009",
+              "display": "Plasma exchange"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "note": [
+          {
+            "text": "Plasma exchange x 5 cycles"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1240411000000108",
+              "display": "Immunosuppressive therapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18286008",
+              "display": "Computed tomography (CT) of chest"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "note": [
+          {
+            "text": "CT scan of the chest showed right upper lobe consolidation and moderate bilateral pleural effusion"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LP31388-9",
+              "display": "Urinalysis"
+            }
+          ]
+        },
+        "valueString": "Hematuria and sub-nephrotic proteinuria",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "remission"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "70423000",
+              "display": "Anti-PR3-associated ANCA glomerulonephritis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "note": [
+          {
+            "text": "The patient achieved remission after 10 weeks of diagnosis with a resolution of symptoms and improvement in renal function."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "386359008",
+                    "display": "Follow-up care"
+                  }
+                ]
+              },
+              "status": "in-progress",
+              "description": "Patient is following up with the nephrology office regularly."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

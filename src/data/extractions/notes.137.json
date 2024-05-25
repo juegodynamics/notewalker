@@ -1,0 +1,203 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "birthDate": "[DOB]",
+        "gender": "male"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "reasonCode": [
+          {
+            "text": "Duchenne muscular dystrophy"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "code": {
+          "text": "Duchenne muscular dystrophy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "code": {
+          "text": "Intellectual disability"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "code": {
+          "text": "Autism spectrum disorder"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "code": {
+          "text": "Joint hyperlaxity"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "code": {
+          "text": "Morphogenetic anomalies"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "code": {
+          "text": "Fragile X syndrome"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "EEG results"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "valueString": "focal spikes over the frontal region and the left temporal region and generalized spike-and-wave complexes during sleep"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Brain MRI results"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "valueString": "normal"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Genetic analysis of the dystrophin gene"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "note": [
+          {
+            "text": "Detection of deletion of exons 46-51 of the gene"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Array-CGH analysis and FMR1 molecular analysis"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "note": [
+          {
+            "text": "Comorbidity with Fragile X syndrome (FXS) confirmed"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Rehabilitation program"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "note": [
+          {
+            "text": "Slight improvement, especially in motor skills"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "description": "Hospital Discharge Summary",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "date": "[Discharge Date]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Hospital Course: Admission Date: [Date] Discharge Date: [Date] Patient: [Name] History and Presenting Problem: This 5-year-old boy with a molecularly confirmed diagnosis of Duchenne muscular dystrophy (DMD) presented with intellectual disability (ID), autism spectrum disorder (ASD), joint hyperlaxity, and morphogenetic anomalies. The patient’s mother had a history of epilepsy with tonic–clonic seizures, photosensitivity, and moderate elevation in serum creatinine phosphokinase (CPK) levels following physical exercise. Assessment and Findings: The patient was born from non-consanguineous parents after an uneventful dizygotic twin pregnancy. He had delayed milestones and showed a lack of eye contact, visual tracking, and social interest from early on. EEG showed focal spikes over the frontal region and the left temporal region and generalized spike-and-wave complexes during sleep. A brain MRI showed normal results. Muscular dystrophy was confirmed through genetic analysis of the dystrophin gene which detected the deletion of exons 46-51 of the gene. The child presented with severe developmental delays and autistic features, including poor eye contact, absence of protodeclarative pointing, attention deficit, and inadequate social-communicative abilities. Joint hyperlaxity and peculiar facial traits were noted, including a high forehead, epicanthic folds, deep-set eyes, an elongated face, and large ears. Following array-CGH analysis and FMR1 molecular analysis, the comorbidity with Fragile X syndrome (FXS) was confirmed. Treatment and Course: The patient received a rehabilitation program that showed a slight improvement, especially in his motor skills. The patient was discharged to continue therapy as an outpatient. The family was referred to genetic counseling. Discharge Diagnoses: 1. Duchenne muscular dystrophy 2. Intellectual disability 3. Autism spectrum disorder 4. Joint hyperlaxity 5. Morphogenetic anomalies 6. Fragile X syndrome Discharge Condition: The patient was discharged in stable condition with continued symptoms and ongoing medical needs. Discharge Medications: N/A Follow-Up: Follow-up appointments with the rehabilitation program and genetic counseling were scheduled."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

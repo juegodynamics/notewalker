@@ -1,0 +1,246 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient-B.II.1",
+        "identifier": [
+          {
+            "value": "B.II.1"
+          }
+        ],
+        "age": 46,
+        "gender": "male"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "Condition-Hemochromatosis",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "E83.10",
+              "display": "Hemochromatosis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-B.II.1"
+        },
+        "note": [
+          {
+            "text": "Cys282Tyr mutation carrier"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "Condition-Dyslipidemia",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "E78.5",
+              "display": "Dyslipidemia"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-B.II.1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "Condition-Hemorrhoids",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "I84",
+              "display": "Internal hemorrhoids"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-B.II.1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "Condition-Arthropathy",
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "M12.9",
+              "display": "Chronic arthropathy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-B.II.1"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "36701003",
+                "display": "Feet"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "122494005",
+                "display": "Spine"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "53840002",
+                "display": "Hands"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "Procedure-Erythroapheresis",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "441047006",
+              "display": "Erythroapheresis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-B.II.1"
+        },
+        "performedPeriod": {
+          "start": "2015-01-01",
+          "end": "2017-05-01"
+        },
+        "note": [
+          {
+            "text": "Initially monthly, later reduced to every two months"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "Procedure-Phlebotomy",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "302295001",
+              "display": "Phlebotomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-B.II.1"
+        },
+        "performedPeriod": {
+          "start": "2015-01-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter-HospitalAdmission",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/Patient-B.II.1"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "267425008",
+                "display": "Hyperferritinemia"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "235856003",
+                "display": "Hepatic iron accumulation"
+              }
+            ]
+          }
+        ],
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "hosp-trans",
+                "display": "Transferred from another hospital"
+              }
+            ]
+          }
+        },
+        "period": {
+          "start": "2015-01-01",
+          "end": "2017-05-01"
+        },
+        "dischargeDisposition": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+              "code": "home",
+              "display": "Home"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "The patient is being discharged with instructions to continue regular phlebotomies and routine monitoring of iron levels. Follow-up appointments with the healthcare provider are recommended to monitor the patient's progress and adjust treatment as necessary."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Observation-HepaticIron",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "57028-3",
+              "display": "Hepatic iron concentration"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Patient-B.II.1"
+        },
+        "effectiveDateTime": "2017-05-01",
+        "valueString": "No signs of hepatic iron overload"
+      }
+    }
+  ]
+}

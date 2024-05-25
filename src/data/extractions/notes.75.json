@@ -1,0 +1,202 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "gender": "female",
+        "birthDate": "1963-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "2",
+        "status": "finished",
+        "period": {
+          "start": "2020-11-01",
+          "end": "2021-01-01"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "23270002",
+              "display": "Sensorineural hearing loss"
+            }
+          ],
+          "text": "Profound sensorineural hearing loss on the left side due to mumps"
+        },
+        "onsetAge": {
+          "value": 4,
+          "unit": "years"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "4",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "42399005",
+              "display": "Vestibular schwannoma"
+            }
+          ],
+          "text": "Right-sided intracanalicular vestibular schwannoma"
+        },
+        "recordedDate": "2019-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "5",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "431491007",
+              "display": "Stereotactic radiosurgery"
+            }
+          ],
+          "text": "Stereotactic radiosurgery (3x6 Gy)"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedDateTime": "2019-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "6",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "23270002",
+              "display": "Sensorineural hearing loss"
+            }
+          ],
+          "text": "Progressive hearing loss on the right side post-SRS"
+        },
+        "recordedDate": "2020-08-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "7",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18286008",
+              "display": "Cochlear implantation"
+            }
+          ],
+          "text": "Cochlear implantation on the right side"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "2020-11-01",
+          "end": "2020-11-30"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "8",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11329-0",
+              "display": "Audiometry"
+            }
+          ],
+          "text": "Aided pure-tone audiometry (PTA)"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "2021-01-01",
+        "valueString": "Significant improvement in hearing; 90% monosyllables at 65 dB (FMT)"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "9",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11329-0",
+              "display": "Audiometry"
+            }
+          ],
+          "text": "Aided pure-tone audiometry (PTA)"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "2021-06-01",
+        "valueString": "Maintained 90% monosyllables at 65 dB (FMT)"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "10",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11329-0",
+              "display": "Audiometry"
+            }
+          ],
+          "text": "Oldenburg Sentence test (OLSA)"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "2021-11-01",
+        "valueString": "1.5 dB SNR"
+      }
+    }
+  ]
+}

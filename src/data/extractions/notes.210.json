@@ -1,0 +1,228 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1980-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "Post-surgical pain management following pelvic exenteration due to cervical carcinoma"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363406005",
+              "display": "Malignant tumor of cervix"
+            }
+          ],
+          "text": "cervical carcinoma"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "236888000",
+              "display": "Pelvic exenteration"
+            }
+          ],
+          "text": "pelvic exenteration"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "7052",
+              "display": "Oxycodone"
+            }
+          ],
+          "text": "Oxycodone"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "dosage": {
+          "text": "Continuous intravenous infusion of oxycodone",
+          "route": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration",
+                "code": "IV",
+                "display": "Intravenous"
+              }
+            ]
+          },
+          "dose": {
+            "value": 30,
+            "unit": "mg/day",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg/day"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "7052",
+              "display": "Oxycodone"
+            }
+          ],
+          "text": "Oxycodone"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "dosage": {
+          "text": "Continuous intravenous infusion of oxycodone",
+          "route": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration",
+                "code": "IV",
+                "display": "Intravenous"
+              }
+            ]
+          },
+          "dose": {
+            "value": 288,
+            "unit": "mg/day",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg/day"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "7052",
+              "display": "Oxycodone"
+            }
+          ],
+          "text": "Oxycodone"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "dosage": {
+          "text": "Continuous intravenous infusion of oxycodone",
+          "route": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration",
+                "code": "IV",
+                "display": "Intravenous"
+              }
+            ]
+          },
+          "dose": {
+            "value": 18,
+            "unit": "mg/day",
+            "system": "http://unitsofmeasure.org",
+            "code": "mg/day"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Opioid withdrawal symptoms"
+            }
+          ],
+          "text": "Opioid withdrawal symptoms"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "effectivePeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "valueString": "Restlessness and itching sensation in legs"
+      }
+    }
+  ]
+}

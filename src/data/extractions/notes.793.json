@@ -1,0 +1,149 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ],
+        "birthDate": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "reasonCode": [
+          {
+            "text": "Asthenia and weight loss"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "Pediatric-onset adult sarcoidosis with liver, splenic, and abdominal lymphadenopathy and mild pulmonary fibrosis"
+            }
+          }
+        ],
+        "hospitalization": {
+          "admitSource": {
+            "text": "Department of Pediatrics of the Meyer Children’s Hospital"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "Pediatric-onset adult sarcoidosis with liver, splenic, and abdominal lymphadenopathy and mild pulmonary fibrosis"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Observation/[redacted]"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "Initial laboratory tests"
+        },
+        "valueString": "Microcytic iron deficiency anemia, Chest X-ray was negative"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "modality": [
+          {
+            "code": "MRI",
+            "display": "Magnetic Resonance Imaging"
+          }
+        ],
+        "description": "MRI examination of the superior and inferior abdomen with contrast medium confirmed increased liver dimensions and its structural inhomogeneity with zones of signal alteration."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "Liver and lymph node ultrasound-guided biopsy"
+        },
+        "outcome": {
+          "text": "Non-necrotizing granulomatous inflammation, resembling sarcoidosis, and aspects of non-specific inflammation of the liver."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "medicationCodeableConcept": {
+          "text": "Prednisone 40 mg/day"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "medicationCodeableConcept": {
+          "text": "Mycophenolate mofetil"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "modality": [
+          {
+            "code": "MRI",
+            "display": "Magnetic Resonance Imaging"
+          }
+        ],
+        "description": "Brain MRI to rule out cerebral involvement; revealed normal findings."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "title": "Follow-up Plan",
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "text": "Periodic follow-up visits consisting of clinical and laboratory evaluation every 6 months and annual pulmonary function tests."
+              },
+              "description": "Patient will be advised to notify healthcare provider of any new symptoms or worsening of current symptoms."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ]
+      }
+    }
+  ]
+}

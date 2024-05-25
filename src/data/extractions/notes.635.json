@@ -1,0 +1,326 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[Mr./Mrs. X]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.3.4.5.6.7",
+            "value": "[XXXXX]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "235595009",
+              "display": "Gastroesophageal reflux disease"
+            }
+          ],
+          "text": "Gastroesophageal reflux disease (GERD)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "414916001",
+              "display": "Liver hemangioma"
+            }
+          ],
+          "text": "Liver hemangioma"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertension"
+            }
+          ],
+          "text": "Hypertension"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "72366004",
+              "display": "Esophagitis"
+            }
+          ],
+          "text": "Mild esophagitis"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-5",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40739000",
+              "display": "Barrett's esophagus"
+            }
+          ],
+          "text": "Barrett's esophagus"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "304188007",
+              "display": "Upper gastrointestinal endoscopy"
+            }
+          ],
+          "text": "Upper GI endoscopy"
+        },
+        "outcome": {
+          "text": "Found a polyp at the gastroesophageal junction."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Computed tomography of chest and abdomen"
+            }
+          ],
+          "text": "Infused computed tomography (CT) of the chest and abdomen"
+        },
+        "valueString": "Large heterogeneously enhancing mass in the upper abdomen, highly suggestive of GIST originating from the gastric antrum."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Wedge resection of stomach"
+            }
+          ],
+          "text": "Wedge resection of the gastric mass"
+        },
+        "outcome": {
+          "text": "Negative margins"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274022001",
+              "display": "Submucosal resection"
+            }
+          ],
+          "text": "Transgastric submucosal resection of the GEJ polyp"
+        },
+        "outcome": {
+          "text": "Negative margins"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "122503009",
+              "display": "Histopathology study"
+            }
+          ],
+          "text": "Histopathological examination"
+        },
+        "valueString": "Confirmed a GEJ polyp with invasive adenocarcinoma involving the superficial submucosa of the polypoid lesion and a high-grade epithelioid GIST tumor with negative margins."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "11124",
+              "display": "Proton Pump Inhibitor"
+            }
+          ],
+          "text": "Proton pump inhibitor"
+        },
+        "dosageInstruction": [
+          {
+            "text": "As prescribed"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "62851",
+              "display": "Imatinib"
+            }
+          ],
+          "text": "Imatinib"
+        },
+        "dosageInstruction": [
+          {
+            "text": "As prescribed"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "76631005",
+                    "display": "Endoscopic surveillance"
+                  }
+                ],
+                "text": "Endoscopic surveillance every six months"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "386359008",
+                    "display": "Follow-up care"
+                  }
+                ],
+                "text": "Follow-up care with the gastroenterologist"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

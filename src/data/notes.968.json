@@ -1,0 +1,225 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "period": {
+          "start": "[DATE]",
+          "end": "[DATE]"
+        },
+        "length": {
+          "value": "[NUMBER]",
+          "unit": "days"
+        },
+        "reasonCode": [
+          {
+            "text": "Right mid-ureteral stone"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Right mid-ureteral stone"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Right ureteroscopy and laser lithotripsy"
+        },
+        "complication": [
+          {
+            "text": "Urinoma"
+          }
+        ],
+        "followUp": [
+          {
+            "text": "Indwelling ureteral stent and retroperitoneal drain placement"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Mid-ureteral stricture"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "patient": {
+          "reference": "Patient/[patient-id]"
+        },
+        "code": {
+          "text": "No known allergies to medications or food"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "32767-9",
+              "display": "Vital signs"
+            }
+          ]
+        },
+        "valueString": "Stable vital signs"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81247-9",
+              "display": "MAG-3 lasix renogram"
+            }
+          ]
+        },
+        "result": [
+          {
+            "text": "50% split function"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60567-0",
+              "display": "Pathology analysis"
+            }
+          ]
+        },
+        "result": [
+          {
+            "text": "Scattered minute tubular structures within a fibromyxoid stroma and immunohistochemistry positive for PAX8, consistent with fibromyxoid nephrogenic adenoma"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Robotic right ureteroureterostomy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Stable condition at discharge"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Continue to monitor for any pain or difficulty urinating. Follow-up with the primary care physician for further evaluation and management.",
+        "activity": [
+          {
+            "detail": {
+              "description": "Follow-up with primary care physician",
+              "scheduledString": "Follow-up appointment"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "status": "not-taken",
+        "medicationCodeableConcept": {
+          "text": "No medications prescribed during hospitalization"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Impression",
+        "status": "completed",
+        "description": "Robotic right ureteroureterostomy for a mid-ureteral stricture with positive immunohistochemistry for PAX8 consistent with fibromyxoid nephrogenic adenoma. No further intervention recommended. Discharged in stable condition with follow-up care advised."
+      }
+    }
+  ]
+}

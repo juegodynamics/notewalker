@@ -1,0 +1,154 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient",
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2002-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter",
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "Dengue fever with acute pancreatitis"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition",
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "code": {
+          "text": "Dengue fever with acute pancreatitis"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "onsetDateTime": "[REDACTED]",
+        "abatementDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure",
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "code": {
+          "text": "Intravenous fluids, antibiotics, antipyretics, opioids, proton pump inhibitors"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Hematological parameters"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "effectiveDateTime": "[REDACTED]",
+        "valueString": "Improvement in hematological parameters with an increase in platelet count, and decrease in amylase and lipase levels."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:careplan",
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "completed",
+              "description": "Patient advised to follow-up with healthcare provider for further management and care. Report any new symptoms or issues immediately. Continue taking medication as prescribed."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:dischargeInstructions",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "date": "[REDACTED]",
+        "type": {
+          "text": "Discharge Instructions"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient is advised to take sufficient rest and maintain good hygiene at home. The patient must avoid consuming food that may be heavy and taxing on the digestive system. The patient should drink plenty of fluids and stay hydrated. The patient must also avoid alcohol consumption and smoking. The patient is advised to follow all instructions provided by the healthcare provider."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

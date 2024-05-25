@@ -1,0 +1,418 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "text": "Discharged"
+          }
+        },
+        "location": [
+          {
+            "location": {
+              "display": "Nyakach County Hospital"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "287050001",
+              "display": "Angioedema"
+            }
+          ],
+          "text": "Enalapril-induced angioedema"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "onsetDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75325-1",
+              "display": "Cardiovascular system assessment"
+            }
+          ],
+          "text": "Cardiovascular examination"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "[Date]",
+        "valueString": "No abnormalities"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75326-9",
+              "display": "Respiratory system assessment"
+            }
+          ],
+          "text": "Respiratory examination"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "[Date]",
+        "valueString": "No abnormalities"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75324-4",
+              "display": "Abdomen and pelvis assessment"
+            }
+          ],
+          "text": "Abdominal examination"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "[Date]",
+        "valueString": "No abnormalities"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428731000124105",
+              "display": "Evaluation using Naranjo probability scale"
+            }
+          ],
+          "text": "Naranjo probability scale"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197361",
+              "display": "Dexamethasone"
+            }
+          ],
+          "text": "Dexamethasone"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "[Date]",
+        "dosage": {
+          "text": "4 mg intravenous"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8640",
+              "display": "Prednisolone"
+            }
+          ],
+          "text": "Prednisolone"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "[Date]",
+        "dosage": {
+          "text": "Peroral"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "207106",
+              "display": "Cetirizine"
+            }
+          ],
+          "text": "Cetirizine"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "[Date]",
+        "dosage": {
+          "text": "Peroral"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8640",
+              "display": "Prednisolone"
+            }
+          ],
+          "text": "Prednisolone"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Thrice daily dose tapered as 20 mg, 10 mg, and 5 mg"
+          }
+        ],
+        "dispenseRequest": {
+          "numberOfRepeatsAllowed": 0,
+          "quantity": {
+            "value": 1,
+            "unit": "course"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "207106",
+              "display": "Cetirizine"
+            }
+          ],
+          "text": "Cetirizine"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Twice daily peroral dose for ten days"
+          }
+        ],
+        "dispenseRequest": {
+          "numberOfRepeatsAllowed": 0,
+          "quantity": {
+            "value": 1,
+            "unit": "course"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "inactive"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "287050001",
+              "display": "Angioedema"
+            }
+          ],
+          "text": "Enalapril-induced angioedema"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "abatementDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387517004",
+              "display": "Allergy to enalapril"
+            }
+          ],
+          "text": "Enalapril-induced angioedema"
+        },
+        "patient": {
+          "reference": "Patient/1"
+        },
+        "onsetDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274441001",
+              "display": "Discharge from hospital"
+            }
+          ],
+          "text": "Discharge from hospital"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up care plan",
+        "description": "Patient to notify hospital if swelling re-occurs and continue with hypertension management",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "text": "Notify hospital if swelling re-occurs"
+              },
+              "scheduledPeriod": {
+                "start": "[Date]",
+                "end": "[Date]"
+              }
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "text": "Continue taking nifedipine and hydrochlorothiazide"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

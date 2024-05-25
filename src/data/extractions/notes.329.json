@@ -1,0 +1,352 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-001",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "123456"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1998-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-001",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128822003",
+              "display": "Histiocytic sarcoma"
+            }
+          ],
+          "text": "histiocytic sarcoma"
+        },
+        "onsetDateTime": "2017-12",
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-001",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "period": {
+          "start": "2017-12-01",
+          "end": "2017-12-31"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "162864005",
+                "display": "Histiocytic sarcoma"
+              }
+            ],
+            "text": "histiocytic sarcoma"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-001",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "48387007",
+              "display": "Tracheotomy"
+            }
+          ],
+          "text": "tracheotomy"
+        },
+        "performedDateTime": "2017-12-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-001",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "44136-8",
+              "display": "PET/CT scan"
+            }
+          ],
+          "text": "PET/CT scan"
+        },
+        "conclusion": "Large solid mass in the left parapharyngeal space with compression of the pharyngeal cavity and multiple enlarged lymph nodes in the left neck."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-001",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33739-4",
+              "display": "Pathology report"
+            }
+          ],
+          "text": "histopathological review"
+        },
+        "valueString": "Confirmed diagnosis of histiocytic sarcoma"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-001",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "123456",
+              "display": "Chemotherapy"
+            }
+          ],
+          "text": "Chemotherapy"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Started with the aim of stabilization of the fulminate disease course"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-002",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108290001",
+              "display": "Radiotherapy"
+            }
+          ],
+          "text": "irradiation to the lesions of pharyngeal and neck"
+        },
+        "performedPeriod": {
+          "start": "2018-01-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-002",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "69548-6",
+              "display": "Next-generation sequencing"
+            }
+          ],
+          "text": "Next-generation sequencing (NGS) of tumor tissue"
+        },
+        "valueString": "Presence of oncogenic mutations"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-002",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "654321",
+              "display": "Specific medication"
+            }
+          ],
+          "text": "Specific medication"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Started after NGS showed oncogenic mutations"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-003",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33762-6",
+              "display": "Tumor size"
+            }
+          ],
+          "text": "Partial response observed after one month of treatment"
+        },
+        "valueString": "Partial response"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-003",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "789012",
+              "display": "Affordable medication"
+            }
+          ],
+          "text": "More affordable medication"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Started after the patient could no longer afford the specific medication"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-004",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33762-6",
+              "display": "Tumor size"
+            }
+          ],
+          "text": "Excellent partial response observed compared with tumor size in March 2018"
+        },
+        "valueString": "Excellent partial response"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-005",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33762-6",
+              "display": "Tumor size"
+            }
+          ],
+          "text": "Nearly complete remission observed four months later"
+        },
+        "valueString": "Nearly complete remission"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-004",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "890123",
+              "display": "Maintenance medication"
+            }
+          ],
+          "text": "Maintenance medication"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Taken for two years until March 2020"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-006",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33762-6",
+              "display": "Tumor recurrence"
+            }
+          ],
+          "text": "No tumor recurrence to date, 45 months after HS diagnosis"
+        },
+        "valueString": "No tumor recurrence"
+      }
+    }
+  ]
+}

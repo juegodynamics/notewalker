@@ -1,0 +1,502 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "Case 4"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2017-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "162397003",
+                "display": "Pain in anterior mandible"
+              }
+            ],
+            "text": "The patient visited the hospital with a complaint of cold water pain in the anterior mandible."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "28530005",
+              "display": "Hypomineralization of permanent teeth"
+            }
+          ],
+          "text": "Hypomineralization of permanent teeth"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "onsetDateTime": "2023-10-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000124101",
+              "display": "Dental procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73400007",
+              "display": "Treatment to suppress hypersensitivity"
+            }
+          ],
+          "text": "Treatment to suppress hypersensitivity"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-10-01",
+          "end": "2023-11-01"
+        },
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "therapy",
+              "display": "Therapy"
+            }
+          ],
+          "text": "Patient's discomfort and hypomineralization were successfully addressed with treatment."
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical",
+                "display": "Clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Pain severity - Visual analogue scale"
+            }
+          ],
+          "text": "VAS Pain Scores"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueQuantity": {
+          "value": 3,
+          "unit": "VAS",
+          "system": "http://unitsofmeasure.org",
+          "code": "VAS"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical",
+                "display": "Clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Pain severity - Visual analogue scale"
+            }
+          ],
+          "text": "VAS Pain Scores"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "effectiveDateTime": "2023-11-01",
+        "valueQuantity": {
+          "value": 0,
+          "unit": "VAS",
+          "system": "http://unitsofmeasure.org",
+          "code": "VAS"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical",
+                "display": "Clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Pain severity - Visual analogue scale"
+            }
+          ],
+          "text": "VAS Pain Scores"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "effectiveDateTime": "2023-12-01",
+        "valueQuantity": {
+          "value": 0.5,
+          "unit": "VAS",
+          "system": "http://unitsofmeasure.org",
+          "code": "VAS"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical",
+                "display": "Clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Pain severity - Visual analogue scale"
+            }
+          ],
+          "text": "VAS Pain Scores"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "effectiveDateTime": "2024-01-01",
+        "valueQuantity": {
+          "value": 0,
+          "unit": "VAS",
+          "system": "http://unitsofmeasure.org",
+          "code": "VAS"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-5",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical",
+                "display": "Clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18762-7",
+              "display": "Tooth color change"
+            }
+          ],
+          "text": "Improvement in tooth discoloration"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "effectiveDateTime": "2024-04-01",
+        "valueQuantity": {
+          "value": 7,
+          "unit": "treatments",
+          "system": "http://unitsofmeasure.org",
+          "code": "treatments"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-6",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-6",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical",
+                "display": "Clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30954-2",
+              "display": "Cloudiness area"
+            }
+          ],
+          "text": "Cloudiness area improvement"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "effectiveDateTime": "2024-04-01",
+        "valueQuantity": {
+          "value": 1903,
+          "unit": "units",
+          "system": "http://unitsofmeasure.org",
+          "code": "units"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N"
+              }
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-7",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-7",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical",
+                "display": "Clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30954-2",
+              "display": "Brown area"
+            }
+          ],
+          "text": "Brown area improvement"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "effectiveDateTime": "2024-04-01",
+        "valueQuantity": {
+          "value": 1667,
+          "unit": "units",
+          "system": "http://unitsofmeasure.org",
+          "code": "units"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:care-plan-1",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "care-plan-1",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Dental Hygiene Plan",
+        "description": "The patient should maintain regular dental hygiene habits, including brushing twice a day and flossing.",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "period": {
+          "start": "2023-10-01",
+          "end": "2024-04-01"
+        }
+      }
+    }
+  ]
+}

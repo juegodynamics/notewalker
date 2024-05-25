@@ -1,0 +1,224 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Name]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "[Date of Birth]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "reasonCode": [
+          {
+            "text": "High intraocular pressure, family history of glaucoma"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422990001",
+              "display": "Primary open angle glaucoma"
+            }
+          ],
+          "text": "True high tension primary glaucoma with a family history and intracranial meningioma"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232717009",
+              "display": "Trabeculectomy"
+            }
+          ],
+          "text": "Trabeculectomy in both eyes"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Craniotomy"
+            }
+          ],
+          "text": "Bilateral craniotomy to resect the meningioma"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "70951-2",
+              "display": "Intraocular pressure by Tonometry"
+            }
+          ],
+          "text": "Intraocular pressure"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "valueQuantity": {
+          "value": 30,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "70951-2",
+              "display": "Intraocular pressure by Tonometry"
+            }
+          ],
+          "text": "Intraocular pressure"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "valueQuantity": {
+          "value": 48,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29271-4",
+              "display": "Best corrected visual acuity level"
+            }
+          ],
+          "text": "Best corrected visual acuity (BCVA)"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "valueQuantity": {
+          "value": 0.1,
+          "unit": "",
+          "system": "http://unitsofmeasure.org",
+          "code": "{score}"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "date": "[Date]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary: Patient Name: [Name], DOB: [Date of Birth], Age: 56 years Gender: Male Admission Date: [Date] Discharge Date: [Date] Brief Hospital Course: The patient presented to the clinic with high intraocular pressure (IOP) ranging from 30-48 mmHg, and a family history of glaucoma. He underwent trabeculectomy in both eyes; however, despite low IOP readings, vision deterioration was observed over the course of three years. An MR scan was performed, which revealed an intracranial meningioma. Bilateral craniotomy was performed, and the meningioma was resected. Post-surgery, the patient's right eye is blind, and the left eye has preserved some useful visual field with a best-corrected visual acuity (BCVA) of approximately 0.1. The patient's condition has been stable for the past 2 years. Diagnosis: True high tension primary glaucoma with a family history and intracranial meningioma. Treatment: Trabeculectomy in both eyes and bilateral craniotomy to resect the meningioma. Prognosis: The patient’s right eye is blind, and the left eye has preserved some useful visual field with a BCVA of approximately 0.1. The patient's condition has remained stable for the past 2 years. Recommendations: The patient should continue to receive regular follow-up care to monitor the stability of his visual field and prevent any further deterioration. It is recommended that he undergo regular ophthalmological checkups to assess the pressure and status of his left eye. Follow-up Visit: A follow-up appointment with an ophthalmologist should be scheduled promptly to ensure continuous monitoring of visual field stability and intraocular pressure."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

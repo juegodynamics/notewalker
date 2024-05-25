@@ -1,0 +1,567 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "name": [
+          {
+            "family": "[redacted]",
+            "given": [
+              "[redacted]"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1967-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "reasonCode": [
+          {
+            "text": "Suspected urinary tract infection with perineal pain and fever"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "#diagnosis1"
+            }
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "diagnosis1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "197456007",
+              "display": "Urinary tract infectious disease"
+            }
+          ],
+          "text": "Suspected urinary tract infection with perineal pain and fever"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "721-1",
+              "display": "White blood cells [#/volume] in Blood"
+            }
+          ],
+          "text": "Elevated white blood cell count"
+        },
+        "valueQuantity": {
+          "value": "elevated",
+          "unit": "cells/µL",
+          "system": "http://unitsofmeasure.org",
+          "code": "/µL"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2160-0",
+              "display": "Creatinine [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Creatinine level"
+        },
+        "valueQuantity": {
+          "value": "elevated",
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+            }
+          ],
+          "text": "Hemoglobin A1c level"
+        },
+        "valueQuantity": {
+          "value": "elevated",
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "180504003",
+              "display": "Insertion of Foley catheter"
+            }
+          ],
+          "text": "Transurethral Foley catheter placement"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "performedDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationRequest1",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "682",
+              "display": "Meropenem"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Intravenous",
+            "route": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/route-codes",
+                  "code": "IV",
+                  "display": "Intravenous"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationRequest2",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "10690",
+              "display": "Fluconazole"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Intravenous",
+            "route": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/route-codes",
+                  "code": "IV",
+                  "display": "Intravenous"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationRequest3",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "11149",
+              "display": "Daptomycin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Intravenous",
+            "route": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/route-codes",
+                  "code": "IV",
+                  "display": "Intravenous"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationRequest4",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308135",
+              "display": "Piperacillin and Tazobactam"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Intravenous",
+            "route": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/route-codes",
+                  "code": "IV",
+                  "display": "Intravenous"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "178830007",
+              "display": "Debridement of wound"
+            }
+          ],
+          "text": "Debridement of necrotic spongiosal tissue and placement of penrose drain"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "performedDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "87441-2",
+              "display": "Candida glabrata isolated"
+            }
+          ],
+          "text": "Intraoperative wound culture positive for Candida glabrata"
+        },
+        "valueString": "Positive",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationRequest5",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "312320",
+              "display": "Micafungin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Intravenous",
+            "route": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/route-codes",
+                  "code": "IV",
+                  "display": "Intravenous"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationRequest6",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "31227",
+              "display": "Voriconazole"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Oral, 14-day course"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "diagnosis2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "703151002",
+              "display": "Candida glabrata infection"
+            }
+          ],
+          "text": "Candida glabrata infection with necrotizing spongiositis of the penis"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Follow-up Plan",
+        "description": "The patient was instructed to follow-up with his urologist for evaluation of the persistent induration in the penoscrotal junction and the transurethral Foley. He was also advised to monitor his blood sugar levels closely, ensure proper nutrition and exercise, follow up with his primary care physician, and continue taking his prescribed medications.",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "addresses": [
+          {
+            "reference": "Condition/diagnosis1"
+          },
+          {
+            "reference": "Condition/diagnosis2"
+          }
+        ],
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "description": "Follow-up with urologist for evaluation of persistent induration and transurethral Foley.",
+              "scheduledPeriod": {
+                "start": "[redacted]",
+                "end": "[redacted]"
+              }
+            }
+          },
+          {
+            "detail": {
+              "kind": "Observation",
+              "description": "Monitor blood sugar levels closely.",
+              "scheduledPeriod": {
+                "start": "[redacted]",
+                "end": "[redacted]"
+              }
+            }
+          },
+          {
+            "detail": {
+              "kind": "Procedure",
+              "description": "Ensure proper nutrition and exercise.",
+              "scheduledPeriod": {
+                "start": "[redacted]",
+                "end": "[redacted]"
+              }
+            }
+          },
+          {
+            "detail": {
+              "kind": "Appointment",
+              "description": "Follow-up with primary care physician.",
+              "scheduledPeriod": {
+                "start": "[redacted]",
+                "end": "[redacted]"
+              }
+            }
+          },
+          {
+            "detail": {
+              "kind": "MedicationRequest",
+              "description": "Continue taking prescribed medications.",
+              "productReference": {
+                "reference": "MedicationRequest/medicationRequest6"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

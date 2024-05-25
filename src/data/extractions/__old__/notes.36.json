@@ -1,0 +1,332 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-occupation",
+            "valueString": "Farmer"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-smokingStatus",
+            "valueString": "History of smoking for 40 years"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "period": {
+          "start": "2019-08-08"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "279039007",
+                "display": "Back pain"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "49727002",
+                "display": "Cough"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254637007",
+              "display": "Malignant tumor of lung"
+            }
+          ],
+          "text": "Stage IVb lung adenocarcinoma with bone metastases"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-5",
+              "display": "CT of Chest"
+            }
+          ],
+          "text": "Thoracic CT scan"
+        },
+        "valueString": "Malignant tumor in the left upper lobe complicated by distal obstructive inflammation, enlargement of left hilar and mediastinal lymph nodes, and multiple bone metastases."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60567-3",
+              "display": "DNA analysis"
+            }
+          ],
+          "text": "733-gene NGS panel"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "82959-1",
+                  "display": "EGFR gene mutation analysis"
+                }
+              ]
+            },
+            "valueString": "EGFR exon 19 p.L747_S752del somatic mutation"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "69548-6",
+                  "display": "TP53 gene mutation analysis"
+                }
+              ]
+            },
+            "valueString": "TP53 p.H179L germline mutation"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81254-3",
+              "display": "Copy number analysis"
+            }
+          ],
+          "text": "NGS-based CNV analyses"
+        },
+        "valueString": "Whole chromosome 7 and 5q deletion associated with secondary MDS."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33717-0",
+              "display": "Bone marrow aspiration study"
+            }
+          ],
+          "text": "Physiological blood indexes and bone marrow aspiration test"
+        },
+        "valueString": "Confirmed MDS."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medication-admin-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "429003",
+              "display": "Gefitinib"
+            }
+          ],
+          "text": "Gefitinib"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-1"
+          }
+        ],
+        "note": [
+          {
+            "text": "Administered for the EGFR-positive mutation."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medication-admin-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308136",
+              "display": "Azacitidine"
+            }
+          ],
+          "text": "Azacitidine"
+        },
+        "note": [
+          {
+            "text": "Administered for four courses of treatment due to decreasing platelet counts."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128613002",
+              "display": "Neuroendocrine tumor"
+            }
+          ],
+          "text": "Neuroendocrine tumor with small cell carcinoma and atypical carcinoid tumor"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Poorly differentiated cancer cells in the fibrous tissue, with about 40% small cell carcinoma and 60% atypical carcinoid tumor."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "82435-1",
+              "display": "PD-L1 expression"
+            }
+          ],
+          "text": "Positive PD-L1 expression"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-6",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "82107-9",
+              "display": "Tumor mutational burden"
+            }
+          ],
+          "text": "High TMB in the tissue sample"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medication-admin-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "239544",
+              "display": "Toripalimab"
+            }
+          ],
+          "text": "Toripalimab"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medication-admin-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "179560",
+              "display": "Bevacizumab"
+            }
+          ],
+          "text": "Bevacizumab"
+        }
+      }
+    }
+  ]
+}

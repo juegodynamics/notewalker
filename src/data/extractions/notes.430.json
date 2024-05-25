@@ -1,0 +1,331 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient3",
+        "name": [
+          {
+            "text": "Patient 3"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2019-06-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183452005",
+                "display": "Hospital admission"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": null,
+          "end": null
+        },
+        "reasonCode": [
+          {
+            "text": "Flame injury from house fire, 41.5% total body surface area third-degree injuries, open joint injury in right elbow"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient3"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "125605004",
+              "display": "Injury of body region"
+            }
+          ],
+          "text": "Flame injury from house fire, 41.5% total body surface area third-degree injuries, open joint injury in right elbow"
+        },
+        "subject": {
+          "reference": "Patient/patient3"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "304120007",
+              "display": "Skin grafting"
+            }
+          ],
+          "text": "Skin grafting procedure"
+        },
+        "subject": {
+          "reference": "Patient/patient3"
+        },
+        "performedPeriod": {
+          "start": "2023-07-14",
+          "end": "2023-07-14"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition1"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "397540003",
+              "display": "External fixation of bone"
+            }
+          ],
+          "text": "SEF placement with Shantz pins and bars using Synthes medium external fixator system"
+        },
+        "subject": {
+          "reference": "Patient/patient3"
+        },
+        "performedPeriod": {
+          "start": "2023-07-14",
+          "end": "2023-07-14"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition1"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Soft tissue surgery"
+            }
+          ],
+          "text": "Antecubital soft tissue plastic surgery contracture release"
+        },
+        "subject": {
+          "reference": "Patient/patient3"
+        },
+        "performedPeriod": {
+          "start": "2024-08-06",
+          "end": "2024-08-06"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition1"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Range of motion"
+            }
+          ],
+          "text": "Range of motion observation"
+        },
+        "subject": {
+          "reference": "Patient/patient3"
+        },
+        "effectivePeriod": {
+          "start": "2024-08-06",
+          "end": "2024-08-06"
+        },
+        "valueString": "Range of motion before surgical release: 0-25° in extension and flexion arc, 0° in both supination and pronation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Range of motion"
+            }
+          ],
+          "text": "Range of motion observation"
+        },
+        "subject": {
+          "reference": "Patient/patient3"
+        },
+        "effectivePeriod": {
+          "start": "2025-09-06",
+          "end": "2025-09-06"
+        },
+        "valueString": "Range of motion after 13-month follow-up: 0-119° in extension and flexion arc, 69° in supination, and 80° in pronation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Motor strength"
+            }
+          ],
+          "text": "Motor strength observation"
+        },
+        "subject": {
+          "reference": "Patient/patient3"
+        },
+        "effectiveDateTime": "2025-09-06",
+        "valueString": "5/5 motor strength"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "followup1",
+        "status": "active",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/patient3"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "308335008",
+              "display": "Follow-up visit"
+            }
+          ],
+          "text": "Follow-up visit"
+        }
+      }
+    }
+  ]
+}

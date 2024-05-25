@@ -1,0 +1,230 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2019-10-10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "2023-09-01T00:00:00Z",
+          "end": "2023-09-04T00:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "text": "Constipation, dry cough, vomiting, high fever, abdominal pain with bloating, headache, rash"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128302006",
+              "display": "Roundworm infection"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "4834000",
+              "display": "Typhoid fever"
+            }
+          ],
+          "text": "Roundworm infection, Typhoid fever"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2703-7",
+              "display": "Eosinophils [#/volume] in Blood"
+            }
+          ],
+          "text": "High level of eosinophils"
+        },
+        "valueQuantity": {
+          "value": 0.7,
+          "unit": "10^9/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*9/L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "20610",
+              "display": "Azithromycin"
+            }
+          ],
+          "text": "Azithromycin"
+        },
+        "dosageInstruction": [
+          {
+            "text": "One-week prescription"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "36484",
+              "display": "Albendazole"
+            }
+          ],
+          "text": "Albendazole"
+        },
+        "dosageInstruction": [
+          {
+            "text": "One-week prescription"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049630",
+              "display": "Antihistamine Cream"
+            }
+          ],
+          "text": "Antihistamine Cream"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Apply as needed to reduce itching from the rash."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225363001",
+              "display": "Intravenous fluid replacement"
+            }
+          ],
+          "text": "IV fluid therapy with normal saline"
+        },
+        "performedPeriod": {
+          "start": "2023-09-01T00:00:00Z",
+          "end": "2023-09-01T23:59:59Z"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/128302006"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "182962000",
+              "display": "Administration of norepinephrine"
+            }
+          ],
+          "text": "Norepinephrine administration"
+        },
+        "performedPeriod": {
+          "start": "2023-09-01T00:00:00Z",
+          "end": "2023-09-01T23:59:59Z"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/128302006"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "The patient was discharged home on a one-week prescription of azithromycin and albendazole. The patient was also provided with antihistamine cream to reduce the itching from the rash. Follow-up with the primary care doctor after discharge. The patient should also follow the medication regimen and the prescribed lifestyle modifications and maintain good hydration.",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "period": {
+          "start": "2023-09-04T00:00:00Z"
+        }
+      }
+    }
+  ]
+}

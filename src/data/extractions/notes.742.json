@@ -1,0 +1,186 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Patient Name]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1984-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "[Unique ID]",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Date of Admission]",
+          "end": "[Date of Discharge]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "441457006",
+              "display": "Chondroid lipoma"
+            }
+          ],
+          "text": "Chondroid lipoma"
+        },
+        "subject": {
+          "reference": "Patient/[Unique ID]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical resection of tumor"
+            }
+          ],
+          "text": "Resection of chondroid lipoma"
+        },
+        "subject": {
+          "reference": "Patient/[Unique ID]"
+        },
+        "performedPeriod": {
+          "start": "[Date of Admission]",
+          "end": "[Date of Discharge]"
+        },
+        "outcome": {
+          "text": "Marginally successful, encapsulated mass removed"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "modality": {
+          "coding": [
+            {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "MR",
+              "display": "Magnetic Resonance"
+            }
+          ]
+        },
+        "description": "MRI scan showing heterogeneity with higher signal intensity than muscle on T1-weighted images, low-signal intensity in the septum on T2-weighted images, complete suppression of the signal on T2-weighted fat-suppressed images, and enhancement of the signal on gadolinium-enhanced T1-weighted images.",
+        "subject": {
+          "reference": "Patient/[Unique ID]"
+        },
+        "started": "[Date of MRI]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "modality": {
+          "coding": [
+            {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "PET",
+              "display": "Positron Emission Tomography"
+            }
+          ]
+        },
+        "description": "PET scan showing a Single-Unit Vehicle Maximum (SUVmax) of 1.84, with no abnormal uptake except in the mass.",
+        "subject": {
+          "reference": "Patient/[Unique ID]"
+        },
+        "started": "[Date of PET]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33747-9",
+              "display": "Biopsy"
+            }
+          ],
+          "text": "Needle biopsy"
+        },
+        "subject": {
+          "reference": "Patient/[Unique ID]"
+        },
+        "effectiveDateTime": "[Date of Biopsy]",
+        "valueString": "The tumor was composed of myxoid and cartilaginous matrix, and mature fat cells as well as lipoblast-like cells. Tumor cells were negative for CDK4, MDM2, MIB1, and Sox9."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "subject": {
+          "reference": "Patient/[Unique ID]"
+        },
+        "date": "[Date of Discharge]",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "[Base64 Encoded Discharge Summary Text]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

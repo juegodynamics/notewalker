@@ -1,0 +1,245 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1951-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-birthTime",
+            "valueDateTime": "1951-01-01T00:00:00Z"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertension"
+            }
+          ],
+          "text": "Hypertension"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "13644009",
+              "display": "Hypercholesterolemia"
+            }
+          ],
+          "text": "High cholesterol"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "22298006",
+              "display": "Myocardial infarction"
+            }
+          ],
+          "text": "Previous history of myocardial infarction"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "109190000",
+              "display": "Transcatheter aortic valve replacement"
+            }
+          ],
+          "text": "Trans-catheter aortic valve replacement (TAVR)"
+        },
+        "performedPeriod": {
+          "start": "2020-04-01",
+          "end": "2020-04-30"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-4"
+          }
+        ],
+        "usedReference": [
+          {
+            "reference": "Device/device-1"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233985008",
+              "display": "Aortic valve stenosis"
+            }
+          ],
+          "text": "Severe degenerative aortic stenosis"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Device",
+        "id": "device-1",
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "75454009",
+              "display": "Aortic valve prosthesis"
+            }
+          ],
+          "text": "LOTUS Edge 27 mm"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "46378-0",
+              "display": "Transthoracic echocardiogram"
+            }
+          ],
+          "text": "Transthoracic echocardiogram (TTE)"
+        },
+        "valueString": "Increased transprosthesis gradient"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "46372-3",
+              "display": "Transesophageal echocardiogram"
+            }
+          ],
+          "text": "Transesophageal echocardiogram (TEE)"
+        },
+        "valueString": "Hypomobility of the noncoronary cusp of the biological valve"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "2286",
+              "display": "Heparin"
+            }
+          ],
+          "text": "Heparin"
+        },
+        "status": "active",
+        "intent": "order"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "CT",
+            "display": "Computed Tomography"
+          }
+        ],
+        "description": "Multidetector computed tomography (MDCT) scan revealed a misfolding of the prosthesis’ frame causing a paravalvular leak and two hypodense appositions at the lower edge of the valve"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "180493000",
+              "display": "Balloon valvuloplasty"
+            }
+          ],
+          "text": "Balloon valvuloplasty"
+        },
+        "outcome": {
+          "text": "Complete resolution of the valvular dysfunction"
+        }
+      }
+    }
+  ]
+}

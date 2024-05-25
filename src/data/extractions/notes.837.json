@@ -1,0 +1,216 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "1961-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "441513000",
+              "display": "IgG4-related ophthalmic disease"
+            }
+          ],
+          "text": "IgG4-related ophthalmic disease (IgG4-ROD)"
+        },
+        "onsetDateTime": "2023-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24337-8",
+              "display": "Visual acuity"
+            }
+          ],
+          "text": "Uncorrected visual acuity"
+        },
+        "valueString": "20/20 OU"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3129-0",
+              "display": "IgG4"
+            }
+          ],
+          "text": "Serum IgG4 level"
+        },
+        "valueQuantity": {
+          "value": 74,
+          "unit": "mg/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2458-8",
+              "display": "IgG2"
+            }
+          ],
+          "text": "Serum IgG2 level"
+        },
+        "valueQuantity": {
+          "value": 770,
+          "unit": "mg/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "86004-9",
+              "display": "Anterior orbitotomy"
+            }
+          ],
+          "text": "Anterior orbitotomy and lacrimal gland biopsy"
+        },
+        "performedDateTime": "2023-01-10"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "modality": {
+          "system": "http://dicom.nema.org/resources/ontology/DCM",
+          "code": "CT"
+        },
+        "description": "Orbit CT showed a 2.5 cm sized enhancing mass in the left lacrimal gland and enlargement of the left lateral rectus muscle belly like a spindle shaped mass."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medicationstatement-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "352272",
+              "display": "Oral Steroids"
+            }
+          ],
+          "text": "Oral steroids"
+        },
+        "status": "active",
+        "effectivePeriod": {
+          "start": "2023-01-15",
+          "end": "2023-02-15"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "2023-01-01",
+          "end": "2023-01-15"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "441513000",
+                "display": "IgG4-related ophthalmic disease"
+              }
+            ],
+            "text": "IgG4-related ophthalmic disease (IgG4-ROD)"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "VGhlIHBhdGllbnQgd2FzIHRyZWF0ZWQgd2l0aCBvcmFsIHN0ZXJvaWRzIGFuZCBzaG93ZWQgaW1wcm92ZW1lbnQgaW4gdGhlIGxlZnQgdXBwZXIgZXllbGlkIHN3ZWxsaW5nIGFuZCByZWN1cnJlbnQgY29uanVuY3RpdmFsIGluamVjdGlvbi4gVGhlIHRlYW0gcHJvdmlkZWQgZXh0ZW5zaXZlIGluZm9ybWF0aW9uIGFib3V0IHRoZSBkaWFnbm9zaXMgYW5kIGltcG9ydGFuY2UgdG8gZm9sbG93LXVwIHJlZ3VsYXJseSB3aXRoIHRoZWlyIHByaW1hcnkgY2FyZSBwaHlzaWNpYW4uIFJlY29tbWVuZGF0aW9ucyB3ZXJlIGdpdmVuIGZvciBuZWNlc3NhcnkgZm9sbG93LXVwIHRlc3RpbmcgYW5kIGEgcmVnaW1lbiBvZiBvcmFsIHN0ZXJvaWRzIGZvciBjb250aW51ZWQgbWFuYWdlbWVudCBvZiB0aGUgY29uZGl0aW9uLiBUaGUgcGF0aWVudCBpcyBhZHZpc2VkIHRvIG1vbml0b3Igc3ltcHRvbXMgYW5kIHNlZWsgbWVkaWNhbCBjYXJlIHByb21wdGx5IGlmIGFueSByZWxhdGVkIHN5bXB0b21zIGFwcGVhci4gRm9sbG93LXVwIGFwcG9pbnRtZW50cyB3ZXJlIHNjaGVkdWxlZCBhbmQgdGhlIHBhdGllbnQgd2FzIHByb3ZpZGVkIHdpdGggZG9jdW1lbnRhdGlvbiBvZiBoZXIgY29uZGl0aW9uIGFuZCBjYXJlIHByb3ZpZGVkIHdoaWxlIGluIHRoZSBob3NwaXRhbC4="
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

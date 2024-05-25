@@ -1,0 +1,171 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[PATIENT NAME]"
+          }
+        ],
+        "gender": "[GENDER]",
+        "birthDate": "2006-XX-XX"  // Age 16 years assuming current year is 2022
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ],
+            "text": "Inpatient"
+          }
+        ],
+        "period": {
+          "start": "[DATE]",
+          "end": "[DATE]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "267036007",
+                "display": "Acute appendicitis"
+              }
+            ],
+            "text": "Acute uncomplicated appendicitis with COVID-19 exacerbation"
+          }
+        ],
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267036007",
+              "display": "Acute appendicitis"
+            }
+          ],
+          "text": "Acute uncomplicated appendicitis with COVID-19 exacerbation"
+        },
+        "subject": {
+          "reference": "Patient/[PATIENT ID]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Appendectomy"
+            }
+          ],
+          "text": "Laparoscopic appendectomy"
+        },
+        "subject": {
+          "reference": "Patient/[PATIENT ID]"
+        },
+        "performedPeriod": {
+          "start": "[DATE]",
+          "end": "[DATE]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Antibiotics"
+        },
+        "subject": {
+          "reference": "Patient/[PATIENT ID]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Continue taking any prescribed medications"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Patient discharge instructions",
+        "subject": {
+          "reference": "Patient/[PATIENT ID]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "text": "Follow up with your primary care physician for any further concerns or symptoms."
+            }
+          },
+          {
+            "detail": {
+              "text": "Monitor your temperature and report any fever to your healthcare provider."
+            }
+          },
+          {
+            "detail": {
+              "text": "Rest and avoid strenuous activity until advised by your healthcare provider."
+            }
+          },
+          {
+            "detail": {
+              "text": "Maintain good personal hygiene and frequent hand washing to prevent the spread of COVID-19."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

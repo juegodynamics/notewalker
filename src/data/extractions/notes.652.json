@@ -1,0 +1,326 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "birthDate": "[DOB]",
+        "gender": "[Gender]",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[MRN]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "125599000",
+              "display": "Tooth discoloration"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80200001",
+              "display": "Diastema"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428021000124106",
+              "display": "Unsatisfactory esthetics"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "91147007",
+              "display": "Tooth sensitivity"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11505-5",
+              "display": "Clinical presentation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[Date]",
+        "valueString": "The patient presented with tooth discoloration, diastema, unsatisfactory esthetics and slight tooth sensitivity. Clinical examination showed insufficient enamel thickness with discolored anterior and posterior teeth. The panoramic radiography showed thin enamel that could not be distinguished from the underlying dentin. The patient also presented with short crowns, multiple diastema, occlusal wear, poor contact points and dental caries. Root length and form were normal. Pulp chambers were regular in size. Oral hygiene was acceptable with no signs of gingivitis."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11348-0",
+              "display": "Medical History"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[Date]",
+        "valueString": "The patient reported no relevant medical history. The patient's family was not affected by any inherited disorders. A renal ultrasound scan was normal with no evidence of nephrocalcinosis. Laboratory findings, including serum electrolytes, calcium, phosphate, urea, creatinine, alkaline phosphatase and parathormone levels, were all normal."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81247-9",
+              "display": "SEM and Histologic Analysis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[Date]",
+        "valueString": "SEM analysis of the extracted maxillary and mandibular left third molar teeth showed an insufficient enamel layer. Histological findings revealed that dentin structure was intact with no irregularities in tubular structure."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "230690007",
+              "display": "Ostectomy"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "231708006",
+              "display": "Gingivectomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "48176007",
+              "display": "Provisional crown"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1045002",
+              "display": "Cementation"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "65431009",
+              "display": "Metal-ceramic crown"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "56381008",
+              "display": "Zirconia crown"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "42157000",
+              "display": "Occlusal splint"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "55110-9",
+              "display": "Follow-up"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[Date]",
+        "valueString": "The patient was asymptomatic during the 1, 2, and 3 month checkups following the provisional crowning procedure. The criteria for the success of the increased vertical dimension were met, with the absence of pain, no sensitivity in facial and masticatory muscles, phonetic and swallowing satisfaction. Dental hygiene instructions were given to the patient."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "inactive"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "discharge",
+                "display": "Discharge condition"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55561003",
+              "display": "Stable"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Plan",
+        "description": "The patient was advised to continue practicing proper oral hygiene practices and attend regular dental check-ups for further monitoring.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    }
+  ]
+}

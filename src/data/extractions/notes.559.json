@@ -1,0 +1,174 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[redacted]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1952-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "reasonCode": [
+          {
+            "text": "Symptoms of gait difficulties and vertigo"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "inactive"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "188340000",
+              "display": "Medulloblastoma, desmoplastic/nodular"
+            }
+          ],
+          "text": "Paucinodular desmoplastic medulloblastoma (WHO grade IV)"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "12738006",
+                "display": "Cerebellar hemisphere"
+              }
+            ],
+            "text": "left cerebellar hemisphere and upper vermis"
+          }
+        ],
+        "evidence": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "439401001",
+                  "display": "Histopathology"
+                }
+              ],
+              "text": "Histopathological work-up revealed a paucinodular desmoplastic medulloblastoma (WHO grade IV)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Excision of tumor"
+            }
+          ],
+          "text": "Microsurgical resection of the tumor"
+        },
+        "outcome": {
+          "text": "No detectable MYC or MYCN amplification"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "status": "completed",
+        "description": "The patient's condition was stable for a week post-surgery. However, he developed a severe pneumonia and subsequently passed away due to respiratory insufficiency.",
+        "finding": [
+          {
+            "item": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "233604007",
+                  "display": "Pneumonia"
+                }
+              ],
+              "text": "severe pneumonia"
+            }
+          },
+          {
+            "item": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "409622000",
+                  "display": "Respiratory insufficiency"
+                }
+              ],
+              "text": "respiratory insufficiency"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "94531-1",
+              "display": "Expression of synaptophysin"
+            }
+          ],
+          "text": "Some tumor cells expressing the neuronal differentiation marker synaptophysin"
+        }
+      }
+    }
+  ]
+}

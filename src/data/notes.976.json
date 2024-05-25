@@ -1,0 +1,316 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Redacted]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[Redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner/admitting-physician"
+            }
+          },
+          {
+            "individual": {
+              "reference": "Practitioner/attending-physician"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "125601005",
+              "display": "Anterior Reversed Occlusion (ARR)"
+            }
+          ],
+          "text": "Anterior Reversed Occlusion (ARR)"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "162680009",
+              "display": "Thumb Sucking Habit"
+            }
+          ],
+          "text": "Thumb Sucking Habit"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "271587001",
+              "display": "Compensated Tongue Thrusting Habit"
+            }
+          ],
+          "text": "Compensated Tongue Thrusting Habit"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "234147009",
+              "display": "Extraction of maxillary central incisors"
+            }
+          ],
+          "text": "Extraction of maxillary central incisors"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-1"
+          },
+          {
+            "reference": "Condition/condition-2"
+          },
+          {
+            "reference": "Condition/condition-3"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "314973004",
+              "display": "Counseling for habit control"
+            }
+          ],
+          "text": "Counseling for habit control"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-2"
+          },
+          {
+            "reference": "Condition/condition-3"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "34068001",
+              "display": "Habit reminder therapy"
+            }
+          ],
+          "text": "Habit reminder therapy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-2"
+          },
+          {
+            "reference": "Condition/condition-3"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Discharge instructions for patient",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Continue frequent dental visits",
+              "status": "not-started"
+            }
+          },
+          {
+            "detail": {
+              "description": "Adopt positive reinforcement approach",
+              "status": "not-started"
+            }
+          },
+          {
+            "detail": {
+              "description": "Encourage good oral hygiene habits",
+              "status": "not-started"
+            }
+          },
+          {
+            "detail": {
+              "description": "Remind parents of harm associated with thumb-sucking and tongue thrusting habits",
+              "status": "not-started"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "admitting-physician",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "attending-physician",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ]
+      }
+    }
+  ]
+}

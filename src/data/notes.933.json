@@ -1,0 +1,313 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1961-01-01", 
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.36.146.595.217.0.1",
+            "value": "[redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "2",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "reasonCode": [
+          {
+            "text": "Complaint of vaginal bleeding for one year."
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/3"
+            }
+          }
+        ],
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254878006",
+              "display": "Endometrial cancer"
+            }
+          ],
+          "text": "Endometrial cancer"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "note": [
+          {
+            "text": "Malignant struma ovarii"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "236894004",
+              "display": "Total hysterectomy with bilateral adnexectomy"
+            }
+          ],
+          "text": "Total hysterectomy with bilateral adnexectomy"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "5",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108290001",
+              "display": "Administration of radioiodine"
+            }
+          ],
+          "text": "Radioiodine therapy"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "6",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108290001",
+              "display": "External beam therapy"
+            }
+          ],
+          "text": "External beam therapy"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "7",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049630",
+              "display": "L-thyroxin"
+            }
+          ],
+          "text": "Suppressive hormone L-thyroxin therapy"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "8",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "[redacted]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "description": "Regular follow-up care to monitor condition"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Composition",
+        "id": "9",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "date": "[redacted]",
+        "author": [
+          {
+            "reference": "Practitioner/10"
+          }
+        ],
+        "title": "Discharge Summary",
+        "section": [
+          {
+            "title": "Reason for Admission",
+            "text": {
+              "status": "generated",
+              "div": "<div>Complaint of vaginal bleeding for one year.</div>"
+            }
+          },
+          {
+            "title": "Hospital Course",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient underwent total hysterectomy with bilateral adnexectomy due to the diagnosis of endometrial cancer which was confirmed on histological findings. It was also discovered that the left ovary had a mature teratoma with a lesion of papillary cancer which was treated with radioiodine therapy. The first post-therapy check of hormonal status, Tg, and ATA were in an optimal range. The patient continued with external beam therapy for endometrial cancer and received suppressive hormone L-thyroxin therapy.</div>"
+            }
+          },
+          {
+            "title": "Diagnosis",
+            "text": {
+              "status": "generated",
+              "div": "<div>Endometrial cancer, malignant struma ovarii</div>"
+            }
+          },
+          {
+            "title": "Procedure",
+            "text": {
+              "status": "generated",
+              "div": "<div>Total hysterectomy with bilateral adnexectomy, radioiodine therapy, external beam therapy</div>"
+            }
+          },
+          {
+            "title": "Follow-up Care",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient is recommended to undergo regular follow-up care to monitor her condition.</div>"
+            }
+          },
+          {
+            "title": "Condition at Discharge",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient was discharged in a stable condition.</div>"
+            }
+          },
+          {
+            "title": "Discharge Medications",
+            "text": {
+              "status": "generated",
+              "div": "<div>None mentioned.</div>"
+            }
+          },
+          {
+            "title": "Instructions",
+            "text": {
+              "status": "generated",
+              "div": "<div>None mentioned.</div>"
+            }
+          },
+          {
+            "title": "Follow-up Appointments",
+            "text": {
+              "status": "generated",
+              "div": "<div>Recommended for regular follow-up care.</div>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "10",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ]
+      }
+    }
+  ]
+}

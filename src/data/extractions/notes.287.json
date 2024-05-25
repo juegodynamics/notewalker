@@ -1,0 +1,277 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1984"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "urn:uuid:condition1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "424132000",
+              "display": "Intravesical ichthyosis with atypical flat black pigmented bladder tumors"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Transurethral resection of bladder"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure2",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Colonoscopy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure3",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Resection of sigmoidal tubulovillous adenoma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:immunization1",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "immunization1",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/cvx",
+              "code": "165",
+              "display": "HPV 9-valent vaccine"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:patient"
+        },
+        "occurrenceDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "190621004",
+              "display": "Hypothyroidism"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:allergyintolerance1",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "allergyintolerance1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "29462009",
+              "display": "Penicillin allergy"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:careplan1",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan1",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "scheduled",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "17993007",
+                    "display": "Cystoscopy"
+                  }
+                ]
+              },
+              "scheduledPeriod": {
+                "start": "[REDACTED]",
+                "end": "[REDACTED]"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

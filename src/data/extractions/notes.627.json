@@ -1,0 +1,340 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-example",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "Not disclosed"
+          }
+        ],
+        "name": [
+          {
+            "text": "Not disclosed"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1978-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-example",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "period": {
+          "start": "Not disclosed",
+          "end": "Not disclosed"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-example",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "193462001",
+              "display": "Solar retinopathy"
+            }
+          ],
+          "text": "Solar retinopathy"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "onsetDateTime": "Not disclosed",
+        "note": [
+          {
+            "text": "The patient was a 45-year-old male with a history of panic disorder who presented to the clinic after gazing directly at the sun during a baseball game, which resulted in bilateral central scotoma and decreased vision."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-example",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8640",
+              "display": "Prednisolone"
+            }
+          ],
+          "text": "Prednisolone"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "effectivePeriod": {
+          "start": "Not disclosed",
+          "end": "Not disclosed"
+        },
+        "dosage": {
+          "text": "30 mg per day, tapered over 12 weeks"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-example-2",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3943",
+              "display": "Triamcinolone"
+            }
+          ],
+          "text": "Triamcinolone"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "effectiveDateTime": "Not disclosed",
+        "dosage": {
+          "text": "Posterior sub-Tenon injection in the right eye"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-example",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27658006",
+              "display": "OCT imaging"
+            }
+          ],
+          "text": "OCT imaging"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "effectiveDateTime": "Not disclosed",
+        "valueString": "Elevated and blurred ellipsoid zone and loss of the interdigitation zone at the foveal area in both eyes"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-example-2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27658006",
+              "display": "OCT imaging"
+            }
+          ],
+          "text": "OCT imaging"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "effectivePeriod": {
+          "start": "Not disclosed",
+          "end": "Not disclosed"
+        },
+        "valueString": "Improvement in the blurred ellipsoid zone, with nearly normal levels at 4 weeks in the right eye and 21 weeks in the left eye. Loss of the interdigitation zone observed after 12 weeks in the right eye and 21 weeks in the left eye."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-example-3",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "5241009",
+              "display": "Fundus examination"
+            }
+          ],
+          "text": "Fundus examination"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "effectiveDateTime": "Not disclosed",
+        "valueString": "Small, yellowish spot in the fovea bilaterally, diminished in both eyes after treatment"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-example-4",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "32421-9",
+              "display": "Visual acuity"
+            }
+          ],
+          "text": "Visual acuity"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "effectiveDateTime": "Not disclosed",
+        "valueString": "0.8 in the right eye and 0.7 in the left eye initially, improved to 1.2 in the right eye and 1.0 in the left eye at 9 weeks, sustained throughout follow-up at 12 and 21 weeks."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-example",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386637004",
+              "display": "Posterior sub-Tenon injection"
+            }
+          ],
+          "text": "Posterior sub-Tenon injection"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "performedDateTime": "Not disclosed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-example",
+        "status": "completed",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "32485007",
+                    "display": "Follow-up examination"
+                  }
+                ],
+                "text": "Follow-up examination"
+              },
+              "status": "scheduled",
+              "scheduledPeriod": {
+                "start": "6 months from discharge"
+              },
+              "performer": [
+                {
+                  "reference": "Practitioner/practitioner-example",
+                  "display": "Ophthalmologist"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "male"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "74400008",
+              "display": "Acalculous cholecystitis"
+            }
+          ],
+          "text": "Acalculous cholecystitis"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "36622005",
+              "display": "Infectious mononucleosis"
+            }
+          ],
+          "text": "Mononucleosis"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1975-2",
+              "display": "Liver enzymes"
+            }
+          ],
+          "text": "Elevated liver enzymes"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "125643009",
+              "display": "Generalized lymphadenopathy"
+            }
+          ],
+          "text": "Generalized lymphadenopathy"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "405158002",
+              "display": "Left adrenal gland resection"
+            }
+          ],
+          "text": "Left adrenal gland resection"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "36407009",
+              "display": "Distal pancreatectomy"
+            }
+          ],
+          "text": "Distal pancreatectomy"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "287664000",
+              "display": "Splenectomy"
+            }
+          ],
+          "text": "Splenectomy"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest1",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "723",
+              "display": "Amoxicillin"
+            }
+          ],
+          "text": "Amoxicillin"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "oral administration"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Symptomatic Therapy",
+        "description": "The patient was admitted and put under symptomatic therapy which led to rapid improvement.",
+        "subject": {
+          "reference": "Patient/patient1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "dischargesummary",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "date": "[REDACTED]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "DISCHARGE SUMMARY\n\nPatient Name: [REDACTED]\nGender: Male\nDate of Admission: [REDACTED]\nDate of Discharge: [REDACTED]\n\nHOSPITAL COURSE:\nThe patient presented to our outpatient clinic with complaints of fever and pain in the right upper abdominal quadrant. A clinical examination and ultrasound revealed a thickened gallbladder wall, which was confirmed by computed tomography (CT) as acalculous cholecystitis. Laboratory results showed elevated liver enzymes, generalized lymphadenopathy, and signs of mononucleosis. The patient was hospitalized and put under symptomatic therapy. Throughout the hospital stay, the patient's state improved rapidly and he was discharged on the 17th day after admission in good general condition.\n\nHISTORY AND FINDINGS:\nThe patient had a history of recent upper respiratory tract infection which was treated with oral amoxicillin. He also had a history of left adrenal gland resection, distal pancreatectomy, and splenectomy due to a large tumor two years ago. Clinical examination revealed tenderness in the epigastric abdomen and a cervical lymphadenopathy.\n\nDIAGNOSES:\n1. Acalculous cholecystitis\n2. Mononucleosis\n3. Elevated liver enzymes\n4. Generalized lymphadenopathy\n\nTREATMENT:\nThe patient was admitted and put under symptomatic therapy. This led to rapid improvement and he was discharged in good general condition.\n\nFOLLOW-UP:\nThe patient is advised to follow-up with his primary care physician or specialist as advised.."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1959-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/us-core-race",
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/v3/Race",
+              "code": "2106-3",
+              "display": "White"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "197358007",
+              "display": "Hepatitis C"
+            }
+          ],
+          "text": "Hepatitis C"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "109838007",
+              "display": "Adrenal mass"
+            }
+          ],
+          "text": "Right adrenal mass"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "59000002",
+              "display": "Right adrenalectomy"
+            }
+          ],
+          "text": "Right adrenalectomy"
+        },
+        "performedPeriod": {
+          "start": "2023-10-10",
+          "end": "2023-10-14"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "2023-10-10",
+          "end": "2023-10-14"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "109838007",
+                "display": "Adrenal mass"
+              }
+            ],
+            "text": "Evaluation of adrenal mass"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2148-5",
+              "display": "ACTH [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "ACTH level"
+        },
+        "valueQuantity": {
+          "value": 20,
+          "unit": "pg/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "pg/mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2146-9",
+              "display": "Cortisol [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "AM cortisol level"
+        },
+        "valueQuantity": {
+          "value": 15,
+          "unit": "mcg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mcg/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "14193-4",
+              "display": "Metanephrines [Mass/volume] in 24 hour Urine"
+            }
+          ],
+          "text": "24-hour urine metanephrines"
+        },
+        "valueQuantity": {
+          "value": 300,
+          "unit": "mcg/24h",
+          "system": "http://unitsofmeasure.org",
+          "code": "mcg/24h"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26436-6",
+              "display": "Surgical pathology report"
+            }
+          ],
+          "text": "Histologic examination of resected adrenal mass"
+        },
+        "conclusion": "Cavernous hemangioma"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "367336001",
+              "display": "Cavernous hemangioma of the adrenal gland"
+            }
+          ],
+          "text": "Cavernous hemangioma of the right adrenal gland"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-Up Plan",
+        "description": "The patient is advised to follow up with the endocrine and surgical teams for regular monitoring. Should any concerning symptoms arise, the patient is instructed to follow-up with his primary care provider.",
+        "activity": [
+          {
+            "detail": {
+              "status": "scheduled",
+              "description": "Follow-up appointment with endocrine and surgical teams"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Name]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1974-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128462008",
+              "display": "Vertigo"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "note": [
+          {
+            "text": "Patient admitted with complaints of episodes of vertigo following stapedectomy done 12 years ago. Symptoms evoked by pressing and lying on the left ear."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "183807002",
+              "display": "Epley maneuver"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "note": [
+          {
+            "text": "Epley maneuvers were attempted but had no effect for treatment of possible benign paroxysmal positional vertigo (BPPV)."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "425689005",
+              "display": "CT of temporal bone"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "note": [
+          {
+            "text": "A temporal bone high resolution CT (HR CT) was performed and showed migration of stapes prosthesis into the vestibule. Depth of protrusion was measured 14 millimeters from tip of the prosthesis to the oval window."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "371209003",
+              "display": "Intravestibular stapes prosthesis protrusion"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "note": [
+          {
+            "text": "Diagnosis of intravestibular stapes prosthesis protrusion related post stapedectomy vertigo was made and revision surgery was proposed."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "status": "active",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Revision surgery"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "note": [
+          {
+            "text": "The patient was scheduled for revision surgery to rectify the migration of stapes prosthesis into the vestibule."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient is to be discharged once all vital signs and laboratory tests are stable. The patient was given appropriate instructions for follow-up appointments and medications."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

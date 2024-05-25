@@ -1,0 +1,215 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "given": [
+              "[Redacted]"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2013-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "443165006",
+                "display": "Pervasive refusal syndrome"
+              }
+            ],
+            "text": "The patient presented with severe restrictions of dietary intake, self-neglect, school refusal, mutism, and urinary and faecal incontinence."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "443165006",
+              "display": "Pervasive refusal syndrome"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "408856003",
+              "display": "Autism spectrum disorder"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "192127007",
+              "display": "Attention deficit disorder"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Inattentive subtype"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "183919006",
+              "display": "Assessment of mental health"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "note": [
+          {
+            "text": "The patient was detained under Section 2 of the Mental Health Act for assessment and treatment after being admitted to a specialist psychiatric ward for children under 12 years. The patient made steady progress with staff during his stay at the hospital, starting from accepting only a small amount of prepackaged food to eating full meals. He also accepted a change in clothes and in his personal hygiene routine with the assistance of nursing staff. The patient was allowed to leave the ward to his family home at weekends and gradually showed signs of improvement. He started to attend a specialist school with support in the classroom to assist his communication and learning needs."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care Plan",
+        "description": "The patient's ASD and ADD, inattentive subtype; shall be kept under regular review by the community team to ensure appropriate support and care.",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "443165006",
+              "display": "Pervasive refusal syndrome"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "The patient indicated no signs of distress regarding his communication level with his mother at the time of discharge from the hospital. However, further input from the community team will be required to accurately assess his long-term goals regarding verbal communication in the future."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "text": "Dr. [Redacted]"
+          }
+        ],
+        "address": [
+          {
+            "text": "[Redacted] Hospital, [Redacted]"
+          }
+        ]
+      }
+    }
+  ]
+}

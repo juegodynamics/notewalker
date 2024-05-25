@@ -1,0 +1,511 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1954-01-01" 
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "allergy-1",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "294627002",
+              "display": "Penicillin allergy"
+            }
+          ],
+          "text": "Penicillin"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254837009",
+              "display": "Malignant neoplasm of breast (disorder)"
+            }
+          ],
+          "text": "Left-sided breast cancer"
+        },
+        "note": [
+          {
+            "text": "Treated with mastectomy and axillary node clearance"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-09-01T00:00:00Z",
+          "end": "2023-09-21T00:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "371607004",
+                "display": "Breast abscess"
+              }
+            ],
+            "text": "Right-sided breast abscess"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "104001001",
+              "display": "Incision and drainage"
+            }
+          ],
+          "text": "Incision and drainage"
+        },
+        "performedPeriod": {
+          "start": "2023-09-01T00:00:00Z",
+          "end": "2023-09-05T00:00:00Z"
+        },
+        "note": [
+          {
+            "text": "Two incisions and drainage performed."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "completed",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "4035",
+              "display": "Erythromycin"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "7-day course of oral erythromycin"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "status": "completed",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "681",
+              "display": "Metronidazole"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "10-day course of oral metronidazole"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "21613-5",
+              "display": "Actinomyces europaeus identified in Breast abscess fluid by Culture"
+            }
+          ],
+          "text": "Presence of Actinomyces europaeus"
+        },
+        "effectiveDateTime": "2023-09-21",
+        "valueString": "Positive"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29571-7",
+              "display": "Organism antibiotic sensitivity"
+            }
+          ],
+          "text": "Antibiotic sensitivity of Actinomyces europaeus"
+        },
+        "related": [
+          {
+            "type": "has-member",
+            "target": {
+              "reference": "Observation/observation-1"
+            }
+          }
+        ],
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "18834-2",
+                  "display": "Penicillin [Susceptibility]"
+                }
+              ],
+              "text": "Penicillin"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "131196009",
+                  "display": "Susceptible"
+                }
+              ],
+              "text": "Sensitive"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "18834-2",
+                  "display": "Erythromycin [Susceptibility]"
+                }
+              ],
+              "text": "Erythromycin"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "131196009",
+                  "display": "Susceptible"
+                }
+              ],
+              "text": "Sensitive"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "18834-2",
+                  "display": "Vancomycin [Susceptibility]"
+                }
+              ],
+              "text": "Vancomycin"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "131196009",
+                  "display": "Susceptible"
+                }
+              ],
+              "text": "Sensitive"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "18834-2",
+                  "display": "Tetracycline [Susceptibility]"
+                }
+              ],
+              "text": "Tetracycline"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "131196009",
+                  "display": "Susceptible"
+                }
+              ],
+              "text": "Sensitive"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "18834-2",
+                  "display": "Ciprofloxacin [Susceptibility]"
+                }
+              ],
+              "text": "Ciprofloxacin"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "131196009",
+                  "display": "Susceptible"
+                }
+              ],
+              "text": "Sensitive"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-3",
+        "status": "completed",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3498",
+              "display": "Tigecycline"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "IV tigecycline"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-4",
+        "status": "completed",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "20225",
+              "display": "Doxycycline"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "6 months of oral doxycycline"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-5",
+        "status": "completed",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8559",
+              "display": "Clarithromycin"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "Oral clarithromycin to complete a 6-month course of oral antibiotics"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75325-1",
+              "display": "Adverse reaction"
+            }
+          ],
+          "text": "Side effects after 6 weeks of oral doxycycline therapy"
+        },
+        "valueString": "Oral thrush and leg blisters"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Ensure the absence of recurrence or related symptoms",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "307824009",
+                    "display": "Follow-up"
+                  }
+                ],
+                "text": "Follow-up"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-2",
+        "status": "completed",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Continue with the oral antibiotics prescribed and complete the full course as directed."
+            }
+          },
+          {
+            "detail": {
+              "description": "Promptly report any concerns or symptoms to your healthcare provider."
+            }
+          },
+          {
+            "detail": {
+              "description": "Keep the affected area clean and dry."
+            }
+          },
+          {
+            "detail": {
+              "description": "Wear loose clothing to avoid irritating the affected site."
+            }
+          },
+          {
+            "detail": {
+              "description": "Attend follow-up appointments as instructed by your healthcare provider."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

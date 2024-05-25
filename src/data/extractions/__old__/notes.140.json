@@ -1,0 +1,336 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "2.II.1",
+        "name": [
+          {
+            "text": "2.II.1 (a right)"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1988-01-01",
+        "age": 35
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/2.II.1"
+        },
+        "code": {
+          "text": "Iron overload disease"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-serum-ferritin",
+        "status": "final",
+        "code": {
+          "text": "High serum ferritin levels"
+        },
+        "subject": {
+          "reference": "Patient/2.II.1"
+        },
+        "effectiveDateTime": "2022-01-01",
+        "valueQuantity": {
+          "value": "high",
+          "unit": "ng/mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-hypogonadotropic-hypogonadism",
+        "status": "final",
+        "code": {
+          "text": "Hypogonadotropic hypogonadism"
+        },
+        "subject": {
+          "reference": "Patient/2.II.1"
+        },
+        "effectiveDateTime": "2022-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-mri",
+        "status": "completed",
+        "code": {
+          "text": "Magnetic Resonance Imaging"
+        },
+        "subject": {
+          "reference": "Patient/2.II.1"
+        },
+        "performedDateTime": "2022-01-01",
+        "outcome": {
+          "text": "Hepatic iron overload"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-iron-chelation",
+        "status": "completed",
+        "code": {
+          "text": "Iron chelation with Desferoxamine"
+        },
+        "subject": {
+          "reference": "Patient/2.II.1"
+        },
+        "performedPeriod": {
+          "start": "2022-01-01",
+          "end": "2020-01-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-phlebotomy",
+        "status": "completed",
+        "code": {
+          "text": "Phlebotomy"
+        },
+        "subject": {
+          "reference": "Patient/2.II.1"
+        },
+        "performedPeriod": {
+          "start": "2022-01-01",
+          "end": "2020-01-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "A.II.1",
+        "name": [
+          {
+            "text": "A.II.1"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1988-01-01",
+        "age": 35
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/A.II.1"
+        },
+        "code": {
+          "text": "HH"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-serum-ferritin-2",
+        "status": "final",
+        "code": {
+          "text": "High levels of serum ferritin and iron"
+        },
+        "subject": {
+          "reference": "Patient/A.II.1"
+        },
+        "effectiveDateTime": "2023-01-01",
+        "valueQuantity": {
+          "value": "high",
+          "unit": "ng/mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-mri-2",
+        "status": "completed",
+        "code": {
+          "text": "Magnetic Resonance Imaging"
+        },
+        "subject": {
+          "reference": "Patient/A.II.1"
+        },
+        "performedDateTime": "2023-01-01",
+        "outcome": {
+          "text": "Severe hepatic iron overload"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-phlebotomy-2",
+        "status": "completed",
+        "code": {
+          "text": "Weekly phlebotomies"
+        },
+        "subject": {
+          "reference": "Patient/A.II.1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01",
+          "end": "2023-12-31"
+        },
+        "note": [
+          {
+            "text": "100 phlebotomies, approximately 22 g of iron removal"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-iron-chelation-2",
+        "status": "completed",
+        "code": {
+          "text": "Iron chelation with Desferoxamine"
+        },
+        "subject": {
+          "reference": "Patient/A.II.1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01",
+          "end": "2023-12-31"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "A.II.2",
+        "name": [
+          {
+            "text": "A.II.2"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1986-01-01",
+        "age": 37
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/A.II.2"
+        },
+        "code": {
+          "text": "HH"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-serum-ferritin-3",
+        "status": "final",
+        "code": {
+          "text": "High levels of serum ferritin and iron"
+        },
+        "subject": {
+          "reference": "Patient/A.II.2"
+        },
+        "effectiveDateTime": "2023-01-01",
+        "valueQuantity": {
+          "value": "high",
+          "unit": "ng/mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-mri-3",
+        "status": "completed",
+        "code": {
+          "text": "Magnetic Resonance Imaging"
+        },
+        "subject": {
+          "reference": "Patient/A.II.2"
+        },
+        "performedDateTime": "2023-01-01",
+        "outcome": {
+          "text": "Severe hepatic iron overload"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-phlebotomy-3",
+        "status": "completed",
+        "code": {
+          "text": "Monthly phlebotomies"
+        },
+        "subject": {
+          "reference": "Patient/A.II.2"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01",
+          "end": "2023-12-31"
+        },
+        "note": [
+          {
+            "text": "46 phlebotomies, 9 g of iron removal"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "proc-iron-chelation-3",
+        "status": "completed",
+        "code": {
+          "text": "Iron chelation with Desferoxamine"
+        },
+        "subject": {
+          "reference": "Patient/A.II.2"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01",
+          "end": "2023-12-31"
+        }
+      }
+    }
+  ]
+}

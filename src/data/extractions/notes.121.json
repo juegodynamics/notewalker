@@ -1,0 +1,255 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1940-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "Respiratory distress"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admitting Diagnosis"
+                }
+              ]
+            }
+          },
+          {
+            "condition": {
+              "text": "Severe prosthetic valve stenosis, pannus"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "DD",
+                  "display": "Discharge Diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Severe prosthetic valve stenosis, pannus"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "103693007",
+              "display": "Surgical procedure"
+            }
+          ]
+        },
+        "code": {
+          "text": "Repeat surgical repair with a bioprosthesis"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11289-6",
+              "display": "Echocardiography study"
+            }
+          ],
+          "text": "TTE showing LV dysfunction with severe prosthetic valve stenosis"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectiveDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "55113-4",
+              "display": "Transesophageal Echocardiography study"
+            }
+          ],
+          "text": "TEE showing hypomobility of the anterior leaflet"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectiveDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24627-2",
+              "display": "CT of Chest"
+            }
+          ],
+          "text": "MDCT showing anterior aortic leaflet stuck and surrounded by hypodense tissue (pannus)"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectiveDateTime": "[REDACTED]",
+        "conclusion": "Pannus confirmed by pathology"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan1",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Follow-up Plan",
+        "description": "The patient is advised to follow up with her primary care physician for continued management. A cardiac rehabilitation program can be considered.",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "period": {
+          "start": "[REDACTED]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "description": "Follow-up with primary care physician"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medicationstatement1",
+        "status": "not-taken",
+        "medicationCodeableConcept": {
+          "text": "No new medications upon discharge"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CareTeam",
+        "id": "careteam1",
+        "status": "active",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "participant": [
+          {
+            "role": [
+              {
+                "text": "Cardiology"
+              }
+            ]
+          },
+          {
+            "role": [
+              {
+                "text": "Pathology"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

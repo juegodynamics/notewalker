@@ -1,0 +1,260 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[confidential]"
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "text": "Medical Record Number"
+            },
+            "value": "[confidential]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "period": {
+          "start": "[confidential]",
+          "end": "[confidential]"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128477000",
+              "display": "Gingival enlargement"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[confidential]"
+        },
+        "note": [
+          {
+            "text": "An 8-year-old male patient was admitted to the Pediatric Dental Clinic at the Federal University of Ceará with complaints of an unknown duration gingival enlargement in the anterior mandibular region associated with tooth pain. The patient was of normal height with no physical abnormalities observed. No history of trauma, infectious diseases, or nutritional disorders was noted. Intraoral examination revealed the presence of mandibular malformed and hypoplastic teeth, deciduous teeth (inferior central incisors) with localized gingival enlargement covered by a fibrous tissue, and teeth 83, 84, and 85 affected by caries."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-6",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[confidential]"
+        },
+        "result": [
+          {
+            "reference": "Observation/[confidential]-1"
+          },
+          {
+            "reference": "Observation/[confidential]-2"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "[confidential]-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "38269-7",
+              "display": "Panoramic radiograph"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[confidential]"
+        },
+        "note": [
+          {
+            "text": "Panoramic radiograph showed primary mandibular teeth, tooth 46 and dental germs with 'ghost teeth' appearance due to a lack of clear definition of enamel and dentin in the presence of extensive pulp chamber demarcation. Agenesis of lower incisor teeth and images suggesting dental caries on teeth 84, 85, and 46 were also observed."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "[confidential]-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "25045-6",
+              "display": "Cone beam computed tomography"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[confidential]"
+        },
+        "note": [
+          {
+            "text": "CBCT scan revealed a hypodense area suggestive of a periapical lesion associated with tooth 81, remarkable difference in the pulp chamber space when comparing deciduous teeth 84 and 74, and presence of ghost teeth associated with unerupted teeth 43 and 45. A semi-automated segmentation tool was used to provide pulp chamber volume, and it was observed that the volume of the RO-positive tooth pulp chamber was approximately 25% greater than the volume of the opposite unaffected tooth. Furthermore, the RO tooth was approximately 28% shorter than the corresponding contralateral tooth. Imaging exams also indicated an intense radiopacity pattern in the region of the trabecular bone surrounding adjacent RO teeth in comparison with the unaffected contralateral region. Fractal analysis of the mandibular trabecular pattern showed an altered bone microarchitecture in the mandibular region containing the RO teeth."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128477000",
+              "display": "Gingival enlargement"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[confidential]"
+        },
+        "note": [
+          {
+            "text": "Discharge Diagnosis: Mandibular dental anomalies with associated severe gingival enlargement, dental caries, and presence of ghost teeth."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "not-done",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000124107",
+              "display": "Dental follow-up"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[confidential]"
+        },
+        "note": [
+          {
+            "text": "The patient discontinued treatment and was not present at the return visit for dental follow-up."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "stopped",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "182904004",
+              "display": "No medication prescribed"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[confidential]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "status": "planned",
+        "description": "Follow-up at Pediatric Dental Clinic",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/[confidential]"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    }
+  ]
+}

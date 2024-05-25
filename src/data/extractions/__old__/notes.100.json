@@ -1,0 +1,183 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "gender": "female",
+        "age": 60
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "193003",
+              "display": "Visual field defect"
+            }
+          ],
+          "text": "Deterioration of the visual field"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "FamilyMemberHistory",
+        "id": "familyhistory1",
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+              "code": "PRN",
+              "display": "Parent"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "23986001",
+                  "display": "Glaucoma"
+                }
+              ],
+              "text": "Glaucoma"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Both parents had undergone treatment for glaucoma."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "122470005",
+              "display": "Bilateral craniotomy"
+            }
+          ],
+          "text": "Bilateral craniotomy for meningioma removal"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "outcome": {
+          "text": "Significant improvement and complete resolution of visual fields in the right eye but significant loss remaining in the left eye."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "417962000",
+              "display": "Olfactory groove meningioma"
+            }
+          ],
+          "text": "Olfactory groove meningioma"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29271-4",
+              "display": "Visual field defect"
+            }
+          ],
+          "text": "Visual field defect"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "valueString": "Rapid bilateral vision loss with regard to the BCVA and VF due to olfactory groove meningioma."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "The patient will be discharged with a recommendation for continued follow-up with the treating physician and appropriate specialists to monitor and manage any signs of vision loss, particularly in the left eye.",
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    }
+  ]
+}

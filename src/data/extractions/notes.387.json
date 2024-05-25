@@ -1,0 +1,549 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "age": "15 years"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ],
+        "reasonCode": [
+          {
+            "text": "Fever, decreased appetite, and nonproductive cough"
+          }
+        ],
+        "period": {
+          "start": "admission date",
+          "end": "discharge date"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ],
+          "text": "Fever"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "364075005",
+              "display": "Tachycardia"
+            }
+          ],
+          "text": "Tachycardia"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "409586006",
+              "display": "Respiratory distress"
+            }
+          ],
+          "text": "Respiratory distress"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1023003",
+              "display": "Splenomegaly"
+            }
+          ],
+          "text": "Splenomegaly"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "552-5",
+              "display": "Complete blood count"
+            }
+          ],
+          "text": "Pancytopenia"
+        },
+        "result": [
+          {
+            "reference": "Observation/[observation-id]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "63459-1",
+              "display": "Gram stain of Sputum"
+            }
+          ],
+          "text": "Gram-positive cocci"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "10901-7",
+              "display": "Hepatitis B surface antigen"
+            }
+          ],
+          "text": "HBsAg"
+        },
+        "result": [
+          {
+            "reference": "Observation/[observation-id]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "13955-0",
+              "display": "Hepatitis C virus antibody"
+            }
+          ],
+          "text": "Anti-HCV"
+        },
+        "result": [
+          {
+            "reference": "Observation/[observation-id]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "20605-2",
+              "display": "HIV 1+2 Ab+HIV1 p24 Ag"
+            }
+          ],
+          "text": "Anti-HIV"
+        },
+        "result": [
+          {
+            "reference": "Observation/[observation-id]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "13927-9",
+              "display": "ANA Ab"
+            }
+          ],
+          "text": "ANA"
+        },
+        "result": [
+          {
+            "reference": "Observation/[observation-id]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "13926-1",
+              "display": "Anti-dsDNA Ab"
+            }
+          ],
+          "text": "Anti ds-DNA"
+        },
+        "result": [
+          {
+            "reference": "Observation/[observation-id]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34534-5",
+              "display": "p-ANCA"
+            }
+          ],
+          "text": "p-ANCA"
+        },
+        "result": [
+          {
+            "reference": "Observation/[observation-id]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34535-2",
+              "display": "c-ANCA"
+            }
+          ],
+          "text": "c-ANCA"
+        },
+        "result": [
+          {
+            "reference": "Observation/[observation-id]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "final",
+        "modality": [
+          {
+            "code": "CT",
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "display": "CT Scan"
+          }
+        ],
+        "description": "CT scan of thorax showed bilateral and peripheral nodular and alveolar patterns, predominantly in the lower lobes of the lung, with no mediastinal lymphadenopathy or pleural effusion observed."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "38275-5",
+              "display": "Abdominal ultrasound"
+            }
+          ],
+          "text": "Abdominal sonography and CT showed hepatosplenomegaly, with splenomegaly being more pronounced than hepatomegaly. Para-aortic lymphadenopathy was not observed."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "31208-2",
+              "display": "Skin lesion"
+            }
+          ],
+          "text": "Small brown nodular lesions on the left leg"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274025005",
+              "display": "Excisional biopsy"
+            }
+          ],
+          "text": "Skin excisional biopsy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "230690007",
+              "display": "Hemiplegia"
+            }
+          ],
+          "text": "Right hemiplegia"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "91175000",
+              "display": "Seizure"
+            }
+          ],
+          "text": "Seizure"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "3092008",
+              "display": "Aphasia"
+            }
+          ],
+          "text": "Aphasia"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "final",
+        "modality": [
+          {
+            "code": "CT",
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "display": "CT Scan"
+          }
+        ],
+        "description": "Brain CT scan revealed hypo dense area on the left temporal and basal ganglia with little enhancement post-injection of IV contrast."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "67151-1",
+              "display": "Biopsy report"
+            }
+          ],
+          "text": "Skin biopsy showed severe infiltration of lymphocytes and histiocytes, atypical lymphocytes observed in subcutaneous and deep parts of the dermis. Aggregation around vessels, nerves, and skin appendices. Endothelial layer inflammation with no vasculitis."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "3959003",
+              "display": "Lymphomatoid granulomatosis (LG)"
+            }
+          ],
+          "text": "Lymphomatoid Granulomatosis (LG)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "stopped",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "6287",
+              "display": "Cyclophosphamide"
+            }
+          ],
+          "text": "Cyclophosphamide"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "stopped",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "11124",
+              "display": "Steroid"
+            }
+          ],
+          "text": "Steroid"
+        }
+      }
+    }
+  ]
+}

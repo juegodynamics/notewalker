@@ -1,0 +1,402 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "1957-01-01",
+        "condition": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "38341003",
+                  "display": "Hypertensive disorder"
+                }
+              ],
+              "text": "Hypertension"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "13644009",
+                  "display": "Disorder of lipid metabolism"
+                }
+              ],
+              "text": "High cholesterol"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "44054006",
+                  "display": "Diabetes mellitus type 2"
+                }
+              ],
+              "text": "Type 2 diabetes"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "414916001",
+                  "display": "Obesity"
+                }
+              ],
+              "text": "Obesity"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "279039007",
+                "display": "Hip pain"
+              }
+            ],
+            "text": "Hip pain following a fall"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-1"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admission diagnosis"
+                }
+              ]
+            },
+            "rank": 1
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "239872002",
+              "display": "Statin-induced necrotizing autoimmune myopathy"
+            }
+          ],
+          "text": "Statin-induced necrotizing autoimmune myopathy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8640",
+              "display": "Prednisone"
+            }
+          ],
+          "text": "Prednisone"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Treatment with prednisone was initiated and the patient was monitored closely."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2157-6",
+              "display": "Creatine kinase, serum"
+            }
+          ],
+          "text": "CPK"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueQuantity": {
+          "value": 1000,
+          "unit": "U/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "13969-1",
+              "display": "Creatine kinase isoenzyme MB [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "CKMB"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueQuantity": {
+          "value": 50,
+          "unit": "ng/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ng/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1742-6",
+              "display": "Aldolase [Enzymatic activity/volume] in Serum by Quantitative method"
+            }
+          ],
+          "text": "Aldolase"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueQuantity": {
+          "value": 10,
+          "unit": "U/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1975-2",
+              "display": "Bilirubin.total [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Liver Function Tests"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueQuantity": {
+          "value": 2,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "RG9jdW1lbnQgU3VtbWFyeToKCkhvc3BpdGFsIENvdXJzZToKVGhlIHBhdGllbnQsIGEgNjYteWVhci1vbGQgZmVtYWxlIHdpdGggYSBtZWRpY2FsIGhpc3Rvcnkgb2YgaHlwZXJ0ZW5zaW9uLCBoaWdoIGNob2xlc3Ryb2wsIHR5cGUgMiBkaWFiZXRlcywgYW5kIG9iZXNpdHksIHdhcyBhZG1pdHRlZCB3aXRoIGNvbXBsYWludHMgb2YgaGlwIHBhaW4gZm9sbG93aW5nIGEgZmFsbC4gQSBwaHlzaWNhbCBleGFtIHJldmVhbGVkIHByb3hpbWFsIG11c2NsZSB3ZWFrbmVzcyB3aGljaCB3YXMgZ3JlYXRlciBpbiB0aGUgbG93ZXIgZXh0cmVtaXRpZXMgd2hpbGUgdGhlIHJlc3Qgb2YgdGhlIHBoeXNpY2FsIGV4YW1pbmF0aW9uIHdhcyB1bnJlbWFya2FibGUuIFJhZGlvZ3JhcGggb2YgdGhlIGhpcCB3YXMgbmVnYXRpdmUgZm9yIGFueSBkaXNsb2NhdGlvbiBvciBmcmFjdHVyZS4gQmxvb2Qgd29yayBzaG93ZWQgZWxldmF0ZWQgQ1BLLCBDS01CLCBhbGRvbGFzZSwgYW5kIGxpdmVyIGZ1bmN0aW9uIHRlc3RzLiBBZnRlciByZXZpZXdpbmcgaGVyIG1lZGljYWwgaGlzdG9yeSBhbmQgY29uZHVjdGluZyBmdXJ0aGVyIHRlc3RzLCB0aGUgZGlhZ25vc2lzIG9mIHN0YXRpbi1pbmR1Y2VkIG5lY3JvdGl6aW5nIGF1dG9pbW11bmUgbXlvcGF0aHkgd2FzIG1hZGUuIFRyZWF0bWVudCB3aXRoIHByZWRuaXNvbmUgd2FzIGluaXRpYXRlZCBhbmQgdGhlIHBhdGllbnQgd2FzIG1vbml0b3JlZCBjbG9zZWx5LgoKS2V5IFBvaW50czogUGF0aWVudCBhZG1pdHRlZCB3aXRoIGhpcCBwYWluIGZvbGxvd2luZyBhIGZhbGwuIFBoeXNpY2FsIGV4YW0gcmV2ZWFsZWQgcHJveGltYWwgbXVzY2xlIHdlYWtuZXNzLiBCbG9vZCB3b3JrIHNob3dlZCBlbGV2YXRlZCBtdXNjbGUgZW56eW1lcyBhbmQgTEZUcy4gRGlhZ25vc2lzIG9mIHN0YXRpbi1pbmR1Y2VkIG5lY3JvdGl6aW5nIGF1dG9pbW11bmUgbXlvcGF0aHkuIFRyZWF0bWVudCB3aXRoIHByZWRuaXNvbmUgYW5kIGNsb3NlIG1vbml0b3JpbmcuIFRpc3N1ZXMgZm9yIGZvbGxvdXAtdXAgYW5kIGRpc2NoYXJnZS4="
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

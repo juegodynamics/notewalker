@@ -1,0 +1,216 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1999-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "74400008",
+              "display": "Achromatopsia"
+            }
+          ],
+          "text": "Achromatopsia"
+        },
+        "onsetAge": {
+          "value": 3,
+          "unit": "years",
+          "system": "http://unitsofmeasure.org",
+          "code": "a"
+        },
+        "note": [
+          {
+            "text": "Photophobia since birth. Myopia with astigmatism and nystagmus identified at 8 months old. No strabismus observed. Ocular therapy including occlusion therapy was unsuccessful. Visual acuity deteriorated over time. Subnormal amplitude under scotopic conditions and extinct responses under photopic conditions. Protan-deutan confusion errors."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "51275-2",
+              "display": "Electroretinogram"
+            }
+          ],
+          "text": "Full-field light- and dark-adapted electroretinogram (ERG) recordings"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Subnormal amplitudes under scotopic conditions and extinct responses under photopic conditions in both eyes compared to normal controls."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "112030000",
+              "display": "Spectral domain optical coherence tomography (SD-OCT)"
+            }
+          ],
+          "text": "Spectral domain optical coherence tomography (SD-OCT)"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Normal retinal architecture with thinned photoreceptor layer."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81247-9",
+              "display": "Genetic analysis master panel"
+            }
+          ],
+          "text": "Mutation screening of the OPN1LW/OPN1MW gene cluster"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Large deletion, NC_000023.11:g.154,118,184_154,191,311del."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "13123003",
+              "display": "Myopia"
+            }
+          ],
+          "text": "Myopia"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "11154001",
+              "display": "Astigmatism"
+            }
+          ],
+          "text": "Astigmatism"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "description": "The patient will be referred to an ophthalmologist for further evaluation and management. Genetic counseling may also be suggested.",
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "305911006",
+                    "display": "Referral to ophthalmologist"
+                  }
+                ],
+                "text": "Referral to an ophthalmologist"
+              },
+              "status": "scheduled"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "305911006",
+                    "display": "Referral to genetic counselor"
+                  }
+                ],
+                "text": "Referral to genetic counselor"
+              },
+              "status": "scheduled"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "74400008",
+                "display": "Achromatopsia"
+              }
+            ],
+            "text": "Follow-up appointments with the ophthalmologist and a genetic counselor as recommended."
+          }
+        ]
+      }
+    }
+  ]
+}

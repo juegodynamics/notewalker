@@ -1,0 +1,142 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Insert Name]"
+          }
+        ],
+        "identifier": [
+          {
+            "use": "usual",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/v2/0203",
+                  "code": "MR",
+                  "display": "Medical Record Number"
+                }
+              ]
+            },
+            "value": "[Insert Number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "period": {
+          "start": "[Insert Date]",
+          "end": "[Insert Date]"
+        },
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "263204007",
+              "display": "Fracture of distal radius"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onsetDateTime": "[Insert Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "448910000",
+              "display": "Minimally invasive locking plate osteosynthesis"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "[Insert Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3373-2",
+              "display": "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 1,
+          "unit": "/10",
+          "system": "http://unitsofmeasure.org",
+          "code": "/10"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "19913-9",
+              "display": "QuickDASH - Disabilities of the Arm, Shoulder and Hand"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 20.45,
+          "unit": "/100",
+          "system": "http://unitsofmeasure.org",
+          "code": "/100"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "28514-1",
+              "display": "Mayo wrist score"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 85,
+          "unit": "/100",
+          "system": "http://unitsofmeasure.org",
+          "code": "/100"
+        }
+      }
+    }
+  ]
+}

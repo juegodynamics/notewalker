@@ -1,0 +1,214 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[redacted]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1967-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "324851000000105",
+                "display": "Inpatient hospital stay"
+              }
+            ]
+          }
+        ],
+        "patient": {
+          "reference": "Patient/[redacted]"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254637007",
+              "display": "Non-small cell lung cancer"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "onsetDateTime": "[redacted]",
+        "abatementDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "430193006",
+              "display": "Bronchoalveolar lavage"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "performedDateTime": "[redacted]",
+        "note": [
+          {
+            "text": "Bronchoalveolar lavage revealed hypercellularity comprising 41% of lymphocytes without pathogens or cancer cells."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26450-2",
+              "display": "Lymphocytes/100 leukocytes in Bronchoalveolar lavage fluid"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "effectiveDateTime": "[redacted]",
+        "valueQuantity": {
+          "value": 41,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81247-9",
+              "display": "PD-L1 expression"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "effectiveDateTime": "[redacted]",
+        "valueString": "Elevated expression of PD-L1 on B and T cells at day 56, with a peak at day 147. Elevated expression of PD-L1 on monocytes at day 147. PD-L1 expression returned to basal levels on day 251."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "status": "not-taken",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "note": [
+          {
+            "text": "Discharge Medications: N/A"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "122503004",
+              "display": "Mediastinoscopy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "performedDateTime": "[redacted]",
+        "note": [
+          {
+            "text": "Mediastinoscopy showed sarcoid lesions."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "date": "[redacted]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "RGlzY2hhcmdlIFN1bW1hcnkKClBhdGllbnQgTmFtZTogW3JlZGFjdGVkXQoKQWdlOiA1NgoKU2V4OiBGZW1hbGUKCk1lZGljYWwgUmVjb3JkIE51bWJlcjogW3JlZGFjdGVkXQoKRGF0ZSBvZiBBZG1pc3Npb246IFtyZWRhY3RlZF0KClsiRGF0ZSBvZiBEaXNjaGFyZ2VdOiBbcmVkYWN0ZWRdCgpBZG1pdHRpbmcgRGlhZ25vc2lzOiBVbnJlc2VjdGFibGUgTlNDTEMKClsiSG9zcGl0YWwgQ291cnNlXSI6IFRoZSBwYXRpZW50IHdhcyBhZG1pdHRlZCB0byBvdXIgaG9zcGl0YWwgZm9yIHRyZWF0bWVudCBvZiB1bnJlc2VjdGFibGUgbm9uLXNtYWxsIGNlbGwgbHVuZyBjYW5jZXIgKE5TQ0xDKS4gVGhlIHBhdGllbnQgaGFkIHByZXZpb3VzbHkgcmVjZWl2ZWQgYWRqdXZhbnQgY2hlbW90aGVyYXB5LCBjb25zaXN0aW5nIG9mIGZvdXIgY3ljbGVzIG9mIGNpc3BsYXRpbi1wZW1ldHJleGVkLgoKTml2b2x1bWFiIHRoZXJhcHkgd2FzIGluaXRpYXRlZCBhbmQgY29udGludWVkIGZvciAyMCBpbmZ1c2lvbnMuIEEgcGFydGlhbCByZXNwb25zZSB3YXMgb2JzZXJ2ZWQgYWZ0ZXIgZml2ZSBkb3NlcywgYW5kIGluY3JlYXNpbmcgbWVkaWFzdGluYWwgbm9kZSBzaXplIGFuZCBhIG1pY3Jvbm9kdWxhciBpbnRlcnN0aXRpYWwgc3luZHJvbWUgd2VyZSBvYnNlcnZlZCBhZnRlciAyMCBuaXZvbHVtYWIgaW5mdXNpb25zLgoKQmlvcHNpZXMgcmV2ZWFsZWQgc2FyY29pZC1saWtlIGluZmxhbW1hdGlvbi4gTml2b2x1bWFiIHRoZXJhcHkgd2FzIGRpc2NvbnRpbnVlZCwgYW5kIHRoZSBwYXRpZW50IGV4cGVyaWVuY2VkIGEgcGFydGlhbCByZXNwb25zZS4gTWVkaWFzdGlub3Njb3B5IHNob3dlZCBzYXJjb2lkIGxlc2lvbnMsIGFuZCB0aGUgaW50ZXJzdGl0aWFsIHN5bmRyb21lIGRldGVyaW9yYXRlZC4KCkJyb25jaG9hbHZlb2xhciBsYXZhZ2Ugd2FzIHBlcmZvcm1lZCwgcmV2ZWFsaW5nIGh5cGVyY2VsbHVsYXJpdHkgY29tcHJpc2luZyA0MSUgb2YgbHltcGhvY3l0ZXMgd2l0aG91dCBwYXRob2dlbnMgb3IgY2FuY2VyIGNlbGxzLiBDVCBzY2FucyB3ZXJlIG9idGFpbmVkLCBhbmQgbm9ybWFsIG1lZGlhc3RpbmFsIG5vZGVzIGFuZCByZWdyZXNzaW9uIG9mIHRoZSBpbnRlcnN0aXRpYWwgc3luZHJvbWUgd2VyZSBvYnNlcnZlZCAzNDggZGF5cyBsYXRlci4KClBELTEsIFBELUwxLCBhbmQgUEQtTDIgZXhwcmVzc2lvbiBvbiBQQk1DIHdlcmUgYW5hbHl6ZWQgYXQgdmFyaW91cyB0aW1lLXBvaW50cyBhZnRlciBzdG9wcGluZyBuaXZvbHVtYWIuIFRoZSBwYXRpZW50IGV4aGliaXRlZCBhbiBlbGV2YXRlZCBleHByZXNzaW9uIG9mIFBELUwxIG9uIEIgYW5kIFQgY2VsbHMgYXQgZGF5IDU2LCB3aXRoIGEgcGVhayBhdCBkYXkgMTQ3LCBjb21wYXJlZCB0byBvdGhlciBwYXRpZW50cyB0cmVhdGVkIHdpdGggbml2b2x1bWFiIHdpdGhvdXQgcmVsZXZhbnQgaW1tdW5lIHJlbGF0ZWQgcmVhY3Rpb25zLiBBbiBlbGV2YXRlZCBleHByZXNzaW9uIG9mIFBELUwxIHdhcyBhbHNvIG9ic2VydmVkIG9uIG1vbm9jeXRlcyBhdCBkYXkgMTQ3LiBQR...="
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

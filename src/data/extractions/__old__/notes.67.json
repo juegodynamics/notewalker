@@ -1,0 +1,689 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:uuid:1"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2003-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-race",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/v3/Race",
+                  "code": "2106-3",
+                  "display": "White"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "2",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "2023-01-01T00:00:00Z",
+          "end": "2023-01-17T00:00:00Z"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386661006",
+              "display": "Fever"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "162397003",
+              "display": "Severe sore throat"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267036007",
+              "display": "Dyspnea"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "102957000",
+              "display": "Impaired consciousness"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "4",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1975-2",
+              "display": "Bilirubin.total [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueQuantity": {
+          "value": 5.8,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "5",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1988-5",
+              "display": "C reactive protein [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueQuantity": {
+          "value": 43,
+          "unit": "mg/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/L"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "6",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1920-8",
+              "display": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueQuantity": {
+          "value": 150,
+          "unit": "U/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "7",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1742-6",
+              "display": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueQuantity": {
+          "value": 79,
+          "unit": "U/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "8",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "94500-6",
+              "display": "SARS-CoV-2 (COVID-19) RNA [Presence] in Nasopharynx by NAA with probe detection"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260385009",
+              "display": "Negative"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "9",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "RAD",
+                "display": "Radiology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-6",
+              "display": "CT of whole body"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "result": [
+          {
+            "reference": "Observation/10"
+          },
+          {
+            "reference": "Observation/11"
+          },
+          {
+            "reference": "Observation/12"
+          },
+          {
+            "reference": "Observation/13"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:10",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "10",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "446074000",
+              "display": "Ground-glass opacity"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Bilateral pulmonary alterations"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:11",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "11",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "252349004",
+              "display": "Pericardial effusion"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Pericardial effusion"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:12",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "12",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71800003",
+              "display": "Mediastinal lymphadenopathy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Mediastinal lymphadenopathy"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:13",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "13",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "36770004",
+              "display": "Hepatosplenomegaly"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Hepatosplenomegaly"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:14",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "14",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "RAD",
+                "display": "Radiology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "37228-6",
+              "display": "CT of neck with contrast IV"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "result": [
+          {
+            "reference": "Observation/15"
+          },
+          {
+            "reference": "Observation/16"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:15",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "15",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "3099004",
+              "display": "Retropharyngeal abscess"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "5.4 cm retropharyngeal abscess"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:16",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "16",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254155001",
+              "display": "Thrombosis of left anterior jugular vein"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Thrombosis of left anterior jugular vein"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:17",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "17",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "10481-7",
+              "display": "Fusobacterium necrophorum [Presence] in Blood by Culture"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260373001",
+              "display": "Positive"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:18",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "18",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "23763009",
+              "display": "Puncture action"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-02T00:00:00Z",
+          "end": "2023-01-02T01:00:00Z"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:19",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "19",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "48387007",
+              "display": "Surgical tracheostomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-02T00:00:00Z",
+          "end": "2023-01-02T02:00:00Z"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:20",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "20",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm

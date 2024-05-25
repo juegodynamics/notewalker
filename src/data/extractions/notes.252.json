@@ -1,0 +1,192 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "__________"
+          }
+        ],
+        "identifier": [
+          {
+            "value": "__________",
+            "type": {
+              "text": "Medical Record Number"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "period": {
+          "start": "__________",
+          "end": "__________"
+        },
+        "type": [
+          {
+            "text": "Hospital Admission"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "95-year-old female with past medical history of heart failure with reduced ejection fraction, hypertension, and asthma admitted for evaluation of nausea, vomiting, and a two-month history of intermittent diarrhea, worsening for the last few days."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "text": "active"
+        },
+        "verificationStatus": {
+          "text": "confirmed"
+        },
+        "category": [
+          {
+            "text": "admitting"
+          }
+        ],
+        "code": {
+          "text": "Nausea, vomiting, and intermittent diarrhea"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Laboratory and stool studies"
+        },
+        "component": [
+          {
+            "code": {
+              "text": "hypokalemia"
+            }
+          },
+          {
+            "code": {
+              "text": "normal lipase"
+            }
+          },
+          {
+            "code": {
+              "text": "normal transaminases"
+            }
+          },
+          {
+            "code": {
+              "text": "normal bilirubin levels"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "final",
+        "description": "CT scan of the abdomen",
+        "series": [
+          {
+            "instance": [
+              {
+                "title": "intussusception with the lead point not categorized"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "open procedure right hemicolectomy"
+        },
+        "outcome": {
+          "text": "The abnormal area was removed. The surgical pathology revealed high-grade dysplasia in a tubulovillous adenoma without in-situ or invasive carcinoma."
+        },
+        "performedDateTime": "__________"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Postoperative kidney function"
+        },
+        "valueQuantity": {
+          "value": 1.3,
+          "unit": "mg/dl"
+        },
+        "interpretation": {
+          "text": "decreased kidney function with oliguria"
+        },
+        "effectiveDateTime": "__________"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "status": "completed",
+        "intent": "order",
+        "code": {
+          "text": "IV fluids administration"
+        },
+        "subject": {
+          "reference": "Patient/__________"
+        },
+        "occurrenceDateTime": "__________"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "text": "Home care services"
+          }
+        ],
+        "period": {
+          "end": "__________"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "text": "resolved"
+        },
+        "verificationStatus": {
+          "text": "confirmed"
+        },
+        "code": {
+          "text": "Intussusception with high-grade dysplasia in a tubulovillous adenoma causing hypokalemia"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "The patient and their immediate caregivers were advised to follow up with their primary care physician for further evaluation and treatment of medical conditions listed above."
+      }
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "text": "Transferred to Ulsan University Hospital"
+          },
+          "dischargeDisposition": {
+            "text": "Discharged without any postoperative complications"
+          }
+        },
+        "reasonCode": [
+          {
+            "text": "Severe abdominal pain accompanied by right flank pain"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": " ectopic pregnancy",
+              "display": "Ectopic pregnancy"
+            }
+          ],
+          "text": "Ectopic pregnancy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-bloodtest",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24357-6",
+              "display": "Blood test"
+            }
+          ],
+          "text": "Blood test"
+        },
+        "result": [
+          {
+            "display": "Low hemoglobin level"
+          },
+          {
+            "display": "Positive urinary pregnancy test"
+          },
+          {
+            "display": "Elevated serum β-HCG level"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-sonography",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "45066-8",
+              "display": "Gynecological sonography"
+            }
+          ],
+          "text": "Gynecological sonography"
+        },
+        "conclusion": "No evidence of intrauterine pregnancy, normal bilateral adnexa, free fluid collection suggestive of hemoperitoneum",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-apct",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-4",
+              "display": "Abdominopelvic computed tomography (APCT)"
+            }
+          ],
+          "text": "Abdominopelvic computed tomography (APCT)"
+        },
+        "conclusion": "Hypervascular mass in the subphrenic region, moderate amount of hemoperitoneum",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-surgery",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Diagnostic laparoscopic surgery"
+            }
+          ],
+          "text": "Diagnostic laparoscopic surgery"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        },
+        "performedPeriod": {
+          "start": "2023-10-05T00:00:00Z",
+          "end": "2023-10-05T00:00:00Z"
+        },
+        "outcome": {
+          "text": "Approximately 400 mL of blood and clots aspirated, placenta-like tissue and hypervascular mass removed"
+        },
+        "followUp": [
+          {
+            "text": "Histological examination of resected mass"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-histology",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26436-6",
+              "display": "Histological examination"
+            }
+          ],
+          "text": "Histological examination"
+        },
+        "conclusion": "Product of conception, consistent with an ectopic pregnancy",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-discharge",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Follow up with your primary care physician for further care. Take prescribed medications as directed by your healthcare provider. Avoid strenuous physical activity until cleared by your healthcare provider. Report any abdominal pain, vaginal bleeding, or dizziness to your healthcare provider immediately.",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-followup",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-Up Care",
+        "description": "Follow up with the obstetrician-gynecologist for further evaluation and monitoring.",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter"
+        }
+      }
+    }
+  ]
+}

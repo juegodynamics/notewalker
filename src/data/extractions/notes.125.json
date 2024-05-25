@@ -1,0 +1,197 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1978"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "admissionDate": "[REDACTED]",
+        "dischargeDate": "[REDACTED]",
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "COVID-19 with Pulmonary Embolism"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "COVID-19 with Pulmonary Embolism"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "RT-PCR test for SARS-CoV-2"
+        },
+        "valueString": "Positive",
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "CT Pulmonary Angiography"
+        },
+        "valueString": "Massive pulmonary embolism, right ventricular dysfunction",
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "Systemic thrombolysis with r-tPA (alteplase)"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "Septic shock"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "Respiratory failure with mechanical ventilation support"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "Severe anemia"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "medicationCodeableConcept": {
+          "text": "Factor-XA inhibitor"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Indefinite anticoagulation therapy"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "type": [
+          {
+            "text": "Follow-up"
+          }
+        ],
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner/OB-GYN"
+            }
+          }
+        ],
+        "reasonCode": [
+          {
+            "text": "Family planning counseling"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "text": "Continue anticoagulation therapy"
+              }
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "text": "Follow up with OB-GYN"
+              }
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "text": "Seek medical attention if recurrence of symptoms"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "description": "Discharge Condition",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient was discharged from our institution with stable vital signs and satisfactory clinical evolution."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

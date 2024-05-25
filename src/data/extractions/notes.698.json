@@ -1,0 +1,292 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-7",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "7"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Patient",
+            "given": [
+              "7"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2017-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-oi",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "3120003",
+              "display": "Osteogenesis Imperfecta"
+            }
+          ],
+          "text": "Osteogenesis Imperfecta"
+        },
+        "subject": {
+          "reference": "Patient/patient-7"
+        },
+        "evidence": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "21661-6",
+                  "display": "Genetic variant assessment"
+                }
+              ],
+              "text": "Pathogenic variant in COL1A2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-autism",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "408856003",
+              "display": "Autism spectrum disorder"
+            }
+          ],
+          "text": "Autism spectrum disorder"
+        },
+        "subject": {
+          "reference": "Patient/patient-7"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-pamidronate",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "657005",
+              "display": "Pamidronate"
+            }
+          ],
+          "text": "Pamidronate"
+        },
+        "subject": {
+          "reference": "Patient/patient-7"
+        },
+        "status": "active",
+        "effectivePeriod": {
+          "start": "2023-01-01",
+          "end": "2023-12-31"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "3120003",
+                "display": "Osteogenesis Imperfecta"
+              }
+            ],
+            "text": "Osteogenesis Imperfecta"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-7"
+        },
+        "period": {
+          "start": "2023-09-01T12:00:00Z",
+          "end": "2023-09-10T12:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "408856003",
+                "display": "Autism spectrum disorder"
+              }
+            ],
+            "text": "Concerns of autistic traits"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-oi"
+            }
+          },
+          {
+            "condition": {
+              "reference": "Condition/condition-autism"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-genetic-testing",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108241001",
+              "display": "Genetic testing"
+            }
+          ],
+          "text": "Genetic testing"
+        },
+        "subject": {
+          "reference": "Patient/patient-7"
+        },
+        "performedDateTime": "2023-09-02"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Multidisciplinary Care Plan",
+        "subject": {
+          "reference": "Patient/patient-7"
+        },
+        "period": {
+          "start": "2023-09-11"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/care-plan-category",
+                "code": "assess-plan",
+                "display": "Assessment and Plan of Treatment"
+              }
+            ]
+          }
+        ],
+        "description": "Ongoing multidisciplinary care for the management of Osteogenesis Imperfecta and monitoring of autism symptoms.",
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "status": "scheduled",
+              "description": "Follow-up appointments with medical team.",
+              "scheduledPeriod": {
+                "start": "2023-10-01"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DischargeSummary",
+        "id": "discharge-summary-1",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/patient-7"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "date": "2023-09-10",
+        "text": {
+          "status": "generated",
+          "div": "<div><p>Patient was discharged in stable condition. Follow-up appointments scheduled with medical team. Autism symptoms being monitored. Future management and treatment based on further evaluations and results of follow-up testing.</p></div>"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "medicalHistory": [
+          {
+            "condition": "No history of brain damage"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "230690007",
+              "display": "Stroke"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "39937001",
+                "display": "Left frontal lobe"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "12738006",
+                "display": "Insula"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "312830007",
+                "display": "Basal ganglia"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "441452000",
+              "display": "Speech therapy"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2022-01-01T00:00:00Z",
+          "end": "2022-06-01T00:00:00Z"
+        },
+        "extension": [
+          {
+            "url": "http://example.org/fhir/StructureDefinition/session-details",
+            "valueString": "1 hour per session, twice a day, 5 days a week"
+          },
+          {
+            "url": "http://example.org/fhir/StructureDefinition/therapy-components",
+            "valueString": "Spontaneous speech, auditory comprehension, repetition, naming, writing, reading training, and calculation"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA10483-1",
+              "display": "Aphasia Battery of Chinese (ABC)"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "LA10484-9",
+              "display": "Boston Diagnostic Aphasia Examination (BDAE)"
+            }
+          ]
+        },
+        "valueString": "Used to evaluate the language function and the severity of aphasia before and after the speech therapy"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72109-2",
+              "display": "Brain MRI"
+            }
+          ]
+        },
+        "conclusion": "Infarction lesion in the left frontal lobe, insula, and basal ganglia"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "56614-7",
+              "display": "Diffusion tensor imaging (DTI)"
+            }
+          ]
+        },
+        "valueString": "Carried out before and after the speech therapy. Corpus callosum tracked using Functool 9.4.05a."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA10485-6",
+              "display": "Follow-up DTI fiber tracking"
+            }
+          ]
+        },
+        "valueString": "Fiber pathway between the splenium of corpus callosum and the left superior temporal gyrus (Wernicke's area) established. Fiber connections between the genu of corpus callosum and the right inferior frontal gyrus (mirror region of Broca's area) increased."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "230690007",
+                "display": "Stroke"
+              }
+            ]
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up appointments",
+        "description": "Patient will continue with follow-up appointments to monitor progress."
+      }
+    }
+  ]
+}

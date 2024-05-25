@@ -1,0 +1,355 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "N/A"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "N/A"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183452005",
+                "display": "Discharge summary"
+              }
+            ],
+            "text": "Discharge Summary"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "period": {
+          "start": "N/A",
+          "end": "N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertensive disorder, systemic arterial"
+            }
+          ],
+          "text": "Severe hypertension"
+        },
+        "note": [
+          {
+            "text": "The patient with a past medical history of fibromyalgia and Sjogren's syndrome presented to the emergency department with severe hypertension. She was not taking any medication at home. On physical examination, the patient had 2+ pitting edema of lower extremities, and the rest of the examination was unremarkable. The patient's blood pressure was controlled after administering hydralazine and clonidine."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9279-1",
+              "display": "Blood pressure"
+            }
+          ],
+          "text": "Blood pressure"
+        },
+        "valueQuantity": {
+          "unit": "mmHg"
+        },
+        "note": [
+          {
+            "text": "The patient's blood pressure was controlled after administering hydralazine and clonidine."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18862-2",
+              "display": "Creatinine"
+            }
+          ],
+          "text": "Increased creatinine (3.8 mg/dl) with blood urea nitrogen of 29 mg/dl"
+        },
+        "valueQuantity": {
+          "value": 3.8,
+          "unit": "mg/dl"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2888-6",
+              "display": "Blood urea nitrogen"
+            }
+          ],
+          "text": "Blood urea nitrogen of 29 mg/dl"
+        },
+        "valueQuantity": {
+          "value": 29,
+          "unit": "mg/dl"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2889-4",
+              "display": "Creatinine"
+            }
+          ],
+          "text": "Creatinine level of 2.5 mg/dl a year ago"
+        },
+        "valueQuantity": {
+          "value": 2.5,
+          "unit": "mg/dl"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29023-1",
+              "display": "Proteinuria"
+            }
+          ],
+          "text": "24-hour proteinuria of 3.89 grams"
+        },
+        "valueQuantity": {
+          "value": 3.89,
+          "unit": "grams"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "50561-0",
+              "display": "Urine dipstick"
+            }
+          ],
+          "text": "Urine dipstick showed 3+ protein, 5-10 red blood cells and 10-15 white blood cells per high power field"
+        },
+        "valueString": "3+ protein, 5-10 RBC, 10-15 WBC per high power field"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "conclusion": "Suspected acute interstitial nephritis or possible immune-complex-mediated disease due to past medical history of Sjogren's syndrome",
+        "result": [
+          {
+            "reference": "Observation/LM"
+          },
+          {
+            "reference": "Observation/IF"
+          },
+          {
+            "reference": "Observation/EM"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "LM",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "12345-6",
+              "display": "Light microscopy"
+            }
+          ],
+          "text": "Light microscopy"
+        },
+        "valueString": "Moderate interstitial fibrosis and moderate intimal fibrosis present in vessels with no thrombosis or vasculitis"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "IF",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "12346-7",
+              "display": "Immunofluorescence"
+            }
+          ],
+          "text": "Immunofluorescence"
+        },
+        "valueString": "Diffuse global 3+ smudgy mesangial of the capillary wall noted with IgG. Glomerular staining showed 1+ IgM, C1q, 2+ C3, 1+ staining with both kappa and lambda light chains"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "EM",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "12347-8",
+              "display": "Electron microscopy"
+            }
+          ],
+          "text": "Electron microscopy"
+        },
+        "valueString": "Extensive electron dense deposits in the expanded mesangial regions and throughout the thickened glomerular basement membranes"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "308646001",
+              "display": "Consultation"
+            }
+          ],
+          "text": "Nephrology consultation"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Hydralazine"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Clonidine"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "The patient was instructed to follow up with a nephrologist and continue to monitor her blood pressure and edema."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "301011002",
+              "display": "Stable condition"
+            }
+          ],
+          "text": "Stable condition on discharge"
+        }
+      }
+    }
+  ]
+}

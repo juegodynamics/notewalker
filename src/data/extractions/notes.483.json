@@ -1,0 +1,133 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient1",
+        "gender": "female",
+        "birthDate": "1981-01-01T00:00:00Z"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "2023-01-01T00:00:00Z",
+          "end": "2023-01-15T00:00:00Z"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "109838007",
+              "display": "Plasmacytoma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient1"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter1"
+        },
+        "recordedDate": "2023-01-01T00:00:00Z"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Resection of lesion of tonsil"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient1"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter1"
+        },
+        "performedDateTime": "2023-01-10T00:00:00Z"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Vital signs, weight, height, head circumference, oxygen saturation and BMI panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient1"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter1"
+        },
+        "effectiveDateTime": "2023-01-01T00:00:00Z",
+        "valueString": "The patient remains clinically free of disease after 6 months of follow-up."
+      }
+    }
+  ]
+}

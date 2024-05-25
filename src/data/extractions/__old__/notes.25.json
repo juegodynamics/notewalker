@@ -1,0 +1,269 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "gender": "female",
+        "age": 59,
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.1",
+            "value": "[redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "1",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "279039007",
+              "display": "Lower back pain"
+            }
+          ]
+        },
+        "onsetString": "[redacted]",
+        "note": [
+          {
+            "text": "Lower back pain associated with weakness of lower extremities, numbness, tingling, and balance issues. Constipation and urinary incontinence noted."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "1",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72170-6",
+              "display": "CT of Chest"
+            }
+          ]
+        },
+        "valueString": "No pulmonary lesions but several subcutaneous lesions on the back."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "2",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72141-7",
+              "display": "MRI of brain and spine"
+            }
+          ]
+        },
+        "valueString": "Abnormal leptomeningeal enhancement in the brainstem extending along the entire spinal cord."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "3",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "80289-1",
+              "display": "Lumbar puncture"
+            }
+          ]
+        },
+        "valueString": "Increased protein and white blood cells in cerebrospinal fluid."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "4",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "48810-6",
+              "display": "Peripheral blood flow cytometry"
+            }
+          ]
+        },
+        "valueString": "Monoclonal B cell lymphocytosis."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "5",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81266-6",
+              "display": "Bone biopsy"
+            }
+          ]
+        },
+        "valueString": "Metastatic adenocarcinoma of the breast."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "1",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "705129",
+              "display": "Letrozole"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Started on letrozole initially with dexamethasone taper."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "1",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "448385000",
+              "display": "Radiation therapy"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Palliative radiation therapy with 30 Gy in 10 fractions to the lumbosacral spine which improved her lower back pain."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "2",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1816471",
+              "display": "Abemaciclib"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Added to letrozole as systemic therapy after completion of radiation therapy, showing excellent response."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "6",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59479-6",
+              "display": "Follow-up scan"
+            }
+          ]
+        },
+        "valueString": "No leptomeningeal enhancements; continues to have sclerotic changes in bones."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "2",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "104001",
+              "display": "Follow-up"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "The patient has been on abemaciclib and letrozole for about two years, her neurological symptoms have improved, and now she has a good quality of life. She is able to walk half a mile on flat ground and is able to perform light household chores."
+          }
+        ]
+      }
+    }
+  ]
+}

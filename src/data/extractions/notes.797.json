@@ -1,0 +1,248 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-example",
+        "name": [
+          {
+            "use": "official",
+            "family": "[REDACTED]",
+            "given": [
+              "[REDACTED]"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "[REDACTED]",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-example",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-example",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "445297001",
+              "display": "Stress fracture of tibia"
+            }
+          ],
+          "text": "Midshaft anterior cortex tibial stress fracture"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-example"
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Procedure/procedure-example"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-example",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "35354009",
+              "display": "Bone grafting"
+            }
+          ],
+          "text": "Tension band plate fixation with bone grafting"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-example"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "note": [
+          {
+            "text": "The necrotic bone and callus at the fracture site was debrided, transverse drilling was performed around the fracture site, bone marrow was inserted, and a tension band plate was applied over the IM nail."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-example",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "282291009",
+              "display": "Clinical examination"
+            }
+          ],
+          "text": "Clinical examination findings"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-example"
+        },
+        "effectiveDateTime": "[REDACTED]",
+        "valueString": "Pain and swelling at the fracture site, required crutches for ambulation. No pathologic findings in the peripheral nervous system of lower extremities or laboratory tests for endocrine or metabolic disorders."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-example",
+        "status": "active",
+        "intent": "plan",
+        "title": "Postoperative Care Plan",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-example"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "completed",
+              "description": "Wear an orthotic boot and avoid weightbearing for 6 weeks, followed by progressive weight bearing and range of motion exercises."
+            }
+          },
+          {
+            "detail": {
+              "status": "completed",
+              "description": "Continue physical therapy and activity modifications as needed for the prevention of future fractures."
+            }
+          },
+          {
+            "detail": {
+              "status": "completed",
+              "description": "Seek medical attention if experiencing any recurrence of fracture symptoms."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-example2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Internal fixation of fracture"
+            }
+          ],
+          "text": "Insertion of 6-hole, 4.5 mm locking compression plate"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-example"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "note": [
+          {
+            "text": "Cortical and unicortical locking screws were inserted, bypassing the nail in order to minimize pressure at the periosteum."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-example2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444971000124108",
+              "display": "Radiological union of fracture"
+            }
+          ],
+          "text": "Radiologic union of the fracture"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-example"
+        },
+        "effectiveDateTime": "[REDACTED]",
+        "valueString": "Complete radiologic union of the fracture at 6 months postoperatively."
+      }
+    }
+  ]
+}

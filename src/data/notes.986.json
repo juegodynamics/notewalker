@@ -1,0 +1,387 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1942-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "92506005",
+              "display": "Adenocarcinoma of prostate"
+            }
+          ],
+          "text": "Stage IV metastatic prostate adenocarcinoma"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "122456005",
+              "display": "Vertebral augmentation"
+            }
+          ],
+          "text": "Vertebral augmentation"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01T10:00:00Z",
+          "end": "2023-01-01T12:00:00Z"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-1"
+          }
+        ],
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "39607008",
+                "display": "Thoracic vertebra"
+              }
+            ],
+            "text": "T11, T12, and L1 vertebral bodies"
+          }
+        ],
+        "outcome": {
+          "text": "No complications, patient discharged same day, pain-free at follow-ups"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-1",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "description": "CT scans of the spine",
+        "series": [
+          {
+            "bodySite": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "51185008",
+                  "display": "Spine"
+                }
+              ]
+            },
+            "instance": [
+              {
+                "uid": "1.2.840.113619.2.55.3.604688.212.1517873984.467.31",
+                "sopClass": {
+                  "system": "http://dicom.nema.org/resources/ontology/DCM",
+                  "code": "1.2.840.10008.5.1.4.1.1.2",
+                  "display": "CT Image Storage"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-2",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "description": "MRI of the spine",
+        "series": [
+          {
+            "bodySite": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "51185008",
+                  "display": "Spine"
+                }
+              ]
+            },
+            "instance": [
+              {
+                "uid": "1.2.840.113619.2.55.3.604688.212.1517873984.467.32",
+                "sopClass": {
+                  "system": "http://dicom.nema.org/resources/ontology/DCM",
+                  "code": "1.2.840.10008.5.1.4.1.1.4",
+                  "display": "MR Image Storage"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29275-5",
+              "display": "CT of Spine"
+            }
+          ],
+          "text": "Compression deformity of T12"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "40% compression deformity of T12"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30623-1",
+              "display": "MRI of Spine"
+            }
+          ],
+          "text": "Pathologic involvement of T12 and L1, 40% spinal canal stenosis"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Pathologic involvement of T12 and L1, 40% spinal canal stenosis"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385797000",
+              "display": "Radiofrequency ablation"
+            }
+          ],
+          "text": "Radiofrequency ablation of vertebral bodies"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01T10:00:00Z",
+          "end": "2023-01-01T11:00:00Z"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-1"
+          }
+        ],
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "39607008",
+                "display": "Thoracic vertebra"
+              }
+            ],
+            "text": "T11, T12, and L1 vertebral bodies"
+          }
+        ],
+        "outcome": {
+          "text": "Radiofrequency ablation performed for 15 minutes at each level"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "86198006",
+              "display": "Injection of methylmethacrylate"
+            }
+          ],
+          "text": "Injection of methylmethacrylate for vertebral stability"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01T11:00:00Z",
+          "end": "2023-01-01T12:00:00Z"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-1"
+          }
+        ],
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "39607008",
+                "display": "Thoracic vertebra"
+              }
+            ],
+            "text": "T11, T12, and L1 vertebral bodies"
+          }
+        ],
+        "outcome": {
+          "text": "Methylmethacrylate injected into T11, T12, and L1 vertebral bodies"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-01-01T08:00:00Z",
+          "end": "2023-01-01T16:00:00Z"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-1"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Pain severity - 3 week follow-up"
+            }
+          ],
+          "text": "Pain severity at three-week follow-up"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "No pain, able to ambulate without assistance"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "MRI of Spine - 8 week follow-up"
+            }
+          ],
+          "text": "MRI at eight-week follow-up"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Stable vertebral changes, complete resolution of epidural disease at T12 and L1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Pain severity - 9 month follow-up"
+            }
+          ],
+          "text": "Pain severity at nine-month follow-up"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Pain-free, returned to normal activities"
+      }
+    }
+  ]
+}

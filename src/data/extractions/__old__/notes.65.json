@@ -1,0 +1,338 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "use": "official",
+            "family": "[REDACTED]",
+            "given": ["[REDACTED]"]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1970-01-01"  // Placeholder date
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "Paroxysmal atrial fibrillation"
+            }
+          ],
+          "text": "Paroxysmal atrial fibrillation"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertension"
+            }
+          ],
+          "text": "Hypertension"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73430006",
+              "display": "Sleep apnea syndrome"
+            }
+          ],
+          "text": "Sleep apnea syndrome"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "429622000",
+              "display": "Atrial fibrillation ablation"
+            }
+          ],
+          "text": "Atrial fibrillation ablation"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "note": [
+          {
+            "text": "We performed bipolar mapping of the right atrium with the ThermoCool SmartTouch SF ablation catheter. The inferior and superior vena cava, and coronary sinus were delineated, and the His potential was tagged in yellow. The interatrial septum was carefully reconstructed, and the Fossa ovalis was precisely defined by setting the color range on the bipolar map to 0.25-0.75 mV and tagging all the fragmented and low voltage signals in light blue. The FO location was further confirmed by ICE and the CartoSound module. We also assessed and reconstructed the structures of the left atrium using ICE and the CartoSound module. A single transseptal puncture was performed using the VIZIGO sheath and transseptal needle. The ThermoCool SmartTouch SF catheter was advanced through the VIZIGO sheath into the left atrium to perform anatomical mapping and PVI, following the CLOSE protocol. Ablations were performed with good contact and stability, leading to fast and effective PVI. The entire procedure lasted 100 minutes, and there were no complications."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medicationstatement-1",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "835967",
+              "display": "Apixaban 5 MG Oral Tablet"
+            }
+          ],
+          "text": "Apixaban 5mg"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosage": [
+          {
+            "text": "5mg twice daily"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medicationstatement-2",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197291",
+              "display": "ACE inhibitor"
+            }
+          ],
+          "text": "ACE inhibitor"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosage": [
+          {
+            "text": "For blood pressure control"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85353-1",
+              "display": "Multi-lead ECG panel"
+            }
+          ],
+          "text": "Electrocardiographic-Holter monitoring"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "valueString": "No AF episode detected"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "MedicationRequest",
+              "status": "completed",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                    "code": "835967",
+                    "display": "Apixaban 5 MG Oral Tablet"
+                  }
+                ],
+                "text": "Apixaban 5mg"
+              },
+              "dosage": {
+                "text": "5mg twice daily"
+              }
+            }
+          },
+          {
+            "detail": {
+              "kind": "MedicationRequest",
+              "status": "completed",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                    "code": "197291",
+                    "display": "ACE inhibitor"
+                  }
+                ],
+                "text": "ACE inhibitor"
+              },
+              "dosage": {
+                "text": "For blood pressure control"
+              }
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "The patient was advised to continue with apixaban 5mg twice daily and ACE inhibitor drug for blood pressure control. He was advised to contact us if he experienced any new cardiac symptoms, such as palpitations or shortness of breath. The patient should also schedule a regular follow-up visit with his primary care physician to monitor his blood pressure and cardiac function."
+          }
+        ]
+      }
+    }
+  ]
+}

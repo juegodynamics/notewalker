@@ -1,0 +1,226 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "age": {
+          "value": "late seventies"
+        },
+        "condition": [
+          {
+            "code": {
+              "text": "endovascular aortic repair for a large infrarenal abdominal aortic aneurysm"
+            }
+          },
+          {
+            "code": {
+              "text": "embolization of a type 2 endoleak"
+            },
+            "outcome": {
+              "text": "resulting in bilateral lower limb weakness and numbness"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonCode": [
+          {
+            "text": "embolization of a type 2 endoleak"
+          }
+        ],
+        "period": {
+          "start": "2023-07-01",
+          "end": "2023-07-31"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "text": "interventional radiologist"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "text": "embolization of a type 2 endoleak"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "2023-07-01T10:00:00Z",
+        "complication": [
+          {
+            "text": "bilateral lower limb weakness and numbness"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "text": "Lumbar spinal drain insertion"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "2023-07-01T15:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-1",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "description": "Urgent CT aortogram followed by MRI thoracolumbar spine",
+        "series": [
+          {
+            "description": "CT aortogram showing postinterval embolization of bilateral feeding arteries and Onyx material extending into the spinal canal"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-2",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonCode": [
+          {
+            "text": "inpatient multidisciplinary rehabilitation"
+          }
+        ],
+        "period": {
+          "start": "2023-07-01",
+          "end": "2023-08-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "bilateral lower limb weakness and numbness"
+        },
+        "clinicalStatus": {
+          "text": "improved but unable to ambulate"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-3",
+        "status": "finished",
+        "class": {
+          "code": "outpatient"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonCode": [
+          {
+            "text": "follow-up electrophysiology study"
+          }
+        ],
+        "period": {
+          "start": "2023-10-01",
+          "end": "2023-10-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "status": "final",
+        "code": {
+          "text": "Electrophysiology study"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "conclusion": "electrophysiological evidence of an acute right lumbar plexopathy involving the right obturator and femoral nerves, with no evidence of axonal continuity"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-4",
+        "status": "finished",
+        "class": {
+          "code": "outpatient"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonCode": [
+          {
+            "text": "follow-up outpatient clinic visit"
+          }
+        ],
+        "period": {
+          "start": "2023-10-15",
+          "end": "2023-10-15"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "right lower limb neurological status largely unchanged"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "left lower limb power improved"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "[Number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ],
+            "text": "Inpatient"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128856002",
+              "display": "Myeloid sarcoma"
+            }
+          ],
+          "text": "Myeloid sarcoma"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "remission",
+              "display": "Remission"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "7890003",
+              "display": "Small bowel obstruction"
+            }
+          ],
+          "text": "Small bowel obstruction"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Excision of mesenteric mass"
+            }
+          ],
+          "text": "Excision of mesenteric mass"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "Upon discharge, the patient will continue to follow up with his haematological specialist to ensure ongoing disease remission. Further instructions include pain management, dietary recommendations, and physical activity recommendations.",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "in-progress",
+              "description": "Pain management"
+            }
+          },
+          {
+            "detail": {
+              "status": "in-progress",
+              "description": "Dietary recommendations"
+            }
+          },
+          {
+            "detail": {
+              "status": "in-progress",
+              "description": "Physical activity recommendations"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-Up Plan",
+        "description": "Ensure that the patient follows up with his haematological specialist to continue treatment and monitoring for recovery.",
+        "subject": {
+          "reference": "Patient/[Number]"
+        }
+      }
+    }
+  ]
+}

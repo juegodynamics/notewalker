@@ -1,0 +1,185 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "gender": "female",
+        "age": 47
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "chief-complaint",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "4210003",
+              "display": "Tender MOD composite restoration tooth with periodic episodes of spontaneous pain"
+            }
+          ],
+          "text": "Tender MOD composite restoration tooth with periodic episodes of spontaneous pain"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "4210003",
+                "display": "Tender MOD composite restoration tooth with periodic episodes of spontaneous pain"
+              }
+            ],
+            "text": "Tender MOD composite restoration tooth with periodic episodes of spontaneous pain"
+          }
+        ],
+        "period": {
+          "start": "2023-01-01",
+          "end": "2023-01-03"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428171000124105",
+              "display": "Endodontic treatment"
+            }
+          ],
+          "text": "Endodontic treatment"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01",
+          "end": "2023-01-01"
+        },
+        "note": [
+          {
+            "text": "Endodontic treatment was performed in a single session using a combination of mechanical and manual instrumentation, and final obturation was achieved using Thermafil 2."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428171000124105",
+              "display": "Endodontic treatment"
+            }
+          ],
+          "text": "Endodontic treatment"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-02",
+          "end": "2023-01-02"
+        },
+        "note": [
+          {
+            "text": "Shaping of the canals was performed using TS1, and apical gauging was confirmed using a 25/02 file. The canal system was irrigated with 6% NaOCl solution and 17% EDTA solution. Obturation was achieved using Thermafil 2 and Kerr EWT pulp canal sealer."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428171000124105",
+              "display": "Endodontic treatment"
+            }
+          ],
+          "text": "Endodontic treatment"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-03",
+          "end": "2023-01-03"
+        },
+        "note": [
+          {
+            "text": "The final radiographs showed two well-obturated canals of this single rooted maxillary premolar. The patient was discharged after monitoring for any adverse effects post-therapy."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "discharge-summary",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "date": "2023-01-03",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary: Patient Name: Not provided Gender: Female Age: 47 Medical History: No significant findings reported. Chief Complaint: Tender MOD composite restoration tooth with periodic episodes of spontaneous pain. History of Present Illness: The patient was referred to the Endodontic Clinic of Dental Faculty at the University of Strasbourg for clinical evaluation due to tenderness of the left maxillary premolar with an MOD composite restoration. Radiographic examination suggested an unusual anatomic variation that required endodontic dilacerated anatomy. Endodontic treatment was performed in a single session using a combination of mechanical and manual instrumentation, and final obturation was achieved using Thermafil 2. Hospital Course Summary: Day 1: Patient presented with a tender MOD composite restoration tooth with periodic episodes of spontaneous pain. Endodontic access was performed under local anesthesia, and initial instrumentation was performed using OneG and TS1 files. Day 2: Shaping of the canals was performed using TS1, and apical gauging was confirmed using a 25/02 file. The canal system was irrigated with 6% NaOCl solution and 17% EDTA solution. Obturation was achieved using Thermafil 2 and Kerr EWT pulp canal sealer. Day 3: The final radiographs showed two well-obturated canals of this single rooted maxillary premolar. The patient was discharged after monitoring for any adverse effects post-therapy. Follow-Up Recommendations: Follow-up appointments should be scheduled, and regular dental check-ups are recommended to ensure the long-term health of the tooth."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

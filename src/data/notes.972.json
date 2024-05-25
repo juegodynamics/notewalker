@@ -1,0 +1,124 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "identifier": [
+          {
+            "use": "usual",
+            "value": "[MRN]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "[Date]",
+        "age": 8
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "text": "Dental consultation"
+          },
+          "dischargeDisposition": {
+            "text": "Discharged after 18 months of follow-up"
+          }
+        },
+        "reasonCode": [
+          {
+            "text": "Absence of Mandibular First Permanent Molar"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "PECR"
+        },
+        "subject": {
+          "reference": "Patient/[MRN]"
+        },
+        "onsetDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Surgical exposure of the crown"
+        },
+        "subject": {
+          "reference": "Patient/[MRN]"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Restoration with glass ionomer cement and resin-based composite"
+        },
+        "subject": {
+          "reference": "Patient/[MRN]"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Panoramic radiograph"
+        },
+        "subject": {
+          "reference": "Patient/[MRN]"
+        },
+        "valueString": "Revealed radiolucent dentin area at the occlusal surface of the nonerupted first permanent molar"
+      }
+    }
+  ]
+}

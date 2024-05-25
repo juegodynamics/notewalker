@@ -1,0 +1,235 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "gender": "male",
+        "age": 69
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "Occult blood in the urine, proteinuria, and renal dysfunction"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ],
+        "reasonCode": [
+          {
+            "text": "Occult blood in the urine, proteinuria, and renal dysfunction"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "50398-7",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "result": [
+          {
+            "reference": "Observation/urinalysis"
+          },
+          {
+            "reference": "Observation/blood-analysis"
+          },
+          {
+            "reference": "Observation/renal-biopsy"
+          },
+          {
+            "reference": "Observation/bone-marrow-biopsy"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "urinalysis",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "57782-5",
+              "display": "Urinalysis"
+            }
+          ]
+        },
+        "valueString": "Presence of red blood cells, protein, and granular casts"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "blood-analysis",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24323-8",
+              "display": "Blood analysis"
+            }
+          ]
+        },
+        "valueString": "Normal complete blood count, blood coagulation system, and normal immunoglobulin levels with negative autoantibodies"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "renal-biopsy",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26439-0",
+              "display": "Renal biopsy"
+            }
+          ]
+        },
+        "valueString": "Mesangial cell proliferation, endocapillary hypercellularity, and infiltration of neutrophils and eosinophils. Positive C3 and C1q immunofluorescence along glomerular capillaries; negative IgG. Electron microscopy showed marked endocapillary hypercellularity with infiltration of polymorphonuclear leukocytes and monocytes, and many tubular structures in parallel arrays with a hollow core in the subendothelial space."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "bone-marrow-biopsy",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34527-2",
+              "display": "Bone marrow biopsy"
+            }
+          ]
+        },
+        "valueString": "Presence of monoclonal immunoglobulins in serum and urine. Monoclonal gammopathy in bone marrow biopsy with no significant uptake on 18F-fluoro-deoxy-glucose positron emission tomography."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "Immune-type glomerulonephritis (ITG) with false-negative IgG staining"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "302343006",
+              "display": "Kidney biopsy"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274689002",
+              "display": "Bone marrow biopsy"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "441420006",
+              "display": "18F-fluoro-deoxy-glucose positron emission tomography"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-Up Care Plan",
+        "description": "Follow-up appointments with a renal specialist to monitor and manage renal dysfunction and proteinuria.",
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "status": "scheduled",
+              "description": "Follow-up appointment with renal specialist"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

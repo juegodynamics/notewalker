@@ -1,0 +1,307 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-example",
+        "age": 61
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "admitting-diagnosis",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "840539006",
+              "display": "COVID-19"
+            }
+          ],
+          "text": "Confirmed COVID-19"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "hospital-course",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "840539006",
+                "display": "COVID-19"
+              }
+            ],
+            "text": "Confirmed COVID-19"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "ventilation",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40617009",
+              "display": "Artificial respiration"
+            }
+          ],
+          "text": "Invasive assisted ventilation"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "ecmo",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "81898007",
+              "display": "Extracorporeal membrane oxygenation"
+            }
+          ],
+          "text": "Venovenous ECMO therapy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "tracheotomy",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "48387007",
+              "display": "Tracheotomy"
+            }
+          ],
+          "text": "Tracheotomy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "renal-replacement-therapy",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108241001",
+              "display": "Renal replacement therapy"
+            }
+          ],
+          "text": "Intermittent renal replacement therapy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "ssc-cip",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "111601007",
+              "display": "Secondary sclerosing cholangitis in critically ill patients (SSC-CIP)"
+            }
+          ],
+          "text": "Secondary sclerosing cholangitis in critically ill patients (SSC-CIP)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "bilirubin",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1975-2",
+              "display": "Bilirubin.total [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Bilirubin levels"
+        },
+        "valueQuantity": {
+          "value": 1.2,
+          "unit": "mg/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "ammonia",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "16362-6",
+              "display": "Ammonia [Moles/volume] in Blood"
+            }
+          ],
+          "text": "Ammonia levels"
+        },
+        "valueQuantity": {
+          "value": 80,
+          "unit": "µmol/L"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "hemadsorption",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "814161000000109",
+              "display": "Hemoadsorption using the CytoSorb hemoperfusion device"
+            }
+          ],
+          "text": "Hemoadsorption"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "irrt",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108241001",
+              "display": "Renal replacement therapy"
+            }
+          ],
+          "text": "Intermittent renal replacement therapy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "cardiac-arrhythmia",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "698247007",
+              "display": "Cardiac arrhythmia"
+            }
+          ],
+          "text": "Cardiac arrhythmia"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "fatal",
+              "display": "Fatal"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "discharge-condition",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75182-8",
+              "display": "Discharge status"
+            }
+          ],
+          "text": "Discharge condition"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "419099009",
+              "display": "Dead"
+            }
+          ],
+          "text": "Deceased"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,374 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Full Name]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1982-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "Acute Pericarditis with Reduced Ejection Fraction and Moderate Pericardial Effusion"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Acute Pericarditis with Reduced Ejection Fraction and Moderate Pericardial Effusion"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Acute Pericarditis with Improved Ejection Fraction and Resolution of Pericardial Effusion"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Tachycardia, Hypotension, and ST segment elevations on ECG"
+        },
+        "valueString": "Tachycardia, Hypotension, and ST segment elevations on ECG consistent with acute pericarditis"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Reduced air entry at right lung base and bibasilar crackles"
+        },
+        "valueString": "Reduced air entry at the right lung base and bibasilar crackles on lung auscultation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Laboratory Findings"
+        },
+        "component": [
+          {
+            "code": {
+              "text": "Troponin I"
+            },
+            "valueString": "Elevation"
+          },
+          {
+            "code": {
+              "text": "CK-MB"
+            },
+            "valueString": "Elevation"
+          },
+          {
+            "code": {
+              "text": "CRP"
+            },
+            "valueString": "Increased"
+          },
+          {
+            "code": {
+              "text": "Ferritin"
+            },
+            "valueString": "Elevated"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "final",
+        "modality": [
+          {
+            "code": "X-ray"
+          }
+        ],
+        "description": "Pulmonary vascular congestion and right mid- and lower-lung opacity/effusion"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "final",
+        "modality": [
+          {
+            "code": "Ultrasound"
+          }
+        ],
+        "description": "Severely reduced ejection fraction and moderate pericardial effusion"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Echocardiogram"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "outcome": {
+          "text": "Complete resolution of pericardial effusion with improved ejection fraction"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Anti-inflammatory therapy"
+        },
+        "reasonCode": [
+          {
+            "text": "Reduce inflammation in the pericardium"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Oseltamivir"
+        },
+        "reasonCode": [
+          {
+            "text": "Influenza B"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Lisinopril"
+        },
+        "reasonCode": [
+          {
+            "text": "Heart failure"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Metoprolol"
+        },
+        "reasonCode": [
+          {
+            "text": "Heart failure"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Paroxysmal atrial fibrillation"
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "MedicationRequest/amiodarone"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Amiodarone"
+        },
+        "reasonCode": [
+          {
+            "text": "Paroxysmal atrial fibrillation"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Flu-like symptoms, shortness of breath, chest pain, and fatigue"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Patient education on monitoring condition and follow-up with cardiology outpatient"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Patient instruction on medication adherence and seeking urgent medical attention in case of recurrence of symptoms"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    }
+  ]
+}

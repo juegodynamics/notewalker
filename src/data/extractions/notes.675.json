@@ -1,0 +1,268 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2007-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "26250001",
+                "display": "Gunshot wound"
+              }
+            ],
+            "text": "Gunshot wound to the right lower extremity"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "26250001",
+              "display": "Gunshot wound"
+            }
+          ],
+          "text": "Gunshot wound to the right lower extremity"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "430193006",
+              "display": "Computed Tomography Angiography (CTA)"
+            }
+          ],
+          "text": "Computed Tomography Angiography (CTA)"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "241611000000106",
+              "display": "Angiogram"
+            }
+          ],
+          "text": "Angiogram"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Exploration and removal of bullet fragment"
+            }
+          ],
+          "text": "Exploration and removal of bullet fragment"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "241611000000106",
+              "display": "Intraoperative angiogram"
+            }
+          ],
+          "text": "Intraoperative angiogram"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-discharge-condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "26250001",
+              "display": "Gunshot wound"
+            }
+          ],
+          "text": "Gunshot wound to the right lower extremity"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "onsetDateTime": "[Date]",
+        "abatementDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "example-careplan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge and Follow-up Plan",
+        "description": "The patient was discharged in stable condition with instructions to take rest and follow-up with outpatient physical therapy for wound care. The patient will follow up with an orthopedic surgeon and an interventional radiologist for evaluation and ongoing management of the injury.",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "text": "Outpatient physical therapy for wound care"
+              },
+              "status": "completed"
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "text": "Follow-up with orthopedic surgeon"
+              },
+              "status": "completed"
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "text": "Follow-up with interventional radiologist"
+              },
+              "status": "completed"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

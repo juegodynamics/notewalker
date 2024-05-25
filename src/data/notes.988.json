@@ -1,0 +1,386 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1988-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/us-core-race",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/v3/Race",
+                  "code": "2028-9",
+                  "display": "Fulani"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183807002",
+                "display": "Admission to surgical ward"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "emd",
+                "display": "Emergency department"
+              }
+            ]
+          },
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "urn:uuid:condition-1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128600001",
+              "display": "Submandibular abscess"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "774007",
+                "display": "Submandibular region"
+              }
+            ]
+          }
+        ],
+        "onsetDateTime": "[Date]"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10495002",
+              "display": "Surgical drainage"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:condition-1"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-2",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "302193003",
+              "display": "Thoracostomy with tube drainage"
+            }
+          ]
+        },
+        "performedDateTime": "[Date]",
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:condition-1"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-3",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233276000",
+              "display": "Debridement of wound"
+            }
+          ]
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:condition-1"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-4",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-4",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "69843000",
+              "display": "Irrigation of wound"
+            }
+          ]
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:condition-1"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationRequest-1",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationRequest-1",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "11124",
+              "display": "Ceftriaxone"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "47625008",
+                  "display": "Intravenous route"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationRequest-2",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationRequest-2",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "6817",
+              "display": "Metronidazole"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "47625008",
+                  "display": "Intravenous route"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationRequest-3",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationRequest-3",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "855332",
+              "display": "Ciprofloxacin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "47625008",
+                  "display": "Intravenous route"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:diagnosticReport-1",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticReport-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-0",
+              "display": "Chest X-ray"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "effectiveDateTime": "[Date]"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:diagnosticReport-2",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticReport-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-0",
+              "display": "Ultrasound of soft tissue"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "effectiveDateTime": "[Date]"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:diagnosticReport-3",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticReport-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "47252-2",
+              "display": "Superficial ultrasound"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "effectiveDateTime": "[Date]"
+      }
+    }
+  ]
+}

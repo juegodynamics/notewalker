@@ -1,0 +1,448 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "family": "[Redacted]",
+            "given": [
+              "[Redacted]"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1996-xx-xx" // Assuming 21 years old in 2017
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32485007",
+                "display": "Hospital admission"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "period": {
+          "start": "2017-04-26T00:00:00+08:00",
+          "end": "2017-05-25T00:00:00+08:00"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "428361000124106",
+                "display": "Discharge to home for follow-up care"
+              }
+            ]
+          }
+        },
+        "location": [
+          {
+            "location": {
+              "display": "Ruijin Hospital affiliated to Shanghai Jiao Tong University"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "16814004",
+              "display": "Klebsiella pneumoniae infection"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "301011002",
+              "display": "Coagulation abnormality"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "421723003",
+              "display": "Disseminated intravascular coagulation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77477000",
+              "display": "Computed tomography of body structure"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "performedDateTime": "2017-04-26"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "35184-1",
+              "display": "Serum creatinine"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "effectiveDateTime": "2017-05-21",
+        "valueQuantity": {
+          "value": 19,
+          "unit": "cm H2O",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm[H2O]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest1",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308182",
+              "display": "Piperacillin-tazobactam"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "authoredOn": "2017-04-26",
+        "dosageInstruction": [
+          {
+            "text": "Empiric antibiotic treatment for Klebsiella pneumoniae infection"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest2",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3498",
+              "display": "Meropenem"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "authoredOn": "2017-04-26",
+        "dosageInstruction": [
+          {
+            "text": "Treatment for Klebsiella pneumoniae infection"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest3",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "139468",
+              "display": "Tigecycline"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "authoredOn": "2017-04-26",
+        "dosageInstruction": [
+          {
+            "text": "Treatment for Klebsiella pneumoniae infection"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest4",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308136",
+              "display": "Colistin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "authoredOn": "2017-04-26",
+        "dosageInstruction": [
+          {
+            "text": "Treatment for Klebsiella pneumoniae infection"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest5",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1739471",
+              "display": "Polymyxin B"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "authoredOn": "2017-05-18",
+        "dosageInstruction": [
+          {
+            "text": "Adjusted treatment for aggravated Klebsiella pneumoniae infection"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner1",
+        "name": [
+          {
+            "family": "[Redacted]",
+            "given": [
+              "[Redacted]"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Composition",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "date": "2017-05-25T00:00:00+08:00",
+        "author": [
+          {
+            "reference": "Practitioner/[Redacted]"
+          }
+        ],
+        "title": "Discharge Summary",
+        "section": [
+          {
+            "title": "Hospital Course",
+            "text": {
+              "status": "generated",
+              "div": "<div><p>The patient, a 21-year-old female, was admitted to the emergency intensive care unit (EICU) of Ruijin Hospital affiliated to Shanghai Jiao Tong University on 26th April 2017. The patient had a history of suffering from chest pain, fever, and coma for a fortnight in the postpartum period. The patient was previously diagnosed with multi-drug resistant Klebsiella pneumoniae (MDR-KP) and treated with piperacillin-tazobactam, meropenem, tigecycline, and colistin. However, these antimicrobial therapies did not work effectively.</p><p>During the admission to our hospital, a full-body computed tomography (CT) scan identified thickened pericardium, bilateral pleural effusion with multiple exudative focuses, hepatosplenomegaly, and pelvic effusion in this patient. Empiric antibiotic treatment was started with piperacillin-tazobactam for Klebsiella pneumoniae infection followed by the use of meropenem, tigecycline, and colistin. On 18th May 2017, the treatment was further adjusted to include polymyxin B, as the patient's infection had aggravated in bilateral lungs compared to that upon admission. Four days later, multiple red rashes appeared on the patient's skin. SH with dark round spots was seen on 23rd May 2017, without pain or pruritus. More dark brown spots spread on the skin of the trunk and limbs, especially on that of the lower abdomen, right hand, and right foot.</p><p>The patient suffered from diarrhea suddenly with intra-abdominal pressure (IAP) increasing to 19 cm H2O on 21st May 2017. About 500 ml black stool was found in the patient’s excrement. Her serum creatinine was elevated dramatically, and anuria occurred. The laboratory examinations revealed that the patient suffered from coagulation abnormality and hyperfibrinolysis, hence disseminated intravascular coagulation (DIC).</p><p>The patient was transferred back to the local hospital for further treatment on 25th May 2017. At that time, her skin color did not recover to the previous state.</p></div>"
+            }
+          },
+          {
+            "title": "Discharge Diagnoses",
+            "text": {
+              "status": "generated",
+              "div": "<div><ul><li>MDR-KP infection</li><li>Coagulation abnormality</li><li>DIC</li></ul></div>"
+            }
+          },
+          {
+            "title": "Discharge Instructions",
+            "text": {
+              "status": "generated",
+              "div": "<div><p>The patient should continue her treatment under the guidance and supervision of her local physician.</p></div>"
+            }
+          },
+          {
+            "title": "Follow-Up Appointment",
+            "text": {
+              "status": "generated",
+              "div": "<div><p>None stated.</p></div>"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

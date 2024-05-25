@@ -1,0 +1,234 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1963"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertension"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "443484003",
+              "display": "CADASIL"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "onsetDateTime": "2019",
+        "note": [
+          {
+            "text": "The patient's clinical condition remained stable, and the lesion load was unchanged for four years until she was diagnosed with COVID-19 in November 2020."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "840539006",
+              "display": "COVID-19"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "onsetDateTime": "2020-11",
+        "note": [
+          {
+            "text": "She developed mild respiratory symptoms and did not require hospitalization or any specific treatment."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "85002002",
+              "display": "Aphasia"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "onsetDateTime": "2020-11-15",
+        "note": [
+          {
+            "text": "Fifteen days after the COVID-19 diagnosis, she suddenly developed aphasia, agraphia, and worsened right upper limb motor deficit, but did not seek medical attention."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "31422002",
+              "display": "Blood pressure"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "note": [
+          {
+            "text": "The review of the blood pressure log excluded uncontrolled hypertension."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "note": [
+          {
+            "text": "A new brain MRI was performed, showing a subacute ischemic area in the left corona radiata."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168537006",
+              "display": "Carotid Doppler ultrasound"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "note": [
+          {
+            "text": "The patient underwent a carotid doppler ultrasound and an echocardiogram, which did not reveal any pathological changes."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "857005",
+              "display": "Clopidogrel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Continue therapy with clopidogrel as secondary prevention."
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "22298006",
+                "display": "Ischemic stroke"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "[Date]"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "date": "[Date]",
+        "description": "Discharge Summary",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "VGhpcyBkb2N1bWVudCBzdW1tYXJpemVzIHRoZSBwYXRpZW50J3MgY29uZGl0aW9uIGFuZCBkaXNjaGFyZ2UgaW5zdHJ1Y3Rpb25zLg=="
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

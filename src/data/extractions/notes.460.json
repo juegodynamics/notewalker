@@ -1,0 +1,178 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "Red Corn Snake"
+          }
+        ],
+        "animal": {
+          "species": {
+            "text": "Corn Snake"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "code": {
+          "text": "Midbody swelling"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "onsetString": "unknown duration"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "code": {
+          "text": "Anorexia"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "onsetString": "3 weeks"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition3",
+        "code": {
+          "text": "Gastrointestinal intussusception"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition4",
+        "code": {
+          "text": "Chronic proliferative gastritis due to Cryptosporidium sp."
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "code": {
+          "text": "Surgical procedure for gastrointestinal intussusception"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedString": "unknown date"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medadmin1",
+        "medicationCodeableConcept": {
+          "text": "Medications post-surgery"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "context": {
+          "reference": "Procedure/procedure1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "reasonCode": [
+          {
+            "text": "Midbody swelling and anorexia"
+          }
+        ],
+        "hospitalization": {
+          "admitSource": {
+            "text": "Zoological Medicine Service, University of Florida"
+          },
+          "dischargeDisposition": {
+            "text": "Home"
+          }
+        },
+        "period": {
+          "start": "unknown date",
+          "end": "unknown date"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Narrative",
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">The red corn snake was admitted for evaluation by the Zoological Medicine Service, University of Florida, due to a midbody swelling and a three-week history of anorexia. The snake was diagnosed with a gastrointestinal intussusception and a surgical procedure was recommended. After the surgery, the snake was treated with medications and discharged the following day. The snake was later diagnosed with chronic proliferative gastritis due to Cryptosporidium sp. The snake was treated and discharged with instructions to follow up with the veterinarian regularly. At 15 months after surgery, the snake was found deceased in its enclosure.</div>"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs1",
+        "status": "final",
+        "code": {
+          "text": "Condition at discharge"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Stable"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs2",
+        "status": "final",
+        "code": {
+          "text": "Follow-up instruction"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Owner was instructed to provide a warm basking spot and a cooler temperate area in the tank. All bedding was to be removed from the enclosure and only clean newspaper or paper towels were to be used as a substrate. The owner was also instructed on the feeding schedule and the prey items to feed the snake."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs3",
+        "status": "final",
+        "code": {
+          "text": "Follow-up"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Owner was advised to follow up with the veterinarian regularly to monitor the snake's condition."
+      }
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "gender": "male",
+        "birthDate": "1963-10-08"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "840539006",
+              "display": "Disease caused by 2019-nCoV (disorder)"
+            }
+          ],
+          "text": "COVID-19"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "note": [
+          {
+            "text": "Moderate ARDS from COVID-19"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "3",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "2023-09-28T08:00:00Z",
+          "end": "2023-10-08T12:00:00Z"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183807002",
+                "display": "discharge summary"
+              }
+            ]
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "840539006",
+                "display": "Disease caused by 2019-nCoV (disorder)"
+              }
+            ],
+            "text": "COVID-19"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "410006001",
+              "display": "Physical therapy treatment"
+            }
+          ],
+          "text": "Physical therapy"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/3"
+        },
+        "performedPeriod": {
+          "start": "2023-09-28T08:00:00Z",
+          "end": "2023-10-08T12:00:00Z"
+        },
+        "note": [
+          {
+            "text": "Breathing exercises adapted to avoid prolonged coughing and oxygen desaturation, and close monitoring during strength and walking exercises. Exercise progression was low initially but increased daily until hospital discharge to a rehabilitation clinic on day 10."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "5",
+        "status": "active",
+        "intent": "plan",
+        "title": "Rehabilitation Care Plan",
+        "description": "Follow-up care at the rehabilitation clinic with regular monitoring of progress and further rehabilitation exercises until full recovery.",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "2023-10-08T12:00:00Z"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "241138001",
+                    "display": "Rehabilitation therapy"
+                  }
+                ],
+                "text": "Rehabilitation therapy"
+              },
+              "status": "not-started"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Any new symptoms or concerns should be reported to the clinic immediately."
+          }
+        ]
+      }
+    }
+  ]
+}

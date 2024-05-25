@@ -1,0 +1,309 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "name": [
+          {
+            "text": "Not Provided"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "serviceType": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "394602003",
+              "display": "Pediatrics"
+            }
+          ]
+        },
+        "period": {
+          "start": "Date of Admission Not Provided",
+          "end": "Date of Discharge Not Provided"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "109980001",
+              "display": "Hypocalcemic dilated cardiomyopathy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "onsetDateTime": "Not Provided"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2339-0",
+              "display": "Calcium [Moles/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Low ionised calcium"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "valueQuantity": {
+          "value": "Low",
+          "unit": "mmol/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mmol/L"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "example-diagnosticreport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-7",
+              "display": "Chest X-ray study"
+            }
+          ],
+          "text": "Chest radiograph"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "result": [
+          {
+            "reference": "Observation/example-observation"
+          }
+        ],
+        "conclusion": "Cardiomegaly"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "16962000",
+              "display": "Echocardiography"
+            }
+          ],
+          "text": "Echocardiogram"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "outcome": {
+          "text": "Structurally normal heart with severely dilated left ventricle, global hypokinesia and moderate mitral regurgitation"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-medicationrequest1",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "214630",
+              "display": "Cholecalciferol"
+            }
+          ],
+          "text": "Oral cholecalciferol"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-medicationrequest2",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308135",
+              "display": "Alfacalcidol"
+            }
+          ],
+          "text": "Alfacalcidol"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "FamilyMemberHistory",
+        "id": "example-familymemberhistory",
+        "status": "completed",
+        "patient": {
+          "reference": "Patient/example-patient"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+              "code": "MTH",
+              "display": "mother"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "3091002",
+                  "display": "Vitamin D deficiency"
+                }
+              ],
+              "text": "Vitamin D deficiency"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "FamilyMemberHistory",
+        "id": "example-familymemberhistory2",
+        "status": "completed",
+        "patient": {
+          "reference": "Patient/example-patient"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+              "code": "SIB",
+              "display": "sibling"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "3091002",
+                  "display": "Vitamin D deficiency"
+                }
+              ],
+              "text": "Vitamin D deficiency"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "example-careplan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Recommendations",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "text": "Recommend the patient to continue taking calcium and vitamin D supplements as prescribed by the physician or primary care provider."
+              }
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "text": "Encourage the patient to attend regular follow-ups with the physician or specialist."
+              }
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "text": "Educate the patient and the patient’s caregiver regarding vitamin D supplementation and proper nutrition."
+              }
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "text": "Recommend the patient’s siblings and mother to undergo vitamin D level testing, and for those found to be deficient, a prescription of vitamin D supplementation be given."
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

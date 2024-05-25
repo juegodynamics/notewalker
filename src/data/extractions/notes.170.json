@@ -1,0 +1,455 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Patient Name]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "patient": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "[Date of Admission]",
+          "end": "[Date of Discharge]"
+        },
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner/1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "1",
+        "name": [
+          {
+            "text": "[Name of Attending Physician]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "443092000",
+              "display": "Small lymphocytic lymphoma"
+            }
+          ],
+          "text": "Small lymphocytic lymphoma (Stage 4), with bone marrow involvement"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "onsetDateTime": "[Date of Admission]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6690-2",
+              "display": "WBC count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueQuantity": {
+          "value": 4400,
+          "unit": "mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueQuantity": {
+          "value": "within normal range"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "777-3",
+              "display": "Platelet count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueQuantity": {
+          "value": "slightly higher"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274025005",
+              "display": "Percutaneous biopsy of breast"
+            }
+          ],
+          "text": "Percutaneous breast biopsy"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "outcome": {
+          "text": "Diffuse atypical small lymphocytic cells"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60567-6",
+              "display": "Immunohistochemical staining"
+            }
+          ],
+          "text": "Immunohistochemical staining"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Neoplastic lymphoma cells positive for CD20, CD5, CD23, PAX5, CD4, BCL2, and negative for CD3, CD10, BCL1 and BCL6"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26450-3",
+              "display": "Bone marrow biopsy"
+            }
+          ],
+          "text": "Bone marrow biopsy"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Diffuse involvement with small lymphocytic lymphoma"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "62361-9",
+              "display": "Fluorescence in situ hybridization (FISH) study"
+            }
+          ],
+          "text": "Fluorescence in situ hybridization (FISH) studies"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Trisomy 12 cytogenetic abnormality"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-4",
+              "display": "CT imaging"
+            }
+          ],
+          "text": "CT imaging"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Extensive mediastinal lymphadenopathy and retroperitoneal lymphadenopathy"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385763009",
+              "display": "FCR regimen"
+            }
+          ],
+          "text": "FCR regimen (fludarabine, cyclophosphamide, and rituximab)"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "outcome": {
+          "text": "Clinical and radiologic remission"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-4",
+              "display": "CT imaging"
+            }
+          ],
+          "text": "CT imaging"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "No evidence of pathological lymphadenopathy"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/care-plan-category",
+                "code": "assess-plan",
+                "display": "Assessment and Plan of Treatment"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "305336008",
+                    "display": "Follow-up visit"
+                  }
+                ],
+                "text": "Follow-up visits with oncologist for regular check-ups and surveillance"
+              },
+              "status": "scheduled"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "441742003",
+                    "display": "CT scan"
+                  }
+                ],
+                "text": "Follow up with CT scans and other oncologic evaluations"
+              },
+              "status": "scheduled"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "160670007",
+                    "display": "Continuing care"
+                  }
+                ],
+                "text": "Continue taking regular medications for diabetes and hypertension"
+              },
+              "status": "scheduled"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

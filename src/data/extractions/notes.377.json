@@ -1,0 +1,311 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "age": 42,
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-nationality",
+            "valueString": "Chinese"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "period": {
+          "start": "2018-09"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "unconfirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Right ear discharge and discomfort"
+        },
+        "onsetString": "3 years ago"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "103693007",
+              "display": "Diagnostic procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168537006",
+              "display": "Audiometric test"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "103693007",
+              "display": "Diagnostic procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168537006",
+              "display": "Otoscopic test"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "103693007",
+              "display": "Diagnostic procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77477000",
+              "display": "CT of temporal bone"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest-1",
+        "status": "completed",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "104177005",
+              "display": "Exudate culture"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "specimen-1",
+        "status": "available",
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "119364003",
+              "display": "Exudate sample"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "collection": {
+          "collector": {
+            "reference": "Practitioner/practitioner-1"
+          },
+          "method": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "258467004",
+                "display": "Swab sample collection"
+              }
+            ]
+          },
+          "bodySite": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "56459004",
+                "display": "Right ear"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18725-2",
+              "display": "Microbial culture"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "specimen": [
+          {
+            "reference": "Specimen/specimen-1"
+          }
+        ],
+        "conclusion": "The exudate from the right ear was analyzed, but the underlying illness causing the discharge and discomfort was not identified."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Consent",
+        "id": "consent-1",
+        "status": "active",
+        "scope": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/consentscope",
+              "code": "research",
+              "display": "Research"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/consentcategorycodes",
+                "code": "research",
+                "display": "Research Consent"
+              }
+            ]
+          }
+        ],
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/practitioner-1"
+          }
+        ],
+        "organization": [
+          {
+            "reference": "Organization/organization-1"
+          }
+        ],
+        "provision": {
+          "type": "permit",
+          "action": [
+            {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/consentaction",
+                  "code": "collect",
+                  "display": "Collect"
+                }
+              ]
+            }
+          ]
+        },
+        "dateTime": "2018-09"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Narrative",
+        "status": "additional",
+        "div": "<div><p>The patient, a 42-year-old Chinese man, presented to the outpatient clinic complaining of right ear discharge accompanied by discomfort for 3 years. The patient had a history of seawater contact and noticed a small volume of clear drainage from both ears. As the condition progressed, the drainage from the left ear vanished and the drainage from the right ear increased and became a thick, purulent exudate containing debris. The ear canal became obstructed by the thick excretion, which caused the patient to experience mild hearing loss, coupled with intermittent tinnitus, and a sensation of ear fullness. The patient did not use any medications to relieve symptoms, but instead removed debris from the right ear using cotton swabs, which resulted in a return to normal hearing and relief of symptoms. Within a few days, new thick drainage would obstruct the ear canal causing the symptoms to reappear. The patient sought health care twice at local hospitals in Xi’an City from Shaanxi Province; however, the underlying illness remained unidentified and did not improve. The discharge from the right ear gradually reduced and turned from brown to white until March 2018, when a low-concentration hydrogen peroxide solution was used to rinse the right ear canal at a local hospital.</p><p>The patient denied any history of infectious diseases, diabetes, or any immunocompromising condition.</p><p>The patient underwent audiometric and otoscopic examinations as well as radiological examinations using computed tomography imaging to examine the temporal bone. The exudate was collected from his right ear using a sterile swab and was transferred to the clinical microbiology laboratory for examination.</p><p>The exudate from the right ear was analyzed by the clinical microbiology laboratory. All specimen processing and bacteriological analysis procedures were performed with approval from the ethics committee. The patient provided written informed consent prior to participation in this project.</p><p>The underlying illness causing the right ear discharge and discomfort was not identified, despite seeking health care twice at local hospitals prior to presentation at our clinic. Further testing and evaluation will be needed to determine the cause of the patient's symptoms.</p><p>The patient presents with a history of right ear discharge and discomfort for 3 years, which was not resolved after seeking health care twice at local hospitals prior to presentation at our clinic. The patient has no history of infectious diseases, diabetes, or any immunocompromising condition. The exudate from the right ear was analyzed by the clinical microbiology laboratory to determine the underlying cause of the symptoms. Further testing and evaluation will be needed to determine the underlying illness.</p></div>"
+      }
+    }
+  ]
+}

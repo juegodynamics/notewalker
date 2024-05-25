@@ -1,0 +1,308 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "name": [
+          {
+            "family": "[Redacted]",
+            "given": [
+              "[Redacted]"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2012-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "2",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "2023-01-01",
+          "end": "2023-05-21"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "239873007",
+                "display": "Pain in left knee"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "239873007",
+              "display": "Pain in left knee"
+            }
+          ],
+          "text": "Left knee pain"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "onsetDateTime": "2018-01-01",
+        "abatementDateTime": "2023-05-21"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "4",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "363680008",
+              "display": "X-ray of knee"
+            }
+          ],
+          "text": "X-ray knee"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "2023-01-01",
+        "valueString": "Osteochondritis dissecans (OCD) lesion of the lateral trochlear groove"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "5",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "363680008",
+              "display": "MRI of knee"
+            }
+          ],
+          "text": "MRI knee"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "2023-01-01",
+        "valueString": "Confirmed the diagnosis and stability of the lesion"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "6",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "710830005",
+              "display": "Application of brace"
+            }
+          ],
+          "text": "Nonoperative management with weight-bearing in a locked knee brace"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01",
+          "end": "2023-03-26"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "7",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "410620009",
+              "display": "Physical therapy treatment"
+            }
+          ],
+          "text": "Physical therapy to strengthen the lower limb"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "2023-03-26",
+          "end": "2023-05-21"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "8",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Home Exercise Program",
+        "description": "Home exercise program to maintain strength and avoid overuse or further injury.",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "2023-05-21"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "410620009",
+                    "display": "Physical therapy treatment"
+                  }
+                ],
+                "text": "Adhere to the home exercise program initiated during physical therapy"
+              },
+              "status": "completed"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "9",
+        "status": "booked",
+        "serviceCategory": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/service-category",
+                "code": "17",
+                "display": "General Practice"
+              }
+            ]
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "408480009",
+                "display": "Follow-up encounter"
+              }
+            ]
+          }
+        ],
+        "appointmentType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0276",
+              "code": "FOLLOWUP",
+              "display": "Follow-up"
+            }
+          ]
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "239873007",
+                "display": "Pain in left knee"
+              }
+            ],
+            "text": "Reassess progress"
+          }
+        ],
+        "start": "2023-06-21T09:00:00Z",
+        "end": "2023-06-21T09:30:00Z",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    }
+  ]
+}

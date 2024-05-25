@@ -1,0 +1,383 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "use": "official",
+            "text": "Cavalier King Charles Spaniel"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2013-01-01",
+        "animal": {
+          "species": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/animal-species",
+                "code": "canine",
+                "display": "Dog"
+              }
+            ]
+          },
+          "breed": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/animal-breeds",
+                "code": "CavalierKingCharlesSpaniel",
+                "display": "Cavalier King Charles Spaniel"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "reasonCode": [
+          {
+            "text": "Gradually enlarging mass on the right frontal bone"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "urn:uuid:condition-1"
+            },
+            "rank": 1
+          }
+        ],
+        "participant": [
+          {
+            "individual": {
+              "reference": "urn:uuid:patient-1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "M93750006",
+              "display": "Neoplastic process"
+            }
+          ],
+          "text": "Neoplastic process"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "64915003",
+                "display": "Frontal bone"
+              }
+            ],
+            "text": "Right frontal bone"
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "252100004",
+              "display": "Craniotomy with resection"
+            }
+          ],
+          "text": "Craniotomy with resection"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Surgery Date]",
+          "end": "[Surgery End Date]"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "64915003",
+                "display": "Frontal bone"
+              }
+            ],
+            "text": "Right frontal bone"
+          }
+        ],
+        "reasonCode": [
+          {
+            "text": "Neoplastic process"
+          }
+        ],
+        "note": [
+          {
+            "text": "Surgery was performed for mass excision. A pre-contoured Ti mesh was seated to cover the defect. Prophylactic intravenous antibiotic cover was given before surgery and every 90 minutes thereafter. Post-operative analgesia was provided."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-1",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "medication-1",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "C1298208",
+              "display": "Intravenous antibiotics"
+            }
+          ],
+          "text": "Prophylactic intravenous antibiotic"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-2",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "medication-2",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "C1298186",
+              "display": "Post-operative analgesia"
+            }
+          ],
+          "text": "Post-operative analgesia"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:followup-1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "followup-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "2369003",
+              "display": "Suture removal"
+            }
+          ],
+          "text": "Suture removal"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Two Weeks Post-Discharge]",
+          "end": "[Two Weeks Post-Discharge]"
+        },
+        "note": [
+          {
+            "text": "The surgical wound had healed, and physical examination was within normal limits."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:followup-2",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "followup-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "5880005",
+              "display": "Physical examination"
+            }
+          ],
+          "text": "Physical examination"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Ten Weeks Recheck]",
+          "end": "[Ten Weeks Recheck]"
+        },
+        "note": [
+          {
+            "text": "Physical examination was unremarkable, and the owner reported no restrictions on the patient's activities."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:followup-3",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "followup-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "5880005",
+              "display": "Physical examination"
+            }
+          ],
+          "text": "Physical examination"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Seven Months Assessment]",
+          "end": "[Seven Months Assessment]"
+        },
+        "note": [
+          {
+            "text": "The patient presented a small bone-like mass near the resection site. A CT scan identified the region of proliferation as dorsal and to the right side of the Ti mesh. Further examination of the mass was declined by the owner."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "122456005",
+              "display": "CT scan"
+            }
+          ],
+          "text": "CT scan"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "effectivePeriod": {
+          "start": "[Seven Months Assessment]",
+          "end": "[Seven Months Assessment]"
+        },
+        "valueString": "Identified region of proliferation as dorsal and to the right side of the Ti mesh."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:diagnosis-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "diagnosis-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444158003",
+              "display": "Multilobular osteochondrosarcoma"
+            }
+          ],
+          "text": "Multilobular osteochondrosarcoma"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "note": [
+          {
+            "text": "Histological diagnosis with potential for local recurrence advised."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:careplan-1",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Long-term follow-up",
+        "description": "Owner should continue to monitor for any changes in the patient's behaviour or physical examination.",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Monitor for changes in behaviour or physical examination."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

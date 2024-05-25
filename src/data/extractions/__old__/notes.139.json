@@ -1,0 +1,290 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-3",
+        "gender": "male",
+        "birthDate": "1990-01-01",
+        "name": [
+          {
+            "use": "official",
+            "family": "Patient",
+            "given": ["3"]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128613002",
+              "display": "Seizure disorder"
+            }
+          ]
+        },
+        "onsetAge": {
+          "value": 10,
+          "unit": "years"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imaging-study-1",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "description": "Brain angio-MRI",
+        "series": [
+          {
+            "description": "Left A1 segment agenesis, temporo-mesial sclerosis, asymmetry of the supratentorial ventricular system, and an occipital horn"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "FamilyMemberHistory",
+        "id": "family-history-1",
+        "patient": {
+          "reference": "Patient/patient-3"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+              "code": "NMTH",
+              "display": "Maternal cousin's son"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "11163003",
+                  "display": "Intellectual disability"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "128613002",
+                  "display": "Seizure disorder"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "FamilyMemberHistory",
+        "id": "family-history-2",
+        "patient": {
+          "reference": "Patient/patient-3"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+              "code": "SIS",
+              "display": "Sister"
+            }
+          ]
+        },
+        "condition": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "128613002",
+                  "display": "Fragile X syndrome"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "49093-5",
+              "display": "Physical findings of Head and Face"
+            }
+          ]
+        },
+        "valueString": "Elongated face, high forehead, wide and anteverted ears, long and flat philtrum, joint hyperlaxity, hypotonia, and midface hypoplasia."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnostic-report-1",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "76094-6",
+              "display": "Molecular analysis of the FMR1 gene and array-CGH"
+            }
+          ]
+        },
+        "conclusion": "FMR1 MFM allele (>200 CGGs), SNTG2, TPO, and PXDN genes, and possibly MYT1L were found to be deleted in the chromosome 2p25.3 span",
+        "presentedForm": [
+          {
+            "contentType": "text/plain",
+            "data": "Real-time PCR revealed decreased levels of MYT1L transcript in the patient when compared to his mother and neurotypical controls."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Medication",
+        "id": "medication-1",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "7052",
+              "display": "Valproic Acid"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Medication",
+        "id": "medication-2",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "7646",
+              "display": "Oxcarbazepine"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Medication",
+        "id": "medication-3",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "7849",
+              "display": "Topiramate"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-request-1",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "medicationReference": {
+          "reference": "Medication/medication-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take as directed"
+          }
+        ],
+        "status": "active",
+        "intent": "order"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-request-2",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "medicationReference": {
+          "reference": "Medication/medication-2"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take as directed"
+          }
+        ],
+        "status": "active",
+        "intent": "order"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-request-3",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "medicationReference": {
+          "reference": "Medication/medication-3"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take as directed"
+          }
+        ],
+        "status": "active",
+        "intent": "order"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "care-plan-1",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "The patient will be discharged with recommendations to continue anticonvulsive treatment with valproic acid, oxcarbazepine, and topiramate. The patient should also undergo regular follow-up appointments with a neurologist to monitor his condition. Genetic counseling may also be recommended to the patient and his family due to the genetic component of his condition."
+      }
+    }
+  ]
+}

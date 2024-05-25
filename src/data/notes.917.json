@@ -1,0 +1,150 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ],
+        "birthDate": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "admitting-diagnosis",
+        "code": {
+          "text": "Retro-orbital pain, exophthalmia, and palpebral ptosis on the left side"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "primary-diagnosis",
+        "code": {
+          "text": "Lung cancer with metastases to liver and cerebellum"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "physical-exam",
+        "code": {
+          "text": "Physical examination"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueString": "Complete ptosis of the left eyelid and complete absence of extraocular movements of the left eye, referable to the third, fourth, and sixth cranial nerve."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "head-ct",
+        "modality": {
+          "coding": [
+            {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "CT",
+              "display": "CT"
+            }
+          ]
+        },
+        "description": "Head CT scan showed mucous thickening in the left sphenoid and maxillary sinuses.",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "brain-mri",
+        "modality": {
+          "coding": [
+            {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "MR",
+              "display": "MRI"
+            }
+          ]
+        },
+        "description": "Brain MRI revealed a new expansive lesion in the left cavernous sinus, inseparable from T2-hypointense changes in the posterior part of the left sphenoid sinus.",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "endoscopic-sinus-surgery",
+        "code": {
+          "text": "Endoscopic sinus surgery including removal of mucus and fungal debris (aspergilloma)"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "outcome": {
+          "text": "Mycotic aneurysm of the intracavernous carotid artery diagnosed"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "mra",
+        "modality": {
+          "coding": [
+            {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "MRA",
+              "display": "MRA"
+            }
+          ]
+        },
+        "description": "Time-of-flight MRA confirmed a saccular aneurysm of the cavernous portion of the left internal carotid artery with turbulent flow.",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "treatment-decision",
+        "status": "completed",
+        "description": "The multidisciplinary team decided to refrain from endovascular treatment due to single hemorrhagic metastasis in the right cerebellar hemisphere and the dismal prognosis of the malignancy.",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "patient-outcome",
+        "code": {
+          "text": "Patient outcome"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "valueString": "The patient died a few weeks later."
+      }
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "name": [
+          {
+            "use": "official",
+            "family": "[redacted]",
+            "given": [
+              "[redacted]"
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[redacted]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1965-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/diagnosis",
+              "display": "Anti-proteinase 3 (anti-PR3)-associated ANCA glomerulonephritis"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "diagnosis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "70300003",
+              "display": "Anti-proteinase 3 (anti-PR3)-associated ANCA glomerulonephritis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "renal-biopsy",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "167271000000107",
+              "display": "Renal biopsy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "plasma-exchange",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000000107",
+              "display": "Plasma exchange"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectivePeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "dosage": {
+          "text": "5 cycles"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "iv-prednisone",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "312615001",
+              "display": "Prednisone"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectivePeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "dosage": {
+          "text": "1 gram x 3 doses followed by prednisone 60 mg daily"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "cyclophosphamide",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387338002",
+              "display": "Cyclophosphamide"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectivePeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "dosage": {
+          "text": "2 doses"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "rituximab",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372857002",
+              "display": "Rituximab"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectivePeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "dosage": {
+          "text": "4 doses"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "lab-analysis",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24323-8",
+              "display": "Creatinine [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectiveDateTime": "[redacted]",
+        "valueQuantity": {
+          "value": 4.1,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hematuria",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "13945-1",
+              "display": "Hematuria"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "valueString": "Hematuria"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "proteinuria",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "14959-1",
+              "display": "Sub-nephrotic proteinuria"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "valueString": "Sub-nephrotic proteinuria"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "ct-scan",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "started": "[redacted]",
+        "numberOfSeries": 1,
+        "numberOfInstances": 1,
+        "description": "CT scan of the chest showed right upper lobe consolidation and moderate bilateral pleural effusion"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "follow-up-plan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up",
+        "description": "Patient is following up with the nephrology office regularly.",
+        "subject": {
+          "reference": "Patient/example-patient"
+        }
+      }
+    }
+  ]
+}

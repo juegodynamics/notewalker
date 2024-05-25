@@ -1,0 +1,168 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "age": 60
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "Foreign Body in Hypopharynx with Perforation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "code": {
+          "text": "Foreign Body in Hypopharynx with Perforation"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Endoscopic examination under general anesthesia and foreign body removal"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Lateral neck soft tissue X-ray"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "valueString": "Presence of a foreign body in the hypopharynx with a linear radiolucency in the retropharyngeal space representing free air"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Neck CT scan"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "valueString": "Linear hyperdense foreign body in the hypopharynx with free air along the retropharyngeal space representing a concealed perforation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Upper gastrointestinal series"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "valueString": "Normal contrast passage through the hypopharynx and esophagus without any evidence of leakage"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "note": [
+          {
+            "text": "Analgesics and intravenous antibiotic therapy for seven days"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Flexible nasopharyngeal endoscopy"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "valueString": "An almost healed posterior pharyngeal wall perforation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "description": "Discharge Care Plan",
+        "activity": [
+          {
+            "detail": {
+              "description": "Patient is advised to follow-up with her primary care physician for further evaluation of the wound site in the posterior pharyngeal wall. She is also advised to seek medical attention if she experiences any recurrence of foreign body sensation, dysphagia, or odynophagia."
+            }
+          },
+          {
+            "detail": {
+              "description": "Patient is advised to gradually resume a normal diet based on her comfort level."
+            }
+          },
+          {
+            "detail": {
+              "description": "Patient should avoid strenuous activity that may cause recurrence of symptoms."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

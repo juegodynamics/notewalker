@@ -1,0 +1,232 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "use": "official",
+            "text": "[redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "4525004",
+                "display": "Hospital admission"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "312220003",
+              "display": "Urethral diverticulum"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "62069005",
+              "display": "Urethral diverticulectomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition-1"
+          }
+        ],
+        "notes": [
+          {
+            "text": "The patient underwent urethral diverticulectomy by elliptical skin incision around the dorsal border of the diverticulum. After complete evacuation of the urine, two hypospadiac urethral fistulae were identified. One small opening was found in the cranial part of the penis 1 cm ventrocaudal to the urethral process and the other larger opening was found 5 cm caudal to the small one and cranial to the scrotum. The small opening was corrected by urethral catheterization."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Wound care management"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "notes": [
+          {
+            "text": "Subcutaneous tissues were sutured, and finally, the skin was sutured. After finishing the operation, antibiotic injections were given to the animal for five days. The wound was dressed daily until the stitches were removed after 10 days."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[redacted]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "The patient's caretakers were given instructions on proper wound care and medication administration."
+            }
+          }
+        ],
+        "notes": [
+          {
+            "text": "The patient was discharged in stable condition with no complications. The family was advised to schedule a follow-up appointment to monitor the patient's healing progress."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner-1",
+        "name": [
+          {
+            "text": "[redacted] MD"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner-2",
+        "name": [
+          {
+            "text": "[redacted] MD"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "[redacted]",
+        "author": [
+          {
+            "reference": "Practitioner/practitioner-1"
+          }
+        ],
+        "custodian": {
+          "reference": "Practitioner/practitioner-2"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "RGlzY2hhcmdlIFN1bW1hcnkKClBhdGllbnQgTmFtZTogW3JlZGFjdGVkXSBfICAgICAgIERhdGUgb2YgQWRtaXNzaW9uOiBbcmVkYWN0ZWRdICAgIERhdGUgb2YgRGlzY2hhcmdlOiBbcmVkYWN0ZWRdCgpIb3NwaXRhbCBDb3Vyc2U6ClRoZSA0NS1kYXktb2xkIG1hbGUgU2FhbmVuIGtpZCB3YXMgYWRtaXR0ZWQgdG8gdGhlIFZldGVyaW5hcnkgVGVhY2hpbmcgSG9zcGl0YWwgd2l0aCBhIGhpc3Rvcnkgb2YgYW4gaW5jcmVhc2luZyBzd2VsbGluZyBvdmVyIHRoZSBwcmVzY3JvdGFsIHJlZ2lvbi4gT24gcGh5c2ljYWwgZXhhbWluYXRpb24sIHRoZSB1cmluZSB3YXMgb2JzZXJ2ZWQgZHJpcHBpbmcgZnJvbSB0aGUgcHJlcHVjZSBhbmQgdXJldGhyYWwgcHJvY2Vzcy4gQSBmbHVpZC1maWxsZWQgcG9ja2V0IHdhcyBzZWVuIHZlbnRyYWwgdG8gdGhlIHBlbmlsZSB1cmV0aHJhLiBNYW51YWwgY29tcHJlc3Npb24gb2YgdGhlIGRpdmVydGljdWx1bSBzaG93ZWQgc3ViY3V0YW5lb3VzIHVyaW5lIGxlYWthZ2UuIFRoZSBwYXRpZW50IHVuZGVyd2VudCBuZWVkbGUgY2VudGVzaXMgd2hpY2ggcmV2ZWFsZWQgdXJpbmUgaW4gdGhlIGZsdWlkLiBVbHRyYXNvbm9ncmFwaGljIGV4YW1pbmF0aW9uIHdhcyBkb25lIG9uIHRoZSByaWdodCBmbGFuayBvZiB0aGUgcGF0aWVudCB0byB2aXN1YWxpemUgdGhlIGtpZG5leXMgYW5kIHRoZSB1cmluYXJ5IGJsYWRkZXIsIGJvdGggb2Ygd2hpY2ggd2VyZSBub3JtYWwuIEJsb29kIHNhbXBsZSBhbmQgdXJpbmFseXNpcyB3ZXJlIHdpdGhpbiB0aGUgcmVmZXJlbmNlIHJhbmdlIGFuZCBubyBvdGhlciBjb25nZW5pdGFsIGFub21hbGllcyB3ZXJlIGlkZW50aWZpZWQuCgpUaGUgcGF0aWVudCB1bmRlcndlbnQgdXJldGhyYWwgZGl2ZXJ0aWN1bGVjdG9teSBiZWxsaXB0aWNhbCBza2luIGluY2lzaW9uIGFyb3VuZCB0aGUgZG9yc2FsIGJvcmRlciBvZiB0aGUgZGl2ZXJ0aWN1bHVtLiBBZnRlciBjb21wbGV0ZSBldmFjdWF0aW9uIG9mIHRoZSB1cmluZSwgdHdvIGh5cG9zcGFkaWFjIHVyZXRobmFsIGZpc3R1bGFlIHdlcmUgaWRlbnRpZmllZC4gT25lIHNtYWxsIG9wZW5pbmcgd2FzIGZvdW5kIGluIHRoZSBjcmFuaWFsIHBhcnQgb2YgdGhlIHBlbmlzIDEgY20gdmVudHJvY2F1ZGFsIHRvIHRoZSB1cmV0aHJhbCBwcm9jZXNzIGFuZCB0aGUgb3RoZXIgbGFyZ2VyIG9wZW5pbmcgd2FzIGZvdW5kIDUgY20gY2F1ZGFsIHRvIHRoZSBzbWFsbCBvbmUgYW5kIGNyYW5pYWwgdG8gdGhlIHNjcm90dW0uIFRoZSBzbWFsbCBvcGVuaW5nIHdhcyBjb3JyZWN0ZWQgYnkgdXJldGhyYWwgY2F0aGV0ZXJpemF0aW9uLgoKU3ViY3V0YW5lb3VzIHRpc3N1ZXMgd2VyZSBzdXR1cmVkLCBhbmQgZmluYWxseSwgdGhlIHNraW4gd2FzIHN1dHVyZWQuIEFmdGVyIGZpbmlzaGluZyB0aGUgb3BlcmF0aW9uLCBhbnRpYmlvdGljIGluamVjdGlvbnMgd2VyZSBnaXZlbiB0byB0aGUgYW5pbWFsIGZvciBmaXZlIGRheXMuIFRoZSB3b3VuZCB3YXMgZHJlc3NlZCBkYWlseSB1bnRpbCB0aGUgc3RpdGNoZXMgd2VyZSByZW1vdmVkIGFmdGVyIDEwIGRheXMuCgpGb2xsb3ctdXA6ClRoZSBwYXRpZW50IHdhcyBkaXNjaGFyZ2VkIGluIHN0YWJsZSBjb25kaXRpb24gd2l0aCBubyBjb21wbGljYXRpb25zLiBUaGUgZmFtaWx5IHdhcyBhZHZpc2VkIHRvIHNjaGVkdWxlIGEgZm9sbG93LXVwIGFwcG9pbnRtZW50IHRvIG1vbml0b3IgdGhlIHBhdGllbnQncyBoZWFsaW5nIHByb2dyZXNzLiBUaGUgcGF0aWVudCdzIGNhcmV0YWtlcnMgd2VyZSBnaXZlbiBpbnN0cnVjdGlvbnMgb24gcHJvcGVyIHdvdW5kIGNhcmUgYW5kIG1lZGljYXRpb24gYWRtaW5pc3RyYXRpb24uIAoKQXBwcm92ZWQgYnk6IFtyZWRhY3RlZF0gTUQgICAgICAgUmV2aWV3ZWQgYnk6IFtyZWRhY3RlZF0gTUQu"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

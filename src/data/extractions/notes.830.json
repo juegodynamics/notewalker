@@ -1,0 +1,238 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "gender": "male",
+        "birthDate": "1950-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/bodyWeight",
+            "valueQuantity": {
+              "value": 100,
+              "unit": "kg",
+              "system": "http://unitsofmeasure.org",
+              "code": "kg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "2",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "21522001",
+              "display": "Abdominal pain"
+            }
+          ],
+          "text": "Mild right subcostal abdominal pain"
+        },
+        "onsetDateTime": "2023-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267036007",
+              "display": "Dyspnea"
+            }
+          ],
+          "text": "Worsening dyspnea upon exertion"
+        },
+        "onsetDateTime": "2023-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "4",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "12208-3",
+              "display": "Physical findings"
+            }
+          ],
+          "text": "Physical exam findings"
+        },
+        "valueString": "Decreased breath sounds and a solid mass in the right lung base"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5",
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "5",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "description": "Imaging consistent with giant subdiaphragmatic hepatic lesion in liver segments IVa, VIII, VII, and partially IVb and V",
+        "series": [
+          {
+            "description": "Hepatic lesion imaging",
+            "instance": [
+              {
+                "title": "Hepatic lesion image"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "6",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "174041007",
+              "display": "Hepatectomy"
+            }
+          ],
+          "text": "Atypical central hepatic resection"
+        },
+        "status": "completed",
+        "outcome": {
+          "text": "Postoperative course remaining uneventful"
+        },
+        "performedPeriod": {
+          "start": "2023-02-01",
+          "end": "2023-02-15"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "7",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26436-6",
+              "display": "Pathology report"
+            }
+          ],
+          "text": "Histological examination"
+        },
+        "conclusion": "Well-differentiated hepatocellular carcinoma (HCC) arising from nonalcoholic steatohepatitis, resected in clear margin (R0)"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "8",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "General condition"
+            }
+          ],
+          "text": "General condition"
+        },
+        "valueString": "The patient remains in excellent general condition with no evidence of recurrence 38 months postoperatively"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "9",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363346000",
+              "display": "Hepatocellular carcinoma"
+            }
+          ],
+          "text": "Well-differentiated hepatocellular carcinoma (HCC)"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "remission",
+              "display": "Remission"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "DiagnosticReport/7"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:10",
+      "resource": {
+        "resourceType": "Impression",
+        "id": "10",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "description": "Progressive dyspnea due to symptomatic elevation of the right hemidiaphragm caused by a silent hepatic tumor. Successful atypical central hepatic resection resulted in clear margins of a well-differentiated HCC."
+      }
+    }
+  ]
+}

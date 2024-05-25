@@ -1,0 +1,256 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "N/A"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "period": {
+          "start": "N/A",
+          "end": "N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "20430005",
+              "display": "Ebstein's anomaly"
+            }
+          ],
+          "text": "Ebstein's anomaly causing severe right atrial and right ventricular dilatation"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "17190001",
+              "display": "Tricuspid regurgitation"
+            }
+          ],
+          "text": "Severe tricuspid regurgitation"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "7970000",
+              "display": "HIV disease"
+            }
+          ],
+          "text": "HIV immunodeficiency with previous cerebral infection and Kaposi's Sarcoma"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition4",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "91234008",
+              "display": "Cardiac failure"
+            }
+          ],
+          "text": "Severe right ventricular dysfunction with low cardiac output syndrome (LCOS)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40617009",
+              "display": "Extracorporeal membrane oxygenation"
+            }
+          ],
+          "text": "ECMO support"
+        },
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59848-5",
+              "display": "Hospital course narrative"
+            }
+          ],
+          "text": "Hospital Course"
+        },
+        "valueString": "The patient was a 44-year-old man diagnosed with Ebstein's anomaly resulting in severe right atrial and right ventricular dilatation with right moderate ventricular dysfunction and severe tricuspid regurgitation. The patient also suffered from HIV immunodeficiency with previous cerebral infection and Kaposi's Sarcoma. In the post-operative period, the patient developed severe right ventricular dysfunction with LCOS, which required ECMO support."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75310-3",
+              "display": "Assessment and plan of treatment"
+            }
+          ],
+          "text": "Assessment and Treatment"
+        },
+        "valueString": "During the hospital course, the patient was closely monitored for his condition. A multidisciplinary approach was used to optimize the patient's care. In order to maintain the patient's hemodynamic status, ECMO support was initiated. The patient was then closely monitored in the intensive care unit for improvement."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8648-8",
+              "display": "Patient disposition narrative"
+            }
+          ],
+          "text": "Disposition and Follow-up"
+        },
+        "valueString": "The patient's condition improved in the post-operative period and was medically stable at the time of discharge."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "69730-0",
+              "display": "Summary of episode note"
+            }
+          ],
+          "text": "Summary"
+        },
+        "valueString": "The patient was admitted with Ebstein's anomaly causing severe right atrial and right ventricular dilatation, tricuspid regurgitation, and underlying HIV-related conditions. Despite developing severe right ventricular dysfunction with LCOS post-operatively, the patient improved with multidisciplinary care and ECMO support. The patient was discharged in stable condition with follow-up instructions provided."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "note": [
+          {
+            "text": "The patient was instructed to follow up with the medical team after discharge. No further specific instructions related to medications or treatments were given at the time of discharge."
+          }
+        ]
+      }
+    }
+  ]
+}

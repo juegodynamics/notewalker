@@ -1,0 +1,209 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Patient's Name]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1979"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "441530006",
+              "display": "Aortic root aneurysm"
+            }
+          ],
+          "text": "Aortic root aneurysm"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233985008",
+              "display": "Severe aortic regurgitation"
+            }
+          ],
+          "text": "Severe aortic regurgitation"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "11687002",
+              "display": "Severe aortic coarctation"
+            }
+          ],
+          "text": "Severe aortic coarctation"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "399207005",
+              "display": "Surgical repair of aortic root aneurysm"
+            }
+          ],
+          "text": "Surgical repair of the aortic root aneurysm"
+        },
+        "performedDateTime": "[Discharge Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "87147004",
+              "display": "Root replacement"
+            }
+          ],
+          "text": "Root replacement"
+        },
+        "performedDateTime": "[Discharge Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "118001",
+              "display": "End-to-side anastomosis"
+            }
+          ],
+          "text": "End-to-side anastomosis"
+        },
+        "performedDateTime": "[Discharge Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "CS",
+          "display": "Consultation"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "308335008",
+                "display": "Multidisciplinary team meeting"
+              }
+            ],
+            "text": "Multidisciplinary team meeting"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "date": "[Discharge Date]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary: Patient Information: Name: [Patient's Name] Gender: Male Age: 44-year-old Medical Record Number: [MRN] Admission Date: [Admission Date] Discharge Date: [Discharge Date] Hospital Course: The patient, a 44-year-old male, was admitted following investigation for chest pain and dyspnoea. Subsequent physical examination, echocardiography, and computed tomography angiography (CTA) revealed aortic root aneurysm of approximately 9 cm, severe aortic regurgitation, and severe aortic coarctation. A multidisciplinary team meeting took place and a consensus was agreed to proceed with a two-staged hybrid approach, with the first phase involving an endovascular approach to stent the coarctation, followed by a second stage to perform the surgical repair of the aortic root aneurysm. The first stage to stent the coarctation was unsuccessful, and the decision was then made to proceed to a single-stage surgical approach to treat both lesions. Following induction of anesthesia, the patient underwent a right infraclavicular and right groin incision. The aortic root, valve, and ascending aorta were excised, and the coronary ostia were noted to be significantly displaced. Root replacement was performed with a 25 mm biological valved-conduit, and an end-to-side anastomosis was fashioned between the 20 mm extra-cardiac graft (attached to the descending thoracic aorta) and the ascending portion of the valved-conduit. Following rewarming and de-airing, the patient was successfully weaned off cardiopulmonary bypass (CPB). The patient remained in ICU for less than 48 hours and made excellent progress on the ward. At 3 months follow up the patient underwent a repeat CTA scan which showed complete patency in the extra-anatomical graft and resolution of the collateral arterial network. Diagnoses: - Aortic root aneurysm - Severe aortic regurgitation - Severe aortic coarctation Procedures: - Surgical repair of the aortic root aneurysm - Root replacement - End-to-side anastomosis Consultations: - Multidisciplinary team meeting Condition at Discharge: The patient was discharged on 8th postoperatively neurologically intact and independent. Minimal anti-hypertensives were required. Follow-Up Plans: The patient will continue to follow-up with their primary care provider for further management and monitoring."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

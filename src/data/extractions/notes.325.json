@@ -1,0 +1,469 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "2004-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "367336001",
+              "display": "Pheochromocytoma"
+            }
+          ],
+          "text": "Pheochromocytoma"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "2018-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "127020004",
+              "display": "Paraganglioma"
+            }
+          ],
+          "text": "Paraganglioma"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "2023-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128462008",
+              "display": "Mass of lung"
+            }
+          ],
+          "text": "Mass of right lung"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "2023-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-4",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128462008",
+              "display": "Mass of pancreas"
+            }
+          ],
+          "text": "Mass of pancreas"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "2023-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure systolic & diastolic"
+            }
+          ],
+          "text": "Blood pressure"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueQuantity": {
+          "value": 150,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 90,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            },
+            "high": {
+              "value": 120,
+              "unit": "mmHg",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ],
+          "text": "Fever"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueQuantity": {
+          "value": 38.5,
+          "unit": "C",
+          "system": "http://unitsofmeasure.org",
+          "code": "C"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 36.5,
+              "unit": "C",
+              "system": "http://unitsofmeasure.org",
+              "code": "C"
+            },
+            "high": {
+              "value": 37.5,
+              "unit": "C",
+              "system": "http://unitsofmeasure.org",
+              "code": "C"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8402-4",
+              "display": "Headache"
+            }
+          ],
+          "text": "Headache"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Severe headache"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1234567",
+              "display": "Antihypertensive medication"
+            }
+          ],
+          "text": "Antihypertensive medication"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take one tablet by mouth daily"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "7654321",
+              "display": "Antipyretic medication"
+            }
+          ],
+          "text": "Antipyretic medication"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take one tablet by mouth every 6 hours as needed for fever"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32485007",
+                "display": "Hospital admission"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-09-01T00:00:00Z",
+          "end": "2023-09-15T00:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "386661006",
+                "display": "Fever"
+              }
+            ],
+            "text": "Fever"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "25064002",
+                "display": "Headache"
+              }
+            ],
+            "text": "Headache"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "38341003",
+                "display": "Hypertension"
+              }
+            ],
+            "text": "High blood pressure"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "2023-09-15T00:00:00Z",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "VGhpcyBpcyBhIHN1bW1hcnkgb2YgdGhlIGhvc3BpdGFsaXphdGlvbiBvZiBhIDE5LXllYXItb2xkIGZlbWFsZSBwYXRpZW50IHdobyB3YXMgZGlhZ25vc2VkIHdpdGggcGhlb2Nocm9tb2N5dG9tYSBhbmQgcGFyYWdhbmdsaW9tYS4gVGhlIHBhdGllbnQgaGFkIGEgaGlzdG9yeSBvZiB0dW1vciBvY2N1cGF0aW9uIGluIHRoZSByaWdodCBhZHJlbmFsIGdsYW5kLCB3aGljaCB3YXMgc3VyZ2ljYWxseSByZW1vdmVkIGFuZCBkaWFnbm9zZWQgYXMgcGhlb2Nocm9tb2N5dG9tYS4gRHVyaW5nIHRoaXMgaG9zcGl0YWxpemF0aW9uLCBtdWx0aXBsZSB0dW1vciBvY2N1cGF0aW9ucyB3ZXJlIGZvdW5kIGluIHRoZSBsZWZ0IGFkcmVuYWwgYW5kIHBhcmFnYW5nbGlvbiByZWdpb24gem9uZXMuIFRoZSBwYXRpZW50IGhhZCBzeW1wdG9tcyBvZiBmZXZlciwgaGVhZGFjaGUsIGFuZCBoaWdoIGJsb29kIHByZXNzdXJlLiBGdXJ0aGVyIHNjYW5zIHJldmVhbGVkIG9jY3VweWluZyBsZXNpb25zIGluIHRoZSByaWdodCBsdW5nIGFuZCBwYW5jcmVhcyB0aGF0IHdlcmUgZGlhZ25vc2VkIGFzIG1hc3Nlcy4gSG9zcGl0YWwgQ291cnNlOiBIdXN0b3J5OiBUaGUgcGF0aWVudCB3YXMgZmlyc3QgZGlhZ25vc2VkIHdpdGggYSB0dW1vciBpbiB0aGUgcmlnaHQgYWRyZW5hbCBnbGFuZCBkdXJpbmcgYSByZWd1bGFyIHBoeXNpY2FsIGV4YW1pbmF0aW9uIGZpdmUgeWVhcnMgYWdvLiBUaGUgdHVtb3Igd2FzIHN1cmdpY2FsbHkgcmVtb3ZlZCBhbmQgZm91bmQgdG8gYmUgYSBwaGVvY2hyb21vY3l0b21hLiBUaGUgcGF0aWVudCB3YXMgcmVndWxhcmx5IGZvbGxvd2VkIHVwIGFuZCByZWNlbnQgc2NhbnMgc2hvd2VkIG11bHRpcGxlIHR1bW9yIG9jY3VwYXRpb25zIGluIHRoZSBsZWZ0IGFkcmVuYWwgYW5kIHBhcmFnYW5nbGlvbiByZWdpb24gem9uZXMuIFRoZSBwYXRpZW50IGhhZCBzeW1wdG9tcyBvZiBmZXZlciwgaGVhZGFjaGUsIGFuZCBoaWdoIGJsb29kIHByZXNzdXJlLiBGdXJ0aGVyIHNjYW5zIHJldmVhbGVkIG9jY3VweWluZyBsZXNpb25zIGluIHRoZSByaWdodCBsdW5nIGFuZCBwYW5jcmVhcyB0aGF0IHdlcmUgZGlhZ25vc2VkIGFzIG1hc3Nlcy4gUHJlc2VudGluZyBJbGxuZXNzOiBUaGUgcGF0aWVudCB3YXMgYWRtaXR0ZWQgdG8gdGhlIGhvc3BpdGFsIGZvciBmdXJ0aGVyIGV4YW1pbmF0aW9uIGFuZCB0cmVhdG1lbnQgb2YgdGhlIHR1bW9yIG9jY3VwYXRpb25zIGFuZCBtYXNzZXMuIE1lZGljYWwgTWFuYWdlbWVudDogVGhlIG1lZGljYWwgdGVhbSBjb25kdWN0ZWQgdmFyaW91cyB0ZXN0cyBhbmQgZXhhbWluYXRpb25zIHRvIGNvbmZpcm0gdGhlIGRpYWdub3NpcyBvZiBwaGVvY2hyb21vY3l0b21hIGFuZCBwYXJhZ2FuZ2xpb21hIHdpdGggb2NjdXB5aW5nIGxlc2lvbnMgaW4gdGhlIHJpZ2h0IGx1bmcgYW5kIHBhbmNyZWFzLiBUaGUgcGF0aWVudCB3YXMgdHJlYXRlZCB3aXRoIGFwcHJvcHJpYXRlIG1lZGljYXRpb25zIHRvIG1hbmFnZSB0aGUgc3ltcHRvbXMgb2YgZmV2ZXIsIG

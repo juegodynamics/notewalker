@@ -1,0 +1,160 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-3",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "patient-3"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1963-01-01"  // Assuming the patient was born in 1963, given the age of 60 in 2023.
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-aml",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "92814006",
+              "display": "Acute myeloid leukemia"
+            }
+          ],
+          "text": "Acute myeloid leukemia"
+        },
+        "onsetDateTime": "2020-12-01",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-induction-therapy",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Induction chemotherapy"
+            }
+          ],
+          "text": "VA regimen induction therapy"
+        },
+        "performedPeriod": {
+          "start": "2020-12-01",
+          "end": "2021-01-01"  // Assuming induction therapy took 1 month.
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-consolidation-therapy",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428341000124100",
+              "display": "Consolidation chemotherapy"
+            }
+          ],
+          "text": "VA regimen consolidation therapy"
+        },
+        "performedPeriod": {
+          "start": "2021-01-01",
+          "end": "2021-04-01"  // Assuming two courses took 3 months.
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-chidamide-venetoclax-azacitidine",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Chidamide combined with venetoclax plus azacitidine regimen"
+            }
+          ],
+          "text": "Chidamide combined with venetoclax plus azacitidine regimen"
+        },
+        "performedPeriod": {
+          "start": "2021-04-01",
+          "end": "2021-05-01"  // Assuming this course took 1 month.
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-cr-status",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260998006",
+              "display": "Complete remission"
+            }
+          ],
+          "text": "Complete remission"
+        },
+        "effectiveDateTime": "2021-05-01",
+        "valueString": "CR after one course of chidamide combined with venetoclax plus azacitidine regimen"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-followup",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "371530004",
+              "display": "Follow-up status"
+            }
+          ],
+          "text": "Follow-up status"
+        },
+        "effectiveDateTime": "2021-06-01",
+        "valueString": "Patient remains in CR after 1 month of follow-up"
+      }
+    }
+  ]
+}

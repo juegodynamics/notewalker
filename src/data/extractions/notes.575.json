@@ -1,0 +1,190 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "12345"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "N/A",
+            "given": [
+              "N/A"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2013-03-01",
+        "address": [
+          {
+            "country": "Japan"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "period": {
+          "start": "2023-01-01",
+          "end": "2023-01-10"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "263113004",
+              "display": "Pathological fracture"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "onsetDateTime": "2017-09-01",
+        "abatementDateTime": "2023-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "442396007",
+              "display": "Resection of bone"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedPeriod": {
+          "start": "2023-01-02",
+          "end": "2023-01-02"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26441-6",
+              "display": "Histopathology study"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectiveDateTime": "2023-01-02",
+        "valueString": "Fibrillation of the medullary cavity was increased, and a small formation, identified as inorganic-like material, was scattered throughout; these findings were consistent with a fracture due to a bone cyst."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-physical-exam",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29545-1",
+              "display": "Physical examination"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectiveDateTime": "2020-01-01",
+        "valueString": "The femur was deformed, with a bowing of approximately 90° in the central area of the femur and an internal rotation of 60°, with incomplete fractures observable in the same area."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "example-careplan",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "description": "Follow-up plan for monitoring of the healed bone and to ensure that the patient does not experience any limitations in daily activities or regular exercise.",
+        "period": {
+          "start": "2023-01-01"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "not-started",
+              "description": "Regular follow-up intervals for monitoring."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

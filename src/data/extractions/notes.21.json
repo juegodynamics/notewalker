@@ -1,0 +1,254 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example",
+        "medicalHistory": [
+          {
+            "condition": "Aortic valve replacement"
+          },
+          {
+            "condition": "Factor V Leiden anomaly"
+          },
+          {
+            "condition": "Migraines"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "pamm",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "xxxxxx",
+              "display": "Paracentral Acute Middle Maculopathy (PAMM)"
+            }
+          ],
+          "text": "Paracentral Acute Middle Maculopathy (PAMM)"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "note": [
+          {
+            "text": "Patient presented with new paracentral blind spots in the right eye. Spectral-domain OCT imaging revealed hyperreflective bands in the middle retina, consistent with PAMM."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "niacinamide",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "xxxxxx",
+              "display": "Niacinamide"
+            }
+          ],
+          "text": "Niacinamide"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "note": [
+          {
+            "text": "Administered for relief of left-sided visual scotoma without success."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "aspirin",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "xxxxxx",
+              "display": "Aspirin"
+            }
+          ],
+          "text": "Aspirin"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "note": [
+          {
+            "text": "Administered for relief of left-sided visual scotoma without success."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "ibuprofen",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "xxxxxx",
+              "display": "Ibuprofen"
+            }
+          ],
+          "text": "Ibuprofen"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "note": [
+          {
+            "text": "Administered for relief of left-sided visual scotoma without success."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "nitroglycerin",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "xxxxxx",
+              "display": "Nitroglycerin"
+            }
+          ],
+          "text": "Nitroglycerin"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "note": [
+          {
+            "text": "Found to be effective in treating subsequent episodes of visual scotomas."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "lesions",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "xxxxxx",
+              "display": "Lesions with purple hue"
+            }
+          ],
+          "text": "Lesions with purple hue"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "note": [
+          {
+            "text": "Patient describes the lesions as small opaque structures obstructing the field of vision with a purple hue."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "consultation",
+        "status": "completed",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "CONS",
+                "display": "Consultation"
+              }
+            ],
+            "text": "Consultation with the Chief of the Retinal Service"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "serviceProvider": {
+          "reference": "Organization/new-york-eye-and-ear-infirmary"
+        },
+        "note": [
+          {
+            "text": "Consultations with the Chief of the Retinal Service at the New York Eye and Ear Infirmary confirm the diagnosis of PAMM. No treatment was given at the time of initial diagnosis."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "symptoms",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "xxxxxx",
+              "display": "Symptoms following physical activity"
+            }
+          ],
+          "text": "Symptoms following physical activity"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "note": [
+          {
+            "text": "The patient experiences symptoms primarily following episodes of extreme physical activity."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "followup",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "xxxxxx",
+                    "display": "Follow-up with ophthalmologist"
+                  }
+                ],
+                "text": "Follow-up with ophthalmologist"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,457 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient1",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ],
+        "gender": "male",
+        "age": 40,
+        "race": "African American"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "Generalized weakness, unintentional weight loss, cough, night sweats, and nonbloody, watery diarrhea."
+            }
+          },
+          {
+            "condition": {
+              "text": "Right-sided hydropneumothorax"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                  "code": "discharge",
+                  "display": "Principal Diagnosis on Discharge"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Generalized weakness, unintentional weight loss, cough, night sweats, nonbloody watery diarrhea"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Right-sided hydropneumothorax"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Right video-assisted thoracoscopic surgery (VATS) with decortication"
+        },
+        "performedPeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Diagnostic thoracentesis"
+        },
+        "performedPeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Initial vitals in the emergency department"
+        },
+        "valueString": "Tachycardia"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Physical examination at the time of admission"
+        },
+        "valueString": "Thin, nontoxic appearing male"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Laboratory workup"
+        },
+        "component": [
+          {
+            "code": {
+              "text": "Absolute CD4 count"
+            },
+            "valueQuantity": {
+              "value": 26,
+              "unit": "cells/µL",
+              "code": "cells/µL"
+            }
+          },
+          {
+            "code": {
+              "text": "CD4 percentage"
+            },
+            "valueQuantity": {
+              "value": 3,
+              "unit": "%",
+              "code": "%"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation4",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Chest X-ray"
+        },
+        "valueString": "Cavitary lesion with an air-fluid level within the anterior medial right hemithorax and a loculated hydropneumothorax along the right lateral lung base"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation5",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "CT chest with contrast"
+        },
+        "valueString": "Two large, thick-walled cavitary lesions originating within the right lung parenchyma that appeared to communicate"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation6",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Stool PCR"
+        },
+        "valueString": "Salmonella species"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation7",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Pleural fluid analysis"
+        },
+        "component": [
+          {
+            "code": {
+              "text": "WBC"
+            },
+            "valueQuantity": {
+              "value": 505000,
+              "unit": "cells/µL",
+              "code": "cells/µL"
+            }
+          },
+          {
+            "code": {
+              "text": "RBC"
+            },
+            "valueQuantity": {
+              "value": 0,
+              "unit": "cells/µL",
+              "code": "cells/µL"
+            }
+          },
+          {
+            "code": {
+              "text": "pH"
+            },
+            "valueQuantity": {
+              "value": 6,
+              "unit": "pH",
+              "code": "pH"
+            }
+          },
+          {
+            "code": {
+              "text": "Protein"
+            },
+            "valueQuantity": {
+              "value": 3.7,
+              "unit": "g/dL",
+              "code": "g/dL"
+            }
+          },
+          {
+            "code": {
+              "text": "LDH"
+            },
+            "valueQuantity": {
+              "value": 41239,
+              "unit": "U/L",
+              "code": "U/L"
+            }
+          },
+          {
+            "code": {
+              "text": "Glucose"
+            },
+            "valueQuantity": {
+              "value": 12,
+              "unit": "mg/dL",
+              "code": "mg/dL"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation8",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Pleural fluid culture"
+        },
+        "valueString": "Positive for Salmonella species"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation9",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "CT abdomen and pelvis with contrast"
+        },
+        "valueString": "Two rim-enhancing hypodense lesions within the central mesentery of the abdomen"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation10",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "CT chest without contrast"
+        },
+        "valueString": "Persistent right-sided hydropneumothorax with centrilobular ground glass opacities with lung entrapment"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation11",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Pleural peel pathology"
+        },
+        "valueString": "Pleural fibrosis, focal chronic inflammation, and mild anthracosis"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "medicationCodeableConcept": {
+          "text": "Intravenous Ceftriaxone"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Additional two weeks from the date of decortication"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication2",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "medicationCodeableConcept": {
+          "text": "Intravenous Metronidazole"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Right-sided chest tube placement"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure4",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Instillation of tissue plasminogen activator (r-tPA) and DNase"
+        },
+        "note": [
+          {
+            "text": "Twice daily for three consecutive days"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure5",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Intra-abdominal drains placement"
+        },
+        "note": [
+          {
+            "text": "Under CT guidance into the mesenteric abscesses"
+          },
+          {
+            "text": "Nontyphi Salmonella eventually grew late in hospital course"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation12",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Follow-up CT chest at four months"
+        },
+        "valueString": "Improved but persistent loculated right pneumothorax with resolution of the right lung cavitary lesions"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation13",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "text": "Follow-up CT chest at seven months"
+        },
+        "valueString": "Complete resolution of the right-sided pneumothorax"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Recommendations and Follow-up",
+        "description": "The patient is recommended to follow up with their primary care physician for ongoing management and monitoring of hypertension and substance abuse. Follow up imaging may be necessary to evaluate the persistence of loculated right pneumothorax. Further imaging may also be necessary to evaluate the rim-enhancing hypodense lesions within the central mesentery of the abdomen. The patient is advised to seek medical attention if any new or persistent symptoms arise. Instructions were provided to the patient regarding medication use, lifestyle modifications, and follow-up care. The patient was discharged in stable condition."
+      }
+    }
+  ]
+}

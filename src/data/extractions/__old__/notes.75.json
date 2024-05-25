@@ -1,0 +1,256 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "gender": "female",
+        "birthDate": "1963-01-01",
+        "name": [
+          {
+            "use": "official",
+            "family": "[redacted]",
+            "given": [
+              "[redacted]"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "status": "finished",
+        "period": {
+          "start": "2020-11-01",
+          "end": "2021-01-01"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232353008",
+              "display": "Profound sensorineural hearing loss"
+            }
+          ],
+          "text": "Profound sensorineural hearing loss on the left side"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "onsetAge": {
+          "value": 4,
+          "unit": "years"
+        },
+        "evidence": [
+          {
+            "code": {
+              "text": "Negative promontory test on the left side"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254935002",
+              "display": "Vestibular schwannoma"
+            }
+          ],
+          "text": "Right-sided intracanalicular vestibular schwannoma"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "evidence": [
+          {
+            "code": {
+              "text": "Stereotactic radiosurgery (3x6 Gy) in 2019"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "365677000",
+              "display": "Stereotactic radiosurgery"
+            }
+          ],
+          "text": "Stereotactic radiosurgery (3x6 Gy)"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedPeriod": {
+          "start": "2019-01-01",
+          "end": "2019-12-31"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "431855005",
+              "display": "Hearing loss"
+            }
+          ],
+          "text": "Progressive hearing loss on the right side post-SRS"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "178170006",
+              "display": "Cochlear implantation"
+            }
+          ],
+          "text": "Cochlear implantation on the right side"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedPeriod": {
+          "start": "2020-11-01",
+          "end": "2020-11-30"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "92551-5",
+              "display": "Hearing test"
+            }
+          ],
+          "text": "Aided pure-tone audiometry (PTA)"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectivePeriod": {
+          "start": "2021-01-01",
+          "end": "2021-03-01"
+        },
+        "valueString": "Significant improvement in hearing, understanding 90% of monosyllables at 65 dB (FMT)"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "92551-5",
+              "display": "Hearing test"
+            }
+          ],
+          "text": "Aided Oldenburg Sentence test (OLSA)"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectivePeriod": {
+          "start": "2021-11-01",
+          "end": "2021-11-30"
+        },
+        "valueString": "1.5 dB signal-to-noise ratio (SNR) for hearing in noise with unilateral CI"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "92551-5",
+              "display": "Hearing test"
+            }
+          ],
+          "text": "Aided word recognition score (WRS) with hearing aid"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectiveDateTime": "2020-08-01",
+        "valueString": "0% on the right side"
+      }
+    }
+  ]
+}

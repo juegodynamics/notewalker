@@ -1,0 +1,300 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "Anonymous"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.3.4.5.6.7.8.9",
+            "value": "######"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "######",
+          "end": "######"
+        },
+        "reasonCode": [
+          {
+            "text": "Pregnancy complicated by abdominal pain"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "424689003",
+              "display": "Bicornuate uterus"
+            }
+          ],
+          "text": "Bicornuate uterus"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "129103003",
+              "display": "Endometriosis"
+            }
+          ],
+          "text": "Endometriosis"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "161967006",
+              "display": "Pregnancy complicated by abdominal pain"
+            }
+          ],
+          "text": "Pregnancy complicated by abdominal pain"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "359589009",
+              "display": "Hysteroscopy"
+            }
+          ],
+          "text": "Hysteroscopy"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedDateTime": "######"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "359589009",
+              "display": "Diagnostic laparoscopy"
+            }
+          ],
+          "text": "Diagnostic laparoscopy"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedDateTime": "######"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "359589009",
+              "display": "Strassman's metroplasty"
+            }
+          ],
+          "text": "Strassman's metroplasty"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedDateTime": "######"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "23788007",
+              "display": "Cesarean section"
+            }
+          ],
+          "text": "Cesarean section"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedDateTime": "######"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "123456",
+              "display": "Prescribed medications"
+            }
+          ],
+          "text": "Prescribed medications"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "736271009",
+                "display": "Discharge instructions"
+              }
+            ],
+            "text": "Discharge instructions"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "text": "Take prescribed medications as directed"
+              },
+              "status": "scheduled"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "text": "Rest at home and avoid heavy lifting or strenuous activity"
+              },
+              "status": "scheduled"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "text": "Attend all scheduled follow-up appointments with the obstetrician"
+              },
+              "status": "scheduled"
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "text": "Monitor any unusual or persistent abdominal pain and report to the obstetrician immediately"
+              },
+              "status": "scheduled"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

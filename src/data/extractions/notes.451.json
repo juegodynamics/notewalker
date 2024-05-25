@@ -1,0 +1,278 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "name": [
+          {
+            "use": "official",
+            "family": "[patient name]",
+            "given": []
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1965-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/v3/Race",
+                  "code": "2106-3",
+                  "display": "White"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "2",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183488001",
+                "display": "Endodontic treatment"
+              }
+            ]
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "45048000",
+                "display": "Endodontic retreatment"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": "2023-01-01T00:00:00Z",
+          "end": "2023-01-01T00:00:00Z"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "45048000",
+              "display": "Endodontic retreatment"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01T00:00:00Z",
+          "end": "2023-01-02T00:00:00Z"
+        },
+        "note": [
+          {
+            "text": "The patient was referred to the endodontics clinic for a second premolar retreatment. Endodontic treatment was performed in two sessions. The tooth had a prosthetic metal crown and was tender to percussion with episodes of spontaneous pain."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "38264-3",
+              "display": "Radiographic study"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "2023-01-01T00:00:00Z",
+        "valueString": "Periapical radiographic examination revealed the presence of a single root with an unusual anatomical variation and probable endodontic dilacerated anatomy."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "5",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386637004",
+              "display": "Root canal therapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01T00:00:00Z",
+          "end": "2023-01-02T00:00:00Z"
+        },
+        "note": [
+          {
+            "text": "The lingual canal was treated with an usual technique of manual scouting, glide path and shaping with a #08 stainless steel K-file. However, after the use of SX opener, a #08 stainless steel K-file was short of the working length (WL). Hence, a mechanical glide-path with Proglider at working length was performed using an endodontic engine followed by root canal preparation with ProTaper Next X1 and X2 and manual 20/02-25/02 NiTi hand file sliding down the glide path up to working length. The buccal canal was treated with a modern step-down technique without initial manual scouting. The initial mechanical preflaring was performed at first with Proglider until above the first root canal curvature, and then the apical scouting, glide path and shaping was done with ProTaper Next X1, X2 and manual 20/02-25/02 NiTi hand file sliding down the glide path up to working length, which was determined using an electronic apex locator. After shaping, both sites were filled with Thermafil 25 after 3D cleaning of the root canal system."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "6",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18748-4",
+              "display": "Diagnostic imaging study"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "effectiveDateTime": "2023-01-02T00:00:00Z",
+        "conclusion": "The final radiographs showed two well-obturated canals with some lateral canal of this single rooted maxillary premolar."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "7",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "45048000",
+              "display": "Endodontic retreatment"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "onsetDateTime": "2023-01-01T00:00:00Z",
+        "abatementDateTime": "2023-01-02T00:00:00Z",
+        "note": [
+          {
+            "text": "The endodontic treatment was successful."
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "8",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up care plan",
+        "description": "Clinical follow-up was recommended.",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "period": {
+          "start": "2023-01-02T00:00:00Z"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "scheduled",
+              "description": "Clinical follow-up"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

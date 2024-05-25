@@ -1,0 +1,146 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1943-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "Suspected traumatic subarachnoid hemorrhage"
+            }
+          },
+          {
+            "condition": {
+              "text": "Distal PICA aneurysm"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Suspected traumatic subarachnoid hemorrhage"
+        },
+        "onsetDateTime": "[REDACTED]",
+        "abatementDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Distal PICA aneurysm"
+        },
+        "onsetDateTime": "[REDACTED]",
+        "abatementDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Coil embolization"
+        },
+        "performedDateTime": "[REDACTED]",
+        "performer": [
+          {
+            "actor": {
+              "reference": "Practitioner/[REDACTED]"
+            }
+          }
+        ],
+        "bodySite": [
+          {
+            "text": "Right femoral artery, left subclavian angiography, right vertebral artery, PICA"
+          }
+        ],
+        "outcome": {
+          "text": "Full recovery with supportive care"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Management of high blood pressure and dyslipidemia",
+        "description": "The patient will follow up closely with a neurologist for the management of high blood pressure and dyslipidemia to prevent future complications. The patient should avoid any head trauma to prevent similar complications in the future."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "final",
+        "code": {
+          "text": "Follow-up MRI"
+        },
+        "valueString": "No acute cerebral infarction in the PICA territory"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "final",
+        "code": {
+          "text": "Follow-up angiography"
+        },
+        "valueString": "No aneurysmal sacs in the distal PICA, recanalized VA located medial to the deployed coil mass"
+      }
+    }
+  ]
+}

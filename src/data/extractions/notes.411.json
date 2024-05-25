@@ -1,0 +1,154 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2000-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386661006",
+              "display": "Holocord oligodendroglioma"
+            }
+          ],
+          "text": "Holocord oligodendroglioma"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "2023-03-01",
+          "end": "2023-03-20"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "54542-7",
+              "display": "Magnetic resonance imaging (MRI) of whole spine"
+            }
+          ],
+          "text": "Cranio-spinal MRI"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "2023-03-01",
+        "valueString": "Long expansile contrast-enhancing mass involving the entire spinal cord, from the level of the cervical region to the conus medullaris with extension to the lower medulla oblongata."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest1",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "2022",
+              "display": "Dexamethasone"
+            }
+          ],
+          "text": "Dexamethasone"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "authoredOn": "2023-03-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "430193006",
+              "display": "Autopsy"
+            }
+          ],
+          "text": "Autopsy"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedDateTime": "2023-03-21",
+        "note": [
+          {
+            "text": "All lobes of the lungs were consolidated secondary to pneumonia. Swelling of the entire spinal cord with white to yellow mucoid material coming out from the central canal. Cut sections showed the entire spinal cord and caudal medullary region were replaced by mucoid material. Histopathologic examination revealed a cellular tumor arranged around the central canal of the cord. The cells are generally small, with round to slightly ovoid nuclei. Fibrillary processes were noted in the cytoplasm."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33717-0",
+              "display": "Pathology study"
+            }
+          ],
+          "text": "Histopathologic examination of the spinal cord"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "2023-03-21",
+        "valueString": "Cellular tumor arranged around the central canal of the cord with small, round to slightly ovoid nuclei and fibrillary processes in the cytoplasm."
+      }
+    }
+  ]
+}

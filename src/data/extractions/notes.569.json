@@ -1,0 +1,319 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "1977",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-nationality",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "urn:iso:std:iso:3166",
+                  "code": "JP",
+                  "display": "Japan"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55464009",
+              "display": "Systemic lupus erythematosus"
+            }
+          ],
+          "text": "SLE"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[insert]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422504002",
+              "display": "Diffuse alveolar hemorrhage"
+            }
+          ],
+          "text": "DAH-induced hypoxemia accompanying SLE"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[insert]",
+          "end": "[insert]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233573008",
+              "display": "Intubation"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11557-6",
+              "display": "Oxygen saturation in Arterial blood by Pulse oximetry"
+            }
+          ],
+          "text": "PaO2"
+        },
+        "valueQuantity": {
+          "value": 117.6,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "352379",
+              "display": "Prednisolone 50 MG Oral Tablet"
+            }
+          ],
+          "text": "Oral prednisolone 50 mg"
+        },
+        "dosageInstruction": [
+          {
+            "text": "50 mg orally once daily"
+          }
+        ],
+        "status": "completed",
+        "intent": "order"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "352379",
+              "display": "Prednisolone 45 MG Oral Tablet"
+            }
+          ],
+          "text": "Oral prednisolone 45 mg"
+        },
+        "dosageInstruction": [
+          {
+            "text": "45 mg orally once daily"
+          }
+        ],
+        "status": "completed",
+        "intent": "order"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "352379",
+              "display": "Methylprednisolone 500 MG Intravenous Solution"
+            }
+          ],
+          "text": "High-dose corticosteroid therapy (methylprednisolone 500 mg/day)"
+        },
+        "dosageInstruction": [
+          {
+            "text": "500 mg intravenously once daily"
+          }
+        ],
+        "status": "completed",
+        "intent": "order"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "352379",
+              "display": "Cyclophosphamide 750 MG Intravenous Solution"
+            }
+          ],
+          "text": "Immunosuppressive therapy (cyclophosphamide 750 mg/day)"
+        },
+        "dosageInstruction": [
+          {
+            "text": "750 mg intravenously once daily"
+          }
+        ],
+        "status": "completed",
+        "intent": "order"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-5",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "352379",
+              "display": "Methylprednisolone 16 MG Oral Tablet"
+            }
+          ],
+          "text": "Oral steroid therapy (methylprednisolone 16 mg/day)"
+        },
+        "dosageInstruction": [
+          {
+            "text": "16 mg orally once daily"
+          }
+        ],
+        "status": "active",
+        "intent": "order"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[insert]",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233573008",
+              "display": "Mechanical ventilation"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[insert]",
+          "end": "[insert]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233573008",
+              "display": "Extubation"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

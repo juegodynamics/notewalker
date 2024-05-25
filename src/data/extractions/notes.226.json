@@ -1,0 +1,179 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Patient Name]"
+          }
+        ],
+        "birthDate": "[Patient Date of Birth]",
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.1",
+            "value": "[Medical Record Number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "reasonCode": [
+          {
+            "text": "Exertional dyspnea and bilateral lower extremity edema"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "tricuspid valve vegetations, septic emboli, and mycotic aneurysms"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "tricuspid valve annuloplasty and reconstruction using autologous pericardial tissue"
+        },
+        "performedPeriod": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "ceftriaxone 2 g IV daily for 6 weeks"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "inactive"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "unconfirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "No known allergies"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Post-operative management",
+        "description": "Follow-up with primary care physician and Cardiothoracic Surgery for post-operative management."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Good condition at discharge"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Composition",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "title": "Discharge Summary",
+        "date": "[Date]",
+        "author": [
+          {
+            "type": "Practitioner",
+            "display": "[Doctor Name]"
+          }
+        ],
+        "section": [
+          {
+            "title": "Hospital Course",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient is a 35-year-old female who was admitted to the Emergency Department with a 3-month history of worsening exertional dyspnea and bilateral lower extremity edema. The patient also endorsed a nonproductive cough, pleuritic chest pain, occasional orthopnea, and an unintentional weight loss of 20 pounds over a one-month period. She was afebrile with mild tachycardia and respiratory distress. An electrocardiogram revealed sinus tachycardia with no acute injury pattern, and a chest radiograph showed a pleural-based wedge-like consolidation in the right inferior lobe consistent with Hampton's Hump. A limited echocardiogram revealed tricuspid valve vegetations and a slightly enlarged right ventricle without any D-sign. The patient subsequently underwent a CT-angiogram of the chest, which revealed multiple septic emboli and mycotic aneurysms and multiple segmental pulmonary arterial occlusions with associated infarcts or hemorrhage.<br/>The patient was treated with IV ceftriaxone and azithromycin to cover possible community-acquired pneumonia, and IV vancomycin, gentamycin, and ciprofloxacin to provide coverage for possible MRSA endocarditis. The patient was admitted with consultation of Cardiothoracic Surgery and Infectious Disease (ID). Blood cultures remained negative, and the causative pathogen was not identified.<br/>The patient subsequently underwent a tricuspid valve annuloplasty and reconstruction using autologous pericardial tissue. The patient's blood cultures remained negative, and ID recommended the patient receive ceftriaxone 2 g IV daily for 6 weeks. Pathology of the valve leaflets indicated granulation tissue with focal areas of bacterial colonization without bacterial identification. The remainder of the patient's postoperative course was uncomplicated, and on hospital day 15, she was transferred to a skilled nursing facility to complete her 6-week course of IV ceftriaxone.</div>"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Patient Name]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1973-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "reasonCode": [
+          {
+            "text": "hematuria, increased frequency, and burning sensation during micturition, accompanied by left flank pain"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Primary chondrosarcoma in crossed fused renal ectopia involving both moieties"
+        },
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Significant Findings"
+        },
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "valueString": "Ultrasound of the abdomen showed the presence of a right ectopic kidney and left-sided hydronephrosis. CECT of the abdomen revealed L-shaped crossed fused renal ectopia, a left-sided renal mass, and a polypoidal mass in the urinary bladder. Histopathology examination showed chondrosarcoma, marked pleomorphism and mitotic activity along with areas of chicken-wire calcification and hemorrhage."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Transurethral resection of the bladder lesion"
+        },
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "performedPeriod": {
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Surgery for resection of the malignant renal mass, and a left nephrectomy with partial right nephrectomy"
+        },
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "performedPeriod": {
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Medical Condition at Discharge"
+        },
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "valueString": "The patient’s condition was stable at the time of discharge."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care",
+        "description": "The patient was advised to come back for regular check-ups.",
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        }
+      }
+    }
+  ]
+}

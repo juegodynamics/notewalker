@@ -1,0 +1,225 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "name": [
+          {
+            "use": "official",
+            "text": "Cavalier King Charles Spaniel"
+          }
+        ],
+        "birthDate": "2017",  // Approximate year based on age
+        "animal": {
+          "species": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/animal-species",
+                "code": "canislf",
+                "display": "Canine"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "2",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "2022-01-01T00:00:00Z",  // Approximate start date
+          "end": "2022-09-30T00:00:00Z"  // Approximate end date based on 9 months stay
+        },
+        "reasonCode": [
+          {
+            "text": "Exercise intolerance and a syncopal episode"
+          }
+        ],
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "84114007",
+              "display": "Dilated cardiomyopathy"
+            }
+          ],
+          "text": "Dilated cardiomyopathy (DCM) phenotype"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "onsetDateTime": "2022-01-01T00:00:00Z"  // Approximate onset date
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "76271-7",
+              "display": "Heart murmur"
+            }
+          ],
+          "text": "Heart murmur"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "2022-09-30T00:00:00Z",  // Approximate date
+        "valueString": "Detected at final examination"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "5",
+        "status": "completed",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "171207006",
+              "display": "Echocardiography"
+            }
+          ],
+          "text": "Echocardiographic examination"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "occurrenceDateTime": "2022-09-30T00:00:00Z"  // Approximate date
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "6",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "282464",
+              "display": "Pimobendan"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "authoredOn": "2022-09-30T00:00:00Z",  // Approximate date
+        "dosageInstruction": [
+          {
+            "text": "Pimobendan as prescribed"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "7",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "89579-7",
+              "display": "Cardiac troponin I [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Serum concentration of cardiac troponin I (cTnI)"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "effectiveDateTime": "2022-09-30T00:00:00Z",  // Approximate date
+        "valueQuantity": {
+          "value": 0.4,  // Example value
+          "unit": "ng/mL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

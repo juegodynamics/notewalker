@@ -1,0 +1,309 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "patient-1"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1949-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "302463007",
+              "display": "Holmium Laser Enucleation of Prostate (HoLEP)"
+            }
+          ],
+          "text": "HoLEP for bladder outlet obstruction and bladder stones"
+        },
+        "performedPeriod": {
+          "start": "2023-10-01T08:00:00Z",
+          "end": "2023-10-01T10:00:00Z"
+        },
+        "complication": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "125643001",
+                "display": "Capsular perforation"
+              }
+            ],
+            "text": "Capsular perforation at the 5 o'clock position in the mid gland"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "301011002",
+                "display": "Abdominal distention"
+              }
+            ],
+            "text": "Significant abdominal distention"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Minilaparotomy"
+            }
+          ],
+          "text": "Subumbilical minilaparotomy"
+        },
+        "reasonReference": [
+          {
+            "reference": "Procedure/procedure-1"
+          }
+        ],
+        "performedPeriod": {
+          "start": "2023-10-01T11:00:00Z",
+          "end": "2023-10-01T12:00:00Z"
+        },
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428341000124106",
+              "display": "Retroperitoneal extravasation without intraperitoneal bladder injury or perforation"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Device",
+        "id": "device-1",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "46775009",
+              "display": "Jackson-Pratt drain"
+            }
+          ],
+          "text": "10F Jackson-Pratt drain"
+        },
+        "note": [
+          {
+            "text": "Placed in the pelvis"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "80256-3",
+              "display": "Drain output volume"
+            }
+          ],
+          "text": "Jackson-Pratt drain output"
+        },
+        "valueQuantity": {
+          "value": 710,
+          "unit": "cc",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL"
+        },
+        "effectiveDateTime": "2023-10-01T00:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "80256-3",
+              "display": "Drain output volume"
+            }
+          ],
+          "text": "Jackson-Pratt drain output"
+        },
+        "valueQuantity": {
+          "value": 81,
+          "unit": "cc",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL"
+        },
+        "effectiveDateTime": "2023-10-02T00:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "80256-3",
+              "display": "Drain output volume"
+            }
+          ],
+          "text": "Jackson-Pratt drain output"
+        },
+        "valueQuantity": {
+          "value": 20,
+          "unit": "cc",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL"
+        },
+        "effectiveDateTime": "2023-10-03T00:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274804009",
+              "display": "Cardiology consultation"
+            }
+          ],
+          "text": "Cardiology consultation for prolonged PR interval and bradycardia"
+        },
+        "performedPeriod": {
+          "start": "2023-10-01T13:00:00Z",
+          "end": "2023-10-01T14:00:00Z"
+        },
+        "outcome": {
+          "text": "No further work-up warranted"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-03T12:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "398254007",
+                "display": "Bladder outlet obstruction"
+              }
+            ],
+            "text": "Bladder outlet obstruction and bladder stones"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26436-6",
+              "display": "Pathology result"
+            }
+          ],
+          "text": "Pathologic analysis of specimen"
+        },
+        "valueString": "No evidence of malignancy"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "281789004",
+              "display": "Catheter removal"
+            }
+          ],
+          "text": "Catheter removed"
+        },
+        "performedDateTime": "2023-10-10T08:00:00Z"
+      }
+    }
+  ]
+}

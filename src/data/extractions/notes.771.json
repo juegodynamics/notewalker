@@ -1,0 +1,214 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1951-01-01",
+        "age": 72
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "156269008",
+              "display": "Schistosomiasis"
+            }
+          ]
+        },
+        "onsetDateTime": "1983-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertension"
+            }
+          ]
+        },
+        "onsetDateTime": "2022-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "239873007",
+              "display": "Spinal cord compression"
+            }
+          ]
+        },
+        "onsetDateTime": "2023-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33747-9",
+              "display": "MRI of spine"
+            }
+          ]
+        },
+        "valueString": "Elliptical abnormal signal shadow in the left side of the vertebral body and left peritoneum indicative of a dumbbell growth. Increased signal intensity on T2-weighted images in the T12-L4 paravertebral region. Size of 8.6 × 8.4 × 12.4 cm on the left side of the L1 vertebral body. Boundary was clear, and an uneven separation was observed. Lesion protruded into the erector spinae muscles and behind the retroperitoneum. Spinal cord compressed, and boundary was clear."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30830-3",
+              "display": "CT of spine"
+            }
+          ]
+        },
+        "valueString": "Bone destruction observable on the left lateral transverse process of L2, and the left kidney was significantly compressed."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical resection"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2023-01-01",
+          "end": "2023-01-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18286008",
+              "display": "Spinal internal fixation"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2023-01-01",
+          "end": "2023-01-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "45212008",
+              "display": "Laminectomy"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2023-01-01",
+          "end": "2023-01-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33716-4",
+              "display": "Pathology report"
+            }
+          ]
+        },
+        "valueString": "Lobulated neoplasm in a prominent extracellular myxoid matrix. Neoplastic cells composed of syncytial cords of 'physaliphorous cells' containing abundant pale septated and vacuolated clear to bubbly cytoplasm with mild nuclear pleomorphism. No overt mitosis identified. Immunohistochemical examination: CK (+++), S100 (++), CD65 (+), neuron-specific enolase (++), epithelial membrane antigen (+++), and vimentin (+++). Ki67 was 3%+ in the lesional cells. Diagnosis confirmed as chordoma."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Follow-up visit note"
+            }
+          ]
+        },
+        "valueString": "No heavy ion radiotherapy performed. After 5-month follow-up, recurrence found in the original lesion through post-operative CT. Second operation not possible. At the 15-month follow-up, patient was deceased."
+      }
+    }
+  ]
+}

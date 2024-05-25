@@ -1,0 +1,322 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1941-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "reasonCode": [
+          {
+            "text": "The patient presented to our clinic for consultation and left ptosis surgery and was previously treated elsewhere for NTG."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422034002",
+              "display": "Unilateral glaucoma"
+            }
+          ],
+          "text": "unilateral stable glaucoma with coexisting pituitary adenoma"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Ptosis repair"
+            }
+          ],
+          "text": "left ptosis surgery"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "17856-6",
+              "display": "Intraocular pressure by Tonometer"
+            }
+          ],
+          "text": "Intraocular pressure"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "valueQuantity": {
+          "value": 14,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29271-4",
+              "display": "Visual acuity"
+            }
+          ],
+          "text": "Best Corrected Visual Acuity"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "29271-4",
+                  "display": "Visual acuity"
+                }
+              ],
+              "text": "BCVA Right Eye"
+            },
+            "valueQuantity": {
+              "value": 1.0,
+              "unit": "",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "29271-4",
+                  "display": "Visual acuity"
+                }
+              ],
+              "text": "BCVA Left Eye"
+            },
+            "valueQuantity": {
+              "value": 1.0,
+              "unit": "",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "276850006",
+              "display": "Visual fields examination"
+            }
+          ],
+          "text": "Visual Field"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "valueString": "left eye exhibited VF changes typical for glaucoma"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "description": "4 x 4mm pituitary microadenoma found to be contacting the chiasm",
+        "series": [
+          {
+            "number": 1,
+            "modality": {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "MR",
+              "display": "Magnetic Resonance"
+            },
+            "description": "Retinal nerve fiber layer thickness defect in OCT examinations"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "The patient was given a detailed follow-up plan upon discharge and scheduled for routine follow-up appointments with his ophthalmologist and endocrinologist.",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Monitor any changes in vision and immediately report any symptoms to his ophthalmologist. Continue monitoring his pituitary microadenoma under the supervision of his endocrinologist."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ReferralRequest",
+        "status": "active",
+        "intent": "order",
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "306206005",
+              "display": "Referral to endocrinology service"
+            }
+          ],
+          "text": "Referral to endocrinologist"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "requester": {
+          "reference": "Practitioner/[Redacted]"
+        },
+        "reasonCode": [
+          {
+            "text": "Management of pituitary microadenoma"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "stable",
+              "display": "Stable"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "699346005",
+              "display": "Pituitary microadenoma"
+            }
+          ],
+          "text": "Pituitary microadenoma contacting the chiasm"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "note": [
+          {
+            "text": "The patient’s condition remained stable throughout his observation with no change in visual field or tumor size."
+          }
+        ]
+      }
+    }
+  ]
+}

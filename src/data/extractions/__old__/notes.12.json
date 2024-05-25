@@ -1,0 +1,348 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-x",
+        "name": [
+          {
+            "use": "official",
+            "family": "X",
+            "given": ["X"]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1986-XX-XX"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-x",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "period": {
+          "start": "XX/XX/XX",
+          "end": "XX/XX/XX"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-breast-cancer",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254837009",
+              "display": "Malignant neoplasm of breast"
+            }
+          ],
+          "text": "Malignant breast mass"
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "onsetDateTime": "XX/XX/XX",
+        "note": [
+          {
+            "text": "Family history of colorectal and hepatobiliary cancers."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-mastectomy",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274022005",
+              "display": "Simple mastectomy"
+            }
+          ],
+          "text": "Right breast simple mastectomy with axillary lymph node evaluation"
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "performedDateTime": "XX/XX/XX"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-pathology",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33747-1",
+              "display": "Pathology report"
+            }
+          ],
+          "text": "Pathology showing multifocal invasive mammary carcinoma with ductal and lobular features"
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "effectiveDateTime": "XX/XX/XX",
+        "valueString": "Multifocal invasive mammary carcinoma with ductal and lobular features"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-pmrt",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108290001",
+              "display": "Radiation therapy procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385798007",
+              "display": "Postmastectomy radiotherapy (PMRT)"
+            }
+          ],
+          "text": "Adjuvant PMRT 5000 cGy dose, 25 fractions with 1000 cGy scar boost"
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "performedPeriod": {
+          "start": "XX/XX/XX",
+          "end": "XX/XX/XX"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-goserelin",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "310964",
+              "display": "Goserelin 3.6 mg"
+            }
+          ],
+          "text": "Goserelin 3.6 mg"
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "authoredOn": "XX/XX/XX",
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 28,
+                "periodUnit": "d"
+              }
+            },
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "263887005",
+                  "display": "Subcutaneous route"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-letrozole",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308136",
+              "display": "Letrozole 2.5 mg"
+            }
+          ],
+          "text": "Letrozole 2.5 mg"
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "authoredOn": "XX/XX/XX",
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "26643006",
+                  "display": "Oral route"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-triptorelin",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "310956",
+              "display": "Triptorelin 3.75 mg"
+            }
+          ],
+          "text": "Triptorelin 3.75 mg"
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "authoredOn": "XX/XX/XX",
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 28,
+                "periodUnit": "d"
+              }
+            },
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "78421000",
+                  "display": "Intramuscular route"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-followup",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care Plan",
+        "description": "Follow up with the oncologist for further evaluation. Recommended for molecular and genetic testing if not done in their initial evaluation. Also, advised to discuss the role of oophorectomy to manage risks and benefits of such treatment further with oncologist.",
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "period": {
+          "start": "XX/XX/XX"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "408443003",
+                    "display": "Follow-up appointment"
+                  }
+                ],
+                "text": "Follow up with the oncologist"
+              },
+              "status": "scheduled"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

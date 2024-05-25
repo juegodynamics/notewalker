@@ -1,0 +1,213 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "period": {
+          "start": "[insert date]",
+          "end": "[insert date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "82272006",
+              "display": "Upper respiratory infection"
+            }
+          ],
+          "text": "Repeated upper airway infections"
+        },
+        "subject": {
+          "reference": "Patient/[unique-id]"
+        },
+        "onsetDateTime": "2008",
+        "abatementDateTime": "[insert date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274681002",
+              "display": "Functional endoscopic sinus surgery"
+            }
+          ],
+          "text": "Functional endoscopic sinus surgery with septal correction and partial reduction of a right-sided hypertrophic concha media bullosa"
+        },
+        "subject": {
+          "reference": "Patient/[unique-id]"
+        },
+        "performedDateTime": "2008"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "CT of Head"
+            }
+          ],
+          "text": "CT scan showing bilateral soft-tissue mass in the olfactory cleft"
+        },
+        "subject": {
+          "reference": "Patient/[unique-id]"
+        },
+        "effectiveDateTime": "[insert date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "MRI",
+              "display": "MRI of Head"
+            }
+          ],
+          "text": "MRI showing T1- and T2-isointense lesions compared to white matter"
+        },
+        "subject": {
+          "reference": "Patient/[unique-id]"
+        },
+        "effectiveDateTime": "[insert date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274681002",
+              "display": "Endoscopic non-aggressive resection"
+            }
+          ],
+          "text": "Endoscopic non-aggressive resection of REAH"
+        },
+        "subject": {
+          "reference": "Patient/[unique-id]"
+        },
+        "performedDateTime": "[insert date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Histopathology report"
+            }
+          ],
+          "text": "Presence of REAH histologically confirmed"
+        },
+        "subject": {
+          "reference": "Patient/[unique-id]"
+        },
+        "effectiveDateTime": "[insert date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "82272006",
+              "display": "Upper respiratory infection"
+            }
+          ],
+          "text": "Upper airway infection resolved"
+        },
+        "subject": {
+          "reference": "Patient/[unique-id]"
+        },
+        "abatementDateTime": "[insert date]"
+      }
+    }
+  ]
+}

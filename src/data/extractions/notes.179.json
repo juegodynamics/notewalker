@@ -1,0 +1,148 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "text": {
+          "status": "generated",
+          "div": "<div>Patient with chronic nasal obstruction and hyposmia on the left side</div>"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div>The patient presented with chronic nasal obstruction and hyposmia on the left side, which had been present for six months. The symptoms were not relieved by self-administered medications. On clinical examination, a bump was noted along the floor of the left nasal cavity.</div>"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75325-1",
+              "display": "Radiograph report"
+            }
+          ],
+          "text": "Plain radiograph of the paranasal sinus and nasal cavity"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "A plain radiograph of the paranasal sinus and nasal cavity revealed a radiopaque focus in the left nasal cavity."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24627-2",
+              "display": "CT of paranasal sinuses"
+            }
+          ],
+          "text": "CT scan of paranasal sinuses"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "A CT scan of paranasal sinuses was performed, revealing a tooth-like bony structure in the hard palate extending into the left inferior nasal cavity, resembling a canine with a relatively smaller size, along with a deviated nasal septum with convexity to the left."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30627-8",
+              "display": "Panoramic X-ray of Teeth"
+            }
+          ],
+          "text": "Orthopantomogram"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "An Orthopantomogram showed a tooth-like radiopaque structure, and a three-dimensional computed tomography (3D CT) scan showed a tooth-like structure in the left nasal cavity. The intranasal tooth was supernumerary, with mild mucosal thickening noted in the bilateral maxillary and sphenoid sinuses."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "31267",
+              "display": "Nasal/sinus endoscopy, surgical with maxillary antrostomy"
+            }
+          ],
+          "text": "Endoscopic removal of the ectopic intranasal tooth"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "outcome": {
+          "text": "Complete resolution of nasal obstruction and hyposmia"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "appointment-1",
+        "status": "booked",
+        "serviceCategory": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/service-category",
+                "code": "17",
+                "display": "General Practice"
+              }
+            ]
+          }
+        ],
+        "description": "Follow-up to monitor symptoms and ensure complete recovery",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/patient-1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    }
+  ]
+}

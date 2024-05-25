@@ -1,0 +1,329 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-1",
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": ""
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32485007",
+                "display": "Discharge summary"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "period": {
+          "start": "",
+          "end": ""
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "15660003",
+                  "display": "Gonococcal ophthalmia neonatorum"
+                }
+              ]
+            },
+            "rank": 1
+          },
+          {
+            "condition": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "427073005",
+                  "display": "Stenotrophomonas maltophilia meningitis"
+                }
+              ]
+            },
+            "rank": 2
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-1",
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "15660003",
+              "display": "Gonococcal ophthalmia neonatorum"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-2",
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "427073005",
+              "display": "Stenotrophomonas maltophilia meningitis"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-1",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "valueQuantity": {
+          "value": "",
+          "unit": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationrequest-1",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "135",
+              "display": "Cefotaxime"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Meningitis dose of Cefotaxime"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationrequest-2",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "88014",
+              "display": "Gentamycin ophthalmic drops"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Gentamycin ophthalmic drops"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationrequest-3",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1151421",
+              "display": "Azithromycin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Azithromycin to cover possible chlamydial infection"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationrequest-4",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "35254",
+              "display": "Trimethoprim-Sulfamethoxazole"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Trimethoprim-Sulfamethoxazole for S. maltophilia"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationrequest-5",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "855332",
+              "display": "Ciprofloxacin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Ciprofloxacin for S. maltophilia"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:followup-1",
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Follow-up visit one week after discharge",
+              "status": "completed"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:recommendation-1",
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "The patient's parents should be advised to schedule regular well-child check-ups with a pediatrician. Any concerns about the child's health should be reported to the pediatrician immediately.",
+              "status": "not-started"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-1",
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "104001005",
+              "display": "Septic workup"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "performedPeriod": {
+          "start": "",
+          "end": ""
+        }
+      }
+    }
+  ]
+}

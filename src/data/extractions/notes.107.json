@@ -1,0 +1,168 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "1995"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "20430005",
+              "display": "Hypoplastic left heart syndrome"
+            }
+          ],
+          "text": "Hypoplastic left lung syndrome"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "430193006",
+              "display": "Bronchial plugging"
+            }
+          ],
+          "text": "Left bronchial blocker placement"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "174041007",
+              "display": "Thoracotomy"
+            }
+          ],
+          "text": "Anterolateral thoracotomy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medication-1",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1048210",
+              "display": "Dexamethasone 0.5 MG Oral Tablet"
+            }
+          ],
+          "text": "Dexamethasone"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "context": {
+          "reference": "Encounter/encounter-1"
+        },
+        "effectivePeriod": {
+          "start": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Discharge instructions for the patient",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Follow up with your primary care physician as scheduled."
+            }
+          },
+          {
+            "detail": {
+              "description": "Follow-up appointments with specialists involved in your care have been scheduled."
+            }
+          },
+          {
+            "detail": {
+              "description": "Follow up as needed with your respiratory therapist as advised."
+            }
+          },
+          {
+            "detail": {
+              "description": "Take all medications as prescribed."
+            }
+          },
+          {
+            "detail": {
+              "description": "Continue to monitor your respiratory symptoms and oxygen levels."
+            }
+          },
+          {
+            "detail": {
+              "description": "Maintain a healthy lifestyle with a balanced diet and regular exercise."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

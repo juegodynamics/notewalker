@@ -1,0 +1,288 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.example.org/mrn",
+            "value": "[Redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "9826008",
+              "display": "Osteomyelitis"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "8010006",
+                "display": "Calcaneus"
+              }
+            ]
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "remission",
+              "display": "Remission"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "433112001",
+              "display": "Irrigation of surgical site"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2023-01-01T00:00:00Z",
+          "end": "2023-01-01T23:59:59Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "183462000",
+              "display": "Drainage of pus"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2023-01-01T00:00:00Z",
+          "end": "2023-01-01T23:59:59Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "243140006",
+              "display": "Radical debridement of bone"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2023-01-12T00:00:00Z",
+          "end": "2023-01-12T23:59:59Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "430193006",
+              "display": "Implantation of calcium phosphate cement"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2023-01-12T00:00:00Z",
+          "end": "2023-01-12T23:59:59Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medadmin-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372687004",
+              "display": "Intravenous antibiotics"
+            }
+          ]
+        },
+        "effectivePeriod": {
+          "start": "2023-01-01T00:00:00Z",
+          "end": "2023-01-12T23:59:59Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medadmin-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385057006",
+              "display": "Oral antibiotics"
+            }
+          ]
+        },
+        "effectivePeriod": {
+          "start": "2023-01-13T00:00:00Z",
+          "end": "2023-02-11T23:59:59Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8339-4",
+              "display": "Fever"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 38.5,
+          "unit": "Celsius",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "CT",
+            "display": "CT"
+          }
+        ],
+        "description": "Imaging tests showed hyperpermeability of the calcaneus"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "MR",
+            "display": "MR"
+          }
+        ],
+        "description": "Magnetic resonance images confirmed a diagnosis of osteomyelitis of the calcaneus as well as abscess formation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "finished",
+        "class": {
+          "code": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "305351004",
+                "display": "Follow-up encounter"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": "2023-01-01T00:00:00Z",
+          "end": "2023-07-01T23:59:59Z"
+        }
+      }
+    }
+  ]
+}

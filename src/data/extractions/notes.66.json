@@ -1,0 +1,184 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "age": 46
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "49436004",
+              "display": "Persistent atrial fibrillation"
+            }
+          ],
+          "text": "Persistent atrial fibrillation"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168537006",
+              "display": "Echocardiogram"
+            }
+          ],
+          "text": "Echocardiogram"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "outcome": {
+          "text": "Did not show any pathological features"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-1",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1368153",
+              "display": "Dabigatran"
+            }
+          ],
+          "text": "Dabigatran"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosage": [
+          {
+            "text": "Oral anticoagulation"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000124107",
+              "display": "Electrical cardioversion"
+            }
+          ],
+          "text": "Electrical cardioversion"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "outcome": {
+          "text": "Effective in restoring sinus rhythm"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-2",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197361",
+              "display": "Flecainide"
+            }
+          ],
+          "text": "Flecainide"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosage": [
+          {
+            "text": "100 mg twice daily"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "241977008",
+              "display": "Asthenia"
+            }
+          ],
+          "text": "Asthenia"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "GDT",
+              "display": "Echocardiography exam"
+            }
+          ],
+          "text": "Echocardiography exam"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Left atrial indexed volume of 36 mL/m2 and left ventricular ejection fraction of 47%"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "22951003",
+              "display": "Atrial fibrillation ablation"
+            }
+          ],
+          "text": "AF ablation through pulmonary vein isolation (PVI)"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "proposed"
+      }
+    }
+  ]
+}

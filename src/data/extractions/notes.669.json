@@ -1,0 +1,147 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1950-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Metastatic lung melanoma"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-1"
+            }
+          }
+        ],
+        "status": "finished",
+        "period": {
+          "start": "2023-07-01",
+          "end": "2023-07-14"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Administration of pembrolizumab 2mg/kg every 3 weeks"
+        },
+        "performedPeriod": {
+          "start": "2023-07-01",
+          "end": "2023-07-14"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Chest computed tomography"
+        },
+        "valueString": "Ground-glass opacities in both lungs"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Pembrolizumab-induced pneumonitis"
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Observation/observation-1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "text": "Prednisone 1mg/kg"
+        },
+        "dosageInstruction": [
+          {
+            "text": "1mg/kg of prednisone in conjunction with antibiotic therapy"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Staging computed tomography"
+        },
+        "valueString": "Complete resolution of clinical features"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "planned",
+        "reasonCode": [
+          {
+            "text": "Follow-up to monitor response to treatment and any potential side effects"
+          }
+        ]
+      }
+    }
+  ]
+}

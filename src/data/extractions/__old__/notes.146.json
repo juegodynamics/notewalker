@@ -1,0 +1,516 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "Second opinion regarding incidental pathology finding of nonmucinous appendiceal adenocarcinoma"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372244006",
+              "display": "Adenocarcinoma of appendix"
+            }
+          ],
+          "text": "Nonmucinous appendiceal adenocarcinoma"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Appendectomy"
+            }
+          ],
+          "text": "Emergent appendectomy"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "241689008",
+              "display": "Computed tomography of abdomen and pelvis"
+            }
+          ],
+          "text": "Staging CT"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Colonoscopy"
+            }
+          ],
+          "text": "Colonoscopy"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure4",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Right hemicolectomy"
+            }
+          ],
+          "text": "Completion right hemicolectomy"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure5",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "47505007",
+              "display": "Right oophorectomy"
+            }
+          ],
+          "text": "Possible right oophorectomy"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308136",
+              "display": "FOLFOX"
+            }
+          ],
+          "text": "Adjuvant FOLFOX"
+        },
+        "status": "stopped",
+        "intent": "order"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "CXXXXXX",
+              "display": "CT findings"
+            }
+          ],
+          "text": "CT findings of growth in the right ovarian cyst and a new complex cystic/solid mass along the left pelvic sidewall"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectiveDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure6",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "241031007",
+              "display": "Cytoreductive surgery"
+            }
+          ],
+          "text": "Cytoreductive surgery"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure7",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Right hemicolectomy"
+            }
+          ],
+          "text": "Right hemicolectomy"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure8",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Cholecystectomy"
+            }
+          ],
+          "text": "Cholecystectomy"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure9",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "74787009",
+              "display": "Total abdominal hysterectomy"
+            }
+          ],
+          "text": "Total abdominal hysterectomy"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure10",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "236886007",
+              "display": "Bilateral salpingo-oophorectomy"
+            }
+          ],
+          "text": "Bilateral salpingo-oophorectomy with en bloc resection of the adnexal masses"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure11",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "384832008",
+              "display": "Hyperthermic intraperitoneal chemotherapy (HIPEC)"
+            }
+          ],
+          "text": "HIPEC with mitomycin C"
+        },
+        "performedDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "255081000119105",
+              "display": "Moderately differentiated adenocarcinoma of gallbladder"
+            }
+          ],
+          "text": "Primary gallbladder adenocarcinoma, moderately to poorly differentiated, arising in a background of high-grade biliary intraepithelial neoplasm and porcelain gallbladder"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter1"
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Observation/observation2"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85318-4",
+              "display": "Pathology report"
+            }
+          ],
+          "text": "Pathology report"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectiveDateTime": "[REDACTED]",
+        "valueString": "The carcinoma extended through the visceral peritoneum onto the serosal surface and into the pericystic soft tissue on the hepatic bed surface. All tumor deposits collected from the operation were consistent with metastasis from the biliary origin."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest2",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "310362",
+              "display": "Gemcitabine"
+            }
+          ],
+          "text": "Gemcitabine"
+        },
+        "status": "completed",
+        "intent": "order",
+        "dosageInstruction": [
+          {
+            "sequence": 1,
+            "text": "Four cycles"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest3",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "310362",
+              "display": "Cisplatin"
+            }
+          ],
+          "text": "Cisplatin"
+        },
+        "status": "completed",
+        "intent": "order",
+        "dosageInstruction": [
+          {
+            "sequence": 1,
+            "text": "Four cycles"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "CT",
+            "display": "Computed Tomography"
+          }
+        ],
+        "description": "Surveillance imaging demonstrated disease progression"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure12",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Laparotomy"
+            }
+          ],
+          "text": "Emergent laparotomy"
+        },
+        "performedDateTime": "[REDACTED]",
+        "reasonCode": [
+          {
+            "text": "Acute abdomen secondary to perforated viscus after first cycle of FOLFOX"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter2",
+        "status": "finished",
+        "class": {
+          "code": "hospice"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "Transition to hospice care"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient1"
+        }
+      }
+    }
+  ]
+}

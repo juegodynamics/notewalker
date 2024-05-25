@@ -1,0 +1,273 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[NAME]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[NUMBER]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": null
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183519005",
+                "display": "Hospital admission"
+              }
+            ],
+            "text": "Inpatient"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        },
+        "period": {
+          "start": "[DATE]",
+          "end": "[DATE]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "263204007",
+              "display": "Fracture of right foot"
+            }
+          ],
+          "text": "Fracture of the right foot and ankle"
+        },
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "253355003",
+              "display": "Myxoma of heart"
+            }
+          ],
+          "text": "Left atrial myxoma"
+        },
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical repair"
+            }
+          ],
+          "text": "Surgical repair of fractures"
+        },
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        },
+        "performedPeriod": {
+          "start": "[DATE]",
+          "end": "[DATE]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "180325003",
+              "display": "Excision of tumor of heart"
+            }
+          ],
+          "text": "Excision of left atrial myxoma"
+        },
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        },
+        "performedPeriod": {
+          "start": "[DATE]",
+          "end": "[DATE]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "324252006",
+              "display": "Intravenous antibiotics"
+            }
+          ],
+          "text": "Intravenous antibiotics"
+        },
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        },
+        "authoredOn": "[DATE]",
+        "dosageInstruction": [
+          {
+            "text": "Complete intravenous antibiotics at home"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "The patient was advised to rest and avoid strenuous activity until follow-up appointments in the outpatient setting. It was recommended that she continue her antibiotics and attend all remaining scheduled physician follow-up appointments. The patient was also advised to keep her wounds clean and dry, and to avoid immersion in water until fully healed.",
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Rest and avoid strenuous activity until follow-up appointments",
+              "status": "scheduled"
+            }
+          },
+          {
+            "detail": {
+              "description": "Continue antibiotics and attend all remaining scheduled follow-up appointments",
+              "status": "scheduled"
+            }
+          },
+          {
+            "detail": {
+              "description": "Keep wounds clean and dry, avoid immersion in water until fully healed",
+              "status": "scheduled"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "status": "booked",
+        "description": "Follow-up with primary care physician",
+        "start": "[DATE]",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/[NUMBER]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "status": "booked",
+        "description": "Follow-up with orthopedist",
+        "start": "[DATE]",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/[NUMBER]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

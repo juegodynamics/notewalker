@@ -1,0 +1,213 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "gender": "male",
+        "birthDate": "1945-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/condition",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "109992007",
+                  "display": "Cutaneous T-cell lymphoma"
+                }
+              ]
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/condition",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "44054006",
+                  "display": "Diabetes mellitus type 2"
+                }
+              ]
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/condition",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "426179005",
+                  "display": "Atrial flutter"
+                }
+              ]
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/condition",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "704997001",
+                  "display": "Sick sinus syndrome"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "21522001",
+                "display": "Abdominal pain"
+              }
+            ],
+            "text": "Right upper quadrant abdominal pain"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/example-condition-liver"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-liver-function",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1975-2",
+              "display": "Aspartate aminotransferase (AST)"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "1742-6",
+              "display": "Alanine aminotransferase (ALT)"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "6768-6",
+              "display": "Alkaline phosphatase (ALP)"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "1975-2",
+              "display": "Bilirubin, total"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 2.5,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure-liver-biopsy",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "229819007",
+              "display": "Percutaneous liver biopsy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition-liver",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128302006",
+              "display": "Metastatic Merkel cell carcinoma"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "example-careplan",
+        "status": "completed",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "activity": [
+          {
+            "reference": {
+              "reference": "Procedure/example-procedure-liver-biopsy"
+            }
+          }
+        ],
+        "addresses": [
+          {
+            "reference": "Condition/example-condition-liver"
+          }
+        ],
+        "note": [
+          {
+            "text": "The patient and family opted for comfort care measures given the medical comorbidities and were discharged home with consultation with Hematology/Oncology and Dermatology."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "example-followup",
+        "status": "booked",
+        "description": "Follow-up with primary care physician and palliative care team",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/example-patient"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    }
+  ]
+}

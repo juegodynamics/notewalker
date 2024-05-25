@@ -1,0 +1,259 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-example",
+        "gender": "female",
+        "birthDate": "1973-01-01",
+        "address": [
+          {
+            "country": "Canada"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-example",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "235866009",
+              "display": "Lyme disease"
+            }
+          ],
+          "text": "Lyme disease"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-skin-lesions",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11379-3",
+              "display": "Ulcerative skin lesions"
+            }
+          ],
+          "text": "Ulcerative skin lesions"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-fatigue",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "54542-0",
+              "display": "Fatigue"
+            }
+          ],
+          "text": "Extreme fatigue"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-musculoskeletal-pain",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Musculoskeletal pain"
+            }
+          ],
+          "text": "Musculoskeletal pain"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-formication",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "54564-4",
+              "display": "Formication"
+            }
+          ],
+          "text": "Formication"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-serology",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6321-6",
+              "display": "Borrelia burgdorferi IgM"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "6320-8",
+              "display": "Borrelia burgdorferi IgG"
+            }
+          ],
+          "text": "Serology for Borrelia burgdorferi"
+        },
+        "valueString": "Seronegative except for two indeterminate IgM bands and a weakly positive IgG band showing reactivity to proteins",
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-antibiotics",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "70618",
+              "display": "Antibiotics"
+            }
+          ],
+          "text": "Antibiotics"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "authoredOn": "2023-10-02"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-naturopathic-remedies",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Naturopathic remedies"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "authoredOn": "2023-10-02"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-hospitalization",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "period": {
+          "start": "2023-09-28",
+          "end": "2023-10-02"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-example"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-discharge",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Care Plan",
+        "description": "Follow-up care with primary physician for further management",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "period": {
+          "start": "2023-10-02"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "scheduled",
+              "code": {
+                "text": "Follow-up with primary physician"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

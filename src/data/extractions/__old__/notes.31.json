@@ -1,0 +1,299 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1988-01-01"  // Assuming 35 years old in 2023
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "period": {
+          "start": "2023-10-01", // Assuming the current year
+          "end": "2023-10-01"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "262350002",
+                "display": "Foreign body in ear"
+              }
+            ],
+            "text": "Foreign body in left ear following trauma"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "262350002",
+              "display": "Foreign body in ear"
+            }
+          ],
+          "text": "Foreign body in left ear following trauma"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter-1"
+        },
+        "onsetDateTime": "2023-10-01",
+        "abatementDateTime": "2023-10-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "172960003",
+              "display": "Removal of foreign body from ear"
+            }
+          ],
+          "text": "Removal of fishhook from left ear"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter-1"
+        },
+        "performedDateTime": "2023-10-01",
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:condition-1"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationadministration-1",
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-1",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3492",
+              "display": "Tetanus Toxoid Vaccine"
+            }
+          ],
+          "text": "Tetanus toxoid adsorbed vaccine"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "context": {
+          "reference": "urn:uuid:encounter-1"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "dosage": {
+          "route": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration",
+                "code": "IM",
+                "display": "Intramuscular"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73595000",
+              "display": "Swelling"
+            }
+          ],
+          "text": "Small, non-tender swelling under the ear lobule"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter-1"
+        },
+        "onsetDateTime": "2023-10-01",
+        "abatementDateTime": "2023-10-07" // Assuming one week duration
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationadministration-2",
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-2",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "11124",
+              "display": "Antibiotic"
+            }
+          ],
+          "text": "Antibiotic therapy"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "context": {
+          "reference": "urn:uuid:encounter-1"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "dosage": {
+          "text": "Course of antibiotics"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-3",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128462008",
+              "display": "Scar tissue"
+            }
+          ],
+          "text": "Post-traumatic scar and granulation tissue involving the left parotid gland"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "onsetDateTime": "2023-12-01" // Assuming two months after initial injury
+      }
+    }
+  ]
+}

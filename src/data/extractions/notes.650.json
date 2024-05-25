@@ -1,0 +1,193 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.1",
+            "value": "[Number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.2",
+            "value": "[Number]"
+          }
+        ],
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "699346009",
+              "display": "Desmoplastic/Nodular Medulloblastoma"
+            }
+          ],
+          "text": "Desmoplastic/Nodular Medulloblastoma with SHH Activation and IDH1 R132C Mutation"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical resection"
+            }
+          ],
+          "text": "Complete surgical resection"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "45033-8",
+              "display": "Histopathology report"
+            }
+          ],
+          "text": "Histopathological analysis, next generation sequencing, and methylation array"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "conclusion": "Desmoplastic/Nodular Medulloblastoma with SHH Activation and IDH1 R132C Mutation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "309362",
+              "display": "HIT-SIOP PNET 4 protocol"
+            }
+          ],
+          "text": "HIT-SIOP PNET 4 protocol"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Cranio-spinal radiation therapy and adjuvant chemotherapy"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11289-6",
+              "display": "Cerebrospinal fluid (CSF) examination"
+            }
+          ],
+          "text": "Cerebrospinal fluid (CSF) examination showed no evidence of dissemination"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "valueString": "No evidence of dissemination"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1975-2",
+              "display": "MRI of brain and spinal cord"
+            }
+          ],
+          "text": "MRI of brain and spinal cord revealed no metastasis"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "valueString": "No metastasis"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "162763002",
+              "display": "Clinical status"
+            }
+          ],
+          "text": "Current status"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "valueString": "Complete remission"
+      }
+    }
+  ]
+}

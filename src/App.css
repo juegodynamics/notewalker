@@ -1,0 +1,42 @@
+.highlight-selected {
+    background-color: lightblue;
+    position: relative;
+}
+
+.highlight-selected::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: lightblue;
+    z-index: -1;
+}
+
+.slick-slide {
+    transition: transform 0.3s ease;
+}
+
+.slick-center {
+    transform: scale(1.05);
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}
+
+.slick-slide {
+    padding: 10px;
+}
+
+.slick-center .note-card {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}

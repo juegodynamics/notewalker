@@ -1,0 +1,255 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example",
+        "name": [
+          {
+            "use": "official",
+            "family": "[redacted]",
+            "given": [
+              "[redacted]"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "reasonCode": [
+          {
+            "text": "right upper abdominal tenderness, nausea, vomiting, and mild to moderate pain radiating to the back"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "64678006",
+              "display": "Xanthogranulomatous cholecystitis"
+            }
+          ],
+          "text": "Xanthogranulomatous cholecystitis (XG)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Excision of lesion of liver"
+            }
+          ],
+          "text": "Extensive surgical resection including adjacent liver segments and loco-regional lymph nodes for proper staging and prognosis"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "performedPeriod": {
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1975-2",
+              "display": "Bilirubin.total [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "elevated bilirubin"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "effectiveDateTime": "[redacted]",
+        "valueQuantity": {
+          "value": "elevated",
+          "unit": "mg/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-wbc",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6690-2",
+              "display": "Leukocytes [#/volume] in Blood"
+            }
+          ],
+          "text": "elevated white blood cell count"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "effectiveDateTime": "[redacted]",
+        "valueQuantity": {
+          "value": "elevated",
+          "unit": "10*3/uL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-ca199",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24110-9",
+              "display": "Cancer antigen 19-9 [Units/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Cancer marker CA 19-9 within normal range"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "effectiveDateTime": "[redacted]",
+        "valueQuantity": {
+          "value": "normal",
+          "unit": "U/mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "example-imaging",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "started": "[redacted]",
+        "numberOfSeries": 1,
+        "numberOfInstances": 1,
+        "description": "CT scan showing large mass replacing gallbladder body and fundus with extensive involvement of adjacent liver segments, duodenum, head of the pancreas, and hepatic flexure of the colon"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "example-pathology",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "22637-3",
+              "display": "Pathology report"
+            }
+          ],
+          "text": "Surgical pathology report"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "effectiveDateTime": "[redacted]",
+        "result": [
+          {
+            "reference": "Observation/example-observation"
+          },
+          {
+            "reference": "Observation/example-wbc"
+          },
+          {
+            "reference": "Observation/example-ca199"
+          }
+        ],
+        "conclusion": "XG tumor with multiple areas of crowding of foamy macrophages and xanthoma cells, foreign body granulomas consisting of cholesterol and tiny bile lakes, mild to moderate reactive inflammatory changes of adjacent hepatic tissue, lymphocytic infiltration of portal tracts, fatty degeneration, and nonspecific inflammatory reaction in periportal lymph nodes"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-discharge",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "84903008",
+              "display": "Discharge condition"
+            }
+          ],
+          "text": "Discharged in good condition"
+        },
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "onsetDateTime": "[redacted]"
+      }
+    }
+  ]
+}

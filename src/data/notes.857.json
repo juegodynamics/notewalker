@@ -1,0 +1,277 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Case-2",
+        "name": [
+          {
+            "text": "Case 2"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1957-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date+2 months]"
+        },
+        "reasonCode": [
+          {
+            "text": "Fever (40°C), Hypotension, General illness"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "code": {
+          "text": "Tachyarrhythmia"
+        },
+        "note": [
+          {
+            "text": "Treated with beta-blockers"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "code": {
+          "text": "Appendectomy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "code": {
+          "text": "Colon cancer"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-4",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "code": {
+          "text": "Splenectomy for colonic metastases"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-5",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "code": {
+          "text": "Sepsis from Streptococcus pneumoniae"
+        },
+        "note": [
+          {
+            "text": "Severe purpura fulminans"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "medicationCodeableConcept": {
+          "text": "Ceftriaxone"
+        },
+        "dosageInstruction": [
+          {
+            "text": "2 g every 12h for 11 days"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "medicationCodeableConcept": {
+          "text": "Levofloxacin"
+        },
+        "dosageInstruction": [
+          {
+            "text": "500 mg every 12h for 7 days"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "code": {
+          "text": "CVVHDF treatment combined with Cytosorb hemoadsorption"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date+24 hours]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "code": {
+          "text": "CRP"
+        },
+        "valueQuantity": {
+          "value": 17.5,
+          "unit": "mg/dl"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "code": {
+          "text": "CRP"
+        },
+        "valueQuantity": {
+          "value": 13,
+          "unit": "mg/dl"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "code": {
+          "text": "Lactacidemia"
+        },
+        "valueQuantity": {
+          "value": 15,
+          "unit": "mmol/l"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "code": {
+          "text": "Lactacidemia"
+        },
+        "valueQuantity": {
+          "value": 4,
+          "unit": "mmol/l"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "code": {
+          "text": "PCT"
+        },
+        "valueQuantity": {
+          "value": 18.35,
+          "unit": "ng/ml"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-6",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "code": {
+          "text": "PCT"
+        },
+        "valueQuantity": {
+          "value": 2,
+          "unit": "ng/ml"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-6",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "code": {
+          "text": "Recurrent septicemia from Enterobacter aerogenes"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-7",
+        "subject": {
+          "reference": "Patient/Case-2"
+        },
+        "code": {
+          "text": "Deceased"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "reasonCode": [
+          {
+            "text": "Referred by orthodontist for full mouth rehabilitation due to anterior open bite, difficulty, and pain when chewing. Intraoral examination revealed hypomineralized AI and some hypoplasia."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Full mouth rehabilitation including composite veneer on incisors, composite full crowns on all other teeth, bonded using dual-cured composite resin."
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "note": [
+          {
+            "text": "Master impressions of the two arches were recorded. Patient monitored every 6 months. Direct composite applied 3 years later on the cervical part of the crown due to gingival maturation. Restorations remained satisfactory after five years."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "Anterior open bite, difficulty and pain when chewing, hypomineralized AI, hypoplasia"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "Patient discharged with successful full mouth rehabilitation, no complaints of mastication issues. Educated on oral hygiene and instructed to follow up with regular dental check-ups and cleanings."
+      }
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "gender": "[Gender]",
+        "birthDate": "1968-01-01"  // Assuming the patient is 55 years old in 2023
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "period": {
+          "start": "[Start date]",
+          "end": "[End date]"
+        },
+        "reasonCode": [
+          {
+            "text": "Nuchal pain at C3-C4 level radiating to the left arm"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Nuchal pain at C3-C4 level radiating to the left arm"
+        },
+        "subject": {
+          "reference": "Patient/[Patient_ID]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "CT scan of the cervical spine"
+        },
+        "subject": {
+          "reference": "Patient/[Patient_ID]"
+        },
+        "valueString": "CT scan revealed a right-sided accessory articulation between the anterior transverse processes of C6 and C7. The transverse foramina of C6 and C7 showed a partial defect, respectively posterior and anterior. No disc herniation was found on the CT scan, both the upper and lower cervical spine was free of any pathological changes."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "type": {
+          "text": "Discharge summary"
+        },
+        "subject": {
+          "reference": "Patient/[Patient_ID]"
+        },
+        "author": [
+          {
+            "reference": "Practitioner/[Practitioner_ID]",
+            "display": "[Physician's name]"
+          }
+        ],
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient was referred to the hospital for exclusion of disc herniation. A CT scan revealed an incidental finding, a right-sided accessory articulation. The patient did not receive any medical intervention, and treatment was limited to pain management and observation. The patient reported a reduction in nuchal pain, and the left arm's radicular symptoms disappeared."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Incidental finding of right-sided accessory articulation between the anterior transverse processes of C6 and C7"
+        },
+        "subject": {
+          "reference": "Patient/[Patient_ID]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/[Patient_ID]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "completed",
+              "description": "The patient should book a follow-up visit after two weeks post-discharge."
+            }
+          },
+          {
+            "detail": {
+              "status": "completed",
+              "description": "The patient should follow up with their primary care physician in 2 weeks post-discharge, or earlier, if new symptoms arise."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

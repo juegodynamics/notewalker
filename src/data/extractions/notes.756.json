@@ -1,0 +1,252 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "family": "[Redacted]",
+            "given": [
+              "[Redacted]"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "[Redacted]",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[Redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "22298006",
+                "display": "Musculoskeletal pain"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "25064002",
+                "display": "Severe headache"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "386807006",
+                "display": "Memory loss"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "422400008",
+                "display": "Vision problem"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "84229001",
+                "display": "Fatigue"
+              }
+            ]
+          }
+        ],
+        "participant": [
+          {
+            "individual": {
+              "reference": "Practitioner/[Redacted]",
+              "display": "[Redacted]"
+            }
+          },
+          {
+            "individual": {
+              "reference": "Practitioner/[Redacted]",
+              "display": "[Redacted]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "provisional"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "235871008",
+              "display": "Possible Lyme disease"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "display": "Seropositive testing for Bb and Babesia"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "The patient was diagnosed based on his history of tick exposure and travel to LD endemic areas."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8657",
+              "display": "Doxycycline"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "authoredOn": "[Redacted]",
+        "requester": {
+          "reference": "Practitioner/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "The patient was discharged home with instructions to continue his medications and follow up with his primary care physician. He was advised to avoid tick bites by performing tick checks, using insect repellent and wearing protective clothing. The patient should also monitor for any new symptoms such as fever, chills, or rash.",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "author": {
+          "reference": "Practitioner/[Redacted]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Continue medications",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "73639000",
+                    "display": "Medication"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "detail": {
+              "description": "Follow up with primary care physician",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "73639000",
+                    "display": "Follow-up"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "detail": {
+              "description": "Avoid tick bites",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "226000000",
+                    "display": "Tick bite prevention"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "detail": {
+              "description": "Monitor for new symptoms such as fever, chills, or rash",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "162864005",
+                    "display": "Monitoring"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Communication",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "recipient": [
+          {
+            "reference": "Practitioner/[Redacted]",
+            "display": "Primary Care Physician"
+          }
+        ],
+        "sent": "[Redacted]",
+        "payload": [
+          {
+            "contentString": "The patient's primary care physician was advised to follow up and arrange repeat serology testing to monitor the patient's Lyme disease status."
+          }
+        ]
+      }
+    }
+  ]
+}

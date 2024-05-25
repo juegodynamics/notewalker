@@ -1,0 +1,230 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealth.org",
+            "value": "12345"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1991-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "44339004",
+                "display": "Increased risk of chromosomal anomaly"
+              }
+            ],
+            "text": "Increased risk of developing T18 syndrome in the foetus during the second trimester maternal serum screening"
+          }
+        ],
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "physician referral"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11881-0",
+              "display": "Ultrasound study"
+            }
+          ],
+          "text": "Ultrasound examination at a gestational age of 16 weeks"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Foetus was normal"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "169074000",
+              "display": "Non-invasive prenatal testing (NIPT)"
+            }
+          ],
+          "text": "NIPT was offered to further screen for common foetal chromosomal abnormalities"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Consent",
+        "id": "consent-1",
+        "status": "active",
+        "scope": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/consentscope",
+              "code": "research"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/consentcategory",
+                "code": "research"
+              }
+            ]
+          }
+        ],
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "dateTime": "2023-10-15T00:00:00Z",
+        "organization": [
+          {
+            "reference": "Organization/1",
+            "display": "Ganzhou Maternal and Child Health Care Hospital"
+          }
+        ],
+        "policy": [
+          {
+            "authority": "http://hospital.smarthealth.org",
+            "uri": "Research Ethics Committee of Ganzhou Maternal and Child Health Care Hospital"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44339004",
+              "display": "Increased risk of chromosomal anomaly"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Observation/observation-1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "discharge-summary-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "2023-10-15T00:00:00Z",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary:\n\nPatient Identification:\n- The patient is a 32-year-old healthy pregnant woman referred to the Medical Genetic Centre of Ganzhou Maternal and Child Health Care Hospital.\n\nReason for admission:\n- The patient was referred due to an increased risk of developing T18 syndrome in the foetus during the second trimester maternal serum screening conducted in another hospital.\n\nHospital Course:\n- An ultrasound examination at a gestational age of 16 weeks was conducted which showed that the foetus was normal.\n- An NIPT was offered to further screen for common foetal chromosomal abnormalities.\n- The patient's written informed consent was obtained to participate in this research project approved by the Research Ethics Committee of Ganzhou Maternal and Child Health Care Hospital.\n\nOutcome:\n- The patient received a comprehensive assessment and evaluation of her condition and was provided with necessary information about her pregnancy.\n- It was determined that the foetus was developing normally and the risk of T18 syndrome was reduced following the ultrasound examination and NIPT.\n- The patient was discharged from the hospital and advised to continue regular prenatal care with her obstetrician."
+            }
+          }
+        ],
+        "context": {
+          "encounter": [
+            {
+              "reference": "Encounter/encounter-1"
+            }
+          ],
+          "period": {
+            "start": "2023-10-10T00:00:00Z",
+            "end": "2023-10-15T00:00:00Z"
+          }
+        }
+      }
+    }
+  ]
+}

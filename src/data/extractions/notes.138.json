@@ -1,0 +1,160 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "Developmental delay, macrocephaly, tremors of the upper limbs, axial hypotonia, and apnea episodes"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": "active",
+        "verificationStatus": "confirmed",
+        "code": {
+          "text": "Developmental delay, macrocephaly, tremors of the upper limbs, axial hypotonia, and apnea episodes, likely caused by the de novo heterozygous variant c.592G>A p.(Glu198Lys) in the PPP2R5D gene reported in HGMD (Human Gene Mutation Database)"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "text": "Battery of diagnostic tools including brain ultrasound and MRI, EEG, audiometric and fundus oculi examinations, molecular analysis for FXS"
+        },
+        "conclusion": "Diagnosis of FXS with de novo heterozygous variant c.592G>A p.(Glu198Lys) in the PPP2R5D gene. Array-CGH revealed a 'likely benign' 9q21.31 duplication of approximately 200 kb."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Clinical Findings"
+        },
+        "valueString": "Broad and rounded forehead, a small nose with a saddle root and anteverted nostrils, a reverse epicanthus, sparse eyebrows in the medial portion, fetal finger pads, ligamentous hyperlaxity, and a sandal gap with prominent heel. Head control at 3.5 months, sitting position at 10 months, non-autonomous standing at 15 months, difficulties in handling objects with coarse grip up to 15 months, poor language development with very few words at 13 months."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Phenobarbital"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Oxygen"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care",
+        "description": "The patient will require long-term follow-up and care from a multidisciplinary team to address her developmental delays."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": "resolved",
+        "verificationStatus": "confirmed",
+        "code": {
+          "text": "Apnea episodes"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": "resolved",
+        "verificationStatus": "confirmed",
+        "code": {
+          "text": "Improved condition"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Discharge"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Communication",
+        "status": "completed",
+        "category": [
+          {
+            "text": "Instructions"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "payload": [
+          {
+            "contentString": "The patient's parents have been advised to continue evaluating her developmental progress and provide additional support as needed. They have also been advised to seek further genetic counseling if they decide to have additional children."
+          }
+        ]
+      }
+    }
+  ]
+}

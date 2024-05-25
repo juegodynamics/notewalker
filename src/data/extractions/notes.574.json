@@ -1,0 +1,292 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "age": 43
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "non-painful, mobile mass of the right inguinal fold"
+          }
+        ],
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "424132000",
+              "display": "Granular cell tumor (Abrikossoff's tumor)"
+            }
+          ],
+          "text": "Granular cell tumor (Abrikossoff's tumor)"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Excision of tumor"
+            }
+          ],
+          "text": "Tumorectomy of inguinal mass"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "22633-8",
+              "display": "Ultrasound Pelvis"
+            }
+          ],
+          "text": "Pelvic ultrasound"
+        },
+        "valueString": "Suspicious non-circumscribed mass measuring 5 cm in its longer axis",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-7",
+              "display": "CT Scan"
+            }
+          ],
+          "text": "CT scan"
+        },
+        "valueString": "Inguinal mass, measuring 5.8 x 4.9 x 3.2 cm, extending within the right femoral triangle, in contact with the long adductor muscle, without enhanced contrast, and without locoregional lymph node",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33716-3",
+              "display": "Pathology study"
+            }
+          ],
+          "text": "Gross pathology examination"
+        },
+        "valueString": "Tumoral tissue homogeneous with greyish stain, margin not well defined, hypodermic and dermic involvement, one lymph node discovered and invaded",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33716-3",
+              "display": "Pathology study"
+            }
+          ],
+          "text": "Pathological evaluation"
+        },
+        "valueString": "No tumor tissue in tumorectomy region, metastatic invasion by granular cells in four of twelve lymph nodes, without capsular rupture",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical revision with inguinal curage"
+            }
+          ],
+          "text": "Surgical revision with inguinal curage"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108290001",
+              "display": "Radiation therapy"
+            }
+          ],
+          "text": "Adjuvant radiotherapy on the tumor bed and right inguinal area of 50 Gy in conventional fractionation"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-Up Plan",
+        "description": "Physical examination with a CT scan every 4 months for the first 2 post-operative years, then every 6 months for up to 5 years, and yearly thereafter.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81378-8",
+              "display": "Discharge condition"
+            }
+          ],
+          "text": "Discharge condition"
+        },
+        "valueString": "Stable, with no acute concerns",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner-1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ]
+      }
+    }
+  ]
+}

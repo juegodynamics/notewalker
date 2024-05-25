@@ -1,0 +1,215 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example",
+        "animal": {
+          "species": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/animal-species",
+                "code": "felis",
+                "display": "Cat"
+              }
+            ]
+          },
+          "breed": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/animal-breed",
+                "code": "MaineCoon",
+                "display": "Maine Coon"
+              }
+            ]
+          },
+          "genderStatus": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender",
+                "code": "neutered",
+                "display": "Neutered"
+              }
+            ]
+          }
+        },
+        "gender": "male",
+        "birthDate": "2023-03-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444814009",
+              "display": "Unilateral otitis media/interna"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Due to Corynebacterium provencense SN15."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "42931-6",
+              "display": "Otoscopic and cytologic examinations"
+            }
+          ]
+        },
+        "valueString": "Revealed brown-colored fluid in the external canal with numerous extra- and intracellular rod-shaped bacteria and neutrophils."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "report1",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18725-2",
+              "display": "Bacterial culture"
+            }
+          ]
+        },
+        "conclusion": "Pure culture of small white colonies (strain number 17KM38) Gram-positive in nature."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication1",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049628",
+              "display": "glucocorticoids"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "Oral and topical glucocorticoids."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication2",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197361",
+              "display": "Ofloxacin (Floxal, Bausch & Lomb Swiss AG)"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "Topical ofloxacin for three weeks."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication3",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049630",
+              "display": "Chloramphenicol palmitate solution (Cloropal, Dr. E. Gräub AG)"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "Oral chloramphenicol palmitate solution twice daily for three weeks."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication4",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049631",
+              "display": "Ear cleaner containing chlorhexidine digluconate (Otodine®, Ufamed AG)"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "Twice daily for two weeks."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "followup1",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "171207006",
+              "display": "Follow-up by local veterinarian"
+            }
+          ]
+        },
+        "occurrenceDateTime": "2023-11-01"
+      }
+    }
+  ]
+}

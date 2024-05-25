@@ -1,0 +1,228 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "gender": "male",
+        "age": 57,
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[Redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Redacted]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "Possible tuberculous meningitis"
+            },
+            "rank": 1
+          }
+        ],
+        "reasonCode": [
+          {
+            "text": "Empirical anti-tuberculous treatment"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "Possible tuberculous meningitis"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "onsetDateTime": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Empirical anti-tuberculous treatment"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "authoredOn": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Lumbar puncture"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]"
+        },
+        "note": [
+          {
+            "text": "Increased opening pressure, pleocytosis, elevated protein level, and reduced glucose level. CSF cytology showed lymphocytic inflammation. Cryptococcus antigen test and Mycobacterium PCR of the CSF were negative."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "Parenchymal NCC (calcified cyst) and possibly extraparenchymal NCC or spinal NCC without radiological evidence"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "onsetDateTime": "[Redacted]",
+        "evidence": [
+          {
+            "code": {
+              "text": "C. cellulosae IgG positive in serum and CSF, Head CT revealed a single calcified lesion in the left frontal lobe, Brain MRI showed no obvious abnormalities, including hydrocephalus"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Albendazole and dexamethasone"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "authoredOn": "[Redacted]",
+        "note": [
+          {
+            "text": "Repeat NGS of CSF identified T. solium DNA sequences, validating the diagnosis of NCC. The albendazole and dexamethasone were continued, and the patient's symptoms and CSF findings improved."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "text": "CSF and Serum Test"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "effectiveDateTime": "[Redacted]",
+        "result": [
+          {
+            "reference": "Observation/CSF-Cytology"
+          },
+          {
+            "reference": "Observation/CSF-NGS-1"
+          },
+          {
+            "reference": "Observation/CSF-NGS-2"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "CSF-Cytology",
+        "status": "final",
+        "code": {
+          "text": "CSF Cytology"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "effectiveDateTime": "[Redacted]",
+        "valueString": "Lymphocytic inflammation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "CSF-NGS-1",
+        "status": "final",
+        "code": {
+          "text": "Next Generation Sequencing of CSF"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "effectiveDateTime": "[Redacted]",
+        "valueString": "Negative"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "CSF-NGS-2",
+        "status": "final",
+        "code": {
+          "text": "Next Generation Sequencing of CSF"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "effectiveDateTime": "[Redacted]",
+        "valueString": "T. solium DNA sequences identified"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "CT",
+            "display": "CT Head"
+          },
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "MR",
+            "display": "MRI Brain"
+          }
+        ],
+        "note": [
+          {
+            "text": "CT revealed a single calcified lesion in the left frontal lobe. MRI showed no obvious abnormalities, including hydrocephalus."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1963-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "193570009",
+              "display": "Nuclear cataract"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "314207002",
+                "display": "Right eye"
+              }
+            ]
+          }
+        ],
+        "onsetDateTime": "2008"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387609000",
+              "display": "Femtosecond laser-assisted cataract surgery"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "314207002",
+                "display": "Right eye"
+              }
+            ]
+          }
+        ],
+        "performedDateTime": "2023-01-01",
+        "outcome": {
+          "text": "Successful and uneventful"
+        },
+        "followUp": [
+          {
+            "text": "Patient to use prescribed topical dexamethasone tobramycin for 2 weeks and pranoprofen for 1 month postoperatively."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "105070",
+              "display": "Dexamethasone Tobramycin"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "Apply topically as directed for 2 weeks"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "313002",
+              "display": "Pranoprofen"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "Apply topically as directed for 1 month"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "32430-6",
+              "display": "Visual Acuity"
+            }
+          ]
+        },
+        "valueString": "Uncorrected visual acuity was 0.00 LogMAR for distance, 0.10 LogMAR for intermediate at 80 cm, and 0.10 LogMAR for near at 40 cm. Despite a mild halo, the patient reported being very satisfied with his vision."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "57832-0",
+              "display": "Ophthalmology Diagnostic Report"
+            }
+          ]
+        },
+        "conclusion": "The patient's IOL was well-centered in the capsule and his corneal astigmatism and SA slightly decreased."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "appointment-1",
+        "status": "booked",
+        "description": "Follow-up appointment with ophthalmologist",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/patient-1"
+            },
+            "required": "required",
+            "status": "accepted"
+          }
+        ]
+      }
+    }
+  ]
+}

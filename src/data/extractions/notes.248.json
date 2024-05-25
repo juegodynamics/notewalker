@@ -1,0 +1,170 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "unknown",
+        "address": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator",
+                "valueString": "right medial thigh"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Gradually enlarging, painless, tender lump"
+        },
+        "bodySite": [
+          {
+            "text": "right medial thigh"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "text": "Laboratory blood test"
+        },
+        "valueString": "unremarkable",
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "text": "MRI Scan"
+        },
+        "valueString": "soft tissue neoplasm with a possibility of neurogenic tumor",
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "text": "Excisional biopsy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "report-1",
+        "status": "final",
+        "code": {
+          "text": "Pathology report"
+        },
+        "result": [
+          {
+            "reference": "Observation/observation-3"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "text": "High-grade sarcoma, epithelioid variant of PLS"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ReferralRequest",
+        "id": "referral-1",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "recipient": [
+          {
+            "display": "Department of Nuclear Medicine & Molecular Imaging"
+          }
+        ],
+        "description": "Post-surgical restaging and assessment of possible metastases"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-1",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "description": "18F-fluorodeoxyglucose positron emission tomography-computed tomography (18F-FDG PET-CT)",
+        "series": [
+          {
+            "description": "Ill-defined hypermetabolic hypodense lesion involving segment VI of the liver"
+          },
+          {
+            "description": "Multiple hypermetabolic osseous lesions involving the skull base, right iliac bone, and few vertebrae suggestive of skeletal metastases"
+          },
+          {
+            "description": "Non-hypermetabolic pulmonary nodule in the right lung field"
+          }
+        ],
+        "conclusion": "Microscopic residual disease cannot be completely ruled out"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ProcedureRequest",
+        "id": "procedure-request-1",
+        "status": "active",
+        "intent": "order",
+        "code": {
+          "text": "Further biopsy of the suspected metastases lesions"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "note": [
+          {
+            "text": "The patient did not attend the follow-up appointments."
+          }
+        ]
+      }
+    }
+  ]
+}

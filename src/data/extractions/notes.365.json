@@ -1,0 +1,193 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2001-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "2",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "EMER",
+          "display": "emergency"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "703199000",
+              "display": "Renal oncocytoma"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Renal oncocytoma with symptomatic hematuria leading to giant clot retention in the urinary bladder."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "43253007",
+              "display": "Laparoscopic partial nephrectomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "note": [
+          {
+            "text": "Laparoscopic partial nephrectomy of the right kidney and tumor resection. The resection margins were free of tumor, and there was no evidence of perinephric invasion or lymphadenopathy. Urinary bladder irrigation with clot retraction was performed."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "5",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "45033-8",
+              "display": "Radiology Report"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "conclusion": "Well-circumscribed, heteroechoic, cortical based lesion located in the upper pole of the right kidney. Well-defined heteroechoic mass at the dependent portion of the urinary bladder consistent with giant retained clot."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "6",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "13986-5",
+              "display": "Urinalysis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "valueString": "Urine microscopy demonstrated multiple red blood cells suggesting hematuria."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "7",
+        "status": "completed",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "encounter": {
+          "reference": "Encounter/2"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "225323000",
+                    "display": "Patient follow-up"
+                  }
+                ]
+              },
+              "description": "At 3-month follow-up, the patient was free of symptoms and had no signs of recurrence."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

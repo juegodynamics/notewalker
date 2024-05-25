@@ -1,0 +1,337 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "Confidential"
+          }
+        ],
+        "gender": "male",
+        "age": 32
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "82423001",
+              "display": "Elevated serum creatinine level"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "29738008",
+              "display": "Proteinuria"
+            }
+          ],
+          "text": "Elevated level of serum creatinine (Scr) (3.71 mg/dl) and proteinuria (3+)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "431855005",
+              "display": "End-stage renal disease"
+            }
+          ],
+          "text": "End-stage renal disease (ESRD)"
+        },
+        "note": [
+          {
+            "text": "Unidentified cause"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "705360001",
+              "display": "Kidney transplant"
+            }
+          ],
+          "text": "Successful kidney transplant 26 months ago"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-1",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049630",
+              "display": "Prednisone"
+            },
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049502",
+              "display": "Mycophenolate mofetil"
+            },
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049740",
+              "display": "Tacrolimus"
+            }
+          ],
+          "text": "Immunosuppressive protocol: prednisone, mycophenolate mofetil, and tacrolimus"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2160-0",
+              "display": "Serum creatinine"
+            }
+          ],
+          "text": "Serum creatinine"
+        },
+        "valueQuantity": {
+          "value": 3.71,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "50561-0",
+              "display": "Proteinuria"
+            }
+          ],
+          "text": "Proteinuria"
+        },
+        "valueString": "3+"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "777-3",
+              "display": "Platelet count"
+            }
+          ],
+          "text": "Blood platelet count"
+        },
+        "valueQuantity": {
+          "value": 34,
+          "unit": "x10^9/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "x10^9/L"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "50398-7",
+              "display": "Kidney biopsy"
+            }
+          ],
+          "text": "Renal allograft biopsy"
+        },
+        "conclusion": "Multiple periodic acid-Schiff stain (PAS) positive materials in the capillary lumens. Capillary wall duplication was obvious and diffuse. Masson trichrome stain revealed extensive fuchsinophilic deposits in the subepithelial, subendothelial, and mesangial spaces."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "23624001",
+              "display": "C3 glomerulonephritis"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "702422001",
+              "display": "Thrombotic microangiopathy"
+            }
+          ],
+          "text": "C3 glomerulonephritis (C3GN) combined with thrombotic microangiopathy (TMA)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18286008",
+              "display": "Plasma exchange"
+            }
+          ],
+          "text": "2 sessions of plasma exchange"
+        },
+        "outcome": {
+          "text": "No clinical improvement as indicated by persistent nephrotic-range proteinuria and progressive elevation of Scr. The patient was in dialysis after approximately one-year follow-up."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9315-3",
+              "display": "Genetic testing"
+            }
+          ],
+          "text": "Genetic testing for the major genes in complement pathway related with renal disease"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://www.ncbi.nlm.nih.gov/nuccore/NM_000204.3",
+                  "code": "c.848A>G",
+                  "display": "CFI gene variant"
+                }
+              ],
+              "text": "c.848A>G (p.Asp283Gly)"
+            },
+            "valueString": "Rare missense variant in compound heterozygous form"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://www.ncbi.nlm.nih.gov/nuccore/NM_000204.3",
+                  "code": "c.1339C>T",
+                  "display": "CFI gene variant"
+                }
+              ],
+              "text": "c.1339C>T (p.Pro447Ser)"
+            },
+            "valueString": "Rare missense variant in compound heterozygous form"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3022-7",
+              "display": "Complement factor I measurement"
+            }
+          ],
+          "text": "Quantitative measurement of plasma CFI"
+        },
+        "valueString": "Normal range"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "108241001",
+              "display": "Follow-up"
+            }
+          ],
+          "text": "Regular follow-up appointments"
+        }
+      }
+    }
+  ]
+}

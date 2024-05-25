@@ -1,0 +1,223 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "gender": "female",
+        "birthDate": "2023-09-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "2",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "20430005",
+              "display": "Congenital heart block"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "397659003",
+              "display": "Malrotation"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "4",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233678006",
+              "display": "Staphylococcus epidermidis infection"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "5",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "397240001",
+              "display": "Cardiac pacemaker insertion"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2023-09-15"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "6",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Exploratory laparotomy"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2023-09-20"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "7",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "43193004",
+              "display": "Division of Ladd's bands"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2023-09-20"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "8",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225358003",
+              "display": "Air injection via NG Tube"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2023-09-20"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "9",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372687004",
+              "display": "Intravenous antibiotics"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "duration": 10,
+                "durationUnit": "d"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:10",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "10",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "2023-09-01",
+          "end": "2023-09-22"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:11",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "11",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Follow-up"
+            }
+          ]
+        },
+        "valueString": "The patient had no clinical symptoms of intestinal obstruction at 17 months' follow-up. The patient is awaiting further cardiac surgery."
+      }
+    }
+  ]
+}

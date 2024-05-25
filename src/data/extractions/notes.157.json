@@ -1,0 +1,285 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "N/A"
+          }
+        ],
+        "identifier": [
+          {
+            "value": "N/A"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "period": {
+          "start": "N/A",
+          "end": "N/A"
+        },
+        "reasonCode": [
+          {
+            "text": "The patient was admitted with a 1-year history of recurrent diffuse, pruritic rash."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "text": "Generalized eruption of erythematous papules with minimal scale on the extremities and trunk particularly the flanks"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetString": "1-year history"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "status": "final",
+        "code": {
+          "text": "Biopsy"
+        },
+        "conclusion": "A biopsy was performed on the left part of the chest and revealed a predominantly perivascular inflammatory infiltrate with occasional eosinophils consistent with DHR.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "text": "Direct immunofluorescence test"
+        },
+        "valueString": "Negative",
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "stopped",
+        "medicationCodeableConcept": {
+          "text": "Triamcinolone"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "status": "stopped",
+        "medicationCodeableConcept": {
+          "text": "Clobetasol"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-3",
+        "status": "stopped",
+        "medicationCodeableConcept": {
+          "text": "Hydroxyzine"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-4",
+        "status": "stopped",
+        "medicationCodeableConcept": {
+          "text": "Prednisone"
+        },
+        "reasonCode": [
+          {
+            "text": "Discontinued due to steroid-induced diabetes"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-5",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Dupilumab 300 mg injections"
+        },
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 14,
+                "periodUnit": "d"
+              }
+            }
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-6",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Dupilumab 300 mg injections"
+        },
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 30,
+                "periodUnit": "d"
+              }
+            }
+          }
+        ],
+        "reasonCode": [
+          {
+            "text": "Due to cost"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "code": {
+          "text": "Dermatitis and pruritus"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "abatementString": "Resolved with the treatment of dupilumab 300 mg injections every 14 days"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner-1",
+        "name": [
+          {
+            "text": "Dr. [Doctor's name]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Composition",
+        "id": "composition-1",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "author": [
+          {
+            "reference": "Practitioner/practitioner-1"
+          }
+        ],
+        "date": "N/A",
+        "title": "Hospital Course Summary",
+        "section": [
+          {
+            "title": "Reason for Admission",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient was admitted with a 1-year history of recurrent diffuse, pruritic rash.</div>"
+            }
+          },
+          {
+            "title": "History of Present Illness",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient presented with a generalized eruption of erythematous papules with minimal scale on the extremities and trunk particularly the flanks. Initial differential diagnosis included hypersensitivity dermatitis, contact dermatitis, non-bullous pemphigoid, atopic dermatitis, and Grover disease. A biopsy was performed on the left part of the chest and revealed a predominantly perivascular inflammatory infiltrate with occasional eosinophils consistent with DHR. A direct immunofluorescence test was negative.</div>"
+            }
+          },
+          {
+            "title": "Hospital Course",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient failed multiple therapies, including topical triamcinolone, clobetasol, and hydroxyzine. Oral prednisone helped but was discontinued due to steroid-induced diabetes. The patient was started on dupilumab 300 mg injections every 14 days and within 4 months, his dermatitis and pruritus resolved. Due to cost, the injections were spaced to every 30 days, and he continued to experience resolution of his symptoms without any side effect from the medication.</div>"
+            }
+          },
+          {
+            "title": "Discharge Condition",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient's dermatitis and pruritus resolved with the treatment of dupilumab 300 mg injections every 14 days.</div>"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

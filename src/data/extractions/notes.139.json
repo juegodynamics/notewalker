@@ -1,0 +1,237 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-3",
+        "name": [
+          {
+            "text": "Patient 3"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1990-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "code": {
+          "text": "Seizure episodes"
+        },
+        "onsetAge": {
+          "value": 10,
+          "unit": "years"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "code": {
+          "text": "Left A1 segment agenesis, temporo-mesial sclerosis, asymmetry of the supratentorial ventricular system, occipital horn"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "code": {
+          "text": "History of comatose episode following severe seizure crisis"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "FamilyMemberHistory",
+        "id": "family-history-1",
+        "patient": {
+          "reference": "Patient/patient-3"
+        },
+        "relationship": {
+          "text": "cousin's sons"
+        },
+        "condition": [
+          {
+            "code": {
+              "text": "ID of undetermined cause"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "FamilyMemberHistory",
+        "id": "family-history-2",
+        "patient": {
+          "reference": "Patient/patient-3"
+        },
+        "relationship": {
+          "text": "sister"
+        },
+        "condition": [
+          {
+            "code": {
+              "text": "PM of the FMR1 gene"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "One unaffected daughter and one son affected by FXS"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "code": {
+          "text": "Physical examination"
+        },
+        "component": [
+          {
+            "code": {
+              "text": "Elongated face"
+            }
+          },
+          {
+            "code": {
+              "text": "High forehead"
+            }
+          },
+          {
+            "code": {
+              "text": "Wide and anteverted ears"
+            }
+          },
+          {
+            "code": {
+              "text": "Long and flat philtrum"
+            }
+          },
+          {
+            "code": {
+              "text": "Joint hyperlaxity"
+            }
+          },
+          {
+            "code": {
+              "text": "Hypotonia"
+            }
+          },
+          {
+            "code": {
+              "text": "Midface hypoplasia"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnostic-report-1",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "code": {
+          "text": "Molecular analysis"
+        },
+        "conclusion": "FMR1 MFM allele (>200 CGGs). Patient's mother: normal allele of 30 CGG triplets, PM allele with 79 CGGs. Deletions in chromosome 2p25.3 span: SNTG2, TPO, PXDN, possibly MYT1L. Decreased levels of MYT1L transcript."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-statement-1",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "medicationCodeableConcept": {
+          "text": "Valproic acid"
+        },
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-statement-2",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "medicationCodeableConcept": {
+          "text": "Oxcarbazepine"
+        },
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-statement-3",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "medicationCodeableConcept": {
+          "text": "Topiramate"
+        },
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "care-plan-1",
+        "subject": {
+          "reference": "Patient/patient-3"
+        },
+        "status": "active",
+        "intent": "plan",
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "text": "Continue anticonvulsive treatment with valproic acid, oxcarbazepine, and topiramate"
+              }
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "text": "Regular follow-up appointments with a neurologist"
+              }
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "text": "Genetic counseling for the patient and family"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

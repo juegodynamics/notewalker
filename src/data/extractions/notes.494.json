@@ -1,0 +1,179 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ],
+        "reasonCode": [
+          {
+            "text": "Cervical canal stenosis due to ossification of the cervical posterior longitudinal ligament resulting in cervical cord compression and complete tetraplegia, progressive restrictive respiratory failure requiring assisted ventilation, and tracheostomy."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Cervical canal stenosis due to ossification of the cervical posterior longitudinal ligament resulting in cervical cord compression and complete tetraplegia, progressive restrictive respiratory failure requiring assisted ventilation, and tracheostomy."
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Conservative management for cervical cord compression at C3 and C4 vertebral levels due to cervical canal stenosis caused by ossification of the cervical posterior longitudinal ligament."
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "intent": "plan",
+        "description": "Intensive care with physical support for expectoration, mechanically assisted removal of tracheal secretions, ventilator muscle training, and management of the spasticity of the abdominal wall. Automated weaning protocol using IntelliVent®-ASV mode to adjust pressure support based on the ideal minute volume."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "final",
+        "code": {
+          "text": "Expiratory tidal volume"
+        },
+        "valueQuantity": {
+          "value": 350,
+          "unit": "mL"
+        },
+        "effectiveDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Cervical cord compression due to cervical canal stenosis secondary to ossification of the cervical posterior longitudinal ligament, resulting in complete tetraplegia, and restrictive respiratory failure."
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "description": "The patient should follow up with the rehabilitation team for further management of tetraplegia. The patient is advised to continue their respiratory rehabilitation and to seek medical attention immediately if there are any marked changes in their breathing or respiratory function. Regular follow-up appointments with the rehabilitation team and monitoring of their respiratory and neurologic functions are recommended."
+      }
+    }
+  ]
+}

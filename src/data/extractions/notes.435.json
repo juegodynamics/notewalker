@@ -1,0 +1,291 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient8",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "8"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Patient",
+            "given": [
+              "8"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2007-04-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "subject": {
+          "reference": "Patient/patient8"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "125605004",
+              "display": "Burn of third degree"
+            }
+          ],
+          "text": "48% TBSA third-degree electrical burn injury"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "subject": {
+          "reference": "Patient/patient8"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "304120007",
+              "display": "Skin grafting"
+            }
+          ],
+          "text": "Skin grafting procedures"
+        },
+        "performedPeriod": {
+          "start": "2023-06-01",
+          "end": "2023-07-24"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "subject": {
+          "reference": "Patient/patient8"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "430193006",
+              "display": "Skeletal external fixation device"
+            }
+          ],
+          "text": "SEF placement"
+        },
+        "performedDateTime": "2023-07-24"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "subject": {
+          "reference": "Patient/patient8"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "52734007",
+              "display": "Ulnar nerve transposition"
+            }
+          ],
+          "text": "Ulnar nerve transposition"
+        },
+        "performedDateTime": "2023-10-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure4",
+        "subject": {
+          "reference": "Patient/patient8"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386637003",
+              "display": "Excision of heterotopic ossification"
+            }
+          ],
+          "text": "Heterotopic ossification removal"
+        },
+        "performedDateTime": "2023-10-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure5",
+        "subject": {
+          "reference": "Patient/patient8"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "61715008",
+              "display": "Contracture release"
+            }
+          ],
+          "text": "Contracture release with arthrofibrosis excision"
+        },
+        "performedDateTime": "2023-10-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure6",
+        "subject": {
+          "reference": "Patient/patient8"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "302755006",
+              "display": "Flap procedure"
+            }
+          ],
+          "text": "Flap to cover soft tissue deficit"
+        },
+        "performedDateTime": "2023-10-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "subject": {
+          "reference": "Patient/patient8"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Range of motion"
+            }
+          ],
+          "text": "Range of motion"
+        },
+        "valueString": "Extension and flexion arc: 20°–90°, supination and pronation not tested",
+        "effectiveDateTime": "2024-07-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "subject": {
+          "reference": "Patient/patient8"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72516-8",
+              "display": "Muscle strength"
+            }
+          ],
+          "text": "Motor strength"
+        },
+        "valueString": "4-/5",
+        "effectiveDateTime": "2024-07-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "subject": {
+          "reference": "Patient/patient8"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Range of motion"
+            }
+          ],
+          "text": "Range of motion prior to elbow contracture release"
+        },
+        "valueString": "Extension and flexion arc: 0°–30°, supination: 25°, pronation: 85°",
+        "effectiveDateTime": "2023-10-14"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "subject": {
+          "reference": "Patient/patient8"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "20958001",
+              "display": "Heterotopic ossification"
+            }
+          ],
+          "text": "Heterotopic ossification"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition3",
+        "subject": {
+          "reference": "Patient/patient8"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "48270008",
+              "display": "Cubital tunnel syndrome"
+            }
+          ],
+          "text": "Cubital tunnel syndrome"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition4",
+        "subject": {
+          "reference": "Patient/patient8"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "409716001",
+              "display": "Elbow stiffness"
+            }
+          ],
+          "text": "Elbow stiffness"
+        }
+      }
+    }
+  ]
+}

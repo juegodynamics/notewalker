@@ -1,0 +1,177 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient1",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Redacted]"
+          }
+        ],
+        "identifier": [
+          {
+            "use": "usual",
+            "value": "[Redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "patient": {
+          "reference": "Patient/patient1"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "patient": {
+          "reference": "Patient/patient1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter1"
+        },
+        "code": {
+          "text": "Multiple injuries from being struck by a motor vehicle"
+        },
+        "note": [
+          {
+            "text": "Bilateral knee injuries, including left knee Segond fracture and multiple ligamentous injuries."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "patient": {
+          "reference": "Patient/patient1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter1"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Diagnostic tests including FAST exam, chest radiograph, and CT of head and cervical spine"
+        },
+        "outcome": {
+          "text": "All tests were negative"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "patient": {
+          "reference": "Patient/patient1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter1"
+        },
+        "status": "completed",
+        "code": {
+          "text": "MRI of both knees"
+        },
+        "outcome": {
+          "text": "Identified ligamentous injuries requiring multiligamentous reconstructions"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "patient": {
+          "reference": "Patient/patient1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter1"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Left knee surgery including ACL reconstruction, PLC reconstruction, and repair of LCL and ALL"
+        },
+        "note": [
+          {
+            "text": "Intraoperative findings included a positive lateral gutter drive-through sign indicative of a PLC injury."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure4",
+        "patient": {
+          "reference": "Patient/patient1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter1"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Right knee surgery including ACL reconstruction, PCL reconstruction, MCL primary repair, PLC reconstruction, and repair of posterior horn of medial meniscus"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure5",
+        "patient": {
+          "reference": "Patient/patient1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter1"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Physical therapy rehabilitation"
+        },
+        "outcome": {
+          "text": "Full range of motion in both knees, grade 1A Lachman maneuver"
+        },
+        "note": [
+          {
+            "text": "Patient was able to return to work and recreational activities at ten weeks after surgery and was cleared for straight running at six months post-op."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "dischargeSummary1",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "type": {
+          "text": "Discharge Summary"
+        },
+        "date": "[Redacted]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient was admitted to the hospital with multiple injuries, including bilateral knee injuries, resulting in multiligamentous reconstructions on both knees. The patient underwent post-operative rehabilitation and physical therapy, which resulted in significant improvement in both knees' range of motion. As the patient meets the discharge criteria, the patient is being discharged from the hospital and advised to continue physical therapy and post-operative care as recommended by the healthcare provider. The patient was provided with discharge instructions, follow-up care instructions, and contact information for their primary care physician."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1967-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "period": {
+          "start": "[insert date]",
+          "end": "[insert date]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "267036007",
+                "display": "Abdominal distension"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "62315008",
+                "display": "Diarrhea"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267036007",
+              "display": "Abdominal distension"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "62315008",
+              "display": "Diarrhea"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274804009",
+              "display": "Endoscopic examination"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "performedDateTime": "[insert date]"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-2",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Electrosurgical resection"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "performedDateTime": "[insert date]"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-1",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "medication-1",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3498",
+              "display": "Bifidobacterium"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationRequest-1",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationRequest-1",
+        "status": "active",
+        "intent": "order",
+        "medicationReference": {
+          "reference": "urn:uuid:medication-1"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "420 mg/bid"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267036007",
+              "display": "Abdominal distension"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "62315008",
+              "display": "Diarrhea"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "abatementDateTime": "[insert date]"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:discharge-summary",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "discharge-summary",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "encounter": {
+          "reference": "urn:uuid:encounter-1"
+        },
+        "date": "[insert date]",
+        "author": [
+          {
+            "reference": "urn:uuid:practitioner-1"
+          }
+        ],
+        "title": "Discharge Summary",
+        "section": [
+          {
+            "title": "Hospital Course",
+            "text": {
+              "status": "generated",
+              "div": "<div><p>The patient was admitted to the hospital with complaints of abdominal distension and diarrhea that had been present for several days. Physical examination revealed no abnormality. Routine laboratory examinations, bacterial and parasitic stool examinations and viral serology were negative. Chest and abdomen X-ray showed no obvious abnormality. However, endoscopic examination disclosed scattered bubble-like or cystoid nodules, which distributed in transverse colon. Narrow band imaging (NBI) showed clear texture of intestinal wall vessels. The patient was treated with high frequency electrosurgical resection of the gas cysts, and the cysts were collapsed after the gas was discharged. Subsequently, the patient's symptoms improved and he was treated with Bifidobacterium (420 mg/bid) to improve his intestinal function. No antibiotics were administered.</p></div>"
+            }
+          },
+          {
+            "title": "Hospital Course",
+            "text": {
+              "status": "generated",
+              "div": "<div><p>The patient's symptoms improved after one week of treatment. The lesions disappeared completely after three months of follow-up.</p></div>"
+            }
+          },
+          {
+            "title": "Condition at discharge",
+            "text": {
+              "status": "generated",
+              "div": "<div><p>The patient was symptom-free.</p></div>"
+            }
+          },
+          {
+            "title": "Discharge Plan",
+            "text": {
+              "status": "generated",
+              "div": "<div><p>The patient was discharged in good condition. No further follow-up was deemed necessary.</p></div>"
+            }
+          },
+          {
+            "title": "Follow-up",
+            "text": {
+              "status": "generated",
+              "div": "<div><p>The patient was advised to continue avoiding gas-producing foods and maintain a healthy diet. A follow-up visit was not deemed necessary.</p></div>"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:practitioner-1",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner-1",
+        "name": [
+          {
+            "text": "Attending Physician"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,409 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "1970-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-birthDate",
+            "valueDate": "1970-01-01"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "20216008",
+              "display": "Lumbar disc herniation"
+            }
+          ],
+          "text": "Lumbar disc herniation"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-08-01",
+          "end": "2023-08-15"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "279039007",
+                "display": "Back pain"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "267070006",
+                "display": "Numbness of lower limb"
+              }
+            ],
+            "text": "Back pain and numbness of lower limbs"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "report-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24606-6",
+              "display": "Chest CT"
+            }
+          ],
+          "text": "CT of chest"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "conclusion": "Scattered pulmonary nodules with calcifications, soft tissue mass in the right lung, and enlarged right hilar lymph nodes",
+        "imagingStudy": [
+          {
+            "reference": "ImagingStudy/chest-ct"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "report-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30522-7",
+              "display": "Abdominal CT"
+            }
+          ],
+          "text": "Abdominal contrast-enhanced CT"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "conclusion": "Diffuse lesions with massive calcifications in the liver showing faint peripheral enhancement in the arterial phase and low enhancement in the portal phase"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "report-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-5",
+              "display": "Bone scan"
+            }
+          ],
+          "text": "Bone scintigraphy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "conclusion": "Multiple hypermetabolic activities in the involved bones"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "report-4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-5",
+              "display": "Cerebral MRI"
+            }
+          ],
+          "text": "Cerebral MRI"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "conclusion": "No anomalies"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "45036003",
+              "display": "Transthoracic needle biopsy"
+            }
+          ],
+          "text": "Transthoracic needle biopsy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "2023-08-10",
+        "bodySite": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "39607008",
+              "display": "Right upper lobe of lung"
+            }
+          ],
+          "text": "Right superior lobe"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33717-0",
+              "display": "Histopathology report"
+            }
+          ],
+          "text": "Histopathological examination"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Epithelioid cells arranged in a glandular pattern with clear cytoplasm, positive for CD31, CD34, CAMTA1, and EMA, but negative for ERG, TFE3, PCK, and desmin, with a Ki-67 index rate of 10%."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128598002",
+              "display": "Epithelioid hemangioendothelioma"
+            }
+          ],
+          "text": "Epithelioid hemangioendothelioma (EHE)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1038892",
+              "display": "Paclitaxel liposome"
+            },
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "2555",
+              "display": "Carboplatin"
+            }
+          ],
+          "text": "Paclitaxel liposome and Carboplatin"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "4 cycles over 8 months"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18782-3",
+              "display": "Disease status"
+            }
+          ],
+          "text": "Disease status"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "No changes observed on 8-month follow-up CT"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "status": "scheduled",
+              "description": "Follow-up appointments as per treating physician's instructions"
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "status": "completed",
+              "description": "Patient education regarding EHE and its management"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "practitionerrole-1",
+        "practitioner": {
+          "reference": "Practitioner/primary-care-physician"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/practitioner-role",
+              "code": "primary-care",
+              "display": "Primary Care Physician"
+            }
+          ],
+          "text": "Primary Care Physician"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "practitionerrole-2",
+        "practitioner": {
+          "reference": "Practitioner/oncologist"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/practitioner-role",
+              "code": "oncologist",
+              "display": "Oncologist"
+            }
+          ],
+          "text": "Oncologist"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "practitionerrole-3",
+        "practitioner": {
+          "reference": "Practitioner/radiologist"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/practitioner-role",
+              "code": "radiologist",
+              "display": "Radiologist"
+            }
+          ],
+          "text": "Radiologist"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "practitionerrole-4",
+        "practitioner": {
+          "reference": "Practitioner/pathologist"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/practitioner-role",
+              "code": "pathologist",
+              "display": "Pathologist"
+            }
+          ],
+          "text": "Pathologist"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "practitionerrole-5",
+        "practitioner": {
+          "reference": "Practitioner/clinical-nurse-specialist"
+        },
+        "role": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/practitioner-role",
+              "code": "nurse-specialist",
+              "display": "Clinical Nurse Specialist"
+            }
+          ],
+          "text": "Clinical Nurse Specialist"
+        }
+      }
+    }
+  ]
+}

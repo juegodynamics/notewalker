@@ -1,0 +1,147 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Patient's name]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[Patient's medical record number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "period": {
+          "start": "[Date of admission]",
+          "end": "[Date of discharge]"
+        },
+        "reasonCode": [
+          {
+            "text": "Shortness of breath, fever, and cough"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "COVID-19"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "COVID-19"
+        },
+        "onsetDateTime": "[Date of admission]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "Vital Signs"
+        },
+        "valueString": "Vital signs within normal limits, febrile with a temperature of 102.0°F"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "Laboratory Assessment Results"
+        },
+        "valueString": "Abnormal, details provided in the patient's medical record"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "medicationCodeableConcept": {
+          "text": "Antibiotics"
+        },
+        "status": "active",
+        "intent": "order"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "medicationCodeableConcept": {
+          "text": "Dexamethasone"
+        },
+        "status": "active",
+        "intent": "order"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "medicationCodeableConcept": {
+          "text": "Remdesivir"
+        },
+        "status": "active",
+        "intent": "order"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "description": "CT chest on admission showed nonspecific nodules, no acute infiltrates. On Day 2, CT chest showed severe bilateral airspace disease throughout the lungs."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "Supplemental oxygen via nasal cannula"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "Oxygen requirements and clinical status"
+        },
+        "valueString": "Oxygen requirements decreased, patient weaned off supplemental oxygen, vital signs stable within normal limits"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "title": "Discharge Instructions",
+        "description": "Continue practicing COVID-safe behaviors: wearing a mask, washing hands frequently, practicing social distancing. Contact hospital if symptoms return or worsen."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "description": "Follow-up appointment with primary care provider for recovery monitoring and further medical intervention"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "text": "[Physician Name]"
+          }
+        ]
+      }
+    }
+  ]
+}

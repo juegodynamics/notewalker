@@ -1,0 +1,347 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-6",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "patient-6"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Unknown",
+            "given": [
+              "Patient",
+              "6"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2015-10-07"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-oi",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80400006",
+              "display": "Osteogenesis Imperfecta"
+            }
+          ],
+          "text": "Osteogenesis Imperfecta"
+        },
+        "subject": {
+          "reference": "Patient/patient-6"
+        },
+        "onsetDateTime": "2015-10-07",
+        "abatementDateTime": "2023-10-07"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-dentinogenesis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "111566002",
+              "display": "Dentinogenesis Imperfecta"
+            }
+          ],
+          "text": "Dentinogenesis Imperfecta"
+        },
+        "subject": {
+          "reference": "Patient/patient-6"
+        },
+        "onsetDateTime": "2015-10-07"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-hernia",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "70140009",
+              "display": "Inguinal hernia"
+            }
+          ],
+          "text": "Inguinal hernia"
+        },
+        "subject": {
+          "reference": "Patient/patient-6"
+        },
+        "onsetDateTime": "2015-10-07",
+        "abatementDateTime": "2015-11-07"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-hernia-repair",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "17404009",
+              "display": "Hernia repair"
+            }
+          ],
+          "text": "Hernia repair"
+        },
+        "subject": {
+          "reference": "Patient/patient-6"
+        },
+        "performedDateTime": "2015-11-07"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-femoral-rodding",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Insertion of intramedullary rod into femur"
+            }
+          ],
+          "text": "Insertion of intramedullary rod into femur"
+        },
+        "subject": {
+          "reference": "Patient/patient-6"
+        },
+        "performedDateTime": "2019-10-07"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-tibial-rodding",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387714009",
+              "display": "Insertion of intramedullary rod into tibia"
+            }
+          ],
+          "text": "Insertion of intramedullary rod into tibia"
+        },
+        "subject": {
+          "reference": "Patient/patient-6"
+        },
+        "performedDateTime": "2020-10-07"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-pamidronate",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387207008",
+              "display": "Pamidronate"
+            }
+          ],
+          "text": "Pamidronate"
+        },
+        "subject": {
+          "reference": "Patient/patient-6"
+        },
+        "status": "active",
+        "dosage": [
+          {
+            "text": "3-monthly infusions"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-genetic-test",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "55233-1",
+              "display": "Genetic analysis master panel"
+            }
+          ],
+          "text": "Genetic Test"
+        },
+        "subject": {
+          "reference": "Patient/patient-6"
+        },
+        "effectiveDateTime": "2023-10-07",
+        "valueString": "de novo pathogenic variant in COL1A1 c.2282G>A in exon 33/34"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-hospital-course",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-6"
+        },
+        "period": {
+          "start": "2015-10-07",
+          "end": "2016-01-07"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "80400006",
+                "display": "Osteogenesis Imperfecta"
+              }
+            ],
+            "text": "Osteogenesis Imperfecta"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-follow-up",
+        "status": "planned",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/patient-6"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "80400006",
+                "display": "Osteogenesis Imperfecta"
+              }
+            ],
+            "text": "Osteogenesis Imperfecta"
+          }
+        ]
+      }
+    }
+  ]
+}

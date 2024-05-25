@@ -1,0 +1,280 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-01",
+        "name": [
+          {
+            "family": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1940-01-01"  // Assuming birthdate based on age 83, adjust as appropriate
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-01",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-01"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "#condition-admitting"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admitting Diagnosis"
+                }
+              ]
+            }
+          },
+          {
+            "condition": {
+              "reference": "#condition-final"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "DD",
+                  "display": "Discharge Diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-admitting",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "66875000",
+              "display": "Respiratory distress"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-final",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233985008",
+              "display": "Prosthetic valve stenosis"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "116288000",
+              "display": "Pannus"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-01",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "109241000119100",
+              "display": "Replacement of aortic valve with bioprosthesis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-01"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-01",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "38276-7",
+              "display": "Echocardiogram study"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-01"
+        },
+        "effectiveDateTime": "[REDACTED]",
+        "valueString": "TTE showed LV dysfunction with severe prosthetic valve stenosis, and TEE showed hypomobility of the anterior leaflet."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-02",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "44136-0",
+              "display": "Computed tomography study"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-01"
+        },
+        "effectiveDateTime": "[REDACTED]",
+        "valueString": "MDCT revealed that the anterior aortic leaflet was stuck and surrounded by hypodense tissue indicating a pannus."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "discharge-summary",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-01"
+        },
+        "date": "[REDACTED]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "DISCHARGE SUMMARY\n\nPatient Name: [REDACTED]\nAge: 83\nSex: Female\n\nAdmission Date: [REDACTED]\nDischarge Date: [REDACTED]\nAdmitting Diagnosis: Respiratory distress\nFinal Diagnosis: Severe prosthetic valve stenosis, pannus\n\nThe patient was an 83-year-old female with a medical history significant for high cholesterol, hypertension, carotid vasculopathy, and smoking. The patient had undergone valvular replacement with a St. Jude 21 mm mechanical prosthesis 20 years prior due to degenerative aortic stenosis. She was admitted to the hospital for respiratory distress.\n\nDuring the admission, TTE showed LV dysfunction with severe prosthetic valve stenosis, and TEE showed hypomobility of the anterior leaflet. MDCT was performed, which revealed that the anterior aortic leaflet was stuck and surrounded by hypodense tissue indicating a pannus.\n\nThe patient underwent repeat surgical repair with a bioprosthesis. The diagnosis of pannus was confirmed by pathology.\n\nThe patient was closely monitored throughout her hospitalization, and her vital signs and respiratory symptoms improved. The patient was discharged in good condition to follow-up with her primary care physician.\n\nFollow-up plan:\nThe patient is advised to follow up with her primary care physician for continued management of her medical conditions. A cardiac rehabilitation program can be considered with the primary care physician's recommendation.\n\nDischarge Medications:\nNot Applicable - the patient did not require new medications upon discharge.\n\nInstructions:\nThe patient is advised to keep all follow-up appointments with her primary care physician. In case of worsening respiratory symptoms or any new symptoms, the patient is advised to seek medical attention immediately.\n\nConsultants:\nCardiology, Pathology."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-01",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up plan",
+        "description": "The patient is advised to follow up with her primary care physician for continued management of her medical conditions. A cardiac rehabilitation program can be considered with the primary care physician's recommendation.",
+        "subject": {
+          "reference": "Patient/patient-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medicationstatement-01",
+        "status": "not-taken",
+        "medicationCodeableConcept": {
+          "text": "No new medications required upon discharge"
+        },
+        "subject": {
+          "reference": "Patient/patient-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "appointment-01",
+        "status": "booked",
+        "description": "Follow-up appointment with primary care physician",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/patient-01"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    }
+  ]
+}

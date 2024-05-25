@@ -1,0 +1,206 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Patient Name]"
+          }
+        ],
+        "gender": "[Patient Sex]",
+        "age": "[Patient Age]",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-race",
+            "valueString": "[Patient Race]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254637007",
+              "display": "Adenocarcinoma of lung"
+            }
+          ],
+          "text": "Left upper lung adenocarcinoma"
+        },
+        "stage": [
+          {
+            "summary": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "258219007",
+                  "display": "Stage 1A"
+                }
+              ],
+              "text": "cT1bN0M0 Stage IA"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[MM/DD/YYYY]",
+          "end": "[MM/DD/YYYY]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "254637007",
+                "display": "Adenocarcinoma of lung"
+              }
+            ],
+            "text": "Management of left upper lung adenocarcinoma"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Video-assisted thoracoscopic surgery (VATS)"
+            }
+          ],
+          "text": "Video-assisted thoracoscopic left upper lobectomy and lymphadenectomy"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "39607008",
+                "display": "Upper lobe of left lung"
+              }
+            ],
+            "text": "Left upper lobe"
+          }
+        ],
+        "outcome": {
+          "text": "No complications, successful separation of interlobar fissure with preservation of A8"
+        },
+        "performedPeriod": {
+          "start": "[MM/DD/YYYY]",
+          "end": "[MM/DD/YYYY]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "DISCHARGE SUMMARY"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "RG9jdW1lbnQgU3VtbWFyeToKQWRtaXNzaW9uIERhdGU6IFtNTS9ERC9ZWVlaXQoKRGlzY2hhcmdlIERhdGU6IFtNTS9ERC9ZWVlaXQoKUGF0aWVudCBOYW1lOiBbUGF0aWVudCBOYW1lXSwgU2V4OiBbUGF0aWVudCBTZXhdLCBBZ2U6IFtQYXRpZW50IEFnZV0sIFJhY2U6IFtQYXRpZW50IFJhY2VdCkRpYWdub3Npcy9SZWFzb24gZm9yIEFkbWlzc2lvbjogTGVmdCB1cHBlciBsdW5nIGFkZW5vY2FyY2lub21hLCBjbGFzc2lmaWVkIGFzIGNUMWIuIE4wTTAgU3RhZ2UgSUEgYmFzZWQgb24gdGhlIFVuaW9uIGZvciBJbnRlcm5hdGlvbmFsIENhbmNlciBDb250cm9sIGNsYXNzaWZpY2F0aW9uIChzZXZlbnRoIGVkaXRpb24pLgoKS2V5IGV2ZW50czoKaG9zcGl0YWwgY291cnNlIGFuZCBzdXJnaWNhbCBwcm9jZWR1cmUgd2l0aCBubyBjb21wbGljYXRpb25zLCBmb2xsb3dlZCBieSBzdGFibGUgZGlzY2hhcmdlIGluIGdyb29kIGNvbmRpdGlvbi4g"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Post-Discharge Care Plan",
+        "description": "Patient instructed to take rest and avoid strenuous activities for up to six weeks post-surgery. Advised to eat a well-balanced diet, maintain good hydration, and follow wound care instructions. Follow-up appointments scheduled with the oncology team.",
+        "subject": {
+          "reference": "Patient/[Patient ID]"
+        },
+        "period": {
+          "start": "[MM/DD/YYYY]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "scheduled",
+              "description": "Follow-up appointments with the oncology team"
+            }
+          },
+          {
+            "detail": {
+              "status": "scheduled",
+              "description": "Patient advised to rest and avoid strenuous activities for up to six weeks post-surgery"
+            }
+          },
+          {
+            "detail": {
+              "status": "scheduled",
+              "description": "Maintain a well-balanced diet and good hydration"
+            }
+          },
+          {
+            "detail": {
+              "status": "scheduled",
+              "description": "Wound care instructions provided"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

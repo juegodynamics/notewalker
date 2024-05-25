@@ -1,0 +1,198 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "age": 70
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Pancreatic cancer"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Carbohydrate antigen 19-9 level"
+        },
+        "valueString": "High"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "modality": [
+          {
+            "code": "CT",
+            "display": "Enhanced CT"
+          }
+        ],
+        "description": "15-mm mass in the pancreatic body and dilatation of the peripheral main pancreatic duct"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Distal pancreatectomy (DP) with lymph node dissection"
+        },
+        "performedPeriod": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-01T08:47:00Z"
+        },
+        "reasonCode": [
+          {
+            "text": "Pancreatic cancer"
+          }
+        ],
+        "bodySite": [
+          {
+            "text": "Pancreas at the right border of the portal vein"
+          }
+        ],
+        "outcome": {
+          "text": "Additional pancreatic resection due to pancreas-associated protein type II"
+        },
+        "note": [
+          {
+            "text": "DP performed by transecting the pancreas with a powered linear stapler."
+          },
+          {
+            "text": "Additional pancreatic tissue observed on the dorsal aspect of the portal vein."
+          },
+          {
+            "text": "Additional pancreatic resection conducted using a powered linear stapler."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Additional pancreatic resection"
+        },
+        "performedPeriod": {
+          "start": "2023-10-01T08:47:00Z",
+          "end": "2023-10-01T14:54:00Z"
+        },
+        "reasonCode": [
+          {
+            "text": "Pancreas-associated protein type II"
+          }
+        ],
+        "bodySite": [
+          {
+            "text": "Pancreas"
+          }
+        ],
+        "outcome": {
+          "text": "Pathological diagnosis: T3N0M0, stage IIA. Pathological margin negative."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonCode": [
+          {
+            "text": "Pancreatic cancer"
+          }
+        ],
+        "period": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-24T00:00:00Z"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "text": "Discharged on postoperative day 23"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Estimated blood loss"
+        },
+        "valueQuantity": {
+          "value": 730,
+          "unit": "mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Total operative time"
+        },
+        "valueQuantity": {
+          "value": 527,
+          "unit": "minutes"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Pathological diagnosis: T3N0M0, stage IIA"
+        },
+        "verificationStatus": {
+          "text": "Confirmed"
+        }
+      }
+    }
+  ]
+}

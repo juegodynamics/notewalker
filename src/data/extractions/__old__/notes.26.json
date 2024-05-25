@@ -1,0 +1,309 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.3.1.3",
+            "value": "[REDACTED]"
+          }
+        ],
+        "birthDate": "[REDACTED]",
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "patient": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "66831009",
+              "display": "Central pontine myelinolysis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "19346002",
+              "display": "Sjogren's syndrome"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "89219-7",
+              "display": "Clinical summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "valueString": "The patient is a 33-year-old female with no known comorbidities who recently gave birth to a healthy girl child. She was brought to the emergency department with sudden onset weakness of both upper and lower limbs, which progressed rapidly to quadriplegia. She had bilateral facial palsy and bulbar palsy. She was diagnosed with central pontine myelinolysis (CPM) due to idiopathic hypernatremic osmotic demyelination. The patient was treated with sodium correction and pulse methylprednisolone and discharged with a modified Rankin Scale score (mRS) of 0."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "89219-7",
+              "display": "Clinical summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "valueString": "One year later, the patient presented to the neurology department with generalized fatigue, diffuse myalgias, and rapidly progressive weakness of all four limbs, which made her wheelchair-bound one day before the presentation. Clinical examination revealed pure motor flaccid symmetric quadriparesis with proximal more than distal weakness and generalized hyporeflexia. Nerve conduction studies showed reduced compound muscle action potential (CMAP) amplitudes of bilateral tibial and peroneal nerves with absent F waves and H reflexes. The patient was diagnosed with Guillain-Barré syndrome (GBS) or hypokalemia-related electrophysiological abnormalities. Basic metabolic panel revealed severe hypokalemia, and arterial blood gas (ABG) and 24-hour urine analysis showed metabolic acidosis, consistent with renal tubular acidosis type-1 (distal). Autoimmune workup was positive for anti-SSA/Ro autoantibodies, and minor salivary gland biopsy was pathognomonic. The patient was diagnosed with primary Sjogren's syndrome (pSS) according to the new classification criteria proposed by the American College of Rheumatology (ACR) and the European League Against Rheumatism (EULAR)."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225158009",
+              "display": "Intravenous potassium administration"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "182857005",
+              "display": "Oral sodium bicarbonate administration"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "833670",
+              "display": "Potassium Chloride 10 MEQ Oral Solution"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "316047",
+              "display": "Sodium Bicarbonate 325 MG Oral Tablet"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "The patient should follow-up with her rheumatologist. The patient should continue taking oral potassium and sodium bicarbonate as prescribed. The patient should maintain proper hydration and electrolyte balance."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary\n\nPatient Name: [REDACTED]\nMRN: [REDACTED]\nDOB: [REDACTED]\nAdmission Date: [REDACTED]\nDischarge Date: [REDACTED]\n\nClinical Summary:\nThe patient is a 33-year-old female with no known comorbidities who recently gave birth to a healthy girl child. She was brought to the emergency department with sudden onset weakness of both upper and lower limbs, which progressed rapidly to quadriplegia. She had bilateral facial palsy and bulbar palsy. She was diagnosed with central pontine myelinolysis (CPM) due to idiopathic hypernatremic osmotic demyelination. The patient was treated with sodium correction and pulse methylprednisolone and discharged with a modified Rankin Scale score (mRS) of 0.\n\nOne year later, the patient presented to the neurology department with generalized fatigue, diffuse myalgias, and rapidly progressive weakness of all four limbs, which made her wheelchair-bound one day before the presentation. Clinical examination revealed pure motor flaccid symmetric quadriparesis with proximal more than distal weakness and generalized hyporeflexia. Nerve conduction studies showed reduced compound muscle action potential (CMAP) amplitudes of bilateral tibial and peroneal nerves with absent F waves and H reflexes. The patient was diagnosed with Guillain-Barré syndrome (GBS) or hypokalemia-related electrophysiological abnormalities. Basic metabolic panel revealed severe hypokalemia, and arterial blood gas (ABG) and 24-hour urine analysis showed metabolic acidosis, consistent with renal tubular acidosis type-1 (distal). Autoimmune workup was positive for anti-SSA/Ro autoantibodies, and minor salivary gland biopsy was pathognomonic. The patient was diagnosed with primary Sjogren's syndrome (pSS) according to the new classification criteria proposed by the American College of Rheumatology (ACR) and the European League Against Rheumatism (EULAR).\n\nHospital Course:\nThe patient was given intravenous (IV) potassium supplementation and subsequently shifted to oral liquid formulation. Oral sodium bicarbonate supplementation was given for renal tubular acidosis. With potassium correction, there was a rapid recovery in the power of all four limbs within 24 hours of admission. The patient was initiated on oral prednisolone and referred to a rheumatologist for further management. She remained asymptomatic on her six-month follow-up.\n\nDischarge Medications:\nN/A\n\nFollow-Up Appointments:\nThe patient was referred to a rheumatologist for further management.\n\nInstructions:\nThe patient should follow-up with her rheumatologist. The patient should continue taking oral potassium and sodium bicarbonate as prescribed. The patient should maintain proper hydration and electrolyte balance.\n\nDischarge Diagnosis:\n1. Central pontine myelinolysis (CPM) due to idiopathic hypernatremic osmotic demyelination\n2. Primary Sjogren's syndrome (pSS) with renal tubular acidosis and hypokalemia-related quadriparesis due to hypokalemia\n\nDisposition:\nThe patient was discharged in stable condition."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient1",
+        "gender": "male",
+        "birthDate": "1980-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "2023-05-01",
+          "end": "2023-07-04"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "emd",
+                "display": "emergency department"
+              }
+            ]
+          },
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "diagnosis",
+                "display": "Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "197406004",
+              "display": "Severe acute pancreatitis"
+            }
+          ],
+          "text": "Severe acute pancreatitis with severe abdominal pain secondary to hepatocellular carcinoma and liver transplantation"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "onsetDateTime": "2023-05-01",
+        "abatementDateTime": "2023-07-04"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "367336001",
+              "display": "Liver transplantation"
+            }
+          ],
+          "text": "Liver transplantation from a living donor"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedDateTime": "2022-07-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medadmin1",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "4337",
+              "display": "Fentanyl"
+            }
+          ],
+          "text": "Continuous intravenous fentanyl infusion"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectivePeriod": {
+          "start": "2023-05-01",
+          "end": "2023-07-04"
+        },
+        "dosage": {
+          "text": "1200 μg/day increased to 2400 μg/day",
+          "route": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration",
+                "code": "IV",
+                "display": "Intravenous"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medadmin2",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "4337",
+              "display": "Fentanyl"
+            }
+          ],
+          "text": "Transdermal fentanyl patch"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectivePeriod": {
+          "start": "2023-07-04",
+          "end": "2023-07-31"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medadmin3",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "4337",
+              "display": "Fentanyl"
+            }
+          ],
+          "text": "Continuous intravenous fentanyl infusion"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectivePeriod": {
+          "start": "2023-08-01",
+          "end": "2023-09-04"
+        },
+        "dosage": {
+          "text": "600 μg/day decreased to 60 μg/day",
+          "route": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration",
+                "code": "IV",
+                "display": "Intravenous"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

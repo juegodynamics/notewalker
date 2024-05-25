@@ -1,0 +1,232 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Patient2",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "urn:oid:2.16.840.1.113883.4.1",
+            "value": "Patient2"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "",
+            "given": [
+              ""
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2012-02-15"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Encounter1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/Patient2"
+        },
+        "period": {
+          "start": "2023-01-01",
+          "end": "2023-10-01"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "125605004",
+                "display": "Burn injury"
+              }
+            ],
+            "text": "Severe flame injury after a motor vehicle accident (MVA) resulting in 62.5% third-degree burn wounds in TBSA"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "Procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "231447009",
+              "display": "Skin grafting"
+            }
+          ],
+          "text": "Skin grafting procedures"
+        },
+        "subject": {
+          "reference": "Patient/Patient2"
+        },
+        "performedPeriod": {
+          "start": "2023-01-02",
+          "end": "2023-06-01"
+        },
+        "reasonCode": [
+          {
+            "text": "Open joint injury in right elbow"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Device",
+        "id": "Device1",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://hospital.smarthealth.org/devices",
+            "value": "ExternalFixatorSystem1"
+          }
+        ],
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "46680005",
+              "display": "External fixator"
+            }
+          ],
+          "text": "External fixator system with Shantz pins and bars"
+        },
+        "patient": {
+          "reference": "Patient/Patient2"
+        },
+        "note": [
+          {
+            "text": "System was locked in full extension and maintained for six weeks"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Physical therapy progress note"
+            }
+          ],
+          "text": "PT/OT notes"
+        },
+        "subject": {
+          "reference": "Patient/Patient2"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueString": "No other complications recorded"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Observation2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Physical therapy progress note"
+            }
+          ],
+          "text": "Final arc of motion"
+        },
+        "subject": {
+          "reference": "Patient/Patient2"
+        },
+        "effectiveDateTime": "2023-10-01",
+        "valueString": "30–110° in the extension and flexion range, with supination and pronation WNL and a 5/5 motor strength"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "Condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "125605004",
+              "display": "Burn injury"
+            }
+          ],
+          "text": "Severe flame injury after a motor vehicle accident (MVA) resulting in 62.5% third-degree burn wounds in TBSA"
+        },
+        "subject": {
+          "reference": "Patient/Patient2"
+        },
+        "onsetDateTime": "2023-01-01",
+        "abatementDateTime": "2023-10-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "CarePlan1",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Care Plan",
+        "description": "Ongoing rehabilitation therapy is recommended to support and encourage the patient's continued recovery. The patient's family was provided with adequate instructions regarding post-discharge care and were advised to follow up with their regular healthcare provider.",
+        "subject": {
+          "reference": "Patient/Patient2"
+        },
+        "period": {
+          "start": "2023-10-01"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Name]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1975-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "reasonCode": [
+          {
+            "text": "Gastrointestinal disease"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "#diag1"
+            }
+          }
+        ],
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ],
+            "period": {
+              "end": "[Discharge Date]"
+            }
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "diag1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Gastrointestinal disease"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386637004",
+              "display": "Electrosurgical resection"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "performedPeriod": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "Ornidazole",
+              "display": "Ornidazole"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "Vitamin B2",
+              "display": "Vitamin B2"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "Bifidobacterium",
+              "display": "Bifidobacterium"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "789-8",
+              "display": "Fecal occult blood test"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "effectiveDateTime": "[Admission Date]",
+        "valueString": "Positive"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "started": "[Admission Date]",
+        "numberOfSeries": 1,
+        "numberOfInstances": 1,
+        "description": "Abdominal X-ray revealed multiple intraluminal gas pockets in the left colon"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Colonoscopy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "performedPeriod": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "report": [
+          {
+            "reference": "Observation/colonoscopy-findings"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "colonoscopy-findings",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33717-0",
+              "display": "Colonoscopy findings"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "effectiveDateTime": "[Admission Date]",
+        "valueString": "Grape-like or beaded subepithelial lesions with erythematous mucosa distributed in the sigmoid."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386637004",
+              "display": "Endoscopic ultrasonography"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "performedPeriod": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "report": [
+          {
+            "reference": "Observation/eus-findings"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "eus-findings",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33369-4",
+              "display": "Endoscopic ultrasound findings"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "effectiveDateTime": "[Admission Date]",
+        "valueString": "Low echo of cystic below the mucosal layer."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33717-0",
+              "display": "Colonoscopy findings"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "effectiveDateTime": "[Admission Date]",
+        "valueString": "NBI showed patchy erythema and yellow nodules. After four months of follow-up, the patient remained asymptomatic with normal colonoscopy findings."
+      }
+    }
+  ]
+}

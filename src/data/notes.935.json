@@ -1,0 +1,210 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-xxx",
+        "name": [
+          {
+            "text": "XXX"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1996-01-01"  // Assuming the patient is 27 years old as of 2023
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-001",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "patient": {
+          "reference": "Patient/patient-xxx"
+        },
+        "period": {
+          "start": "MM/DD/YYYY",
+          "end": "MM/DD/YYYY"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-001"
+            },
+            "rank": 1
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-001",
+        "subject": {
+          "reference": "Patient/patient-xxx"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "xxxxxxxx",
+              "display": "Sclerosing Lymphocytic Lobulitis"
+            }
+          ],
+          "text": "Sclerosing Lymphocytic Lobulitis"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "onsetDateTime": "MM/DD/YYYY"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-001",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "xxxxxxxx",
+              "display": "Breast ultrasound"
+            }
+          ],
+          "text": "Breast ultrasound"
+        },
+        "subject": {
+          "reference": "Patient/patient-xxx"
+        },
+        "effectiveDateTime": "MM/DD/YYYY",
+        "issued": "MM/DD/YYYY",
+        "conclusion": "Dense lymphocytic infiltrate of predominantly B-lymphocytes surrounding the ductulolobular unit and the vessels, in combination with a fibrous stroma of low cellularity and an increase in fibroblasts. Diagnosis of sclerosing lymphocytic lobulitis."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-001",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "xxxxxxxx",
+              "display": "Breast MRI"
+            }
+          ],
+          "text": "Breast MRI"
+        },
+        "subject": {
+          "reference": "Patient/patient-xxx"
+        },
+        "effectiveDateTime": "MM/DD/YYYY",
+        "valueString": "Multifocal nodular contrast enhancement in the retro-areolar region and the lower-outer quadrant of the right breast."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-002",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "xxxxxxxx",
+              "display": "Breast ultrasound"
+            }
+          ],
+          "text": "Breast ultrasound"
+        },
+        "subject": {
+          "reference": "Patient/patient-xxx"
+        },
+        "effectiveDateTime": "MM/DD/YYYY",
+        "valueString": "Hypoechoic lesion on ultrasonography and the multifocal contrast enhancement on MRI gradually diminished to a level where it is barely perceptible."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-001",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care Plan",
+        "description": "Continue regular follow-up examinations as scheduled.",
+        "subject": {
+          "reference": "Patient/patient-xxx"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "not-started",
+              "description": "Regular follow-up examinations including breast ultrasound every six months and a yearly mammogram and MRI of the breasts."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-002",
+        "subject": {
+          "reference": "Patient/patient-xxx"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254837009",
+              "display": "Breast Cancer"
+            }
+          ],
+          "text": "Breast Cancer (left breast) history"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "inactive",
+              "display": "Inactive"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "onsetDateTime": "2018-01-01"
+      }
+    }
+  ]
+}

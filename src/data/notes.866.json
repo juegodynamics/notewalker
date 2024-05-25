@@ -1,0 +1,226 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "1985-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "Q85.1",
+              "display": "Tuberous Sclerosis Complex"
+            }
+          ],
+          "text": "Tuberous Sclerosis Complex"
+        },
+        "onsetDateTime": "2022-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "24700007",
+              "display": "Renal angiomyolipoma"
+            }
+          ],
+          "text": "Renal angiomyolipomas and bilateral cysts"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "154283005",
+              "display": "Lymphangioleiomyomatosis"
+            }
+          ],
+          "text": "Pulmonary Lymphangioleiomyomatosis (LAM)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233604007",
+              "display": "Bilateral nephrectomy"
+            }
+          ],
+          "text": "Bilateral nephrectomy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "17403005",
+              "display": "Lung transplantation"
+            }
+          ],
+          "text": "Lung transplantation"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "309362",
+              "display": "Everolimus"
+            }
+          ],
+          "text": "Everolimus"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Started on everolimus to manage pulmonary Lymphangioleiomyomatosis (LAM)"
+          }
+        ],
+        "note": [
+          {
+            "text": "Dose reduction and initiation of midodrine required due to hypotension and dizziness."
+          },
+          {
+            "text": "Restarted at a reduced dose after self-discontinuation and observed amenorrhea as the only noted side effect."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "687673",
+              "display": "Midodrine"
+            }
+          ],
+          "text": "Midodrine"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Initiated to manage hypotension and dizziness caused by increased dose of everolimus."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75324-3",
+              "display": "Hypotension"
+            }
+          ],
+          "text": "Hypotension"
+        },
+        "valueString": "Patient experienced hypotension and dizziness with an increased dose of everolimus."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "89268-6",
+              "display": "Pulmonary function"
+            }
+          ],
+          "text": "Worsening pulmonary function"
+        },
+        "valueString": "Worsening pulmonary function observed, likely attributable to everolimus interruption."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "88040-1",
+              "display": "Amenorrhea"
+            }
+          ],
+          "text": "Amenorrhea"
+        },
+        "valueString": "Reported amenorrhea as the only noted side effect after restarting everolimus at a reduced dose."
+      }
+    }
+  ]
+}

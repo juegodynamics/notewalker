@@ -1,0 +1,173 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home"
+              }
+            ]
+          }
+        },
+        "reasonCode": [
+          {
+            "text": "Hemoptysis investigation"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "#hemoptysis"
+            }
+          },
+          {
+            "condition": {
+              "reference": "#pulmonary-hemosiderosis"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "hemoptysis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Hemoptysis"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "pulmonary-hemosiderosis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Pulmonary hemosiderosis"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "lung-biopsy",
+        "status": "completed",
+        "code": {
+          "text": "Lung biopsy"
+        },
+        "reasonReference": [
+          {
+            "reference": "#hemoptysis"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Systemic corticosteroids"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "discharge-careplan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Care Plan",
+        "description": "Instructions for patient after discharge",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "text": "Continue taking prescribed medication as prescribed by the primary care provider"
+              }
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "text": "Follow a healthy diet and maintain an active lifestyle"
+              }
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "text": "Close follow-up with the primary care provider"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

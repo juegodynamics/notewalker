@@ -1,0 +1,227 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Redacted]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.19.5",
+            "value": "[Redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "442361000124100",
+              "display": "Branch retinal vein occlusion"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "note": [
+          {
+            "text": "The patient was diagnosed with temporal superior BRVO without ME affecting the right eye during his initial assessment. The condition recurred after receiving the first dose of the Pfizer-BioNTech vaccine, resulting in secondary ME."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "183101005",
+              "display": "Intravitreal injection of ranibizumab"
+            }
+          ],
+          "text": "Intravitreal ranibizumab"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "note": [
+          {
+            "text": "The patient received 2 doses of intravitreal ranibizumab to treat the secondary ME resulting from recurrent temporal superior BRVO."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medication-administration-1",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1037095",
+              "display": "Ranibizumab"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "dosage": {
+          "text": "2 doses"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29271-4",
+              "display": "Visual acuity - right eye"
+            }
+          ],
+          "text": "BCVA"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "20/25",
+        "note": [
+          {
+            "text": "BCVA improved to 20/25"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29271-4",
+              "display": "Fundus photography and OCT images"
+            }
+          ],
+          "text": "Fundus photographs and OCT images"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "result": [
+          {
+            "reference": "Observation/observation-1"
+          }
+        ],
+        "conclusion": "Recurrence of temporal superior BRVO and secondary ME. No avascular area was found on the OCT angiography images."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge Summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary: Patient Name: [Redacted] Medical Record Number: [Redacted] Date of Admission: [Redacted] Date of Discharge: [Redacted] Clinical Diagnosis: The patient was diagnosed with temporal superior BRVO without ME affecting the right eye during his initial assessment. The condition recurred after receiving the first dose of the Pfizer-BioNTech vaccine, resulting in secondary ME. Hospital Course: The patient was referred to our hospital for assessment and treatment of recurrent temporal superior BRVO and secondary ME. Fundus photographs and OCT images were taken, which showed a recurrence of the condition. The patient's BCVA was 20/25, and no avascular area was found on the OCT angiography images. The patient was treated with 2 doses of intravitreal ranibizumab, which resolved the ME and improved his BCVA to 20/25. Treatment and Medications: The patient received 2 doses of intravitreal ranibizumab to treat the secondary ME resulting from recurrent temporal superior BRVO. Hospital Disposition: The patient was discharged after successful resolution of the secondary ME, and his BCVA improved to 20/25. There were no other significant findings during his hospital course. Follow-up Plan: The patient received his second vaccination dose 3 weeks after receiving his first. He did not have any symptoms, nor did he have any changes in the examination of his right eye after receiving this second dose. The patient was advised to monitor his vision and report any changes to his eye doctor. Follow-up appointments were scheduled as needed."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

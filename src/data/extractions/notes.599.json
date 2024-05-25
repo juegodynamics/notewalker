@@ -1,0 +1,261 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-example",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-example",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "162397003",
+                "display": "Obstructive sleep apnea syndrome"
+              }
+            ],
+            "text": "Snoring, OSA, myoclonus"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-example",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "162397003",
+              "display": "Obstructive sleep apnea syndrome"
+            }
+          ],
+          "text": "Snoring, OSA, myoclonus"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-example",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232717009",
+              "display": "Uvulopalatopharyngoplasty"
+            }
+          ],
+          "text": "Minimally invasive Uvulopalatopharyngoplasty (UUUP)"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-example",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72170-7",
+              "display": "EEG study"
+            }
+          ],
+          "text": "EEG showed focal dysrhythmia during hyperventilation with scattered sharp waves"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "result": [
+          {
+            "reference": "Observation/observation-example"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-example",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4537-7",
+              "display": "EEG finding"
+            }
+          ],
+          "text": "EEG showed focal dysrhythmia during hyperventilation with scattered sharp waves"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-mallampati",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "399208008",
+              "display": "Mallampati score"
+            }
+          ],
+          "text": "Class III Mallampati score"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-depression",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "35489007",
+              "display": "Depressive disorder"
+            }
+          ],
+          "text": "Depression"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "FollowUp",
+        "id": "followup-example",
+        "status": "completed",
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "description": "10-year follow-up showed no recurrence of symptoms related to sleep apnea or loss of consciousness. The patient did not lose any weight during the follow-up period."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-recommendations",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Recommendations",
+        "description": "Maintain a healthy lifestyle and avoid excessive alcohol consumption. Follow-up with neurologist is recommended.",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "74262004",
+                    "display": "General health education"
+                  }
+                ],
+                "text": "Maintain a healthy lifestyle and avoid excessive alcohol consumption"
+              }
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "308292007",
+                    "display": "Neurologist follow-up"
+                  }
+                ],
+                "text": "Follow-up with neurologist is recommended"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2004-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "50849002",
+                "display": "Emergency department admission"
+              }
+            ],
+            "text": "Emergency department admission"
+          }
+        ],
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "59566000",
+                "display": "Neck pain"
+              }
+            ],
+            "text": "Neck pain after being ejected from a motor vehicle during a road traffic accident"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "84757009",
+              "display": "Atlanto-occipital and atlanto-axial dissociation"
+            }
+          ],
+          "text": "Atlanto-occipital and atlanto-axial dissociation"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232717009",
+              "display": "Posterior occipitocervical fusion"
+            }
+          ],
+          "text": "Posterior occipitocervical fusion surgery"
+        },
+        "performedPeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "Patient is advised to follow-up with primary care physician and specialists for continuous monitoring and evaluation. Gradual resumption of normal activities with medical guidance.",
+        "addresses": [
+          {
+            "reference": "Condition/[condition-id]"
+          }
+        ],
+        "activity": [
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "304501000000107",
+                    "display": "Follow up with primary care physician"
+                  }
+                ],
+                "text": "Follow up with primary care physician"
+              }
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "182832007",
+                    "display": "Follow up with specialist"
+                  }
+                ],
+                "text": "Follow up with specialist"
+              }
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "229506003",
+                    "display": "Gradual resumption of normal activities"
+                  }
+                ],
+                "text": "Gradual resumption of normal activities with guidance"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

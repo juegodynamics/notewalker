@@ -1,0 +1,176 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName",
+            "valueString": "Involved in a murder case"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183452005",
+                "display": "Forensic examination"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "period": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-10T00:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-toxicology",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "12236-1",
+              "display": "Toxicology screen"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectiveDateTime": "2023-10-02T00:00:00Z",
+        "valueString": "Detectable levels of benzoylecgonine in urine and pubic hair; no significant levels of drugs or alcohol in blood and saliva."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "behavioral",
+                "display": "Behavioral"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "66344007",
+              "display": "Personality disorder"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "example-mri",
+        "status": "available",
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "MR",
+            "display": "MRI"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "description": "MRI imaging showed a decrease in cortical thickness with enlarged lateral ventricles, significant volumetric asymmetry of the amygdalae, and a decreased volume of the right orbito-frontal cortex in comparison with the left one."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "example-petct",
+        "status": "available",
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "PT",
+            "display": "PET-CT"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "description": "PET-CT testing did not indicate any alteration of brain perfusion or metabolism."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "example-impression",
+        "status": "completed",
+        "description": "Based on the tests and evaluations, it is concluded that the patient did not show any clinical signs of neurological impairment or alcohol-dependence. The patient will be transferred back to the custody of the court.",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "date": "2023-10-10T00:00:00Z",
+        "summary": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "443654008",
+              "display": "Neurological status normal"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428441000124101",
+              "display": "No evidence of alcohol dependence"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

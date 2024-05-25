@@ -1,0 +1,242 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "given": [
+              "First Name"
+            ],
+            "family": "Last Name"
+          }
+        ],
+        "birthDate": "YYYY-MM-DD"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "YYYY-MM-DD",
+          "end": "YYYY-MM-DD"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "59282003",
+              "display": "Pulmonary embolism"
+            }
+          ],
+          "text": "Saddle PE"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "441212007",
+              "display": "Hematoma of psoas muscle"
+            }
+          ],
+          "text": "Left psoas hematoma"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "441212007",
+              "display": "Hematoma of psoas muscle"
+            }
+          ],
+          "text": "Right psoas and iliacus hematoma"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "243120004",
+              "display": "Continuous positive airway pressure (procedure)"
+            }
+          ],
+          "text": "Continuous positive airway pressure (CPAP)"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40617009",
+              "display": "Supplemental oxygen therapy"
+            }
+          ],
+          "text": "Supplemental oxygen"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "384703000",
+              "display": "Administration of tissue plasminogen activator"
+            }
+          ],
+          "text": "Tissue plasminogen activator (tPA)"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225164002",
+              "display": "Heparin administration"
+            }
+          ],
+          "text": "Heparin infusion"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "109990006",
+              "display": "Insertion of filter into inferior vena cava"
+            }
+          ],
+          "text": "Inferior vena cava (IVC) filter placement"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "122462000",
+              "display": "Drainage of hematoma"
+            }
+          ],
+          "text": "Hematoma drainage"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "12843005",
+              "display": "Blood transfusion"
+            }
+          ],
+          "text": "Blood transfusions"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "status": "booked",
+        "description": "Follow-up appointment with neurology"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "status": "booked",
+        "description": "Follow-up appointment with hematology"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge instructions",
+        "description": "The patient was instructed to follow-up with his primary care physician and discuss any further concerns or questions regarding his treatment plan. He was also advised to continue taking his medication as prescribed and keep his scheduled follow-up appointments."
+      }
+    }
+  ]
+}

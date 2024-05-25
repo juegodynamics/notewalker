@@ -1,0 +1,268 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "period": {
+          "start": "[Date of Admission]",
+          "end": "[Date of Discharge]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "49521004",
+                "display": "Trunk structure"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "369031003",
+                "display": "Upper extremity"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "368209003",
+                "display": "Lower extremity"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "detail": [
+              {
+                "text": "pruritic rash"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "Lichenified papules throughout the trunk and extremities, most notably on the back. Biopsies showed mild spongiosis with an underlying superficial and deep perivascular infiltrate."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1404",
+              "display": "halobetasol"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "topical"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308135",
+              "display": "tacrolimus"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "topical"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "608139",
+              "display": "oral antihistamines"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "857005",
+              "display": "prednisone"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "32968",
+              "display": "mycophenolate mofetil"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1459093",
+              "display": "dupilumab"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "standard dosing"
+          }
+        ],
+        "note": [
+          {
+            "text": "Significant improvement within three months. Mild pruritus between injections and minimal residual post-inflammatory hyperpigmented macules. Stopped after 1 year due to insurance reasons, rash returned. Restarted after insurance reapproval, leading to complete resolution."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Follow up with primary care physician or dermatologist as recommended. Avoid known allergens or irritants. Comply with medication regimens and report any side effects or adverse reactions.",
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Plan",
+        "description": "Follow up with dermatologist or primary care physician for regular checkups. Continue receiving treatment with dupilumab as prescribed.",
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "text": "[Physician Name] MD"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "name": "[Medical Institution/Practice]"
+      }
+    }
+  ]
+}

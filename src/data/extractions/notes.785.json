@@ -1,0 +1,329 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-example",
+        "name": [
+          {
+            "use": "official",
+            "family": "Anonymous"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1997-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-example",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "period": {
+          "start": "[INSERT DATE]",
+          "end": "[INSERT DATE]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-example",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "255841004",
+              "display": "Post-Bariatric Hypoglycemia (PBH)"
+            }
+          ],
+          "text": "Post-Bariatric Hypoglycemia (PBH) related to Roux-en-Y Gastric Bypass (RYGB)"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-rygb",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "698247007",
+              "display": "Roux-en-Y Gastric Bypass"
+            }
+          ],
+          "text": "Roux-en-Y Gastric Bypass (RYGB)"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "performedDateTime": "[INSERT DATE]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-glucose-monitoring",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "15074-8",
+              "display": "Glucose [Moles/volume] in Blood"
+            }
+          ],
+          "text": "Continuous Glucose Monitoring (CGM)"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "effectivePeriod": {
+          "start": "[INSERT DATE]",
+          "end": "[INSERT DATE]"
+        },
+        "performer": [
+          {
+            "reference": "Organization/dexcom",
+            "display": "Dexcom G4 PLATINUM"
+          }
+        ],
+        "valueQuantity": {
+          "value": 200,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "NutritionOrder",
+        "id": "nutrition-order-example",
+        "status": "active",
+        "intent": "order",
+        "patient": {
+          "reference": "Patient/patient-example"
+        },
+        "dateTime": "[INSERT DATE]",
+        "orderer": {
+          "reference": "Practitioner/example"
+        },
+        "allergyIntolerance": [],
+        "foodPreferenceModifier": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/diet",
+                "code": "low-carbohydrate",
+                "display": "Low carbohydrate diet"
+              }
+            ]
+          }
+        ],
+        "excludeFoodModifier": [],
+        "oralDiet": {
+          "type": [
+            {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diet",
+                  "code": "normocaloric",
+                  "display": "Normocaloric diet"
+                }
+              ]
+            }
+          ],
+          "nutrient": [
+            {
+              "modifier": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/nutrient",
+                    "code": "fiber",
+                    "display": "High fiber"
+                  }
+                ]
+              }
+            }
+          ],
+          "schedule": [
+            {
+              "timing": {
+                "repeat": {
+                  "frequency": 1,
+                  "period": 1,
+                  "periodUnit": "d"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-request-example",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "617311",
+              "display": "multivitamin and mineral supplement"
+            }
+          ],
+          "text": "Multivitamin and mineral supplements"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "authoredOn": "[INSERT DATE]",
+        "requester": {
+          "reference": "Practitioner/example"
+        },
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "{tbl}"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-request-cornstarch",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "198211",
+              "display": "uncooked cornstarch"
+            }
+          ],
+          "text": "Uncooked cornstarch"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "authoredOn": "[INSERT DATE]",
+        "requester": {
+          "reference": "Practitioner/example"
+        },
+        "dosageInstruction": [
+          {
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 85,
+                  "unit": "g",
+                  "system": "http://unitsofmeasure.org",
+                  "code": "g"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-followup",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care Plan",
+        "description": "Continued management of PBH and follow-up with endocrinology consultation.",
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "period": {
+          "start": "[INSERT DATE]",
+          "end": "[INSERT DATE]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "description": "Endocrinology consultation for PBH management",
+              "status": "scheduled",
+              "scheduledPeriod": {
+                "start": "[INSERT DATE]",
+                "end": "[INSERT DATE]"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

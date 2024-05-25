@@ -1,0 +1,354 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-ts-tsai",
+        "name": [
+          {
+            "use": "official",
+            "family": "Tsai",
+            "given": [
+              "TS"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1975-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-ts-tsai"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "Snake bite on right palm near the base of the index finger"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-snakebite",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Snake bite on right palm near the base of the index finger"
+        },
+        "subject": {
+          "reference": "Patient/patient-ts-tsai"
+        },
+        "onsetDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-antivenom",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428431000124106",
+              "display": "Administration of antivenom"
+            }
+          ],
+          "text": "Administration of monovalent antivenom for D. siamensis"
+        },
+        "subject": {
+          "reference": "Patient/patient-ts-tsai"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "note": [
+          {
+            "text": "Patient received a total of 8 vials of antivenom within 10 hours."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-blood-tests",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24323-8",
+              "display": "Blood test"
+            }
+          ],
+          "text": "Blood tests showing acute kidney injury, disseminated intravascular coagulation, and coagulopathy"
+        },
+        "subject": {
+          "reference": "Patient/patient-ts-tsai"
+        },
+        "effectiveDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medreq-antibiotics",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "372687",
+              "display": "Antibiotics"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-ts-tsai"
+        },
+        "authoredOn": "[REDACTED]",
+        "requester": {
+          "reference": "Practitioner/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-hyperbaric-oxygen",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "430193006",
+              "display": "Hyperbaric oxygen therapy"
+            }
+          ],
+          "text": "Hyperbaric oxygen treatment"
+        },
+        "subject": {
+          "reference": "Patient/patient-ts-tsai"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "note": [
+          {
+            "text": "Two courses of hyperbaric oxygen treatment on days 3 and 4."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-daily-stool",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2924-5",
+              "display": "Stool description"
+            }
+          ],
+          "text": "Daily stool description"
+        },
+        "subject": {
+          "reference": "Patient/patient-ts-tsai"
+        },
+        "effectivePeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "valueString": "Soft or fluid, dark blue-green but not black"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-urine-color",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "5778-6",
+              "display": "Urine color"
+            }
+          ],
+          "text": "Urine color"
+        },
+        "subject": {
+          "reference": "Patient/patient-ts-tsai"
+        },
+        "effectiveDateTime": "[REDACTED]",
+        "valueString": "Normal"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-followup",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/patient-ts-tsai"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "Follow-up for elevated red skin rash and itching"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-skin-rash",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Elevated red skin rash and itching"
+        },
+        "subject": {
+          "reference": "Patient/patient-ts-tsai"
+        },
+        "onsetDateTime": "[REDACTED]",
+        "abatementDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medreq-antihistamines",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "11157",
+              "display": "Antihistamines"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-ts-tsai"
+        },
+        "authoredOn": "[REDACTED]",
+        "requester": {
+          "reference": "Practitioner/[REDACTED]"
+        }
+      }
+    }
+  ]
+}

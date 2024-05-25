@@ -1,0 +1,305 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "name": [
+          {
+            "use": "official",
+            "family": "[Redacted]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1961-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "127013003",
+              "display": "Retroperitoneal tumor"
+            }
+          ],
+          "text": "Retroperitoneal tumor (AML)"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "onsetDateTime": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Excision of retroperitoneal tumor"
+            }
+          ],
+          "text": "Tumor resection surgery"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "example-diagnosticreport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "45033-8",
+              "display": "CT Abdomen"
+            }
+          ],
+          "text": "CT Abdomen"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "result": [
+          {
+            "reference": "Observation/example-observation-ct"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-ct",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "45033-8",
+              "display": "CT Abdomen"
+            }
+          ],
+          "text": "Abdominal CT"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "valueString": "A child-head-sized mass with heterogeneous contrast."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "example-diagnosticreport-mri",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "46312-0",
+              "display": "MRI Abdomen"
+            }
+          ],
+          "text": "MRI Abdomen"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "result": [
+          {
+            "reference": "Observation/example-observation-mri"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-mri",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "46312-0",
+              "display": "MRI Abdomen"
+            }
+          ],
+          "text": "Abdominal MRI"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "valueString": "A heterogeneously hyperintense mass on T1-weighted imaging, a relatively uniform and hyperintense mass on T2-weighted imaging, and a hypointense mass with an enhanced border on gadolinium-enhanced imaging."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-lab",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3094-0",
+              "display": "ACTH [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "ACTH levels"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "valueQuantity": {
+          "value": "slightly elevated",
+          "unit": "pg/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "pg/mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "example-discharge-summary",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "date": "[Redacted]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "VGhlIHBhdGllbnQsIGEgNjIteWVhci1vbGQgSmFwYW5lc2UgZmVtYWxlLCB3YXMgYWRtaXR0ZWQgdG8gb3VyIHN1cmdpY2FsIG91dHBhdGllbnQgY2xpbmljIGR1ZSB0byBhIGxlZnQgYWJkb21pbmFsIG1hc3MuIEEgY2xpbmljYWwgZXhhbWluYXRpb24gcmV2ZWFsZWQgYSBwYWluZXNzLCBjaGlsZC1oZWFkLXNpemVkIHR1bW9yIGxvY2F0ZWQgaW4gdGhlIGxlZnQgdXBwZXIgYWJkb21lbiBhbmQgYWJkb21pbmFsIENUIGRlbW9uc3RyYXRlZCBhIGNoaWxkLWhlYWQtc2l6ZWQgbWFzcyB3aXRoIGhldGVyb2dlbmVvdXMgY29udHJhc3QuIFN1YnNlcXVlbnQgTVJJIHJldmVhbGVkIGEgaGV0ZXJvZ2VuZW91c2x5IGh5cGVyaW50ZW5zZSBtYXNzIG9uIFQxLXdlaWdodGVkIGltYWdpbmcsIGEgcmVsYXRpdmVseSB1bmlmb3JtIGFuZCBoZXBlcmludGVuc2UgbWFzcyBvbiBUMi13ZWlnaHRlZCBpbWFnaW5nLCBhbmQgYSBoeXBvaW50ZW5zZSBtYXNzIHdpdGggYW4gZW5oYW5jZWQgYm9yZGVyIG9uIGdhZG9saW5pdW0tZW5oYW5jZWQgaW1hZ2luZy4gTGFiY29yYXRvcnkgZGF0YSBpbmRpY2F0ZWQgc2xpZ2h0bHkgZWxldmF0ZWQgbGV2ZWxzIG9mIEFDVEgsIGJ1dCBvdGhlcndpc2Ugbm9ybWFsIGVsZWN0cm9seXRlcyBhbmQgaGVtYXRvbG9naWNhbCBtYXJrZXJzLiBUaGUgcGF0aWVudCB1bmRlcndlbnQgdHVtb3IgcmVzZWN0aW9uIHN1cmdlcnkgYW5kIHRoZSBtdWx0aWxvYnVsYXJ5IHllbGxvdyBtYXNzIHdhcyBmb3VuZCB0byB3ZWlnaCAxNTAwIGcgd2l0aCBibGVlZGluZyBpbiBwbGFjZXMuIEhpc3RvcGF0aG9sb2dpY2FsIGV4YW1pbmF0aW9uIHJldmVhbGVkIHRoYXQgdGhlIHR1bW9yIHdhcyBjb21wb3NlZCBvZiBhIHByb2xpZmVyYXRpb24gb2YgbWF0dXJlIGFuZCB2YXJpYWJsZS1zaXplZCBhZGlwb2N5dGVzIGFkbWl4ZWQgd2l0aCBhZ2dyZWdhdGVzIG9mIGhlbWF0b3BvZXRpYyBlbGVtZW50cywgYXNzb2NpYXRlZCB3aXRoIGFkcmVuYWwgZ2xhbmQgdGlzc3VlIGluIHRoZSBwZXJpcGhlcmFsIHJlZ2lvbiB3aXRoaW4gdGhlIHR1bW9yLiBUaGVzZSBmaW5kaW5ncyB3ZXJlIGNvbXBhdGlibGUgd2l0aCBBTUwuIFRoZSBwYXRpZW50IGhhZCBhbiB1bmV2ZW50ZnVsIHJlY292ZXJ5IGFuZCB3YXMgZGlzY2hhcmdlZCBvbiB0aGUgNnRoIGRheSBhZnRlciB0aGUgb3BlcmF0aW9uLiBTaGUgaGFzIGJlZW4gZm9sbG93ZWQgdXAgb3VyIG91dHBhdGllbnQgY2xpbmljIHdpdGhvdXQgcmVjdXJyZW5jZSBmb3IgYXBwcm94aW1hdGVseSAxMiB5ZWFycyBzaW5jZSB1bmRlcmdvaW5nIHRoZSBvcGVyYXRpb24uIC4="
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "example-careplan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-Up Care Plan",
+        "description": "The patient should continue to follow up with our outpatient clinic regularly to ensure that there is no recurrence of the AML.",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "period": {
+          "start": "[Redacted]"
+        }
+      }
+    }
+  ]
+}

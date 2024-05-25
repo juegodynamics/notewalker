@@ -1,0 +1,247 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "identifier": [
+          {
+            "value": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "identifier": [
+          {
+            "value": "[REDACTED]"
+          }
+        ],
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "#condition1"
+            }
+          },
+          {
+            "condition": {
+              "reference": "#condition2"
+            }
+          },
+          {
+            "condition": {
+              "reference": "#condition3"
+            }
+          },
+          {
+            "condition": {
+              "reference": "#condition4"
+            }
+          },
+          {
+            "condition": {
+              "reference": "#condition5"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "code": {
+          "text": "End-stage renal disease"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "code": {
+          "text": "Community-acquired pneumonia"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition3",
+        "code": {
+          "text": "Persistent cough"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition4",
+        "code": {
+          "text": "Epigastric pain"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition5",
+        "code": {
+          "text": "Abdominal distension"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "Exploratory laparotomy with gallbladder rupture repair and external drainage"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "Elevated WBC counts"
+        },
+        "valueString": "Elevated WBC counts"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "PD effluent culture positive for Klebsiella pneumoniae"
+        },
+        "valueString": "Positive for Klebsiella pneumoniae"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "text": "Distended gallbladder with modest wall thickening and distended bowel on enhanced CT imaging"
+        },
+        "valueString": "Distended gallbladder with modest wall thickening and distended bowel"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "stopped",
+        "medicationCodeableConcept": {
+          "text": "Moxifloxacin"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "stopped",
+        "medicationCodeableConcept": {
+          "text": "Cefuroxime"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "stopped",
+        "medicationCodeableConcept": {
+          "text": "Amikacin"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "stopped",
+        "medicationCodeableConcept": {
+          "text": "Cefepime"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "stopped",
+        "medicationCodeableConcept": {
+          "text": "Antitussives"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "stopped",
+        "medicationCodeableConcept": {
+          "text": "Analgesics"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "stopped",
+        "medicationCodeableConcept": {
+          "text": "Amphotericin"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "status": "completed",
+        "code": {
+          "text": "Maintenance hemodialysis"
+        },
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "occurrenceTiming": {
+          "repeat": {
+            "frequency": 3,
+            "period": 1,
+            "periodUnit": "wk"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Follow-Up Recommendations",
+        "description": "Follow up with primary care physician. No additional recommendations were given.",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    }
+  ]
+}

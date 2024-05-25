@@ -1,0 +1,413 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "use": "official",
+            "family": "1",
+            "given": [
+              "Patient"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1955-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "92814008",
+              "display": "Acute myeloid leukemia"
+            }
+          ],
+          "text": "Acute myeloid leukemia"
+        },
+        "onsetDateTime": "2020-01-01",
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Observation/observation-1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6690-2",
+              "display": "Leukocytes [#/volume] in Blood"
+            }
+          ],
+          "text": "Leukocytosis"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2020-01-01",
+        "valueQuantity": {
+          "value": 50000,
+          "unit": "per microliter",
+          "system": "http://unitsofmeasure.org",
+          "code": "/uL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "777-3",
+              "display": "Platelets [#/volume] in Blood"
+            }
+          ],
+          "text": "Thrombocytopenia"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2020-01-01",
+        "valueQuantity": {
+          "value": 50000,
+          "unit": "per microliter",
+          "system": "http://unitsofmeasure.org",
+          "code": "/uL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4544-3",
+              "display": "Hemoglobin [Mass/volume] in Blood"
+            }
+          ],
+          "text": "Anemia"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2020-01-01",
+        "valueQuantity": {
+          "value": 8,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80219-6",
+              "display": "Bone marrow aspiration"
+            }
+          ],
+          "text": "Bone marrow aspiration"
+        },
+        "performedDateTime": "2020-01-01",
+        "outcome": {
+          "text": "Hypercellular bone marrow with 50% blasts"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26436-6",
+              "display": "Flow cytometry study"
+            }
+          ],
+          "text": "Flow cytometry"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2020-01-01",
+        "interpretation": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260385009",
+              "display": "Abnormal"
+            }
+          ],
+          "text": "Aberrations in ASXL1, CEBPA, JAK2, and RUNX1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81247-9",
+              "display": "Genetic analysis master panel"
+            }
+          ],
+          "text": "Genetic analyses"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2020-01-01",
+        "interpretation": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260385009",
+              "display": "Negative"
+            }
+          ],
+          "text": "Negative gene mutations"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "84759006",
+              "display": "Induction chemotherapy"
+            }
+          ],
+          "text": "Induction chemotherapy"
+        },
+        "performedDateTime": "2020-02-01",
+        "outcome": {
+          "text": "Complete remission with low minimal residual disease"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385693009",
+              "display": "Consolidation chemotherapy"
+            }
+          ],
+          "text": "Consolidation chemotherapy"
+        },
+        "performedDateTime": "2020-03-01",
+        "outcome": {
+          "text": "Remission duration of 11 months"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "92814008",
+              "display": "Relapsed acute myeloid leukemia"
+            }
+          ],
+          "text": "Relapsed acute myeloid leukemia"
+        },
+        "onsetDateTime": "2020-11-01",
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Observation/observation-6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-6",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81247-9",
+              "display": "Genetic analysis master panel"
+            }
+          ],
+          "text": "Genetic analyses"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2020-11-01",
+        "interpretation": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260385009",
+              "display": "Abnormal"
+            }
+          ],
+          "text": "Concurrent molecular aberration recurrence"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73411000119102",
+              "display": "Venetoclax and azacitidine chemotherapy"
+            }
+          ],
+          "text": "Venetoclax and azacitidine chemotherapy"
+        },
+        "performedDateTime": "2020-12-01",
+        "outcome": {
+          "text": "Complete remission after one course"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-5",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73411000119102",
+              "display": "Chidamide with venetoclax and azacitidine chemotherapy"
+            }
+          ],
+          "text": "Chidamide with venetoclax and azacitidine chemotherapy"
+        },
+        "performedDateTime": "2021-01-01",
+        "outcome": {
+          "text": "Complete remission after one course"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "161615003",
+              "display": "Disease progression"
+            }
+          ],
+          "text": "Disease progression"
+        },
+        "onsetDateTime": "2021-04-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-6",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "419099009",
+              "display": "Death notification"
+            }
+          ],
+          "text": "Death"
+        },
+        "performedDateTime": "2021-04-01",
+        "outcome": {
+          "text": "The patient passed away due to disease progression"
+        }
+      }
+    }
+  ]
+}

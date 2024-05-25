@@ -1,0 +1,156 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "N/A"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "period": {
+          "start": "N/A",
+          "end": "N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "126827008",
+              "display": "Thrombosis of deep dorsal penile vein"
+            }
+          ],
+          "text": "Deep dorsal penile vein thrombosis"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1294538",
+              "display": "Rivaroxaban 15 MG Oral Tablet"
+            }
+          ],
+          "text": "Rivaroxaban"
+        },
+        "dosageInstruction": [
+          {
+            "text": "15 mg twice a day"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "57021-8",
+              "display": "Thrombosis of deep dorsal penile vein"
+            }
+          ],
+          "text": "Ultrasound evaluation"
+        },
+        "valueString": "Partial thrombosis at the proximal part of the vein with mild pain noted at the site with pressure of the ultrasound probe",
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge Summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "VGhpcyBkb2N1bWVudCBzdW1tYXJpemVzIHRoZSBoaXN0b3J5IGFuZCB0cmVhdG1lbnQgb2YgYSBwYXRpZW50IHdobyBoYWQgZGVlcCBkb3JzYWwgcGVuaWxlIHZlaW4gdGhyb21ib3Npcw=="
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "The patient should continue to take Rivaroxaban as prescribed. It is important to report any new or worsening symptoms to the healthcare provider. The patient should also continue monitoring for any side effects of the medication.",
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care",
+        "description": "The patient will follow-up with his primary care physician for further evaluation and monitoring. Further follow-up with the urologist may be necessary depending on the outcome of the follow-up evaluations.",
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    }
+  ]
+}

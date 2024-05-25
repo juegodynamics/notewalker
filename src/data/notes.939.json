@@ -1,0 +1,174 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[patient name]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.36.146.595.217.0.1",
+            "value": "[medical record number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "period": {
+          "start": "[admission date]",
+          "end": "[discharge date]"
+        },
+        "reasonCode": [
+          {
+            "text": "Pain localized to the right costovertebral angle and associated shoulder pain"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Intrahepatic abscess due to dropped calcified appendicolith"
+        },
+        "subject": {
+          "reference": "Patient/[patient identifier]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Laboratory findings"
+        },
+        "valueString": "Raised inflammatory parameters (CRP 116 mg/dL)"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "CT"
+          }
+        ],
+        "description": "Non-contrast-enhanced CT-scan revealing a high-density structure in the liver segment 7 surrounded by a hypodense zone of 25 mm, containing small air bubbles suggestive of an intrahepatic abscess"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Laparoscopic exploration and drainage of abscess"
+        },
+        "performedPeriod": {
+          "start": "[procedure start date]",
+          "end": "[procedure end date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Intravenous antibiotics"
+        },
+        "subject": {
+          "reference": "Patient/[patient identifier]"
+        },
+        "effectivePeriod": {
+          "start": "[administration start date]",
+          "end": "[administration end date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Composition",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "title": "Discharge Summary",
+        "date": "[discharge date]",
+        "author": [
+          {
+            "reference": "Practitioner/[practitioner identifier]"
+          }
+        ],
+        "section": [
+          {
+            "title": "Discharge Condition",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient was discharged in good condition.</div>"
+            }
+          },
+          {
+            "title": "Follow-Up Care",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient was advised to follow-up with their primary care physician for further monitoring.</div>"
+            }
+          },
+          {
+            "title": "Discharge Medications",
+            "text": {
+              "status": "generated",
+              "div": "<div>None.</div>"
+            }
+          },
+          {
+            "title": "Discharge Instructions",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient was advised to continue their regular activities and diet, and to seek medical attention if their symptoms persist or worsen.</div>"
+            }
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[patient identifier]"
+        },
+        "encounter": {
+          "reference": "Encounter/[encounter identifier]"
+        }
+      }
+    }
+  ]
+}

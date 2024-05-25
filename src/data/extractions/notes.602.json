@@ -1,0 +1,220 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "name": [
+          {
+            "text": "[INSERT PATIENT NAME]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1983-XX-XX"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "2",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[INSERT DATE OF ADMISSION]",
+          "end": "[INSERT DATE OF DISCHARGE]"
+        },
+        "reasonCode": [
+          {
+            "text": "Right common carotid artery dissection with C1-C4 fractures"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "Right common carotid artery dissection with C1-C4 fractures"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "admitting-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Right common carotid artery dissection with C1-C4 fractures"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "4",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "discharge-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Successful carotid artery stenting"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "5",
+        "status": "completed",
+        "code": {
+          "text": "Carotid artery stenting"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "[INSERT DATE OF ADMISSION]",
+          "end": "[INSERT DATE OF DISCHARGE]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "6",
+        "status": "final",
+        "code": {
+          "text": "Neurological examination"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Normal pupils, normal cranial nerves, normal power and reflexes in all four limbs"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "7",
+        "status": "final",
+        "code": {
+          "text": "CT-scan and 3D reconstruction imaging"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "result": [
+          {
+            "reference": "Observation/8"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "8",
+        "status": "final",
+        "code": {
+          "text": "Imaging results"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Fractures and blockages in the cervical area, right common carotid artery dissection"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "9",
+        "status": "completed",
+        "code": {
+          "text": "Intraoperative cerebral angiography"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "[INSERT DATE OF ADMISSION]",
+          "end": "[INSERT DATE OF DISCHARGE]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "10",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Plan",
+        "description": "Scheduled outpatient visits every six months to monitor for any neurological complications.",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "[INSERT DATE OF DISCHARGE]",
+          "end": "[INSERT TWO YEARS AFTER DATE OF DISCHARGE]"
+        }
+      }
+    }
+  ]
+}

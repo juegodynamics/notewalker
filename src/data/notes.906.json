@@ -1,0 +1,427 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "gender": "male",
+        "birthDate": "1998-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "example-encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[INSERT DATE]",
+          "end": "[INSERT DATE]"
+        },
+        "reasonCode": [
+          {
+            "text": "Multi-fragmentary fractures of the lower third of right tibia and fibula following a motorcycle accident"
+          }
+        ],
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition-fracture",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71341001",
+              "display": "Fracture of lower limb"
+            }
+          ],
+          "text": "Multi-fragmentary fractures of the lower third of right tibia and fibula"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        },
+        "onsetDateTime": "[INSERT DATE]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition-fes",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "23048003",
+              "display": "Fat embolism syndrome"
+            }
+          ],
+          "text": "Fat embolism syndrome (FES)"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        },
+        "onsetDateTime": "[INSERT DATE]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition-psh",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "72825002",
+              "display": "Sympathetic hyperactivity"
+            }
+          ],
+          "text": "Paroxysmal sympathetic hyperactivity (PSH)"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        },
+        "onsetDateTime": "[INSERT DATE]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "example-med-admin-methylprednisolone",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "6876",
+              "display": "Methylprednisolone"
+            }
+          ],
+          "text": "Methylprednisolone"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "context": {
+          "reference": "Encounter/example-encounter"
+        },
+        "effectivePeriod": {
+          "start": "[INSERT DATE]",
+          "end": "[INSERT DATE]"
+        },
+        "dosage": {
+          "text": "10mg/kg/day for 3 days"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "example-med-admin-propranolol",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "8640",
+              "display": "Propranolol"
+            }
+          ],
+          "text": "Propranolol"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "context": {
+          "reference": "Encounter/example-encounter"
+        },
+        "effectivePeriod": {
+          "start": "[INSERT DATE]",
+          "end": "[INSERT DATE]"
+        },
+        "dosage": {
+          "text": "120mg/d"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "example-med-admin-morphine",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "7052",
+              "display": "Morphine"
+            }
+          ],
+          "text": "Morphine"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "context": {
+          "reference": "Encounter/example-encounter"
+        },
+        "effectivePeriod": {
+          "start": "[INSERT DATE]",
+          "end": "[INSERT DATE]"
+        },
+        "dosage": {
+          "text": "3mg every 4 hours"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure-fracture",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical fixation of fracture"
+            }
+          ],
+          "text": "Fracture surgically fixed"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        },
+        "performedDateTime": "[INSERT DATE]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-ct-head",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-4",
+              "display": "CT of Head"
+            }
+          ],
+          "text": "Head CT scan"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        },
+        "valueString": "Multiple and bilateral frontal subcortical hypodense areas without a midline shift"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-ct-chest",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30750-6",
+              "display": "CT of Chest"
+            }
+          ],
+          "text": "Chest CT scan"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        },
+        "valueString": "Normal except for small bilateral basal atelectasis with no evidence of pulmonary embolism"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-echo",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18034-3",
+              "display": "Transthoracic echocardiography"
+            }
+          ],
+          "text": "Transthoracic echocardiography"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        },
+        "valueString": "Normal ventricles, normal valve function and an absence of patent foramen ovale or signs of pulmonary hypertension"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-eeg",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34966-6",
+              "display": "Electroencephalogram"
+            }
+          ],
+          "text": "Electroencephalogram"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        },
+        "valueString": "Diffuse slowing without epileptiform discharges"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "example-observation-mri-brain",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30720-9",
+              "display": "MRI of Brain"
+            }
+          ],
+          "text": "Brain MRI"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "encounter": {
+          "reference": "Encounter/example-encounter"
+        },
+        "valueString": "Multiple small lesions in both cerebral hemispheres that were hypointense on T1 and hyperintense on T2 and FLAIR, did not show enhancement after gadolinium injection, and were located in the periventricular white matter of both frontoparietal regions"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "example-careplan",
+        "status": "active",
+        "intent": "order",
+        "title": "Follow-up Care Plan",
+        "description": "The patient will follow up with the orthopedic surgeon for scheduled appointments related to the fracture.",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "period": {
+          "start": "[INSERT DATE]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "description": "Follow up with orthopedic surgeon"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

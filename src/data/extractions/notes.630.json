@@ -1,0 +1,180 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "_____________"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "period": {
+          "start": "______________",
+          "end": "_____________"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "Postmenopausal vaginal bleeding, presence of localized anterior intrauterine mass with deep myometrial invasion"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "code": {
+          "text": "Postmenopausal vaginal bleeding"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "Localized anterior intrauterine mass with deep myometrial invasion"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/_____________"
+        },
+        "code": {
+          "text": "Physical examination finding"
+        },
+        "valueString": "18-week sized uterus without palpable groin lymph nodes"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/_____________"
+        },
+        "code": {
+          "text": "MRI of the pelvis"
+        },
+        "valueString": "Localized anterior intrauterine mass with deep myometrial invasion"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/_____________"
+        },
+        "code": {
+          "text": "CT with contrast of the abdomen and thorax"
+        },
+        "valueString": "Localized anterior intrauterine mass with deep myometrial invasion"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/_____________"
+        },
+        "code": {
+          "text": "Histology"
+        },
+        "valueString": "Uterine curettage showed carcinosarcoma composed of mixed endometrioid adenocarcinoma, chondrosarcoma, and a hepatoid component, with the hepatoid tumor cells being positive for AFP, HepPar-1, and arginase-1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/_____________"
+        },
+        "code": {
+          "text": "Total abdominal hysterectomy and bilateral salpingo-oophorectomy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PlanDefinition",
+        "subject": {
+          "reference": "Patient/_____________"
+        },
+        "title": "Adjuvant chemotherapy with Taxotere and Cyclophosphamide (TC)"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "code": {
+          "text": "Carcinosarcoma with endometrioid adenocarcinoma, hepatoid adenocarcinoma, and sarcomatous components consisting of chondroid and spindle cell components"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "recurrence",
+              "display": "Recurrence"
+            }
+          ]
+        },
+        "code": {
+          "text": "Histological recurrence and general metastases of malignancy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "subject": {
+          "reference": "Patient/_____________"
+        },
+        "description": "Regular visits with oncologist, calm surroundings, physical exercises, controlled edibles, and medication as needed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/_____________"
+        },
+        "code": {
+          "text": "Patient outcome"
+        },
+        "valueString": "The patient succumbed 11 months after the surgery, subsequent chemotherapy, and post-chemotherapy treatment"
+      }
+    }
+  ]
+}

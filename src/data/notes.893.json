@@ -1,0 +1,158 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1993-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org-1",
+        "name": "Lyon University Hospital",
+        "address": {
+          "country": "France"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "4210003",
+              "display": "Traumatic tooth injury"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "11",
+                "display": "Maxillary right central incisor"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "Periradicular bone loss, moderate periodontal disease, and edentulous zones due to upper first premolar extractions."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "234723000",
+              "display": "Extraction of tooth"
+            }
+          ]
+        },
+        "performedDateTime": "2023-01-01",
+        "note": [
+          {
+            "text": "The loose incisor was extracted atraumatically, and a temporary removable partial denture was positioned immediately."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "234741000000104",
+              "display": "Provision of removable partial denture"
+            }
+          ]
+        },
+        "performedDateTime": "2023-01-01",
+        "note": [
+          {
+            "text": "The patient selected the denture for economic reasons from the options proposed, including the placement of a dental implant with a provisional crown or a cantilever bridge."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "409586006",
+                "display": "Follow-up encounter"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": "2023-01-08",
+          "end": "2023-01-08"
+        },
+        "note": [
+          {
+            "text": "Upon reception of the denture, the removable denture was cleaned, and finishing and polishing were checked. The patient reported no difficulty with mastication and expressed his great satisfaction for aesthetical appearance of the prosthesis. Occlusal integration was checked to prevent any static or dynamic dysfunctional contacts. The initial retention of the denture base was excellent. The patient was recalled after one week to assess wound healing and patient tolerance to the immediate prosthesis. Healing of the oral mucosa was confirmed by the closure of extraction socket and the non-inflammatory aspect of the oral mucosa. There were no adverse and unanticipated events to report."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Periodontal Disease Treatment and Final Prosthetic Rehabilitation",
+        "description": "Final prosthetic rehabilitation will be initiated only after the treatment of periodontal disease and disappearance of tissue inflammation. The patient was advised to maintain good oral hygiene and quit tobacco and cannabis use to prevent further deterioration.",
+        "period": {
+          "start": "2023-01-01"
+        }
+      }
+    }
+  ]
+}

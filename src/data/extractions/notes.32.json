@@ -1,0 +1,238 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "name": [
+          {
+            "family": "[redacted]",
+            "given": [
+              "[redacted]"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "239856006",
+              "display": "SAPHO syndrome"
+            }
+          ],
+          "text": "SAPHO syndrome"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "38262-9",
+              "display": "History of clinical finding in subject"
+            }
+          ],
+          "text": "Right hip pain and decreased range of motion"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "effectiveDateTime": "[redacted]",
+        "valueString": "The patient, an 18-year-old male, was admitted to the emergency department with complaints of right hip pain for two weeks which worsened when attempting movement. The patient had a history of similar episodes in the past four years but was not diagnosed with any medical condition. Physical examination revealed mild to moderate tenderness in the right hip joint and a decreased range of motion."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "38238-9",
+              "display": "Imaging study report"
+            }
+          ],
+          "text": "MRI of the right thigh"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "effectiveDateTime": "[redacted]",
+        "valueString": "MRI of the right thigh showed trochanteric bursa effusion and synovitis of the right hip joint."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "38238-9",
+              "display": "Imaging study report"
+            }
+          ],
+          "text": "MRI of the sternoclavicular joint"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "effectiveDateTime": "[redacted]",
+        "valueString": "MRI showed a patchy area of hyperintensity on T2 and hypointensity on T1 images close to the sternoclavicular junction. On post-contrast images, there was a mild accentuated heterogeneous enhancement. A trace of fluid was also noted in the joint space, and marrow edema was seen along the articular margin and body of the sternum."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest1",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "72705000",
+              "display": "Non-steroidal anti-inflammatory drugs"
+            }
+          ],
+          "text": "Non-steroidal anti-inflammatory drugs (NSAIDs)"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "authoredOn": "[redacted]",
+        "dosageInstruction": [
+          {
+            "text": "NSAIDs for pain management"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest2",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "161",
+              "display": "Paracetamol"
+            }
+          ],
+          "text": "Paracetamol"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "authoredOn": "[redacted]",
+        "dosageInstruction": [
+          {
+            "text": "Paracetamol for pain management"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "708255002",
+              "display": "Magnetic resonance imaging of hip"
+            }
+          ],
+          "text": "MRI of the right thigh"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "performedDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "241609006",
+              "display": "Magnetic resonance imaging of sternoclavicular joint"
+            }
+          ],
+          "text": "MRI of the sternoclavicular joint"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "performedDateTime": "[redacted]"
+      }
+    }
+  ]
+}

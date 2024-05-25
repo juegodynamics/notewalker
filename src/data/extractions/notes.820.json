@@ -1,0 +1,249 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[Number]"
+          }
+        ],
+        "birthDate": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "703254007",
+              "display": "Cardiac sarcoidosis"
+            }
+          ]
+        },
+        "onsetDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "425419005",
+              "display": "Recurrent ventricular tachycardia"
+            }
+          ]
+        },
+        "onsetDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "209515001",
+              "display": "Decompensated heart failure"
+            }
+          ]
+        },
+        "onsetDateTime": "[Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18286008",
+              "display": "Radiofrequency ablation"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "56875007",
+                "display": "Left ventricle"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "53085002",
+                "display": "Interventricular septum"
+              }
+            ]
+          }
+        ],
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18286008",
+              "display": "Radiofrequency ablation"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "procedure",
+                "display": "Procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18776-5",
+              "display": "Hospital course narrative"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "valueString": "The patient was a 65-year-old man admitted due to repetitive drug-resistant VT episodes and decompensated heart failure. He had a history of cardiac sarcoidosis and a cardiac resynchronization therapy device implanted. Despite the administration of multiple medications, VTs could not be controlled, and he was admitted to our hospital. Electroanatomical mapping and RFA were performed to manage the VT storm, targeting low voltage zones and/or abnormal electrograms such as those with fragmented and double potentials. After the procedure, the clinical VT could not be induced. However, a different VT emerged two days later, and he required intubation, sedation, and cardiopulmonary support. A second ablation session was performed, and the VT was eliminated. The patient, however, died from deterioration of his heart failure 12 days after the procedure. A postmortem examination of the heart was performed revealed ablation lesions that were mainly located on the interventricular septum and inferior wall of the left ventricle."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "procedure",
+                "display": "Procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18776-5",
+              "display": "Hospital course narrative"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "valueString": "Initial resuscitation due to decompensated heart failure and VT storm. RFA resulted in temporary VT control until a different morphological VT arose. Second RFA resulted in complete elimination of the VT; however, the patient died from deterioration of heart failure 12 days after the procedure."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18741-9",
+              "display": "Discharge note"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "valueString": "The patient was discharged after his death, and no further follow-up was required."
+      }
+    }
+  ]
+}

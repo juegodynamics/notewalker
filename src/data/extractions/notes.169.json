@@ -1,0 +1,123 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "age": 27
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Abdominal lump with fullness after food and weight loss"
+        },
+        "clinicalStatus": {
+          "text": "Active"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "conclusion": "Complex cystic mass with internal septation",
+        "imagingStudy": [
+          {
+            "modality": {
+              "text": "Ultrasonogram (USG)"
+            }
+          },
+          {
+            "modality": {
+              "text": "Contrast-enhanced computed tomography (CECT)"
+            }
+          }
+        ],
+        "conclusionCode": [
+          {
+            "text": "Multiseptated cystic lesion, hypodense, associated with main pancreatic duct dilatation"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "code": {
+          "text": "Surgical exploration and excision of multiloculated cystic lesion"
+        },
+        "outcome": {
+          "text": "Postoperative lymphatic discharge, patient discharged with abdominal drain"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Fine-needle aspiration cytology (FNAC)"
+        },
+        "valueString": "Straw-colored aspirate with mature lymphocytes"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Histopathological examination"
+        },
+        "valueString": "Unremarkable pancreatic tissue with dilated lymphatic spaces, lymphatic follicles, congested blood vessels, fibrocollagenous tissue with chronic inflammatory infiltrate, lymphocytes, no malignant or atypical cells"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "finished",
+        "class": {
+          "code": "outpatient"
+        },
+        "period": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-15T00:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "text": "Follow-up for lymphatic discharge"
+          }
+        ],
+        "outcome": {
+          "text": "Drain output gradually decreased and was eventually removed"
+        }
+      }
+    }
+  ]
+}

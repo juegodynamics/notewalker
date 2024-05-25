@@ -1,0 +1,295 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "2002-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-10T00:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "123456",
+              "display": "Subretinal lesion with subretinal fluid and pigment epithelial detachment"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "22830006",
+              "display": "Factor VIII deficiency"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Focal laser photocoagulation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-10-02T00:00:00Z",
+          "end": "2023-10-02T00:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "455200000",
+              "display": "Photodynamic therapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-10-02T00:00:00Z",
+          "end": "2023-10-02T00:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386637003",
+              "display": "Intravitreal injection of triamcinolone acetonide"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-10-04T00:00:00Z",
+          "end": "2023-10-04T00:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-4",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Thermal laser photocoagulation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-10-05T00:00:00Z",
+          "end": "2023-10-05T00:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-5",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386637003",
+              "display": "Intravitreal injection of bevacizumab"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-10-06T00:00:00Z",
+          "end": "2023-10-10T00:00:00Z"
+        },
+        "note": [
+          {
+            "text": "Four intravitreal injections of bevacizumab (1.25 mg/0.05 ml) at an interval of 4–6 weeks."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29265-1",
+              "display": "Visual acuity"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "20/20",
+        "effectiveDateTime": "2033-10-01T00:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "document-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge Summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "RGlzY2hhcmdlIFN1bW1hcnk6ClRoaXMgaXMgYSBzdW1tYXJ5IG9mIGNhcmUgcHJvdmlkZWQgdG8gYSAyMS15ZWFyLW9sZCBmZW1hbGUgd2hvIHByZXNlbnRlZCB3aXRoIHZpc3VhbCBjb21wbGFpbnRzIHJlbGF0ZWQgdG8gYSByZXRpbmFsIGxlc2lvbiBpbiB0aGUgcmlnaHQgZXllLgpIb3NwaXRhbCBDb3Vyc2U6ClRoZSBwYXRpZW50IHdhcyBkaWFnbm9zZWQgd2l0aCBhIHN1YnJldGluYWwgbGVzaW9uIHdpdGggc3VicmV0aW5hbCBmbHVpZCBhbmQgcGlnbWVudCBlcGl0aGVsaWFsIGRldGFjaG1lbnQgaW4gdGhlIHJpZ2h0IGV5ZSwgc3BhcmluZyB0aGUgZm92ZWEuIFRoZSBwYXRpZW50IHdhcyBhbHNvIGRpYWdub3NlZCB3aXRoIGZhY3RvciBWSUlJIGRlZmljaWVuY3kuClRyZWF0bWVudDpGb2NhbCBsYXNlciBwaG90b2NvYWd1bGF0aW9uIHdhcyBwZXJmb3JtZWQgb24gYW4gZXh0cmFmb3ZlYWwgY2hvcm9pZGFsIG5lb3Zhc2N1bGFyIG1lbWJyYW5lIChDTlZNKS4gVGhlIHBhdGllbnQgd2FzIHRyZWF0ZWQgd2l0aCBwaG90b2R5bmFtaWMgdGhlcmFweSAoUERUKSBmb2xsb3dlZCBieSBpbnRyYXZpdHJlYWwgdHJpYW1jaW5vbG9uZSBhY2V0b25pZGUgKElWVEEpIGluamVjdGlvbiAoNCBtZy8wLjEgbWwpIDIgZGF5cyBsYXRlci4gVGhlcm1hbCBsYXNlciBwaG90b2NvYWd1bGF0aW9uIHdhcyBkb25lIGR1ZSB0byBwZXJzaXN0ZW50IGh5cGVyZmx1b3Jlc2NlbmNlIHJlbGF0ZWQgdG8gdGhlIGV4dHJhZm92ZWFsIENOVk0uIFRoZSBwYXRpZW50IHdhcyB0cmVhdGVkIHdpdGggZm91ciBpbnRyYXZpdHJlYWwgaW5qZWN0aW9ucyBvZiBiZXZhY2l6dW1hYiAoMS4yNSBtZy8wLjA1IG1sKSBhdCBhbiBpbnRlcnZhbCBvZiA0LTYgd2Vla3MuCkNvdXJzZSBhbmQgRm9sbG93LVVwOldoaWxlIHRoZSBwYXRpZW50J3Mg...
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

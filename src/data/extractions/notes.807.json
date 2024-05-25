@@ -1,0 +1,249 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "history": [
+          {
+            "condition": "recto-sigmoid carcinoma",
+            "treatment": [
+              {
+                "description": "neoadjuvant chemoradiotherapy"
+              },
+              {
+                "description": "Modified De Gramont regimen plus Oxaliplatin"
+              },
+              {
+                "description": "Panitumumab",
+                "startDate": "2016-05",
+                "cycles": 18
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-fever",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "provisional"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386661006",
+              "display": "Fever"
+            }
+          ],
+          "text": "Fever of unknown origin"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-symptoms",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75325-1",
+              "display": "Symptoms"
+            }
+          ],
+          "text": "Symptoms"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "valueString": "fever, dry cough, progressive shortness of breath, decreased exercise tolerance"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-ct-pet",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "44136-0",
+              "display": "CT and PET CT scan"
+            }
+          ],
+          "text": "CT and PET/CT scan after neoadjuvant chemoradiotherapy"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "conclusion": "Favourable response to rectal tumour, six small new liver lesions"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-reassessment",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "44136-0",
+              "display": "Reassessment CT, MRI, and PET scans"
+            }
+          ],
+          "text": "Reassessment CT, MRI, and PET scans"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "conclusion": "Liver and rectal primary lesions responded well, complete response of rectal disease on pathology after resection"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-resection",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "275856006",
+              "display": "Surgical resection"
+            }
+          ],
+          "text": "Surgical resection of rectal tumour"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedPeriod": {
+          "start": "2016-09",
+          "end": "2016-09"
+        },
+        "outcome": {
+          "text": "Complete response of rectal disease"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medadmin-chemotherapy",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1352113",
+              "display": "Panitumumab"
+            }
+          ],
+          "text": "Panitumumab"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "effectivePeriod": {
+          "start": "2017-03",
+          "end": "2017-03"
+        },
+        "dosage": {
+          "text": "Three cycles in March 2017"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-discharge",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "period": {
+          "end": "2017-03"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-fever"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "DD",
+                  "display": "Discharge diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest-further-investigation",
+        "status": "active",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "398192003",
+              "display": "Further investigations"
+            }
+          ],
+          "text": "Further investigations"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "386661006",
+                "display": "Fever"
+              }
+            ],
+            "text": "Fever of unknown origin"
+          }
+        ]
+      }
+    }
+  ]
+}

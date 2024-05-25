@@ -1,0 +1,163 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-anonymous",
+        "name": [
+          {
+            "use": "official",
+            "text": "Anonymous"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-anonymous",
+        "subject": {
+          "reference": "Patient/patient-anonymous"
+        },
+        "period": {
+          "start": "[insert date]",
+          "end": "[insert date]"
+        },
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[insert number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-knee-pain",
+        "subject": {
+          "reference": "Patient/patient-anonymous"
+        },
+        "code": {
+          "text": "Left knee pain with crackling noise"
+        },
+        "onsetDateTime": "[insert date]",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-mri",
+        "status": "final",
+        "code": {
+          "text": "MRI examination of the left knee"
+        },
+        "subject": {
+          "reference": "Patient/patient-anonymous"
+        },
+        "valueString": "The MRI examination indicated various anatomic anomalies, including the absence of the anterior cruciate ligament, hypoplastic posterior cruciate ligament, absence of the lateral intercondylar spine, and hypoplastic lateral meniscus. The patient also had severe trochlear dysplasia due to hypoplasia of the lateral femoral condyle and medial patellar facet hypoplasia. Sequellae of the earlier leg lengthening procedure were observed in the form of absent left fibula and metallic artefacts in the tibia."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-leg-lengthening",
+        "subject": {
+          "reference": "Patient/patient-anonymous"
+        },
+        "code": {
+          "text": "Leg lengthening procedure"
+        },
+        "bodySite": [
+          {
+            "text": "Left leg"
+          }
+        ],
+        "outcome": {
+          "text": "Absent left fibula and metallic artefacts in the tibia"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-physical-therapy",
+        "subject": {
+          "reference": "Patient/patient-anonymous"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Physical Therapy Plan",
+        "description": "Ongoing physical therapy to improve stability and reduce the risk of future knee injuries.",
+        "activity": [
+          {
+            "detail": {
+              "description": "Continue physical therapy",
+              "status": "in-progress"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-discharge",
+        "subject": {
+          "reference": "Patient/patient-anonymous"
+        },
+        "code": {
+          "text": "Stable at discharge"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "inactive"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Observation/observation-mri"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-follow-up",
+        "subject": {
+          "reference": "Patient/patient-anonymous"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-Up Care Plan",
+        "description": "Follow up with primary care physician for ongoing monitoring of her condition.",
+        "activity": [
+          {
+            "detail": {
+              "description": "Follow up with primary care physician",
+              "status": "in-progress"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

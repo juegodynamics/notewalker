@@ -1,0 +1,318 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "gender": "male",
+        "birthDate": "1964-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183807002",
+                "display": "Discharge summary"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "period": {
+          "start": "2014-09",
+          "end": "2014-12"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "19204006",
+              "display": "Spinal cord injury"
+            }
+          ],
+          "text": "T6 AIS A SCI from a gunshot wound"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "724.5",
+              "display": "Chronic pain"
+            }
+          ],
+          "text": "Chronic pain"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition3",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "394974009",
+              "display": "Heterotopic ossification"
+            }
+          ],
+          "text": "Left hip and knee heterotopic ossification"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition4",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition4",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "239873007",
+              "display": "Dislocation of joint"
+            }
+          ],
+          "text": "Chronic right hip dislocation"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Radiation therapy"
+            }
+          ],
+          "text": "Neo-adjuvant radiation therapy"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "performedPeriod": {
+          "start": "2014-11-01",
+          "end": "2014-11-30"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure2",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Excision of tumor"
+            }
+          ],
+          "text": "Radical excision of right shoulder mass with flap closure"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "performedPeriod": {
+          "start": "2014-12-01",
+          "end": "2014-12-31"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:careplan",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "subject": {
+          "reference": "urn:uuid:patient"
+        },
+        "period": {
+          "start": "2014-12-01",
+          "end": "2014-12-31"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "completed",
+              "description": "The patient was in a stable condition and was successfully discharged home to live alone in his accessible apartment complex."
+            }
+          },
+          {
+            "detail": {
+              "status": "in-progress",
+              "description": "The patient requires regular follow-up care with the oncology and physiatry departments. He needs to attend scheduled appointments for close monitoring of his condition and to ensure that his medication is adjusted accordingly if needed. He should be encouraged to follow a proper diet and exercise routine and attend physical therapy as recommended."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

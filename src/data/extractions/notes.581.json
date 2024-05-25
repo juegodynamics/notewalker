@@ -1,0 +1,178 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1950-01-01",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/patient-age",
+            "valueAge": {
+              "value": 73,
+              "unit": "years"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "21050002",
+              "display": "Pilon fracture"
+            }
+          ],
+          "text": "Multifragmentary Pilon fracture"
+        },
+        "onsetDateTime": "2023-04-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "66873009",
+              "display": "Insertion of intramedullary nail"
+            }
+          ],
+          "text": "Primary retrograde expandable Fixion® nail insertion"
+        },
+        "performedPeriod": {
+          "start": "2023-04-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "73744-4",
+              "display": "Healing assessment"
+            }
+          ],
+          "text": "Good union"
+        },
+        "effectiveDateTime": "2023-09-04",
+        "valueString": "The patient demonstrated good union and was able to walk without significant pain."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274914003",
+              "display": "Removal of intramedullary nail"
+            }
+          ],
+          "text": "Attempted removal of primary retrograde expandable Fixion® nail"
+        },
+        "performedPeriod": {
+          "start": "2025-10-01"
+        },
+        "outcome": {
+          "text": "Unsuccessful attempt at nail removal"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "62507009",
+              "display": "Heel pain"
+            }
+          ],
+          "text": "Chronic heel pain due to slight prominence at the bottom end of the nail"
+        },
+        "onsetDateTime": "2025-10-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75325-1",
+              "display": "Follow-up"
+            }
+          ],
+          "text": "Follow-up assessment"
+        },
+        "effectiveDateTime": "2025-10-01",
+        "valueString": "The patient is currently asymptomatic and will continue to be under follow-up. No further intervention is required at this time."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "document-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18748-4",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "The patient presented to our unit with a Pilon fracture which was successfully treated with primary retrograde expandable Fixion® nail. Follow-up revealed good union, however, after two and a half years the patient requested removal of the nail due to chronic heel pain. Despite an unsuccessful attempt at nail removal, the patient remains asymptomatic and will continue to be monitored."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

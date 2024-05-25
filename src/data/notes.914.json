@@ -1,0 +1,212 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "identifier": [
+          {
+            "use": "usual",
+            "system": "urn:oid:2.16.840.1.113883.4.1",
+            "value": "123456"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Doe",
+            "given": ["John"]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1948-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "2",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "201834006",
+              "display": "L5 radiculopathy"
+            }
+          ],
+          "text": "Severe bilateral L5 sciatalgy with paresthesias and mictional delay"
+        },
+        "onsetDateTime": "2014-07-01",
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "ImagingStudy/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3",
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "3",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "started": "2014-07-01",
+        "numberOfSeries": 1,
+        "numberOfInstances": 1,
+        "description": "MRI of lumbar spine",
+        "series": [
+          {
+            "uid": "urn:oid:1.2.840.113619.2.5.1762582753.1400050.1345727605.233",
+            "number": 1,
+            "modality": {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "MR",
+              "display": "Magnetic Resonance"
+            },
+            "description": "L4-L5 disc herniation",
+            "instance": [
+              {
+                "uid": "urn:oid:1.2.840.113619.2.5.1762582753.1400050.1345727605.234",
+                "sopClass": {
+                  "system": "http://dicom.nema.org/resources/ontology/DCM",
+                  "code": "1.2.840.10008.5.1.4.1.1.4",
+                  "display": "MR Image Storage"
+                },
+                "title": "Axial T2 MRI"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "4",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "405614008",
+              "display": "Laminectomy"
+            }
+          ],
+          "text": "Hemilaminectomy L4 and L5 on the right side with adjacent hemiflavectomy L3/4 and L5/S1"
+        },
+        "performedDateTime": "2014-07-01",
+        "performer": [
+          {
+            "actor": {
+              "reference": "Practitioner/5"
+            },
+            "role": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "309343006",
+                  "display": "Neurosurgeon"
+                }
+              ],
+              "text": "Neurosurgeon"
+            }
+          }
+        ],
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "51185008",
+                "display": "Lumbar spine"
+              }
+            ],
+            "text": "L4-L5"
+          }
+        ],
+        "outcome": {
+          "text": "Herniation inside the dural sac causing compression of most adjacent rootlets. Disc fragment was 'spongious' and 'softer than the usual extradural herniation.'"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "5",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "9876543210"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Smith",
+            "given": ["Jane"]
+          }
+        ],
+        "gender": "female",
+        "qualification": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "309343006",
+                  "display": "Neurosurgeon"
+                }
+              ],
+              "text": "Neurosurgeon"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "6",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "period": {
+          "start": "2014-07-01T09:00:00Z",
+          "end": "2014-07-06T17:00:00Z"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "428361000124106",
+                "display": "Discharge to home"
+              }
+            ],
+            "text": "Discharged asymptomatic on day 5"
+          }
+        }
+      }
+    }
+  ]
+}

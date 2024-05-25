@@ -1,0 +1,261 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-example",
+        "gender": "male",
+        "age": "16"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-example",
+        "status": "finished",
+        "class": {
+          "code": "IMP",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "N/A",
+          "end": "N/A"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        },
+        "serviceProvider": {
+          "reference": "Organization/tehran-university-medical-sciences"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-tmj-ankylosis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "276654001",
+              "display": "Ankylosis of temporomandibular joint"
+            }
+          ],
+          "text": "Bilateral TMJ ankylosis"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "onsetAge": {
+          "value": 4,
+          "unit": "years",
+          "system": "http://unitsofmeasure.org",
+          "code": "a"
+        },
+        "note": [
+          {
+            "text": "The bilateral TMJ ankylosis had relapsed after two unsuccessful surgeries."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-gap-arthroplasty",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ],
+          "text": "Gap Arthroplasty"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "89599006",
+              "display": "Arthroplasty of temporomandibular joint"
+            }
+          ],
+          "text": "Gap Arthroplasty"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "performedPeriod": {
+          "start": "N/A",
+          "end": "N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-osteodistractor",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ],
+          "text": "Distraction Osteogenesis"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "237019009",
+              "display": "Insertion of distraction device"
+            }
+          ],
+          "text": "Osteodistractor Installation"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "performedPeriod": {
+          "start": "N/A",
+          "end": "N/A"
+        },
+        "note": [
+          {
+            "text": "A custom-made device called the Sh-device was used for a month for recommended mandibular displacement. The recommended displacement rate was 0.5mm per day."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-incisal-opening",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical",
+                "display": "Clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Maximum incisal opening"
+            }
+          ],
+          "text": "Maximum Incisal Opening"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "effectivePeriod": {
+          "start": "N/A",
+          "end": "N/A"
+        },
+        "valueQuantity": {
+          "value": 38,
+          "unit": "mm",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-physiotherapy-diet",
+        "status": "active",
+        "intent": "plan",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/care-plan-category",
+                "code": "assess-plan",
+                "display": "Assessment and Plan"
+              }
+            ],
+            "text": "Physiotherapy and Diet Plan"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "period": {
+          "start": "N/A",
+          "end": "N/A"
+        },
+        "description": "The patient was advised to continue physiotherapy and follow the recommended diet plan."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "tehran-university-medical-sciences",
+        "name": "Tehran University of Medical Sciences",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov",
+                "display": "Healthcare Provider"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

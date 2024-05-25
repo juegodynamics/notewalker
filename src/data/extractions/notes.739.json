@@ -1,0 +1,270 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "length": {
+          "value": 14,
+          "unit": "days"
+        },
+        "reasonCode": [
+          {
+            "text": "Psychosis with disorganized thought processes, paranoid delusions, and hallucinations; history of dopa-responsive dystonia"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Psychosis"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "onsetDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Dopa-responsive dystonia"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "onsetDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Urine toxicology screening"
+        },
+        "valueString": "negative",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "effectiveDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Haloperidol"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "effectiveDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Diphenhydramine"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "effectiveDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Lorazepam"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "effectiveDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Schizoaffective disorder bipolar type"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "onsetDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Auditory hallucinations"
+        },
+        "valueString": "resolved by the tenth day",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "effectiveDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Mood"
+        },
+        "valueString": "Euthymic by the tenth day",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "effectiveDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Physical examination"
+        },
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "performedPeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Speech"
+        },
+        "valueString": "Normal spontaneous speech on discharge",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "effectiveDateTime": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care",
+        "description": "Provided with outpatient follow-up for further treatment and medication management.",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "period": {
+          "start": "[redacted]"
+        },
+        "addresses": [
+          {
+            "reference": "Condition/[redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Adhere to new medication regimen, follow-up with appointed outpatient clinic, refrain from using illicit drugs, alert medical personnel if psychotic symptoms emerge.",
+        "subject": {
+          "reference": "Patient/[redacted]"
+        },
+        "period": {
+          "start": "[redacted]"
+        },
+        "addresses": [
+          {
+            "reference": "Condition/[redacted]"
+          }
+        ]
+      }
+    }
+  ]
+}

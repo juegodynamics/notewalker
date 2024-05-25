@@ -1,0 +1,225 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "2008-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "period": {
+          "start": "2023-10-01",
+          "end": "2023-10-07"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "21522001",
+                "display": "Abdominal pain"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "840539006",
+              "display": "COVID-19"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "onsetDateTime": "2023-09-29"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Appendectomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "performedDateTime": "2023-10-02"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-1",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "medication-1",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197351",
+              "display": "Cefotaxime"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-2",
+      "resource": {
+        "resourceType": "Medication",
+        "id": "medication-2",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "6812",
+              "display": "Metronidazole"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationRequest-1",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationRequest-1",
+        "status": "completed",
+        "intent": "order",
+        "medicationReference": {
+          "reference": "urn:uuid:medication-1"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medicationRequest-2",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationRequest-2",
+        "status": "completed",
+        "intent": "order",
+        "medicationReference": {
+          "reference": "urn:uuid:medication-2"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:carePlan-1",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "carePlan-1",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Post-operative care plan",
+        "description": "Standard analgesia and monitoring for symptom control",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "period": {
+          "start": "2023-10-02",
+          "end": "2023-10-07"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Monitor symptom control and manage pain with standard analgesia"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:carePlan-2",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "carePlan-2",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Isolation and follow-up care plan",
+        "description": "Isolation precautions and outpatient follow-up",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "period": {
+          "start": "2023-10-07",
+          "end": "2023-10-21"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Patient and family education on symptom management and isolation precautions"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

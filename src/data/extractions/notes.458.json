@@ -1,0 +1,275 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1",
+        "animal": {
+          "species": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/animal-species",
+                "code": "alpaca",
+                "display": "Alpaca"
+              }
+            ]
+          }
+        },
+        "gender": "female",
+        "birthDate": "2023-09-28",
+        "weight": {
+          "value": 9.5,
+          "unit": "kg"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "86299006",
+              "display": "Common arterial trunk"
+            }
+          ],
+          "text": "Type I common arterial trunk and PFO"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "3",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Tachycardia"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Tachycardia"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "4",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-6",
+              "display": "Radiographic imaging study"
+            }
+          ],
+          "text": "Standard lateral thoracic radiographs"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Minor abnormalities"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "5",
+        "status": "aborted",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Endoscopy of upper gastrointestinal tract"
+            }
+          ],
+          "text": "Upper airway endoscopy"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "reasonCode": [
+          {
+            "text": "Progressive distress"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "6",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18259-3",
+              "display": "Echocardiogram study"
+            }
+          ],
+          "text": "Echocardiographic exam"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Severe dilation of the right atrium and ventricle. Large VSD and PFO found."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "7",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "183419001",
+              "display": "Euthanasia"
+            }
+          ],
+          "text": "Humane euthanasia"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "reasonCode": [
+          {
+            "text": "Poor prognosis"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "8",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "55233-1",
+              "display": "Postmortem examination"
+            }
+          ],
+          "text": "Postmortem examination"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Marked dilation of the right atrium, small PFO, large VSD, and single vessel overriding the IVS."
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "9",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "hosp-trans"
+              }
+            ],
+            "text": "Admitted with progressive weakness and dyspnea"
+          }
+        },
+        "period": {
+          "start": "2023-10-01",
+          "end": "2023-10-04"
+        },
+        "dischargeDisposition": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+              "code": "exp"
+            }
+          ],
+          "text": "Patient deceased"
+        }
+      }
+    }
+  ]
+}

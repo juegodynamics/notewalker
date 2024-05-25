@@ -1,0 +1,351 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "text": "Admitted for evaluation and monitoring of respiratory performance"
+          },
+          "dischargeDisposition": {
+            "text": "Discharged with outpatient follow up"
+          }
+        },
+        "status": "finished"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "447692005",
+              "display": "Pulmonary alveolar proteinosis"
+            }
+          ],
+          "text": "Pulmonary alveolar proteinosis (PAP)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Bronchoscopy"
+            }
+          ],
+          "text": "Bronchoscopy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Endobronchial ultrasound"
+            }
+          ],
+          "text": "Radial probe endobronchial ultrasound (EBUS)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "79033003",
+              "display": "Biopsy of lung"
+            }
+          ],
+          "text": "Forceps biopsy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "79033003",
+              "display": "Biopsy of lung"
+            }
+          ],
+          "text": "Cryobiopsy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI) [Ratio]"
+            }
+          ],
+          "text": "Peripheral capillary oxygen saturation (SpO2)"
+        },
+        "valueQuantity": {
+          "value": 95,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30522-7",
+              "display": "Rheumatoid factor"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "33925-4",
+              "display": "Antinuclear antibody"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "47210-2",
+              "display": "Anti-Smith antibody"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "47209-4",
+              "display": "Anti-ribonucleoprotein antibody"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "47213-6",
+              "display": "Anti-SSA"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "47214-4",
+              "display": "Anti-SSB"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "47212-8",
+              "display": "Anti-Scl-70"
+            }
+          ],
+          "text": "Autoimmune markers"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "NEG",
+                "display": "Negative"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "82146-6",
+              "display": "Pneumocystis jiroveci DNA [Presence] in Sputum by Probe and target amplification method"
+            }
+          ],
+          "text": "Polymerase chain reaction of Pneumocystis jiroveci"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "NEG",
+                "display": "Negative"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "DX",
+            "display": "Digital Radiography"
+          }
+        ],
+        "description": "Chest X-ray revealed diffuse interstitial infiltration bilaterally",
+        "series": [
+          {
+            "description": "Chest X-ray"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "CT",
+            "display": "Computed Tomography"
+          }
+        ],
+        "description": "Chest CT disclosed extensive patchy ground-glass opacities superimposed with thickened interlobular septa and intralobular lines over both lung fields, demonstrating a “crazy paving” pattern",
+        "series": [
+          {
+            "description": "Chest CT"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "19868-9",
+              "display": "Pulmonary function test"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "28728-1",
+              "display": "Spirometry"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "20150-9",
+              "display": "Diffusing capacity of the lung for carbon monoxide"
+            }
+          ],
+          "text": "Pulmonary function test"
+        },
+        "valueString": "Normal spirometry and moderately reduced diffusing capacity of the lungs for carbon monoxide (DLCO) on single breath diffusing capacity test"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Bronchoscopy with biopsy"
+            }
+          ],
+          "text": "Radial probe endobronchial ultrasound (EBUS)"
+        },
+        "note": [
+          {
+            "text": "Bronchoscopy indicated no endobronchial lesions. A radial probe endobronchial ultrasound (EBUS) showed a “blizzard sign”, suggesting ground-glass opacity over the superior segment of the right lower lobe. Pathological report of the four 0.2 × 0.2 × 0.1 cm tissue fragments obtained by forceps biopsy indicated only chronic inflammation. On the other hand, the four 0.5 × 0.5 × 0.2 cm tissue fragments acquired by cryobiopsy revealed periodic acid-Schiff (PAS)-positive granular proteinaceous exudate with mild interstitial lymphocytic infiltration filling the alveolar spaces consistent with PAP."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "The patient declined whole lung lavage and opted for close surveillance. He was discharged with outpatient follow up.",
+        "activity": [
+          {
+            "detail": {
+              "description": "Outpatient follow up"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ]
+      }
+    }
+  ]
+}

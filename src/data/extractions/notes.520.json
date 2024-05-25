@@ -1,0 +1,147 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "birthDate": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "Hemorrhagic shock due to bleeding from vessels originating from the lesser curvature of the stomach"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Hemorrhagic shock due to bleeding from vessels originating from the lesser curvature of the stomach"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Admission Physical Examination"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "At presentation the patient was hemodynamically unstable (blood pressure= 100/55 mmHg, heart rate= 135 beats/min, and breaths= 25 per min) and afebrile (36.7 C)."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "text": "Exploratory laparotomy and ligation of bleeding vessels originating from the lesser curvature of the stomach"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "end": "[REDACTED]"
+        },
+        "outcome": {
+          "text": "The patient had an uneventful recovery and was discharged on the 12th postoperative day."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "completed",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "description": "Discharge Instructions",
+        "text": {
+          "status": "additional",
+          "div": "<div>The patient is to report to the emergency department or seek immediate medical attention if experiencing any unusual symptoms such as abdominal pain, profuse bleeding, fever, or shortness of breath. The patient is advised to follow up with their primary care physician for further evaluation and to receive care instructions.</div>"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "appointment-1",
+        "status": "booked",
+        "description": "Follow-Up",
+        "start": "[REDACTED]",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/patient-1"
+            }
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/[REDACTED]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

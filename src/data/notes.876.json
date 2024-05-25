@@ -1,0 +1,273 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.1",
+            "value": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1989-01-01" // Example birth date
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "High-grade brainstem tumor"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "High-grade brainstem tumor"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "text": "Neurological symptoms"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Right hemiparesis, numbness, dysphagia, ataxia, severe headaches, mild left facial droop, dysarthria, worsening dysphagia, left lower quadrant abdominal pain, acute numbness of the left chest and shoulder"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274441001",
+              "display": "Stereotactic biopsy of brain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "43206002",
+              "display": "Nasogastric tube insertion"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "43183002",
+              "display": "Percutaneous endoscopic gastrostomy (PEG)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-1",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308136",
+              "display": "Temozolomide"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "[REDACTED]"
+        },
+        "dosage": {
+          "text": "IV then oral via PEG tube"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-2",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "2206",
+              "display": "Dexamethasone"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectivePeriod": {
+          "start": "[REDACTED]"
+        },
+        "dosage": {
+          "text": "Increased"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "text": "MRI of the brain"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Heterogeneous T1 hypointense and T2 hyperintense signal abnormality involving the pontine base and extending into the medulla. Mildly increased relative cerebral blood flow and blood volume within the enhancing portion of the abnormality. No abnormal enhancement or significant hyperperfusion in the pontine component. Mild mass effect on the fourth ventricle. No peritumoral edema or significant mass effect."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "text": "CT scan of the chest"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Scattered small ground glass and nodular opacities bilaterally."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60570-9",
+              "display": "Pathology report"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "conclusion": "Brain biopsy initially interpreted as classic medulloblastoma (WHO Grade 4), amended to small cell glioblastoma (WHO Grade 4). Interphase fluorescence in situ hybridization (iFISH) analysis revealed PDGFRA amplification. No amplification of MYC, NMYC, or EGFR."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary: Patient Name: [REDACTED] Medical Record Number: [REDACTED] Date of Admission: [REDACTED] Date of Discharge: [REDACTED] Length of Stay: [REDACTED] Admitting Diagnosis: High-grade brainstem tumor Hospital Course: The patient, a 34-year-old Caucasian female, was admitted to the hospital with complaints of right hemiparesis, numbness, dysphagia, and ataxia. These symptoms began as numbness over her right scapular area two weeks prior, and the numbness later progressed to include the right leg. Additionally, she reported five days of waking up during the night with severe headaches, which were different in nature from her previous migraines. After workup in the emergency department and neurology consultation, the patient was referred to neurosurgery for management of a high-grade brainstem tumor. On initial presentation, the patient's pupils were equal, round, and reactive to light, and her cranial nerves were grossly intact. Motor testing revealed that strength was 5/5 in both upper and lower extremities, and dysmetria was noted in the right upper extremity during finger-to-nose testing. The patient experienced a progressive decline during her initial admission, to include mild left facial droop, dysarthria, and worsening dysphagia. These symptoms continued until her initial discharge. Upon readmission, the patient displayed similar findings, including left lower quadrant abdominal pain radiating to the shoulder and acute numbness of the left chest and shoulder. These symptoms progressed and worsened until the patient was intubated after deteriorating to a GCS score of 10. The patient underwent a closed stereotactic needle biopsy, during which biopsy samples were successfully obtained for pathologic examination. Postoperatively, a nasogastric tube was placed to provide nutrition, due to worsening dysphagia. On Day 10 of her hospitalization, a PEG tube was placed. The patient was scheduled for chemotherapy and craniospinal radiation therapy, and was discharged on Day 12. Four days later, the patient returned due to worsening symptoms, and dexamethasone was increased. The patient was started on temozolomide IV, but she developed respiratory acidosis/hypercapnia with a CO2 of 115 and was started on a BIPAP, two days later. As a result, a rapid response team was called to transfer the patient to the ICU. The temozolomide was converted to oral dosing via a PEG tube. The patient's family was consulted regarding the patient's status and their options. The patient chose to update her status to do not intubate. The patient was extubated prior to her discharge to a hospice care facility, where she passed away four days later. Imaging: MRI of the brain with and without contrast revealed a heterogeneous T1 hypointense and T2 hyperintense signal abnormality involving the pontine base and extending into the medulla. There was mildly increased relative cerebral blood flow and blood volume within the enhancing portion of the abnormality, suggesting neovascularity. The pontine component of the lesion also showed no abnormal enhancement or significant hyperperfusion. Mild mass effect on the fourth ventricle was noted. There was no peritumoral edema or significant mass effect. A CT scan of the chest with and without contrast enhancement revealed scattered small ground glass and nodular opacities bilaterally. Pathology: The brain biopsy was originally interpreted as a classic medulloblastoma (WHO Grade 4). However, the diagnosis was amended at St. Jude's Children's Research Hospital to small cell glioblastoma (WHO Grade 4). Interphase fluorescence in situ hybridization (iFISH) analysis revealed platelet-derived growth factor receptor A (PDGFRA) amplification. No amplification of MYC, NMYC, or epidermal growth factor receptor (EGFR) was observed. Follow-up: The patient passed away at a hospice care facility four days after discharge."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

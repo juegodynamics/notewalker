@@ -1,0 +1,188 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "gender": "male",
+        "age": 70
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "CTEPH",
+        "code": {
+          "text": "Chronic thromboembolic pulmonary hypertension (CTEPH)"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "PEA",
+        "code": {
+          "text": "Pulmonary embolism (PEA)"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "LVD",
+        "code": {
+          "text": "Left ventricular dysfunction following ECMO support"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "Cardiopulmonary bypass (CPB)"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "Extracorporeal membrane oxygenation (ECMO)"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "Vasopressor therapy"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "Inhaled nitric oxide and treprostinil treatment"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "Lung protective ventilation"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "Positive end-expiratory pressure (PEEP)"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "Atrial septostomy"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "Tracheostomy"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "text": "Discharged in stable condition"
+          }
+        },
+        "period": {
+          "start": "Not specified",
+          "end": "Not specified"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Follow-up care with local healthcare provider",
+              "code": {
+                "text": "Follow-up care"
+              },
+              "status": "not-started"
+            }
+          },
+          {
+            "detail": {
+              "description": "Healthy lifestyle guidance",
+              "code": {
+                "text": "Education"
+              },
+              "status": "not-started"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

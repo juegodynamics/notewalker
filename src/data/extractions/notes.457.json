@@ -1,0 +1,143 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example-patient",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2020",
+        "animal": {
+          "species": {
+            "text": "Guinea pig"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "example-condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Endometriosis with adenomyosis in the uterus and cystic endometriosis in the ovary"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure-1",
+        "status": "completed",
+        "code": {
+          "text": "Emergency surgery"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedPeriod": {
+          "start": "2022-01-01T00:00:00Z",
+          "end": "2022-01-01T00:00:00Z"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/example-condition-1"
+          }
+        ],
+        "note": [
+          {
+            "text": "Emergency surgery was performed under sedation with an association of butorphanol, medetomidine, and ketamine administrated intramuscularly. Anesthesia was maintained with isoflurane. During the anesthesia, intravenous fluid was administered via intravenous catheter 24 G. Surgical examination of the abdomen revealed an enlarged and congested ovary and uterus and signs of peritonitis."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-medicationrequest-1",
+        "status": "active",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "medicationCodeableConcept": {
+          "text": "Antibiotic"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-medicationrequest-2",
+        "status": "active",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "medicationCodeableConcept": {
+          "text": "Nonsteroidal anti-inflammatory drugs"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "example-medicationrequest-3",
+        "status": "active",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "medicationCodeableConcept": {
+          "text": "Ranitidine"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "example-procedure-2",
+        "status": "completed",
+        "code": {
+          "text": "Necropsy"
+        },
+        "subject": {
+          "reference": "Patient/example-patient"
+        },
+        "performedPeriod": {
+          "start": "2022-04-01T00:00:00Z",
+          "end": "2022-04-01T00:00:00Z"
+        },
+        "note": [
+          {
+            "text": "A necropsy was performed at that time and did not show any sign of endometriosis."
+          }
+        ]
+      }
+    }
+  ]
+}

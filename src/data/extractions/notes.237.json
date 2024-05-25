@@ -1,0 +1,308 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[INSERT PATIENT NAME]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "[INSERT DATE OF BIRTH]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[INSERT DATE]",
+          "end": "[INSERT DATE]"
+        },
+        "reasonCode": [
+          {
+            "text": "Specialist evaluation of a non-specific cough"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Non-specific cough with right pulmonary mass"
+        },
+        "subject": {
+          "reference": "Patient/[INSERT PATIENT ID]"
+        },
+        "onsetString": "6 weeks prior to admission"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Physical examination of the lung"
+        },
+        "subject": {
+          "reference": "Patient/[INSERT PATIENT ID]"
+        },
+        "valueString": "Diminished breath sounds on the right side of the lung"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Chest radiograph"
+        },
+        "subject": {
+          "reference": "Patient/[INSERT PATIENT ID]"
+        },
+        "valueString": "Mass located in the right upper lobe and middle lobe of the right lung, with a central area of calcification"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Chest computed tomography (CT) scan"
+        },
+        "subject": {
+          "reference": "Patient/[INSERT PATIENT ID]"
+        },
+        "valueString": "Confirmed chest radiograph findings of mass located in the right upper lobe and middle lobe of the right lung, with a central area of calcification"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ]
+        },
+        "code": {
+          "text": "Thoracotomy and resection of the lesion"
+        },
+        "subject": {
+          "reference": "Patient/[INSERT PATIENT ID]"
+        },
+        "performedPeriod": {
+          "start": "[INSERT DATE]",
+          "end": "[INSERT DATE]"
+        },
+        "outcome": {
+          "text": "Lobectomy of both upper lobe and middle lobe"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Histopathological examination"
+        },
+        "subject": {
+          "reference": "Patient/[INSERT PATIENT ID]"
+        },
+        "valueString": "Disorganization of the normal bronchoalveolar parenchyma, myofibroblastic cells, and inflammatory cell infiltrates, such as lymphocytes, neutrophils, eosinophils, and histiocytes. Large ossification found in the center of the lesion"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Immunohistochemistry"
+        },
+        "subject": {
+          "reference": "Patient/[INSERT PATIENT ID]"
+        },
+        "valueString": "Positive for calponin antigens, SMA, desmin, P53, bcL2, CK, HMW, ALK-1; Negative for beta-catenin, cyclin D1, Myo-D1, S100p, CD34, CD99, CD117"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Inflammatory Myofibroblastic Pseudotumor"
+        },
+        "subject": {
+          "reference": "Patient/[INSERT PATIENT ID]"
+        },
+        "abatementString": "Post-operative course was uneventful and the patient had normal daily activities, normal chest x-ray and no recurrences after 1 year"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "No plan for outpatient follow-up"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "text": "[INSERT PHYSICIAN NAME]"
+          }
+        ],
+        "qualification": [
+          {
+            "identifier": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-2.7-0360",
+              "value": "MD"
+            },
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.101",
+                  "code": "MD",
+                  "display": "Doctor of Medicine"
+                }
+              ]
+            }
+          },
+          {
+            "identifier": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-2.7-0360",
+              "value": "FACP"
+            },
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.6.101",
+                  "code": "FACP",
+                  "display": "Fellow of the American College of Physicians"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

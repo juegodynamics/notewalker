@@ -1,0 +1,238 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1946-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[date of admission]",
+          "end": "[date of discharge]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363406005",
+              "display": "Malignant tumor of lung"
+            }
+          ],
+          "text": "Stage IV lung SCC with metastasis to the liver"
+        },
+        "clinicalStatus": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "96413",
+              "display": "Chemotherapy administration, intravenous infusion technique; up to 1 hour, single or initial substance/drug"
+            }
+          ],
+          "text": "Treatment with nivolumab"
+        },
+        "performedPeriod": {
+          "start": "[date of admission]",
+          "end": "[date of discharge]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2143-6",
+              "display": "Cortisol [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Random cortisol level"
+        },
+        "valueQuantity": {
+          "value": 1.3,
+          "unit": "μg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ug/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2141-0",
+              "display": "Adrenocorticotropic hormone [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "ACTH level"
+        },
+        "valueQuantity": {
+          "value": 5,
+          "unit": "pg/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "pg/mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1806006",
+              "display": "Central adrenal insufficiency"
+            }
+          ],
+          "text": "Immune-related central adrenal insufficiency"
+        },
+        "clinicalStatus": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Medication",
+        "id": "medication-1",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "312615",
+              "display": "Dexamethasone"
+            }
+          ],
+          "text": "Dexamethasone"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Medication",
+        "id": "medication-2",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "3640",
+              "display": "Hydrocortisone"
+            }
+          ],
+          "text": "Hydrocortisone"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationReference": {
+          "reference": "Medication/medication-2"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Hydrocortisone as prescribed"
+          }
+        ],
+        "status": "active",
+        "intent": "order"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "185349003",
+              "display": "Imaging scan follow-up"
+            }
+          ],
+          "text": "Repeat scans after discontinuing nivolumab"
+        },
+        "performedPeriod": {
+          "start": "[date of discharge]",
+          "end": "[date of discharge]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-2",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[date of discharge]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "308646001",
+                "display": "Follow-up encounter"
+              }
+            ],
+            "text": "Follow-up appointments with primary care physician"
+          }
+        ]
+      }
+    }
+  ]
+}

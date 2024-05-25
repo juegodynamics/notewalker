@@ -1,0 +1,200 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2002-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "period": {
+          "start": "2023-03-01",
+          "end": "2023-03-18"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "191667000",
+              "display": "Organic delirium"
+            }
+          ]
+        },
+        "onsetDateTime": "2023-03-01",
+        "abatementDateTime": "2023-03-18",
+        "note": [
+          {
+            "text": "Acute organic delirium caused by GHB withdrawal"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000124106",
+              "display": "Electroconvulsive therapy"
+            }
+          ]
+        },
+        "performedPeriod": {
+          "start": "2023-03-11",
+          "end": "2023-03-14"
+        },
+        "note": [
+          {
+            "text": "Bilateral frontotemporal ECT as 'en bloc' treatment"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "status": "stopped",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197361",
+              "display": "Olanzapine"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "Intensified with olanzapine"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "status": "stopped",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "301536",
+              "display": "Diazepam"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "Intravenous diazepam"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "status": "completed",
+        "intent": "plan",
+        "activity": [
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "306206005",
+                    "display": "Follow-up visit"
+                  }
+                ]
+              },
+              "description": "Follow up with psychiatric services for further evaluation and management"
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "409063005",
+                    "display": "Drug addiction treatment"
+                  }
+                ]
+              },
+              "description": "Informed about drug addiction services and the importance of abstinence from substance abuse"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "The patient provided consent to report his case in the medical literature."
+          }
+        ]
+      }
+    }
+  ]
+}

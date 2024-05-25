@@ -1,0 +1,397 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-001",
+        "identifier": [
+          {
+            "system": "http://hospital.example.org",
+            "value": "[REDACTED]"
+          }
+        ],
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-001",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "Idiopathic central precocious puberty"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-001",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "237279007",
+              "display": "Precocious puberty"
+            }
+          ],
+          "text": "Idiopathic central precocious puberty"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-001",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18286008",
+              "display": "Administration of gonadotropin-releasing hormone analogue"
+            }
+          ],
+          "text": "Gonadotropin-releasing hormone (GnRH) analogue therapy with triptorelin i.m. 3.75 mg every 28 days"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-001",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ],
+          "text": "Height"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "valueQuantity": {
+          "value": 131.5,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-002",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI) [Ratio]"
+            }
+          ],
+          "text": "Tanner stage"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "valueString": "Tanner stage 3"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-002",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18286008",
+              "display": "Administration of gonadotropin-releasing hormone analogue"
+            }
+          ],
+          "text": "Follow-up LHRH test"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "outcome": {
+          "text": "Suppressed gonadotropin peaks"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-002",
+        "status": "finished",
+        "class": {
+          "code": "emergency"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "period": {
+          "start": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "Abdominal pain, burning sensation at neck and dyspnea"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-002",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "39579001",
+              "display": "Anaphylactic reaction"
+            }
+          ],
+          "text": "Anaphylactic reactions"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "onsetDateTime": "[REDACTED]",
+        "abatementDateTime": "[REDACTED]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-003",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "764123006",
+              "display": "Administration of epinephrine"
+            }
+          ],
+          "text": "Treatment with systemic epinephrine"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-004",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "421656000",
+              "display": "Administration of hydrocortisone"
+            }
+          ],
+          "text": "Treatment with intravenous hydrocortisone"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "allergy-001",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "417532002",
+              "display": "Allergy to gonadotropin-releasing hormone analogue"
+            }
+          ],
+          "text": "Allergy to triptorelin"
+        },
+        "patient": {
+          "reference": "Patient/patient-001"
+        },
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "271807003",
+                    "display": "Pruritus"
+                  }
+                ],
+                "text": "Pruriginous whistles"
+              }
+            ],
+            "severity": "severe",
+            "exposureRoute": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "34206005",
+                  "display": "Intramuscular route"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-003",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "62041-2",
+              "display": "Skin prick test"
+            }
+          ],
+          "text": "Skin prick test result"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "valueString": "Positive result at very low dilution of the drug (1:10.000)"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-005",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18286008",
+              "display": "Administration of gonadotropin-releasing hormone analogue"
+            }
+          ],
+          "text": "Discontinuation of triptorelin therapy"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-004",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI) [Ratio]"
+            }
+          ],
+          "text": "Puberty progression"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "valueString": "No significant progression of puberty in the six months of follow-up"
+      }
+    }
+  ]
+}

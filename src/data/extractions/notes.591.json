@@ -1,0 +1,205 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/bodyHeight",
+            "valueQuantity": {
+              "value": 156,
+              "unit": "cm",
+              "system": "http://unitsofmeasure.org",
+              "code": "cm"
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/bodyHeadCircumference",
+            "valueQuantity": {
+              "value": 52.5,
+              "unit": "cm",
+              "system": "http://unitsofmeasure.org",
+              "code": "cm"
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/phenotype",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "248626009",
+                  "display": "Speech delay"
+                },
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "229711000000102",
+                  "display": "Developmental delay"
+                },
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "192127007",
+                  "display": "Attention deficit disorder"
+                },
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "248563002",
+                  "display": "Retrognathia"
+                },
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "276654001",
+                  "display": "Hypertelorism"
+                },
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "248562007",
+                  "display": "Elongated philtrum"
+                },
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "248561000",
+                  "display": "Thin upper lip"
+                },
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "248570002",
+                  "display": "Broad hands"
+                },
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "248569007",
+                  "display": "Short hands"
+                },
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "111266001",
+                  "display": "Syndactyly"
+                },
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "248572005",
+                  "display": "Sandal gap"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "MRI",
+              "display": "MRI scan"
+            }
+          ]
+        },
+        "valueString": "No structural brain anomalies were seen on MRI."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "WES",
+              "display": "Whole Exome Sequencing"
+            }
+          ]
+        },
+        "valueString": "De novo frameshift variant Chr1(GRCh37):g.244217335del, NM_205768.2(ZBTB18):c.259del(p.(Leu87Cysfs*21)), that leads to a premature termination codon located more than 400 codons upstream of the canonical termination codon."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "305351004",
+                "display": "Discharge encounter"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "end": "2023-10-21T12:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "248626009",
+                "display": "Speech delay"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "229711000000102",
+                "display": "Developmental delay"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "192127007",
+                "display": "Attention deficit disorder"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "408432007",
+                    "display": "Follow-up visit"
+                  }
+                ]
+              },
+              "status": "scheduled",
+              "scheduledTiming": {
+                "repeat": {
+                  "frequency": 1,
+                  "period": 6,
+                  "periodUnit": "mo"
+                }
+              },
+              "description": "Follow-up at regular intervals with genetics and developmental specialists."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

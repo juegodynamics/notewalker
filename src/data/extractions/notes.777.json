@@ -1,0 +1,214 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "XXX"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2003-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Abdominal pain in epigastric region, weight loss, low back pain"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Sacroiliitis"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Gastric ulcer at the incisura angularis, granulomatous gastritis"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Granulamatous lymphadenitis with granulomas including giant cells, suspecting TB"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-5",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Ankylosing spondylitis"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Exploratory laparotomy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "text": "ATT consisting of (2HREZ/7HR) regimen"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Weight gain"
+        },
+        "valueQuantity": {
+          "value": 6,
+          "unit": "kg"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Hemoglobin"
+        },
+        "valueQuantity": {
+          "value": 12.6,
+          "unit": "gm/dL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "F-18 FDG PET/CT result"
+        },
+        "valueString": "Complete response to ATT with no residual disease"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "reasonCode": [
+          {
+            "text": "Abdominal pain in the epigastric region, weight loss, and fever"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-1"
+            }
+          },
+          {
+            "condition": {
+              "reference": "Condition/condition-2"
+            }
+          },
+          {
+            "condition": {
+              "reference": "Condition/condition-3"
+            }
+          },
+          {
+            "condition": {
+              "reference": "Condition/condition-4"
+            }
+          },
+          {
+            "condition": {
+              "reference": "Condition/condition-5"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "type": {
+          "text": "Discharge Summary"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "UGF0aWVudCBJbmZvcm1hdGlvbjogDQpOYW1lOiBYWFgNClVzZXJOYW1lOiBYWFgNClBhcnRpY2lwYW50TmFtZTogWFhYDQoNCkNoaWVmIENvbXBsYWludDogDQpBYmRvbWluYWwgcGFpbiBpbiB0aGUgZXBpZ2FzdHJpYyByZWdpb24sIHdlaWdodCBsb3NzLCBhbmQgZmV2ZXIgZm9yIDIgDQptb250aHMuDQpIb3NwaXRhbCBDb3Vyc2U6DQpUaGUgcGF0aWVudCB3YXMgYWRtaXR0ZWQgd2l0aCBjb21wbGFpbnRzIG9mIGFiZG9taW5hbCBwYWluIGluIHRoZSBlcGlnYXN0cmljIHJlZ2lvbiwgd2VpZ2h0IGxvc3MsIGFuZCBmZXZlci4gSGUgaGFkIGEgcGFzdCBtZWRpY2FsIGhpc3Rvcnkgb2YgbG93IGJhY2sgcGFpbi4gUGh5c2ljYWwgZXhhbWluYXRpb24gd2FzIG5vcm1hbC4gU2Fjcm9pbGlpdGlzIHdhcyBkZXRlY3RlZCBvbiBYLXJheSwgYW5kIGh1bWFuIGxldWtvY3l0ZSBhbnRpZ2VuIEIyNyB3YXMgcG9zaXRpdmUuIFBFVC9DVCBzY2FuIHJldmVhbGVkIG11bHRpcGxlIG1hbGlnbmFudCBseW1waGFkZW5vcGF0aGllcywgcGVyaXRvbmVhbCBpbXBsYW50cywgYW5kIGdhc3RyaWMgd2FsbCB0aGlja2VuaW5nIHN1Z2dlc3RpdmUgb2YgbGluaXRpcyBwbGFzdGljYS4gVXBwZXIgR0kgZW5kb3Njb3B5IGRldGVjdGVkIGEgZ2FzdHJpYyB1bGNlciBhdCB0aGUgaW5jaXN1cmEgYW5ndWxhcmlzLiBCaW9wc2llcyB3ZXJlIGNvbmR1Y3RlZCwgd2hpY2ggcmV2ZWFsZWQgZ3JhbnVsb21hdG91cyBnYXN0cml0aXMsIExhbmdoYW5zLXR5cGUgZ2lhbnQgY2VsbHMsIGdyYW51bG9tYXMgY29tcG9zZWQgb2YgZXBpdGhlbGlvaWQgaGlzdGlvY3l0ZXMsIHVsY2VyYXRpb24sIGFuZCBleHVkYXRlcyBpbiB0aGUgdHdvIHNhbXBsZXMuIEV4cGxvcmF0b3J5IGxhcGFyb3RvbXkgcmV2ZWFsZWQgZ3JhbnVsYW1hdG91cyBseW1waGFkZW5pdGlzIHdpdGggZ3JhbnVsb21hcyBpbmNsdWRpbmcgZ2lhbnQgY2VsbHMsIG1vc3RseSBzdXNwZWN0aW5nIFRCLiBBbmt5bG9zaW5nIHNwb25keWxpdGlzIHdhcyBkaWFnbm9zZWQgYXMgd2VsbC4gVGhlIHBhdGllbnQgd2FzIHB1dCBvbiBBVFQgY29uc2lzdGluZyBvZiAoMkhSRVovN0hSKSByZWdpbWVuLiBBdCB0aGUgNnRoIHdlZWsgb2YgdHJlYXRtZW50LCBoZSBnYWluZWQgd2VpZ2h0IGFib3V0IDYga2csIGFuZCBoZSB3YXMgZmVlbGluZyBoZWFsdGh5LiBIZW1vZ2xvYmluIHdhcyAxMi42IGdtL2RMLiBGb2xsb3ctdXAgRi0xOCBGR0cgUEVULyBDVCByZXZlYWxlZCBhIGNvbXBsZXRlIHJlc3BvbnNlIHRvIEFUVCB3aXRoIG5vIHJlc2lkdWFsIGRpc2Vhc2UuDQpTdW1tYXJ5IG9mIERpYWdub3NlczogDQoxLiBBYmRvbWluYWwgcGFpbiBpbiBlcGlnYXN0cmljIHJlZ2lvbiwgd2VpZ2h0IGxvc3MsIGxvdyBiYWNrIHBhaW4NCjIuIFNhY3JvaWxpaXRpcw0KM3MuIEdhc3RyaWMgdW5jZXIgYXQgdGhlIGluY2lzdXJhIGFuZ3VsYXJpcw0KNC4gR3JhbnVsYW1hdG91cyBseW1waGFkZW5pdGlzIHdpdGggZ3JhbnVsb21hcyBpbmNsdWRpbmcgZ2lhbnQgY2VsbHMsIHN1c3BlY3RpbmcgVEINDUUuIEFua3lsb3Npbmcgc3BvbmR5bGl0aXMNCg0KU3VtbWFyeSBvZiBUcmVhdG1lbnQ6DQpUaGUgcGF0aWVudCB3YXMgcHV0IG9uIEFUVCBjb25zaXN0aW5nIG9mICgySFJFWi83SFIpIHJlZ2ltZW4uIEF0IHRoZSBNdGggd2VlayBvZiB0cmVhdG1lbnQsIGhlIGdhaW5lZCB3ZWlnaHQgYWJvdXQgNiBrZywgYW5kIGhlIHdhcyBmZWVsaW5nIGhlYWx0aHkuIEhlbW9nbG9iaW4gd2FzIDEyLjYgZ20vZC5MLiBGb2xsb3ctdXAgRi0xOCBGR0cgUEVULyBDVCByZXZlYWxlZCBhIGNvbXBsZXRlIHJlc3BvbnNlIHRvIEFUVCB3aXRoIG5vIHJlc2lkdWFsIGRpc2Vhc2UuDQpDb25kaXRpb24gYXQgRGlzY2hhcmdlOg0KUGF0aWVudCBpcyBkaXNjaGFyZ2VkIGluIGdvb2QgY29uZGl0aW9uLiBGb2xsb3ctdXAgYXBwb2ludG1lbnRzIHdlcmUgc2NoZWR1bGVkIHdpdGggdGhlIHRyZWF0aW5nIHBoeXNpY2lhbnMu"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

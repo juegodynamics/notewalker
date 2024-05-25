@@ -1,0 +1,305 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-janice",
+        "name": [
+          {
+            "given": [
+              "Janice"
+            ]
+          }
+        ],
+        "birthDate": "1935-01-01",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "123456"
+          }
+        ],
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-janice-hospital-stay",
+        "subject": {
+          "reference": "Patient/patient-janice"
+        },
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183519006",
+                "display": "Hospital stay"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": "",
+          "end": ""
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-dementia",
+        "subject": {
+          "reference": "Patient/patient-janice"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "52448006",
+              "display": "Dementia"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-mental-capabilities",
+        "subject": {
+          "reference": "Patient/patient-janice"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72166-2",
+              "display": "Mental status"
+            }
+          ]
+        },
+        "valueString": "Decline in function, difficulty with short and long term memory, problems with orientation."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-physical-capabilities",
+        "subject": {
+          "reference": "Patient/patient-janice"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72514-3",
+              "display": "Physical status"
+            }
+          ]
+        },
+        "valueString": "Able to perform basic activities of daily living but had difficulty with complex tasks and planning."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-weight-loss",
+        "subject": {
+          "reference": "Patient/patient-janice"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11334-5",
+              "display": "Weight loss"
+            }
+          ]
+        },
+        "valueString": "Experienced weight loss due to stopping cooking and relying on microwave-ready meals and easy snacks."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-incontinence",
+        "subject": {
+          "reference": "Patient/patient-janice"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75325-1",
+              "display": "Incontinence"
+            }
+          ]
+        },
+        "valueString": "Had incontinence issues, occasional bowel incontinence."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-hearing-loss",
+        "subject": {
+          "reference": "Patient/patient-janice"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "419023004",
+              "display": "Bilateral hearing loss"
+            }
+          ]
+        },
+        "valueString": "Suffered from bilateral hearing loss."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "FamilyMemberHistory",
+        "id": "familymemberhistory-gwen",
+        "patient": {
+          "reference": "Patient/patient-janice"
+        },
+        "relationship": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+              "code": "daughter"
+            }
+          ]
+        },
+        "name": "Gwen",
+        "status": "completed",
+        "note": [
+          {
+            "text": "Gwen is the primary caregiver and reported that Janice had developed paranoia and visual hallucinations."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-janice-discharge",
+        "subject": {
+          "reference": "Patient/patient-janice"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Discharge instructions for Janice",
+        "activity": [
+          {
+            "detail": {
+              "description": "Continue with current medications."
+            }
+          },
+          {
+            "detail": {
+              "description": "Hand hygiene and general hygienic care is advised."
+            }
+          },
+          {
+            "detail": {
+              "description": "Ensure that she is monitored for any signs of cognitive decline."
+            }
+          },
+          {
+            "detail": {
+              "description": "Allow proper ventilation within the residential area."
+            }
+          },
+          {
+            "detail": {
+              "description": "Provide appropriate support to Janice to manage her incontinence issues."
+            }
+          },
+          {
+            "detail": {
+              "description": "Ensure that all her belongings, including her paintings and collectibles, are retained without damage."
+            }
+          },
+          {
+            "detail": {
+              "description": "Arrange ongoing care from home-care providers to help with complex tasks and planning as well as medication reminders."
+            }
+          },
+          {
+            "detail": {
+              "description": "Encourage communication with the daughter Gwen to monitor how she is handling the burden of caregiver stress. Consider connecting her to a local caregiver support group."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "appointment-followup-primary-care",
+        "status": "planned",
+        "description": "Follow-up appointment with primary care provider.",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/patient-janice"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "appointment-followup-audiologist",
+        "status": "planned",
+        "description": "Appointment with an audiologist for hearing aid adjustment.",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/patient-janice"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "appointment-followup-geriatrician",
+        "status": "planned",
+        "description": "Follow-up visit with geriatrician to monitor patients' health and well-being and evaluate compliance with the care plan.",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/patient-janice"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Patient's name]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "period": {
+          "start": "[Admission date]",
+          "end": "[Discharge date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "95315005",
+              "display": "Leiomyoma"
+            }
+          ],
+          "text": "Leiomyoma with LMS found in pathology reports."
+        },
+        "subject": {
+          "reference": "Patient/[Patient's name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "236893007",
+              "display": "Laparoscopic myomectomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Patient's name]"
+        },
+        "performedPeriod": {
+          "start": "[Date of Admission]",
+          "end": "[Date of Discharge]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "236893007",
+              "display": "Transabdominal hysterectomy and bilateral salphingoopherectomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Patient's name]"
+        },
+        "performedPeriod": {
+          "start": "[Date of Admission]",
+          "end": "[Date of Discharge]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "236893007",
+              "display": "Excision of mass in defined localization"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Patient's name]"
+        },
+        "performedPeriod": {
+          "start": "[Date of Admission]",
+          "end": "[Date of Discharge]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26436-6",
+              "display": "General pathology report"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Patient's name]"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/[Pathologist]"
+          }
+        ],
+        "valueString": "Pathology report revealed a marked cellularity and pleomorphism, extensive necrosis, mitosis >5/10BBA, KI67 proliferation index >%50, weak positivity for p53, and LMS with no detectable lymphovascular invasion."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26436-6",
+              "display": "General pathology report"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Patient's name]"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/[Pathologist]"
+          }
+        ],
+        "valueString": "Pathology report revealed an atypical pleomorphic fusiform cell proliferation area in a focal area within the cavity consistent with residual LMS when evaluated together with laparoscopic myomectomy material."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26436-6",
+              "display": "General pathology report"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Patient's name]"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/[Pathologist]"
+          }
+        ],
+        "valueString": "Pathology report revealed high grade malign mesenchymal tumor with high cellularity, extensive necrosis, mitosis 40/10 BBA, and moderate atypia. No tumor in surgical margin."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "44136-0",
+              "display": "Ultrasonography study"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Patient's name]"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/[Ultrasonographer]"
+          }
+        ],
+        "valueString": "Ultrasonography revealed a mass consistent with a degenerated myoma measuring 77x82mm, of which subserous component was greater in the posterior wall."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "44136-0",
+              "display": "MRI study"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Patient's name]"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/[Radiologist]"
+          }
+        ],
+        "valueString": "MRI revealed a mass with a hypovascular appearance following a heterogeneous and hypointense IV contrast material with a diameter of 8 mm, which appeared to displace the posterior cervix."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "44136-0",
+              "display": "PET-CT study"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Patient's name]"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/[Radiologist]"
+          }
+        ],
+        "valueString": "PET-CT performed after 3 months from 1st surgery, FDG uptake noted in the area above rectosigmoid mesentery towards the left abdominal wall in pelvic floor."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/[Patient's name]"
+        },
+        "authoredOn": "[Discharge date]",
+        "dosageInstruction": [
+          {
+            "text": "Continue medications as prescribed."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-Up Care Plan",
+        "description": "The patient should attend her follow-up appointments with the gynecologic oncologist. If the patient experiences any unusual symptoms or side effects, it is recommended that she contact her gynecologic oncologist.",
+        "subject": {
+          "reference": "Patient/[Patient's name]"
+        },
+        "period": {
+          "start": "[Discharge date]"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,285 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-x",
+        "name": [
+          {
+            "use": "official",
+            "family": "X"
+          }
+        ],
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-x",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "period": {
+          "start": "XX/XX/XX",
+          "end": "XX/XX/XX"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-breast-cancer",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254837009",
+              "display": "Malignant neoplasm of breast"
+            }
+          ],
+          "text": "Malignant breast mass"
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "onsetAge": {
+          "value": 36,
+          "unit": "years",
+          "system": "http://unitsofmeasure.org",
+          "code": "a"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-mastectomy",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Simple mastectomy"
+            }
+          ],
+          "text": "Right breast simple mastectomy with axillary lymph node evaluation"
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "performedPeriod": {
+          "start": "XX/XX/XX",
+          "end": "XX/XX/XX"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-pathology",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33717-0",
+              "display": "Pathology report"
+            }
+          ],
+          "text": "Pathology"
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "valueString": "Multifocal invasive mammary carcinoma with ductal and lobular features"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-pmrt",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385798006",
+              "display": "Adjuvant radiotherapy"
+            }
+          ],
+          "text": "Adjuvant PMRT 5000 cGy dose, 25 fractions with 1000 cGy scar boost"
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "performedPeriod": {
+          "start": "XX/XX/XX",
+          "end": "XX/XX/XX"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-goserelin",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308056",
+              "display": "Goserelin 3.6 mg"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "dosageInstruction": [
+          {
+            "text": "3.6 mg every 28 days"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-letrozole",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "204447",
+              "display": "Letrozole 2.5 mg"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "dosageInstruction": [
+          {
+            "text": "2.5 mg once daily"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-triptorelin",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "309362",
+              "display": "Triptorelin 3.75 mg"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "dosageInstruction": [
+          {
+            "text": "3.75 mg IM once every 28 days"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest-genetic-testing",
+        "status": "active",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "451041000124106",
+              "display": "Molecular genetic testing"
+            }
+          ],
+          "text": "Molecular and genetic testing"
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest-oophorectomy-discussion",
+        "status": "active",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "183919006",
+              "display": "Oophorectomy"
+            }
+          ],
+          "text": "Discuss the role of oophorectomy"
+        },
+        "subject": {
+          "reference": "Patient/patient-x"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-follow-up",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-x"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "status": "scheduled",
+              "description": "Follow up with the oncologist for further evaluation"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "gender": "male",
+        "age": 76
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "305351004",
+                "display": "Admission to hospital"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "period": {
+          "start": "N/A",
+          "end": "N/A"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "161944000",
+                "display": "Hearing loss"
+              }
+            ],
+            "text": "The patient complained of progressive bilateral hearing loss over 35 years and recurrent acute hearing loss bilaterally."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "299686004",
+              "display": "Bilateral progressive hearing loss"
+            }
+          ],
+          "text": "Bilateral progressive hearing loss"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "429703003",
+              "display": "CyberKnife radiosurgery"
+            }
+          ],
+          "text": "CyberKnife radiosurgery"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition"
+          }
+        ],
+        "note": [
+          {
+            "text": "CyberKnife radiosurgery to treat the multilocular schwannoma on the right side and the small intracochlear schwannoma on the T1."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "284263002",
+              "display": "Cochlear implantation"
+            }
+          ],
+          "text": "Cochlear implantation"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/condition"
+          }
+        ],
+        "note": [
+          {
+            "text": "Cochlear implantation on the right and left sides."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9270-0",
+              "display": "Word recognition score"
+            }
+          ],
+          "text": "Aided WRS"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "valueString": "35% (FMT) on the right side",
+        "note": [
+          {
+            "text": "The patient had an aided WRS of 35% (FMT) on the right side."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6990-2",
+              "display": "Signal-to-noise ratio"
+            }
+          ],
+          "text": "Signal-to-noise ratio"
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "valueString": "4.6 dB with CI on the right side and hearing aid on the left side, 11.3 dB for the right side with CI (with masking of the left ear)",
+        "note": [
+          {
+            "text": "The OLSA test revealed a 4.6 dB signal-to-noise ratio (SNR) with CI on the right side and hearing aid on the left side and 11.3 dB for the right side with CI (with masking of the left ear)."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Plan",
+        "description": "A follow-up appointment will be scheduled to monitor the auditory function of the patient.",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    }
+  ]
+}

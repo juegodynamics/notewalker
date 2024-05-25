@@ -1,0 +1,213 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[Number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org/encounters",
+            "value": "[Number]"
+          }
+        ],
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "93362002",
+              "display": "Bronchiolitis"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "5291005",
+              "display": "Hypocalcemia"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "267962006",
+              "display": "Rickets"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "367651003",
+                "display": "Knee"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128593007",
+              "display": "Dilated cardiomyopathy"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1982",
+              "display": "Calcium Carbonate 500 MG Oral Tablet"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "500 mg/day in divided doses"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "617312",
+              "display": "Cholecalciferol 3000 IU Oral Tablet"
+            }
+          ]
+        },
+        "dosageInstruction": [
+          {
+            "text": "3000 IU daily, later increased to 6000 IU daily"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "8195001",
+              "display": "Echocardiography"
+            }
+          ]
+        },
+        "outcome": {
+          "text": "Dilated cardiomyopathy with severely dilated left ventricle (LVEF of 25%, FS of 15%, and global hypokinesia)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "subject": {
+          "reference": "Patient/[Number]"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Upon discharge, [patient name] should follow up with a pediatrician for ongoing care. The mother of the patient should be educated on the importance of vitamin D supplementation during pregnancy and infancy. It is essential to continue administering oral calcium and cholecalciferol as per the specialist's advice. In addition, monitoring of the patient's growth and development should be monitored closely."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "status": "booked",
+        "description": "Follow-up visit with pediatrician for regular visits until the condition is stable.",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/[Number]"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    }
+  ]
+}

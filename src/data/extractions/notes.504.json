@@ -1,0 +1,200 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "family": "",
+            "given": [
+              ""
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1968-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "",
+          "end": ""
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "276775000",
+                "display": "Sinus node dysfunction"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "276775000",
+              "display": "Sinus node dysfunction"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "2267001",
+              "display": "Pacemaker implantation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "performedPeriod": {
+          "start": "",
+          "end": ""
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Vital signs"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Stable but with a temporary pause on the cardiac monitor that was symptomatic."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "93761005",
+              "display": "Glioblastoma multiforme"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "note": [
+          {
+            "text": "Rapid progression of all lesions, except the one in the pons, with vasogenic edema and midline shift."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Plan",
+        "description": "Schedule a repeat CT scan to monitor the progression of the glioblastoma and further management of the illness.",
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary: The patient presented to the emergency department with 2 episodes of unprovoked syncope and nausea, accompanied by somnolence, after being discharged three weeks earlier from the hospital for right frontal nodule resection of his multifocal glioblastoma multiforme. The patient's vital signs at the time of admission were stable, but with a temporary pause on the cardiac monitor that was symptomatic. The patient was diagnosed with SSS, and a pacemaker implantation was performed. After 24-hour monitoring post-procedure, the patient was discharged home to be followed up at the pacemaker clinic. During the follow-up, the patient's hemiparesis did not recover. The patient's condition at the time of discharge was stable but showed a rapid progression of all lesions, except the one in the pons, with vasogenic edema and midline shift. The patient was advised to seek immediate medical attention if they experience any further syncope, nausea, somnolence, or general weakness. The patient was discharged with a follow-up plan to schedule a repeat CT scan to monitor the progression of the glioblastoma and further management of the illness. No medication information available. No other Instructions available. Signed, [Physician Name] MD."
+            }
+          }
+        ],
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    }
+  ]
+}

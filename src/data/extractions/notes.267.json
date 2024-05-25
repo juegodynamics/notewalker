@@ -1,0 +1,255 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[NAME]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.3.4.5.6.7",
+            "value": "[NUMBER]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "period": {
+          "start": "[DATE]",
+          "end": "[DATE]"
+        },
+        "reasonCode": [
+          {
+            "text": "[SYMPTOMS]"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "[DIAGNOSIS]"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "[DIAGNOSIS]"
+        },
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        },
+        "onsetDateTime": "[DATE]",
+        "abatementDateTime": "[DATE]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Visual Acuity"
+        },
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        },
+        "valueString": "20/20 in both eyes"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Spherical Equivalent Refraction"
+        },
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        },
+        "component": [
+          {
+            "code": {
+              "text": "Right Eye"
+            },
+            "valueQuantity": {
+              "value": -10.5,
+              "unit": "diopters"
+            }
+          },
+          {
+            "code": {
+              "text": "Left Eye"
+            },
+            "valueQuantity": {
+              "value": -14,
+              "unit": "diopters"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Intraocular Pressure"
+        },
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        },
+        "component": [
+          {
+            "code": {
+              "text": "Right Eye"
+            },
+            "valueQuantity": {
+              "value": 18,
+              "unit": "mm Hg"
+            }
+          },
+          {
+            "code": {
+              "text": "Left Eye"
+            },
+            "valueQuantity": {
+              "value": 16,
+              "unit": "mm Hg"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Fundus Examination"
+        },
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        },
+        "component": [
+          {
+            "code": {
+              "text": "Fundus"
+            },
+            "valueString": "Tigroid fundus in both eyes"
+          },
+          {
+            "code": {
+              "text": "Lesion"
+            },
+            "valueString": "White, well-defined, and patchy lesion at the superonasal to the fovea in the left eye"
+          },
+          {
+            "code": {
+              "text": "Autofluorescence"
+            },
+            "valueString": "Hypofluorescence area in the macula"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Best Corrected Visual Acuity (BCVA)"
+        },
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        },
+        "valueString": "20/100 in the left eye at the final visit"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "No medication changes during this hospital stay"
+        },
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care Plan",
+        "description": "The patient is advised to follow up with a specialist for further examination and treatment.",
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "description": "Follow up with a specialist",
+              "status": "not-started"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "stable"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "[DIAGNOSIS]"
+        },
+        "subject": {
+          "reference": "Patient/[NUMBER]"
+        }
+      }
+    }
+  ]
+}

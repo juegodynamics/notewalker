@@ -1,0 +1,234 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Patient's Name]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[Medical Record Number]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1940-01-01",
+        "address": [
+          {
+            "country": "Japan"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "period": {
+          "end": "[Date of Discharge]"
+        },
+        "reasonCode": [
+          {
+            "text": "Mass in right maxillary premolar region"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128544003",
+              "display": "Peripheral ossifying fibroma with squamous cell carcinoma"
+            }
+          ],
+          "text": "Peripheral ossifying fibroma with squamous cell carcinoma (pT1N0M0)"
+        },
+        "subject": {
+          "reference": "Patient/[Medical Record Number]"
+        },
+        "onsetDateTime": "2002-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Tumorectomy"
+            }
+          ],
+          "text": "Tumorectomy under general anesthesia"
+        },
+        "subject": {
+          "reference": "Patient/[Medical Record Number]"
+        },
+        "performedPeriod": {
+          "end": "[Date of Discharge]"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/[Medical Record Number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "45007796",
+              "display": "Microscopic findings"
+            }
+          ],
+          "text": "Microscopic findings of the surgically removed tumor"
+        },
+        "subject": {
+          "reference": "Patient/[Medical Record Number]"
+        },
+        "valueString": "The tumor was composed of spindle-shaped cells that were proliferating with collagenous fiber, and scattered bone formation was also observed. The epithelial component of the tumor was well-differentiated squamous cell carcinoma."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29553-5",
+              "display": "Physical exam"
+            }
+          ],
+          "text": "Physical Exam"
+        },
+        "subject": {
+          "reference": "Patient/[Medical Record Number]"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "10210-3",
+                  "display": "Intra-oral findings"
+                }
+              ],
+              "text": "Intra-oral findings"
+            },
+            "valueString": "A massive pedunculated mass in the right maxillary premolar region measuring 83 × 58 × 35 mm was palpable. It covered the front of the right palate, and it protruded to the extra-oral region from the right maxillary premolar alveolar region. Its surface was almost entirely smooth, and some erosions and ulcerations were seen. It was elastic and hard and showed no tenderness on palpation. There was no palpable regional lymphadenopathy."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11348-0",
+              "display": "Hospital Course"
+            }
+          ],
+          "text": "Hospital Course"
+        },
+        "subject": {
+          "reference": "Patient/[Medical Record Number]"
+        },
+        "valueString": "[Patient's Name], an 83-year-old Japanese woman, was admitted to our department with a chief complaint of a mass in her right maxillary premolar region. The patient had initially noticed a painless mass in her right maxillary premolar region in 2002, but she did not seek any treatment for it. She was referred to us for examination and treatment due to difficulty in performing tracheal intubation for surgery of sigmoid colon cancer at another hospital. After performing several tests, the patient was diagnosed with peripheral ossifying fibroma with squamous cell carcinoma. We suspected a benign gingival tumor in the right maxillary premolar region, which was confirmed by a biopsy. Later, tumorectomy was performed under general anesthesia to remove the tumor, including the surrounding tissue. One week after surgery, the wound was covered with an oral appliance for protection. The microscopic findings of the surgically removed tumor were similar to those of the biopsy specimen. The tumor was composed of spindle-shaped cells that were proliferating with collagenous fiber, and scattered bone formation was also observed. The epithelial component of the tumor was considered to be well-differentiated squamous cell carcinoma. No signs of local recurrence or metastasis have been observed during follow-up."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11348-0",
+              "display": "Condition at discharge"
+            }
+          ],
+          "text": "Condition at discharge"
+        },
+        "subject": {
+          "reference": "Patient/[Medical Record Number]"
+        },
+        "valueString": "At the time of discharge, the patient's condition was stable, and there were no signs of local recurrence or metastasis during follow-up."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "78500-8",
+              "display": "Follow-Up Plan"
+            }
+          ],
+          "text": "Follow-Up Plan"
+        },
+        "subject": {
+          "reference": "Patient/[Medical Record Number]"
+        },
+        "valueString": "The patient will continue regular follow-up appointments with her primary care physician to monitor for any signs of recurrence or metastasis."
+      }
+    }
+  ]
+}

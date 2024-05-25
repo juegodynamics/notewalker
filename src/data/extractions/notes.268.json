@@ -1,0 +1,262 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1972-01-01"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "period": {
+          "start": "[insert date]",
+          "end": "[insert date]"
+        },
+        "reasonCode": [
+          {
+            "text": "Possible pulmonary infection"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Pulmonary cryptococcosis"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "onsetDateTime": "[insert date]"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "444931000124105",
+              "display": "Bronchoscopy"
+            }
+          ],
+          "text": "Bronchoscopic examinations"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "performedDateTime": "[insert date]"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-1",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-1",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "5278",
+              "display": "Piperacillin sodium/tazobactam sodium"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "authoredOn": "[insert date]",
+        "dosageInstruction": [
+          {
+            "text": "Given for 1 week"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-2",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-2",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "6918",
+              "display": "Fluconazole"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "authoredOn": "[insert date]",
+        "dosageInstruction": [
+          {
+            "text": "200mg/day orally for 3 weeks"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:medication-3",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medication-3",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "309362",
+              "display": "Bicyclol"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "authoredOn": "[insert date]",
+        "dosageInstruction": [
+          {
+            "text": "50mg/day orally for 3 weeks"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "61007-3",
+              "display": "Cryptococcal antigen [Presence] in Serum by Immunoassay"
+            }
+          ],
+          "text": "Cryptococcal antigen testing"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "effectiveDateTime": "[insert date]",
+        "valueString": "Positive"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30524-3",
+              "display": "C-reactive protein [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "High C-reactive protein"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:observation-3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4537-7",
+              "display": "Erythrocyte sedimentation rate by Westergren method"
+            }
+          ],
+          "text": "High erythrocyte sedimentation rate"
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:imagingstudy-1",
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-1",
+        "status": "available",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "description": "CT scans showing multiple consolidations and ground-glass shadows of bilateral lung fields"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:imagingstudy-2",
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-2",
+        "status": "available",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "description": "Contrast-enhanced CT scans showing multiple consolidations and ground-glass shadows with rough margins"
+      }
+    }
+  ]
+}

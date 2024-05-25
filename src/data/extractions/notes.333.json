@@ -1,0 +1,132 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1971-01-01",
+        "condition": [
+          {
+            "code": {
+              "text": "Gastroesophageal reflux disease"
+            }
+          },
+          {
+            "code": {
+              "text": "chronic urticaria"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "period": {
+          "start": "2020-06",
+          "end": "2021-01"
+        },
+        "reasonCode": [
+          {
+            "text": "None"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Immunization",
+        "vaccineCode": {
+          "text": "Influenza vaccination (Vaxigriptetra®)"
+        },
+        "occurrenceDateTime": "2020-10",
+        "patient": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Immunization",
+        "vaccineCode": {
+          "text": "Pfizer-BioNTech Covid-19 vaccine"
+        },
+        "occurrenceDateTime": "2020-12",
+        "patient": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "site": {
+          "text": "left arm"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Immunization",
+        "vaccineCode": {
+          "text": "Pfizer-BioNTech Covid-19 vaccine"
+        },
+        "occurrenceDateTime": "2021-01",
+        "patient": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "site": {
+          "text": "right arm"
+        },
+        "reaction": [
+          {
+            "detail": {
+              "text": "itching, clear yellowish secretion, and some bleeding from the BCG scar site"
+            },
+            "date": "2021-01"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "code": {
+          "text": "Itching, clear yellowish secretion, and some bleeding from BCG scar site"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "onsetDateTime": "2021-01",
+        "abatementDateTime": "2021-02"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "BCG vaccination"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "performedDateTime": "2020-06"
+      }
+    }
+  ]
+}

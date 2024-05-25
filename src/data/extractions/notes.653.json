@@ -1,0 +1,173 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "1997",
+        "name": [
+          {
+            "text": "N/A"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2017-03"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "25990002",
+              "display": "Endometriosis (disorder)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "2017-03",
+        "note": [
+          {
+            "text": "Endometriosis involving anterior and posterior cul-de-sac, both pelvic side walls, both ovaries, and sigmoid colon."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "2370009",
+              "display": "Laparoscopy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "2017-03"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44807009",
+              "display": "Fulguration of endometriotic lesions on the diaphragm using bipolar energy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "2017-03"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "PelvicDieCorrection",
+              "display": "Pelvic Die correction"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "2017-03"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24606-6",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2017-03",
+        "presentedForm": [
+          {
+            "contentType": "text/plain",
+            "data": "RGlzY2hhcmdlIFN1bW1hcnk6ClBhdGllbnQgTmFtZTogTi9BCTtBZG1pc3Npb24gRGF0ZTogTWFyY2ggMjAxNwpQYXRpZW50IEFnZTogMjAJRGlzY2hhcmdlIERhdGU6IE4vQQpHZW5kZXI6IEZlbWFsZQpMZW5ndGggb2YgU3RheTogTi9BCkhvc3BpdGFsIENvdXJzZToKQSAyMC15ZWFyLW9sZCB2aXJnaW4gZmVtYWxlIHBhdGllbnQgd2FzIHJlZmVycmVkIHRvIHRoZSBob3NwaXRhbCBpbiBNYXJjaCAyMDE3IGR1ZSB0byBjaHJvbmljIHBlbHZpYyBwYWluIGFuZCBzZXZlcmUgbWVuc3RydWFsIGN5Y2xlIHBhaW4gd2l0aCBhIFZOUlMgb2YgOSBsYXN0aW5nIGZvciBhbG1vc3QgYSB5ZWFyLiBUaGUgcGF0aWVudCBoYWQgbm8gaGlzdG9yeSBvZiBkeXNjaGV6aWEsIHBhaW4gZHVyaW5nIG9yIHBvc3QtdXJpbmF0aW9uLCBvciBvdGhlciBzeW1wdG9tcyByZWxhdGVkIHRvIGRpYXBocmFnbWF0aWMgZW5kb21ldHJpb3Npcy4KVGhlIHBhdGllbnQgd2FzIGRpYWdub3NlZCB3aXRoIGVuZG9tZXRyaW9zaXMgaW52b2x2aW5nIHRoZSBhbnRlcmlvciBhbmQgcG9zdGVyaW9yIGN1bC1kZS1zYWMgYm90aCBwZWx2aWMgc2lkZSB3YWxscywgYm90aCBvdmFyaWVzLCBhbmQgc2lnbW9pZCBjb2xvbiBmb2xsb3dpbmcgbGFwYXJvc2NvcHkuIE1hZ25ldGljIHJlc29uYW5jZSBpbWFnaW5nIChNUkkpIHdhcyBjb25kdWN0ZWQgdG8gZXhjbHVkZSBsZWZ0IG1hc3MgZnJvbSBhZGVub2NhcmNpbm9tYSwgd2hpbGUgdGhlIHJlc3VsdHMgcmV2ZWFsZWQgbm9ybWFsIHVwcGVyIGFiZG9taW5hbCBvcmdhbnMsIGx1bmdzLCBhbmQgZW5kb21ldHJpdW0gaW4gYm90aCBhZG5leGFlLiBEdXJpbmcgbGFwYXJvc2NvcHksIHRoZSBwYXRpZW50IHVuZGVyd2VudCBwZWx2aWMgRGl1IGNvcnJlY3Rpb24sIGFuZCBhIDItY20gZW5kb21ldHJpb3RpYyBub2R1bGUgYXR0YWNoZWQgdG8gdGhlIHJlY3RvdmFnaW5hbCBzZXB0dW0gd2FzIHNoYXZlZC4gVGhlcmUgd2FzIG5vIGV2aWRlbmNlIG9mIGVuZG9tZXRyaW9zaXMgaW4gdGhlIHVyZXRlcnMuIEVuZG9zY29waWMgZnVsZ3VyYXRpb24gd2FzIHBlcmZvcm1lZCB1c2luZyBiaXBvbGFyIGVuZXJneSBmb3IgZW5kb21ldHJpb3RpYyBsZXNpb25zIG9mIHRoZSBkaWFwaHJhZ20gd2hlbiB0aGUgcGF0aWVudCB3YXMgY2xhc2VkIGluIGEgcmV2ZXJzZSBUcmVuZGVsZW5idXJnIHBvc2l0aW9uLiBUaGVyZSB3ZXJlIGZpdmUgdG8gc2l4IGFyZWFzIG9mIHN1cGVyZmljaWFsIGVuZG9tZXRyaW9zaXMgb24gdGhlIGFudGVyaW9yIGFuZCBjZW50ZXIgb2YgdGhlIHJpZ2h0IGhlbWktZGlhcGhyYWdtLCBidXQgdGhlIGxlZnQgaGVtaS1kaWFwaHJhZ20gd2FzIGludGFjdC4KQW5hdG9teSBvZiBwZWx2aXMgIHdhcyByZXN0b3JlZCwgYW5kIHRoZSBwYXRpZW50IHdhcyBkaXNjaGFyZ2VkIGluIGEgc3RhYmxlIGNvbmRpdGlvbi4gClByb2NlZHVyZXM6CjEuIExhcGFyb3Njb3B5CjIuIEZ1bGd1cmF0aW9uIG9mIGVuZG9tZXRyaW90aWMgbGVzaW9ucyBvbiB0aGUgZGlhcGhyYWdtIHVzaW5nIGJpcG9sYXIgZW5lcmd5CjMuIFBlbHZpYyBEaWUgY29ycmVjdGlvbgpEaWFnbm9zZXM6CjEuIEVuZG9tZXRyaW9zaXMgaW52b2x2aW5nIGFudGVyaW9yIGFuZCBwb3N0ZXJpb3IgY3VsLWRlLXNhYywgYm90aCBwZWx2aWMgc2lkZSB3YWxscywgYm90aCBvdmFyaWVzLCBhbmQgc2lnbW9pZCBjb2xvbiAKSG9zcGl0YWwgQ291cnNlIFN1bW1hcnk6ClRoZSAyMC15ZWFyLW9sZCBmZW1hbGUgcGF0aWVudCB3YXMgYWRtaXR0ZWQgdG8gdGhlIGhvc3BpdGFsIGR1ZSB0byBjaHJvbmljIHBlbHZpYyBwYWluLCBhbmQgc2V2ZXJlIG1lbnN0cnVhbCBjeWNsZSBwYWluLiBUaGUgcGF0aWVudCB1bmRlcndlbnQgbGFwYXJvc2NvcHksIHBlbHZpYyBEaWUgY29ycmVjdGlvbiwgYW5kIGVuZG9zY29waWMgZnVsZ3VyYXRpb24gdG8gY29ycmVjdCB0aGUgZGlhZ25vc2lzIG9mIGVuZG9tZXRyaW9zaXMgaW52b2x2aW5nIHRoZSBhbnRlcmlvciBhbmQgcG9zdGVyaW9yIGN1bC1kZS1zYWMgYm90aCBwZWx2aWMgc2lkZSB3YWxscywgYm90aCBvdmFyaWVzLCBhbmQgc2lnbW9pZCBjb2xvbi4gVGhlIHBhdGllbnQgd2FzIGRpc2NoYXJnZWQgaW4gc3RhYmxlIGNvbmRpdGlvbi4="
+          }
+        ]
+      }
+    }
+  ]
+}

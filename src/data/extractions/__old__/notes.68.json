@@ -1,0 +1,250 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [{
+          "use": "official",
+          "family": "[Name Omitted]"
+        }],
+        "gender": "male",
+        "age": 34
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [{
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active"
+          }]
+        },
+        "verificationStatus": {
+          "coding": [{
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "confirmed"
+          }]
+        },
+        "code": {
+          "coding": [{
+            "system": "http://snomed.info/sct",
+            "code": "pigmented-lesion",
+            "display": "Pigmented lesion with rare mitotic figures and multiple microscopic satellites"
+          }]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [{
+            "system": "http://snomed.info/sct",
+            "code": "274025005",
+            "display": "Excisional biopsy"
+          }]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-01T00:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "status": "final",
+        "code": {
+          "coding": [{
+            "system": "http://loinc.org",
+            "code": "45033-8",
+            "display": "Pathology report"
+          }]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "result": [{
+          "reference": "Observation/observation-1"
+        }]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [{
+            "system": "http://loinc.org",
+            "code": "33717-0",
+            "display": "Examination of tissue"
+          }]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Pigmented lesion with rare mitotic figures and multiple microscopic satellites extending into fat to a depth of at least 4 mm. Sentinel lymph node biopsy was negative for neoplasm."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [{
+            "system": "http://loinc.org",
+            "code": "33717-0",
+            "display": "Immunohistochemical stains"
+          }]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [{
+                "system": "http://loinc.org",
+                "code": "33717-0",
+                "display": "Melan-A"
+              }]
+            },
+            "valueString": "diffusely reactive"
+          },
+          {
+            "code": {
+              "coding": [{
+                "system": "http://loinc.org",
+                "code": "33717-0",
+                "display": "HMB-45"
+              }]
+            },
+            "valueString": "diffusely reactive"
+          },
+          {
+            "code": {
+              "coding": [{
+                "system": "http://loinc.org",
+                "code": "33717-0",
+                "display": "catenin"
+              }]
+            },
+            "valueString": "non-specific cytoplasmic staining"
+          },
+          {
+            "code": {
+              "coding": [{
+                "system": "http://loinc.org",
+                "code": "33717-0",
+                "display": "Ki-67"
+              }]
+            },
+            "valueString": "low proliferative index"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [{
+            "system": "http://loinc.org",
+            "code": "81247-9",
+            "display": "Four-color in situ hybridization"
+          }]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "No gene rearrangements including PRKCA and PRKAR1A"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "code": {
+          "coding": [{
+            "system": "http://loinc.org",
+            "code": "81247-9",
+            "display": "Targeted mutation analysis"
+          }]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "GNA11 c.626A>T p.Q209L oncogenic mutation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "status": "final",
+        "code": {
+          "coding": [{
+            "system": "http://loinc.org",
+            "code": "81247-9",
+            "display": "Whole-genome DNA methylation profiling"
+          }]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Whole-genome DNA methylation profiling and t-Distributed Stochastic Neighbor Embedding (t-SNE) cluster analysis performed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-6",
+        "status": "final",
+        "code": {
+          "coding": [{
+            "system": "http://loinc.org",
+            "code": "72166-2",
+            "display": "Discharge diagnosis"
+          }]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Pigmented lesion with rare mitotic figures and multiple microscopic satellites"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "activity": [{
+          "detail": {
+            "description": "Follow up with healthcare provider for further evaluation and management of the pigmented lesion."
+          }
+        }]
+      }
+    }
+  ]
+}

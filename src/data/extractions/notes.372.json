@@ -1,0 +1,310 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "example",
+        "name": [
+          {
+            "use": "official",
+            "family": "[Redacted]",
+            "given": [
+              "[Redacted]"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1945-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "53741008",
+              "display": "Coronary artery disease (disorder)"
+            }
+          ],
+          "text": "Coronary artery disease (CAD)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition2",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233985008",
+              "display": "Aortic valve stenosis (disorder)"
+            }
+          ],
+          "text": "Aortic stenosis (AS)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000124102",
+              "display": "Percutaneous coronary intervention (procedure)"
+            }
+          ],
+          "text": "Percutaneous coronary intervention (PCI)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "109681000146100",
+              "display": "Transcatheter aortic valve replacement (procedure)"
+            }
+          ],
+          "text": "Transcatheter aortic valve replacement (TAVR)"
+        },
+        "note": [
+          {
+            "text": "29mm Edwards Sapien 3 valve"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition3",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "48447003",
+              "display": "Heart failure (disorder)"
+            }
+          ],
+          "text": "Heart failure"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition4",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "426627000",
+              "display": "Atrial fibrillation (disorder)"
+            }
+          ],
+          "text": "Atrial fibrillation (Af)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest1",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1110240",
+              "display": "Rivaroxaban"
+            }
+          ],
+          "text": "Rivaroxaban"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Non-vitamin K antagonist oral anticoagulant (NOAC) for new-onset Af and leaflet thrombosis"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition5",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "74400008",
+              "display": "Gastrointestinal hemorrhage (disorder)"
+            }
+          ],
+          "text": "Upper gastrointestinal bleeding"
+        },
+        "note": [
+          {
+            "text": "Episode after concomitant use of clopidogrel and rivaroxaban"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Endoscopy (procedure)"
+            }
+          ],
+          "text": "Therapeutic endoscope"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest2",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "76231",
+              "display": "Proton Pump Inhibitors"
+            }
+          ],
+          "text": "Proton pump inhibitors"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure4",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "12843005",
+              "display": "Blood transfusion (procedure)"
+            }
+          ],
+          "text": "Blood transfusions"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan1",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "status": "active",
+        "intent": "plan",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/care-plan-category",
+                "code": "assess-plan",
+                "display": "Assessment and Plan of Treatment"
+              }
+            ]
+          }
+        ],
+        "description": "Continue with anti-coagulants, monitor closely at regular intervals, and follow up on a regular basis with a cardiologist.",
+        "addresses": [
+          {
+            "reference": "Condition/condition3"
+          },
+          {
+            "reference": "Condition/condition4"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "DISCH",
+                "display": "discharge"
+              }
+            ]
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "409586006",
+                "display": "Follow-up encounter (procedure)"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

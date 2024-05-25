@@ -1,0 +1,229 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "case-3",
+        "name": [
+          {
+            "use": "official",
+            "family": "Case",
+            "given": [
+              "3"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2014-03-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/case-3"
+        },
+        "period": {
+          "start": "2023-09-01",
+          "end": "2023-09-07"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "84229001",
+                "display": "Toothache"
+              }
+            ],
+            "text": "Cold water pain in the left side of the maxilla"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "84229001",
+              "display": "Toothache"
+            }
+          ],
+          "text": "Cold water pain and hypersensitivity due to caries and root resorption in the left upper second primary molar"
+        },
+        "subject": {
+          "reference": "Patient/case-3"
+        },
+        "onsetDateTime": "2023-09-01",
+        "note": [
+          {
+            "text": "The left upper second primary molar was extracted because of apical periodontitis and root resorption due to severe caries when the patient was 4 years old."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI) [Ratio]"
+            }
+          ],
+          "text": "Physical Examination"
+        },
+        "subject": {
+          "reference": "Patient/case-3"
+        },
+        "effectiveDateTime": "2023-09-01",
+        "valueString": "Dark brown hypomineralization on the buccal tooth surface of the first premolars, along with root resorption and apical periodontitis."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "432119003",
+              "display": "Dental hypersensitivity treatment"
+            }
+          ],
+          "text": "Hypersensitivity treatment"
+        },
+        "subject": {
+          "reference": "Patient/case-3"
+        },
+        "performedPeriod": {
+          "start": "2023-09-01",
+          "end": "2023-09-07"
+        },
+        "outcome": {
+          "text": "VAS score improved from 4 to 0"
+        },
+        "note": [
+          {
+            "text": "The dark brown tooth surface of the first premolars has lightened to pale brown. Digital analysis also showed a significant reduction in the area of the brownish tint."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Dental follow-up plan",
+        "description": "Regular dental examinations to monitor any changes in symptoms or oral health. Education on proper oral care.",
+        "subject": {
+          "reference": "Patient/case-3"
+        },
+        "period": {
+          "start": "2023-09-07"
+        },
+        "activity": [
+          {
+            "detail": {
+              "kind": "Appointment",
+              "status": "scheduled",
+              "description": "Regular dental examinations",
+              "scheduledPeriod": {
+                "start": "2023-10-07"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-2",
+        "status": "planned",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "Patient/case-3"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "84229001",
+                "display": "Toothache"
+              }
+            ],
+            "text": "Follow-up for hypersensitivity and dental examination"
+          }
+        ],
+        "period": {
+          "start": "2023-10-07"
+        }
+      }
+    }
+  ]
+}

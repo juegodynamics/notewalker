@@ -1,0 +1,270 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "*Redacted*",
+            "family": "*Redacted*",
+            "given": ["*Redacted*"]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "*Redacted*"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "185349003",
+                "display": "Encounter for check-up"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/*Redacted*"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        },
+        "period": {
+          "start": "2023-09-01T08:00:00Z",
+          "end": "2023-09-01T12:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "396275006",
+              "display": "Leiomyoma"
+            }
+          ],
+          "text": "Leiomyoma"
+        },
+        "subject": {
+          "reference": "Patient/*Redacted*"
+        },
+        "onsetDateTime": "2023-09-01T08:00:00Z",
+        "abatementDateTime": "2023-09-01T12:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274292007",
+              "display": "Transrectal ultrasound guided biopsy of prostate"
+            }
+          ],
+          "text": "TRUS-guided biopsy"
+        },
+        "subject": {
+          "reference": "Patient/*Redacted*"
+        },
+        "performedPeriod": {
+          "start": "2023-09-01T09:00:00Z",
+          "end": "2023-09-01T09:30:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2857-1",
+              "display": "Prostate specific antigen [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "PSA"
+        },
+        "subject": {
+          "reference": "Patient/*Redacted*"
+        },
+        "effectiveDateTime": "2023-09-01T08:30:00Z",
+        "valueQuantity": {
+          "value": 1.05,
+          "unit": "ng/mL",
+          "system": "http://unitsofmeasure.org",
+          "code": "ng/mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168537006",
+              "display": "Transrectal ultrasound of prostate"
+            }
+          ],
+          "text": "TRUS"
+        },
+        "subject": {
+          "reference": "Patient/*Redacted*"
+        },
+        "effectiveDateTime": "2023-09-01T09:00:00Z",
+        "valueString": "Hypoechoic structure of 5 cm, extending beyond the prostate, interpreted as an utricular cyst."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "168731004",
+              "display": "Magnetic resonance imaging of prostate"
+            }
+          ],
+          "text": "Multiparametric prostate MRI"
+        },
+        "subject": {
+          "reference": "Patient/*Redacted*"
+        },
+        "effectiveDateTime": "2023-09-01T10:00:00Z",
+        "valueString": "Sharply demarcated structure of 5.8 × 6.5 × 5.2 cm originating in the right transition zone of the midprostate, with posterior bulging and no invasive behavior. A benign stromal tumor was suggested."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up MRI",
+        "description": "Follow-up imaging with MRI at six months was advised.",
+        "subject": {
+          "reference": "Patient/*Redacted*"
+        },
+        "period": {
+          "start": "2023-09-01T12:00:00Z",
+          "end": "2024-03-01T12:00:00Z"
+        },
+        "activity": [
+          {
+            "reference": {
+              "reference": "Procedure/*Redacted*"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "None"
+        },
+        "subject": {
+          "reference": "Patient/*Redacted*"
+        },
+        "authoredOn": "2023-09-01T12:00:00Z"
+      }
+    }
+  ]
+}

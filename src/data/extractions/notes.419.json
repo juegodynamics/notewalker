@@ -1,0 +1,217 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "1993-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-09-01",
+          "end": "2023-09-10"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "161891005",
+                "display": "Premature labor"
+              }
+            ],
+            "text": "Sudden onset, unprovoked, epigastric and left sided pleuritic chest pain"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "2894001",
+              "display": "Diaphragmatic hernia"
+            }
+          ],
+          "text": "Large left diaphragmatic defect"
+        },
+        "onsetDateTime": "2023-09-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "103693007",
+              "display": "Cesarean section"
+            }
+          ],
+          "text": "Lower uterine segment caesarean section"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "112030002",
+              "display": "Cesarean section"
+            }
+          ],
+          "text": "Cesarean section"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "2023-09-03",
+        "outcome": {
+          "text": "Uncomplicated delivery of a liveborn female infant weighing 1731 g"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Thoracotomy"
+            }
+          ],
+          "text": "Left thoracotomy"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Thoracotomy"
+            }
+          ],
+          "text": "Thoracotomy"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": "2023-09-03",
+        "outcome": {
+          "text": "Bochdalek hernia involving stomach, small bowel, colon, appendix, spleen and omentum successfully reduced and defect repaired with four figure of eight Prolene sutures"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "276654001",
+              "display": "Prematurity of newborn"
+            }
+          ],
+          "text": "Issues of prematurity"
+        },
+        "onsetDateTime": "2023-09-03"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "386661006",
+              "display": "Respiratory distress syndrome of newborn"
+            }
+          ],
+          "text": "Mild respiratory distress"
+        },
+        "onsetDateTime": "2023-09-03"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-4",
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "16932000",
+              "display": "Jaundice"
+            }
+          ],
+          "text": "Jaundice"
+        },
+        "onsetDateTime": "2023-09-03"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "description": "Follow-up with primary obstetrician and pediatrician. Monitor symptoms and contact medical provider if signs of complications."
+      }
+    }
+  ]
+}

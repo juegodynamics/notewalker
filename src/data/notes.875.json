@@ -1,0 +1,320 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "2002-01-01"  // Approximate birth date assuming the current year is 2023
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-01-01T00:00:00Z",  // Approximate admission date
+          "end": "2023-01-10T00:00:00Z"    // Approximate discharge date
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "71900003",
+              "display": "Subdural hemorrhage"
+            }
+          ],
+          "text": "Acute on Chronic Subdural Hematoma (CSDH) on the left side"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "2023-01-01T00:00:00Z",  // Approximate onset datetime
+        "abatementDateTime": "2023-01-10T00:00:00Z" // Approximate resolution datetime
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "61312",
+              "display": "Craniotomy with evacuation of hematoma"
+            }
+          ],
+          "text": "Emergency craniotomy with evacuation of the hematoma"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01T00:00:00Z",  // Approximate procedure date
+          "end": "2023-01-01T02:00:00Z"    // Approximate procedure end time
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9269-2",
+              "display": "Glasgow coma scale total score"
+            }
+          ],
+          "text": "Glasgow Coma Scale (GCS) score"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": "2023-01-01T00:00:00Z",  // Approximate observation datetime
+        "valueQuantity": {
+          "value": 7,
+          "unit": "score",
+          "system": "http://unitsofmeasure.org",
+          "code": "score"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "128462008",
+              "display": "Seizure"
+            }
+          ],
+          "text": "Generalized tonic-clonic seizures"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "2023-01-01T00:00:00Z",  // Approximate onset datetime
+        "abatementDateTime": "2023-01-10T00:00:00Z" // Approximate resolution datetime
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved",
+              "display": "Resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "313387002",
+              "display": "Vomiting"
+            }
+          ],
+          "text": "Repeated episodes of vomiting"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "onsetDateTime": "2023-01-01T00:00:00Z",  // Approximate onset datetime
+        "abatementDateTime": "2023-01-10T00:00:00Z" // Approximate resolution datetime
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197361",
+              "display": "Acetazolamide"
+            }
+          ],
+          "text": "Acetazolamide"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Conservative management with acetazolamide"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "E-9999",
+              "display": "Wound dressing"
+            }
+          ],
+          "text": "Pressure dressing of the wound"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01T00:00:00Z",  // Approximate procedure date
+          "end": "2023-01-10T00:00:00Z"    // Approximate procedure end time
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "clinicalimpression-1",
+        "status": "completed",
+        "description": "A 21-year-old male presented to the emergency with one episode of generalized tonic-clonic seizures followed by altered sensorium and repeated episodes of vomiting. He had a history of a minor head injury two months prior, which resulted in an incidental left Sylvian Type II arachnoid cyst. He was observed with symptomatic treatment for headaches until he presented with seizures and altered sensorium. His Glasgow Coma Scale (GCS) was seven on admission with left uncal herniation and a computed tomography (CT) scan revealed an acute on Chronic Subdural Hematoma (CSDH) on the left side with bleed into the cyst cavity and a significant midline shift. Emergency surgery was performed and dark machine oil-colored fluid was evacuated through two burr holes. Postoperative period was complicated with cerebrospinal fluid leak from the parietal burr hole on suture removal followed by a pulsatile swelling in the frontal burr hole. He was managed conservatively with acetazolamide and pressure dressing of the wound. The swelling spontaneously disappeared. The patient has been asymptomatic since then.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "2023-01-10T00:00:00Z",  // Approximate date of impression
+        "finding": [
+          {
+            "item": {
+              "reference": "Condition/condition-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Condition/condition-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Condition/condition-3"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

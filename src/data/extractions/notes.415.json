@@ -1,0 +1,168 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1998-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": null,
+          "end": null
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "24184005",
+              "display": "Acute cardiac failure"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "27479000",
+              "display": "Substance intoxication"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "note": [
+          {
+            "text": "4-CMC and amphetamine intoxication resulting in acute cardiac failure."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26436-6",
+              "display": "Cause of death"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Acute cardiac failure resulting from chronic focal lesions in the myocardium, possibly due to substance intoxication."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "RGlzY2hhcmdlIFN1bW1hcnk6CgpBZG1pc3Npb24gRGF0ZTogTi9BCkRpc2NoYXJnZSBEYXRlOiBOL0EKClBhdGllbnQ6IDI1LXllYXItb2xkIG1hbGUKClJlYXNvbiBmb3IgYWRtaXNzaW9uOgpUaGUgcGF0aWVudCB3YXMgZm91bmQgZGVhZCBpbiBoaXMgZmxhdC4gQXV0b3BzeSBkZXRlcm1pbmVkIHRoYXQgdGhlIGNhdXNlIG9mIGRlYXRoIHdhcyBhY3V0ZSBjYXJkaWFjIGZhaWx1cmUgcmVzdWx0aW5nIGZyb20gY2hyb25pYyBmb2NhbCBsZXNpb25zIGluIHRoZSBteW9jYXJkaXVtLCBwb3NzaWJseSBkdWUgdG8gc3Vic3RhbmNlIGludG94aWNhdGlvbi4KCkhvc3BpdGFsIGNvdXJzZToKRGVlIHRvIHRoZSBjaXJjdW1zdGFuY2VzIG9mIHRoZSBwYXRpZW50J3MgZGVhdGgsIHRoZXJlIHdhcyBubyBob3NwaXRhbCBjb3Vyc2UgdG8gZG9jdW1lbnQuCgpGaW5hbCBkaWFnbm9zaXM6Ck1peGVkIGNhdXNlcyBvZiBteW9jYXJkaXVtIGxlc2lvbnMgd2l0aCA0LUNNQyBhbmQgYW1waGV0YW1pbmUgaW50b3hpY2F0aW9uLCByZXN1bHRpbmcgaW4gYWN1dGUgY2FyZGlhYyBmYWlsdXJlLgoKVGJlcmFwaWVzOgphcyB0aGVyZSB3YXMgbm8gaG9zcGl0YWxpemF0aW9uIGZvciB0aGlzIHBhdGllbnQsIHRoZXJlIHdhcyBubyB0cmVhdG1lbnQgYWRtaW5pc3RlcmVkLgoKRm9sbG93LXVwOgpodHRwczovL3d3dy5leGFtcGxlLmNvbQpUaGVyZSB3aWxsIGJlIG5vIGZvbGxvdy11cCBuZWNlc3NhcnksIGFzIHRoZSBwYXRpZW50IGhhcyBleHBpcmVkLgoKUmVjb21tZW5kYXRpb246CkJhc2VkIG9uIHRoZSBhdXRvcHN5IHJlcG9ydCwgaXQgaXMgcmVjb21tZW5kZWQgdG8gZWR1Y2F0ZSBpbmRpdmlkdWFscyBvbiB0aGUgcG90ZW50aWFsIGRhbmdlcnMgb2Ygc3Vic3RhbmNlIGFidXNlLCBhcyBzdWJzdGFuY2VzIGxpa2UgNC1DTUMgYW5kIGFtcGhldGFtaW5lcyBjYW4gcmVzdWx0IGluIG15b2NhcmRpdW0gbGVzaW9ucyBhbmQgYWN1dGUgY2FyZGlhYyBmYWlsdXJlLiBBZGRpdGlvbmFsbHksIGl0IGlzIGltcG9ydGFudCB0byBzZWVrIG1lZGljYWwgYXR0ZW50aW9uIGltbWVkaWF0ZWx5IGlmIHN5bXB0b21zIG9mIHN1YnN0YW5jZSBpbnRveGljYXRpb24gYXJlIHByZXNlbnQu"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

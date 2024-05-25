@@ -1,0 +1,134 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Case2",
+        "name": [
+          {
+            "text": "Case 2"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "subject": {
+          "reference": "Patient/Case2"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "subject": {
+          "reference": "Patient/Case2"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233604007",
+              "display": "Anterior Maxillary Pain"
+            }
+          ],
+          "text": "Anterior Maxillary Pain"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "clinicalImpression1",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/Case2"
+        },
+        "description": "Case 2 is an 8-year-old male child who presented to the hospital with chief complaints of pain in the anterior maxilla following exposure to cold water. The patient had a history of trauma to the anterior primary teeth at the age of one year, with composite resin repair of a fracture in the crown of the upper right primary central incisor. Physical examination revealed an abnormal position of the upper right permanent central incisor and clouding of the labial surface, which were likely due to trauma to the primary teeth. The VAS value was 6 for cold water and 7.5 for air blowing.",
+        "finding": [
+          {
+            "itemCodeableConcept": {
+              "text": "abnormal position of the upper right permanent central incisor and clouding of the labial surface"
+            }
+          },
+          {
+            "itemCodeableConcept": {
+              "text": "VAS value was 6 for cold water and 7.5 for air blowing"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/Case2"
+        },
+        "code": {
+          "text": "Immediate treatment to reduce VAS"
+        },
+        "outcome": {
+          "text": "VAS reduced to zero for cold water and air blowing"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "status": "completed",
+        "subject": {
+          "reference": "Patient/Case2"
+        },
+        "code": {
+          "text": "Monthly treatment for seven months"
+        },
+        "outcome": {
+          "text": "VAS for air blowing was 2-4, and for cold water it was 1-2. No appearance of discolored, devitalized teeth, gingival inflammation, or percussion pain. Digital analysis showed significantly reduced cloudiness, from 27,886 pixels to 7904 pixels. Hypomineralized tooth mostly cloudy, with a narrow area of brown color, significantly decreased after treatment (p < 0.03)."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "dischargeSummary1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/Case2"
+        },
+        "date": "[redacted]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Case 2 was discharged in good condition. Follow-up care should continue as needed."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

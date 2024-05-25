@@ -1,0 +1,517 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "given": [
+              "N/A"
+            ]
+          }
+        ],
+        "birthDate": "1990-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183452005",
+                "display": "Discharge from hospital"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "end": "N/A"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "306689006",
+                "display": "Discharge to psychiatric hospital"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "74355002",
+              "display": "Myopericarditis"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Likely drug-induced"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "191816009",
+              "display": "Schizoaffective disorder, mixed type"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "note": [
+          {
+            "text": "Treatment-resistant"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "66590003",
+              "display": "Alcohol abuse"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197361",
+              "display": "Metoprolol"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "197316",
+              "display": "Colchicine"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "5640",
+              "display": "Ibuprofen"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "241541005",
+              "display": "Cardiac magnetic resonance imaging"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "outcome": {
+          "text": "Showed global hypokinesis with a left ventricular ejection fraction (EF) of 45%"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "104963000",
+              "display": "Electrocardiogram"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "outcome": {
+          "text": "ST elevations most prominent in V2-V3"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "104963000",
+              "display": "Electrocardiogram"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "outcome": {
+          "text": "Repeat EKG revealed resolution of ST-elevation and no arrhythmic events on telemetry"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "status": "active",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "167275002",
+              "display": "Echocardiogram"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72170-3",
+              "display": "Troponin [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "result": [
+          {
+            "reference": "Observation/troponin"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "troponin",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72170-3",
+              "display": "Troponin [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "valueQuantity": {
+          "value": "elevated",
+          "unit": "ng/mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30522-7",
+              "display": "Leukocytes [#/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "result": [
+          {
+            "reference": "Observation/leukocytosis"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "leukocytosis",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30522-7",
+              "display": "Leukocytes [#/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "valueQuantity": {
+          "value": "elevated",
+          "unit": "K/uL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "83107-3",
+              "display": "Brain natriuretic peptide [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "result": [
+          {
+            "reference": "Observation/bnp"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "bnp",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "83107-3",
+              "display": "Brain natriuretic peptide [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "valueQuantity": {
+          "value": "elevated",
+          "unit": "pg/mL"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24323-8",
+              "display": "Inflammatory marker panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "result": [
+          {
+            "reference": "Observation/inflammatory_markers"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "inflammatory_markers",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24323-8",
+              "display": "Inflammatory marker panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "valueString": "elevated"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PlanDefinition",
+        "status": "active",
+        "title": "Discharge Instructions",
+        "action": [
+          {
+            "description": "The patient is advised to follow up with his primary care provider or cardiology team for further evaluation and management regarding potential cardiac involvement associated with clozapine therapy."
+          },
+          {
+            "description": "He is recommended to avoid alcohol use and comply with prescribed medications and psychiatric treatments."
+          },
+          {
+            "description": "Patient education was provided regarding healthy lifestyle choices and symptom management to prevent future exacerbations of myopericarditis."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-Up Plans",
+        "description": "Follow-up with primary care provider or cardiology team for echocardiogram and repeat laboratory testing.",
+        "subject": {
+          "reference": "Patient/N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "family": "[Last Name]",
+            "given": [
+              "Dr."
+            ],
+            "suffix": [
+              "MD"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

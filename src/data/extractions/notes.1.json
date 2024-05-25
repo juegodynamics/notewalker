@@ -1,0 +1,272 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "use": "official",
+            "text": "[Insert Name]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "[Insert Birth Date]",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[Insert Number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[Insert Admission Date]",
+          "end": "[Insert Discharge Date]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/adm-diagnosis-1"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD",
+                  "display": "Admission diagnosis"
+                }
+              ]
+            }
+          },
+          {
+            "condition": {
+              "reference": "Condition/dis-diagnosis-1"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "DD",
+                  "display": "Discharge diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "adm-diagnosis-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "786.2",
+              "display": "Unspecified respiratory tract infection"
+            }
+          ],
+          "text": "Unspecified respiratory tract infection"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "dis-diagnosis-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "786.2",
+              "display": "Resolved respiratory tract infection"
+            }
+          ],
+          "text": "Resolved respiratory tract infection"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "physical-therapy",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Physical therapy procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225358003",
+              "display": "Dyspnea-relieving positions and mobilization techniques"
+            }
+          ],
+          "text": "Dyspnea-relieving positions, mobilization techniques, and deep-breathing exercises"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Insert Admission Date]",
+          "end": "[Insert Discharge Date]"
+        },
+        "outcome": {
+          "text": "Reduction in respiratory rate from 30 to 22 breaths/min, increase in oxygen saturation from 92% to 96% on 4 L/min oxygen. Walking and strength training, able to walk 350m without a walking aid or supplemental oxygen before discharge."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "discharge-medications",
+        "status": "completed",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "note": [
+          {
+            "text": "None"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "follow-up-plan",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "description": "Follow-up with regular healthcare professional for further monitoring and management of health status."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Composition",
+        "id": "discharge-summary",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "[Insert Discharge Date]",
+        "author": [
+          {
+            "reference": "Practitioner/[Insert Practitioner ID]"
+          }
+        ],
+        "title": "Discharge Summary",
+        "section": [
+          {
+            "title": "Hospital Course",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient was hospitalized due to persistent fever and dry cough for 2 weeks, leading to reduced general health condition. On admission, the patient required 4 L/min of oxygen due to rapid shallow breathing at rest and severe breathlessness during minor physical activity. The initial physical therapy focused on educating the patient on dyspnea-relieving positions, mobilization techniques, and deep-breathing exercises. However, with time, the patient's anxiety-induced dyspnea became an issue, leading to the modification of therapy to relieve his dyspnea. The patient positively responded to the therapy, evidenced by a reduction in respiratory rate from 30 to 22 breaths/min and an increase in oxygen saturation from 92% to 96% on 4 L/min oxygen. Over the next few days, his dyspnea and anxiety started to alleviate gradually, and the patient regained his self-confidence. The therapy was eventually shifted to walking and strength training, and the patient was able to walk for 350m without a walking aid or supplemental oxygen before discharge.</div>"
+            }
+          },
+          {
+            "title": "Hospital Outcome",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient was discharged home in an improved condition, with resolved respiratory tract infection, showing no need for further hospitalization. The patient was advised to follow-up with his regular healthcare professional for further monitoring and management of his health status.</div>"
+            }
+          },
+          {
+            "title": "Discharge Medications",
+            "text": {
+              "status": "generated",
+              "div": "<div>None</div>"
+            }
+          },
+          {
+            "title": "Follow-up",
+            "text": {
+              "status": "generated",
+              "div": "<div>The patient was advised to follow-up with his regular healthcare professional regarding further monitoring and management of his health status.</div>"
+            }
+          },
+          {
+            "title": "Impression",
+            "text": {
+              "status": "generated",
+              "div": "<div>Resolved respiratory tract infection with successful physical therapy for dyspnea relief and anxiety reduction. The patient responded well to therapy and regained his self-confidence, able to walk independently before discharge.</div>"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

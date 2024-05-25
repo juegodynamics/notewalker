@@ -1,0 +1,218 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "appendiceal-adenocarcinoma",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "code": {
+          "text": "Nonmucinous appendiceal adenocarcinoma"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "gallbladder-adenocarcinoma",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "code": {
+          "text": "Primary gallbladder adenocarcinoma, moderately to poorly differentiated"
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "emergent-appendectomy",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "code": {
+          "text": "Emergent appendectomy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "staging-ct",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "code": {
+          "text": "Staging CT"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "colonoscopy",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "code": {
+          "text": "Colonoscopy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "cytoreductive-surgery",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "code": {
+          "text": "Cytoreductive surgery"
+        },
+        "bodySite": [
+          {
+            "text": "Right hemicolectomy, cholecystectomy, total abdominal hysterectomy, bilateral salpingo-oophorectomy with en bloc resection of adnexal masses"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "hipec",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "code": {
+          "text": "HIPEC with mitomycin C"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "emergent-laparotomy",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "code": {
+          "text": "Emergent laparotomy"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "gemcitabine-cisplatin",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "medicationCodeableConcept": {
+          "text": "Gemcitabine and cisplatin"
+        },
+        "status": "completed",
+        "dosageInstruction": [
+          {
+            "text": "Completed four cycles"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "folfox",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "medicationCodeableConcept": {
+          "text": "FOLFOX"
+        },
+        "status": "stopped",
+        "dosageInstruction": [
+          {
+            "text": "Started FOLFOX after surveillance imaging demonstrated disease progression"
+          }
+        ],
+        "note": [
+          {
+            "text": "Patient presented with an acute abdomen secondary to perforated viscus shortly after receiving the first cycle of FOLFOX"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "discharge-summary",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "date": "[REDACTED]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary:\n\nPatient Name: [REDACTED]\n\nDate of Admission: [REDACTED]\n\nDate of Discharge: [REDACTED]\n\nHospital Course:\n\nThe patient was admitted to our tertiary medical center for a second opinion regarding the incidental pathology finding of nonmucinous appendiceal adenocarcinoma after an emergent appendectomy at an outside hospital. She underwent a staging CT and colonoscopy, which revealed no evidence of distant metastasis. Completion right hemicolectomy and possible right oophorectomy followed by adjuvant FOLFOX were recommended, but the patient forgoed any treatment at that time.\n\nThe patient presented to clinic with the CT findings of growth in the right ovarian cyst and a new complex cystic/solid mass along the left pelvic sidewall. On presentation, she complained of lower abdominal fullness and cramping with intermittent bloating and early satiety. Her exam was mostly unremarkable except for the fullness in bilateral adnexa. She underwent cytoreductive surgery, which included right hemicolectomy, cholecystectomy, and total abdominal hysterectomy and bilateral salpingo-oophorectomy with en bloc resection of the adnexal masses. This was followed by HIPEC with mitomycin C. The patient had an uneventful postoperative recovery and was discharged on postoperative day 6.\n\nPathology revealed primary gallbladder adenocarcinoma, moderately to poorly differentiated, arising in a background of high-grade biliary intraepithelial neoplasm and porcelain gallbladder. The carcinoma extended through the visceral peritoneum onto the serosal surface and into the pericystic soft tissue on the hepatic bed surface. All tumor deposits collected from the operation were consistent with metastasis from the biliary origin. The patient completed four cycles of gemcitabine and cisplatin before switching to FOLFOX after surveillance imaging demonstrated disease progression. The patient presented with an acute abdomen secondary to perforated viscus shortly after receiving the first cycle of FOLFOX and underwent emergent laparotomy. She was subsequently transitioned to hospice.\n\nHospital Course Summary:\n\nThe patient presented with nonmucinous appendiceal adenocarcinoma after an emergent appendectomy at an outside hospital. Further imaging revealed that the patient had growth in the right ovarian cyst and a new complex cystic/solid mass along the left pelvic sidewall. The patient underwent cytoreductive surgery, which included right hemicolectomy, cholecystectomy, and total abdominal hysterectomy and bilateral salpingo-oophorectomy with en bloc resection of the adnexal masses. This was followed by HIPEC with mitomycin C. The pathology revealed primary gallbladder adenocarcinoma, moderately to poorly differentiated, arising in a background of high-grade biliary intraepithelial neoplasm and porcelain gallbladder. The carcinoma extended through the visceral peritoneum onto the serosal surface and into the pericystic soft tissue on the hepatic bed surface. The patient completed four cycles of gemcitabine and cisplatin before switching to FOLFOX after surveillance imaging demonstrated disease progression. The patient presented with an acute abdomen secondary to perforated viscus shortly after receiving the first cycle of FOLFOX and underwent emergent laparotomy. She was subsequently transitioned to hospice."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

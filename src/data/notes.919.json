@@ -1,0 +1,362 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "N/A"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "305351004",
+                "display": "Pediatric emergency department admission"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": "N/A",
+          "end": "N/A"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "703989005",
+                "display": "Sulfonylurea overdose"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "703989005",
+              "display": "Sulfonylurea overdose"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2339-0",
+              "display": "Glucose [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 10,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "effectiveDateTime": "N/A"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225358003",
+              "display": "Administration of dextrose"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "performedDateTime": "N/A"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "425492004",
+              "display": "Glucose infusion"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "performedDateTime": "N/A"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "426659000",
+              "display": "Somatostatin treatment"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "performedDateTime": "N/A"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "MR",
+            "display": "Magnetic Resonance"
+          }
+        ],
+        "description": "T2-weighted MRI",
+        "series": [
+          {
+            "number": 1,
+            "modality": {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "MR"
+            },
+            "description": "T2-weighted sequence",
+            "instance": [
+              {
+                "number": 1,
+                "sopClass": {
+                  "system": "http://dicom.nema.org/resources/ontology/DCM",
+                  "code": "1.2.840.10008.5.1.4.1.1.4"
+                },
+                "title": "T2-weighted MRI showing focal hyperintensity in SCC",
+                "uid": "N/A"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "started": "N/A"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "MR",
+            "display": "Magnetic Resonance"
+          }
+        ],
+        "description": "Diffusion-weighted imaging (DWI)",
+        "series": [
+          {
+            "number": 1,
+            "modality": {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "MR"
+            },
+            "description": "DWI sequence",
+            "instance": [
+              {
+                "number": 1,
+                "sopClass": {
+                  "system": "http://dicom.nema.org/resources/ontology/DCM",
+                  "code": "1.2.840.10008.5.1.4.1.1.4"
+                },
+                "title": "DWI showing significant signal increase",
+                "uid": "N/A"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "started": "N/A"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "status": "available",
+        "modality": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "MR",
+            "display": "Magnetic Resonance"
+          }
+        ],
+        "description": "Follow-up DWI",
+        "series": [
+          {
+            "number": 1,
+            "modality": {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "MR"
+            },
+            "description": "DWI sequence",
+            "instance": [
+              {
+                "number": 1,
+                "sopClass": {
+                  "system": "http://dicom.nema.org/resources/ontology/DCM",
+                  "code": "1.2.840.10008.5.1.4.1.1.4"
+                },
+                "title": "Follow-up DWI showing complete resolution of lesion",
+                "uid": "N/A"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/N/A"
+        },
+        "started": "N/A"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "703989005",
+              "display": "Sulfonylurea overdose"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "The patient was instructed to follow up with a mental health provider for further evaluation and treatment on her suicidal tendencies. Additionally, the patient was instructed to continue routine follow-up with her primary care provider and advised to abstain from the use of oral hypoglycemic drugs in the future.",
+        "subject": {
+          "reference": "Patient/N/A"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "status": "booked",
+        "description": "Follow-up appointment with mental health provider",
+        "start": "N/A",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/N/A"
+            },
+            "required": "required",
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "status": "booked",
+        "description": "Follow-up appointment with primary care provider",
+        "start": "N/A",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/N/A"
+            },
+            "required": "required",
+            "status": "accepted"
+          }
+        ]
+      }
+    }
+  ]
+}

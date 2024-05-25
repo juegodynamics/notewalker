@@ -1,0 +1,233 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-example",
+        "identifier": [
+          {
+            "system": "http://saintlouisuniversity.edu/gift-body-program",
+            "value": "SLU-GB-001"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "admitting-diagnosis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "20479005",
+              "display": "Complete bifid penis"
+            }
+          ],
+          "text": "Complete bifid penis"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "hospital-course",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "hospitalization": {
+          "admitSource": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/admit-source",
+                "code": "other",
+                "display": "Other"
+              }
+            ],
+            "text": "Brought for anatomical dissection under the Saint Louis University Gift Body Program"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-bifid-penis",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18782-3",
+              "display": "Physical findings of Penis"
+            }
+          ],
+          "text": "Bifid penis"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "valueString": "Bifid penis 9.2 cm long, divided into right and left parts, each with its own glans and prepuce. No urethra in the phallus, urethral meatus located at base of divided phallus, indicating proximal penoscrotal hypospadias."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-histology",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33717-0",
+              "display": "Histopathology study"
+            }
+          ],
+          "text": "Histological examination"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "valueString": "Epithelial lining of urinary bladder extended to 3.9 cm on the ventral surface of each phallus, resembling stratified squamous epithelium."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-scrotum",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6996-0",
+              "display": "Physical findings of Scrotum"
+            }
+          ],
+          "text": "Scrotum"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "valueString": "Large scrotum containing left and right testes with normally routed spermatic cord. No epididymis, vas deferens continues directly from each testis to seminal vesicle of the same side."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-pathology",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "26436-6",
+              "display": "Pathology study"
+            }
+          ],
+          "text": "Pathologic examination"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "valueString": "Small mass of hard tissue on the left side, measuring 0.5 cm by 0.5 cm, located at the site of the prostate gland. Histologically, it did not resemble prostatic glandular tissue and had no connection with vas deferens or seminal vesicle."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "discharge-diagnosis",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "inactive"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "20479005",
+              "display": "Complete bifid penis"
+            }
+          ],
+          "text": "Complete bifid penis with proximal penoscrotal hypospadias accompanied by absent epididymis"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        }
+      }
+    }
+  ]
+}

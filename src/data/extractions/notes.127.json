@@ -1,0 +1,523 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "identifier": [
+          {
+            "use": "usual",
+            "system": "http://hospital.smarthealthit.org",
+            "value": "12345"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1944-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "38341003",
+              "display": "Hypertension"
+            }
+          ],
+          "text": "Hypertension"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "84114007",
+              "display": "Heart failure"
+            }
+          ],
+          "text": "Heart failure"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "230690007",
+              "display": "Cerebral infarction"
+            }
+          ],
+          "text": "Middle cerebral artery infarction"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "287682000",
+              "display": "Total hip replacement"
+            }
+          ],
+          "text": "Total hip arthroplasty"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "182840001",
+                "display": "Hip joint"
+              }
+            ]
+          }
+        ],
+        "performedPeriod": {
+          "start": "2022-01-01T09:00:00Z",
+          "end": "2022-01-01T12:00:00Z"
+        },
+        "performer": [
+          {
+            "actor": {
+              "reference": "Practitioner/practitioner-1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "20564-1",
+              "display": "Oxygen saturation in Arterial blood by Pulse oximetry"
+            }
+          ],
+          "text": "Oxygen saturation"
+        },
+        "valueQuantity": {
+          "value": 93.1,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "effectiveDateTime": "2022-01-01T10:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "20564-1",
+              "display": "Oxygen saturation in Arterial blood by Pulse oximetry"
+            }
+          ],
+          "text": "Oxygen saturation"
+        },
+        "valueQuantity": {
+          "value": 83.1,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "effectiveDateTime": "2022-01-01T10:30:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2703-7",
+              "display": "Partial pressure of oxygen in Arterial blood"
+            }
+          ],
+          "text": "Partial pressure of oxygen"
+        },
+        "valueQuantity": {
+          "value": 161.6,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        },
+        "effectiveDateTime": "2022-01-01T10:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2703-7",
+              "display": "Partial pressure of oxygen in Arterial blood"
+            }
+          ],
+          "text": "Partial pressure of oxygen"
+        },
+        "valueQuantity": {
+          "value": 51.2,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        },
+        "effectiveDateTime": "2022-01-01T10:30:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233935004",
+              "display": "Atelectasis (disorder)"
+            }
+          ],
+          "text": "Atelectasis"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1354328",
+              "display": "Propofol 10 MG/ML Injectable Emulsion"
+            }
+          ],
+          "text": "Propofol"
+        },
+        "effectiveDateTime": "2022-01-01T09:00:00Z",
+        "dosage": {
+          "route": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "47625008",
+                "display": "Intravenous route"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "582620",
+              "display": "Rocuronium bromide 10 MG/ML Injectable Solution"
+            }
+          ],
+          "text": "Rocuronium"
+        },
+        "effectiveDateTime": "2022-01-01T09:00:00Z",
+        "dosage": {
+          "route": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "47625008",
+                "display": "Intravenous route"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "397801001",
+              "display": "Intra-arterial cannulation"
+            }
+          ],
+          "text": "Intra-arterial cannulation"
+        },
+        "performedPeriod": {
+          "start": "2022-01-01T09:00:00Z",
+          "end": "2022-01-01T09:30:00Z"
+        },
+        "performer": [
+          {
+            "actor": {
+              "reference": "Practitioner/practitioner-1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "429419006",
+              "display": "Recruitment maneuver"
+            }
+          ],
+          "text": "Recruitment maneuver"
+        },
+        "performedPeriod": {
+          "start": "2022-01-01T10:30:00Z",
+          "end": "2022-01-01T10:45:00Z"
+        },
+        "performer": [
+          {
+            "actor": {
+              "reference": "Practitioner/practitioner-1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "11289",
+              "display": "Neostigmine 5 MG/ML Injection"
+            }
+          ],
+          "text": "Neostigmine"
+        },
+        "effectiveDateTime": "2022-01-01T10:45:00Z",
+        "dosage": {
+          "route": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "47625008",
+                "display": "Intravenous route"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "5640",
+              "display": "Glycopyrrolate 0.2 MG/ML Injection"
+            }
+          ],
+          "text": "Glycopyrrolate"
+        },
+        "effectiveDateTime": "2022-01-01T10:45:00Z",
+        "dosage": {
+          "route": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "47625008",
+                "display": "Intravenous route"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner-1",
+        "name": [
+          {
+            "use": "official",
+            "family": "Doe",
+            "given": [
+              "John"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2022-01-01T08:00:00Z",
+          "end": "2022-01-05T10:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "287682000",
+                "display": "Total hip replacement"
+              }
+            ],
+            "text": "Total hip arthroplasty"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Composition",
+        "id": "composition-1",
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60591-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "2022-01-05T10:00:00Z",
+        "author": [
+          {
+            "reference": "Practitioner/practitioner-1"
+          }
+        ],
+        "title": "Discharge Summary",
+        "section": [
+          {
+            "title": "Hospital Course",
+            "text": {
+              "status": "generated",
+              "div": "<div><p>The patient is a 79-year-old female with a history of hypertension, heart failure, and middle cerebral artery infarction who underwent total hip arthroplasty under general anesthesia. Before the surgery, several modalities were monitored, including electrocardiography, noninvasive blood pressure, pulse oximetry, and bispectral index monitoring. The anesthesia was induced with propofol and rocuronium, and intra-arterial cannulation was performed for continuous blood pressure monitoring. During surgery, the patient experienced a drop in oxygen saturation levels from 93.1% to 83.1%. The patient was ventilated at a fraction of inspired oxygen of 0.4, and the arterial blood gas showed that the partial pressure of oxygen dropped from 161.6 to 51.2, which suggested atelectasis due to a collapsed lung. Treatment included increasing the positive end expiratory pressure to 10 cm H2O and FiO2 to 1.0 and performing a recruitment maneuver. The patient's oxygen saturation level increased only temporarily and dropped again to 81%. To address this, muscle relaxation was reversed, and spontaneous respiration was induced. The oxygen saturation level recovered to 90%, and the surgery continued.</p></div>"
+            }
+          },
+          {
+            "title": "Discharge Summary",
+            "text": {
+              "status": "generated",
+              "div": "<div><p>The patient, having undergone surgery, was monitored for her vital signs and underwent various modalities (electrocardiography, noninvasive blood pressure, pulse oximetry, and bispectral index monitoring) prior to the procedure. Unfortunately, the patient suffered a drop in oxygen saturation levels during surgery, which was due to atelectasis (a collapsed lung). The medical team administered adjustments to the patient's ventilation parameters and was able to recover the oxygen saturation level temporarily. However, to fully address the issue, muscle relaxants were reversed, and spontaneous respiration was induced. This led to a recovery of the oxygen saturation level. After the surgery, the patient recovered and was discharged.</p></div>"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

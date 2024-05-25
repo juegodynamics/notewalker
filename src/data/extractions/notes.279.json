@@ -1,0 +1,154 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.19.5",
+            "value": "[Redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "identifier": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.19.5",
+            "value": "[Redacted]"
+          }
+        ],
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "95883001",
+              "display": "Gastrointestinal stromal tumor"
+            }
+          ],
+          "text": "Gastrointestinal Stromal Tumor (GIST)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80146002",
+              "display": "Laparoscopic surgical procedure"
+            }
+          ],
+          "text": "Laparoscopic surgery to remove the mass"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "69695003",
+                "display": "Structure of stomach"
+              }
+            ],
+            "text": "Lesser gastric curvature"
+          }
+        ],
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "note": [
+          {
+            "text": "The gastrocolic and posterior gastric attachments were divided to access the lesser sac. The tumor base was located at the posterior gastric wall and exhibited increased vascularity without any invasion into adjacent tissues. After creating a liberal longitudinal anterior gastrotomy, the tumor was delivered and sequentially stapled using linear staplers in close apposition to the tumor. The staple line was oversewn on its luminal aspect and the gastrotomy was closed using 2–0 delayed-absorbable barbed suture in two layers."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33717-0",
+              "display": "Histopathology report"
+            }
+          ],
+          "text": "Histopathology report"
+        },
+        "valueString": "GIST with negative margins, indicating a high potential for malignancy"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "310798",
+              "display": "Imatinib"
+            }
+          ],
+          "text": "Imatinib"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Adjuvant imatinib therapy commenced after consultation with the medical oncologist."
+          }
+        ]
+      }
+    }
+  ]
+}

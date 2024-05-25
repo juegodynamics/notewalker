@@ -1,0 +1,281 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1962-01-01"  // Assuming the current year is 2023 and the patient is 61 years old
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "193093009",
+              "display": "Nonarteritic anterior ischemic optic neuropathy"
+            }
+          ],
+          "text": "Nonarteritic anterior ischemic optic neuropathy (NA-AION)"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "185349003",
+                "display": "Ophthalmology clinic visit"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "20208-6",
+              "display": "Vision observation"
+            }
+          ],
+          "text": "Vision observation"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "valueString": "Sudden and painless loss of vision in right eye, poor vision, pupillary defect, color vision deficiency, and visual field loss."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-4",
+              "display": "CT of head"
+            }
+          ],
+          "text": "Cranial computed tomography (CT)"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "valueString": "Revealed white matter lesions."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11218-5",
+              "display": "Fundus examination"
+            }
+          ],
+          "text": "Fundus examination of right eye"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "valueString": "Swelling of the right optic disc, with hemorrhaging, congestion, and tortuosity."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation4",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11218-5",
+              "display": "Fundus examination"
+            }
+          ],
+          "text": "Fundus examination of left eye"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "valueString": "Hemorrhaging and leakage, along with visual field loss."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation5",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11378-7",
+              "display": "Discharge condition"
+            }
+          ],
+          "text": "Discharge condition"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "valueString": "The patient discharged from the clinic with a diagnosis of NA-AION. The patient will continue to follow up with ophthalmology."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation6",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "clinical"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29545-1",
+              "display": "Discharge recommendations"
+            }
+          ],
+          "text": "Discharge recommendations"
+        },
+        "subject": {
+          "reference": "Patient/[REDACTED]"
+        },
+        "valueString": "The patient should continue to monitor her cholesterol levels. The patient should consider avoiding long flights or trips to high altitudes to reduce the risk of further episodes."
+      }
+    }
+  ]
+}

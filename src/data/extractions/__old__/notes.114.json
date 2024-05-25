@@ -1,0 +1,202 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient1",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ],
+        "birthDate": "[redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "patient": {
+          "reference": "Patient/patient1"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "287036008",
+                "display": "Structure of sartorius muscle"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "13694006",
+              "display": "Neoplasm of uncertain behavior of connective and other soft tissue"
+            }
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "onsetAge": {
+          "value": 2,
+          "unit": "months",
+          "system": "http://unitsofmeasure.org",
+          "code": "mo"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "45033-8",
+              "display": "Physical findings of Musculoskeletal system"
+            }
+          ],
+          "text": "25/10 mm nodule on antero-intern side of left thigh"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "7890003",
+                  "display": "Size and extent of lesion"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 25,
+              "unit": "mm",
+              "system": "http://unitsofmeasure.org"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "7890003",
+                  "display": "Size and extent of lesion"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 10,
+              "unit": "mm",
+              "system": "http://unitsofmeasure.org"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Excision of lesion of thigh"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedPeriod": {
+          "start": "2023-01-01",
+          "end": "2023-01-04"
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "287036008",
+                "display": "Structure of sartorius muscle"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33747-2",
+              "display": "Pathology Study"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "85337-2",
+                  "display": "Histopathology finding"
+                }
+              ]
+            },
+            "valueString": "Proliferation of tapered cells arranged in an irregular spiral pattern and crossed by thin-walled vessels. A pseudocapsule formed by a thin layer of connective tissue <1 mm covered the mass. Neoplastic proliferation encompassed residual skeletal muscle fibers in the center of the lesion. Extracapsular and peripheral scarce mature adipose tissue were seen with isolated large-caliber blood vessels."
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "85337-2",
+                  "display": "Histopathology finding"
+                }
+              ]
+            },
+            "valueString": "Vimentin positive, smooth muscle actin positive in nodules with necrosis and calcifications (miotic nodules), desmin focal positive, Ki67 low (about 5 positive cells per 100 tumor cells, suggesting low cell kinetics)."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Patient name]"
+          }
+        ],
+        "gender": "[gender]",
+        "age": "[age]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "reasonCode": [
+          {
+            "text": "Flame burn from MVA resulting in 25% TBSA third-degree injuries"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Third-degree burns covering 25% TBSA"
+        },
+        "subject": {
+          "reference": "Patient/[patient id]"
+        },
+        "note": [
+          {
+            "text": "Left knee had an open joint injury requiring three skin grafting procedures prior to external fixator placement"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "SEF placement using Shantz pins and bars"
+        },
+        "performedDateTime": "[Date]",
+        "bodySite": [
+          {
+            "text": "left knee"
+          }
+        ],
+        "note": [
+          {
+            "text": "No additional skin grafting procedures were required after SEF placement. The left knee was immobilized in full extension"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[patient id]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Damage to medial collateral ligament"
+        },
+        "subject": {
+          "reference": "Patient/[patient id]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Spontaneous knee fusion of the medial femoral epiphysis"
+        },
+        "subject": {
+          "reference": "Patient/[patient id]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "code": {
+          "text": "Varus deformity and leg length discrepancy of 4.0 cm"
+        },
+        "subject": {
+          "reference": "Patient/[patient id]"
+        },
+        "note": [
+          {
+            "text": "Causing persistent pain requiring an osteotomy and Ilizarov placement for correction and lengthening"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Osteotomy and Ilizarov placement"
+        },
+        "performedDateTime": "[Date]",
+        "bodySite": [
+          {
+            "text": "left knee"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[patient id]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "length": {
+          "value": "[number]",
+          "unit": "days"
+        },
+        "reasonCode": [
+          {
+            "text": "Continued follow-up care with rehabilitation and orthopedic services"
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[patient id]"
+        }
+      }
+    }
+  ]
+}

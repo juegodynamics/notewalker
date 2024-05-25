@@ -1,0 +1,352 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "Mr. (Unidentified)"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1938-01-01",
+        "age": 85
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "190330001",
+              "display": "Thyroid storm"
+            }
+          ],
+          "text": "Thyroid Storm due to Destructive Thyroiditis"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40930008",
+              "display": "Hypothyroidism"
+            }
+          ],
+          "text": "Hypothyroidism due to Hashimoto's disease"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Type 2 diabetes mellitus"
+            }
+          ],
+          "text": "Type 2 diabetes mellitus"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372244006",
+              "display": "Malignant melanoma of nasal cavity"
+            }
+          ],
+          "text": "Malignant melanoma of nasal cavity"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "2842",
+              "display": "Insulin"
+            }
+          ],
+          "text": "Insulin injection"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Daily maintenance insulin injection"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "10582",
+              "display": "Levothyroxine Sodium"
+            }
+          ],
+          "text": "Levothyroxine sodium hydrate"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Daily maintenance levothyroxine sodium hydrate"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "2023-01-01",
+          "end": "2023-02-04"
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "305351004",
+                "display": "Hospital admission"
+              }
+            ],
+            "text": "Hospital admission"
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "190330001",
+                "display": "Thyroid storm"
+              }
+            ],
+            "text": "Thyroid Storm due to Destructive Thyroiditis"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure systolic and diastolic"
+            }
+          ],
+          "text": "Blood pressure"
+        },
+        "valueQuantity": {
+          "value": 70,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "9279-1",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "valueQuantity": {
+          "value": 100,
+          "unit": "bpm",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "completed",
+        "period": {
+          "start": "2023-01-01",
+          "end": "2023-02-04"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "182832007",
+                    "display": "Fluid therapy"
+                  }
+                ],
+                "text": "Intravenously administered fluid therapy"
+              }
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "182832007",
+                    "display": "Insulin therapy"
+                  }
+                ],
+                "text": "Intravenously administered insulin infusion"
+              }
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "260385009",
+                    "display": "Potassium iodide"
+                  }
+                ],
+                "text": "Orally administered potassium iodide"
+              }
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "372556000",
+                    "display": "Short-acting beta-adrenoreceptor blocker"
+                  }
+                ],
+                "text": "Short-acting beta-adrenoreceptor blocker"
+              }
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "372687004",
+                    "display": "Prednisolone"
+                  }
+                ],
+                "text": "Prednisolone"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ],
+          "text": "Discharge Summary"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary\n\nPatient Information: \nName: Mr. (Unidentified) \nAge: 85 \nGender: Male\n\nFinal Diagnosis: Thyroid Storm due to Destructive Thyroiditis\n\nHistory of Present Illness: \nThe patient presented to our hospital with a severe case of thyrotoxicosis and poor blood glucose control. He had a history of hypothyroidism due to Hashimoto's disease and type 2 diabetes, for which he had been receiving insulin self-injection therapy. He had also undergone treatment for malignant melanoma of the nasal cavity, receiving one cycle of nivolumab therapy followed by two courses of ipilimumab therapy. His symptoms included fatigue, nausea, and sweating, which progressed to clinical and biochemical thyrotoxicosis after receiving a dual course of ipilimumab as a third treatment. On admission to our hospital, he presented with fever, tachycardia, agitation, and anxiety. He had a diffuse goiter without exophthalmoses and his blood pressure had decreased to 70/50 mmHg.\n\nHospital Course: \nThe patient was treated with intravenously administered insulin infusion and intravenously administered fluid therapy. He was diagnosed as having destructive thyroiditis based on decreased uptake on thyroid scintigraphy. Treatment for thyroid storm was initiated with orally administered potassium iodide and a short-acting beta-adrenoreceptor blocker, landiolol hydrochloride, to control his heart rate. Prednisolone was also given as a treatment for irAE and thyroid storm. On day 5, his tachycardia had resolved, and the landiolol hydrochloride was discontinued. On day 11, his thyroid function had improved and the amount of total insulin used to control his blood glucose was decreased. On day 25, he was found to have hypothyroidism, and thyroid hormone replacement therapy was restarted. He was discharged from our hospital on day 35 on daily maintenance insulin injection and levothyroxine sodium hydrate.\n\nFollow-Up: \nThe patient was advised to follow up with his primary care physician for ongoing management of his thyroiditis, diabetes mellitus, and melanoma.\n\nDischarge Medications: \n1. Insulin injection\n2. Levothyroxine sodium hydrate\n\nCondition at Discharge: Stable \n\nInstructions at Discharge: \n1. Follow up with primary care physician for ongoing management of thyroiditis, diabetes mellitus, and melanoma.\n2. Continue taking prescribed medications as directed.\n3. Report any new symptoms or changes in condition to your healthcare provider immediately."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

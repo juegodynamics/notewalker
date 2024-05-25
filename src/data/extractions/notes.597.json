@@ -1,0 +1,211 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "text": {
+          "status": "generated",
+          "div": "<div>Patient with a complaint of bloody stool, diagnosed with sigmoid colon adenocarcinoma.</div>"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Sigmoid colon adenocarcinoma"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Primary laparoscopic colon resection"
+        },
+        "status": "completed",
+        "performedPeriod": {
+          "start": "2023-04-01",
+          "end": "2023-04-01"
+        },
+        "outcome": {
+          "text": "Unremarkable"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Abdominal drain fluid observation"
+        },
+        "effectiveDateTime": "2023-04-07",
+        "valueString": "Large amount of yellow fluid indicating urine leakage"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "started": "2023-04-07",
+        "modality": {
+          "system": "http://dicom.nema.org/resources/ontology/DCM",
+          "code": "US",
+          "display": "Ultrasound"
+        },
+        "description": "Abdominal ultrasonography showed a collection of fluid in the pelvis."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Ureteroscopy"
+        },
+        "status": "completed",
+        "performedPeriod": {
+          "start": "2023-04-09",
+          "end": "2023-04-09"
+        },
+        "outcome": {
+          "text": "Complete severing of the left ureter about 4 to 5 cm from the ureteral orifice."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Device",
+        "id": "device-1",
+        "type": {
+          "text": "Double-J ureteral stent"
+        },
+        "manufacturer": "Unknown",
+        "model": "4.5F",
+        "patient": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Insertion of Double-J ureteral stents"
+        },
+        "status": "completed",
+        "performedPeriod": {
+          "start": "2023-04-09",
+          "end": "2023-04-09"
+        },
+        "outcome": {
+          "text": "Quick subsiding of abdominal drainage"
+        },
+        "device": [
+          {
+            "reference": "Device/device-1"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Removal of Double-J ureteral stents"
+        },
+        "status": "completed",
+        "performedPeriod": {
+          "start": "2023-08-09",
+          "end": "2023-08-09"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Follow-up CT scan"
+        },
+        "effectiveDateTime": "2023-12-01",
+        "valueString": "Mild but unchanged residual dilation of the renal pelvis and ureter with good drainage"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Follow-up CT scan"
+        },
+        "effectiveDateTime": "2024-06-01",
+        "valueString": "Mild but unchanged residual dilation of the renal pelvis and ureter with good drainage"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Asymptomatic urinary tract infection"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

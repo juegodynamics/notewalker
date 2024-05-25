@@ -1,0 +1,529 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[Redacted]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "[Redacted]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-dmd",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "46635009",
+              "display": "Duchenne muscular dystrophy"
+            }
+          ],
+          "text": "Duchenne muscular dystrophy (DMD)"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "onsetAge": {
+          "value": 9,
+          "unit": "years",
+          "system": "http://unitsofmeasure.org",
+          "code": "a"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-weight",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Body weight"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "valueQuantity": {
+          "value": 53,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 47,
+              "unit": "percentile",
+              "system": "http://unitsofmeasure.org",
+              "code": "%"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-height",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ],
+          "text": "Body height"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "valueQuantity": {
+          "value": 147,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "low": {
+              "value": 3,
+              "unit": "percentile",
+              "system": "http://unitsofmeasure.org",
+              "code": "%"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-sleep-apnea",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73430006",
+              "display": "Obstructive sleep apnea"
+            }
+          ],
+          "text": "Moderate obstructive sleep apnea"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-echo",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "182777000",
+              "display": "Echocardiogram"
+            }
+          ],
+          "text": "Echocardiogram"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "valueString": "Normal cardiac function"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-ed",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "EMER",
+          "display": "emergency"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "386661006",
+                "display": "Fever"
+              }
+            ],
+            "text": "Confusion, tachycardia, tachypnea, and fever following soccer practice"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-cardiac-arrest",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "410429000",
+              "display": "Cardiac arrest"
+            }
+          ],
+          "text": "Cardiac arrest"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "valueString": "Cardiac arrest requiring 3 minutes of CPR with return of spontaneous circulation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-ct-scan",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77477000",
+              "display": "Computerized axial tomography (CT)"
+            }
+          ],
+          "text": "CT scans of head and chest"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "outcome": {
+          "text": "No acute intracranial pathology; patchy diffuse nodular airspace opacities throughout both lungs"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-ultrasound",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "250537006",
+              "display": "Duplex ultrasound"
+            }
+          ],
+          "text": "Duplex ultrasound of lower extremities"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "valueString": "Negative for deep venous thrombosis"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-x-ray",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-4",
+              "display": "X-ray of lower limb"
+            }
+          ],
+          "text": "X-rays"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "valueString": "Femoral neck and fibular metaphysis fractures"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-ophthalmological",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "431640002",
+              "display": "Ophthalmological examination"
+            }
+          ],
+          "text": "Ophthalmological exam"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "valueString": "Purtscher-like retinopathy"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "medicationrequest-antibiotics",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "Antibiotics",
+              "display": "Antibiotics"
+            }
+          ],
+          "text": "Antibiotics"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Administered for 48 hours"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-mini-bal",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "225267004",
+              "display": "Bronchoalveolar lavage"
+            }
+          ],
+          "text": "Mini bronchoalveolar lavage (BAL)"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "outcome": {
+          "text": "Negative cultures"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-mechanical-ventilation",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40617009",
+              "display": "Artificial respiration"
+            }
+          ],
+          "text": "Mechanical ventilation"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "outcome": {
+          "text": "Successful, weaned off and extubated on day five"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-afterload-reduction",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "18286008",
+              "display": "Afterload reduction"
+            }
+          ],
+          "text": "Right ventricular afterload reduction therapy"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "outcome": {
+          "text": "Successful, weaned off"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-hospital-stay",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "reasonCode": [
+          {
+            "text": "Acute hypoxic respiratory failure and subsequent treatments"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-discharge",
+        "status": "completed",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "completed",
+              "description": "Follow-up with primary care physician"
+            }
+          },
+          {
+            "detail": {
+              "status": "completed",
+              "description": "Follow-up with ophthalmologist for Purtscher-like retinopathy"
+            }
+          },
+          {
+            "detail": {
+              "status": "completed",
+              "description": "Prescribed pain medications"
+            }
+          },
+          {
+            "detail": {
+              "status": "completed",
+              "description": "Continue physical therapy"
+            }
+          },
+          {
+            "detail": {
+              "status": "completed",
+              "description": "Follow-up with pulmonologist to monitor respiratory status"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

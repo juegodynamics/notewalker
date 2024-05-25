@@ -1,0 +1,245 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "reasonCode": [
+          {
+            "text": "headache and pre-existing visual disturbance"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "late-onset post-treatment tuberculomas with edematous changes"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "text": "CRP levels"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueQuantity": {
+          "value": "elevated",
+          "unit": "mg/L"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "text": "Interferon-γ release assay (T-SPOT)"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "positive"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "text": "Chest X-ray"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "no abnormal lesions"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "code": {
+          "text": "Cerebrospinal fluid (CSF) testing"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "component": [
+          {
+            "code": {
+              "text": "Protein levels"
+            },
+            "valueQuantity": {
+              "value": "elevated",
+              "unit": "mg/dL"
+            }
+          },
+          {
+            "code": {
+              "text": "Pleocytosis"
+            },
+            "valueString": "no"
+          },
+          {
+            "code": {
+              "text": "Glucose levels"
+            },
+            "valueQuantity": {
+              "value": "normal",
+              "unit": "mg/dL"
+            }
+          },
+          {
+            "code": {
+              "text": "Opening pressure"
+            },
+            "valueString": "standard"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-1",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "description": "Head CT revealed new emerging tuberculomas in the left sylvian fissure"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-2",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "description": "Contrast-enhanced axial T1-weighted brain MRI scan revealed tuberculomas with a diffuse hypointense area around the left sylvian fissure"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-3",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "description": "Brain FLAIR imaging indicated a hyperintense area around the tuberculomas in the left sylvian fissure, suggesting edematous changes"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "text": "Administration of corticosteroids (prednisolone, 30 mg/day)"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "outcome": {
+          "text": "disappearance of the tuberculomas"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "status": "final",
+        "code": {
+          "text": "Mycobacterial culture and real-time PCR in the CSF"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "did not indicate the existence of the reactivation of CNS tuberculosis"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-Up Plan",
+        "description": "The patient is advised to visit a neurosurgical clinic regularly to check the patency of the VP shunt.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    }
+  ]
+}

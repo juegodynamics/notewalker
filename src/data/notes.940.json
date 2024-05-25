@@ -1,0 +1,184 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Redacted]"
+          }
+        ],
+        "identifier": [
+          {
+            "value": "[Redacted]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1994-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "period": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "reasonCode": [
+          {
+            "text": "Edentulous left mandible secondary to partial mandibulectomy surgery"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "code": {
+          "text": "Edentulous left mandible secondary to partial mandibulectomy surgery"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "date": "[Redacted]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary\n\nPatient Name: [Redacted]\nMedical Record Number: [Redacted]\n\nDate of Admission: [Redacted]\nDate of Discharge: [Redacted]\n\nAdmitting Diagnosis: Edentulous left mandible secondary to partial mandibulectomy surgery\n\nHospital Course:\n\nThe patient is a 29-year-old Pakistani male who was admitted to the Oral Surgery Department for rehabilitation of the left edentulous mandible secondary to partial mandibulectomy surgery. The patient has undergone two operations for the left body of a mandible keratocyst odontogenic tumour (KCOT). The patient reported an absence of paraesthesia on the left mandible. He has been reviewed regularly and requested to have a replacement of his missing teeth on the lower left side due to difficulty eating and the effect on his appearance.\n\nOn clinical examination, the patient had an asymmetrical face with a slightly depressed left lower body of the mandible on a class I skeletal pattern. The smile line was high exposing the gingiva on the upper maxillary incisors. Intraorally, the oral hygiene was fair with the presence of mild gingivitis. The dentition on the maxillary arch was unrestored. The left edentulous mandible was irregular basal bone with firm mucosa covering the bone from 41 until 37. There were marked loss of bony structure horizontally and vertically. This has caused the tongue to occupy the space that used to be occupied by teeth and alveolus in the left mandibular segment. The healing of the operation site was uneventful.\n\nAn orthopantomogram was taken to evaluate the remaining bony structure of the mandible. Radiographically, the operation site (lower left posterior segment) has no abnormalities. The remaining basal bone was adequate in thickness to support the mandible with an irregular margin. There are no radiopaque abnormalities suggestive of new pathology.\n\nIn consideration of the above, and the opinions of relevant healthcare professionals, the patient is clinically stable and able to be discharged.\n\nDischarge Diagnosis: Edentulous left mandible secondary to partial mandibulectomy surgery\n\nDischarge Plan: The patient's discharge plan is to provide referral for replacement of his missing teeth on the lower left side. The patient will be followed up on an as-needed basis and referred to a specialist if new symptoms arise.\n\nSigned,\n\n[Redacted]\nAttending Physician."
+            }
+          }
+        ],
+        "author": [
+          {
+            "reference": "Practitioner/[Redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "122869004",
+              "display": "Mandibulectomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "performedPeriod": {
+          "start": "[Redacted]",
+          "end": "[Redacted]"
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/[Redacted]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72170-1",
+              "display": "Panoramic X-ray of mandible"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "effectiveDateTime": "[Redacted]",
+        "valueString": "Radiographically, the operation site (lower left posterior segment) has no abnormalities. The remaining basal bone was adequate in thickness to support the mandible with an irregular margin. There are no radiopaque abnormalities suggestive of new pathology."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "The patient's discharge plan is to provide referral for replacement of his missing teeth on the lower left side. The patient will be followed up on an as-needed basis and referred to a specialist if new symptoms arise.",
+        "subject": {
+          "reference": "Patient/[Redacted]"
+        },
+        "period": {
+          "start": "[Redacted]"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Patient's Name]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "period": {
+          "start": "2018-02-08",
+          "end": "2018-03-21"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "text": "[Physician's Name]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "code": {
+          "text": "Tinea Pedis with an underlying delayed-type hypersensitivity reaction"
+        },
+        "recordedDate": "2018-03-21"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "code": {
+          "text": "History of Present Illness"
+        },
+        "valueString": "58-year-old African American male with a long-standing complaint of scaly and itchy feet presented to the clinic with visible inflammation on the plantar surface of both feet. An initial specimen collection from the patient's plantar surface showed hyphae indicative of a fungal infection under KOH (potassium hydroxide) preparation. The patient was treated with ketoconazole topical cream and 20% Urea creams daily, which showed improvement with minimal remaining inflammation."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "code": {
+          "text": "intradermal skin testing with intradermal Candida and Trichophyton allergens"
+        },
+        "performedPeriod": {
+          "start": "2018-02-08",
+          "end": "2018-03-21"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "code": {
+          "text": "Hospital Course"
+        },
+        "valueString": "The patient responded well to the treatment and showed complete resolution of underlying fungal infection on the plantar surface of his feet with minimal inflammation. With further consideration, the patient's exaggerated immune reaction caused by Trichophyton was suspected as an underlying cause of allergic response (delayed-type hypersensitivity reaction) to the fungus instead of a cutaneous fungal infection alone."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "code": {
+          "text": "Discharge Condition"
+        },
+        "valueString": "The patient was discharged on March 21, 2018."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "status": "not-taken",
+        "medicationCodeableConcept": {
+          "text": "None prescribed on discharge."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "subject": {
+          "reference": "Patient/[Patient's Name]"
+        },
+        "code": {
+          "text": "Discharge Instructions"
+        },
+        "valueString": "The patient is encouraged to follow up with their regular physician for any further complaint of scaly and itchy feet. It is also recommended to use good hygiene practices, take care of skin, and avoid sharing towels and other personal items."
+      }
+    }
+  ]
+}

@@ -1,0 +1,418 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient1",
+        "name": [
+          {
+            "use": "official",
+            "text": "***REDACTED***"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.36.146.595.217.0.1",
+            "value": "***REDACTED***"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "(date minus 14 days)"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter1",
+        "status": "finished",
+        "class": {
+          "code": "inpatient"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "period": {
+          "start": "(date of admission)",
+          "end": "(date of discharge)"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "Intestinal malrotation"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "AD"
+                }
+              ]
+            }
+          },
+          {
+            "condition": {
+              "text": "Resolved intestinal malrotation with successful duodenoduodenostomy"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "DD"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "174902008",
+              "display": "Laparotomy"
+            }
+          ],
+          "text": "Emergent laparotomy via a left upper quadrant incision"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedPeriod": {
+          "start": "(date of surgery)",
+          "end": "(date of surgery)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "231850004",
+              "display": "Duodenoduodenostomy"
+            }
+          ],
+          "text": "Duodenoduodenostomy with diamond-shaped anastomosis"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedPeriod": {
+          "start": "(date of surgery)",
+          "end": "(date of surgery)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "75570004",
+              "display": "Intestinal malrotation"
+            }
+          ],
+          "text": "Intestinal malrotation"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "56899-6",
+              "display": "Gestational age"
+            }
+          ],
+          "text": "Gestational age at birth"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectiveDateTime": "(date of birth)",
+        "valueQuantity": {
+          "value": 31,
+          "unit": "weeks",
+          "system": "http://unitsofmeasure.org",
+          "code": "wk"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29308-4",
+              "display": "Physical findings of Cardiovascular system"
+            }
+          ],
+          "text": "Antenatal diagnosis of left atrial isomerism, dextrocardia, and right-sided stomach"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectiveDateTime": "(date of antenatal diagnosis)",
+        "valueString": "Antenatal diagnosis of left atrial isomerism, dextrocardia, and right-sided stomach confirmed postnatal."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "56852-5",
+              "display": "Physical findings of Abdomen"
+            }
+          ],
+          "text": "Abdominal exam"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectiveDateTime": "(date of examination)",
+        "valueString": "No gross phenotypic anomalies were noted and abdominal exam was unremarkable."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "report1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "30746-4",
+              "display": "Plain abdominal X-ray"
+            }
+          ],
+          "text": "Plain abdominal X-ray"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectiveDateTime": "(date of X-ray)",
+        "conclusion": "Normal gas patterns consistent with situs inversus"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "report2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "36584-3",
+              "display": "Upper gastrointestinal contrast study"
+            }
+          ],
+          "text": "Upper gastrointestinal contrast study"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectiveDateTime": "(date of GI study)",
+        "conclusion": "Suggestive of intestinal malrotation"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Division of Ladd's bands"
+            }
+          ],
+          "text": "Division of Ladd's bands"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "performedPeriod": {
+          "start": "(date of surgery)",
+          "end": "(date of surgery)"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Weight gain"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectiveDateTime": "(date of weight check at 3 months)",
+        "valueQuantity": {
+          "value": "(weight at 3 months)",
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation5",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body weight"
+            }
+          ],
+          "text": "Weight gain"
+        },
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "effectiveDateTime": "(date of weight check at 1 year)",
+        "valueQuantity": {
+          "value": "(weight at 1 year)",
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan1",
+        "status": "completed",
+        "intent": "plan",
+        "subject": {
+          "reference": "Patient/patient1"
+        },
+        "period": {
+          "start": "(date of discharge)"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "completed",
+              "description": "The patient's parents were advised to continue enteral feeds as per the current regimen. They were also advised to monitor the patient's feeding tolerance, bowel movements, and weight gain in regular pediatric check-ups with the primary care physician. The parents were further instructed to seek immediate medical attention in case of any concerns."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "appointment1",
+        "status": "booked",
+        "serviceCategory": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/service-category",
+                "code": "17",
+                "display": "General Practice"
+              }
+            ]
+          }
+        ],
+        "description": "Follow-up appointment with pediatrician",
+        "start": "(next scheduled appointment date)",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/patient1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "practitioner1",
+        "name": [
+          {
+            "use": "official",
+            "text": "***REDACTED*** MD"
+          }
+        ]
+      }
+    }
+  ]
+}

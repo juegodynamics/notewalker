@@ -1,0 +1,226 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "birthDate": "[Date of Birth]",
+        "gender": "male",
+        "age": {
+          "value": 56,
+          "unit": "years"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+              }
+            ]
+          }
+        ],
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "reasonCode": [
+          {
+            "text": "High intraocular pressure, family history of glaucoma"
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "#diagnosis1"
+            }
+          },
+          {
+            "condition": {
+              "reference": "#diagnosis2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "diagnosis1",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "192975002",
+              "display": "Primary open-angle glaucoma"
+            }
+          ],
+          "text": "True high tension primary glaucoma with a family history"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "diagnosis2",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "443898000",
+              "display": "Intracranial meningioma"
+            }
+          ],
+          "text": "Intracranial meningioma"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "11601000119106",
+              "display": "Trabeculectomy"
+            }
+          ],
+          "text": "Trabeculectomy in both eyes"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40557009",
+              "display": "Craniotomy"
+            }
+          ],
+          "text": "Bilateral craniotomy to resect the meningioma"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "14957-1",
+              "display": "Intraocular pressure"
+            }
+          ],
+          "text": "Intraocular pressure"
+        },
+        "valueQuantity": {
+          "value": 30,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "14957-1",
+              "display": "Intraocular pressure"
+            }
+          ],
+          "text": "Intraocular pressure"
+        },
+        "valueQuantity": {
+          "value": 48,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "70953-1",
+              "display": "Best corrected visual acuity"
+            }
+          ],
+          "text": "Best corrected visual acuity (BCVA)"
+        },
+        "valueQuantity": {
+          "value": 0.1,
+          "unit": "",
+          "system": "http://unitsofmeasure.org",
+          "code": ""
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Follow-up Care Plan",
+        "description": "The patient should continue to receive regular follow-up care to monitor the stability of his visual field and prevent any further deterioration. It is recommended that he undergo regular ophthalmological checkups to assess the pressure and status of his left eye.",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Regular ophthalmological checkups",
+              "status": "scheduled"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

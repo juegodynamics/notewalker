@@ -1,0 +1,146 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:system:medical-record-number",
+            "value": "[REDACTED]"
+          }
+        ],
+        "gender": "female",
+        "age": 47
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "code": "inpatient",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "display": "Inpatient"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Systemic blood pressure asymmetry with major hypoplasia of the vertebral arteries and a persistent hypoglossal artery"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "document-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge Summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "[REDACTED]",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "DISCHARGE SUMMARY:\n\nPatient Name: [REDACTED]\nMedical Record Number: [REDACTED]\nDate of Admission: [REDACTED]\nDate of Discharge: [REDACTED]\n\nHOSPITAL COURSE:\n\nThe patient, a 47-year-old female, was admitted to the hospital for further evaluation of systemic blood pressure asymmetry. Prior Doppler ultrasonography of the cervical arteries had failed to demonstrate the vertebral arteries. Computed Tomography Angiography (CTA) of the supra-aortic arteries was performed to investigate the cause of the patient's symptoms.\n\nCTA revealed major hypoplasia of the vertebral arteries, particularly on the left side. The hypoplastic vertebral arteries were found to be not connected to the basilar artery, which was only fed by a large ascending artery emerging from a large left internal carotid artery. 3D volume rendering views without bone removal showed that this atypical artery was penetrating the skull through the hypoglossus canal. The artery was identified as a persistent hypoglossal artery, which was considered fortuitous.\n\nThe patient's condition was monitored and managed by the healthcare team throughout their hospitalization, and they were ultimately discharged in stable condition.\n\nDISCHARGE INSTRUCTIONS:\n\nThe patient was instructed to follow up with their primary care physician regarding their blood pressure asymmetry. They were advised to continue their current medications and/or treatments as prescribed. The patient was also informed to report any new or worsening symptoms to their healthcare provider immediately.\n\nFOLLOW-UP:\n\nThe patient was advised to schedule a follow-up appointment with their primary care physician within the next 2 weeks to discuss further evaluation and management of their condition.\n\nDISCHARGE DIAGNOSIS:\n\nSystemic blood pressure asymmetry with major hypoplasia of the vertebral arteries and a persistent hypoglossal artery.\n\nDISCHARGE CONDITION:\n\nStable.."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Follow up with primary care physician regarding blood pressure asymmetry. Continue current medications and/or treatments as prescribed. Report any new or worsening symptoms to healthcare provider immediately."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "servicerequest-1",
+        "status": "active",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Follow-up appointment with primary care physician"
+        },
+        "authoredOn": "[REDACTED]",
+        "occurrenceDateTime": "[REDACTED]"
+      }
+    }
+  ]
+}

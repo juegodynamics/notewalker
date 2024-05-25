@@ -1,0 +1,241 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[patient's name]"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[patient's number]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1950-01-01"  // assuming year of birth based on age 73
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[admission date]",
+          "end": "[Date of discharge]"
+        },
+        "reasonCode": [
+          {
+            "text": "FXTAS"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77176002",
+              "display": "Fragile X-associated tremor/ataxia syndrome"
+            }
+          ],
+          "text": "FXTAS"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "429419009",
+              "display": "Radiosurgical thalamotomy"
+            }
+          ],
+          "text": "Radiosurgical thalamotomy using GK on the VIM of the left thalamus"
+        },
+        "performedPeriod": {
+          "start": "[admission date]",
+          "end": "[Date of discharge]"
+        },
+        "outcome": {
+          "text": "Improvement observed 4 months after the procedure"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72170-0",
+              "display": "Radiology Study Report"
+            }
+          ],
+          "text": "MRI in 2016 revealed bilateral hyperintensity in the cerebellar hemispheres and the MCP"
+        },
+        "conclusion": "The combination of intention tremor, ataxia, MCP sign, and gait instability instigated the diagnosis of FXTAS"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "75325-1",
+              "display": "Neurological examination"
+            }
+          ],
+          "text": "Neurological examination findings"
+        },
+        "component": [
+          {
+            "code": {
+              "text": "Tremors of head, neck, and upper limbs"
+            }
+          },
+          {
+            "code": {
+              "text": "Moderate tremors of lower limbs"
+            }
+          },
+          {
+            "code": {
+              "text": "Dysarthria"
+            }
+          },
+          {
+            "code": {
+              "text": "Paresis of right facial nerve"
+            }
+          },
+          {
+            "code": {
+              "text": "Brisk reflexes on right side"
+            }
+          },
+          {
+            "code": {
+              "text": "Bilateral dysmetria"
+            }
+          },
+          {
+            "code": {
+              "text": "Dysdiadochokinesis"
+            }
+          },
+          {
+            "code": {
+              "text": "Truncal ataxia"
+            }
+          },
+          {
+            "code": {
+              "text": "Ataxia of lower limbs, more significant on left side"
+            }
+          },
+          {
+            "code": {
+              "text": "Unstable gait"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72169-2",
+              "display": "Psychological evaluation"
+            }
+          ],
+          "text": "Psychological examination findings"
+        },
+        "component": [
+          {
+            "code": {
+              "text": "Mild cognitive impairment"
+            }
+          },
+          {
+            "code": {
+              "text": "Deficits of executive functions"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "21613-5",
+              "display": "Molecular pathology report"
+            }
+          ],
+          "text": "Molecular examination revealed permutations in the FMR1 gene confirming FXTAS with expansion of CGG repeats"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "Patient was discharged with instructions to follow up with their primary care physician and Neurologist as needed. Instructions were given to join rehabilitation therapy for further improvement in the quality of life.",
+        "period": {
+          "start": "[Date of Discharge]"
+        }
+      }
+    }
+  ]
+}

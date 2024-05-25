@@ -1,0 +1,239 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "age": 27
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:encounter-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "32485007",
+                "display": "Hospital admission"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "period": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:condition-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "399183000",
+              "display": "Hypoplastic left heart syndrome"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "233527001",
+              "display": "Bronchial blocker placement"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-2",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-2",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "174041007",
+              "display": "Left upper lobectomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:procedure-3",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-3",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "274022008",
+              "display": "Thoracotomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "performedPeriod": {
+          "start": "[Date]",
+          "end": "[Date]"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:careplan-1",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "activity": [
+          {
+            "detail": {
+              "status": "completed",
+              "description": "The patient received an inflatable 5Fr bronchial blocker and underwent left bronchial blocker placement. This resulted in an immediate improvement of the patient's respiratory status with a decrease in oxygen requirement and improved ventilation with weaning of ventilator settings and better inflation of the right lung."
+            }
+          },
+          {
+            "detail": {
+              "status": "completed",
+              "description": "The patient underwent surgical exploration by anterolateral thoracotomy, 80% of the emphysematous left upper lobe was removed, a small area of the pulmonary sequestration was also identified, and a chest tube was placed. The procedure was successful, and the patient's respiratory support was weaned as tolerated."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:careplan-2",
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-2",
+        "status": "active",
+        "intent": "plan",
+        "subject": {
+          "reference": "urn:uuid:patient-1"
+        },
+        "description": "Discharge Instructions",
+        "activity": [
+          {
+            "detail": {
+              "status": "scheduled",
+              "description": "Follow up with your primary care physician as scheduled."
+            }
+          },
+          {
+            "detail": {
+              "status": "scheduled",
+              "description": "Follow-up appointments with specialists involved in your care have been scheduled."
+            }
+          },
+          {
+            "detail": {
+              "status": "scheduled",
+              "description": "Follow up as needed with your respiratory therapist as advised."
+            }
+          },
+          {
+            "detail": {
+              "status": "scheduled",
+              "description": "Take all medications as prescribed."
+            }
+          },
+          {
+            "detail": {
+              "status": "scheduled",
+              "description": "Continue to monitor your respiratory symptoms and oxygen levels."
+            }
+          },
+          {
+            "detail": {
+              "status": "scheduled",
+              "description": "Maintain a healthy lifestyle with a balanced diet and regular exercise."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

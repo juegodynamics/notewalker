@@ -1,0 +1,182 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "gender": "female",
+        "birthDate": "1980-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "258477007",
+              "display": "Bilateral vocal cord polyps"
+            }
+          ],
+          "text": "Bilateral vocal cord polyps"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000124100",
+              "display": "Transoral laser microsurgery vocal cord polyp resection"
+            }
+          ],
+          "text": "Transoral laser microsurgery vocal cord polyp resection"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "429419004",
+              "display": "Routine nasotracheal intubation with a video laryngoscope"
+            }
+          ],
+          "text": "Routine nasotracheal intubation with a video laryngoscope"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "54542-2",
+              "display": "CT of head, neck, and chest"
+            }
+          ],
+          "text": "Head, neck, and chest CT scan"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "Revealed mediastinal emphysema and extensive subcutaneous emphysema from the base of the skull to the chest, along with a suspected tear on the membranous trachea located 4.5 cm under the glottis, extending to ∼8.5 cm under the glottis."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "232717009",
+              "display": "Emergency surgical chest exploration"
+            }
+          ],
+          "text": "Emergency surgical chest exploration"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "394730007",
+              "display": "Suturing of tracheal tear"
+            }
+          ],
+          "text": "Suturing of tracheal tear"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "status": "completed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11289-6",
+              "display": "Follow-up note"
+            }
+          ],
+          "text": "Follow-up after one month"
+        },
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "valueString": "No tracheal stenosis or respiratory dysfunction was noted during follow-up after one month from the date of surgery."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "status": "not-taken",
+        "medicationCodeableConcept": {
+          "text": "None"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "description": "Postoperative care and instructions",
+        "activity": [
+          {
+            "detail": {
+              "description": "Avoid any strenuous physical activity or heavy lifting for a minimum period of 4 weeks.",
+              "status": "not-started"
+            }
+          },
+          {
+            "detail": {
+              "description": "Follow up with the doctor after one month for a postoperative evaluation.",
+              "status": "not-started"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

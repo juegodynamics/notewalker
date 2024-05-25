@@ -1,0 +1,188 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Name]"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "[DOB]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "code": "inpatient",
+          "display": "Inpatient"
+        },
+        "period": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        },
+        "hospitalization": {
+          "dischargeDisposition": {
+            "text": "Discharged"
+          }
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "text": "Organizing right lower lobe pneumonia with a small effusion"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "code": {
+          "text": "Organizing right lower lobe pneumonia with a small effusion"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "onsetDateTime": "[Admission Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "Computed tomography (CT) scan"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "performedDateTime": "[Admission Date]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "code": {
+          "text": "Chest drain insertion"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "performedPeriod": {
+          "start": "[Admission Date]",
+          "end": "[Discharge Date]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Intravenous antibiotics"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Follow prescribed course until completed"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "completed",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "Intrapleural urokinase therapy"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "CRP and white cell count"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "effectiveDateTime": "[Admission Date]",
+        "valueString": "Rising levels observed"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Respiratory rate"
+        },
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "effectiveDateTime": "[Admission Date]",
+        "valueQuantity": {
+          "value": 32,
+          "unit": "breaths per minute"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "Follow up with primary care physician within 1-2 weeks. Avoid playing netball until fully recovered.",
+        "subject": {
+          "reference": "Patient/[Name]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "description": "Follow prescribed course of antibiotics",
+              "status": "in-progress"
+            }
+          },
+          {
+            "detail": {
+              "description": "Continue regular analgesia",
+              "status": "in-progress"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "clinicalStatus": {
+          "text": "Inactive"
+        },
+        "verificationStatus": {
+          "text": "Unconfirmed"
+        },
+        "code": {
+          "text": "No adverse reactions noted during hospitalization"
+        },
+        "patient": {
+          "reference": "Patient/[Name]"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,368 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-fcf",
+        "identifier": [
+          {
+            "use": "usual",
+            "system": "http://hospital.smarthealth.org/patients",
+            "value": "F.C.F."
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1982-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-fcf"
+        },
+        "period": {
+          "start": "2022-01-01T00:00:00Z",
+          "end": "2022-01-05T00:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "386661006",
+                "display": "Fever"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "68962001",
+                "display": "Myalgia"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "267064002",
+                "display": "Anorexia"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "422400008",
+                "display": "Vomiting"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "18165001",
+                "display": "Jaundice"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "271301001",
+                "display": "Colure"
+              }
+            ]
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/hepatitis"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                  "code": "confirmed"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "hepatitis",
+        "subject": {
+          "reference": "Patient/patient-fcf"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "16902000",
+              "display": "Hepatitis"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Observation/lab-tests"
+              }
+            ]
+          },
+          {
+            "detail": [
+              {
+                "reference": "Observation/clinical-signs"
+              }
+            ]
+          }
+        ],
+        "onsetDateTime": "2022-01-01T00:00:00Z",
+        "abatementDateTime": "2022-01-05T00:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "lab-tests",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24323-8",
+              "display": "Hepatic function panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-fcf"
+        },
+        "effectiveDateTime": "2022-01-01T00:00:00Z",
+        "valueString": "Abnormal liver function tests consistent with hepatitis"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "clinical-signs",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1023001",
+              "display": "Clinical finding"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-fcf"
+        },
+        "effectiveDateTime": "2022-01-01T00:00:00Z",
+        "valueString": "Symptoms of fever, myalgia, anorexia, vomiting, jaundice, and colure"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-2",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-fcf"
+        },
+        "period": {
+          "start": "2022-01-20T00:00:00Z",
+          "end": "2022-02-25T00:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "386661006",
+                "display": "Fever"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "267064002",
+                "display": "Anorexia"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "313387002",
+                "display": "Sweating"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "1023001",
+                "display": "Weight loss"
+              }
+            ]
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/infective-endocarditis"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                  "code": "confirmed"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "infective-endocarditis",
+        "subject": {
+          "reference": "Patient/patient-fcf"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40798000",
+              "display": "Infective endocarditis"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "Observation/tee"
+              }
+            ]
+          }
+        ],
+        "onsetDateTime": "2022-01-20T00:00:00Z",
+        "abatementDateTime": "2022-02-25T00:00:00Z"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "tee",
+        "subject": {
+          "reference": "Patient/patient-fcf"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "109007",
+              "display": "Transesophageal echocardiography"
+            }
+          ]
+        },
+        "performedDateTime": "2022-01-20T00:00:00Z",
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385669000",
+              "display": "Prolapsed mitral valve and endocardial vegetation"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "mitral-valve-surgery",
+        "subject": {
+          "reference": "Patient/patient-fcf"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "17436001",
+              "display": "Mitral valve replacement"
+            }
+          ]
+        },
+        "performedDateTime": "2022-02-25T00:00:00Z",
+        "outcome": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "385669000",
+              "display": "Surgery ended without any complications"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "warfarin",
+        "subject": {
+          "reference": "Patient/patient-fcf"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "11289",
+              "display": "Warfarin"
+            }
+          ]
+        },
+        "authoredOn": "2022-02-25T00:00:00Z",
+        "dosageInstruction": [
+          {
+            "text": "Take as directed"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "follow-up-encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-fcf"
+        },
+        "period": {
+          "start": "2022-03-01T00:00:00Z",
+          "end": "2023-08-01T00:00:00Z"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183019000",
+                "display": "Follow-up encounter"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

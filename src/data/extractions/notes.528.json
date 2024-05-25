@@ -1,0 +1,274 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "male",
+        "birthDate": "1957-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "53741008",
+              "display": "Coronary arteriosclerosis"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "428191000124100",
+              "display": "Percutaneous coronary intervention"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "performedPeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-1",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1191",
+              "display": "Aspirin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-2",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "308135",
+              "display": "Prasugrel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-3",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "573621",
+              "display": "Carvedilol"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-4",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "835",
+              "display": "Isosorbide mononitrate"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-5",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "617320",
+              "display": "Atorvastatin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-6",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "29046",
+              "display": "Lisinopril"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "medication-7",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "5640",
+              "display": "Nitroglycerin"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18748-4",
+              "display": "Discharge summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "encounter": {
+          "reference": "Encounter/encounter-1"
+        },
+        "effectivePeriod": {
+          "start": "[redacted]",
+          "end": "[redacted]"
+        },
+        "presentedForm": [
+          {
+            "contentType": "text/plain",
+            "data": "RGlzY2hhcmdlIFN1bW1hcnk6CgpQYXRpZW50IE5hbWU6IFtyZWRhY3RlZF0KU2V4OiBNYWxlCkFnZTogNjYgeWVhcnMgb2xkCkFkbWlzc2lvbiBEYXRlOiBbcmVkYWN0ZWRdCkRpc2NoYXJnZSBEYXRlOiBbcmVkYWN0ZWRdClByaW1hcnkgQ2FyZSBQaHlzaWNpYW46IFtyZWRhY3RlZF0KCkhvc3BpdGFsIENvdXJzZToKVGhlIHBhdGllbnQsIGEgNjYteWVhci1vbGQgbWFsZSB3aXRoIGEgY29tcGxpY2F0ZWQgaGlzdG9yeSBvZiBjYXJkaWFjIGRpc2Vhc2UsIHdhcyBhZG1pdHRlZCB0byB0aGUgaG9zcGl0YWwgb24gW3JlZGFjdGVkXS4gVGhlIHBhdGllbnQgaGFzIGEgaGlzdG9yeSBvZiBoeXBlcnRlbnNpb24sIGRpYWJldGVzLCBkeXNsaXBpZGVtaWEsIGFuZCBwcmlvciBiaWxhdGVyYWwgY2Fyb3RpZCBlbmRhcnRlcmVjdG9teS4gVGhlIHBhdGllbnQgYWxzbyB1bmRlcndlbnQgY29yb25hcnkgYXJ0ZXJ5IGJ5cGFzcyBncmFmdGluZyAoQ0FCRykgMTUgeWVhcnMgYWdvIGFuZCByZWRvIENBQkcgMiB5ZWFycyBhZ28uIFRoZSBwYXRpZW50IHByZXNlbnRlZCB3aXRoIGxpbWl0aW5nIGFuZ2luYSwgZGVzcGl0ZSBiZWluZyBvbiBtYXhpbWFsbHkgdGl0cmF0ZWQgbWVkaWNhbCB0aGVyYXB5IG9mIGFzcGlyaW4sIHByYXN1Z3JlbCwgY2FydmVkaWxvbCwgcmFub2xhemluZSwgaXNvc29yYmlkZW1vbm9uaXRyYXRlIChzdXN0YWluZWQgcmVsZWFzZSksIGF0b3J2YXN0YXRpbiwgbGlzaW5vcHJpbCwgbml0cm9nbHljZXJpbiBwYXRjaCwgYW5kIGFzIG5lZWRlZCBzdWJsaW5ndWFsIG5pdHJvZ3Z5Y2VyaW4uCgpGb3VyIG1vbnRocyBwcmlvciB0byBhZG1pc3Npb24sIHRoZSBwYXRpZW50IHVuZGVyd2VudCBjb3JvbmFyeSBhbmdpb2dyYXBoeSB3aGljaCByZXZlYWxlZCBhIGxvbmcsIDk1JSBzdGVub3NpcyBpbiB0aGUgbWlkLWxlZnQgYW50ZXJpb3IgZGVzY2VuZGluZyAoTEFEKS4gQSBTeW5lcmd5IGRydWctZWx1dGluZyBzdGVudCAoQm9zdG9uIFNjaWVudGlmaWMpIHdhcyBkZXBsb3llZCBhdCAxMiBhdG1vc3BoZXJlcywgd2hpY2ggdGVtcG9yYXJpbHkgaW1wcm92ZWQgdGhlIHBhdGllbnQncyBzeW1wdG9tcy4gSG93ZXZlciwgdGhlIHBhdGllbnQgcHJlc2VudGVkIGFnYWluIHdpdGggcmVzdCBwYWluLCBhbmQgcmVwZWF0IGNvcm9uYXJ5IGFuZ2lvZ3JhcGh5IHJldmVhbGVkIGEgc3RlbnQgZnJhY3R1cmUgd2l0aCA3MCUgaW4tc3RlbnQgcmVzdGVub3Npcy4gVGhlIHBhdGllbnQgdW5kZXJ3ZW50IGNvcm9uYXJ5IGludGVydmVudGlvbiBhbmQgYSBYaWVuY2UgQWxwaW5lIERTIHdhcyBkZXBsb3llZCBpbnNpZGUgdGhlIGZyYWN0dXJlZCBTeW5lcmd5IERVUyB3aXRoIFRJTUkgSUlJIGZsb3cgYW5kIG5vIHJlc2lkdWFsIHN0ZW5vc2lzLiBUaGUgcGF0aWVudCB0b2xlcmF0ZWQgdGhlIHByb2NlZHVyZSBhbmQgd2FzIGRpc2NoYXJnZWQgaW4gc3RhYmxlIGNvbmRpdGlvbi4KCkRpYWdub3NlczogClRoaXMgaG9zcGl0YWxpemF0aW9uIHdhcyBtYWlubHkgZHVlIHRvIHRoZSBwYXRpZW50J3MgY2FyZGlhYyBkaXNlYXNlLCBpbmNsdWRpbmcgZXh0ZW5zaXZlIGNvcm9uYXJ5IGFydGVyeSBkaXNlYXNlLCBoeXBlcnRlbnNpb24sIGRpYWJldGVzLCBhbmQgZHlzbGlwaWRlbWlhLgoKRm9sbG93LXVwOiBUaGUgcGF0aWVudCBpcyBhZHZpc2VkIHRvIGZvbGxvdy11cCB3aXRoIGhpcyBwcmltYXJ5IGNhcmUgcGh5c2ljaWFuIGFuZCBhIGNhcmRpb2xvZ2lzdC4gVGhlIHBhdGllbnQgaXMgYWR2aXNlZCB0byBjb250aW51ZSBoaXMgbWVkaWNhdGlvbnMgYW5kIHRvIG1ha2UgbGlmZXN0eWxlIG1vZGlmaWNhdGlvbnMgdG8gbWFuYWdlIGhpcyBjYXJkaWFjIGhlYWx0aC4KCkFsbCBxdW90ZXMgYXJlIGZyb20gdGhlIG9yaWdpbmFsIGZpbGUu"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "gender": "male",
+        "age": 81,
+        "condition": [
+          {
+            "code": {
+              "text": "Alzheimer’s disease"
+            }
+          },
+          {
+            "code": {
+              "text": "Excess weight"
+            }
+          },
+          {
+            "code": {
+              "text": "Type-2 diabetes"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "EMER",
+                "display": "emergency"
+              }
+            ]
+          }
+        ],
+        "reasonCode": [
+          {
+            "text": "Diffuse abdominal pain for two days"
+          }
+        ],
+        "hospitalization": {
+          "admitSource": {
+            "text": "Emergency department"
+          }
+        },
+        "period": {
+          "start": "2023-10-01T00:00:00Z",
+          "end": "2023-10-01T00:00:00Z"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "text": "Diffuse Jejuno-Ileal Diverticulosis (DJID)"
+        },
+        "note": [
+          {
+            "text": "Causing a small bowel obstruction due to an enterolith impacted in the distal ileum and an isolated jejunal diverticulitis with incidental Meckel’s diverticulum."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "code": {
+          "text": "Laparotomy"
+        },
+        "note": [
+          {
+            "text": "The enterolith was manually and proximally retrogradely pushed. The inflamed jejunal diverticulum was surgically resected along with the Meckel’s diverticulum."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "status": "final",
+        "code": {
+          "text": "Contrast-enhanced abdominal CT scan"
+        },
+        "conclusion": "Diffuse fluid distention of the small bowel loops indicative of obstruction. A profusion of dilated small bowel diverticula along the mesenteric border. An isolated jejunal diverticulitis in the right flank. A 3 cm large enterolith impacted in the distal ileum causing small bowel obstruction. Incidentally discovered Meckel’s diverticulum."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "completed",
+        "intent": "plan",
+        "title": "Discharge Instructions",
+        "description": "The patient should follow a healthy diet plan to manage diabetes and excess weight. Follow-up appointments were scheduled to ensure timely evaluation and improvement of the patient's condition."
+      }
+    }
+  ]
+}

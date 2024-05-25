@@ -1,0 +1,154 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-example",
+        "gender": "male",
+        "birthDate": "1950-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-example",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372143000",
+              "display": "Malignant neoplasm of liver"
+            }
+          ],
+          "text": "Recurrent Hepatocellular Carcinoma (HCC)"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "display": "Abdominal dynamic CT showing mildly hypervascular and ring-enhanced nodule with venous wash-out in S5 of remnant liver"
+              },
+              {
+                "display": "Laboratory data with mildly elevated AST, total bilirubin, and CEA levels"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-example",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "174040003",
+              "display": "Partial hepatectomy"
+            }
+          ],
+          "text": "Partial S5 hepatectomy"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "performedPeriod": {
+          "start": "2022-07-01",
+          "end": "2022-07-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnosticreport-example",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "45033-8",
+              "display": "Pathology report"
+            }
+          ],
+          "text": "Microscopic examination of hepatic nodule"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "result": [
+          {
+            "reference": "Observation/observation-example"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-example",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33717-0",
+              "display": "Hepatic nodule pathology"
+            }
+          ],
+          "text": "Gross and microscopic examination of hepatic nodule"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "valueString": "Poorly demarcated portal nodule with central necrosis. Unencapsulated, ill-defined, and expansive/infiltrative nodule, displaying a solid proliferation of atypical epithelial cells, arranged in solid nests, trabeculae, and/or irregular and fused tubule-like structures, involving the portal vein with focal perineural invasion."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-chc-int",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372141003",
+              "display": "Combined Hepatocellular Carcinoma and Cholangiocarcinoma (CHC-INT)"
+            }
+          ],
+          "text": "Primary CHC-INT"
+        },
+        "subject": {
+          "reference": "Patient/patient-example"
+        },
+        "onsetDateTime": "2022-07-01",
+        "abatementDateTime": "2023-10-01",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "remission",
+              "display": "Remission"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "display": "Recurrence in remnant liver 1 year and 3 months after surgery"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

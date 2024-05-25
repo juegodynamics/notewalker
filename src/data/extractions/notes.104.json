@@ -1,0 +1,224 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": "1953-01-01"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "422878002",
+              "display": "Normal tension glaucoma"
+            }
+          ],
+          "text": "Progressive NTG"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "82810-3",
+              "display": "Visual acuity"
+            }
+          ],
+          "text": "BCVA"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "0.5 in right eye, 1.0 in left eye"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "17858-5",
+              "display": "Intraocular pressure"
+            }
+          ],
+          "text": "IOP"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "15 mm Hg in right eye, 16 mm Hg in left eye"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29300-1",
+              "display": "Cup to disc ratio"
+            }
+          ],
+          "text": "C/D ratio"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "0.8-0.9"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29300-1",
+              "display": "Disc hemorrhage"
+            }
+          ],
+          "text": "Disc hemorrhage"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "Noted on the right side"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "699002",
+              "display": "Pituitary adenoma"
+            }
+          ],
+          "text": "Pituitary macroadenoma affecting the chiasm"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "39567001",
+              "display": "Transsphenoidal resection"
+            }
+          ],
+          "text": "Transsphenoidal resection to remove the tumor"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "2019-01-01",
+          "end": "2019-01-01"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ClinicalImpression",
+        "id": "clinical-impression-1",
+        "status": "completed",
+        "description": "This case report describes a 70-year-old female who was referred to our clinic for progressive NTG. She was found to have pituitary macroadenoma affecting the chiasm, which was deemed responsible for the bitemporal hemianopia observed in her VF. Following the tumor's removal, the patient's VF improved and has remained stable for four years. To the best of our knowledge, coexistence of true glaucoma was observed in less than 1% of cases with this medical presentation. The patient's glaucoma was observed to progress, although interestingly, surgical excision of the tumor halted its progression. The influence of the adenoma on the optic disc appearance is still uncertain.",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "date": "2023-01-01"
+      }
+    }
+  ]
+}

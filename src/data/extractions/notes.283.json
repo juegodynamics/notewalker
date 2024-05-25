@@ -1,0 +1,181 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "use": "official",
+            "family": "[REDACTED]",
+            "given": [
+              "[REDACTED]"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1947-01-01",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[REDACTED]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        },
+        "reasonCode": [
+          {
+            "text": "Abdominal distension and postmenopausal bleeding"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Adenosarcoma with SO"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "52734007",
+              "display": "Total abdominal hysterectomy and bilateral adnexectomy with pelvic lymphadenectomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedPeriod": {
+          "start": "[REDACTED]",
+          "end": "[REDACTED]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "72170-5",
+              "display": "Follow-up care plan"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "The patient was advised to follow-up with her gynecologist for regular check-ups and to monitor any potential recurrence of the disease."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11348-0",
+              "display": "Discharge Condition"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "valueString": "The patient's condition was critical at discharge, and she passed away due to peritoneal sarcomatosis 1.5 months after recurrence."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "documentreference-1",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18842-5",
+              "display": "Discharge Summary"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "Discharge Summary: Patient Name: [REDACTED], Age: 76 years, Sex: Female, Medical Record Number (MRN): [REDACTED], Admission Date: [REDACTED], Discharge Date: [REDACTED], Hospital Course: The patient was admitted to our hospital with a chief complaint of abdominal distension and postmenopausal bleeding. She was found to have a bulky uterus with a subendometrial mass on vaginal ultrasonography. Adenosarcoma was suspected on the basis of findings from biopsy by hysteroscopy. Magnetic resonance imaging (MRI) was performed for further examination. Sagittal T2-weighted imaging (WI) showed a large heterogeneous high-intensity mass, approximately 241 × 114 × 88 mm3 in size, without myometrial invasion expanding the uterine cavity and extending into the cervical canal. Subsequently, total abdominal hysterectomy and bilateral adnexectomy with pelvic lymphadenectomy were performed. The pathology report indicated that the tumor was diagnosed as adenosarcoma with SO without myometrial invasion (T1aN0M0). A follow-up CT scan performed 6 months after surgery revealed peritoneal sarcomatosis. The patient's gynecologist recommended adjuvant chemotherapy, but she did not wish to receive the treatment and died of the disease 1.5 months after recurrence. Diagnosis: Adenosarcoma with SO, Treatment: Total abdominal hysterectomy and bilateral adnexectomy with pelvic lymphadenectomy, Follow-up Care: The patient was advised to follow-up with her gynecologist for regular check-ups and to monitor any potential recurrence of the disease. Discharge Condition: The patient's condition was critical at discharge, and she passed away due to peritoneal sarcomatosis 1.5 months after recurrence. Discharge Medications: Not Applicable, Discharge Instructions: Not Applicable, Signed, [REDACTED]."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

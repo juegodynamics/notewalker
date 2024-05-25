@@ -1,0 +1,248 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1959-xx-xx"  // Assuming the patient is 64 years old in 2023
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183519009",
+                "display": "Hospital admission"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/[patient-id]"
+        },
+        "period": {
+          "start": "[DATE]",
+          "end": "[DATE]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "422504002",
+                "display": "Headache"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "422965002",
+                "display": "Visual field defect"
+              }
+            ]
+          }
+        ],
+        "hospitalization": {
+          "dischargeDisposition": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                "code": "home",
+                "display": "Home"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "443849009",
+              "display": "Aneurysm of the carotid artery"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[patient-id]"
+        },
+        "onsetDateTime": "[DATE]"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "not-done",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Surgical procedure"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[patient-id]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "443849009",
+                "display": "Aneurysm of the carotid artery"
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "text": "The neurosurgeons have decided to continue with conservative management as the patient is stable and does not require any intervention or surgery at this time."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "status": "active",
+        "intent": "plan",
+        "title": "Post-discharge Care Plan",
+        "subject": {
+          "reference": "Patient/[patient-id]"
+        },
+        "period": {
+          "start": "[DATE]"
+        },
+        "activity": [
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "736271009",
+                    "display": "Follow-up with neurosurgeon"
+                  }
+                ]
+              },
+              "description": "The patient is advised to visit the neurosurgeon as scheduled for follow-up and further management of his condition."
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "160670007",
+                    "display": "Taking medication"
+                  }
+                ]
+              },
+              "description": "The patient is advised to take his medications as prescribed."
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "226358003",
+                    "display": "Healthy lifestyle education"
+                  }
+                ]
+              },
+              "description": "The patient is advised to follow a healthy lifestyle with regular exercise and a balanced diet."
+            }
+          },
+          {
+            "detail": {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "386473003",
+                    "display": "Report symptoms"
+                  }
+                ]
+              },
+              "description": "The patient is advised to report any increase in headache, visual disturbance, or any other symptoms to his physician immediately."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "status": "not-taken",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "373873005",
+              "display": "No current medication"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/[patient-id]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "text": "[REDACTED]"
+          }
+        ]
+      }
+    }
+  ]
+}

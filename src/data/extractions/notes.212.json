@@ -1,0 +1,224 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "text": "[Insert Name]"
+          }
+        ],
+        "gender": "[Insert Gender]",
+        "birthDate": "[Insert Birth Date]",
+        "identifier": [
+          {
+            "system": "http://hospital.smarthealthit.org",
+            "value": "[Insert Number]"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "IMP",
+          "display": "inpatient encounter"
+        },
+        "period": {
+          "start": "[Insert Admission Date]",
+          "end": "[Insert Discharge Date]"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "363346000",
+                "display": "Malignant neoplasm of vulva"
+              }
+            ],
+            "text": "Vulvar sarcoma"
+          }
+        ],
+        "hospitalization": {
+          "dischargeDisposition": {
+            "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+            "code": "home"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "363346000",
+              "display": "Malignant neoplasm of vulva"
+            }
+          ],
+          "text": "Vulvar sarcoma"
+        },
+        "subject": {
+          "reference": "Patient/[Insert Patient ID]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Radiation therapy procedure"
+            }
+          ],
+          "text": "Radiotherapy"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1200009",
+              "display": "Proton beam therapy"
+            }
+          ],
+          "text": "Proton beam radiotherapy"
+        },
+        "subject": {
+          "reference": "Patient/[Insert Patient ID]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "status": "completed",
+        "category": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "302193003",
+              "display": "Surgical procedure"
+            }
+          ],
+          "text": "Surgery"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "304914007",
+              "display": "Skin grafting"
+            }
+          ],
+          "text": "Skin grafting"
+        },
+        "subject": {
+          "reference": "Patient/[Insert Patient ID]"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "stopped",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049620",
+              "display": "Oxycodone Hydrochloride 40 MG Extended Release Oral Tablet"
+            }
+          ],
+          "text": "Oxycodone"
+        },
+        "subject": {
+          "reference": "Patient/[Insert Patient ID]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "40 mg/day, gradually increased to 160 mg/day"
+          }
+        ],
+        "dispenseRequest": {
+          "numberOfRepeatsAllowed": 0,
+          "quantity": {
+            "value": 160,
+            "unit": "mg/day"
+          }
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049620",
+              "display": "Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet"
+            }
+          ],
+          "text": "Oxycodone"
+        },
+        "subject": {
+          "reference": "Patient/[Insert Patient ID]"
+        },
+        "dosageInstruction": [
+          {
+            "text": "10 mg/day"
+          }
+        ],
+        "dispenseRequest": {
+          "numberOfRepeatsAllowed": 0,
+          "quantity": {
+            "value": 10,
+            "unit": "mg/day"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "name": [
+          {
+            "text": "Japanese woman",
+            "given": ["Japanese"],
+            "family": "woman"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1982"  // Assuming birth year based on age 41 in 2023
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": "[DATE]",  // Admission Date
+          "end": "[DATE]"    // Discharge Date
+        },
+        "reasonCode": [
+          {
+            "text": "Bilateral groin pain and right buttock pain"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Iron-deficiency anemia"
+        },
+        "onsetDateTime": "2021"  // Diagnosed 2 years earlier from 2023
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Bilateral osteonecrosis of the femoral head"
+        },
+        "stage": [
+          {
+            "summary": {
+              "text": "Stage 1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "note": [
+          {
+            "text": "Standard radiographs of both hips revealed no characteristic findings."
+          },
+          {
+            "text": "MRI scans showed a low signal line in the subchondral region of the femoral head, and a high signal region in all of the femoral head."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Surgery with sliding hip screws and femoral head decompression"
+        },
+        "outcome": {
+          "text": "Patient began to bear weight as tolerated with the use of an assistive device bilaterally."
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "text": "Eldecalcitol"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "medicationadministration-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "medicationCodeableConcept": {
+          "text": "Teriparatide acetate"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "DEXA scan results"
+        },
+        "valueString": "Low in both femoral necks"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "TRACP-5b level"
+        },
+        "valueString": "Increased"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Total P1NP"
+        },
+        "valueString": "Decreased"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-3",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "Vitamin D deficiency"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-4",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "JOA hip score"
+        },
+        "valueQuantity": {
+          "value": 34,
+          "unit": "points"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-5",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "code": {
+          "text": "JOA hip score"
+        },
+        "valueQuantity": {
+          "value": 90,
+          "unit": "points"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-2",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "note": [
+          {
+            "text": "Radiographs showed no evidence of recurrent stress fracture in the femoral neck or progression of osteonecrosis."
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "careplan-1",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "status": "active",
+        "intent": "plan",
+        "title": "Discharge Plan",
+        "description": "Close follow-up and instructions to continue the prescribed medications. Maintain a healthy lifestyle and attend regular follow-up visits.",
+        "activity": [
+          {
+            "detail": {
+              "description": "Walking ability improved gradually."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

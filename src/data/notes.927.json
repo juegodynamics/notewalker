@@ -1,0 +1,230 @@
+{
+  "resourceType": "Bundle",
+  "type": "document",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-1",
+        "gender": "female",
+        "birthDate": null
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-1",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "254837009",
+              "display": "Metastatic neoplasm to external auditory canal"
+            }
+          ],
+          "text": "Metastatic breast carcinoma to the left external auditory canal (EAC)"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "encounter-1",
+        "status": "finished",
+        "class": {
+          "code": "inpatient",
+          "display": "Inpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "183807002",
+                "display": "Inpatient stay for diagnosis and treatment"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "period": {
+          "start": null,
+          "end": null
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "Condition/condition-1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "procedure-1",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "387713003",
+              "display": "Excision of lesion"
+            }
+          ],
+          "text": "Surgical operation by the ENT surgeon and the mass was subtotally removed"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "performedDateTime": null,
+        "outcome": {
+          "text": "Histopathologic examination of specimens revealed metastatic carcinoma"
+        },
+        "report": [
+          {
+            "reference": "DiagnosticReport/diagnostic-report-1"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "diagnostic-report-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "LAB",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33747-3",
+              "display": "Histopathology Report"
+            }
+          ],
+          "text": "Histopathologic examination"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": null,
+        "issued": null,
+        "result": [
+          {
+            "reference": "Observation/observation-1"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "observation-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33747-3",
+              "display": "Histopathology Report"
+            }
+          ],
+          "text": "Histopathologic findings"
+        },
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "effectiveDateTime": null,
+        "valueString": "Histopathological findings of the excised lesion showed microscopically an infiltrative carcinoma compatible with a breast origin based on immunohistochemical study results that were positive for Estrogen Receptor (ER), Cytokeratin 7, and E-cadherin but negative for C-Erb-b2 and Progesterone receptor (PR). The tumor was composed of atypical cells with large nuclei and prominent nucleoli in a solid pattern. There was no ductal or tubular structure. The positivity of both ER and E-Cadherin also supported ductal type when compared to lobular carcinoma of the breast."
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ImagingStudy",
+        "id": "imagingstudy-1",
+        "status": "available",
+        "subject": {
+          "reference": "Patient/patient-1"
+        },
+        "started": null,
+        "description": "CT scan of the temporal bone",
+        "series": [
+          {
+            "uid": "1.2.840.10008.1.2.1",
+            "number": 1,
+            "modality": {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "CT",
+              "display": "CT"
+            },
+            "description": "CT scan revealed that the left EAC had been completely obstructed by a soft tissue density mass. Despite the fact that the mass was located in both bony and cartilaginous EAC, no bony or cartilaginous invasion was observed."
+          },
+          {
+            "uid": "1.2.840.10008.1.2.1",
+            "number": 2,
+            "modality": {
+              "system": "http://dicom.nema.org/resources/ontology/DCM",
+              "code": "MR",
+              "display": "MRI"
+            },
+            "description": "MRI showed a well-defined and fusiform soft tissue mass that filled the left EAC and was located in both the bony and cartilaginous EAC. Following the administration of the gadolinium-based contrast agent, homogeneous enhancement was seen. DWI showed slightly hyperintense signal on isotropic trace image and the apparent diffusion coefficient (ADC) map revealed slightly restricted diffusion in the mass. There was a small, non-enhancing hemorrhagic fluid collection present between the mass and the tympanic membrane. Middle and internal ear structures were normal on both MRI and temporal CT images."
+          }
+        ]
+      }
+    }
+  ]
+}
