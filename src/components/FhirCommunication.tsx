@@ -6,6 +6,16 @@ interface FhirCommunicationProps {
     communication: PatientCommunication[];
 }
 
+/**
+ * FhirCommunication component
+ *
+ * This component renders the communication information from a FHIR PatientCommunication resource.
+ * It displays the languages spoken by the patient.
+ *
+ * @param {Object} props - The component props
+ * @param {PatientCommunication[]} props.communication - The array of PatientCommunication resources to display
+ * @returns {JSX.Element} The rendered component
+ */
 const FhirCommunication: React.FC<FhirCommunicationProps> = ({
     communication,
 }) => (

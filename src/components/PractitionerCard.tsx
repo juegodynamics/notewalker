@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardContent, Typography, Grid, Chip} from '@mui/material';
+import {Card, CardContent, Typography, Grid} from '@mui/material';
 import {Practitioner} from 'fhir/r4';
 import MissingFieldBadge from './Badge'; // Import the MissingFieldBadge component
 
@@ -7,7 +7,19 @@ interface PractitionerCardProps {
     practitioner: Practitioner;
 }
 
+/**
+ * PractitionerCard component
+ *
+ * This component renders a card with details about a Practitioner FHIR resource.
+ * It displays various fields from the Practitioner resource and uses a badge to
+ * indicate any missing required fields.
+ *
+ * @param {Object} props - The component props
+ * @param {Practitioner} props.practitioner - The Practitioner resource to display
+ * @returns {JSX.Element} The rendered component
+ */
 const PractitionerCard: React.FC<PractitionerCardProps> = ({practitioner}) => {
+    // Function to render a field with a label and value
     const renderField = (label: string, value: any) => {
         return (
             <Grid item xs={12} sm={6} md={4}>

@@ -7,7 +7,19 @@ interface EncounterCardProps {
     encounter: Encounter;
 }
 
+/**
+ * EncounterCard component
+ *
+ * This component renders a card with details about an Encounter FHIR resource.
+ * It displays various fields from the Encounter resource and uses a badge to
+ * indicate any missing required fields.
+ *
+ * @param {Object} props - The component props
+ * @param {Encounter} props.encounter - The Encounter resource to display
+ * @returns {JSX.Element} The rendered component
+ */
 const EncounterCard: React.FC<EncounterCardProps> = ({encounter}) => {
+    // Function to render a field with a label and value
     const renderField = (label: string, value: any) => (
         <Grid item xs={12} sm={6} md={4}>
             <Typography variant="body2">

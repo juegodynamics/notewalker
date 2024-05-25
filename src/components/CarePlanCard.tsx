@@ -7,7 +7,19 @@ interface CarePlanCardProps {
     carePlan: CarePlan;
 }
 
+/**
+ * CarePlanCard component
+ *
+ * This component renders a card with details about a CarePlan FHIR resource.
+ * It displays various fields from the CarePlan resource, and uses a badge to
+ * indicate any missing required fields.
+ *
+ * @param {Object} props - The component props
+ * @param {CarePlan} props.carePlan - The CarePlan resource to display
+ * @returns {JSX.Element} The rendered component
+ */
 const CarePlanCard: React.FC<CarePlanCardProps> = ({carePlan}) => {
+    // Function to render a field with a label and value
     const renderField = (label: string, value: any) => (
         <Grid item xs={12} sm={6} md={4}>
             <Typography variant="body2">

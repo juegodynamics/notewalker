@@ -8,7 +8,19 @@ import EncounterCard from 'components/EncounterCard';
 import ProcedureCard from 'components/ProcedureCard';
 import CarePlanCard from 'components/CarePlanCard';
 
-export const getResourceCard = (entry: fhir.BundleEntry): React.ReactNode => {
+/**
+ * getResourceCard function
+ *
+ * This function takes a FHIR BundleEntry and returns the corresponding React component
+ * to display the resource details. It supports various FHIR resource types such as
+ * Patient, Organization, Practitioner, Condition, Encounter, Procedure, and CarePlan.
+ *
+ * @param {fhir.BundleEntry} entry - The FHIR BundleEntry containing the resource
+ * @returns {React.ReactNode} The React component to display the resource details
+ */
+export const getResourceCard = (
+    entry: fhir.BundleEntry,
+): React.ReactNode | null => {
     if (!entry.resource) {
         return null;
     }

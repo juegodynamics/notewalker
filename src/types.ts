@@ -5,6 +5,8 @@ export interface Criterion {
     field: string;
     operator: Operator;
     value: string;
+    startDate?: string;
+    endDate?: string;
 }
 
 export interface Patient {

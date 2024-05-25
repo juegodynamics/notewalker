@@ -1,18 +1,23 @@
 import React, {useState} from 'react';
 import {Grid, Chip, Box} from '@mui/material';
 import NoteCard from './NoteCard';
-import {Note} from 'types';
+import {Criterion, Note} from 'types';
+import ChipArray from './ChipArray';
 
 interface NotesGridProps {
     notes: Note[];
     searchTerm: string;
     onNoteSelect: (id: number) => void;
+    criteria: Criterion[];
+    onDeleteCriterion?: (index: number) => void;
 }
 
 const NotesGrid: React.FC<NotesGridProps> = ({
     notes,
     searchTerm,
     onNoteSelect,
+    criteria,
+    onDeleteCriterion,
 }) => {
     const [filters, setFilters] = useState<string[]>([]);
 
@@ -23,7 +28,7 @@ const NotesGrid: React.FC<NotesGridProps> = ({
                     .toLowerCase()
                     .includes(searchTerm.toLowerCase())) &&
             (filters.length === 0 ||
-                filters.every((filter) => note.tags?.includes(filter)))
+                filters.every((filter) => note.tags?.includes(filter))),
     );
 
     const handleFilterChange = (filter: string) => {
@@ -38,20 +43,12 @@ const NotesGrid: React.FC<NotesGridProps> = ({
 
     return (
         <Box>
-            <Box display="flex" justifyContent="center" mb={2}>
-                <Chip
-                    label="Filter 1"
-                    onClick={() => handleFilterChange('Filter 1')}
-                />
-                <Chip
-                    label="Filter 2"
-                    onClick={() => handleFilterChange('Filter 2')}
-                />
-                <Chip
-                    label="Filter 3"
-                    onClick={() => handleFilterChange('Filter 3')}
-                />
-            </Box>
+            <ChipArray
+                criteria={criteria}
+                onDelete={(index) => {
+                    onDeleteCriterion?.(index);
+                }}
+            />
             <Grid container spacing={2}>
                 {filteredNotes.map((note) => (
                     <Grid

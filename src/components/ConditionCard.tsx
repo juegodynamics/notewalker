@@ -1,13 +1,25 @@
 import React from 'react';
-import {Card, CardContent, Typography, Grid, Chip} from '@mui/material';
+import {Card, CardContent, Typography, Grid} from '@mui/material';
 import {Condition} from 'fhir/r4';
-import MissingFieldBadge from './Badge'; // Import the MissingFieldBadge component
+import MissingFieldBadge from './Badge';
 
 interface ConditionCardProps {
     condition: Condition;
 }
 
+/**
+ * ConditionCard component
+ *
+ * This component renders a card with details about a Condition FHIR resource.
+ * It displays various fields from the Condition resource and uses a badge to
+ * indicate any missing required fields.
+ *
+ * @param {Object} props - The component props
+ * @param {Condition} props.condition - The Condition resource to display
+ * @returns {JSX.Element} The rendered component
+ */
 const ConditionCard: React.FC<ConditionCardProps> = ({condition}) => {
+    // Function to render a field with a label and value
     const renderField = (label: string, value: any) => {
         return (
             <Grid item xs={12} sm={6} md={4}>

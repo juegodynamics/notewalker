@@ -7,7 +7,19 @@ interface ProcedureCardProps {
     procedure: Procedure;
 }
 
+/**
+ * ProcedureCard component
+ *
+ * This component renders a card with details about a Procedure FHIR resource.
+ * It displays various fields from the Procedure resource and uses a badge to
+ * indicate any missing required fields.
+ *
+ * @param {Object} props - The component props
+ * @param {Procedure} props.procedure - The Procedure resource to display
+ * @returns {JSX.Element} The rendered component
+ */
 const ProcedureCard: React.FC<ProcedureCardProps> = ({procedure}) => {
+    // Function to render a field with a label and value
     const renderField = (label: string, value: any) => (
         <Grid item xs={12} sm={6} md={4}>
             <Typography variant="body2">

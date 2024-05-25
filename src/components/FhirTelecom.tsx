@@ -6,6 +6,16 @@ interface FhirTelecomProps {
     telecom: ContactPoint[];
 }
 
+/**
+ * FhirTelecom component
+ *
+ * This component renders the telecom information from a FHIR ContactPoint resource.
+ * It displays the system (e.g., phone, email) and the corresponding value.
+ *
+ * @param {Object} props - The component props
+ * @param {ContactPoint[]} props.telecom - The array of ContactPoint resources to display
+ * @returns {JSX.Element} The rendered component
+ */
 const FhirTelecom: React.FC<FhirTelecomProps> = ({telecom}) => (
     <>
         {telecom?.map((contact, index) => (

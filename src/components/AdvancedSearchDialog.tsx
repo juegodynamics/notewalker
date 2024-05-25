@@ -19,12 +19,35 @@ interface AdvancedSearchDialogProps {
     onClose: () => void;
     onSearch: (criteria: Criterion[]) => void;
     bundles: Bundle[];
+    criteria: Criterion[];
+    setCriteria: React.Dispatch<React.SetStateAction<Criterion[]>>;
 }
 
+// Define the possible resource types and operators as enums
 const resourceTypes = Object.values(ResourceType);
 const operators = Object.values(Operator);
+
+// Define the fields available for each resource type
 export const resourceFields: Record<ResourceType, string[]> = {
     Patient: ['id', 'name', 'gender', 'birthDate', 'address.text'],
+    Practitioner: [
+        'id',
+        'name.text',
+        'gender',
+        'address.text',
+        'telecom.value',
+    ],
+    Composition: [
+        'id',
+        'status',
+        'category.coding.display',
+        'code.coding.display',
+        'subject.reference',
+        'effectiveDateTime',
+        'issued',
+        'conclusion',
+    ],
+
     Condition: [
         'id',
         'clinicalStatus.coding.code',
@@ -49,27 +72,34 @@ export const resourceFields: Record<ResourceType, string[]> = {
         'subject.reference',
         'performedDateTime',
     ],
-    DiagnosticReport: [
-        'id',
-        'status',
-        'category.coding.display',
-        'code.coding.display',
-        'subject.reference',
-        'effectiveDateTime',
-        'issued',
-        'conclusion',
-    ],
 };
 
+/**
+ * AdvancedSearchDialog component
+ *
+ * This component provides an advanced search interface allowing users to build
+ * complex search criteria. The criteria are based on FHIR resource types and fields.
+ *
+ * @param {Object} props - The component props
+ * @param {boolean} props.open - Whether the dialog is open
+ * @param {Function} props.onClose - Function to call when the dialog is closed
+ * @param {Function} props.onSearch - Function to call when a search is performed
+ * @param {Bundle[]} props.bundles - Array of FHIR bundles to search within
+ * @param {Criterion[]} props.criteria - The current search criteria
+ * @param {Function} props.setCriteria - Function to update the search criteria
+ * @returns {JSX.Element} The rendered component
+ */
 const AdvancedSearchDialog: React.FC<AdvancedSearchDialogProps> = ({
     open,
     onClose,
     onSearch,
     bundles,
+    criteria,
+    setCriteria,
 }) => {
-    const [criteria, setCriteria] = useState<Criterion[]>([]);
     const [uniqueValues, setUniqueValues] = useState<string[]>([]);
 
+    // Fetch unique values for the selected field when criteria changes
     useEffect(() => {
         if (criteria.length > 0) {
             const {resourceType, field} = criteria[criteria.length - 1];
@@ -77,6 +107,8 @@ const AdvancedSearchDialog: React.FC<AdvancedSearchDialogProps> = ({
         }
     }, [criteria]);
 
+    // Fetch unique values for a specific field in the resource type.
+    // These are used to populate the Autocomplete.
     const fetchUniqueValues = (resourceType: ResourceType, field: string) => {
         const valuesSet = new Set<string>();
 
@@ -96,11 +128,13 @@ const AdvancedSearchDialog: React.FC<AdvancedSearchDialogProps> = ({
         setUniqueValues(Array.from(valuesSet));
     };
 
+    // Extract values for a specific field from a resource
     const getFieldValues = (resource: any, field: string): string[] => {
         const fields = field.split('.');
         return getNestedFieldValues(resource, fields);
     };
 
+    // Recursively get nested field values from an object
     const getNestedFieldValues = (obj: any, fields: string[]): string[] => {
         if (!obj) return [];
         const field = fields[0];
@@ -127,6 +161,7 @@ const AdvancedSearchDialog: React.FC<AdvancedSearchDialogProps> = ({
         }
     };
 
+    // Add a new criterion to the criteria list
     const handleAddCriterion = () => {
         setCriteria([
             ...criteria,
@@ -135,10 +170,13 @@ const AdvancedSearchDialog: React.FC<AdvancedSearchDialogProps> = ({
                 field: '',
                 operator: Operator.Equals,
                 value: '',
+                startDate: '',
+                endDate: '',
             },
         ]);
     };
 
+    // Update a specific criterion in the criteria list
     const handleCriterionChange = (
         index: number,
         key: keyof Criterion,
@@ -149,11 +187,13 @@ const AdvancedSearchDialog: React.FC<AdvancedSearchDialogProps> = ({
         setCriteria(newCriteria);
     };
 
+    // Handle the search action
     const handleSearch = () => {
         onSearch(criteria);
         onClose();
     };
 
+    // Get the fields for a specific resource type
     const getFields = (resourceType: ResourceType): string[] => {
         return resourceFields[resourceType] || [];
     };
@@ -178,6 +218,7 @@ const AdvancedSearchDialog: React.FC<AdvancedSearchDialogProps> = ({
                                         )
                                     }
                                     fullWidth
+                                    sx={{mt: 2}}
                                 >
                                     {resourceTypes.map((type) => (
                                         <MenuItem key={type} value={type}>
@@ -199,6 +240,7 @@ const AdvancedSearchDialog: React.FC<AdvancedSearchDialogProps> = ({
                                         )
                                     }
                                     fullWidth
+                                    sx={{mt: 2}}
                                 >
                                     {getFields(
                                         criterion.resourceType as ResourceType,
@@ -212,6 +254,7 @@ const AdvancedSearchDialog: React.FC<AdvancedSearchDialogProps> = ({
                             <Grid item xs={12} sm={2}>
                                 <TextField
                                     select
+                                    disabled={criterion.field === 'birthDate'}
                                     label="Operator"
                                     value={criterion.operator}
                                     onChange={(e) =>
@@ -222,6 +265,7 @@ const AdvancedSearchDialog: React.FC<AdvancedSearchDialogProps> = ({
                                         )
                                     }
                                     fullWidth
+                                    sx={{mt: 2}}
                                 >
                                     {operators.map((op) => (
                                         <MenuItem key={op} value={op}>
@@ -230,30 +274,78 @@ const AdvancedSearchDialog: React.FC<AdvancedSearchDialogProps> = ({
                                     ))}
                                 </TextField>
                             </Grid>
-                            <Grid item xs={12} sm={4}>
-                                <Autocomplete
-                                    options={uniqueValues}
-                                    value={criterion.value}
-                                    onChange={(e, newValue) =>
-                                        handleCriterionChange(
-                                            index,
-                                            'value',
-                                            newValue as string,
-                                        )
-                                    }
-                                    renderInput={(params) => (
+                            {criterion.field === 'birthDate' ? (
+                                <>
+                                    <Grid item xs={12} sm={2}>
                                         <TextField
-                                            {...params}
-                                            label="Value"
+                                            label="Start Date"
+                                            type="date"
+                                            value={criterion.startDate}
+                                            onChange={(e) =>
+                                                handleCriterionChange(
+                                                    index,
+                                                    'startDate',
+                                                    e.target.value,
+                                                )
+                                            }
                                             fullWidth
+                                            sx={{mt: 2}}
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
                                         />
-                                    )}
-                                />
-                            </Grid>
+                                    </Grid>
+                                    <Grid item xs={12} sm={2}>
+                                        <TextField
+                                            label="End Date"
+                                            type="date"
+                                            value={criterion.endDate}
+                                            onChange={(e) =>
+                                                handleCriterionChange(
+                                                    index,
+                                                    'endDate',
+                                                    e.target.value,
+                                                )
+                                            }
+                                            fullWidth
+                                            sx={{mt: 2}}
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                        />
+                                    </Grid>
+                                </>
+                            ) : (
+                                <Grid item xs={12} sm={4}>
+                                    <Autocomplete
+                                        options={uniqueValues}
+                                        value={criterion.value}
+                                        onChange={(e, newValue) =>
+                                            handleCriterionChange(
+                                                index,
+                                                'value',
+                                                newValue as string,
+                                            )
+                                        }
+                                        renderInput={(params) => (
+                                            <TextField
+                                                {...params}
+                                                label="Value"
+                                                fullWidth
+                                            />
+                                        )}
+                                        sx={{mt: 2}}
+                                    />
+                                </Grid>
+                            )}
                         </React.Fragment>
                     ))}
                 </Grid>
-                <Button onClick={handleAddCriterion} color="primary">
+                <Button
+                    onClick={handleAddCriterion}
+                    color="primary"
+                    sx={{mt: 1}}
+                >
                     Add Criterion
                 </Button>
             </DialogContent>

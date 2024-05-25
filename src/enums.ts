@@ -1,9 +1,10 @@
 export enum ResourceType {
     Patient = 'Patient',
+    Practitioner = 'Practitioner',
     Condition = 'Condition',
     Encounter = 'Encounter',
     Procedure = 'Procedure',
-    DiagnosticReport = 'DiagnosticReport',
+    Composition = 'Composition',
 }
 
 export enum Operator {
